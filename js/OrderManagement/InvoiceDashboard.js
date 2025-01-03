@@ -81,7 +81,6 @@
 //     });
 // });
 
-
 // document.addEventListener("DOMContentLoaded", () => {
 //   const financialYearSelect = document.getElementById("financial-year");
 //   const searchBySelect = document.getElementById("search-by");
@@ -153,7 +152,6 @@
 //   });
 // });
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const financialYearSelect = document.getElementById("financial-year");
   const searchBySelect = document.getElementById("search-by");
@@ -170,7 +168,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateCards = (year) => {
     const cards = cardContainer.querySelectorAll(".card-title");
     cards.forEach((card, index) => {
-      card.textContent = year ? `${Math.floor(Math.random(index + 1))}` : "Default";
+      card.textContent = year
+        ? `${Math.floor(Math.random(index + 1))}`
+        : "Default";
     });
   };
 
@@ -255,6 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   historyButton.addEventListener("click", () => {
-    window.location.href = "/history.html";
+    window.location.href = "/html/Dashboard/InvoiceHistory.html";
   });
 });
+
