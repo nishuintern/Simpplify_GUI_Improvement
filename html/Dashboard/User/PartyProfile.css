@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body,
+html {
+    height: 100dvh;
+}
+
+.profile-container,
+.profile-update-container {
+    border: 1px solid #BABED8;
+    padding: 20px 20px;
+    background-color: #FFFFFF;
+}
+
+.profile-container label,
+.profile-update-container label,
+.profile-update-container span,
+.profile-container span {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #3C4059;
+}
+
+.btn-edit {
+    width: 88px;
+    height: 40px;
+    top: 77px;
+    left: 1315px;
+    gap: 0px;
+    border-radius: 4px 0px 0px 0px;
+    border: none;
+    opacity: 0px;
+    background-color: #027EDC;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+.update-btn{
+    border: none;
+    margin-left: 65%;
+    margin-top:10px ;
+    background-color: #027EDC;
+    color: #FFFFFF;
+    padding: 5px 20px;
+}
+.Report{
+    min-width: 100%;
+
+}

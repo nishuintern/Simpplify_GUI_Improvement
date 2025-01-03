@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    bottom: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --heading-bg-color: #EEEEEE;
+    --header-sidebar-bg-color: #141D38;
+    --text-color: #3C4059;
+    --secondary-text-color: #FFFFFF;
+    --border-color: #BABED8;
+    --table-th-bg-color: #ECEFF3;
+    --pag-bg-color: #FE660C;
+    --table-striped-bg-color: #ECEFF3;
+    --lang-text-font-weight: 500;
+    --lang-text-font-size: 14px;
+    --lang-text-font-lh: 16.41px;
+    --heading-font-weight: 700;
+    --heading-font-size: 22px;
+    --heading-font-lh: 33px;
+    --card-text-title-weight: 500;
+    --card-text-title-size: 16px;
+    --card-text-title-lh: 24px;
+    --label-text-weight: 500;
+    --label-text-size: 14px;
+    --label-text-lh: 21px;
+    --th-text-weight: 500;
+    --th-text-size: 11px;
+    --th-text-lh: 12.89px;
+    --td-text-weight: 400;
+    --td-text-size: 10px;
+    --td-text-lh: 11.72px;
+    --btn-search-text-weight: 500;
+    --btn-search-text-size: 12px;
+    --btn-search-text-lh: 18px;
+    --pag-text-weight: 400;
+    --pag-text-size: 12px;
+    --pag-text-lh: 14.06px;
+    --pag-btn-text-weight: 400;
+    --pag-btn-text-size: 13px;
+    --pag-btn-text-lh: 15.23px;
+    --search-po-card-width: 640px;
+    --search-po-card-height: 273px;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.quotation-header {
+    background-color: var(--heading-bg-color);
+    padding: 10px;
+}
+
+.quotation-header img {
+    cursor: pointer;
+}
+
+.quotation-container {
+    justify-self: center;
+}
+
+.cus-ban {
+    border: 1px solid #BABED8;
+}
+
+.border-1 {
+    border: 1px solid;
+}
+
+.invoices-nav-link {
+    color: #3C4059;
+    text-decoration: none;
+}
+
+.invoices-nav-link.active {
+    color: #FE660C;
+    text-decoration: underline;
+}
+
+.invoices-nav-link:hover {
+    color: #FE660C;
+    text-decoration: underline;
+}
+.border-invoice{
+    border-bottom: 1px solid #3C4059;
+}

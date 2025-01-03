@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+:root {
+    --heading-bg-color: #EEEEEE;
+    --header-sidebar-bg-color: #141D38;
+    --text-color: #3C4059;
+    --secondary-text-color: #FFFFFF;
+    --border-color: #BABED8;
+    --table-th-bg-color: #ECEFF3;
+    --pag-bg-color: #FE660C;
+    --table-striped-bg-color: #ECEFF3;
+    --lang-text-font-weight: 500;
+    --lang-text-font-size: 14px;
+    --lang-text-font-lh: 16.41px;
+    --heading-font-weight: 700;
+    --heading-font-size: 22px;
+    --heading-font-lh: 33px;
+    --card-text-title-weight: 500;
+    --card-text-title-size: 16px;
+    --card-text-title-lh: 24px;
+    --label-text-weight: 500;
+    --label-text-size: 14px;
+    --label-text-lh: 21px;
+    --th-text-weight: 500;
+    --th-text-size: 11px;
+    --th-text-lh: 12.89px;
+    --td-text-weight: 400;
+    --td-text-size: 10px;
+    --td-text-lh: 11.72px;
+    --btn-search-text-weight: 500;
+    --btn-search-text-size: 12px;
+    --btn-search-text-lh: 18px;
+    --pag-text-weight: 400;
+    --pag-text-size: 12px;
+    --pag-text-lh: 14.06px;
+    --pag-btn-text-weight: 400;
+    --pag-btn-text-size: 13px;
+    --pag-btn-text-lh: 15.23px;
+    --search-po-card-width: 640px;
+    --search-po-card-height: 273px;
+}
+
+body {
+    margin: 0;
+}
+
+.reverseAuction-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #EEEEEE;
+    padding: 10px;
+}
+
+.reverseAuction-header img {
+    cursor: pointer;
+}
+
+.item-container {
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 33px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+/* 
+.invoices-nav-link {
+    color: #3C4059;
+    text-decoration: none;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 13px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+.invoices-nav-link.active {
+    color: #FE660C;
+    text-decoration: none;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 13px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+.invoices-nav-link:hover {
+    color: #FE660C;
+    text-decoration: none;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 13px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+} 
+
+.border-invoice {
+    border-bottom: 1px solid #3C4059;
+} */
+
+.container-1 {
+
+    height: 49px;
+    border-top: 1px solid #BABED8;
+    border-left: 1px solid #BABED8;
+    border-bottom: 1px solid #BABED8;
+    border-right: 1px solid #BABED8;
+    align-items: center;
+}
+
+.container-2 {
+    width: 35px;
+    height: 35px;
+    border: solid 1px #BABED8;
+    margin-left: 14px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.container-2 span img {
+    margin: 3px;
+}
+
+h4 {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.41px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+h4 span {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 15.23px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+table th {
+    background-color: #ECEFF3;
+    font-family: Roboto;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 12.89px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+table td {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.06px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+th {
+    background-color: var(--table-th-bg-color);
+    position: relative;
+    cursor: pointer;
+    font-size: var(--th-text-size);
+    line-height: var(--th-text-lh);
+    font-weight: var(--th-text-weight);
+    color: var(--text-color);
+}
+
+td {
+    font-size: var(--td-text-size);
+    line-height: var(--td-text-lh);
+    font-weight: var(--td-text-weight);
+    color: var(--text-color);
+}
+
+th .sort-icons {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 4px;
+}
+
+th .sort-icons i {
+    font-size: 12px;
+    /* color: #6c757d; */
+    cursor: pointer;
+    border: 1px solid #BABED8;
+}
+
+/* th .sort-icons i.active {
+    color: #007bff;
+}
+
+.pagination .page-item .page-link {
+    color: #007bff;
+} */
+
+.pagination .page-item.active .page-link {
+    background-color: #FE660C;
+    color: #FFFFFF;
+    border: none;
+}
+
+.sortable-header {
+    display: flexbox;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    gap: 8px
+}
+
+.sort-icons {
+    display: flex;
+    flex-direction: column;
+}
+
+.sort-icon {
+    cursor: pointer;
+    font-size: 5px;
+    line-height: 1;
+}
+
+.page-size-container label,.search-div label{
+    font-weight: var(--label-text-weight);
+    font-size: var(--label-text-size);
+    line-height: var(--label-text-font-lh);
+}
+.pag-div div{
+    font-weight: var(--pag-text-weight);
+    font-size: var(--pag-text-size);
+    line-height: var(--pag-text-lh);
+}

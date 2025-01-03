@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    top: 0;
+    bottom: 0;
+    box-sizing: border-box;
+}
+html,body {
+   width: 100%;
+   height: 100%;
+}
+.order-item-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #EEEEEE;
+    padding: 10px;
+}
+
+.order-item-header img {
+    cursor: pointer;
+}
+
+.item-container {
+    justify-self: center;
+}
+
+.btn-downloads {
+    background-color: #027EDC;
+    color: #FFFFFF;
+}
+
+.btn-dispatch {
+    background-color: #3D9B3E;
+    color: #FFFFFF;
+}
+
+.btn-asn {
+    background-color: #027EDC;
+    color: #FFFFFF;
+}
+
+.border-1 {
+    border: 1px solid;
+}
