@@ -225,56 +225,6 @@ select option {
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
-:root {
-  --heading-bg-color: #eeeeee;
-  --header-sidebar-bg-color: #141d38;
-  --text-color: #3c4059;
-  --secondary-text-color: #ffffff;
-  --border-color: #babed8;
-  --table-th-bg-color: #eceff3;
-  --pag-bg-color: #fe660c;
-  --table-striped-bg-color: #eceff3;
-  --lang-text-font-weight: 500;
-  --lang-text-font-size: 14px;
-  --lang-text-font-lh: 16.41px;
-  --heading-font-weight: 700;
-  --heading-font-size: 22px;
-  --heading-font-lh: 33px;
-  --card-text-title-weight: 500;
-  --card-text-title-size: 16px;
-  --card-text-title-lh: 24px;
-  --label-text-weight: 500;
-  --label-text-size: 14px;
-  --label-text-lh: 21px;
-  --th-text-weight: 500;
-  --th-text-size: 11px;
-  --th-text-lh: 12.89px;
-  --td-text-weight: 400;
-  --td-text-size: 10px;
-  --td-text-lh: 11.72px;
-  --btn-search-text-weight: 500;
-  --btn-search-text-size: 12px;
-  --btn-search-text-lh: 18px;
-  --pag-text-weight: 400;
-  --pag-text-size: 12px;
-  --pag-text-lh: 14.06px;
-  --pag-btn-text-weight: 400;
-  --pag-btn-text-size: 13px;
-  --pag-btn-text-lh: 15.23px;
-  --search-po-card-width: 640px;
-  --search-po-card-height: 273px;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
-  box-sizing: border-box;
-}
-
 html,
 body {
   width: 100%;
