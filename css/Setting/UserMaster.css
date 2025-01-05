@@ -167,3 +167,7 @@ th .sort-icons i {
     font-size: var(--pag-text-size);
     line-height: var(--pag-text-lh);
 }
+.active-link{
+    text-decoration: none;
+    color: #424F9C;
+  }

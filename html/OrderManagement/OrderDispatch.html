@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/OrderManagement/OrderDispatch.css" />
     <link
@@ -16,7 +17,7 @@
   <body>
     <div class="dashboard-container">
       <!-- Sidebar -->
-      <aside class="sidebar">
+      <aside class="sidebar d-sm-none d-md-none d-lg-block">
         <div class="logo">
           <div class="logo-container">
             <img src="/icons/newton icon copy 1.svg" alt="Company Logo" />
@@ -35,7 +36,7 @@
             </li>
             <li>
               <a href="/html/OrderManagement/OrderDispatch.html">
-                <div class="menu-item">
+                <div class="menu-item active">
                   <img
                     src="/icons/icon-park-outline_transaction-order.svg"
                     alt="Order Management"
@@ -270,7 +271,7 @@
               </div>
             </div>
           </a>
-          <a href="/html/Dashboard/User/PartyProfile.html">
+          <a href="">
             <div class="user-dropdown">
               <button class="user-dropdown-btn">
                 <span>
@@ -306,7 +307,7 @@
       </header>
         <!-- Dashboard Heading -->
         <div class="row-container">
-          <div id="subSidebar0" class="sub-sidebar" style="z-index: 1000">
+          <div id="subSidebar0" class="sub-sidebar d-md-block d-lg-block d-sm-none" style="z-index: 1000">
             <span class="ps-3 pt-5 title-text">Order Management</span>
             <hr />
             <ul class="nav flex-column">
@@ -365,7 +366,7 @@
               </li>
             </ul>
           </div>
-          <div class="">
+          <div>
             <div class="dashboard-heading">
               <div class="d-flex">
                 <a href="/html/index.html">

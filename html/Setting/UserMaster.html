@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/css/OrderManagement/OrderDispatch.css" />
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/Setting/UserMaster.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <title>Simplify</title>
@@ -82,7 +83,7 @@
           </li>
           <li>
             <a href="/html/Setting/UserTenantMapping.html">
-              <div class="menu-item">
+              <div class="menu-item active">
                 <img src="/icons/uil_setting.svg" alt="Setting" />
                 <span>Setting</span>
               </div>
@@ -190,7 +191,7 @@
                     </li>
                     <li>
                       <a href="/html/Setting/UserTenantMapping.html">
-                        <div class="menu-item">
+                        <div class="menu-item active">
                           <img src="/icons/uil_setting.svg" alt="Setting" />
                           <span>Setting</span>
                         </div>
@@ -226,7 +227,7 @@
               </div>
             </div>
           </a>
-          <a href="/html/Dashboard/User/PartyProfile.html">
+          <a href="">
             <div class="user-dropdown">
               <button class="user-dropdown-btn">
                 <span>
@@ -276,14 +277,14 @@
               <img src="/icons/Synchronize.svg" alt="" />
             </div>
           </div>
-          <div id="orderDis" class="table-responsive m-2"></div>
+          <div id="user-master" class="mt-2"></div>
         </div>
       </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/js/index.js"></script>
-  <script src="/js/tableManager.js"></script>
+  <script src="/js/tableManager2.js"></script>
   <script>
     initializeTableManager("/js/tableConfigs.json");
   </script>

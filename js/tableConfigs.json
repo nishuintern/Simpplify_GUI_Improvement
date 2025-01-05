@@ -877,5 +877,167 @@
         "ExpectedDeliveryDate.": "Show Image  Map/Edit HSN"
       }
     ]
+  },
+  {
+    "tableId": "#task-manager",
+    "columns": [
+      {
+        "data": "TaskID",
+        "title": "Task ID"
+      },
+      {
+        "data": "AssignBy",
+        "title": "Assign By"
+      },
+      {
+        "data": "AssignByUser",
+        "title": "Assign By User"
+      },
+      {
+        "data": "AssignToUser",
+        "title": "Assign To User"
+      },
+      {
+        "data": "Subject",
+        "title": "Subject"
+      },
+      {
+        "data": "StartDate",
+        "title": "Start Date"
+      },
+      {
+        "data": "EndDate",
+        "title": "End Date"
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      }
+    ],
+    "data": [
+      {
+        "TaskID": "20180710TSK000006 ",
+        "AssignBy": "3 G Technology (Shanghai) Ltd.",
+        "AssignByUser": "threetech.12@gmail.com",
+        "AssignToUser": "3 g Technology (Shanghai) Ltd",
+        "Subject": "ertert",
+        "StartDate": "7/12/2024 12:00:00AM",
+        "EndDate": "7/12/2024 12:00:00AM",
+        "Status": "ACTIVE"
+      }
+    ]
+  },
+  {
+    "tableId": "#user-tenant-mapping",
+    "columns": [
+      {
+        "data": "PartyCode",
+        "title": "Party Code"
+      },
+      {
+        "data": "SupplierName",
+        "title": "Supplier Name"
+      },
+      {
+        "data": "UserCode(E-mail)",
+        "title": "User Code (E-mail)"
+      },
+      {
+        "data": "TCode",
+        "title": "T Code"
+      },
+      {
+        "data": "CompanyName",
+        "title": "Company Name"
+      }
+    ],
+    "data": [
+      {
+        "PartyCode": "123",
+        "SupplierName": "Indoasian",
+        "UserCode(E-mail)": "threetech@gmail.com",
+        "TCode": "66878",
+        "CompanyName": "Simpl"
+      }
+    ]
+  },
+  {
+    "tableId": "#user-master",
+    "columns": [
+      {
+        "data": "PartyCode",
+        "title": "Party Code"
+      },
+      {
+        "data": "E-mailID",
+        "title": "E-mail ID"
+      },
+      {
+        "data": "Name",
+        "title": "Name"
+      },
+      {
+        "data": "MobileAccess",
+        "title": "Mobile Access"
+      },
+      {
+        "data": "IMEIValidation",
+        "title": "IMEI Validation"
+      },
+      {
+        "data": "IPValidation",
+        "title": "IP Validation"
+      },
+      {
+        "data": "MACValidation",
+        "title": "MAC Validation"
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      }
+    ],
+    "data": [
+      {
+        "PartyCode": "3GT5685895",
+        "E-mailID": "threerech.12@gmail.com",
+        "Name": "Suresh",
+        "MobileAccess": "No",
+        "IMEIValidation": "No",
+        "IPValidation": "No",
+        "MACValidation": "No",
+        "Status": "ACTIVE"
+      },
+      {
+        "PartyCode": "3GT5685895",
+        "E-mailID": "threerech.12@gmail.com",
+        "Name": "Suresh",
+        "MobileAccess": "No",
+        "IMEIValidation": "No",
+        "IPValidation": "No",
+        "MACValidation": "No",
+        "Status": "ACTIVE"
+      },
+      {
+        "PartyCode": "3GT5685895",
+        "E-mailID": "threerech.12@gmail.com",
+        "Name": "Suresh",
+        "MobileAccess": "No",
+        "IMEIValidation": "No",
+        "IPValidation": "No",
+        "MACValidation": "No",
+        "Status": "ACTIVE"
+      },
+      {
+        "PartyCode": "3GT5685895",
+        "E-mailID": "threerech.12@gmail.com",
+        "Name": "Suresh",
+        "MobileAccess": "No",
+        "IMEIValidation": "No",
+        "IPValidation": "No",
+        "MACValidation": "No",
+        "Status": "ACTIVE"
+      }
+    ]
   }
 ]

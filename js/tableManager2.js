@@ -49,11 +49,10 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       let sortOrder = "asc";
 
       // Create table structure
-      // Create table structure
       const tableDiv = document.createElement("div");
       tableDiv.className = "table-responsive custom-scrollbar";
       const table = document.createElement("table");
-      table.className = "table text-nowrap";
+      table.className = "table  text-nowrap";
       const thead = document.createElement("thead");
       thead.className = "table table-secondary";
       const tbody = document.createElement("tbody");
@@ -67,11 +66,6 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
 
       // Create a row for the table headers
       const headerRow = document.createElement("tr");
-      // const footerRow= document.createElement("tr");
-      // tfooter.forEach((tfooter)=>{
-      //     const th=document.createElement("th");
-      //     footerRow.appendChild(th);
-      // })
 
       // Add table headers with sorting
       headers.forEach((header) => {
@@ -197,20 +191,21 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
         const startIndex = (currentPage - 1) * pageSize;
         const endIndex = Math.min(startIndex + pageSize, filteredData.length);
         const paginatedData = filteredData.slice(startIndex, endIndex);
-        tbody.innerHTML = '';
-        if (paginatedData.length === 0) {
-        tbody.innerHTML =
-            '<tr><td colspan="6" class="text-center">No data to display</td></tr>';
-        } else {
+
         tbody.innerHTML = paginatedData
-            .map(
+        .map(
             (row) =>
-                `<tr>${headers
-                .map((header) => `<td>${row[header.key]}</td>`)
+            `<tr>${headers
+                .map((header) => {
+                if (header.label === "Status"||header.label === "Action") {
+                    return `<td><a href="#" class="active-link">${row[header.key]}</a></td>`;
+                } else {
+                    return `<td>${row[header.key]}</td>`;
+                }
+                })
                 .join("")}</tr>`
-            )
-            .join("");
-        }
+        )
+        .join("");
 
         updatePagination(filteredData.length, startIndex + 1, endIndex);
     }
@@ -229,62 +224,62 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
         const totalPages = Math.ceil(totalItems / pageSize);
         paginationList.innerHTML = `
             <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
-              <button class="page-link" onclick="changePage(${
+            <button class="page-link" onclick="changePage(${
                 currentPage - 1
-              })">Previous</button>
+            })">Previous</button>
             </li>
             ${[...Array(totalPages).keys()]
-              .map(
+            .map(
                 (i) => `
-              <li class="page-item ${i + 1 === currentPage ? "active" : ""}">
+            <li class="page-item ${i + 1 === currentPage ? "active" : ""}">
                 <button class="page-link" onclick="changePage(${i + 1})">${
-                  i + 1
+                i + 1
                 }</button>
-              </li>`
-              )
-              .join("")}
+            </li>`
+            )
+            .join("")}
             <li class="page-item ${
-              currentPage === totalPages ? "disabled" : ""
+            currentPage === totalPages ? "disabled" : ""
             }">
-              <button class="page-link" onclick="changePage(${
+            <button class="page-link" onclick="changePage(${
                 currentPage + 1
-              })">Next</button>
+            })">Next</button>
             </li>
-          `;
-      }
+        `;
+    }
 
       // Change page
-      window.changePage = (page) => {
+    window.changePage = (page) => {
         currentPage = page;
         renderTable();
-      };
+    };
 
       // Event listeners
-      document
+    document
         .getElementById(`${containerId}-pageSize`)
         .addEventListener("change", (event) => {
-          pageSize = parseInt(event.target.value);
-          currentPage = 1;
-          renderTable();
+        pageSize = parseInt(event.target.value);
+        currentPage = 1;
+        renderTable();
         });
 
-      document
+    document
         .getElementById(`${containerId}-search`)
         .addEventListener("input", () => {
-          currentPage = 1;
-          renderTable();
+        currentPage = 1;
+        renderTable();
         });
 
       // Initial render
-      renderTable();
+    renderTable();
     }
-  };
+};
 
   // Check if DOM is already loaded
-  if (document.readyState === "loading") {
+if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", onDomReady);
-  } else {
+} else {
     // If DOM is already loaded, call the function directly
     onDomReady();
-  }
+}
 }

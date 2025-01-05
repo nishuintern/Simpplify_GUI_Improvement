@@ -10,13 +10,14 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/css/main.min.css" />
     <title>Simplify</title>
   </head>
 
   <body>
     <div class="dashboard-container">
       <!-- Sidebar -->
-      <aside class="sidebar">
+      <aside class="sidebar d-sm-none d-md-none d-lg-block">
         <div class="logo">
           <div class="logo-container">
             <img src="/icons/newton icon copy 1.svg" alt="Company Logo" />
@@ -162,89 +163,184 @@
                   ></button>
                 </div>
                 <div class="offcanvas-body">
-                  <nav>
-                    <ul>
-                      <li class="d-flex">
-                        <a href="/html/index.html" class="text-decoration-none">
-                          <div class="menu-item">
+                  <!-- <nav>
+                    <ul class="list-unstyled">
+                      <li class="mb-3">
+                        <a
+                          href="/html/index.html"
+                          class="text-decoration-none w-100"
+                        >
+                          <div class="menu-item d-flex align-items-center">
                             <img
                               src="/icons/iconamoon_home@2x.svg"
                               alt="Dashboard"
+                              class="me-2"
                             />
-                            <span class="d-flex text-white ms-2"
-                              >Dashboard</span
-                            >
+                            <span class="text-white d-block">Dashboard</span>
                           </div>
                         </a>
                       </li>
-                      <li>
-                        <a href="/html/OrderManagement/OrderDispatch.html">
-                          <div class="menu-item">
+                      <li class="d-flex align-items-center mb-3">
+                        <a
+                          href="/html/OrderManagement/OrderDispatch.html"
+                          class="text-decoration-none w-100"
+                        >
+                          <div class="menu-item d-flex align-items-center">
                             <img
                               src="/icons/icon-park-outline_transaction-order.svg"
                               alt="Order Management"
+                              class="me-2"
                             />
-
-                            <span>Order Management</span>
+                            <span class="text-white d-block">Order Management</span>
                           </div>
                         </a>
                       </li>
-                      <li>
-                        <a href="/html/Quotation/QuotationDetails.html">
-                          <div class="menu-item">
-                            <img src="/icons/Checkout.svg" alt="Quotation" />
-                            <span>Quotation Details</span>
+                      <li class="d-flex align-items-center mb-3">
+                        <a
+                          href="/html/Quotation/QuotationDetails.html"
+                          class="text-decoration-none w-100"
+                        >
+                          <div class="menu-item d-flex align-items-center">
+                            <img
+                              src="/icons/Checkout.svg"
+                              alt="Quotation"
+                              class="me-2"
+                            />
+                            <span class="text-white d-block">Quotation Details</span>
                           </div>
                         </a>
                       </li>
-                      <li>
-                        <a href="/html/ReverseAuction/ReverseAuction.html">
-                          <div class="menu-item">
-                            <img src="/icons/Sell.svg" alt="Reverse Auction" />
-                            <span>Reverse Auction</span>
+                      <li class="d-flex align-items-center mb-3">
+                        <a
+                          href="/html/ReverseAuction/ReverseAuction.html"
+                          class="text-decoration-none w-100"
+                        >
+                          <div class="menu-item d-flex align-items-center">
+                            <img
+                              src="/icons/Sell.svg"
+                              alt="Reverse Auction"
+                              class="me-2"
+                            />
+                            <span class="text-white d-block">Reverse Auction</span>
                           </div>
                         </a>
                       </li>
-                      <li>
-                        <a href="/html/AuctionEngine/AuctionEngine.html">
-                          <div class="menu-item">
+                      <li class="d-flex align-items-center mb-3">
+                        <a
+                          href="/html/AuctionEngine/AuctionEngine.html"
+                          class="text-decoration-none w-100"
+                        >
+                          <div class="menu-item d-flex align-items-center">
                             <img
                               src="/icons/Service.svg"
                               alt="Auction Engine"
+                              class="me-2"
                             />
-                            <span>Auction Engine</span>
+                            <span class="text-white d-block">Auction Engine</span>
                           </div>
                         </a>
                       </li>
-                      <li>
-                        <a href="/html/RFP/RFP.html">
-                          <div class="menu-item">
+                      <li class="d-flex align-items-center mb-3">
+                        <a
+                          href="/html/RFP/RFP.html"
+                          class="text-decoration-none w-100"
+                        >
+                          <div class="menu-item d-flex align-items-center">
                             <img
                               src="/icons/Invite.svg"
                               alt="Request For Proposal"
+                              class="me-2"
                             />
-                            <span>Request For Proposal</span>
+                            <span class="text-white d-block">Request For Proposal</span>
                           </div>
                         </a>
                       </li>
-                      <li>
-                        <a href="/html/TaskManager/TaskManager.html">
-                          <div class="menu-item">
-                            <img src="/icons/Task.svg" alt="Task Manager" />
-                            <span>Task Manager</span>
+                      <li class="d-flex align-items-center mb-3">
+                        <a
+                          href="/html/TaskManager/TaskManager.html"
+                          class="text-decoration-none w-100"
+                        >
+                          <div class="menu-item d-flex align-items-center">
+                            <img
+                              src="/icons/Task.svg"
+                              alt="Task Manager"
+                              class="me-2"
+                            />
+                            <span class="text-white d-block">Task Manager</span>
                           </div>
                         </a>
                       </li>
-                      <li>
-                        <a href="/html/Setting/UserTenantMapping.html">
-                          <div class="menu-item">
-                            <img src="/icons/uil_setting.svg" alt="Setting" />
-                            <span>Setting</span>
+                      <li class="d-flex align-items-center mb-3">
+                        <a
+                          href="/html/Setting/UserTenantMapping.html"
+                          class="text-decoration-none w-100"
+                        >
+                          <div class="menu-item d-flex align-items-center">
+                            <img
+                              src="/icons/uil_setting.svg"
+                              alt="Setting"
+                              class="me-2"
+                            />
+                            <span class="text-white  d-block">Setting</span>
                           </div>
                         </a>
                       </li>
                     </ul>
-                  </nav>
+                  </nav> -->
+                  <ul class="list-unstyled w-100 gap-5">
+                    <li class="m-auto">
+                      <a class="text-decoration-none text-white" href="/html/index.html"
+                        >Dashboard</a
+                      >
+                    </li>
+                    <li class="m-auto">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/html/OrderManagement/OrderDispatch.html"
+                        >Order Management</a
+                      >
+                    </li>
+                    <li class="m-auto">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/html/Quotation/QuotationDetails.html"
+                        >QuotationDetails</a
+                      >
+                    </li>
+                    <li class="m-auto">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/html/ReverseAuction/ReverseAuction.html"
+                        >Reverse Auction</a
+                      >
+                    </li>
+                    <li class="m-auto">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/html/AuctionEngine/AuctionEngine.html"
+                        >Auction Engine</a
+                      >
+                    </li>
+                    <li class="m-auto">
+                      <a class="text-decoration-none text-white" href="/html/RFP/RFP.html"
+                        >Request For Proposal</a
+                      >
+                    </li>
+                    <li class="m-auto">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/html/TaskManager/TaskManager.html"
+                        >Task Manager</a
+                      >
+                    </li>
+                    <li class="m-auto">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/html/Setting/UserTenantMapping.html"
+                        >Setting</a
+                      >
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -273,7 +369,7 @@
                 </div>
               </div>
             </a>
-            <a href="/html/Dashboard/User/PartyProfile.html">
+            <a href="">
               <div class="user-dropdown">
                 <button class="user-dropdown-btn">
                   <span>
