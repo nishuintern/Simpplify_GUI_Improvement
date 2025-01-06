@@ -97,7 +97,7 @@
             <li>
               <a href="/html/Setting/UserTenantMapping.html">
                 <div class="menu-item">
-                  <img src="/icons/uil_setting.svg" alt="Setting" />
+                  <img src="/icons/uil_setting.png" alt="Setting" />
                   <span>Setting</span>
                 </div>
               </a>
@@ -144,10 +144,11 @@
               </div>
 
               <div
-                class="offcanvas-lg offcanvas-start d-lg-none"
+                class="offcanvas offcanvas-lg offcanvas-start d-lg-none"
                 tabindex="-1"
                 id="offcanvasResponsive"
                 aria-labelledby="offcanvasResponsiveLabel"
+                style="width: 250px;"
               >
                 <div class="offcanvas-header">
                   <img src="/icons/newton icon copy 1.svg" alt="" />
@@ -277,7 +278,7 @@
                         >
                           <div class="menu-item d-flex align-items-center">
                             <img
-                              src="/icons/uil_setting.svg"
+                              src="/icons/uil_setting.png"
                               alt="Setting"
                               class="me-2"
                             />
@@ -288,57 +289,105 @@
                     </ul>
                   </nav> -->
                   <ul class="list-unstyled w-100 gap-5">
-                    <li class="m-auto">
-                      <a class="text-decoration-none text-white" href="/html/index.html"
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/html/index.html"
                         >Dashboard</a
                       >
                     </li>
-                    <li class="m-auto">
-                      <a
-                        class="text-decoration-none text-white"
-                        href="/html/OrderManagement/OrderDispatch.html"
-                        >Order Management</a
+                    <li class="m-4">
+                      <select id="customDropdown"
+                        class="bg-transparent border-0 text-white bg-option"
+                        onchange="location = this.value;"
                       >
+                        <option value="Order Management">Order Management</option>
+                        <option
+                          value="/html/OrderManagement/OrderDispatch.html"
+                        >
+                          Order Dispatch
+                        </option>
+                        <option value="/html/OrderManagement/orderAck.html">
+                          Order Acknowledgement
+                        </option>
+                        <option value="/html/OrderManagement/Invoice.html">
+                          Invoice
+                        </option>
+                        <option value="/html/OrderManagement/BuyerMapping.html">
+                          Buyer Mapping
+                        </option>
+                        <option value="/html/OrderManagement/ItemCatalog.html">
+                          Item Catalog
+                        </option>
+                        <option value="/html/OrderManagement/Item.html">
+                          Item
+                        </option>
+                        <option value="/html/OrderManagement/POStatus.html">
+                          PO Status
+                        </option>
+                        <option
+                          value="/html/OrderManagement/InvoiceDashboard.html"
+                        >
+                          Invoice Dashboard
+                        </option>
+                        <option value="/html/OrderManagement/MyInvoices.html">
+                          My Invoices
+                        </option>
+                      </select>
                     </li>
-                    <li class="m-auto">
+                    <li class="m-4">
                       <a
                         class="text-decoration-none text-white"
                         href="/html/Quotation/QuotationDetails.html"
                         >QuotationDetails</a
                       >
                     </li>
-                    <li class="m-auto">
+                    <li class="m-4">
                       <a
                         class="text-decoration-none text-white"
                         href="/html/ReverseAuction/ReverseAuction.html"
                         >Reverse Auction</a
                       >
                     </li>
-                    <li class="m-auto">
+                    <li class="m-4">
                       <a
                         class="text-decoration-none text-white"
                         href="/html/AuctionEngine/AuctionEngine.html"
                         >Auction Engine</a
                       >
                     </li>
-                    <li class="m-auto">
-                      <a class="text-decoration-none text-white" href="/html/RFP/RFP.html"
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/html/RFP/RFP.html"
                         >Request For Proposal</a
                       >
                     </li>
-                    <li class="m-auto">
+                    <li class="m-4">
                       <a
                         class="text-decoration-none text-white"
                         href="/html/TaskManager/TaskManager.html"
                         >Task Manager</a
                       >
                     </li>
-                    <li class="m-auto">
-                      <a
-                        class="text-decoration-none text-white"
-                        href="/html/Setting/UserTenantMapping.html"
-                        >Setting</a
+                    <li class="m-4">
+                      <select id="customDropdown"
+                      class="bg-transparent border-0 text-white bg-option"
+                      onchange="location = this.value;"
+                    >
+                    <option value="setting">Setting</option>
+                      <option
+                        value="/html/setting/UserTenantMapping.html"
                       >
+                        UserTenantMapping
+                      </option>
+                      <option value="/html/setting/UserMaster.html">
+                        UserMaster
+                      </option>
+                      <option value="/html/OrderManagement/MenuMapping.html">
+                        MenuMapping
+                      </option>
+                      </select>
                     </li>
                   </ul>
                 </div>
@@ -420,18 +469,18 @@
             >
               <form onsubmit="searchPoNumber(event)" method="post">
                 <div class="search-po">
-                  <h4 class="pt-2 ps-1 m-sm-auto card-heading">
+                  <h4 class="pt-2 ps-1 m-sm-4 card-heading">
                     Search PO Number Details
                   </h4>
                   <hr />
                   <label for="Customer" class="d-lg-flex d-sm-flex d-md-flex">
                     <span
-                      class="ms-sm-auto ms-lg-1 me-lg-1 ms-md-1 card-inside-text label-text d-flex align-items-center"
+                      class="ms-sm-4 ms-lg-1 me-lg-1 ms-md-1 card-inside-text label-text d-flex align-items-center"
                       >Customer</span
                     >
                     <input
                       id="customer-input"
-                      class="ms-sm-auto px-sm-5 ms-lg-3 px-lg-5 py-lg-1 py-sm-1 customer-input ms-md-3"
+                      class="ms-sm-4 px-sm-5 ms-lg-3 px-lg-5 py-lg-1 py-sm-1 customer-input ms-md-3"
                       list="customer-list"
                       placeholder="Select or type customer"
                     />
@@ -521,7 +570,7 @@
                 ></div>
               </div>
             </section>
-            <section class="col-sm-12 col-md-12 col-lg-5 m-auto">
+            <section class="col-sm-12 col-md-12 col-lg-5 mb-4">
               <div class="search-po">
                 <h4 class="p-2 card-heading">Purchase Order Report</h4>
                 <hr />
@@ -546,7 +595,7 @@
               </form>
             </section>
             <section
-              class="col-sm-auto col-md-auto m-auto col-lg-6 container-fluid mt-4 mb-5"
+              class="col-sm-12 col-md-12  col-lg-6 container-fluid mt-4 mb-5"
             >
               <form action="#">
                 <div class="search-po">
