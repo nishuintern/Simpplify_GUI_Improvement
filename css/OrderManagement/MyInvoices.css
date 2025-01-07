@@ -63,7 +63,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 70px;
+    width: 80px;
     background-color: #141D38;
     color: #fff;
     display: flex;
@@ -513,7 +513,7 @@ section {
 
 .row-container {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 200px auto;
     /* gap: 10px; */
     /* padding: 10px; */
 }
