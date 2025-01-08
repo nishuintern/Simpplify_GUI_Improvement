@@ -125,18 +125,14 @@
           </div>
           <nav>
             <div class="dropdown me-sm-1 me-md-1 mt-sm-3 mt-md-3">
-              <button
-                class="btn-togg-drop dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+              <select
+                name="lang"
+                id="lang-text"
+                class="lang-text bg-transparent text-white border-0 px-lg-3 px-md-2 px-sm-1 bg-option"
               >
-                <span class="lang-text">Language</span>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">English</a></li>
-                  <li><a class="dropdown-item" href="#">Hindi</a></li>
-                </ul>
-              </button>
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+              </select>
               <div class="alert alert-info d-none d-lg-none">
                 Resize your browser to show the responsive offcanvas toggle.
               </div>

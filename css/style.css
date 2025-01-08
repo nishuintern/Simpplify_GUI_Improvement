@@ -95,6 +95,7 @@ body {
   width: 228px;
   display: block;
   align-items: start;
+  overflow-y: auto;
 }
 
 .menu-item {
@@ -796,13 +797,13 @@ th {
 }
 
 
-.bg-option{
+.bg-option option{
     background-color: #141d38;
 }
-/* .bg-option option:hover::after{
+.bg-option option::before:hover::after{
     background-color: #141d38;
     color: #EEEEEE;
-} */
+}
 /* Responsive Design */
 @media (max-width: 430px) {
   .tables-section {
