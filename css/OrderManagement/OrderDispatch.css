@@ -68,7 +68,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 70px;
+    width: 80px;
     background-color: #141D38;
     color: #fff;
     display: flex;
@@ -518,7 +518,7 @@ section {
 
 .row-container {
     display: grid;
-    grid-template-columns: 220px auto;
+    grid-template-columns: 200px auto;
     /* gap: 10px; */
     /* padding: 10px; */
 }
@@ -871,7 +871,7 @@ th .sort-icons i {
 
 
 /* Responsive Design */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .tables-section {
         grid-template-columns: 1fr;
     }
@@ -901,4 +901,4 @@ th .sort-icons i {
     .search-and-todo {
         grid-template-columns: 1fr;
     }
-}
+} */
