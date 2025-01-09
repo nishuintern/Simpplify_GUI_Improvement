@@ -460,7 +460,7 @@ input[type="radio"]:checked {
     transition: opacity 0.3s ease;
     position: absolute;
     color: white;
-    left: 60px; 
+    left: 60px;
     top: auto;
 
 }
