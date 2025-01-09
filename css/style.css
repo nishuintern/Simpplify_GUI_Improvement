@@ -61,6 +61,7 @@ body {
 .dashboard-container {
   display: flex;
   height: 100vh;
+  width: 100%;
 }
 .menu-item.active{
     background-color: #3c4059;
@@ -805,13 +806,13 @@ th {
     color: #EEEEEE;
 }
 /* Responsive Design */
-@media (max-width: 430px) {
+@media (min-width: 320px) and (max-width: 998px) {
   .tables-section {
     grid-template-columns: 1fr;
   }
 
   .sidebar {
-    width: 80px;
+    /* width: 80px; */
     display: none;
   }
 
@@ -831,9 +832,92 @@ th {
 
   .header {
     font-size: 14px;
+    padding: 10px;
+    text-align: center;
+    background-color: #141D38;
+  }
+
+  .dashboard-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .search-and-todo {
     grid-template-columns: 1fr;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .content-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
+
+  .content-scroll {
+    overflow-y: auto;
+    flex: 1 1 auto;
+  }
+
+  .content-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .card {
+    flex: 1 1 calc(100% - 32px); /* Full width for small screens */
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-body {
+    padding: 16px;
+    text-align: center;
+  }
+
+  .card-title {
+    font-size: var(--card-text-title-size);
+    font-weight: var(--card-text-title-weight);
+    line-height: var(--card-text-title-lh);
+    margin-top: 8px;
+  }
+
+  .card-text {
+    font-size: var(--td-text-size);
+    font-weight: var(--td-text-weight);
+    line-height: var(--td-text-lh);
+    color: var(--text-color);
+  }
+
+  @media (min-width: 768px) {
+    .card {
+      flex: 1 1 calc(50% - 32px); /* Half width for medium screens */
+    }
+  }
+
+  @media (min-width: 998px) {
+    .card {
+      flex: 1 1 calc(25% - 32px); /* Quarter width for large screens */
+    }
   }
 }

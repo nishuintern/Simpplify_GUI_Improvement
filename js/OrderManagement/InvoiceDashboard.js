@@ -259,3 +259,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("toggle-btn");
+  const sidebar = document.getElementById("sidebar");
+
+  toggleBtn.addEventListener("click", () => {
+    if (sidebar.classList.contains("expanded")) {
+      // Collapse Sidebar
+      sidebar.classList.remove("expanded");
+      sidebar.classList.add("collapsed");
+      document.querySelector(".layout").style.gridTemplateColumns = "80px 1fr";
+    } else {
+      // Expand Sidebar
+      sidebar.classList.remove("collapsed");
+      sidebar.classList.add("expanded");
+      document.querySelector(".layout").style.gridTemplateColumns = "250px 1fr";
+    }
+  });
+});

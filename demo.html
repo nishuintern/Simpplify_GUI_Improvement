@@ -1,186 +1,541 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <title>Task Manager</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    /* General Layout */
+    .layout {
+      display: grid;
+      grid-template-columns: 80px 1fr; /* Sidebar starts collapsed */
+      height: 100vh;
+      transition: grid-template-columns 0.3s ease;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fc;
-            color: #333;
-        }
+    /* Sidebar */
+    .sidebar {
+      background-color: #141d38;
+      color: #fff;
+      overflow: hidden;
+      width: 80px; /* Default collapsed width */
+      transition: width 0.3s ease;
+    }
 
-        .sidebar {
-            width: 250px;
-            height: 100vh;
-            background-color: #1b2742;
-            color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-        }
+    .sidebar .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 80px;
+      margin-top: 20px;
+      padding: 10px;
+    }
 
-        .sidebar h2 {
-            text-align: center;
-            padding: 20px;
-        }
+    .sidebar .logo h3 {
+      opacity: 0; /* Hidden in collapsed mode */
+      transition: opacity 0.3s ease;
+    }
 
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
+    .sidebar nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-        .sidebar ul li {
-            padding: 15px 20px;
-            cursor: pointer;
-        }
+    .sidebar nav ul li {
+      margin: 10px 0;
+    }
 
-        .sidebar ul li:hover {
-            background-color: #2a3c64;
-        }
+    .sidebar nav ul li a {
+      text-decoration: none;
+      color: #ccc;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      opacity: 0; /* Hidden in collapsed mode */
+      transition: opacity 0.3s ease;
+    }
 
-        .main-content {
-            margin-left: 250px;
-            padding: 20px;
-        }
+    .sidebar.expanded {
+      width: 250px; /* Expanded width */
+    }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #ffffff;
-            padding: 10px 20px;
-            border-bottom: 1px solid #ddd;
-        }
+    .sidebar.expanded .logo .logo h3,
+    .sidebar.expanded nav ul li a {
+      opacity: 1; /* Visible in expanded mode */
+    }
 
-        .header .actions {
-            display: flex;
-            gap: 10px;
-        }
+    .sidebar.expanded .logo {
+      margin-left: 20px;
+      margin-top: 0;
+      padding: 10px;
+      transition: margin-left 0.3s ease;
+    }
 
-        .header .actions button {
-            background-color: #1b2742;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #141d38;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-        .header .actions button:hover {
-            background-color: #2a3c64;
-        }
+    .header nav a {
+      margin: 0 10px;
+      display: inline-block;
+    }
 
-        .table-container {
-            margin-top: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    .toggle-btn {
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+    /* .content {
+      padding: 20px;
+      display: grid;
+      grid-template-rows: auto auto;
+    } */
+    .sidebar.expanded nav ul li a {
+      justify-content: flex-start; /* Align content normally when expanded */
+      opacity: 1; /* Visible in expanded mode */
+    }
 
-        table th, table td {
-            text-align: left;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
+    .sidebar.collapsed nav ul li a {
+      opacity: 0; /* Hide text in collapsed mode */
+    }
 
-        table th {
-            background-color: #f1f1f1;
-        }
+    .sidebar.collapsed nav ul li img {
+      margin: 0 auto; /* Center icons in collapsed mode */
+    }
 
-        .pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0;
-        }
+    /* Ensure icons always remain visible */
+    .sidebar nav ul li a:hover img {
+      filter: brightness(1.2); /* Slightly brighten icon on hover */
+    }
 
-        .pagination button {
-            border: 1px solid #ddd;
-            padding: 5px 10px;
-            background-color: #ffffff;
-            cursor: pointer;
-        }
+    .sidebar.expanded .logo h3 {
+      opacity: 1; /* Show text in expanded mode */
+    }
 
-        .pagination button:hover {
-            background-color: #f1f1f1;
-        }
+    /* Active State */
+    .sidebar nav ul li .menu-item.active {
+      background-color: #444;
+      color: #fff;
+      border-radius: 8px;
+    }
+    .container-invoice {
+      display: grid;
+      grid-template-rows: auto;
+    }
+    .dashboard-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #eeeeee;
+      color: #3c4059;
+    }
+    .main-content {
+      flex: 1; /* Take remaining width */
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
 
-        .pagination .active {
-            background-color: #1b2742;
-            color: white;
-            border: none;
-        }
-    </style>
-</head>
-<body>
-    <div class="sidebar">
-        <h2>Task Manager</h2>
-        <ul>
-            <li>Task Manager</li>
-            <li>Dashboard</li>
-            <li>Settings</li>
-        </ul>
-    </div>
+    /* Ensure content fills remaining space */
+    .main-content header {
+      flex-shrink: 0;
+    }
+    .menu-item{
+        display: block;
+    }
+  </style>
+  <body>
+    <div class="layout">
+      <!-- Sidebar -->
+      <aside class="sidebar collapsed" id="sidebar">
+        <div class="logo">
+          <div class="logo-container d-flex">
+            <img src="/icons/newton icon copy 1.svg" alt="Company Logo" />
+            <h3>Simplify</h3>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="/html/index.html">
+                <div class="menu-item">
+                  <img src="/icons/iconamoon_home@2x.svg" alt="Dashboard" />
+                  <span>Dashboard</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/html/OrderManagement/OrderDispatch.html">
+                <div class="menu-item active">
+                  <img
+                    src="/icons/icon-park-outline_transaction-order.svg"
+                    alt="Order Management"
+                  />
 
-    <div class="main-content">
-        <div class="header">
-            <h1>Task Manager</h1>
-            <div class="actions">
-                <button>Add Task</button>
-                <button>Refresh</button>
+                  <span>Order Management</span>
+                </div>
+              </a>
+              <img
+                src="/icons/Glyph_ undefined 1.svg"
+                alt="Toggle Menu"
+                class="toggle-img"
+              />
+            </li>
+            <li>
+              <a href="/html/Quotation/QuotationDetails.html">
+                <div class="menu-item">
+                  <img src="/icons/Checkout.svg" alt="Quotation" />
+                  <span>Quotation Details</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/html/ReverseAuction/ReverseAuction.html">
+                <div class="menu-item">
+                  <img src="/icons/Sell.svg" alt="Reverse Auction" />
+                  <span>Reverse Auction</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/html/AuctionEngine/AuctionEngine.html">
+                <div class="menu-item">
+                  <img src="/icons/Service.svg" alt="Auction Engine" />
+                  <span>Auction Engine</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/html/RFP/RFP.html">
+                <div class="menu-item">
+                  <img src="/icons/Invite.svg" alt="Request For Proposal" />
+                  <span>Request For Proposal</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/html/TaskManager/TaskManager.html">
+                <div class="menu-item">
+                  <img src="/icons/Task.svg" alt="Task Manager" />
+                  <span>Task Manager</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/html/Setting/UserTenantMapping.html">
+                <div class="menu-item">
+                  <img src="/icons/uil_setting.png" alt="Setting" />
+                  <span>Setting</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <header class="header">
+          <div class="header-container">
+            <!-- Mobile Toggle Button -->
+            <!-- <button
+              class="toggle-btn bg-transparent border-0 d-lg-none"
+              id="offcanvas-toggle-btn"
+            >
+              <img src="/icons/menu.svg" alt="Toggle Offcanvas Menu" />
+            </button> -->
+
+            <!-- Sidebar Toggle Button -->
+            <button class="toggle-btn bg-transparent border-0" id="toggle-btn">
+              <img src="/icons/menu.svg" alt="Toggle Sidebar" />
+            </button>
+            <span class="fs-4 m-2">Simplify</span>
+          </div>
+
+          <nav>
+            <a href="#help">
+              <img src="/icons/help.svg" alt="Help" />
+            </a>
+            <a href="#notification">
+              <img src="/icons/Doorbell.svg" alt="Notification" />
+            </a>
+            <a href="#">
+              <img src="/icons/Customer.svg" alt="Customer Profile" />
+            </a>
+          </nav>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content">
+          <div class="container-invoice">
+            <div class="dashboard-heading">
+              <div class="d-flex">
+                <a href="/html/index.html">
+                  <img src="/icons/Arrow back ios (2).svg" alt="" />
+                </a>
+                <h3>Invoice Dashboard</h3>
+              </div>
+              <a href="">
+                <img src="/icons/Synchronize.svg" alt="" />
+              </a>
             </div>
+            <div>
+              <div
+                class="filters d-lg-flex d-md-block d-sm-block justify-content-lg-start justify-content-sm-between justify-content-md-between align-items-md-center align-items-sm-center cus-ban"
+              >
+                <div
+                  class="d-lg-block d-sm-flex justify-content-sm-between justify-content-md-between d-md-flex ms-lg-1 ms-md-1 ms-sm-1"
+                >
+                  <label class="m-sm-2" for="fan-year">
+                    <span>Financial Year</span>
+                    <select
+                      class="px-lg-5 py-md-2 py-sm-1 py-lg-1"
+                      name="size"
+                      id="financial-year"
+                    >
+                      <option value="default">Select Year</option>
+                      <option value="2024">2024</option>
+                      <option value="2023">2023</option>
+                      <option value="2022">2022</option>
+                      <option value="2021">2021</option>
+                      <option value="2020">2020</option>
+                    </select>
+                  </label>
+                  <div>
+                    <div class="d-none" id="search-container">
+                      <label class="ms-lg-5 m-sm-1" for="location">
+                        <span>Location</span>
+                        <select
+                          class="px-4 py-1 ms-1"
+                          name="location"
+                          id="location"
+                        >
+                          <option value="default">Select Location</option>
+                          <option value="Location1">Location 1</option>
+                          <option value="Location2">Location 2</option>
+                          <option value="Location3">Location 3</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div class="d-none" id="fromDate-container">
+                      <label
+                        for="from-date"
+                        class="m-lg-3 m-sm-1 me-2 text-nowrap"
+                        ><span>From Date</span></label
+                      >
+                      <input
+                        type="date"
+                        id="from-date"
+                        class="ms-lg-1 ps-2 pe-2 px-4 py-1"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- <div id=" additional-filters">
+                </div> -->
+                <div
+                  class="d-lg-block d-sm-block d-md-block ms-lg-1 ms-md-1 ms-sm-1"
+                >
+                  <label class="m-sm-1 m-lg-1 m-md-1" for="search">
+                    <span class="me-lg-4 me-md-2 me-sm-2">Search By</span>
+                    <select
+                      class="px-sm-3 px-lg-5 px-md-2 py-lg-1"
+                      name="searchBy"
+                      id="search-by"
+                    >
+                      <option value="default">Select</option>
+                      <option value="ALL">ALL</option>
+                      <option value="Location">Location</option>
+                      <option value="MaterialInTransits">
+                        Material In Transits
+                      </option>
+                      <option value="Date">Date</option>
+                    </select>
+                  </label>
+                  <div class="d-none" id="toDate-container">
+                    <label for="to-date" class="m-lg-3 m-sm-1 text-nowrap"
+                      ><span>To Date</span></label
+                    >
+                    <input
+                      type="date"
+                      id="to-date"
+                      class="ms-lg-5 ps-2 pe-2 px-4 py-1"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="button-container d-sm-block d-md-block d-lg-block m-1 p-1"
+                >
+                  <button
+                    class="btn btn-dark btn-sm me-sm-2 me-md-2 me-lg-2 p-2 px-lg-3 px-sm-2 px-md-3"
+                    id="search-btn"
+                    onclick="()=>handleSearchByChange();"
+                  >
+                    Search
+                  </button>
+                  <button
+                    class="btn btn-primary btn-sm me-lg-2 p-2 px-lg-3 px-md-3 px-sm-2"
+                    id="material-transit-btn"
+                  >
+                    Material Transist
+                  </button>
+                  <button
+                    class="btn btn-light btn-sm p-2 px-lg-3 px-sm-2 px-md-3"
+                    id="history-btn"
+                  >
+                    History
+                  </button>
+                </div>
+              </div>
+              <div class="content-scroll">
+                <div id="card-container card-grid" class="row ms-3 mt-3">
+                  <!-- Cards here (unchanged for now) -->
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                      <div class="card d-flex justify-content-center">
+                        <div
+                          class="card-body d-flex flex-column align-items-center"
+                        >
+                          <img src="/icons/Vector.svg" alt="" />
+                          <h6 class="mt-1 card-title">21</h6>
+                          <p class="card-text">My Invoice</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                      <div class="card d-flex justify-content-center">
+                        <div
+                          class="card-body d-flex flex-column align-items-center"
+                        >
+                          <img
+                            src="/icons/flat-color-icons_ok (2).svg"
+                            alt=""
+                          />
+                          <h6 class="mt-1 card-title">00</h6>
+                          <p class="card-text">Created</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                      <div class="card d-flex justify-content-center">
+                        <div
+                          class="card-body d-flex flex-column align-items-center"
+                        >
+                          <img src="/icons/la_file-invoice.svg" alt="" />
+                          <h6 class="mt-1 card-title">18</h6>
+                          <p class="card-text">L1 Pending</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                      <div class="card d-flex justify-content-center">
+                        <div
+                          class="card-body d-flex flex-column align-items-center"
+                        >
+                          <img
+                            src="/icons/flat-color-icons_ok (3).svg"
+                            alt=""
+                          />
+                          <h6 class="mt-1 card-title">18</h6>
+                          <p class="card-text">L1 Pending More than 7 Days</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-auto col-md-4 col-sm-6 mb-4">
+                      <div class="card d-flex justify-content-center">
+                        <div
+                          class="card-body d-flex flex-column align-items-center"
+                        >
+                          <img
+                            src="/icons/flat-color-icons_ok (1).png"
+                            alt=""
+                          />
+                          <h6 class="mt-1 card-title">00</h6>
+                          <p class="card-text">L3 Pending</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                      <div class="card d-flex justify-content-center">
+                        <div
+                          class="card-body d-flex flex-column align-items-center"
+                        >
+                          <img src="/icons/la_file-invoice (1).svg" alt="" />
+                          <h6 class="mt-1 card-title">01</h6>
+                          <p class="card-text">Approved</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                      <div class="card d-flex justify-content-center">
+                        <div
+                          class="card-body d-flex flex-column align-items-center"
+                        >
+                          <img
+                            src="/icons/marketeq_rejected-file-2.svg"
+                            alt=""
+                          />
+                          <h6 class="mt-1 card-title">01</h6>
+                          <p class="card-text">Rejected</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div id="invoice-dashboard" class="table-responsive"></div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Task ID</th>
-                        <th>Assign By</th>
-                        <th>Assign By User</th>
-                        <th>Assign To User</th>
-                        <th>Subject</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>20180710TSK000006</td>
-                        <td>3G Technology (Shanghai) Ltd.</td>
-                        <td>threetech.12@gmail.com</td>
-                        <td>3G Technology (Shanghai) Ltd.</td>
-                        <td>ert</td>
-                        <td>7/12/2024 12:00:00 AM</td>
-                        <td>7/12/2024 12:00:00 AM</td>
-                        <td>Active</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="pagination">
-            <button>Previous</button>
-            <button class="active">1</button>
-            <button>Next</button>
-        </div>
+      </div>
     </div>
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleBtn = document.getElementById("toggle-btn");
+        const sidebar = document.getElementById("sidebar");
+        const layout = document.querySelector(".layout");
+
+        toggleBtn.addEventListener("click", () => {
+          if (sidebar.classList.contains("expanded")) {
+            // Collapse Sidebar
+            sidebar.classList.remove("expanded");
+            layout.style.gridTemplateColumns = "80px 1fr";
+          } else {
+            // Expand Sidebar
+            sidebar.classList.add("expanded");
+            layout.style.gridTemplateColumns = "250px 1fr";
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
