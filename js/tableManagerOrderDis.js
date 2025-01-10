@@ -57,6 +57,8 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       thead.className = "table table-secondary";
       const tbody = document.createElement("tbody");
       tbody.id = `${containerId}-tbody`;
+      tbody.className="table text-wrap";
+      tbody.className="table text-wrap";
       const tfooter = document.createElement("tfoot");
       tfooter.className = "table table-secondary";
       table.appendChild(thead);

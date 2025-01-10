@@ -24,7 +24,13 @@ html,body {
 .border-1{
     border: 1px solid;
 }
-
+/* .row-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    padding: 10px;
+    margin-bottom: 10px;
+} */
 @media (min-width: 320px) and (max-width: 998px) {
     .tables-section {
         grid-template-columns: 1fr;

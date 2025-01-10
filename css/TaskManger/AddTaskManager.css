@@ -1,0 +1,51 @@
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.form-container label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+.form-container select,
+.form-container input,
+.form-container textarea,
+.form-container button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.form-container textarea {
+  height: 100px;
+  resize: none;
+}
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+.file-upload {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.full-width {
+  grid-column: span 2;
+}
+.content-scroll{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 150px);
+}

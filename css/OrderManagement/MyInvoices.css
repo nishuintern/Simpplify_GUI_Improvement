@@ -53,11 +53,16 @@ body {
     max-width: 100%;
     height: 100%;
     overflow: hidden;
+    display: grid;
+    grid-template-rows: auto auto;
 }
 
 .dashboard-container {
-    display: flex;
-    height: auto;
+    display: grid;
+    grid-template-rows:auto;
+    height: 100%;
+    position: relative;
+    
 
 }
 
@@ -829,7 +834,11 @@ th .sort-icons i {
 .pagination .page-item.active .page-link {
     background-color: #FE660C;
     color: #FFFFFF;
-    border: none;
+    border: 1px solid #BABED8;
+    border-radius: 4px;
+}
+.page-link{
+    color: #3C4059;
 }
 
 .sortable-header {

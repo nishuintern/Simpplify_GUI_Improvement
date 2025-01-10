@@ -1039,5 +1039,272 @@
         "Status": "ACTIVE"
       }
     ]
+  },
+  {
+    "tableId": "#need-to-act",
+    "columns": [
+      {
+        "data": "DispatchId",
+        "title": "Dispatch Id"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "VendorName",
+        "title": "Vendor Name"
+      },
+      {
+        "data": "InvoiceNo.",
+        "title": "Invoice No."
+      },
+      {
+        "data": "InvoiceDate",
+        "title": "Invoice Date"
+      },
+      {
+        "data": "PONo.",
+        "title": "PO No."
+      },
+      {
+        "data": "MSME",
+        "title": "MSME"
+      },
+      {
+        "data": "PaymentDt",
+        "title": "Payment Dt"
+      },
+      {
+        "data": "PaidAmt",
+        "title": "Paid Amt"
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      },
+      {
+        "data": "CreationDt",
+        "title": "Creation Dt"
+      },
+      {
+        "data": "PendingDy",
+        "title": "Pending Dy"
+      },
+      {
+        "data": "InvoiceAmt",
+        "title": "Invoice Amt"
+      }
+    ],
+    "data": [
+      {
+        "DispatchId": "20240821DISP000003",
+        "Location": "NEDSPL-HO",
+        "VendorName": "3G Technology (Shanghai)LTD.",
+        "InvoiceNo.": "20140821INV000003",
+        "InvoiceDate": "21/08/2024",
+        "PONo.": "20240815NPO000001",
+        "MSME": "No",
+        "PaymentDt": "",
+        "PaidAmt": "Rejected",
+        "Status": "ACTIVE",
+        "CreationDt": "21/08/2024",
+        "PendingDy": "0",
+        "InvoiceAmt": "1140.00"
+      },
+      {
+        "DispatchId": "20240821DISP000003",
+        "Location": "NEDSPL-HO",
+        "VendorName": "3G Technology (Shanghai)LTD.",
+        "InvoiceNo.": "20140821INV000003",
+        "InvoiceDate": "21/08/2024",
+        "PONo.": "20240815NPO000001",
+        "MSME": "No",
+        "PaymentDt": "",
+        "PaidAmt": "Rejected",
+        "Status": "ACTIVE",
+        "CreationDt": "21/08/2024",
+        "PendingDy": "0",
+        "InvoiceAmt": "1140.00"
+      }
+    ]
+  },
+  {
+    "tableId": "#my-invoice-history",
+    "columns": [
+      {
+        "data": "DispatchId",
+        "title": "Dispatch Id"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "VendorName",
+        "title": "Vendor Name"
+      },
+      {
+        "data": "InvoiceNo.",
+        "title": "Invoice No."
+      },
+      {
+        "data": "InvoiceDate",
+        "title": "Invoice Date"
+      },
+      {
+        "data": "PONo.",
+        "title": "PO No."
+      },
+      {
+        "data": "MSME",
+        "title": "MSME"
+      },
+      {
+        "data": "PaymentDt",
+        "title": "Payment Dt"
+      },
+      {
+        "data": "PaidAmt",
+        "title": "Paid Amt"
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      },
+      {
+        "data": "CreationDt",
+        "title": "Creation Dt"
+      },
+      {
+        "data": "PendingDy",
+        "title": "Pending Dy"
+      },
+      {
+        "data": "InvoiceAmt",
+        "title": "Invoice Amt"
+      }
+    ],
+    "data": [
+      {
+        "DispatchId": "20240821DISP000003",
+        "Location": "NEDSPL-HO",
+        "VendorName": "3G Technology (Shanghai)LTD.",
+        "InvoiceNo.": "20140821INV000003",
+        "InvoiceDate": "21/08/2024",
+        "PONo.": "20240815NPO000001",
+        "MSME": "No",
+        "PaymentDt": "",
+        "PaidAmt": "Rejected",
+        "Status": "ACTIVE",
+        "CreationDt": "21/08/2024",
+        "PendingDy": "0",
+        "InvoiceAmt": "1140.00"
+      },
+      {
+        "DispatchId": "20240821DISP000003",
+        "Location": "NEDSPL-HO",
+        "VendorName": "3G Technology (Shanghai)LTD.",
+        "InvoiceNo.": "20140821INV000003",
+        "InvoiceDate": "21/08/2024",
+        "PONo.": "20240815NPO000001",
+        "MSME": "No",
+        "PaymentDt": "",
+        "PaidAmt": "Rejected",
+        "Status": "ACTIVE",
+        "CreationDt": "21/08/2024",
+        "PendingDy": "0",
+        "InvoiceAmt": "1140.00"
+      }
+    ]
+  },
+  {
+    "tableId": "#my-pending",
+    "columns": [
+      {
+        "data": "DispatchId",
+        "title": "Dispatch Id"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "VendorName",
+        "title": "Vendor Name"
+      },
+      {
+        "data": "InvoiceNo.",
+        "title": "Invoice No."
+      },
+      {
+        "data": "InvoiceDate",
+        "title": "Invoice Date"
+      },
+      {
+        "data": "PONo.",
+        "title": "PO No."
+      },
+      {
+        "data": "MSME",
+        "title": "MSME"
+      },
+      {
+        "data": "PaymentDt",
+        "title": "Payment Dt"
+      },
+      {
+        "data": "PaidAmt",
+        "title": "Paid Amt"
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      },
+      {
+        "data": "CreationDt",
+        "title": "Creation Dt"
+      },
+      {
+        "data": "PendingDy",
+        "title": "Pending Dy"
+      },
+      {
+        "data": "InvoiceAmt",
+        "title": "Invoice Amt"
+      }
+    ],
+    "data": [
+      {
+        "DispatchId": "20240821DISP000003",
+        "Location": "NEDSPL-HO",
+        "VendorName": "3G Technology (Shanghai)LTD.",
+        "InvoiceNo.": "20140821INV000003",
+        "InvoiceDate": "21/08/2024",
+        "PONo.": "20240815NPO000001",
+        "MSME": "No",
+        "PaymentDt": "",
+        "PaidAmt": "Rejected",
+        "Status": "ACTIVE",
+        "CreationDt": "21/08/2024",
+        "PendingDy": "0",
+        "InvoiceAmt": "1140.00"
+      },
+      {
+        "DispatchId": "20240821DISP000003",
+        "Location": "NEDSPL-HO",
+        "VendorName": "3G Technology (Shanghai)LTD.",
+        "InvoiceNo.": "20140821INV000003",
+        "InvoiceDate": "21/08/2024",
+        "PONo.": "20240815NPO000001",
+        "MSME": "No",
+        "PaymentDt": "",
+        "PaidAmt": "Rejected",
+        "Status": "ACTIVE",
+        "CreationDt": "21/08/2024",
+        "PendingDy": "0",
+        "InvoiceAmt": "1140.00"
+      }
+    ]
   }
 ]

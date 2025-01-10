@@ -108,25 +108,17 @@
       <div class="main-content">
         <!-- Header -->
         <header
-          class="header d-sm-flex justify-content-sm-between justify-content-lg-between justify-content-md-between"
+          class="header d-sm-flex justify-content-sm-between justify-content-lg-end justify-content-md-between"
         >
-          <div class="header-container d-lg-flex  d-md-flex d-sm-flex">
-            <img src="/icons/newton icon copy 1.svg" class="d-lg-none d-sm-block d-md-block" alt="Company" />
-            <span class="fs-4 m-2 d-lg-none">Simpplify</span>
+          <div class="header-container d-lg-none d-md-flex d-sm-flex">
+            <img src="/icons/newton icon copy 1.svg" alt="Company" />
+            <span class="fs-4 m-2">Simpplify</span>
             <button
-              class="bg-transparent border-0 m-1 pointer-event d-lg-none"
+              class="bg-transparent border-0 m-1 pointer-event"
               type="button"
               data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasResponsive"
               aria-controls="offcanvasResponsive"
-            >
-              <img src="/icons/menu.svg" alt="" />
-            </button>
-
-            <button
-              class="bg-transparent border-0 m-1 pointer-event  align-items-lg-start"
-              type="button"
-              id="toggle-btn"
             >
               <img src="/icons/menu.svg" alt="" />
             </button>
@@ -335,10 +327,7 @@
         </header>
         <!-- Dashboard Heading -->
         <div class="row-container">
-          <div
-            id="subSidebar0"
-            class="sub-sidebar d-sm-none d-md-none d-lg-none"
-          >
+          <div id="subSidebar0" class="sub-sidebar d-sm-none d-md-none d-lg-block">
             <span class="ps-3 pt-5 title-text">Order Management</span>
             <hr />
             <ul class="nav flex-column">
@@ -398,102 +387,223 @@
             </ul>
           </div>
           <div class="container-invoice">
-            <!-- Dashboard Heading -->
             <div class="dashboard-heading">
-              <div class="header-left">
+              <div class="d-flex">
                 <a href="/html/index.html">
-                  <img src="/icons/Arrow back ios (2).svg" alt="Back" />
+                  <img src="/icons/Arrow back ios (2).svg" alt="" />
                 </a>
                 <h3>Invoice Dashboard</h3>
               </div>
-              <a href="#">
-                <img src="/icons/Synchronize.svg" alt="Refresh" />
+              <a href="">
+                <img src="/icons/Synchronize.svg" alt="" />
               </a>
             </div>
-
-            <!-- Filters Section -->
-            <div class="filters cus-ban p-2">
-              <label for="financial-year">
-                <span>Financial Year</span>
-                <select id="financial-year" class="p-2">
-                  <option value="default">Select Year</option>
-                  <option value="2024">2024</option>
-                  <option value="2023">2023</option>
-                  <option value="2022">2022</option>
-                  <option value="2021">2021</option>
-                  <option value="2020">2020</option>
-                </select>
-              </label>
-
-              <label for="search-by">
-                <span>Search By</span>
-                <select id="search-by" class="p-2">
-                  <option value="default">Select</option>
-                  <option value="ALL">ALL</option>
-                  <option value="Location">Location</option>
-                  <option value="MaterialInTransits">
-                    Material In Transits
-                  </option>
-                  <option value="Date">Date</option>
-                </select>
-              </label>
-
-              <div class="button-group">
-                <button class="search px-4">Search</button>
-                <button class="material-transit px-4">Material Transit</button>
-                <button class="history px-4">History</button>
+            <div>
+              <div
+                class="filters d-lg-flex d-md-block d-sm-block justify-content-lg-start justify-content-sm-between justify-content-md-between align-items-md-center align-items-sm-center cus-ban"
+              >
+                <div
+                  class="d-lg-block d-sm-flex justify-content-sm-between justify-content-md-between d-md-flex ms-lg-1 ms-md-1 ms-sm-1"
+                >
+                  <label class="m-sm-2" for="fan-year">
+                    <span>Financial Year</span>
+                    <select
+                      class="px-lg-5 py-md-2 py-sm-1 py-lg-1"
+                      name="size"
+                      id="financial-year"
+                    >
+                      <option value="default">Select Year</option>
+                      <option value="2024">2024</option>
+                      <option value="2023">2023</option>
+                      <option value="2022">2022</option>
+                      <option value="2021">2021</option>
+                      <option value="2020">2020</option>
+                    </select>
+                  </label>
+                  <div>
+                    <div class="d-none" id="search-container">
+                      <label class="ms-lg-5 m-sm-1" for="location">
+                        <span>Location</span>
+                        <select
+                          class="px-4 py-1 ms-1"
+                          name="location"
+                          id="location"
+                        >
+                          <option value="default">Select Location</option>
+                          <option value="Location1">Location 1</option>
+                          <option value="Location2">Location 2</option>
+                          <option value="Location3">Location 3</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div class="d-none" id="fromDate-container">
+                      <label
+                        for="from-date"
+                        class="m-lg-3 m-sm-1 me-2 text-nowrap"
+                        ><span>From Date</span></label
+                      >
+                      <input
+                        type="date"
+                        id="from-date"
+                        class="ms-lg-1 ps-2 pe-2 px-4 py-1"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- <div id=" additional-filters">
+            </div> -->
+                <div
+                  class="d-lg-block d-sm-block d-md-block ms-lg-1 ms-md-1 ms-sm-1"
+                >
+                  <label class="m-sm-1 m-lg-1 m-md-1" for="search">
+                    <span class="me-lg-4 me-md-2 me-sm-2">Search By</span>
+                    <select
+                      class="px-sm-3 px-lg-5 px-md-2 py-lg-1"
+                      name="searchBy"
+                      id="search-by"
+                    >
+                      <option value="default">Select</option>
+                      <option value="ALL">ALL</option>
+                      <option value="Location">Location</option>
+                      <option value="MaterialInTransits">
+                        Material In Transits
+                      </option>
+                      <option value="Date">Date</option>
+                    </select>
+                  </label>
+                  <div class="d-none" id="toDate-container">
+                    <label for="to-date" class="m-lg-3 m-sm-1 text-nowrap"
+                      ><span>To Date</span></label
+                    >
+                    <input
+                      type="date"
+                      id="to-date"
+                      class="ms-lg-5 ps-2 pe-2 px-4 py-1"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="button-container d-sm-block d-md-block d-lg-block m-1 p-1"
+                >
+                  <button
+                    class="btn btn-dark btn-sm me-sm-2 me-md-2 me-lg-2 p-2 px-lg-3 px-sm-2 px-md-3"
+                    id="search-btn"
+                    onclick="()=>handleSearchByChange();"
+                  >
+                    Search
+                  </button>
+                  <button
+                    class="btn btn-primary btn-sm me-lg-2 p-2 px-lg-3 px-md-3 px-sm-2"
+                    id="material-transit-btn"
+                  >
+                    Material Transist
+                  </button>
+                  <button
+                    class="btn btn-light btn-sm p-2 px-lg-3 px-sm-2 px-md-3"
+                    id="history-btn"
+                  >
+                    History
+                  </button>
+                </div>
               </div>
-            </div>
-
-            <!-- Card Section -->
-            <div class="card-grid">
-              <div class="card">
-                <img src="/icons/Vector.svg" alt="My Invoice" />
-                <h3>21</h3>
-                <p>My Invoice</p>
+              <div class="content-scroll">
+                <div id="card-container" class="ms-3 mt-3">
+                  <!-- Cards here (unchanged for now) -->
+                  <div class="card-container">
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                      <div class="card d-flex justify-content-center">
+                        <div
+                          class="card-body d-flex flex-column align-items-center"
+                        >
+                          <img src="/icons/Vector.svg" alt="" />
+                          <h6 class="mt-1 card-title">21</h6>
+                          <p class="card-text">My Invoice</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                      <div class="card d-flex justify-content-center">
+                        <div
+                          class="card-body d-flex flex-column align-items-center"
+                        >
+                          <img
+                            src="/icons/flat-color-icons_ok (2).svg"
+                            alt=""
+                          />
+                          <h6 class="mt-1 card-title">00</h6>
+                          <p class="card-text">Created</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                      <div class="card d-flex justify-content-center">
+                        <div
+                          class="card-body d-flex flex-column align-items-center"
+                        >
+                          <img src="/icons/la_file-invoice.svg" alt="" />
+                          <h6 class="mt-1 card-title">18</h6>
+                          <p class="card-text">L1 Pending</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                      <div class="card d-flex justify-content-center">
+                        <div
+                          class="card-body d-flex flex-column align-items-center"
+                        >
+                          <img
+                            src="/icons/flat-color-icons_ok (3).svg"
+                            alt=""
+                          />
+                          <h6 class="mt-1 card-title">18</h6>
+                          <p class="card-text">L1 Pending More than 7 Days</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-auto col-md-4 col-sm-6 mb-4">
+                      <div class="card d-flex justify-content-center">
+                        <div
+                          class="card-body d-flex flex-column align-items-center"
+                        >
+                          <img
+                            src="/icons/flat-color-icons_ok (1).png"
+                            alt=""
+                          />
+                          <h6 class="mt-1 card-title">00</h6>
+                          <p class="card-text">L3 Pending</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                      <div class="card d-flex justify-content-center">
+                        <div
+                          class="card-body d-flex flex-column align-items-center"
+                        >
+                          <img src="/icons/la_file-invoice (1).svg" alt="" />
+                          <h6 class="mt-1 card-title">01</h6>
+                          <p class="card-text">Approved</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                      <div class="card d-flex justify-content-center">
+                        <div
+                          class="card-body d-flex flex-column align-items-center"
+                        >
+                          <img
+                            src="/icons/marketeq_rejected-file-2.svg"
+                            alt=""
+                          />
+                          <h6 class="mt-1 card-title">01</h6>
+                          <p class="card-text">Rejected</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="line"></div>
+                <div id="invoice-dashboard" class="container"></div>
               </div>
-              <div class="card">
-                <img src="/icons/flat-color-icons_ok (2).svg" alt="Created" />
-                <h3>00</h3>
-                <p>Created</p>
-              </div>
-              <div class="card">
-                <img src="/icons/la_file-invoice.svg" alt="L1 Pending" />
-                <h3>18</h3>
-                <p>L1 Pending</p>
-              </div>
-              <div class="card">
-                <img
-                  src="/icons/flat-color-icons_ok (3).svg"
-                  alt="L1 Pending > 7 Days"
-                />
-                <h3>18</h3>
-                <p>L1 Pending More than 7 Days</p>
-              </div>
-              <div class="card">
-                <img
-                  src="/icons/flat-color-icons_ok (1).png"
-                  alt="L3 Pending"
-                />
-                <h3>00</h3>
-                <p>L3 Pending</p>
-              </div>
-              <div class="card">
-                <img src="/icons/la_file-invoice (1).svg" alt="Approved" />
-                <h3>01</h3>
-                <p>Approved</p>
-              </div>
-              <div class="card">
-                <img src="/icons/marketeq_rejected-file-2.svg" alt="Rejected" />
-                <h3>01</h3>
-                <p>Rejected</p>
-              </div>
-            </div>
-
-            <!-- Table Section -->
-            <div class="invoice-dashboard">
-              <div class="line"></div>
-              <div class="table-responsive" id="invoice-dashboard"></div>
             </div>
           </div>
         </div>

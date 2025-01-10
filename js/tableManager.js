@@ -55,11 +55,13 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       const table = document.createElement("table");
       table.className = "table text-nowrap";
       const thead = document.createElement("thead");
-      thead.className = "table table-secondary";
+      thead.className = "table table-secondary p-3";
       const tbody = document.createElement("tbody");
+      tbody.className='table table-responsive';
       tbody.id = `${containerId}-tbody`;
       const tfooter = document.createElement("tfoot");
       tfooter.className = "table table-secondary";
+      tbody.className="table text-wrap";
       table.appendChild(thead);
       table.appendChild(tbody);
       table.appendChild(tfooter);

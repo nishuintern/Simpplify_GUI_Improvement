@@ -76,6 +76,7 @@ body {
     color: #F39C12;
     text-wrap: nowrap;
 }
+
 @media (min-width: 320px) and (max-width: 998px) {
     .tables-section {
         grid-template-columns: 1fr;

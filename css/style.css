@@ -850,7 +850,7 @@ th {
   .main-content {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 95%;
     padding: 10px;
   }
 

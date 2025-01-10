@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="stylesheet" href="/css/OrderManagement/OrderDispatch.css">
-     <link rel="stylesheet" href="/css/TaskManger/TaskManager.css">
+    <link rel="stylesheet" href="/css/OrderManagement/OrderDispatch.css" />
+    <link rel="stylesheet" href="/css/TaskManger/TaskManager.css" />
+    <link rel="stylesheet" href="/css/TaskManger/AddTaskManager.css">
     <link rel="stylesheet" href="/css/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -125,7 +126,11 @@
           </div>
           <nav>
             <div class="dropdown me-sm-1 me-md-1 mt-sm-3 mt-md-3">
-              <select name="lang" id="lang-text" class="lang-text bg-transparent text-white border-0 px-lg-3 px-md-2 px-sm-1  bg-option">
+              <select
+                name="lang"
+                id="lang-text"
+                class="lang-text bg-transparent text-white border-0 px-lg-3 px-md-2 px-sm-1 bg-option"
+              >
                 <option value="en">English</option>
                 <option value="hi">Hindi</option>
               </select>
@@ -134,27 +139,27 @@
               </div>
 
               <div
-              class="offcanvas offcanvas-lg offcanvas-start d-lg-none"
-              tabindex="-1"
-              id="offcanvasResponsive"
-              aria-labelledby="offcanvasResponsiveLabel"
-              style="width: 250px;"
-            >
-              <div class="offcanvas-header">
-                <img src="/icons/newton icon copy 1.svg" alt="" />
-                <h5 class="offcanvas-title m-2" id="offcanvasResponsiveLabel">
-                  Simpplify
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="offcanvas"
-                  data-bs-target="#offcanvasResponsive"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="offcanvas-body">
-                <!-- <nav>
+                class="offcanvas offcanvas-lg offcanvas-start d-lg-none"
+                tabindex="-1"
+                id="offcanvasResponsive"
+                aria-labelledby="offcanvasResponsiveLabel"
+                style="width: 250px"
+              >
+                <div class="offcanvas-header">
+                  <img src="/icons/newton icon copy 1.svg" alt="" />
+                  <h5 class="offcanvas-title m-2" id="offcanvasResponsiveLabel">
+                    Simpplify
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    data-bs-target="#offcanvasResponsive"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="offcanvas-body">
+                  <!-- <nav>
                   <ul class="list-unstyled">
                     <li class="mb-3">
                       <a
@@ -278,110 +283,112 @@
                     </li>
                   </ul>
                 </nav> -->
-                <ul class="list-unstyled w-100 gap-5">
-                  <li class="m-4">
-                    <a
-                      class="text-decoration-none text-white"
-                      href="/html/index.html"
-                      >Dashboard</a
-                    >
-                  </li>
-                  <li class="m-4">
-                    <select id="customDropdown"
-                      class="bg-transparent border-0 text-white bg-option"
-                      onchange="location = this.value;"
-                    >
-                      <option value="Order Management">Order Management</option>
-                      <option
-                        value="/html/OrderManagement/OrderDispatch.html"
+                  <ul class="list-unstyled w-100 gap-5">
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/html/index.html"
+                        >Dashboard</a
                       >
-                        Order Dispatch
-                      </option>
-                      <option value="/html/OrderManagement/orderAck.html">
-                        Order Acknowledgement
-                      </option>
-                      <option value="/html/OrderManagement/Invoice.html">
-                        Invoice
-                      </option>
-                      <option value="/html/OrderManagement/BuyerMapping.html">
-                        Buyer Mapping
-                      </option>
-                      <option value="/html/OrderManagement/ItemCatalog.html">
-                        Item Catalog
-                      </option>
-                      <option value="/html/OrderManagement/Item.html">
-                        Item
-                      </option>
-                      <option value="/html/OrderManagement/POStatus.html">
-                        PO Status
-                      </option>
-                      <option
-                        value="/html/OrderManagement/InvoiceDashboard.html"
+                    </li>
+                    <li class="m-4">
+                      <select
+                        id="customDropdown"
+                        class="bg-transparent border-0 text-white bg-option"
+                        onchange="location = this.value;"
                       >
-                        Invoice Dashboard
-                      </option>
-                      <option value="/html/OrderManagement/MyInvoices.html">
-                        My Invoices
-                      </option>
-                    </select>
-                  </li>
-                  <li class="m-4">
-                    <a
-                      class="text-decoration-none text-white"
-                      href="/html/Quotation/QuotationDetails.html"
-                      >QuotationDetails</a
-                    >
-                  </li>
-                  <li class="m-4">
-                    <a
-                      class="text-decoration-none text-white"
-                      href="/html/ReverseAuction/ReverseAuction.html"
-                      >Reverse Auction</a
-                    >
-                  </li>
-                  <li class="m-4">
-                    <a
-                      class="text-decoration-none text-white"
-                      href="/html/AuctionEngine/AuctionEngine.html"
-                      >Auction Engine</a
-                    >
-                  </li>
-                  <li class="m-4">
-                    <a
-                      class="text-decoration-none text-white"
-                      href="/html/RFP/RFP.html"
-                      >Request For Proposal</a
-                    >
-                  </li>
-                  <li class="m-4">
-                    <a
-                      class="text-decoration-none text-white"
-                      href="/html/TaskManager/TaskManager.html"
-                      >Task Manager</a
-                    >
-                  </li>
-                  <li class="m-4">
-                    <select id="customDropdown"
-                    class="bg-transparent border-0 text-white bg-option"
-                    onchange="location = this.value;"
-                  >
-                  <option value="setting">Setting</option>
-                    <option
-                      value="/html/setting/UserTenantMapping.html"
-                    >
-                      UserTenantMapping
-                    </option>
-                    <option value="/html/setting/UserMaster.html">
-                      UserMaster
-                    </option>
-                    <option value="/html/OrderManagement/MenuMapping.html">
-                      MenuMapping
-                    </option>
-                    </select>
-                  </li>
-                </ul>
+                        <option value="Order Management">
+                          Order Management
+                        </option>
+                        <option
+                          value="/html/OrderManagement/OrderDispatch.html"
+                        >
+                          Order Dispatch
+                        </option>
+                        <option value="/html/OrderManagement/orderAck.html">
+                          Order Acknowledgement
+                        </option>
+                        <option value="/html/OrderManagement/Invoice.html">
+                          Invoice
+                        </option>
+                        <option value="/html/OrderManagement/BuyerMapping.html">
+                          Buyer Mapping
+                        </option>
+                        <option value="/html/OrderManagement/ItemCatalog.html">
+                          Item Catalog
+                        </option>
+                        <option value="/html/OrderManagement/Item.html">
+                          Item
+                        </option>
+                        <option value="/html/OrderManagement/POStatus.html">
+                          PO Status
+                        </option>
+                        <option
+                          value="/html/OrderManagement/InvoiceDashboard.html"
+                        >
+                          Invoice Dashboard
+                        </option>
+                        <option value="/html/OrderManagement/MyInvoices.html">
+                          My Invoices
+                        </option>
+                      </select>
+                    </li>
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/html/Quotation/QuotationDetails.html"
+                        >QuotationDetails</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/html/ReverseAuction/ReverseAuction.html"
+                        >Reverse Auction</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/html/AuctionEngine/AuctionEngine.html"
+                        >Auction Engine</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/html/RFP/RFP.html"
+                        >Request For Proposal</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/html/TaskManager/TaskManager.html"
+                        >Task Manager</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <select
+                        id="customDropdown"
+                        class="bg-transparent border-0 text-white bg-option"
+                        onchange="location = this.value;"
+                      >
+                        <option value="setting">Setting</option>
+                        <option value="/html/setting/UserTenantMapping.html">
+                          UserTenantMapping
+                        </option>
+                        <option value="/html/setting/UserMaster.html">
+                          UserMaster
+                        </option>
+                        <option value="/html/OrderManagement/MenuMapping.html">
+                          MenuMapping
+                        </option>
+                      </select>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
             </div>
 
             <a href="#help">
@@ -445,122 +452,158 @@
           </nav>
         </header>
         <!-- Dashboard Heading -->
-        <div class="row-container">
-          <div id="subSidebar4" class="sub-sidebar" style="z-index: 1000">
-            <span class="p-2 title-text">Task Manager</span>
-            <hr />
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  href="/html/TaskManager/TaskManager.html"
-                  >Task Manager</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div>
+        <div class="container-fluid">
+          <div class="">
             <div class="dashboard-heading">
               <div class="d-flex">
                 <a href="/html/index.html">
                   <img src="/icons/Arrow back ios (2).svg" alt="" />
                 </a>
-                <h3>Task Manager</h3>
+                <h3>Add New Task Manager</h3>
               </div>
               <div>
-                <a href="/html/TaskManager/AddNewTaskManager.html" class="text-decoration-none me-4">
-                  <img src="/icons/formkit_add.svg" alt="" />
+                <a href="" class="text-decoration-none me-4">
+                  <img src="/icons/save.svg" alt="" />
                 </a>
                 <img src="/icons/Synchronize.svg" alt="" />
               </div>
             </div>
-            <div id="task-manager" class="mt-1"></div>
-            <!-- <div class="d-flex justify-content-between">
-              <div>
-                <label class="m-3" for="page-size">
-                  <span>Page Size :</span>
-                  <select class="ps-2 pe-2" name="size" id="sizeOfPage">
-                    <option value="10">10</option>
+            <div class="content-scroll">
+              <div class="form-container">
+                <!-- Column 1 -->
+                <div>
+                  <label for="staff-name">Staff Name *</label>
+                  <input
+                    type="text"
+                    id="staff-name"
+                    placeholder="Enter staff name"
+                  />
+
+                  <label>Internal/External *</label>
+                  <div class="radio-group">
+                    <label
+                      ><input
+                        type="radio"
+                        name="internal-external"
+                        value="internal"
+                        checked
+                      />
+                      Internal</label
+                    >
+                    <label
+                      ><input
+                        type="radio"
+                        name="internal-external"
+                        value="external"
+                      />
+                      External</label
+                    >
+                  </div>
+
+                  <label for="entity">Entity *</label>
+                  <select id="entity">
+                    <option value="">SELECT</option>
+                    <option value="task">Task</option>
+                    <option value="meeting">Meeting</option>
                   </select>
-                </label>
-              </div>
-              <div>
-                <label class="m-3" for="search">
-                  <span>Search</span>
-                  <input class="ps-5" type="text" />
-                </label>
+
+                  <label for="event">Event/Task/Meeting</label>
+                  <select id="event">
+                    <option value="">Task</option>
+                  </select>
+
+                  <label for="start-date">Start Date/Time *</label>
+                  <div style="display: flex; gap: 10px">
+                    <input type="date" id="start-date" />
+                    <select id="start-time">
+                      <option value="am">AM</option>
+                      <option value="pm">PM</option>
+                    </select>
+                  </div>
+
+                  <label>Status</label>
+                  <select>
+                    <option value="">-SELECT-</option>
+                  </select>
+
+                  <div class="checkbox-group">
+                    <label
+                      ><input type="checkbox" id="invoiced" /> Invoiced</label
+                    >
+                  </div>
+
+                  <label for="name">Name</label>
+                  <input type="text" id="name" />
+
+                  <label for="phone">Phone No.</label>
+                  <input type="text" id="phone" />
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                  <label for="completion-rights">Completion Rights</label>
+                  <select id="completion-rights">
+                    <option value="">-SELECT-</option>
+                  </select>
+
+                  <label for="department">Department</label>
+                  <select id="department">
+                    <option value="">-SELECT-</option>
+                  </select>
+
+                  <label for="buyer-supplier-users"
+                    >Buyer/Supplier Users *</label
+                  >
+                  <select id="buyer-supplier-users">
+                    <option value="">-SELECT-</option>
+                  </select>
+
+                  <label for="type">TYPE *</label>
+                  <select id="type">
+                    <option value="">-SELECT-</option>
+                  </select>
+
+                  <label for="end-date">End Date/Time *</label>
+                  <div style="display: flex; gap: 10px">
+                    <input type="date" id="end-date" />
+                    <select id="end-time">
+                      <option value="am">AM</option>
+                      <option value="pm">PM</option>
+                    </select>
+                  </div>
+
+                  <label for="reason">Reason</label>
+                  <select id="reason">
+                    <option value="">-SELECT-</option>
+                  </select>
+
+                  <label for="priority">Priority *</label>
+                  <select id="priority">
+                    <option value="">-SELECT-</option>
+                  </select>
+
+                  <div class="file-upload">
+                    <label for="attach-document">Attach Document</label>
+                    <input type="file" id="attach-document" />
+                  </div>
+                </div>
+
+                <!-- Full width -->
+                <div class="full-width mb-4">
+                  <label for="subject">SUBJECT</label>
+                  <input type="text" id="subject"/>
+                  <label for="log">Log</label>
+                  <textarea id="log" rows="20"></textarea>
+                </div>
               </div>
             </div>
-            <div class="table-responsive">
-              <table class="table">
-                <thead class="sortable-header sort-icon">
-                  <tr>
-                    <th scope="col">
-                      Company Name
-                      <span
-                        ><img src="/icons/Arrow back ios (1).svg" alt=""
-                      /></span>
-                    </th>
-                    <th scope="col">
-                      Order No.
-                      <span
-                        ><img src="/icons/Arrow back ios (1).svg" alt=""
-                      /></span>
-                    </th>
-                    <th scope="col">
-                      PO Date
-                      <span
-                        ><img src="/icons/Arrow back ios (1).svg" alt=""
-                      /></span>
-                    </th>
-                    <th scope="col">
-                      Validity Date
-                      <span
-                        ><img src="/icons/Arrow back ios (1).svg" alt=""
-                      /></span>
-                    </th>
-                    <th scope="col">
-                      Order Amount
-                      <span
-                        ><img src="/icons/Arrow back ios (1).svg" alt=""
-                      /></span>
-                    </th>
-                    <th scope="col">
-                      Action
-                      <span
-                        ><img src="/icons/Arrow back ios (1).svg" alt=""
-                      /></span>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody id="tableBody">
-                  
-                </tbody>
-              </table>
-            </div>
-            <div class="d-flex justify-content-between m-4">
-              <span>Showing 1 to 2 of (18 entries)</span>
-              <nav aria-label="...">
-                <ul class="pagination" id="pagination">
-                  <li class="page-item">
-                    <a class="page-link" href="#" id="prev">Previous</a>
-                  </li>
-                  <li class="page-item active" aria-current="page">
-                    <a class="page-link" id="pageNo" href="#">1</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" id="next" href="#">Next</a>
-                  </li>
-                </ul>
-              </nav>
-            </div> -->
           </div>
         </div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/index.js"></script>
+    <script src="/js/TaskManger/AddTaskManager.js"></script>
     <!-- <script src="/js/TaskManger/TaskManager.js"></script> -->
     <script src="/js/tableManager2.js"></script>
     <script>
