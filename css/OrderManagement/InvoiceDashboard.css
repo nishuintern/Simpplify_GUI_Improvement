@@ -768,7 +768,7 @@ section {
 
 .row-container {
   display: grid;
-  grid-template-columns: 200px 1100px;
+  grid-template-columns: auto auto;
   /* gap: 10px; */
   /* padding: 10px; */
 }

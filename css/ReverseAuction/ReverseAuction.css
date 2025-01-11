@@ -1,8 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    bottom: 0;
+    box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+
 :root {
     --heading-bg-color: #EEEEEE;
     --header-sidebar-bg-color: #141D38;
@@ -43,22 +49,11 @@
     --search-po-card-height: 273px;
 }
 
-body {
-    margin: 0;
-}
-
-.reverseAuction-header {
+.auctionEngine-header {
     display: flex;
     justify-content: space-between;
     background-color: #EEEEEE;
     padding: 10px;
-}
-
-.reverseAuction-header img {
-    cursor: pointer;
-}
-
-.item-container {
     font-family: Roboto;
     font-size: 22px;
     font-weight: 700;
@@ -68,14 +63,18 @@ body {
     text-decoration-skip-ink: none;
 
 }
-/* 
+
+.auctionEngine-header img {
+    cursor: pointer;
+}
+
 .invoices-nav-link {
     color: #3C4059;
     text-decoration: none;
     font-family: Roboto;
     font-size: 13px;
     font-weight: 400;
-    line-height: 13px;
+    line-height: 19.5px;
     text-align: center;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -84,11 +83,11 @@ body {
 
 .invoices-nav-link.active {
     color: #FE660C;
-    text-decoration: none;
+    text-decoration: underline;
     font-family: Roboto;
     font-size: 13px;
     font-weight: 400;
-    line-height: 13px;
+    line-height: 19.5px;
     text-align: center;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -97,20 +96,20 @@ body {
 
 .invoices-nav-link:hover {
     color: #FE660C;
-    text-decoration: none;
+    text-decoration: underline;
     font-family: Roboto;
     font-size: 13px;
     font-weight: 400;
-    line-height: 13px;
+    line-height: 19.5px;
     text-align: center;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
 
-} 
+}
 
 .border-invoice {
     border-bottom: 1px solid #3C4059;
-} */
+}
 
 .container-1 {
 
@@ -155,27 +154,6 @@ h4 span {
     text-decoration-skip-ink: none;
 }
 
-table th {
-    background-color: #ECEFF3;
-    font-family: Roboto;
-    font-size: 11px;
-    font-weight: 500;
-    line-height: 12.89px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-
-}
-
-table td {
-    font-family: Roboto;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 14.06px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-}
 th {
     background-color: var(--table-th-bg-color);
     position: relative;
@@ -209,14 +187,6 @@ th .sort-icons i {
     border: 1px solid #BABED8;
 }
 
-/* th .sort-icons i.active {
-    color: #007bff;
-}
-
-.pagination .page-item .page-link {
-    color: #007bff;
-} */
-
 .pagination .page-item.active .page-link {
     background-color: #FE660C;
     color: #FFFFFF;
@@ -242,13 +212,68 @@ th .sort-icons i {
     line-height: 1;
 }
 
-.page-size-container label,.search-div label{
+.page-size-container label,
+.search-div label {
     font-weight: var(--label-text-weight);
     font-size: var(--label-text-size);
     line-height: var(--label-text-font-lh);
 }
-.pag-div div{
+
+.pag-div div {
     font-weight: var(--pag-text-weight);
     font-size: var(--pag-text-size);
     line-height: var(--pag-text-lh);
+}
+
+.tabs {
+    border-bottom: 1px solid #3C4059;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    /* Space between tabs */
+}
+
+/* Individual tabs */
+.tab {
+    color: #3C4059;
+    /* Default text color */
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: color 0.3s ease;
+    border: none;
+    background: transparent;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 13px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+/* Active tab with orange underline */
+.tab.active {
+    color: #FE660C;
+    border-bottom: 1px solid #FE660C;
+}
+
+.nav-underline .tab-item.active {
+    border-bottom: 2px solid #FE660C;
+    margin-bottom: -1px;
+}
+
+/* .nav-item.active{
+    border-bottom: 1px solid #FE660C;;
+} */
+/* Hover effect for tabs */
+/* .tab:hover {
+    color: black;
+} */
+
+/* Make sure to override Bootstrap's styles if needed */
+.nav-item {
+    margin: 0;
 }

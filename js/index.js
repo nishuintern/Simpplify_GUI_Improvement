@@ -51,10 +51,10 @@ function searchPoNumber(event) {
     }
 
     // Construct the search URL
-    const searchUrl = `http://127.0.0.1:5500/DashboardSearchRes/SearchRes.html?customer=${encodeURIComponent(customer)}&searchBy=${searchBy.value}&query=${encodeURIComponent(query)}`;
+    // const searchUrl = `/html/Dashboard/DashboardSearchRes/SearchRes.html?customer=${encodeURIComponent(customer)}&searchBy=${searchBy.value}&query=${encodeURIComponent(query)}`;
 
     // // Redirect to search results page
-    window.location.href = searchUrl;
+    window.location.href = 'http://127.0.0.1:5500//html/Dashboard/DashboardSearchRes/SearchRes.html';
 }
 
 document.addEventListener("DOMContentLoaded", function () {

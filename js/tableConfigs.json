@@ -242,28 +242,12 @@
     ],
     "data": [
       {
-        "EventCode": "20240709ENQ000003",
-        "EventName": "Event 7base",
-        "OpeningDate": "07/09/2024",
-        "OpeningTime": "313:00:00",
-        "OpeningBidTime": "300.00",
-        "Action": "300.00"
-      },
-      {
-        "EventCode": "20240709ENQ000004",
-        "EventName": "Event 7base",
-        "OpeningDate": "07/09/2024",
-        "OpeningTime": "313:00:00",
-        "OpeningBidTime": "300.00",
-        "Action": "300.00"
-      },
-      {
-        "EventCode": "20240709ENQ000005",
-        "EventName": "Event 7base",
-        "OpeningDate": "07/09/2024",
-        "OpeningTime": "313:00:00",
-        "OpeningBidTime": "300.00",
-        "Action": "300.00"
+        "EventCode": " ",
+        "EventName": " ",
+        "OpeningDate": " ",
+        "OpeningTime": " ",
+        "OpeningBidTime": "",
+        "Action": ""
       }
     ]
   },
@@ -289,29 +273,20 @@
       {
         "data": "OpeningBidAmount",
         "title": "Opening Bid Amount"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
       }
     ],
     "data": [
       {
-        "EventCode": "20240709ENQ000003",
-        "EventName": "Event 7base",
-        "OpeningDate": "07/09/2024",
-        "OpeningTime": "313:00:00",
-        "OpeningBidAmount": "300.00"
-      },
-      {
-        "EventCode": "20240709ENQ000004",
-        "EventName": "Event 7base",
-        "OpeningDate": "07/09/2024",
-        "OpeningTime": "313:00:00",
-        "OpeningBidAmount": "300.00"
-      },
-      {
-        "EventCode": "20240709ENQ000005",
-        "EventName": "Event 7base",
-        "OpeningDate": "07/09/2024",
-        "OpeningTime": "313:00:00",
-        "OpeningBidAmount": "300.00"
+        "EventCode": " ",
+        "EventName": " ",
+        "OpeningDate": " ",
+        "OpeningTime": " ",
+        "OpeningBidTime": "",
+        "Action": ""
       }
     ]
   },
@@ -337,6 +312,10 @@
       {
         "data": "OpeningBidAmount",
         "title": "Opening Bid Amount"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
       }
     ],
     "data": [
@@ -345,21 +324,24 @@
         "EventName": "Event 7base",
         "OpeningDate": "07/09/2024",
         "OpeningTime": "313:00:00",
-        "OpeningBidAmount": "300.00"
+        "OpeningBidAmount": "300.00",
+        "Action": "win"
       },
       {
         "EventCode": "20240709ENQ000004",
         "EventName": "Event 7base",
         "OpeningDate": "07/09/2024",
         "OpeningTime": "313:00:00",
-        "OpeningBidAmount": "300.00"
+        "OpeningBidAmount": "300.00",
+        "Action": "not sure"
       },
       {
         "EventCode": "20240709ENQ000005",
         "EventName": "Event 7base",
         "OpeningDate": "07/09/2024",
         "OpeningTime": "313:00:00",
-        "OpeningBidAmount": "300.00"
+        "OpeningBidAmount": "300.00",
+        "Action":"not win"
       }
     ]
   },
@@ -953,11 +935,11 @@
     ],
     "data": [
       {
-        "PartyCode": "123",
-        "SupplierName": "Indoasian",
-        "UserCode(E-mail)": "threetech@gmail.com",
-        "TCode": "66878",
-        "CompanyName": "Simpl"
+        "PartyCode": "",
+        "SupplierName": "",
+        "UserCode(E-mail)": "",
+        "TCode": "",
+        "CompanyName": ""
       }
     ]
   },
@@ -1304,6 +1286,278 @@
         "CreationDt": "21/08/2024",
         "PendingDy": "0",
         "InvoiceAmt": "1140.00"
+      }
+    ]
+  },
+  {
+    "tableId": "#rfp-running",
+    "columns": [
+      {
+        "data": "RFPCode",
+        "title": "RFP Code"
+      },
+      {
+        "data": "RFPDescription",
+        "title": "RFP Description"
+      },
+      {
+        "data": "RFPRequirement",
+        "title": "RFP Requirement"
+      },
+      {
+        "data": "OpeningDate",
+        "title": "Opening Date"
+      },
+      {
+        "data": "OpeningTime",
+        "title": "Opening Time"
+      },
+      {
+        "data": "ClosingDate",
+        "title": "ClosingDate"
+      },
+      {
+        "data": "ClosingTime",
+        "title": "Closing Time"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "RFPCode": " ",
+        "RFPDescription": " ",
+        "RFPRequirement": " ",
+        "OpeningDate": " ",
+        "OpeningTime": " ",
+        "ClosingDate": " ",
+        "ClosingTime": " ",
+        "Action": " "
+      }
+    ]
+  },
+  {
+    "tableId": "#rfp-upcoming",
+    "columns": [
+      {
+        "data": "RFPCode",
+        "title": "RFP Code"
+      },
+      {
+        "data": "RFPDescription",
+        "title": "RFP Description"
+      },
+      {
+        "data": "RFPRequirement",
+        "title": "RFP Requirement"
+      },
+      {
+        "data": "OpeningDate",
+        "title": "Opening Date"
+      },
+      {
+        "data": "OpeningTime",
+        "title": "Opening Time"
+      },
+      {
+        "data": "ClosingDate",
+        "title": "ClosingDate"
+      },
+      {
+        "data": "ClosingTime",
+        "title": "Closing Time"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "RFPCode": " ",
+        "RFPDescription": " ",
+        "RFPRequirement": " ",
+        "OpeningDate": " ",
+        "OpeningTime": " ",
+        "ClosingDate": " ",
+        "ClosingTime": " ",
+        "Action": " "
+      }
+    ]
+  },
+  {
+    "tableId": "#recent",
+    "columns": [
+      {
+        "data": "QuotationNo.",
+        "title": "Quotation No."
+      },
+      {
+        "data": "QuotationType",
+        "title": "Quotation Type"
+      },
+      {
+        "data": "PartyName",
+        "title": "Party Name"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "EnquiryNo.",
+        "title": "Enquiry No."
+      },
+      {
+        "data": "EnquiryDate",
+        "title": "Enquiry Date"
+      },
+      {
+        "data": "PONo.",
+        "title": "PO No."
+      },
+      {
+        "data": "PODate",
+        "title": "PO Date"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate":"28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Re Quote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate":"28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Re Quote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate":"28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Re Quote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate":"28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Re Quote"
+      }
+    ]
+  },
+  {
+    "tableId": "#history",
+    "columns": [
+      {
+        "data": "QuotationNo.",
+        "title": "Quotation No."
+      },
+      {
+        "data": "QuotationType",
+        "title": "Quotation Type"
+      },
+      {
+        "data": "PartyName",
+        "title": "Party Name"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "EnquiryNo.",
+        "title": "Enquiry No."
+      },
+      {
+        "data": "EnquiryDate",
+        "title": "Enquiry Date"
+      },
+      {
+        "data": "PONo.",
+        "title": "PO No."
+      },
+      {
+        "data": "PODate",
+        "title": "PO Date"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate":"28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Re Quote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate":"28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Re Quote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate":"28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Re Quote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate":"28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Re Quote"
       }
     ]
   }

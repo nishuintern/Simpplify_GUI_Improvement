@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/html/Dashboard/User/PartyProfile.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/Setting/UserTenantMapping.css" />
+    <link rel="stylesheet" href="/css/OrderManagement/OrderDispatch.css" />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -189,7 +190,11 @@
         </header>
         <!-- Dashboard Heading -->
         <div class="row-container">
-          <div id="subSidebar7" class="sub-sidebar d-lg-block" style="z-index: 1000">
+          <div
+            id="subSidebar7"
+            class="sub-sidebar d-lg-block"
+            style="z-index: 1000"
+          >
             <span class="p-2 title-text">Setting</span>
             <hr />
             <ul class="nav flex-column">
@@ -212,71 +217,73 @@
               </li>
             </ul>
           </div>
-          <div class="dashboard-heading">
-            <div class="d-flex">
-              <a href="/html/Setting/UserTenantMapping.html">
-                <img src="/icons/Arrow back ios (2).svg" alt="Back" />
-              </a>
-              <h3>User And Tenant Mapping</h3>
+          <div>
+            <div class="dashboard-heading">
+              <div class="d-flex">
+                <a href="/html/Setting/UserTenantMapping.html">
+                  <img src="/icons/Arrow back ios (2).svg" alt="Back" />
+                </a>
+                <h3>User And Tenant Mapping</h3>
+              </div>
+              <div class="d-flex">
+                <a href="">
+                  <img src="/icons/save.svg" alt="" class="me-4" />
+                </a>
+                <a href="">
+                  <img src="/icons/Synchronize.svg" alt="" />
+                </a>
+              </div>
             </div>
-            <div class="d-flex">
-              <a href="">
-                <img src="/icons/save.svg" alt="" class="me-4" />
-              </a>
-              <a href="">
-                <img src="/icons/Synchronize.svg" alt="" />
-              </a>
-            </div>
-          </div>
-          <main class="main-content" id="mainContent">
-            <div class="m-2">
-              <div class="mt-3 d-block">
-                <label for="userCode">
-                  <span>User Code(E-mail)*</span>
-                  <select name="userCode" id="userCode" class="ms-1" required>
-                    <option value="">Select User</option>
-                    <option value="partyCode">threegtech.12@gmail.com</option>
-                  </select>
-                </label>
+            <main class="main-content" id="mainContent">
+              <div class="m-2">
                 <div class="mt-3 d-block">
-                  <label for="partyCode">
-                    <span>Party Code*</span>
-                    <input
-                      type="text"
-                      id="partyCode"
-                      placeholder="Enter Party Code"
-                      required
-                      class="ms-1"
-                    />
+                  <label for="userCode">
+                    <span>User Code(E-mail)*</span>
+                    <select name="userCode" id="userCode" class="ms-1" required>
+                      <option value="">Select User</option>
+                      <option value="partyCode">threegtech.12@gmail.com</option>
+                    </select>
                   </label>
+                  <div class="mt-3 d-block">
+                    <label for="partyCode">
+                      <span>Party Code*</span>
+                      <input
+                        type="text"
+                        id="partyCode"
+                        placeholder="Enter Party Code"
+                        required
+                        class="ms-1"
+                      />
+                    </label>
+                  </div>
+                </div>
+                <div class="table-responsive mt-3 d-none">
+                  <table class="table">
+                    <thead class="table-secondary">
+                      <tr>
+                        <th>T Code</th>
+                        <th>Company Url</th>
+                        <th>Company Name</th>
+                        <th>
+                          <input type="checkbox" name="check" id="check" />
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>www.threegtech.com</td>
+                        <td>ThreeG Tech</td>
+                        <td>
+                          <input type="checkbox" name="check" id="check" />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
-              <div class="table-responsive mt-3 d-none">
-                <table class="table">
-                  <thead class="table-secondary">
-                    <tr>
-                      <th>T Code</th>
-                      <th>Company Url</th>
-                      <th>Company Name</th>
-                      <th>
-                        <input type="checkbox" name="check" id="check" />
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>www.threegtech.com</td>
-                      <td>ThreeG Tech</td>
-                      <td>
-                        <input type="checkbox" name="check" id="check" />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </main>
+            </main>
+          </div>
         </div>
       </div>
     </div>

@@ -57,11 +57,11 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       const thead = document.createElement("thead");
       thead.className = "table table-secondary p-3";
       const tbody = document.createElement("tbody");
-      tbody.className='table table-responsive';
+      tbody.className = "table table-responsive";
       tbody.id = `${containerId}-tbody`;
       const tfooter = document.createElement("tfoot");
       tfooter.className = "table table-secondary";
-      tbody.className="table text-wrap";
+      tbody.className = "table text-wrap";
       table.appendChild(thead);
       table.appendChild(tbody);
       table.appendChild(tfooter);
@@ -184,45 +184,113 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       }
 
       // Function to render table
+      //   function renderTable() {
+      //     const searchValue = document
+      //       .getElementById(`${containerId}-search`)
+      //       .value.toLowerCase();
+      //     let filteredData = data.filter((row) => {
+      //       return Object.values(row).some((value) =>
+      //         value.toString().toLowerCase().includes(searchValue)
+      //       );
+      //     });
+
+      //     filteredData = sortData(filteredData);
+
+      //     const startIndex = (currentPage - 1) * pageSize;
+      //     const endIndex = Math.min(startIndex + pageSize, filteredData.length);
+      //     const paginatedData = filteredData.slice(startIndex, endIndex);
+      //     tbody.innerHTML = '';
+      //     if (paginatedData.length === 0) {
+      //     tbody.innerHTML =
+      //         '<tr><td colspan="6" class="text-center">No data to display</td></tr>';
+      //     } else {
+      //     tbody.innerHTML = paginatedData
+      //         .map(
+      //         (row) =>
+      //             `<tr>${headers
+      //             .map((header) => `<td>${row[header.key]}</td>`)
+      //             .join("")}</tr>`
+      //         )
+      //         .join("");
+      //     }
+
+      //     updatePagination(filteredData.length, startIndex + 1, endIndex);
+      // }
       function renderTable() {
         const searchValue = document
           .getElementById(`${containerId}-search`)
           .value.toLowerCase();
-        let filteredData = data.filter((row) => {
+
+        // Ensure data is valid
+        let filteredData = Array.isArray(data) ? data : [];
+
+        // Filter data based on search input
+        filteredData = filteredData.filter((row) => {
           return Object.values(row).some((value) =>
             value.toString().toLowerCase().includes(searchValue)
           );
         });
 
-        filteredData = sortData(filteredData);
+        // Check if any row contains data for the headers, if not, set isEmpty to true
+        const isEmpty = filteredData.every((row) =>
+          headers.every(
+            (header) =>
+              !row[header.key] || row[header.key].toString().trim() === ""
+          )
+        );
 
         const startIndex = (currentPage - 1) * pageSize;
         const endIndex = Math.min(startIndex + pageSize, filteredData.length);
         const paginatedData = filteredData.slice(startIndex, endIndex);
-        tbody.innerHTML = '';
-        if (paginatedData.length === 0) {
-        tbody.innerHTML =
-            '<tr><td colspan="6" class="text-center">No data to display</td></tr>';
-        } else {
-        tbody.innerHTML = paginatedData
-            .map(
-            (row) =>
-                `<tr>${headers
-                .map((header) => `<td>${row[header.key]}</td>`)
-                .join("")}</tr>`
-            )
-            .join("");
-        }
 
-        updatePagination(filteredData.length, startIndex + 1, endIndex);
-    }
+        tbody.innerHTML = "";
+
+        if (isEmpty || paginatedData.length === 0) {
+          // Show 'No data to display' message if data for headers is empty
+          tbody.innerHTML = `<tr><td colspan="${
+            headers.length || 1
+          }" class="text-center">No data to display</td></tr>`;
+          updatePagination(0, 0, 0); // No pagination items
+        } else {
+          // Populate table rows
+          tbody.innerHTML = paginatedData
+            .map((row) => {
+              // Check if this table requires the row color logic
+              let rowClass = "";
+              if (containerId === "watchBids") {
+                // Apply logic for this specific table
+                if (row.Action === "win") {
+                  rowClass = "bg-success text-white"; // Green background for "win"
+                } else if (row.Action === "not sure") {
+                  rowClass = "bg-warning text-dark"; // Yellow background for "not sure"
+                } else if (row.Action === "not win") {
+                  rowClass = "bg-danger text-white"; // Red background for "not win"
+                }
+              }
+
+              return `<tr class="${rowClass}">${headers
+                .map((header) => `<td>${row[header.key] || ""}</td>`)
+                .join("")}</tr>`;
+            })
+            .join("");
+
+          updatePagination(filteredData.length, startIndex + 1, endIndex);
+        }
+      }
 
       // Function to update pagination and summary
-    function updatePagination(totalItems, start, end) {
+      function updatePagination(totalItems, start, end) {
         const summary = document.getElementById(`${containerId}-summary`);
         const paginationList = document.getElementById(
-        `${containerId}-pagination`
+          `${containerId}-pagination`
         );
+
+        if (totalItems === 0) {
+          // Update summary and pagination for no items
+          summary.textContent = "Showing 0 to 0 of (0 Entries)";
+          paginationList.innerHTML = ""; // No pagination buttons
+          return;
+        }
 
         // Update summary
         summary.textContent = `Showing ${start} to ${end} of (${totalItems} Entries)`;

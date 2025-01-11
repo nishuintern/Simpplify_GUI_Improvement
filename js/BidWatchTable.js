@@ -49,17 +49,19 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       let sortOrder = "asc";
 
       // Create table structure
+      // Create table structure
       const tableDiv = document.createElement("div");
       tableDiv.className = "table-responsive custom-scrollbar";
       const table = document.createElement("table");
-      table.className = "table  text-nowrap";
+      table.className = "table text-nowrap";
       const thead = document.createElement("thead");
-      thead.className = "table table-secondary";
+      thead.className = "table table-secondary p-3";
       const tbody = document.createElement("tbody");
+      tbody.className = "table table-responsive";
       tbody.id = `${containerId}-tbody`;
-      tbody.className="table text-wrap";
       const tfooter = document.createElement("tfoot");
       tfooter.className = "table table-secondary";
+      tbody.className = "table text-wrap";
       table.appendChild(thead);
       table.appendChild(tbody);
       table.appendChild(tfooter);
@@ -67,6 +69,11 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
 
       // Create a row for the table headers
       const headerRow = document.createElement("tr");
+      // const footerRow= document.createElement("tr");
+      // tfooter.forEach((tfooter)=>{
+      //     const th=document.createElement("th");
+      //     footerRow.appendChild(th);
+      // })
 
       // Add table headers with sorting
       headers.forEach((header) => {
@@ -177,46 +184,100 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       }
 
       // Function to render table
+      //   function renderTable() {
+      //     const searchValue = document
+      //       .getElementById(`${containerId}-search`)
+      //       .value.toLowerCase();
+      //     let filteredData = data.filter((row) => {
+      //       return Object.values(row).some((value) =>
+      //         value.toString().toLowerCase().includes(searchValue)
+      //       );
+      //     });
+
+      //     filteredData = sortData(filteredData);
+
+      //     const startIndex = (currentPage - 1) * pageSize;
+      //     const endIndex = Math.min(startIndex + pageSize, filteredData.length);
+      //     const paginatedData = filteredData.slice(startIndex, endIndex);
+      //     tbody.innerHTML = '';
+      //     if (paginatedData.length === 0) {
+      //     tbody.innerHTML =
+      //         '<tr><td colspan="6" class="text-center">No data to display</td></tr>';
+      //     } else {
+      //     tbody.innerHTML = paginatedData
+      //         .map(
+      //         (row) =>
+      //             `<tr>${headers
+      //             .map((header) => `<td>${row[header.key]}</td>`)
+      //             .join("")}</tr>`
+      //         )
+      //         .join("");
+      //     }
+
+      //     updatePagination(filteredData.length, startIndex + 1, endIndex);
+      // }
       function renderTable() {
         const searchValue = document
           .getElementById(`${containerId}-search`)
           .value.toLowerCase();
+
+        // Filter data based on search input
         let filteredData = data.filter((row) => {
           return Object.values(row).some((value) =>
             value.toString().toLowerCase().includes(searchValue)
           );
         });
 
-        filteredData = sortData(filteredData);
-
         const startIndex = (currentPage - 1) * pageSize;
         const endIndex = Math.min(startIndex + pageSize, filteredData.length);
         const paginatedData = filteredData.slice(startIndex, endIndex);
 
-        tbody.innerHTML = paginatedData
-        .map(
-            (row) =>
-            `<tr>${headers
-                .map((header) => {
-                if (header.label === "Status"||header.label === "Action") {
-                    return `<td><a href="#" class="active-link text-decoration-none">${row[header.key]}</a></td>`;
-                } else {
-                    return `<td>${row[header.key]}</td>`;
-                }
-                })
-                .join("")}</tr>`
-        )
-        .join("");
+        tbody.innerHTML = "";
 
-        updatePagination(filteredData.length, startIndex + 1, endIndex);
-    }
+        if (paginatedData.length === 0) {
+          // Show 'No data to display' message if no data is present
+          tbody.innerHTML = `<tr><td colspan="${
+            headers.length || 1
+          }" class="text-center">No data to display</td></tr>`;
+          updatePagination(0, 0, 0); // No pagination items
+        } else {
+          // Populate table rows
+          tbody.innerHTML = paginatedData
+            .map((row) => {
+              // Determine the row's background color based on the `Action` field
+              let rowClass = "";
+              if (containerId === "watchBids") {
+                if (row.Action === "win") {
+                  rowClass = "bg-success text-white"; // Green background for "win"
+                } else if (row.Action === "not sure") {
+                  rowClass = "bg-warning text-dark"; // Yellow background for "not sure"
+                } else if (row.Action === "not win") {
+                  rowClass = "bg-danger text-white"; // Red background for "not win"
+                }
+              }
+              return `<tr class="${rowClass}">${headers
+                .map((header) => `<td>${row[header.key] || ""}</td>`)
+                .join("")}</tr>`;
+            })
+            .join("");
+
+          updatePagination(filteredData.length, startIndex + 1, endIndex);
+        }
+      }
 
       // Function to update pagination and summary
-    function updatePagination(totalItems, start, end) {
+      function updatePagination(totalItems, start, end) {
         const summary = document.getElementById(`${containerId}-summary`);
         const paginationList = document.getElementById(
-        `${containerId}-pagination`
+          `${containerId}-pagination`
         );
+
+        if (totalItems === 0) {
+          // Update summary and pagination for no items
+          summary.textContent = "Showing 0 to 0 of (0 Entries)";
+          paginationList.innerHTML = ""; // No pagination buttons
+          return;
+        }
 
         // Update summary
         summary.textContent = `Showing ${start} to ${end} of (${totalItems} Entries)`;
@@ -225,62 +286,62 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
         const totalPages = Math.ceil(totalItems / pageSize);
         paginationList.innerHTML = `
             <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
-            <button class="page-link" onclick="changePage(${
+              <button class="page-link" onclick="changePage(${
                 currentPage - 1
-            })">Previous</button>
+              })">Previous</button>
             </li>
             ${[...Array(totalPages).keys()]
-            .map(
+              .map(
                 (i) => `
-            <li class="page-item ${i + 1 === currentPage ? "active" : ""}">
+              <li class="page-item ${i + 1 === currentPage ? "active" : ""}">
                 <button class="page-link" onclick="changePage(${i + 1})">${
-                i + 1
+                  i + 1
                 }</button>
-            </li>`
-            )
-            .join("")}
+              </li>`
+              )
+              .join("")}
             <li class="page-item ${
-            currentPage === totalPages ? "disabled" : ""
+              currentPage === totalPages ? "disabled" : ""
             }">
-            <button class="page-link" onclick="changePage(${
+              <button class="page-link" onclick="changePage(${
                 currentPage + 1
-            })">Next</button>
+              })">Next</button>
             </li>
-        `;
-    }
+          `;
+      }
 
       // Change page
-    window.changePage = (page) => {
+      window.changePage = (page) => {
         currentPage = page;
         renderTable();
-    };
+      };
 
       // Event listeners
-    document
+      document
         .getElementById(`${containerId}-pageSize`)
         .addEventListener("change", (event) => {
-        pageSize = parseInt(event.target.value);
-        currentPage = 1;
-        renderTable();
+          pageSize = parseInt(event.target.value);
+          currentPage = 1;
+          renderTable();
         });
 
-    document
+      document
         .getElementById(`${containerId}-search`)
         .addEventListener("input", () => {
-        currentPage = 1;
-        renderTable();
+          currentPage = 1;
+          renderTable();
         });
 
       // Initial render
-    renderTable();
+      renderTable();
     }
-};
+  };
 
   // Check if DOM is already loaded
-if (document.readyState === "loading") {
+  if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", onDomReady);
-} else {
+  } else {
     // If DOM is already loaded, call the function directly
     onDomReady();
-}
+  }
 }

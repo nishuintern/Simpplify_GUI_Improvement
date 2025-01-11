@@ -68,7 +68,7 @@
     cursor: pointer;
 }
 
-.invoices-nav-link {
+/* .invoices-nav-link {
     color: #3C4059;
     text-decoration: none;
     font-family: Roboto;
@@ -105,7 +105,7 @@
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
 
-}
+} */
 
 .border-invoice {
     border-bottom: 1px solid #3C4059;
@@ -180,4 +180,56 @@ th .sort-icons i {
     font-weight: var(--pag-text-weight);
     font-size: var(--pag-text-size);
     line-height: var(--pag-text-lh);
+}
+.tabs {
+    border-bottom: 1px solid #3C4059;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    /* Space between tabs */
+}
+
+/* Individual tabs */
+.tab {
+    color: #3C4059;
+    /* Default text color */
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: color 0.3s ease;
+    border: none;
+    background: transparent;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 13px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+/* Active tab with orange underline */
+.tab.active {
+    color: #FE660C;
+    border-bottom: 1px solid #FE660C;
+}
+
+.nav-underline .tab-item.active {
+    border-bottom: 2px solid #FE660C;
+    margin-bottom: -1px;
+}
+
+/* .nav-item.active{
+    border-bottom: 1px solid #FE660C;;
+} */
+/* Hover effect for tabs */
+/* .tab:hover {
+    color: black;
+} */
+
+/* Make sure to override Bootstrap's styles if needed */
+.nav-item {
+    margin: 0;
 }
