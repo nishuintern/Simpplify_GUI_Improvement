@@ -50,14 +50,15 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
 
       // Create table structure
       const tableDiv = document.createElement("div");
-      tableDiv.className = "table-responsive custom-scrollbar";
+      tableDiv.className =
+        "table-responsive-lg table-responsive-md table-responsive-sm custom-scrollbar";
       const table = document.createElement("table");
       table.className = "table  text-nowrap";
       const thead = document.createElement("thead");
       thead.className = "table table-secondary";
       const tbody = document.createElement("tbody");
       tbody.id = `${containerId}-tbody`;
-      tbody.className="table text-wrap";
+      tbody.className = "table text-wrap";
       const tfooter = document.createElement("tfoot");
       tfooter.className = "table table-secondary";
       table.appendChild(thead);
@@ -128,9 +129,9 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       topControls.className =
         "d-flex justify-content-between align-items-center m-3";
       topControls.innerHTML = `
-        <div class='d-flex justify-content-between text-nowrap page-size-container'>
-            <label for="${containerId}-pageSize" class='mt-2 me-2'>Page Size:</label>
-            <select id="${containerId}-pageSize" class="px-2">
+        <div class='d-lg-flex d-md-block d-sm-block justify-content-lg-between text-nowrap page-size-container'>
+            <label for="${containerId}-pageSize" class='mt-2 me-2 d-block'>Page Size:</label>
+            <select id="${containerId}-pageSize" class="px-3 py-2 d-block">
             ${pageSizeOptions
               .map(
                 (size) =>
@@ -141,9 +142,9 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
               .join("")}
             </select>
         </div>
-        <div class='d-flex justify-content-between text-nowrap search-div'>
-            <label for="${containerId}-search" class='mt-2 me-2'>Search:</label>
-            <input type="search" id="${containerId}-search" class="search-box" placeholder="Search...">
+        <div class='d-lg-flex d-md-block d-sm-block justify-content-lg-between text-nowrap search-div'>
+            <label for="${containerId}-search" class='mt-2 me-2 px-4 py-1 d-block'>Search:</label>
+            <input type="search" id="${containerId}-search" class="search-box d-block" placeholder="Search...">
         </div>
         `;
 
@@ -194,28 +195,34 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
         const paginatedData = filteredData.slice(startIndex, endIndex);
 
         tbody.innerHTML = paginatedData
-        .map(
+          .map(
             (row) =>
-            `<tr>${headers
+              `<tr>${headers
                 .map((header) => {
-                if (header.label === "Status"||header.label === "Action") {
-                    return `<td><a href="#" class="active-link text-decoration-none">${row[header.key]}</a></td>`;
-                } else {
+                  if (header.label === "Status" || header.label === "Action") {
+                    return `<td>
+                    
+                      <a href='#' class='text-decoration-none text-primary'>${
+                        row[header.key]
+                      }</a>
+                      
+                  </td>`;
+                  } else {
                     return `<td>${row[header.key]}</td>`;
-                }
+                  }
                 })
                 .join("")}</tr>`
-        )
-        .join("");
+          )
+          .join("");
 
         updatePagination(filteredData.length, startIndex + 1, endIndex);
-    }
+      }
 
       // Function to update pagination and summary
-    function updatePagination(totalItems, start, end) {
+      function updatePagination(totalItems, start, end) {
         const summary = document.getElementById(`${containerId}-summary`);
         const paginationList = document.getElementById(
-        `${containerId}-pagination`
+          `${containerId}-pagination`
         );
 
         // Update summary
@@ -226,61 +233,61 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
         paginationList.innerHTML = `
             <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
             <button class="page-link" onclick="changePage(${
-                currentPage - 1
+              currentPage - 1
             })">Previous</button>
             </li>
             ${[...Array(totalPages).keys()]
-            .map(
+              .map(
                 (i) => `
             <li class="page-item ${i + 1 === currentPage ? "active" : ""}">
                 <button class="page-link" onclick="changePage(${i + 1})">${
-                i + 1
+                  i + 1
                 }</button>
             </li>`
-            )
-            .join("")}
+              )
+              .join("")}
             <li class="page-item ${
-            currentPage === totalPages ? "disabled" : ""
+              currentPage === totalPages ? "disabled" : ""
             }">
             <button class="page-link" onclick="changePage(${
-                currentPage + 1
+              currentPage + 1
             })">Next</button>
             </li>
         `;
-    }
+      }
 
       // Change page
-    window.changePage = (page) => {
+      window.changePage = (page) => {
         currentPage = page;
         renderTable();
-    };
+      };
 
       // Event listeners
-    document
+      document
         .getElementById(`${containerId}-pageSize`)
         .addEventListener("change", (event) => {
-        pageSize = parseInt(event.target.value);
-        currentPage = 1;
-        renderTable();
+          pageSize = parseInt(event.target.value);
+          currentPage = 1;
+          renderTable();
         });
 
-    document
+      document
         .getElementById(`${containerId}-search`)
         .addEventListener("input", () => {
-        currentPage = 1;
-        renderTable();
+          currentPage = 1;
+          renderTable();
         });
 
       // Initial render
-    renderTable();
+      renderTable();
     }
-};
+  };
 
   // Check if DOM is already loaded
-if (document.readyState === "loading") {
+  if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", onDomReady);
-} else {
+  } else {
     // If DOM is already loaded, call the function directly
     onDomReady();
-}
+  }
 }

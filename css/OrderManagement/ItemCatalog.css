@@ -240,3 +240,8 @@ th .sort-icons i {
     opacity: 87%;
     color: var(--text-color);
 }
+.content-scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 30vh);
+}

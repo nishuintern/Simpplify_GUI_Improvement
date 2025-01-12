@@ -341,7 +341,7 @@
         "OpeningDate": "07/09/2024",
         "OpeningTime": "313:00:00",
         "OpeningBidAmount": "300.00",
-        "Action":"not win"
+        "Action": "not win"
       }
     ]
   },
@@ -823,40 +823,16 @@
     ],
     "data": [
       {
-        "DispatchId": "Item 1",
-        "Location": "Item Description",
-        "VendorName": "Item Spec",
-        "InvoiceNo.": "02",
-        "SourceOfInvoice": "02",
-        "InvoiceAmount": "02020005",
-        "PONo.": "02",
-        "MSME": "Show Image  Map/Edit HSN",
-        "DateOfShipment": "Show Image  Map/Edit HSN",
-        "ExpectedDeliveryDate.": "Show Image  Map/Edit HSN"
-      },
-      {
-        "DispatchId": "ITMWM00002",
-        "Location": "Washing Machine",
-        "VendorName": "Semiconductor material",
-        "InvoiceNo.": "01",
-        "SourceOfInvoice": "03",
-        "InvoiceAmount": "01030001",
-        "PONo.": "02",
-        "MSME": "Show Image  Map/Edit HSN",
-        "DateOfShipment": "Show Image  Map/Edit HSN",
-        "ExpectedDeliveryDate.": "Show Image  Map/Edit HSN"
-      },
-      {
-        "DispatchId": "ITEM00045",
-        "Location": "Wiper Motor",
-        "VendorName": "DC based motor wiperskip the car",
-        "InvoiceNo.": "38",
-        "SourceOfInvoice": "01",
-        "InvoiceAmount": "38010001",
-        "PONo.": "02",
-        "MSME": "Show Image  Map/Edit HSN",
-        "DateOfShipment": "Show Image  Map/Edit HSN",
-        "ExpectedDeliveryDate.": "Show Image  Map/Edit HSN"
+        "DispatchId": " ",
+        "Location": " ",
+        "VendorName": " ",
+        "InvoiceNo.": " ",
+        "SourceOfInvoice": " ",
+        "InvoiceAmount": " ",
+        "PONo.": " ",
+        "MSME": " ",
+        "DateOfShipment": " ",
+        "ExpectedDeliveryDate": " "
       }
     ]
   },
@@ -1434,7 +1410,7 @@
         "PartyName": "3G Technology(Shanghai)LTD.",
         "Location": "Delhi",
         "EnquiryNo.": "20240828ENQ000001",
-        "EnquiryDate":"28/08/2024",
+        "EnquiryDate": "28/08/2024",
         "PONo.": "20240828NPO000001",
         "PODate": "28/08/2024",
         "Action": "Re Quote"
@@ -1445,7 +1421,7 @@
         "PartyName": "3G Technology(Shanghai)LTD.",
         "Location": "Delhi",
         "EnquiryNo.": "20240828ENQ000001",
-        "EnquiryDate":"28/08/2024",
+        "EnquiryDate": "28/08/2024",
         "PONo.": "20240828NPO000001",
         "PODate": "28/08/2024",
         "Action": "Re Quote"
@@ -1456,7 +1432,7 @@
         "PartyName": "3G Technology(Shanghai)LTD.",
         "Location": "Delhi",
         "EnquiryNo.": "20240828ENQ000001",
-        "EnquiryDate":"28/08/2024",
+        "EnquiryDate": "28/08/2024",
         "PONo.": "20240828NPO000001",
         "PODate": "28/08/2024",
         "Action": "Re Quote"
@@ -1467,7 +1443,7 @@
         "PartyName": "3G Technology(Shanghai)LTD.",
         "Location": "Delhi",
         "EnquiryNo.": "20240828ENQ000001",
-        "EnquiryDate":"28/08/2024",
+        "EnquiryDate": "28/08/2024",
         "PONo.": "20240828NPO000001",
         "PODate": "28/08/2024",
         "Action": "Re Quote"
@@ -1521,7 +1497,7 @@
         "PartyName": "3G Technology(Shanghai)LTD.",
         "Location": "Delhi",
         "EnquiryNo.": "20240828ENQ000001",
-        "EnquiryDate":"28/08/2024",
+        "EnquiryDate": "28/08/2024",
         "PONo.": "20240828NPO000001",
         "PODate": "28/08/2024",
         "Action": "Re Quote"
@@ -1532,7 +1508,7 @@
         "PartyName": "3G Technology(Shanghai)LTD.",
         "Location": "Delhi",
         "EnquiryNo.": "20240828ENQ000001",
-        "EnquiryDate":"28/08/2024",
+        "EnquiryDate": "28/08/2024",
         "PONo.": "20240828NPO000001",
         "PODate": "28/08/2024",
         "Action": "Re Quote"
@@ -1543,7 +1519,7 @@
         "PartyName": "3G Technology(Shanghai)LTD.",
         "Location": "Delhi",
         "EnquiryNo.": "20240828ENQ000001",
-        "EnquiryDate":"28/08/2024",
+        "EnquiryDate": "28/08/2024",
         "PONo.": "20240828NPO000001",
         "PODate": "28/08/2024",
         "Action": "Re Quote"
@@ -1554,7 +1530,7 @@
         "PartyName": "3G Technology(Shanghai)LTD.",
         "Location": "Delhi",
         "EnquiryNo.": "20240828ENQ000001",
-        "EnquiryDate":"28/08/2024",
+        "EnquiryDate": "28/08/2024",
         "PONo.": "20240828NPO000001",
         "PODate": "28/08/2024",
         "Action": "Re Quote"

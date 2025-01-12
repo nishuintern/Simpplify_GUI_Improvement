@@ -51,7 +51,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       // Create table structure
       // Create table structure
       const tableDiv = document.createElement("div");
-      tableDiv.className = "table-responsive custom-scrollbar";
+      tableDiv.className = "table-responsive-lg table-responsive-md table-responsive-sm custom-scrollbar";
       const table = document.createElement("table");
       table.className = "table text-nowrap";
       const thead = document.createElement("thead");
@@ -254,7 +254,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
                 } else if (row.Action === "not win") {
                   rowClass = "bg-danger text-white"; // Red background for "not win"
                 }
-              }
+              }''
               return `<tr class="${rowClass}">${headers
                 .map((header) => `<td>${row[header.key] || ""}</td>`)
                 .join("")}</tr>`;

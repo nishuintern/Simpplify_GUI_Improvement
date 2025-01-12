@@ -140,6 +140,8 @@ th .sort-icons i {
     background-repeat: no-repeat;
     background-position:center;
     background-size: 40px 40px;
+    width: 30%;
+    height: 40px;
 }
 .btn-show-img{
     background-color: transparent;
@@ -153,5 +155,10 @@ th .sort-icons i {
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
+    /* width: 33%; */
 
+}
+.greenRow{
+  background-color: green !important;
+  color:white !important;
 }

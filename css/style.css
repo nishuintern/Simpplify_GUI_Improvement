@@ -908,16 +908,16 @@ th {
     line-height: var(--td-text-lh);
     color: var(--text-color);
   }
-
+/* 
   @media (min-width: 768px) {
     .card {
-      flex: 1 1 calc(50% - 32px); /* Half width for medium screens */
+      flex: 1 1 calc(50% - 32px); 
     }
   }
 
   @media (min-width: 998px) {
     .card {
-      flex: 1 1 calc(25% - 32px); /* Quarter width for large screens */
+      flex: 1 1 calc(25% - 32px); 
     }
-  }
+  } */
 }
