@@ -22,3 +22,10 @@ html,body{
 .content-scroll::-webkit-scrollbar {
     display: none;
 }
+.cus-ban{
+    background: #F5F5F5;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #BABED8;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}

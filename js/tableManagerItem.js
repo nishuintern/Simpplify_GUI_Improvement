@@ -128,9 +128,9 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       topControls.className =
         "d-flex justify-content-between align-items-center m-3";
       topControls.innerHTML = `
-        <div class='d-flex justify-content-between text-nowrap page-size-container'>
-            <label for="${containerId}-pageSize" class='mt-2 me-2'>Page Size:</label>
-            <select id="${containerId}-pageSize" class="px-2">
+        <div class='d-lg-flex d-md-block d-sm-block justify-content-lg-between text-nowrap page-size-container'>
+            <label for="${containerId}-pageSize" class='mt-2 me-2 d-block'>Page Size:</label>
+            <select id="${containerId}-pageSize" class="px-3 py-2 d-block">
             ${pageSizeOptions
               .map(
                 (size) =>
@@ -141,9 +141,9 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
               .join("")}
             </select>
         </div>
-        <div class='d-flex justify-content-between text-nowrap search-div'>
-            <label for="${containerId}-search" class='mt-2 me-2'>Search:</label>
-            <input type="search" id="${containerId}-search" class="search-box" placeholder="Search...">
+        <div class='d-lg-flex d-md-block d-sm-block justify-content-lg-between text-nowrap search-div'>
+            <label for="${containerId}-search" class='mt-2 me-lg-2  px-4 py-1 d-block'>Search:</label>
+            <input type="search" id="${containerId}-search" class="search-box d-block" placeholder="Search...">
         </div>
         `;
 
@@ -198,12 +198,14 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
             text: 'Show Image',
             onClick: 'handleBlueButton',
             backgroundColor: '#ffff',
+            color:'#424F9C',
           },
           {
             class: 'btn-blue',
             text: 'Map/Edit HSN',
             onClick: 'handleOrangeButton',
             backgroundColor: '#027EDC',
+            color:'#FFFFFF',
           },
         ];
         tbody.innerHTML = paginatedData
@@ -219,7 +221,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
                             <button
                               class='${config.class}'
                               onclick='${config.onClick}(${row[header.key]})'
-                              style='background-color: ${config.backgroundColor}; background-image: ${config.backgroundImage};'>
+                              style='background-color: ${config.backgroundColor}; color:${config.color}; background-image: ${config.backgroundImage};'>
                               ${config.text}
                             </button>`
                         )

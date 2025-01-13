@@ -245,6 +245,10 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
         const paginatedData = filteredData.slice(startIndex, endIndex);
 
         tbody.innerHTML = "";
+        const buyerCustomer =
+          document.getElementById("buyer-customer")?.value || "";
+        const buyerBank = document.getElementById("buyer-bank")?.value || "";
+        
 
         if (isEmpty || paginatedData.length === 0) {
           // Show 'No data to display' message if data for headers is empty
@@ -256,6 +260,36 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
           // Populate table rows
           tbody.innerHTML = paginatedData
             .map((row) => {
+              if (
+                buyerCustomer === "Indoasian" ||
+                buyerBank === "HDFC" ||
+                buyerBank === "HDSC"
+              ) {
+                const matchesBuyerConditions =
+                  (buyerCustomer && row.Customer === buyerCustomer) ||
+                  (buyerBank && row.BankName === buyerBank);
+      
+                // If buyer conditions are provided, filter based on them
+                return (
+                  matchesSearch &&
+                  ((!buyerCustomer && !buyerBank) || matchesBuyerConditions)
+                );
+              }
+              const configs=[
+                success={
+                color:"#FFFFFF",
+                background:"#008000"
+                
+              },
+              leading={
+                color:"#3C4059",
+                background:"#FFFF00"
+              },
+              {
+                color:"#FFFFFF",
+                background:"#FF0000"
+              }
+            ]
               // Check if this table requires the row color logic
               let rowClass = "";
 
