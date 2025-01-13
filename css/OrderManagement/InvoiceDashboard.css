@@ -1193,8 +1193,8 @@ input:focus {
 .card-container {
   display: grid;
   grid-template-columns: repeat(
-    3,
-    minmax(210px, 20px)
+    4,
+    minmax(210px, 1fr)
   ); /* Flexible columns */
   grid-gap: 10px; /* Space between grid items */
   padding: 10px; /* Padding around the grid */
