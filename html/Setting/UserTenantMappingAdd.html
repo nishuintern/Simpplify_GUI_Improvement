@@ -189,10 +189,10 @@
           </nav>
         </header>
         <!-- Dashboard Heading -->
-        <div class="row-container">
+        <div class="">
           <div
             id="subSidebar7"
-            class="sub-sidebar d-lg-block"
+            class="sub-sidebar d-none"
             style="z-index: 1000"
           >
             <span class="p-2 title-text">Setting</span>
@@ -235,11 +235,12 @@
               </div>
             </div>
             <main class="main-content" id="mainContent">
-              <div class="m-2">
+              <div class="p-3 form-control mt-2">
+                <form action="">
                 <div class="mt-3 d-block">
                   <label for="userCode">
                     <span>User Code(E-mail)*</span>
-                    <select name="userCode" id="userCode" class="ms-1" required>
+                    <select name="userCode" id="userCode" class="ms-1 px-5 py-1" required>
                       <option value="">Select User</option>
                       <option value="partyCode">threegtech.12@gmail.com</option>
                     </select>
@@ -252,11 +253,12 @@
                         id="partyCode"
                         placeholder="Enter Party Code"
                         required
-                        class="ms-1"
+                        class="ms-1 px-5 py-1"
                       />
                     </label>
                   </div>
                 </div>
+                </form>
                 <div class="table-responsive mt-3 d-none">
                   <table class="table">
                     <thead class="table-secondary">

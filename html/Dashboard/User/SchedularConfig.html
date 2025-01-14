@@ -176,7 +176,9 @@
                     href="/html/Dashboard/User/SchedularConfig.html"
                     >Scheduler Configuration</a
                   >
-                  <a class="submenu" href="/html/loginForm/Login.html">Logout</a>
+                  <a class="submenu" href="/html/loginForm/Login.html"
+                    >Logout</a
+                  >
                 </div>
               </div>
             </a>
@@ -194,66 +196,86 @@
           <div
             class="d-flex justify-content-between flex-column profile-update-container"
           >
-            <form action="">
-              <div class="d-flex justify-content-center mt-3">
-                <div
-                  class="d-flex text-nowrap justify-content-center"
-                >
-                  <label for="Supplier" class="ms-5" style="text-align: center;"
-                    >Report Template Name *</label
-                  >
-                  <select
-                    name="Supplier"
-                    id="Supplier"
-                    class="px-5 py-1 ms-5 Report"
-                  >
-                    <option value="">Select Supplier</option>
-                    <option value="1">Supplier 1</option>
-                    <option value="2">Supplier 2</option>
-                  </select>
+            <div class="container mt-2">
+              <form action="" class="form-control form-container">
+                <!-- Report Template Name -->
+                <div class="mb-3 row mt-2">
+                  <div class="col-lg-3 col-md-4">
+                    <label for="SupplierTemplate" class="form-label"
+                      >Report Template Name *</label
+                    >
+                  </div>
+                  <div class="col-lg-6 col-md-8">
+                    <select
+                      name="SupplierTemplate"
+                      id="SupplierTemplate"
+                      class="form-select"
+                    >
+                      <option value="">Select Supplier</option>
+                      <option value="1">Supplier 1</option>
+                      <option value="2">Supplier 2</option>
+                    </select>
+                  </div>
                 </div>
-              </div>
-              <div class="d-flex justify-content-center mt-3">
-                <div
-                  class="d-flex text-nowrap justify-content-center "
-                >
-                  <label for="Supplier" class="ms-5" style="text-align: center;"
-                    >Report Schedule Type *</label
-                  >
-                  <select
-                    name="Supplier"
-                    id="Supplier"
-                    class="px-5 py-1 ms-5 Report"
-                  >
-                    <option value="">Daily</option>
-                    <option value="1">Weekly</option>
-                    <option value="2">Monthly</option>
-                  </select>
+
+                <!-- Report Schedule Type -->
+                <div class="row mb-3">
+                  <div class="col-lg-3 col-md-4">
+                    <label for="ScheduleType" class="form-label"
+                      >Report Schedule Type *</label
+                    >
+                  </div>
+                  <div class="col-lg-6 col-md-8">
+                    <select
+                      name="ScheduleType"
+                      id="ScheduleType"
+                      class="form-select"
+                    >
+                      <option value="default">Select ScheduleType</option>
+                      <option value="Daily">Daily</option>
+                      <option value="Weekly">Weekly</option>
+                      <option value="Monthly">Monthly</option>
+                    </select>
+                  </div>
                 </div>
-              </div>
-              <div class="d-flex justify-content-center mt-3">
-                <div
-                  class="d-flex text-nowrap justify-content-center "
-                >
-                  <label for="Supplier" class="me-5" style="text-align: center;">Schedule Time *</label>
-                  <select
-                    name="Supplier"
-                    id="Supplier"
-                    class="px-5 py-1 ms-5 Report"
-                  >
-                    <option value="">01:00</option>
-                    <option value="1">02:00</option>
-                    <option value="2">03:00</option>
-                  </select>
+
+                <!-- Schedule Time -->
+                <div class="row mb-3">
+                  <div class="col-lg-3 col-md-4">
+                    <label for="ScheduleTime" class="form-label"
+                      >Schedule Time *</label
+                    >
+                  </div>
+                  <div class="col-lg-6 col-md-8">
+                    <select
+                      name="ScheduleTime"
+                      id="ScheduleTime"
+                      class="form-select"
+                    >
+                      <option value="default">Select ScheduleTime</option>
+                      <option value="01:00">01:00</option>
+                      <option value="02:00">02:00</option>
+                      <option value="03:00">03:00</option>
+                    </select>
+                  </div>
                 </div>
-              </div>
-              <div class="d-flex">
-                <button class="update-btn">Update</button>
-              </div>
-            </form>
+
+                <!-- Update Button -->
+                <div class="mt-4 mb-3 row">
+                  <div class="col-6">
+                    <button
+                      type="button"
+                      class="btn btn-primary px-5 update-btn"
+                    >
+                      Update
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
             <div class="table-responsive">
-              <table class="table table-striped table-bordered mt-3">
-                <thead>
+              <table class="table  table-bordered mt-3">
+                <thead class="table-secondary">
                   <tr>
                     <th>Schedule Type</th>
                     <th>Schedule Time</th>
@@ -261,11 +283,6 @@
                 </thead>
                 <tbody id="tableBody">
                   <!-- Table rows will be dynamically added here -->
-                    <tr>
-                      <td>Daily</td>
-                      <td>01:00</td>
-                    </tr>
-  
                 </tbody>
               </table>
             </div>
@@ -276,6 +293,38 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/index.js"></script>
     <script src="/js/tableManager.js"></script>
+    <script>
+      const tableBody = document.getElementById("tableBody");
+      const scheduleTypeSelect = document.getElementById("ScheduleType");
+      const scheduleTimeSelect = document.getElementById("ScheduleTime");
+      const updateBtn = document.querySelector(".update-btn");
+      updateBtn.addEventListener("click", updateTable);
+      function updateTable() {
+        const selectedScheduleType = scheduleTypeSelect.value;
+        const selectedScheduleTime = scheduleTimeSelect.value;
+        if (!selectedScheduleType || !selectedScheduleTime) {
+          alert("Please select both Report Schedule Type and Schedule Time.");
+          return;
+        }
+        // Get the current row count
+        const rowCount = tableBody.rows.length;
+
+        // Create a new row
+        const newRow = tableBody.insertRow();
+
+        // Insert cells into the row
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+
+        // Add data to the cells
+        cell1.textContent = selectedScheduleType;
+        cell2.textContent = selectedScheduleTime;
+
+        // Clear the dropdown selections
+        scheduleTypeSelect.value = selectedScheduleType;
+        scheduleTimeSelect.value = selectedScheduleTime;
+      }
+    </script>
     <script>
       initializeTableManager("/js/tableConfigs.json");
     </script>
