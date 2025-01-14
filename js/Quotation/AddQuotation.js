@@ -1,30 +1,48 @@
-document.getElementById("submitAll").addEventListener("click", function (e) {
-  e.preventDefault(); // Prevent default form submission behavior
+class MultiFormHandler {
+  constructor(formsSelector, buttonSelector) {
+    this.formsSelector = formsSelector; // Selector for all forms
+    this.buttonSelector = buttonSelector; // Selector for the button
+    this.quotations = []; // Array to store all added quotations
+    this.init();
+  }
 
-  // Get all forms on the page
-  const forms = document.querySelectorAll("form");
+  // Initialize event listeners
+  init() {
+    const button = document.querySelector(this.buttonSelector);
+    if (button) {
+      button.addEventListener("click", () => this.addQuotation());
+    } else {
+      console.error("Button not found");
+    }
+  }
 
-  // Object to store combined form data
-  const allFormData = {};
+  // Collect data from all forms
+  getAllFormData() {
+    const forms = document.querySelectorAll(this.formsSelector); // Select all forms
+    const formData = {};
 
-  // Iterate over each form
-  forms.forEach((form) => {
-    // Iterate over all form elements within each form
-    const elements = form.elements;
-    Array.from(elements).forEach((element) => {
-      if (element.name) {
-        // For dropdowns, get the selected value
-        if (element.tagName === "SELECT") {
-          allFormData[element.name] =
-            element.options[element.selectedIndex].value;
-        } else {
-          // For other inputs, get the value
-          allFormData[element.name] = element.value;
-        }
-      }
+    forms.forEach((form) => {
+      const inputs = form.querySelectorAll("input, select");
+      inputs.forEach((input) => {
+        formData[input.id] = input.value; // Collect data using the element's ID as the key
+      });
     });
-  });
 
-  // Log the combined data
-  console.log("Combined Form Values:", allFormData);
+    return formData;
+  }
+
+  // Add quotation and log all quotations
+  addQuotation() {
+    const newQuotation = this.getAllFormData();
+    this.quotations.push(newQuotation); // Add new data to the array
+    console.log("Current Quotations:", this.quotations);
+  }
+}
+
+// Instantiate the MultiFormHandler
+document.addEventListener("DOMContentLoaded", () => {
+  new MultiFormHandler("form", "#submitAll"); // Pass the form selector and button selector
 });
+
+
+new MultiFormHandler("form", "#submitAll");

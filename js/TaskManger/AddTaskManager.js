@@ -1,25 +1,52 @@
-// Form validation example
-document.getElementById('staff-name').addEventListener('blur', function () {
-    if (this.value.trim() === '') {
-      alert('Staff Name is required');
-    }
-  });
+const saveBtn=document.getElementById('saveData');
+saveBtn.addEventListener('click', (e)=>{
+  e.preventDefault();
+})
+class MultiFormHandler {
+  constructor(formsSelector, buttonSelector) {
+    this.formsSelector = formsSelector; // Selector for all forms
+    this.buttonSelector = buttonSelector; // Selector for the button
+    this.quotations = []; // Array to store all added quotations
+    this.init();
+  }
 
-  // Dynamically update options based on Entity selection
-  document.getElementById('entity').addEventListener('change', function () {
-    const eventField = document.getElementById('event');
-    eventField.innerHTML = ''; // Clear existing options
-
-    if (this.value === 'task') {
-      eventField.innerHTML = '<option value="task1">Task 1</option><option value="task2">Task 2</option>';
-    } else if (this.value === 'meeting') {
-      eventField.innerHTML = '<option value="meeting1">Meeting 1</option><option value="meeting2">Meeting 2</option>';
+  // Initialize event listeners
+  init() {
+    const button = document.querySelector(this.buttonSelector);
+    if (button) {
+      button.addEventListener("click", () => this.addQuotation());
+    } else {
+      console.error("Button not found");
     }
-  });
+  }
 
-  // Example for priority validation
-  document.getElementById('priority').addEventListener('change', function () {
-    if (this.value === '') {
-      alert('Priority is required');
-    }
-  });
+  // Collect data from all forms
+  getAllFormData() {
+    const forms = document.querySelectorAll(this.formsSelector); // Select all forms
+    const formData = {};
+
+    forms.forEach((form) => {
+      const inputs = form.querySelectorAll("input, select");
+      inputs.forEach((input) => {
+        formData[input.id] = input.value; // Collect data using the element's ID as the key
+      });
+    });
+
+    return formData;
+  }
+
+  // Add quotation and log all quotations
+  addQuotation() {
+    const newQuotation = this.getAllFormData();
+    this.quotations.push(newQuotation); // Add new data to the array
+    console.log("Current Quotations:", this.quotations);
+  }
+}
+
+// Instantiate the MultiFormHandler
+document.addEventListener("DOMContentLoaded", () => {
+  new MultiFormHandler("form", "#saveData"); // Pass the form selector and button selector
+});
+
+
+new MultiFormHandler("form", "#saveData");
