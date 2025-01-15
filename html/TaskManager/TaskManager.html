@@ -445,8 +445,8 @@
           </nav>
         </header>
         <!-- Dashboard Heading -->
-        <div class="row-container">
-          <div id="subSidebar4" class="sub-sidebar" style="z-index: 1000">
+        <div class="">
+          <div id="subSidebar4" class="sub-sidebar d-none" style="z-index: 1000">
             <span class="p-2 title-text">Task Manager</span>
             <hr />
             <ul class="nav flex-column">
@@ -469,13 +469,13 @@
                 <h3>Task Manager</h3>
               </div>
               <div>
-                <a href="/html/TaskManager/AddNewTaskManager.html" class="text-decoration-none me-4">
+                <a href="/html/TaskManager/AddTaskManager.html" class="text-decoration-none me-4">
                   <img src="/icons/formkit_add.svg" alt="" />
                 </a>
                 <img src="/icons/Synchronize.svg" alt="" />
               </div>
             </div>
-            <div id="task-manager" class="container"></div>
+            <div id="task-manager" class="container-fluid"></div>
             <!-- <div class="d-flex justify-content-between">
               <div>
                 <label class="m-3" for="page-size">
@@ -563,6 +563,7 @@
     <script src="/js/index.js"></script>
     <!-- <script src="/js/TaskManger/TaskManager.js"></script> -->
     <script src="/js/tableManager2.js"></script>
+    <script src="/js/TaskManger/AddTaskManager.js"></script>
     <script>
       initializeTableManager("/js/tableConfigs.json");
     </script>

@@ -49,3 +49,36 @@
     overflow-x: hidden;
     height: calc(100vh - 150px);
 }
+.form-label {
+  font-weight: 500;
+}
+.form-row {
+  margin-bottom: 20px;
+}
+.radio-group label {
+  margin-right: 20px;
+}
+.col-label {
+  padding-right: 10px;
+}
+.modal-header {
+  border-bottom: 1px solid #dee2e6;
+}
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+}
+.no-data {
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  color: #6c757d;
+}
+.error {
+  border: 1px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
