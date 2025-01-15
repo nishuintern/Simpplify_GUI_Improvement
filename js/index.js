@@ -1,83 +1,96 @@
+const toggleSidebarButton = document.getElementById("toggle-sidebar");
+const sidebar = document.querySelector(".sidebar");
+
+toggleSidebarButton.addEventListener("click", () => {
+  if (sidebar.classList.contains("collapsed")) {
+    sidebar.classList.toggle("expanded");
+  } else if (sidebar.classList.contains("collapsed")) {
+    sidebar.classList.toggle("collapsed");
+  } else {
+    sidebar.classList.toggle("collapsed");
+  }
+});
 
 //Po Search
 function searchPoNumber(event) {
-    event.preventDefault(); // Prevent form submission
+  event.preventDefault(); // Prevent form submission
 
-    // Get form elements
-    const customer = document.getElementById("customer-select").value;
-    const searchBy = document.querySelector('input[name="searchBy"]:checked'); // Get selected radio button
-    const errorMessage = document.getElementById("error-message"); // Error message container
-    let queryParams = '';
-    let query = '';
+  // Get form elements
+  const customer = document.getElementById("customer-select").value;
+  const searchBy = document.querySelector('input[name="searchBy"]:checked'); // Get selected radio button
+  const errorMessage = document.getElementById("error-message"); // Error message container
+  let queryParams = "";
+  let query = "";
 
-    // Reset any previous error message
-    if (errorMessage) errorMessage.textContent = "";
+  // Reset any previous error message
+  if (errorMessage) errorMessage.textContent = "";
 
-    // Validate Customer
-    if (!customer) {
-        if (errorMessage) errorMessage.textContent = "Please select a customer.";
-        return;
+  // Validate Customer
+  if (!customer) {
+    if (errorMessage) errorMessage.textContent = "Please select a customer.";
+    return;
+  }
+
+  // Validate SearchBy
+  if (!searchBy) {
+    if (errorMessage) errorMessage.textContent = "Please select a search type.";
+    return;
+  }
+
+  // Validate fields based on SearchBy selection
+  if (searchBy.value === "po-no") {
+    const poNumber = document.getElementById("po-number-select").value;
+    if (!poNumber) {
+      if (errorMessage) errorMessage.textContent = "Please select a PO Number.";
+      return;
     }
+    queryParams = `?type=po-no&custName=${customer}&ponum=${poNumber}`;
+    query = poNumber;
+  } else if (searchBy.value === "date") {
+    const fromDate = document.getElementById("from-date-input").value;
+    const toDate = document.getElementById("to-date-input").value;
 
-    // Validate SearchBy
-    if (!searchBy) {
-        if (errorMessage) errorMessage.textContent = "Please select a search type.";
-        return;
+    if (!fromDate || !toDate) {
+      if (errorMessage)
+        errorMessage.textContent = "Please select both From Date and To Date.";
+      return;
     }
-
-    // Validate fields based on SearchBy selection
-    if (searchBy.value === "po-no") {
-        const poNumber = document.getElementById("po-number-select").value;
-        if (!poNumber) {
-            if (errorMessage) errorMessage.textContent = "Please select a PO Number.";
-            return;
-        }
-        queryParams = `?type=po-no&custName=${customer}&ponum=${poNumber}`;
-        query = poNumber;
-    } else if (searchBy.value === "date") {
-        const fromDate = document.getElementById("from-date-input").value;
-        const toDate = document.getElementById("to-date-input").value;
-
-        if (!fromDate || !toDate) {
-            if (errorMessage) errorMessage.textContent = "Please select both From Date and To Date.";
-            return;
-        }
-        if (new Date(fromDate) > new Date(toDate)) {
-            if (errorMessage) errorMessage.textContent = "From Date cannot be later than To Date.";
-            return;
-        }
-        queryParams = `?type=date&custName=${customer}&fromDate=${fromDate}&toDate=${toDate}`;
-        query = `from:${fromDate}, to:${toDate}`;
+    if (new Date(fromDate) > new Date(toDate)) {
+      if (errorMessage)
+        errorMessage.textContent = "From Date cannot be later than To Date.";
+      return;
     }
+    queryParams = `?type=date&custName=${customer}&fromDate=${fromDate}&toDate=${toDate}`;
+    query = `from:${fromDate}, to:${toDate}`;
+  }
 
-    // Construct the search URL
-    // const searchUrl = `/html/Dashboard/DashboardSearchRes/SearchRes.html?customer=${encodeURIComponent(customer)}&searchBy=${searchBy.value}&query=${encodeURIComponent(query)}`;
+  // Construct the search URL
+  // const searchUrl = `/html/Dashboard/DashboardSearchRes/SearchRes.html?customer=${encodeURIComponent(customer)}&searchBy=${searchBy.value}&query=${encodeURIComponent(query)}`;
 
-    // // Redirect to search results page
-    window.location.href = 'http://127.0.0.1:5500//html/Dashboard/DashboardSearchRes/SearchRes.html';
+  // // Redirect to search results page
+  window.location.href =
+    "http://127.0.0.1:5500//html/Dashboard/DashboardSearchRes/SearchRes.html";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const searchByRadios = document.querySelectorAll('input[name="searchBy"]');
-    const dynamicInputContainer = document.getElementById("dynamic-input");
+  const searchByRadios = document.querySelectorAll('input[name="searchBy"]');
+  const dynamicInputContainer = document.getElementById("dynamic-input");
 
-    // Render PO Number UI by default
-    renderPoNumberUI();
+  // Render PO Number UI by default
+  renderPoNumberUI();
 
-    searchByRadios.forEach((radio) => {
-        radio.addEventListener("change", function () {
-            if (radio.value === "po-no") {
-                renderPoNumberUI();
-            } else if (radio.value === "date") {
-
-                renderDateUI();
-            }
-        });
+  searchByRadios.forEach((radio) => {
+    radio.addEventListener("change", function () {
+      if (radio.value === "po-no") {
+        renderPoNumberUI();
+      } else if (radio.value === "date") {
+        renderDateUI();
+      }
     });
+  });
 
-
-    function renderPoNumberUI() {
-        dynamicInputContainer.innerHTML = `
+  function renderPoNumberUI() {
+    dynamicInputContainer.innerHTML = `
         <label for="PO No" class="d-flex justify-content-evenly d-sm-flex justify-content-sm-start">
           <span class="ms-sm-2 label-text d-flex align-items-center">PO Number</span>
           <input
@@ -91,11 +104,10 @@ document.addEventListener("DOMContentLoaded", function () {
             <option value="PO-003"></option>
           </datalist>
         </label>`;
+  }
 
-    }
-
-    function renderDateUI() {
-        dynamicInputContainer.innerHTML = `
+  function renderDateUI() {
+    dynamicInputContainer.innerHTML = `
         <label for="From Date" class="d-flex justify-content-evenly d-sm-flex justify-content-sm-start">
           <span class="ms-sm-2 label-text d-flex align-items-center">From Date</span>
           <input id="from-date-input" class=" ms-sm-5 px-sm-5 px-lg-5 customer-input " type="date" />
@@ -105,55 +117,47 @@ document.addEventListener("DOMContentLoaded", function () {
           <span class="ms-sm-4 ms-lg-4 label-text ms-lg-2 d-flex align-items-center">To Date</span>
           <input id="to-date-input" class=" ms-sm-5 px-sm-5 ms-lg-5 px-lg-5 customer-input" type="date" />
         </label>`;
-    }
+  }
 });
 
-
-
-
-
 function activateLink(event, subSidebarId) {
-    // event.preventDefault();
-    // event.preventDefault();
-    const clickedLink = event.target;
+  // event.preventDefault();
+  // event.preventDefault();
+  const clickedLink = event.target;
 
+  // Check if the clicked link is already active
+  const isAlreadyActive = clickedLink.classList.contains("active");
 
-    // Check if the clicked link is already active
-    const isAlreadyActive = clickedLink.classList.contains("active");
+  // Get all links and sub-sidebars
+  const links = document.querySelectorAll(".nav-link");
+  const subSidebars = document.querySelectorAll(".sub-sidebar");
 
-    // Get all links and sub-sidebars
-    const links = document.querySelectorAll(".nav-link");
-    const subSidebars = document.querySelectorAll(".sub-sidebar");
-
-
-    // Remove active state from all links and sub-sidebars
-    links.forEach((link) => link.classList.remove("active"));
-    subSidebars.forEach((sidebar) => {
-        if (sidebar.id === subSidebarId) {
-            // Toggle the current sub-sidebar
-            sidebar.style.display =
-                sidebar.style.display === 'block' ? 'none' : 'block';
-            sidebar.classList.remove("active")
-        } else {
-            // Ensure other sub-sidebars are hidden
-            sidebar.style.display = 'none';
-        }
-
-    });
-
-    // Toggle state for clicked link and associated sub-sidebar
-    if (!isAlreadyActive) {
-        clickedLink.classList.add("active");
-
-        const activeSubSidebar = document.getElementById(subSidebarId);
-        if (activeSubSidebar) {
-            activeSubSidebar.classList.add("active");
-        }
+  // Remove active state from all links and sub-sidebars
+  links.forEach((link) => link.classList.remove("active"));
+  subSidebars.forEach((sidebar) => {
+    if (sidebar.id === subSidebarId) {
+      // Toggle the current sub-sidebar
+      sidebar.style.display =
+        sidebar.style.display === "block" ? "none" : "block";
+      sidebar.classList.remove("active");
     } else {
-        // If the clicked link was active, reset the layout
-        activeSubSidebar.classList.remove('active');
+      // Ensure other sub-sidebars are hidden
+      sidebar.style.display = "none";
     }
+  });
 
+  // Toggle state for clicked link and associated sub-sidebar
+  if (!isAlreadyActive) {
+    clickedLink.classList.add("active");
+
+    const activeSubSidebar = document.getElementById(subSidebarId);
+    if (activeSubSidebar) {
+      activeSubSidebar.classList.add("active");
+    }
+  } else {
+    // If the clicked link was active, reset the layout
+    activeSubSidebar.classList.remove("active");
+  }
 }
 
 // function loadContent(page) {
@@ -177,99 +181,96 @@ function activateLink(event, subSidebarId) {
 //         });
 // }
 function loadContent(page) {
-    const mainContent = document.getElementById("mainContent");
-    mainContent.style.width = "90%";
-    mainContent.style.height = "auto";
+  const mainContent = document.getElementById("mainContent");
+  mainContent.style.width = "90%";
+  mainContent.style.height = "auto";
 
-    // Fetch the content
-    fetch(page)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`Failed to fetch page: ${response.statusText}`);
-            }
-            return response.text();
-        })
-        .then((html) => {
-            mainContent.innerHTML = html;
+  // Fetch the content
+  fetch(page)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Failed to fetch page: ${response.statusText}`);
+      }
+      return response.text();
+    })
+    .then((html) => {
+      mainContent.innerHTML = html;
 
-            // Load and execute inline scripts in the fetched content
-            const scripts = mainContent.querySelectorAll("script");
-            scripts.forEach((script) => {
-                const newScript = document.createElement("script");
-                if (script.src) {
-                    newScript.src = script.src; // External script
-                } else {
-                    newScript.textContent = script.textContent; // Inline script
-                }
-                document.body.appendChild(newScript);
-                document.body.removeChild(newScript); // Cleanup after execution
-            });
+      // Load and execute inline scripts in the fetched content
+      const scripts = mainContent.querySelectorAll("script");
+      scripts.forEach((script) => {
+        const newScript = document.createElement("script");
+        if (script.src) {
+          newScript.src = script.src; // External script
+        } else {
+          newScript.textContent = script.textContent; // Inline script
+        }
+        document.body.appendChild(newScript);
+        document.body.removeChild(newScript); // Cleanup after execution
+      });
 
-            // Update the URL without reloading the page
-            const currentUrl = window.location.href;
-            const newUrl = currentUrl.includes("?page=") ?
-                currentUrl.split("?page=")[0] :
-                currentUrl;
-            history.pushState(null, "", `${newUrl}?page=${page}`);
-        })
-        .catch((err) => {
-            mainContent.innerHTML = "<p>Error loading content.</p>";
-            console.error(err);
-        });
+      // Update the URL without reloading the page
+      const currentUrl = window.location.href;
+      const newUrl = currentUrl.includes("?page=")
+        ? currentUrl.split("?page=")[0]
+        : currentUrl;
+      history.pushState(null, "", `${newUrl}?page=${page}`);
+    })
+    .catch((err) => {
+      mainContent.innerHTML = "<p>Error loading content.</p>";
+      console.error(err);
+    });
 }
 window.onpopstate = () => {
-    const params = new URLSearchParams(window.location.search);
-    const page = params.get('page');
-    if (page) {
-        loadContent(page);
-    }
+  const params = new URLSearchParams(window.location.search);
+  const page = params.get("page");
+  if (page) {
+    loadContent(page);
+  }
 };
 
-
 function refreshPage() {
-    window.location.reload();
+  window.location.reload();
 }
 
 function activateIcon(clickedElement) {
+  // Remove 'active' class and hide all toggle images
+  const allLinks = document.querySelectorAll(".icons-link");
+  const allToggleImgs = document.querySelectorAll(".toggle-img");
 
-    // Remove 'active' class and hide all toggle images
-    const allLinks = document.querySelectorAll(".icons-link");
-    const allToggleImgs = document.querySelectorAll(".toggle-img");
+  allLinks.forEach((link) => link.classList.remove("active"));
+  allToggleImgs.forEach((img) => img.classList.add("d-none"));
 
-    allLinks.forEach((link) => link.classList.remove("active"));
-    allToggleImgs.forEach((img) => img.classList.add("d-none"));
+  // Add 'active' class to clicked link and show corresponding toggle image
+  clickedElement.classList.add("active");
 
-    // Add 'active' class to clicked link and show corresponding toggle image
-    clickedElement.classList.add("active");
-
-    const parentLi = clickedElement.parentElement;
-    const toggleImg = parentLi.querySelector(".toggle-img");
-    if (toggleImg) {
-        toggleImg.classList.remove("d-none");
-    }
+  const parentLi = clickedElement.parentElement;
+  const toggleImg = parentLi.querySelector(".toggle-img");
+  if (toggleImg) {
+    toggleImg.classList.remove("d-none");
+  }
 }
 
-
 i18next.init({
-    fallbackLng: 'en',
-    debug: true,
-    resources: {
-        en: {
-            translation: {
-                welcome: "Welcome"
-            }
-        },
-        hi: {
-            translation: {
-                welcome: "स्वागत"
-            }
-        },
-        // es: {
-        //     translation: {
-        //         welcome: "Bienvenido"
-        //     }
-        // }
-    }
+  fallbackLng: "en",
+  debug: true,
+  resources: {
+    en: {
+      translation: {
+        welcome: "Welcome",
+      },
+    },
+    hi: {
+      translation: {
+        welcome: "स्वागत",
+      },
+    },
+    // es: {
+    //     translation: {
+    //         welcome: "Bienvenido"
+    //     }
+    // }
+  },
 });
 
 // document.getElementById('language-selector').addEventListener('change', function () {
@@ -281,7 +282,6 @@ i18next.init({
 //         });
 //     });
 // });
-
 
 // document.addEventListener('DOMContentLoaded', function () {
 //     // Fetch the external JSON file
@@ -401,7 +401,6 @@ i18next.init({
 
 //         // Append the header row to thead
 //         thead.appendChild(headerRow);
-
 
 //         // Controls container (top)
 //         const topControls = document.createElement("div");

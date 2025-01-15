@@ -18,7 +18,7 @@
   <body>
     <div class="dashboard-container">
       <!-- Sidebar -->
-      <aside class="sidebar d-sm-none d-md-none d-lg-block">
+      <aside class="sidebar collapsed d-sm-none d-md-none d-lg-block">
         <div class="logo">
           <div class="logo-container">
             <img src="/icons/newton icon copy 1.svg" alt="Company Logo" />
@@ -111,11 +111,21 @@
       <div class="main-content">
         <!-- Header -->
         <header
-          class="header d-sm-flex justify-content-sm-between justify-content-lg-end justify-content-md-between"
+          class="header d-sm-flex justify-content-sm-between justify-content-lg-between justify-content-md-between align-items-center"
         >
+          <div class="d-lg-flex d-md-none d-sm-none">
+            <button class="bg-transparent border-0 text-primary" id="toggle-sidebar">
+              <img
+                src="/icons/menu.svg"
+                alt="menu"
+                style="cursor: pointer;"
+              />
+            </button>
+          </div>
           <div class="d-lg-none d-md-flex d-sm-flex justify-content-sm-start">
             <img src="/icons/newton icon copy 1.svg" alt="Company" />
             <span class="fs-4 m-2">Simpplify</span>
+
             <button
               class="bg-transparent border-0 m-1 pointer-event"
               type="button"
@@ -127,7 +137,9 @@
             </button>
           </div>
           <nav>
-            <div class="dropdown me-sm-1 me-md-1 mt-sm-3 mt-md-3 align-content-center">
+            <div
+              class="dropdown me-sm-1 me-md-1 mt-sm-3 mt-md-3 align-content-center"
+            >
               <!-- <button
                 class="btn-togg-drop dropdown-toggle"
                 type="button"
@@ -140,7 +152,11 @@
                   <li><a class="dropdown-item" href="#">Hindi</a></li>
                 </ul>
               </button> -->
-              <select name="lang" id="lang-text" class="lang-text bg-transparent text-white border-0 px-lg-3 px-md-2 px-sm-1  bg-option">
+              <select
+                name="lang"
+                id="lang-text"
+                class="lang-text bg-transparent text-white border-0 px-lg-3 px-md-2 px-sm-1 bg-option"
+              >
                 <option value="en">English</option>
                 <option value="hi">Hindi</option>
               </select>
@@ -425,7 +441,7 @@
                 </div>
               </div>
             </a>
-            <a href="">
+            <a href="javascript:void(0);">
               <div class="user-dropdown">
                 <button class="user-dropdown-btn">
                   <span>
@@ -470,7 +486,7 @@
         </div>
 
         <main class="main-content content container-fluid" id="mainContent">
-          <div class="row  mt-3 ms-2">
+          <div class="row mt-3 ms-2">
             <section
               class="col-md-12 col-lg-5 col-sm-12 me-6 mb-4 search-po-card container-fluid"
             >
@@ -482,7 +498,7 @@
                   <hr />
                   <label for="Customer" class="d-lg-flex d-sm-block d-md-block">
                     <span
-                      class="ms-sm-4 ms-lg-1 me-lg-1 ms-md-1 card-inside-text label-text d-lg-flex  align-items-center"
+                      class="ms-sm-4 ms-lg-1 me-lg-1 ms-md-1 card-inside-text label-text d-lg-flex align-items-center"
                       >Customer</span
                     >
                     <input
@@ -552,7 +568,7 @@
                 </div>
               </form>
             </section>
-            <section class="col-md-12 col-sm-12 col-lg-6 mb-4  container-fluid">
+            <section class="col-md-12 col-sm-12 col-lg-6 mb-4 container-fluid">
               <form action="#">
                 <div class="search-po label-text">
                   <h4 class="p-2 card-heading">To Do List</h4>
@@ -565,8 +581,10 @@
               </form>
             </section>
           </div>
-          <div class="row  mt-3 ms-2 container-fluid">
-            <section class="col-sm-12 col-md-12 col-lg-5 mt-2 me-5 mb-4 container-fluid">
+          <div class="row mt-3 ms-2 container-fluid">
+            <section
+              class="col-sm-12 col-md-12 col-lg-5 mt-2 me-5 mb-4 container-fluid"
+            >
               <div class="search-po">
                 <h4 class="p-2 card-heading">To Do List</h4>
                 <hr />
@@ -602,7 +620,7 @@
               </form>
             </section>
             <section
-              class="col-sm-12 col-md-12 col-lg-6 ms-2  mb-5 container-fluid"
+              class="col-sm-12 col-md-12 col-lg-6 ms-2 mb-5 container-fluid"
             >
               <form action="#">
                 <div class="search-po">
