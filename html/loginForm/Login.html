@@ -32,37 +32,63 @@
         </form>
     </div> -->
 
-    <div class="login-form">
-    <div class="logo-container">
-        <div>
-        <img src="/icons/newton icon copy 1.svg" alt="" />
+    <main>
+      <div class="login-form">
+        <div class="logo-container">
+          <div>
+            <img src="/icons/newton icon copy 1.svg" alt="" />
+          </div>
+          <div class="ms-2">
+            <h1>Simpplify</h1>
+          </div>
         </div>
-        <div class="ms-2">
-        <h1>Simpplify</h1>
+        <div class="label-text mt-2">
+          <span>Sign In To Your Account</span>
         </div>
-    </div>
-    <div class="label-text mt-2">
-    <span class="capitalize-first-letter">Sign in to your account</span>
-    </div>
-    <div class="container-fields row">
-        <form action="">
-        <label for="username">
-            <span>username</span>
-        </label>
-        <br>
-        <input type="text" id="username" placeholder="Enter  Your User Name">
+        <div class="second-label-text">
+          <span>Please enter your username and password to log in.</span>
+        </div>
+        <div class="container-fields">
+          <form action="" class="align-content-center mt-1" id="loginForm">
+            <label for="username">username</label>
+            <div
+              class="justify-content-center align-items-center align-self-center mt-2"
+            >
+              <input
+                id="username"
+                type="text"
+                placeholder="Enter  Your User Name"
+                class="input-group form-control"
+              />
+              <div class="invalid-feedback">Please enter your username.</div>
+            </div>
 
-        <label for="password">
-            <span>password</span>
-        </label>
-        <br>
-        <input type="password" id="password" placeholder="Enter  Your Password">
-    </form>
-    </div>
-    </div>
+            <label for="password" class="mt-2">password</label>
+            <div
+              class="justify-content-center align-items-center align-self-center mt-2"
+            >
+              <input
+                id="password"
+                type="password"
+                placeholder="Enter Your Password"
+                class="input-group form-control"
+              />
+              <div class="invalid-feedback">Please enter your password.</div>
+            </div>
+
+            <div class="form-group mt-2">
+              <button type="submit" class="btn-login">SIGN IN</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="foot mt-3 text-center">
+        © 2025 <span>Simpplify</span>. All rights reserved
+      </div>
+    </main>
 
     <script src="/html/loginForm/Login.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>

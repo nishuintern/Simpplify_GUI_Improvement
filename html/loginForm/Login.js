@@ -1,33 +1,64 @@
 let isAuthenticated = false;
 document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value.trim();
+    
+    // Reset error states before validation
+    usernameInput.classList.remove('is-invalid');
+    passwordInput.classList.remove('is-invalid');
 
-    if (email === "threegtech.12@gmail.com" && password === "123") {
-        console.log('Login successful with email:', email);
+    let hasError = false;
+
+    // Validate username
+    if (!username) {
+        usernameInput.classList.add('is-invalid');
+        hasError = true;
+    }
+
+    // Validate password
+    if (!password) {
+        passwordInput.classList.add('is-invalid');
+        hasError = true;
+    }
+
+    if (hasError) {
+        return; // Exit if there are validation errors
+    }
+
+    if (username === "threegtech.12@gmail.com" && password === "123") {
+        console.log('Login successful with email:', username);
         alert('Login successful!');
-        isAuthenticated = true;
         sessionStorage.setItem('isAuthenticated', true);
-        // You can add additional logic here, such as redirecting to a new page.
+        // Redirect to a new page
         window.location.href = '/html/index.html';
         // Reset form fields after successful login
-        document.getElementById('email').value = '';
-        document.getElementById('password').value = '';
+        usernameInput.value = '';
+        passwordInput.value = '';
     } else {
-        alert('Please fill in all fields.');
+        alert('Incorrect username or password.');
     }
 });
 
-window.addEventListener('popstate', function () {
-    if (!isAuthenticated && !sessionStorage.getItem('isAuthenticated')) {
-        alert('You must log in first!');
-        window.location.href = '/html/index.html'; // Redirect to login page
-    }
+// Remove error state on focus
+document.querySelectorAll('#loginForm .form-control').forEach(input => {
+    input.addEventListener('focus', function () {
+        input.classList.remove('is-invalid');
+    });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    if (sessionStorage.getItem('isAuthenticated')) {
-        isAuthenticated = true;
-    }
+window.addEventListener("popstate", function () {
+  if (!isAuthenticated && !sessionStorage.getItem("isAuthenticated")) {
+    alert("You must log in first!");
+    window.location.href = "/html/index.html"; // Redirect to login page
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (sessionStorage.getItem("isAuthenticated")) {
+    isAuthenticated = true;
+  }
 });

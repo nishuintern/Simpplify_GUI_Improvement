@@ -24,7 +24,7 @@ body {
 .logo-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .logo-container h1 {
   font-size: 32px;
@@ -33,12 +33,13 @@ body {
   letter-spacing: 0.01em;
   font-family: Inter;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .label-text {
   color: #027edc;
   text-align: left;
-  margin-left: 20%;
+  margin-left: 13%;
   font-family: Inter;
   font-size: 14px;
   font-weight: 500;
@@ -48,8 +49,8 @@ body {
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
-.container-fields{
-    display: block;
+.container-fields {
+  display: block;
 }
 .username {
   font-family: Inter;
@@ -62,5 +63,51 @@ body {
   text-align: center;
 }
 .capitalize-first-letter::first-letter {
-    text-transform: uppercase;
-  }
+  text-transform: uppercase;
+}
+.second-label-text {
+  color: #333333;
+  font-family: Inter;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.15px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  margin-left: 13%;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.input-group {
+  width: 460px;
+  border: 0.5px solid #00000080;
+  height: 38px;
+}
+.container-fields {
+  margin-left: 13%;
+}
+.btn-login {
+  width: 109px;
+  height: 30px;
+  margin-left: 63%;
+  color: #ffff;
+  background-color: #141d38;
+  margin-top: 5px;
+}
+.foot {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.foot span{
+  color: #007edc;
+}
+.is-invalid {
+  border-color: #dc3545 !important; /* Ensure red border */
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); /* Add subtle shadow */
+}
