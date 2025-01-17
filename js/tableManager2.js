@@ -3,36 +3,55 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
     fetch(configUrl)
       .then((response) => {
         if (!response.ok) {
-          throw new Error(
-            `Network response was not ok: ${response.statusText}`
-          );
+          throw new Error(`Network response was not ok: ${response.statusText}`);
         }
         return response.json();
       })
       .then((tableConfigs) => {
         const convertedConfigs = convertTableConfig(tableConfigs);
-        convertedConfigs.forEach((config) => createDataTable(config));
-      })
-      .catch((error) =>
-        console.error("Error loading table configurations:", error)
-      );
 
-    function convertTableConfig(input) {
-      return input.map((table) => ({
-        containerId: table.tableId.replace("#", ""), // Remove '#' for containerId
-        headers: table.columns.map((column) => ({
-          key: column.data,
-          label: column.title,
-        })),
-        data: table.data,
-        pageSizeOptions: [5, 10, 15], // Default page size options
-        defaultPageSize: 5, // Default page size
-      }));
-    }
+        convertedConfigs.forEach((config) => {
+          if (config.dataUrl) {
+            // Fetch data dynamically if `dataUrl` is provided
+            fetch(config.dataUrl)
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error(`Error fetching table data: ${response.statusText}`);
+                }
+                return response.json();
+              })
+              .then((apiData) => {
+                config.data = apiData; // Set fetched data to the table configuration
+                createDataTable(config);
+              })
+              .catch((error) =>
+                console.error("Error fetching table data:", error)
+              );
+          } else {
+            createDataTable(config); // Use static data from `tableConfigs`
+          }
+        });
+      })
+      .catch((error) => console.error("Error loading table configurations:", error));
+
+      function convertTableConfig(input) {
+        return input.map((table) => ({
+          containerId: table.tableId.replace("#", ""), // Remove '#' for containerId
+          headers: table.columns.map((column) => ({
+            key: column.data,
+            label: column.title,
+          })),
+          data: table.data || [], // Default to an empty array if no data is provided
+          dataUrl: table.dataUrl || null, // Include optional `dataUrl`
+          pageSizeOptions: [5, 10, 15], // Default page size options
+          defaultPageSize: 5, // Default page size
+        }));
+      }
 
     function createDataTable({
       containerId,
       headers,
+      dataUrl,
       data,
       pageSizeOptions = [5, 10, 15],
       defaultPageSize = 5,

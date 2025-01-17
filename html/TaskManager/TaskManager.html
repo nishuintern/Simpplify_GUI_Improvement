@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="stylesheet" href="/css/OrderManagement/OrderDispatch.css">
-     <link rel="stylesheet" href="/css/TaskManger/TaskManager.css">
+    <link rel="stylesheet" href="/css/OrderManagement/OrderDispatch.css">
+    <link rel="stylesheet" href="/css/TaskManger/TaskManager.css">
     <link rel="stylesheet" href="/css/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -108,8 +108,16 @@
       <div class="main-content">
         <!-- Header -->
         <header
-          class="header d-sm-flex justify-content-sm-between justify-content-lg-end justify-content-md-between"
+          class="header d-sm-flex justify-content-sm-between justify-content-lg-between justify-content-md-between align-items-center"
         >
+        <div class="d-lg-flex d-md-none d-sm-none">
+          <button
+            class="bg-transparent border-0 text-primary"
+            id="toggle-sidebar"
+          >
+            <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
+          </button>
+        </div>
           <div class="d-lg-none d-md-flex d-sm-flex">
             <img src="/icons/newton icon copy 1.svg" alt="Company" />
             <span class="fs-4 m-2">Simpplify</span>
@@ -475,7 +483,7 @@
                 <img src="/icons/Synchronize.svg" alt="" />
               </div>
             </div>
-            <div id="task-manager" class="container-fluid"></div>
+            <div id="task-manager" class="table-responsive"></div>
             <!-- <div class="d-flex justify-content-between">
               <div>
                 <label class="m-3" for="page-size">
@@ -535,7 +543,6 @@
                   </tr>
                 </thead>
                 <tbody id="tableBody">
-                  
                 </tbody>
               </table>
             </div>

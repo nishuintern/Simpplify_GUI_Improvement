@@ -489,13 +489,13 @@
             <section
               class="col-md-12 col-lg-5 col-sm-12 me-6 mb-4 search-po-card container-fluid"
             >
-              <form onsubmit="searchPoNumber(event)" method="post">
+              <form onsubmit="searchPoNumber(event)">
                 <div class="search-po">
                   <h4 class="pt-2 ps-1 m-sm-4 card-heading">
                     Search PO Number Details
                   </h4>
                   <hr />
-                  <label for="Customer" class="d-lg-flex d-sm-block d-md-block">
+                  <label for="customer-input" class="d-lg-flex d-sm-block d-md-block">
                     <span
                       class="ms-sm-4 ms-lg-1 me-lg-1 ms-md-1 card-inside-text label-text d-lg-flex align-items-center"
                       >Customer</span
@@ -559,7 +559,6 @@
                     <button id="searchPoBtn" type="submit" class="search-btn">
                       <span
                         class="btn-search-text px-md-5 py-md-1"
-                        onclick="purchaseOrderReport()"
                         >Search</span
                       >
                     </button>

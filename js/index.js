@@ -16,60 +16,58 @@ function searchPoNumber(event) {
   event.preventDefault(); // Prevent form submission
 
   // Get form elements
-  const customer = document.getElementById("customer-select").value;
-  const searchBy = document.querySelector('input[name="searchBy"]:checked'); // Get selected radio button
+  const customer = document.getElementById("customer-input").value.trim(); // Customer input field
+  const searchBy = document.querySelector('input[name="searchBy"]:checked'); // Selected radio button
   const errorMessage = document.getElementById("error-message"); // Error message container
   let queryParams = "";
-  let query = "";
 
   // Reset any previous error message
   if (errorMessage) errorMessage.textContent = "";
 
   // Validate Customer
   if (!customer) {
-    if (errorMessage) errorMessage.textContent = "Please select a customer.";
+    errorMessage.textContent = "Please select or type a customer.";
     return;
   }
 
   // Validate SearchBy
   if (!searchBy) {
-    if (errorMessage) errorMessage.textContent = "Please select a search type.";
+    errorMessage.textContent = "Please select a search type.";
     return;
   }
 
   // Validate fields based on SearchBy selection
   if (searchBy.value === "po-no") {
-    const poNumber = document.getElementById("po-number-select").value;
+    const poNumber = document.getElementById("po-number-input").value.trim();
     if (!poNumber) {
-      if (errorMessage) errorMessage.textContent = "Please select a PO Number.";
+      errorMessage.textContent = "Please select or type a PO Number.";
       return;
     }
-    queryParams = `?type=po-no&custName=${customer}&ponum=${poNumber}`;
-    query = poNumber;
+    queryParams = `?type=po-no&custName=${encodeURIComponent(
+      customer
+    )}&ponum=${encodeURIComponent(poNumber)}`;
   } else if (searchBy.value === "date") {
-    const fromDate = document.getElementById("from-date-input").value;
-    const toDate = document.getElementById("to-date-input").value;
+    const fromDate = document.getElementById("from-date-input").value.trim();
+    const toDate = document.getElementById("to-date-input").value.trim();
 
     if (!fromDate || !toDate) {
-      if (errorMessage)
-        errorMessage.textContent = "Please select both From Date and To Date.";
+      errorMessage.textContent = "Please select both From Date and To Date.";
       return;
     }
     if (new Date(fromDate) > new Date(toDate)) {
-      if (errorMessage)
-        errorMessage.textContent = "From Date cannot be later than To Date.";
+      errorMessage.textContent = "From Date cannot be later than To Date.";
       return;
     }
-    queryParams = `?type=date&custName=${customer}&fromDate=${fromDate}&toDate=${toDate}`;
-    query = `from:${fromDate}, to:${toDate}`;
+    queryParams = `?type=date&custName=${encodeURIComponent(
+      customer
+    )}&fromDate=${encodeURIComponent(fromDate)}&toDate=${encodeURIComponent(
+      toDate
+    )}`;
   }
 
-  // Construct the search URL
-  // const searchUrl = `/html/Dashboard/DashboardSearchRes/SearchRes.html?customer=${encodeURIComponent(customer)}&searchBy=${searchBy.value}&query=${encodeURIComponent(query)}`;
-
-  // // Redirect to search results page
-  window.location.href =
-    "http://127.0.0.1:5500//html/Dashboard/DashboardSearchRes/SearchRes.html";
+  // Redirect to the search results page with query parameters
+  const searchUrl = `/html/Dashboard/DashboardSearchRes/SearchRes.html${queryParams}`;
+  window.location.href = searchUrl;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -79,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Render PO Number UI by default
   renderPoNumberUI();
 
+  // Add event listener for radio button changes
   searchByRadios.forEach((radio) => {
     radio.addEventListener("change", function () {
       if (radio.value === "po-no") {
@@ -91,34 +90,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function renderPoNumberUI() {
     dynamicInputContainer.innerHTML = `
-        <label for="PO No" class="d-flex justify-content-evenly d-sm-flex justify-content-sm-start">
-          <span class="ms-sm-2 label-text d-flex align-items-center">PO Number</span>
-          <input
-            id="po-number-input"
-            class="ms-sm-5 px-sm-5 ms-lg-3 px-lg-5 py-lg-1 customer-input"
-            list="po-number-list"
-            placeholder="Select or type PO Number" />
-          <datalist id="po-number-list">
-            <option value="PO-001"></option>
-            <option value="PO-002"></option>
-            <option value="PO-003"></option>
-          </datalist>
-        </label>`;
+      <label for="PO No" class="d-flex justify-content-evenly d-sm-flex justify-content-sm-start">
+        <span class="ms-sm-2 label-text d-flex align-items-center">PO Number</span>
+        <input
+          id="po-number-input"
+          class="ms-sm-5 px-sm-5 ms-lg-3 px-lg-5 py-lg-1 customer-input"
+          list="po-number-list"
+          placeholder="Select or type PO Number" />
+        <datalist id="po-number-list">
+          <option value="PO-001"></option>
+          <option value="PO-002"></option>
+          <option value="PO-003"></option>
+        </datalist>
+      </label>`;
   }
 
   function renderDateUI() {
     dynamicInputContainer.innerHTML = `
-        <label for="From Date" class="d-flex justify-content-evenly d-sm-flex justify-content-sm-start">
-          <span class="ms-sm-2 label-text d-flex align-items-center">From Date</span>
-          <input id="from-date-input" class=" ms-sm-5 px-sm-5 px-lg-5 customer-input " type="date" />
-        </label>
-        <hr/>
-        <label for="To Date" class="d-flex justify-content-evenly d-sm-flex justify-content-sm-start mt-2">
-          <span class="ms-sm-4 ms-lg-4 label-text ms-lg-2 d-flex align-items-center">To Date</span>
-          <input id="to-date-input" class=" ms-sm-5 px-sm-5 ms-lg-5 px-lg-5 customer-input" type="date" />
-        </label>`;
+      <label for="From Date" class="d-flex justify-content-evenly d-sm-flex justify-content-sm-start">
+        <span class="ms-sm-2 label-text d-flex align-items-center">From Date</span>
+        <input id="from-date-input" class="ms-sm-5 px-sm-5 px-lg-5 customer-input" type="date" />
+      </label>
+      <hr/>
+      <label for="To Date" class="d-flex justify-content-evenly d-sm-flex justify-content-sm-start mt-2">
+        <span class="ms-sm-4 ms-lg-4 label-text ms-lg-2 d-flex align-items-center">To Date</span>
+        <input id="to-date-input" class="ms-sm-5 px-sm-5 ms-lg-5 px-lg-5 customer-input" type="date" />
+      </label>`;
   }
 });
+
 
 function activateLink(event, subSidebarId) {
   // event.preventDefault();

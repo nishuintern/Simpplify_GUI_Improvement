@@ -82,6 +82,10 @@ body {
   width: 460px;
   border: 0.5px solid #00000080;
   height: 38px;
+  background-color: #ffff;
+}
+.input-group img {
+  background-color: transparent;
 }
 .container-fields {
   margin-left: 13%;
@@ -89,10 +93,10 @@ body {
 .btn-login {
   width: 109px;
   height: 30px;
-  margin-left: 63%;
   color: #ffff;
   background-color: #141d38;
   margin-top: 5px;
+  margin-right: 17%;
 }
 .foot {
   font-family: Inter;
@@ -104,10 +108,23 @@ body {
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
-.foot span{
+.foot span {
   color: #007edc;
 }
 .is-invalid {
   border-color: #dc3545 !important; /* Ensure red border */
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); /* Add subtle shadow */
+}
+.input-group input {
+  padding-left: 40px;
+  padding-right: 154px;
+  border: none;
+  padding-top: 10px;
+}
+a {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.94px;
+  letter-spacing: 0.01em;
 }

@@ -1,52 +1,320 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/html/Dashboard/User/PartyProfile.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add"
+    />
+    <title>Simplify</title>
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="sidebar d-sm-none d-md-none d-lg-block">
+        <div class="logo">
+          <div class="logo-container">
+            <img src="/icons/newton icon copy 1.svg" alt="Company Logo" />
+            <h3>Simplify</h3>
+            <!-- <button id="toggleBtn" onclick="toggleSidebar();">
+            <img src="/icons/menu.svg" style="width: 20px; height: 20px;" alt="Menu" />
+          </button> -->
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="/html/index.html">
+                <div class="menu-item">
+                  <img src="/icons/iconamoon_home@2x.svg" alt="Dashboard" />
+                  <span>Dashboard</span>
+                </div>
+              </a>
+              <img
+                src="/icons/Glyph_ undefined 1.svg"
+                alt="Toggle Menu"
+                class="toggle-img"
+              />
+            </li>
+            <li>
+              <a href="/html/OrderManagement/OrderDispatch.html">
+                <div class="menu-item">
+                  <img
+                    src="/icons/icon-park-outline_transaction-order.svg"
+                    alt="Order Management"
+                  />
 
-<head>
-    <title>Purchase Order Reports</title>
-    <link rel="stylesheet" type="text/css" href="/DashboardSearchRes/searchRes.css">
-</head>
+                  <span>Order Management</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/html/Quotation/QuotationDetails.html">
+                <div class="menu-item">
+                  <img src="/icons/Checkout.svg" alt="Quotation" />
+                  <span>Quotation Details</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/html/ReverseAuction/ReverseAuction.html">
+                <div class="menu-item">
+                  <img src="/icons/Sell.svg" alt="Reverse Auction" />
+                  <span>Reverse Auction</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/html/AuctionEngine/AuctionEngine.html">
+                <div class="menu-item">
+                  <img src="/icons/Service.svg" alt="Auction Engine" />
+                  <span>Auction Engine</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/html/RFP/RFP.html">
+                <div class="menu-item">
+                  <img src="/icons/Invite.svg" alt="Request For Proposal" />
+                  <span>Request For Proposal</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/html/TaskManager/TaskManager.html">
+                <div class="menu-item">
+                  <img src="/icons/Task.svg" alt="Task Manager" />
+                  <span>Task Manager</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/html/Setting/UserTenantMapping.html">
+                <div class="menu-item">
+                  <img src="/icons/uil_setting.png" alt="Setting" />
+                  <span>Setting</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
 
-<body>
-    <h2>Purchase Order Reports</h2>
-    <table id="purchaseOrderTable">
-        <tr>
-            <th>PO Number</th>
-            <th>Location Code</th>
-            <th>Location</th>
-            <th>Date</th>
-            <th>Amount</th>
-        </tr>
-    </table>
-    <table id="itemTable">
-        <tr>
-            <th>Item Code</th>
-            <th>Order Quantity</th>
-            <th>Rate</th>
-        </tr>
-    </table>
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Header -->
+        <header class="header">
+          <nav class="d-flex">
+            <div class="dropdown me-1 mt-3">
+              <button
+                class="btn-togg-drop dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span class="lang-text">Language</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">English</a></li>
+                <li><a class="dropdown-item" href="#">Hindi</a></li>
+              </ul>
+            </div>
+            <a href="#help">
+              <div class="user-dropdown">
+                <button class="user-dropdown-btn">
+                  <span>
+                    <img src="/icons/help.svg" alt="Customer" />
+                  </span>
+                </button>
+                <div class="user-dropdown-content">
+                  <a class="submenu" href="#help">HelpLine</a>
+                </div>
+              </div>
+            </a>
+            <a href="#notification">
+              <div class="user-dropdown">
+                <button class="user-dropdown-btn">
+                  <span>
+                    <img src="/icons/Doorbell.svg" alt="Customer" />
+                  </span>
+                </button>
+                <div class="user-dropdown-content">
+                  <a class="submenu" href="#help">Notificatuon 1</a>
+                </div>
+              </div>
+            </a>
+            <a href="">
+              <div class="user-dropdown">
+                <button class="user-dropdown-btn">
+                  <span>
+                    <img src="/icons/Customer.svg" alt="Customer" />
+                  </span>
+                </button>
+                <div class="user-dropdown-content">
+                  <a
+                    class="submenu"
+                    href="/html/Dashboard/User/PartyProfile.html"
+                    >My Profile</a
+                  >
+                  <a
+                    class="submenu"
+                    href="/html/Dashboard/User/UserAlertMapping.html"
+                    >User Alert Mapping</a
+                  >
+                  <a
+                    class="submenu"
+                    href="/html/Dashboard/User/AlertConfig.html"
+                    >Alert Configuration</a
+                  >
+                  <a
+                    class="submenu"
+                    href="/html/Dashboard/User/SchedularConfig.html"
+                    >Scheduler Configuration</a
+                  >
+                  <a class="submenu" href="/html/loginForm/Login.html"
+                    >Logout</a
+                  >
+                </div>
+              </div>
+            </a>
+          </nav>
+        </header>
+        <!-- Dashboard Heading -->
+        <div class="dashboard-heading">
+          <div class="d-flex">
+            <a href="/html/index.html">
+              <img src="/icons/Arrow back ios (2).svg" alt="" />
+            </a>
+            <h3>Purchase Order Reports</h3>
+          </div>
+          <!-- <a href="">
+            <img src="/icons/Synchronize.svg" alt="" />
+          </a> -->
+          <a href="">
+            <img src="/icons/Synchronize.svg" alt="" />
+          </a>
+        </div>
 
-    <table id="dispatchTable">
-        <tr>
-            <th>ITEM CODE</th>
-            <th>Doc No.</th>
-            <th>Date</th>
-            <th>Dispatched Quantity</th>
-            <th>Pending Quantity</th>
-            <th>MRN Status</th>
-            <th>Amount</th>
-        </tr>
-    </table>
+        <main class="main-content" id="mainContent">
+          <!-- <div
+            class="d-none justify-content-center flex-column m-3 profile-update-container"
+          >
+            <form action="">
+              <div>
+                <label for="partyCode">Party Code :</label>
+                <input type="text" id="partyCode" />
+              </div>
+              <div>
+                <label for="partyCode">Party Name :</label>
+                <input type="text" id="partName" />
+              </div>
+              <div>
+                <label for="partyCode" class="ms-1">Role :</label>
+                <input type="text" id="Role" />
+              </div>
+            </form>
+          </div> -->
+          <div class="profile-container">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="table-secondary">
+                  <tr>
+                    <th scope="col">PO Number</th>
+                    <th scope="col">Location Code</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <span
+                        class="toggle-sign fs-6 me-2"
+                        data-bs-toggle="collapse"
+                        href="#collapseExample"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="collapseExample"
+                      >
+                      +
+                      </span>
+                      PO001
+                    </td>
+                    <td>LocationCode1</td>
+                    <td>Location1</td>
+                    <td>2022-05-10</td>
+                    <td>$10000</td>
+                  </tr>
+                  <tr class="collapse" id="collapseExample">
+                    <td colspan="5">
+                      <table style="width: 100%;">
+                        <thead class="table-secondary">
+                          <tr class="p-2">
+                            <th>Item Code</th>
+                            <th>Item Name</th>
+                            <th>Quantity</th>
+                            <th>Rate</th>
+                            <th>Amount</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>ItemCode1</td>
+                            <td>ItemName1</td>
+                            <td>10</td>
+                            <td>$100</td>
+                            <td>$1000</td>
+                          </tr>
+                          <tr>
+                            <td>ItemCode2</td>
+                            <td>ItemName2</td>
+                            <td>5</td>
+                            <td>$200</td>
+                            <td>$1000</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/html/Dashboard/User/PartyProfile.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggles = document.querySelectorAll(".toggle-sign");
+        toggles.forEach((toggle) => {
+          toggle.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = toggle.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
 
-    <table>
-        <tr>
-            <td>Total:</td>
-            <td id="totalQuantity">0</td>
-            <td id="totalAmount">0</td>
-        </tr>
-    </table>
-    <script src="/DashboardSearchRes/searchRes.js">
+            if (targetElement.classList.contains("show")) {
+              targetElement.classList.remove("show");
+              toggle.textContent = "+";
+            } else {
+              targetElement.classList.add("show");
+              toggle.textContent = "-";
+            }
+          });
+        });
+      });
     </script>
-
-</body>
-
+  </body>
 </html>

@@ -1536,5 +1536,14 @@
         "Action": "Re Quote"
       }
     ]
+  },
+  {
+    "tableId": "#exampleTable",
+    "columns": [
+      { "data": "id", "title": "ID" },
+      { "data": "name", "title": "Name" },
+      { "data": "email", "title": "Email" }
+    ],
+    "dataUrl": "https://jsonplaceholder.typicode.com/users"
   }
 ]

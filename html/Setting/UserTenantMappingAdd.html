@@ -20,7 +20,7 @@
   <body>
     <div class="dashboard-container">
       <!-- Sidebar -->
-      <aside class="sidebar d-sm-none d-md-none d-lg-block">
+      <aside class="sidebar collapse d-sm-none d-md-none d-lg-block">
         <div class="logo">
           <div class="logo-container">
             <img src="/icons/newton icon copy 1.svg" alt="Company Logo" />
@@ -112,7 +112,15 @@
       <!-- Main Content -->
       <div class="main-content">
         <!-- Header -->
-        <header class="header">
+        <header class="header justify-content-between align-items-center">
+          <div class="d-lg-flex d-md-none d-sm-none">
+            <button
+              class="bg-transparent border-0 text-primary"
+              id="toggle-sidebar"
+            >
+              <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
+            </button>
+          </div>
           <nav class="d-flex">
             <div class="dropdown me-1 mt-3">
               <button

@@ -19,7 +19,7 @@
   <body>
     <div class="dashboard-container">
       <!-- Sidebar -->
-      <aside class="sidebar d-sm-none d-md-none d-lg-block">
+      <aside class="sidebar collapse d-sm-none d-md-none d-lg-block">
         <div class="logo">
           <div class="logo-container">
             <img src="/icons/newton icon copy 1.svg" alt="Company Logo" />
@@ -109,8 +109,16 @@
       <div class="main-content">
         <!-- Header -->
         <header
-          class="header d-sm-flex justify-content-sm-between justify-content-lg-end justify-content-md-between"
+          class="header d-sm-flex justify-content-sm-between justify-content-lg-between justify-content-md-between align-items-center"
         >
+        <div class="d-lg-flex d-md-none d-sm-none">
+          <button
+            class="bg-transparent border-0 text-primary"
+            id="toggle-sidebar"
+          >
+            <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
+          </button>
+        </div>
           <div class="d-lg-none d-md-flex d-sm-flex">
             <img src="/icons/newton icon copy 1.svg" alt="Company" />
             <span class="fs-4 m-2">Simpplify</span>
@@ -448,8 +456,8 @@
           </nav>
         </header>
         <!-- Dashboard Heading -->
-        <div class="row-container">
-          <div id="subSidebar2" class="sub-sidebar" style="z-index: 1000">
+        <div class="">
+          <div id="subSidebar2" class="sub-sidebar d-none" style="z-index: 1000">
             <span class="p-2 title-text">Quotation Details</span>
             <hr />
             <ul class="nav flex-column">
@@ -547,7 +555,7 @@
                             </label>
                           </div>
                         </div> -->
-                <div id="recent" class="container">
+                <div id="recent" class="table-responsive">
                   <!-- <div class="table-responsive flex-fill">
                             <table class="table">
                               <thead>
@@ -661,7 +669,7 @@
                           </div>
                         </div> -->
                 <div class="border-1">
-                  <div id="history" class="container"></div>
+                  <div id="history" class="table-responsive"></div>
                   <!-- <div class="table-responsive">
                             <table class="table">
                               <thead>
@@ -775,7 +783,7 @@
                           </div>
                         </div> -->
                 <div class="border-1">
-                  <div id="watchBids" class="container"></div>
+                  <div id="watchBids" class=""></div>
                   <!-- <div class="table-responsive">
                             <table class="table">
                               <thead>

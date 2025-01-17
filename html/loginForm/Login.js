@@ -44,7 +44,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
 });
 
 // Remove error state on focus
-document.querySelectorAll('#loginForm .form-control').forEach(input => {
+document.querySelectorAll('#loginForm .input-group').forEach(input => {
     input.addEventListener('focus', function () {
         input.classList.remove('is-invalid');
     });
