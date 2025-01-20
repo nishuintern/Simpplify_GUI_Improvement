@@ -69,14 +69,14 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
 
       // Create table structure
       const tableDiv = document.createElement("div");
-      tableDiv.className = "table-responsive-lg table-responsive-md table-responsive-sm custom-scrollbar";
+      tableDiv.className = "table-responsive-lg table-responsive-md table-responsive-sm";
       const table = document.createElement("table");
       table.className = "table  text-nowrap";
       const thead = document.createElement("thead");
       thead.className = "table table-secondary";
       const tbody = document.createElement("tbody");
       tbody.id = `${containerId}-tbody`;
-      tbody.className="table text-wrap";
+      tbody.className="table text-wrap overflow-x-auto";
       tbody.className="table text-wrap";
       const tfooter = document.createElement("tfoot");
       tfooter.className = "table table-secondary";
@@ -162,7 +162,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
             </select>
         </div>
         <div class='d-lg-flex d-md-block d-sm-block justify-content-lg-between text-nowrap search-div'>
-            <label for="${containerId}-search" class='mt-2 me-2 px-4 py-1 d-block'>Search:</label>
+            <label for="${containerId}-search" class='mt-2 me-2 py-1 d-block'>Search:</label>
             <input type="search" id="${containerId}-search" class="search-box d-block" placeholder="Search...">
         </div>
         `;
@@ -218,21 +218,18 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
             text: 'Download',
             onClick: 'handleBlueButton',
             backgroundColor: '#007bff',
-           
           },
           {
             class: 'btn-orange',
             text: 'Dispatch',
             onClick: 'handleOrangeButton',
             backgroundColor: '#fd7e14',
-           
           },
           {
             class: 'btn-green',
             text: 'ASN',
             onClick: 'handleGreenButton',
             backgroundColor: '#28a745',
-            
           }
         ];
         tbody.innerHTML = paginatedData
@@ -341,9 +338,31 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
 
 // Example functions for handling button clicks
 function handleBlueButton(value) {
-  console.log('Download button clicked with value:', value);
-  // Add your functionality here
+  try {
+      // Ensure jsPDF is loaded
+      if (!window.jspdf || !window.jspdf.jsPDF) {
+          console.error("jsPDF library is not loaded. Please include it in your project.");
+          return;
+      }
+
+      // Import jsPDF
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF();
+
+      // Add dynamic content to the PDF using the 'value' parameter
+      const content = value || "This is your dynamically generated PDF file!";
+      pdf.text(content, 10, 10);
+
+      // Save the PDF with a dynamic filename
+      const fileName = `document_${Date.now()}.pdf`; // Example: document_1677888800000.pdf
+      pdf.save(fileName);
+
+      console.log(`PDF '${fileName}' has been generated successfully.`);
+  } catch (error) {
+      console.error("An error occurred while generating the PDF:", error);
+  }
 }
+
 
 function handleOrangeButton(value) {
   console.log('Dispatch button clicked with value:', value);

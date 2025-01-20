@@ -20,7 +20,7 @@
   <body>
     <div class="dashboard-container">
       <!-- Sidebar -->
-      <aside class="sidebar d-sm-none d-md-none d-lg-block">
+      <aside class="sidebar collapse d-sm-none d-md-none d-lg-block">
         <div class="logo">
           <div class="logo-container">
             <img src="/icons/newton icon copy 1.svg" alt="Company Logo" />
@@ -112,7 +112,17 @@
       <!-- Main Content -->
       <div class="main-content">
         <!-- Header -->
-        <header class="header">
+        <header
+          class="header d-sm-flex justify-content-sm-between justify-content-lg-between justify-content-md-between align-items-center"
+        >
+          <div class="d-lg-flex d-md-none d-sm-none">
+            <button
+              class="bg-transparent border-0 text-primary"
+              id="toggle-sidebar"
+            >
+              <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
+            </button>
+          </div>
           <nav class="d-flex">
             <div class="dropdown me-1 mt-3">
               <button
@@ -203,90 +213,23 @@
             <img src="/icons/Synchronize.svg" alt="" />
           </a>
         </div>
-
         <main class="main-content" id="mainContent">
-          <!-- <div
-            class="d-none justify-content-center flex-column m-3 profile-update-container"
-          >
-            <form action="">
-              <div>
-                <label for="partyCode">Party Code :</label>
-                <input type="text" id="partyCode" />
-              </div>
-              <div>
-                <label for="partyCode">Party Name :</label>
-                <input type="text" id="partName" />
-              </div>
-              <div>
-                <label for="partyCode" class="ms-1">Role :</label>
-                <input type="text" id="Role" />
-              </div>
-            </form>
-          </div> -->
           <div class="profile-container">
-            <div class="table-responsive">
+            <div id="tableSection" class="table-responsive">
               <table class="table">
-                <thead class="table-secondary">
+                <thead
+                  class="table-secondary"
+                  style="background-color: #eceff3"
+                >
                   <tr>
-                    <th scope="col">PO Number</th>
-                    <th scope="col">Location Code</th>
-                    <th scope="col">Location</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Amount</th>
+                    <th>PO Number</th>
+                    <th>Location Code</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Amount</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <span
-                        class="toggle-sign fs-6 me-2"
-                        data-bs-toggle="collapse"
-                        href="#collapseExample"
-                        role="button"
-                        aria-expanded="false"
-                        aria-controls="collapseExample"
-                      >
-                      +
-                      </span>
-                      PO001
-                    </td>
-                    <td>LocationCode1</td>
-                    <td>Location1</td>
-                    <td>2022-05-10</td>
-                    <td>$10000</td>
-                  </tr>
-                  <tr class="collapse" id="collapseExample">
-                    <td colspan="5">
-                      <table style="width: 100%;">
-                        <thead class="table-secondary">
-                          <tr class="p-2">
-                            <th>Item Code</th>
-                            <th>Item Name</th>
-                            <th>Quantity</th>
-                            <th>Rate</th>
-                            <th>Amount</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>ItemCode1</td>
-                            <td>ItemName1</td>
-                            <td>10</td>
-                            <td>$100</td>
-                            <td>$1000</td>
-                          </tr>
-                          <tr>
-                            <td>ItemCode2</td>
-                            <td>ItemName2</td>
-                            <td>5</td>
-                            <td>$200</td>
-                            <td>$1000</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                  </tr>
-                </tbody>
+                <tbody id="mainTableBody"></tbody>
               </table>
             </div>
           </div>
@@ -295,26 +238,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/index.js"></script>
-    <script src="/html/Dashboard/User/PartyProfile.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const toggles = document.querySelectorAll(".toggle-sign");
-        toggles.forEach((toggle) => {
-          toggle.addEventListener("click", (e) => {
-            e.preventDefault();
-            const targetId = toggle.getAttribute("href").substring(1);
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement.classList.contains("show")) {
-              targetElement.classList.remove("show");
-              toggle.textContent = "+";
-            } else {
-              targetElement.classList.add("show");
-              toggle.textContent = "-";
-            }
-          });
-        });
-      });
-    </script>
+    <script src="/html/Dashboard/DashboardSearchRes/searchRes.js"></script>
   </body>
 </html>

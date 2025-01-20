@@ -824,7 +824,7 @@ th {
   .main-content {
     display: flex;
     flex-direction: column;
-    width: 95%;
+    width: 100%;
     /* padding: 10px; */
   }
 
@@ -894,4 +894,13 @@ th {
       flex: 1 1 calc(25% - 32px); 
     }
   } */
+}
+@media (min-width: 320px) and (max-width: 575px) {
+  .small-toggle{
+    display: none;
+  }
+  .header{
+    display: flex;
+    justify-content: space-between;
+  }
 }

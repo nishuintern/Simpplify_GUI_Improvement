@@ -658,7 +658,7 @@ aside nav li a:hover .icon-title {
 }
 
 .custom-scrollbar {
-
+    overflow: scroll !important;;
     /* For WebKit browsers (Chrome, Safari, Edge) */
     ::-webkit-scrollbar {
         display: none;
@@ -844,3 +844,18 @@ th .sort-icons i {
 
 
 /* Responsive Design */
+@media (min-width: 320px) and (max-width: 575px) {
+    .sidebar{
+        display: none;
+    }
+    .small-toggle{
+      display: none;
+    }
+    .header{
+      display: flex;
+      justify-content: space-between;
+    }
+    .lang-text{
+        margin-top: 16px;
+    }
+  }

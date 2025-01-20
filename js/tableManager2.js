@@ -162,7 +162,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
             </select>
         </div>
         <div class='d-lg-flex d-md-block d-sm-block justify-content-lg-between text-nowrap search-div'>
-            <label for="${containerId}-search" class='mt-2 me-2 px-4 py-1 d-block'>Search:</label>
+            <label for="${containerId}-search" class='mt-2 me-2 py-1 d-block'>Search:</label>
             <input type="search" id="${containerId}-search" class="search-box d-block" placeholder="Search...">
         </div>
         `;
@@ -220,11 +220,9 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
                 .map((header) => {
                   if (header.label === "Status" || header.label === "Action") {
                     return `<td>
-                    
                       <a href='#' class='text-decoration-none text-primary'>${
                         row[header.key]
                       }</a>
-                      
                   </td>`;
                   } else {
                     return `<td>${row[header.key]}</td>`;

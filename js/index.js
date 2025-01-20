@@ -12,63 +12,204 @@ toggleSidebarButton.addEventListener("click", () => {
 });
 
 //Po Search
+// function searchPoNumber(event) {
+//   event.preventDefault(); // Prevent form submission
+
+//   // Get form elements
+//   const customer = document.getElementById("customer-input").value.trim(); // Customer input field
+//   const searchBy = document.querySelector('input[name="searchBy"]:checked'); // Selected radio button
+//   const errorMessage = document.getElementById("error-message"); // Error message container
+//   let queryParams = "";
+
+//   // Reset any previous error message
+//   if (errorMessage) errorMessage.textContent = "";
+
+//   // Validate Customer
+//   if (!customer) {
+//     errorMessage.textContent = "Please select or type a customer.";
+//     return;
+//   }
+
+//   // Validate SearchBy
+//   if (!searchBy) {
+//     errorMessage.textContent = "Please select a search type.";
+//     return;
+//   }
+
+//   // Validate fields based on SearchBy selection
+//   if (searchBy.value === "po-no") {
+//     const poNumber = document.getElementById("po-number-input").value.trim();
+//     if (!poNumber) {
+//       errorMessage.textContent = "Please select or type a PO Number.";
+//       return;
+//     }
+//     queryParams = `?type=po-no&custName=${encodeURIComponent(
+//       customer
+//     )}&ponum=${encodeURIComponent(poNumber)}`;
+//   } else if (searchBy.value === "date") {
+//     const fromDate = document.getElementById("from-date-input").value.trim();
+//     const toDate = document.getElementById("to-date-input").value.trim();
+
+//     if (!fromDate || !toDate) {
+//       errorMessage.textContent = "Please select both From Date and To Date.";
+//       return;
+//     }
+//     if (new Date(fromDate) > new Date(toDate)) {
+//       errorMessage.textContent = "From Date cannot be later than To Date.";
+//       return;
+//     }
+//     queryParams = `?type=date&custName=${encodeURIComponent(
+//       customer
+//     )}&fromDate=${encodeURIComponent(fromDate)}&toDate=${encodeURIComponent(
+//       toDate
+//     )}`;
+//   }
+
+//   // Redirect to the search results page with query parameters
+//   const searchUrl = `/html/Dashboard/DashboardSearchRes/SearchRes.html${queryParams}`;
+//   window.location.href = searchUrl;
+// }
+
 function searchPoNumber(event) {
-  event.preventDefault(); // Prevent form submission
+  event.preventDefault(); // Prevent the default form submission
 
-  // Get form elements
-  const customer = document.getElementById("customer-input").value.trim(); // Customer input field
-  const searchBy = document.querySelector('input[name="searchBy"]:checked'); // Selected radio button
-  const errorMessage = document.getElementById("error-message"); // Error message container
-  let queryParams = "";
+  // Get form values
+  const customer = document.getElementById("customer-input").value.trim();
+  const searchBy = document.querySelector(
+    'input[name="searchBy"]:checked'
+  ).value;
+  const dynamicInput = document
+    .getElementById("dynamic-input")
+    .querySelector("input");
+  const searchValue = dynamicInput ? dynamicInput.value.trim() : "";
 
-  // Reset any previous error message
-  if (errorMessage) errorMessage.textContent = "";
+  // Error message element
+  const errorMessage = document.getElementById("error-message");
 
-  // Validate Customer
+  // Validation
   if (!customer) {
     errorMessage.textContent = "Please select or type a customer.";
     return;
   }
 
-  // Validate SearchBy
-  if (!searchBy) {
-    errorMessage.textContent = "Please select a search type.";
+  if (!searchValue) {
+    errorMessage.textContent = `Please enter a valid ${
+      searchBy === "po-no" ? "PO Number" : "Date"
+    }.`;
     return;
   }
 
-  // Validate fields based on SearchBy selection
-  if (searchBy.value === "po-no") {
-    const poNumber = document.getElementById("po-number-input").value.trim();
-    if (!poNumber) {
-      errorMessage.textContent = "Please select or type a PO Number.";
-      return;
-    }
-    queryParams = `?type=po-no&custName=${encodeURIComponent(
-      customer
-    )}&ponum=${encodeURIComponent(poNumber)}`;
-  } else if (searchBy.value === "date") {
-    const fromDate = document.getElementById("from-date-input").value.trim();
-    const toDate = document.getElementById("to-date-input").value.trim();
+  // Clear error message if validation passes
+  errorMessage.textContent = "";
 
-    if (!fromDate || !toDate) {
-      errorMessage.textContent = "Please select both From Date and To Date.";
-      return;
-    }
-    if (new Date(fromDate) > new Date(toDate)) {
-      errorMessage.textContent = "From Date cannot be later than To Date.";
-      return;
-    }
-    queryParams = `?type=date&custName=${encodeURIComponent(
-      customer
-    )}&fromDate=${encodeURIComponent(fromDate)}&toDate=${encodeURIComponent(
-      toDate
-    )}`;
-  }
+  // Save data to local storage
+  const formData = {
+    customer,
+    searchBy,
+    searchValue,
+  };
 
-  // Redirect to the search results page with query parameters
-  const searchUrl = `/html/Dashboard/DashboardSearchRes/SearchRes.html${queryParams}`;
-  window.location.href = searchUrl;
+  localStorage.setItem("poSearchData", JSON.stringify(formData));
+
+  // Notify the user and optionally render the table or navigate to another page
+  console.log("Form data saved to local storage:", formData);
+
+  // (Optional) Render the table dynamically or redirect
+  // renderTable(formData); // Uncomment if table rendering is on the same page
+  window.location.href = "/html/Dashboard/DashboardSearchRes/SearchRes.html"; // Uncomment if navigation to another page is required
 }
+
+function renderTable(data) {
+  const tableSection = document.getElementById("tableSection");
+  const mainTableBody = document.getElementById("mainTableBody");
+
+  // Clear any existing rows in the table
+  mainTableBody.innerHTML = "";
+
+  // Create table rows dynamically
+  const mainRowId = `collapseRow0`;
+  const mainRow = `
+    <tr>
+      <td>
+        <span
+          class="toggle-sign fs-6 me-2"
+          data-bs-toggle="collapse"
+          href="#${mainRowId}"
+          role="button"
+          aria-expanded="false"
+          aria-controls="${mainRowId}"
+        >
+          +
+        </span>
+        ${data.searchValue}
+      </td>
+      <td>${data.customer}</td>
+      <td>${data.searchBy === "date" ? data.searchValue : "N/A"}</td>
+      <td>$1000.00</td>
+    </tr>
+  `;
+
+  const expandedRow = `
+    <tr class="collapse" id="${mainRowId}">
+      <td colspan="5">
+        <table style="width: 100%">
+          <thead class="table-secondary">
+            <tr>
+              <th>Item Code</th>
+              <th>Order Quantity</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ExampleItemCode</td>
+              <td>10</td>
+              <td>$100</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  `;
+
+  // Append rows to the main table body
+  mainTableBody.innerHTML = mainRow + expandedRow;
+
+  // Scroll to the table section
+  tableSection.scrollIntoView({ behavior: "smooth" });
+}
+
+// Dynamically update input field based on 'Search By' selection
+document.addEventListener("DOMContentLoaded", () => {
+  const dynamicInputContainer = document.getElementById("dynamic-input");
+  const searchByInputs = document.querySelectorAll('input[name="searchBy"]');
+
+  searchByInputs.forEach((input) => {
+    input.addEventListener("change", () => {
+      dynamicInputContainer.innerHTML = "";
+
+      if (input.value === "po-no") {
+        dynamicInputContainer.innerHTML = `
+          <label for="poNumber" class="label-text card-inside-text">
+            Enter PO Number:
+          </label>
+          <input type="text" id="poNumber" class="form-control" placeholder="Enter PO Number" />
+        `;
+      } else if (input.value === "date") {
+        dynamicInputContainer.innerHTML = `
+          <label for="searchDate" class="label-text card-inside-text">
+            Select Date:
+          </label>
+          <input type="date" id="searchDate" class="form-control" />
+        `;
+      }
+    });
+  });
+  // Trigger initial change event to render the default input field
+  searchByInputs[0].dispatchEvent(new Event("change"));
+  // const searchUrl = `/html/Dashboard/DashboardSearchRes/SearchRes.html${queryParams}`;
+  // window.location.href = `/html/Dashboard/DashboardSearchRes/SearchRes.html`;
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   const searchByRadios = document.querySelectorAll('input[name="searchBy"]');
@@ -118,7 +259,6 @@ document.addEventListener("DOMContentLoaded", function () {
       </label>`;
   }
 });
-
 
 function activateLink(event, subSidebarId) {
   // event.preventDefault();

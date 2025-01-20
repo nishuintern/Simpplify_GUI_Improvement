@@ -1,194 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Form</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PO Acceptance Modal</title>
   <style>
-    /* General Styles */
-    /* General Styles */
     body {
-      margin: 0;
-      font-family: "Roboto", sans-serif;
-      background-color: #eef0fa;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: Arial, sans-serif;
     }
 
-    /* Login Container */
-    .login-container {
-      width: 90%; /* Default to 90% of screen width */
-      max-width: 400px; /* Never exceed 400px width */
-      margin: auto;
-      text-align: center;
-    }
-
-    /* Login Box */
-    .login-box {
-      background-color: #fff;
-      border-radius: 8px;
-      padding: 2rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo {
-      max-width: 80px;
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      color: #1f2a44;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      margin: 0.5rem 0 1.5rem;
-      font-size: 14px;
-      color: #555;
-    }
-
-    /* Input Group */
-    .input-group {
-      position: relative;
-      margin-bottom: 1.5rem;
-    }
-
-    .input-group .icon {
-      position: absolute;
+    .modal {
+      display: none;
+      position: fixed;
       top: 50%;
-      left: 10px;
-      transform: translateY(-50%);
-      font-size: 16px;
-      color: #aaa;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 500px;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      z-index: 1000;
     }
 
-    input {
-      width: 100%; /* Make input width responsive */
-      padding: 0.75rem 0.75rem 0.75rem 2.5rem; /* Add space for the icon */
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 14px;
-      font-family: "Roboto", sans-serif;
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: #f2f2f2;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .modal-header h2 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .modal-header .close {
+      cursor: pointer;
+      font-size: 20px;
       color: #333;
-      box-sizing: border-box; /* Prevent padding from breaking layout */
     }
 
-    input:focus {
-      border-color: #1f2a44;
-      outline: none;
+    .modal-body {
+      padding: 15px;
+      overflow-y: auto;
+      max-height: 60vh;
     }
 
-    /* Button */
-    .btn {
-      width: 100%; /* Button remains responsive */
-      background-color: #1f2a44;
-      color: #fff;
-      padding: 0.75rem;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #f9f9f9;
+    }
+
+    .input-field {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+      background-color: #f2f2f2;
+      border-top: 1px solid #ddd;
+    }
+
+    .modal-footer button {
+      padding: 8px 15px;
+      margin-left: 5px;
       border: none;
       border-radius: 4px;
-      font-size: 16px;
-      font-weight: 500;
       cursor: pointer;
+      font-size: 14px;
     }
 
-    .btn:hover {
-      background-color: #142033;
+    .btn-save { background-color: orange; color: white; }
+    .btn-accept { background-color: green; color: white; }
+    .btn-reject { background-color: red; color: white; }
+    .btn-query { background-color: blue; color: white; }
+
+    .btn-save:hover, .btn-accept:hover, .btn-reject:hover, .btn-query:hover {
+      opacity: 0.8;
     }
 
-    /* Footer */
-    footer {
-      margin-top: 1.5rem;
-      font-size: 12px;
-      color: #555;
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
     }
 
-    footer .brand {
-      color: #f36a2f;
-      font-weight: bold;
-    }
-
-    /* Media Queries */
-    @media (max-width: 768px) {
-      .login-box {
-        padding: 1.5rem; /* Reduce padding for smaller screens */
-      }
-
-      input {
-        font-size: 13px; /* Adjust font size for input */
-      }
-
-      .btn {
-        font-size: 14px; /* Adjust button size */
-      }
-    }
-
-    @media (max-width: 480px) {
-      .login-box {
-        padding: 1rem; /* Further reduce padding for very small screens */
-      }
-
-      h2 {
-        font-size: 18px; /* Adjust heading size */
-      }
-
-      input {
-        font-size: 12px; /* Smaller input font for compact view */
-      }
-
-      .btn {
-        font-size: 14px; /* Adjust button font */
-        padding: 0.65rem; /* Reduce button padding */
+    @media (max-height: 600px) {
+      .modal-body {
+        max-height: 50vh;
       }
     }
   </style>
-  <body>
-    <div class="login-container">
-      <div class="login-box">
-        <img src="/icons/newton icon copy 1.svg" alt="Newton Logo" class="logo" />
-        <h2>Sign In To Your Account</h2>
-        <p>Please enter your username and password to log in.</p>
-        <form id="login-form">
-          <div class="input-group">
-            <i class="fas fa-user icon"></i>
-            <input
-              type="text"
-              id="username"
-              placeholder="Enter Your User Name"
-              required
-            />
-          </div>
-          <div class="input-group">
-            <i class="fas fa-lock icon"></i>
-            <input
-              type="password"
-              id="password"
-              placeholder="Enter Your Password"
-              required
-            />
-          </div>
-          <button type="submit" class="btn">SIGN IN</button>
-        </form>
-        <footer>
-          <p>
-            &copy; 2024 <span class="brand">Simpplify</span>. ALL RIGHTS RESERVED
-          </p>
-        </footer>
-      </div>
-    </div>
-    <script src="script.js"></script>
-  </body>
+</head>
+<body>
+
+<button id="openModal">Open Modal</button>
+
+<div class="modal-overlay" id="modalOverlay"></div>
+
+<div class="modal" id="poModal">
+  <div class="modal-header">
+    <h2>PO Acceptance</h2>
+    <span class="close" id="closeModal">&times;</span>
+  </div>
+  <div class="modal-body">
+    <table>
+      <thead>
+        <tr>
+          <th>Sr.No</th>
+          <th>Term &amp; Condition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>TERM AND CONDITION 1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>TERM AND CONDITION 2</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>TERM AND CONDITION 3</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>TERM AND CONDITION 4</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <textarea id="queryField" class="input-field" placeholder="Enter query..."></textarea>
+    <textarea id="remarksField" class="input-field" placeholder="Enter remarks..."></textarea>
+  </div>
+  <div class="modal-footer">
+    <button class="btn-save" id="saveButton">SAVE</button>
+    <button class="btn-accept" id="acceptButton">ACCEPT</button>
+    <button class="btn-reject">REJECT</button>
+    <button class="btn-query" id="queryButton">QUERY</button>
+  </div>
+
+  <div class="modal-body">
+    <h3>Query Table</h3>
+    <table id="queryTable">
+      <thead>
+        <tr>
+          <th>Sr.No</th>
+          <th>Query</th>
+          <th>Reply</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal-body">
+    <h3>Accepted Terms</h3>
+    <table id="acceptedTable">
+      <thead>
+        <tr>
+          <th>Sr.No</th>
+          <th>Query</th>
+          <th>Reply</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  const openModalBtn = document.getElementById('openModal');
+  const modal = document.getElementById('poModal');
+  const closeModalBtn = document.getElementById('closeModal');
+  const modalOverlay = document.getElementById('modalOverlay');
+  const queryField = document.getElementById('queryField');
+  const remarksField = document.getElementById('remarksField');
+  const queryTable = document.getElementById('queryTable').querySelector('tbody');
+  const acceptedTable = document.getElementById('acceptedTable').querySelector('tbody');
+
+  openModalBtn.addEventListener('click', () => {
+    modal.style.display = 'block';
+    modalOverlay.style.display = 'block';
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalOverlay.style.display = 'none';
+  });
+
+  modalOverlay.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalOverlay.style.display = 'none';
+  });
+
+  document.getElementById('queryButton').addEventListener('click', () => {
+    const queryValue = queryField.value.trim();
+    const remarksValue = remarksField.value.trim();
+
+    if (queryValue) {
+      const row = queryTable.insertRow();
+      row.insertCell(0).textContent = queryTable.rows.length;
+      row.insertCell(1).textContent = queryValue;
+      row.insertCell(2).textContent = remarksValue || "N/A";
+
+      queryField.value = '';
+      remarksField.value = '';
+    }
+  });
+
+  document.getElementById('saveButton').addEventListener('click', () => {
+    const queries = [];
+    queryTable.querySelectorAll('tr').forEach(row => {
+      const cells = row.querySelectorAll('td');
+      queries.push({
+        srNo: cells[0].textContent,
+        query: cells[1].textContent,
+        reply: cells[2].textContent
+      });
+    });
+
+    localStorage.setItem('queries', JSON.stringify(queries));
+    alert('Data saved to local storage!');
+  });
+
+  document.getElementById('acceptButton').addEventListener('click', () => {
+    const queries = JSON.parse(localStorage.getItem('queries')) || [];
+    queries.forEach(query => {
+      const row = acceptedTable.insertRow();
+      row.insertCell(0).textContent = acceptedTable.rows.length;
+      row.insertCell(1).textContent = query.query;
+      row.insertCell(2).textContent = query.reply;
+    });
+    alert('Queries added to Accepted Terms table!');
+  });
+</script>
+
+</body>
 </html>

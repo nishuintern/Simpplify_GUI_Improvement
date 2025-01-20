@@ -162,3 +162,37 @@ th .sort-icons i {
   background-color: green !important;
   color:white !important;
 }
+
+.table-responsive-lg {
+  max-height: 80vh; /* Limits height to 80% of the viewport */
+  overflow-y: auto; /* Enables vertical scrolling */
+  overflow-x: auto; /* Enables horizontal scrolling */
+}
+
+.table-responsive-md,
+.table-responsive-sm {
+  max-height: 60vh; /* Smaller height for medium and small screens */
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.table {
+  white-space: nowrap; /* Prevents column wrapping unless explicitly set */
+}
+
+.sort-icons {
+  margin-left: auto;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #007bff; /* Blue active page */
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    font-size: 12px; /* Smaller font for pagination on small screens */
+  }
+}
+
+

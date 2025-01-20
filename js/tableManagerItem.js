@@ -119,7 +119,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
             </select>
         </div>
         <div class='d-lg-flex d-md-block d-sm-block justify-content-lg-between text-nowrap search-div'>
-            <label for="${containerId}-search" class='mt-2 me-lg-2  px-4 py-1 d-block'>Search:</label>
+            <label for="${containerId}-search" class='mt-2 me-lg-2 py-1 d-block'>Search:</label>
             <input type="search" id="${containerId}-search" class="search-box d-block" placeholder="Search...">
         </div>
         `;

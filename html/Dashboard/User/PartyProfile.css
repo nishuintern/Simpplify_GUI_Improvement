@@ -17,6 +17,7 @@ html {
     border: 1px solid #BABED8;
     padding: 20px 20px;
     background-color: #FFFFFF;
+    width: 100%;
 }
 
 .profile-container label,

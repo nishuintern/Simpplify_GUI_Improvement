@@ -128,7 +128,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
           </select>
         </div>
         <div class="search-div">
-          <label for="${containerId}-search">Search:</label>
+          <label for="${containerId}-search" class='mt-2 me-2 py-1 d-block'>Search:</label>
           <input type="search" id="${containerId}-search" placeholder="Search...">
         </div>
       `;
