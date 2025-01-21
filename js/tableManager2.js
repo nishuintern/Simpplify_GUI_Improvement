@@ -3,7 +3,9 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
     fetch(configUrl)
       .then((response) => {
         if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.statusText}`);
+          throw new Error(
+            `Network response was not ok: ${response.statusText}`
+          );
         }
         return response.json();
       })
@@ -16,7 +18,9 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
             fetch(config.dataUrl)
               .then((response) => {
                 if (!response.ok) {
-                  throw new Error(`Error fetching table data: ${response.statusText}`);
+                  throw new Error(
+                    `Error fetching table data: ${response.statusText}`
+                  );
                 }
                 return response.json();
               })
@@ -32,21 +36,23 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
           }
         });
       })
-      .catch((error) => console.error("Error loading table configurations:", error));
+      .catch((error) =>
+        console.error("Error loading table configurations:", error)
+      );
 
-      function convertTableConfig(input) {
-        return input.map((table) => ({
-          containerId: table.tableId.replace("#", ""), // Remove '#' for containerId
-          headers: table.columns.map((column) => ({
-            key: column.data,
-            label: column.title,
-          })),
-          data: table.data || [], // Default to an empty array if no data is provided
-          dataUrl: table.dataUrl || null, // Include optional `dataUrl`
-          pageSizeOptions: [5, 10, 15], // Default page size options
-          defaultPageSize: 5, // Default page size
-        }));
-      }
+    function convertTableConfig(input) {
+      return input.map((table) => ({
+        containerId: table.tableId.replace("#", ""), // Remove '#' for containerId
+        headers: table.columns.map((column) => ({
+          key: column.data,
+          label: column.title,
+        })),
+        data: table.data || [], // Default to an empty array if no data is provided
+        dataUrl: table.dataUrl || null, // Include optional `dataUrl`
+        pageSizeOptions: [5, 10, 15], // Default page size options
+        defaultPageSize: 5, // Default page size
+      }));
+    }
 
     function createDataTable({
       containerId,
@@ -146,11 +152,11 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       // Controls container (top)
       const topControls = document.createElement("div");
       topControls.className =
-        "d-flex justify-content-between align-items-center m-3";
+        "d-flex justify-content-between align-items-center m-2";
       topControls.innerHTML = `
-        <div class='d-lg-flex d-md-block d-sm-block justify-content-lg-between text-nowrap page-size-container'>
-            <label for="${containerId}-pageSize" class='mt-2 me-2 d-block'>Page Size:</label>
-            <select id="${containerId}-pageSize" class="px-3 py-2 d-block">
+        <div class="page-size-container d-flex align-items-center">
+          <label for="${containerId}-pageSize" class='me-1'>Page Size:</label>
+          <select id="${containerId}-pageSize" class='px-3 py-1'>
             ${pageSizeOptions
               .map(
                 (size) =>
@@ -159,18 +165,18 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
                   }>${size}</option>`
               )
               .join("")}
-            </select>
+          </select>
         </div>
-        <div class='d-lg-flex d-md-block d-sm-block justify-content-lg-between text-nowrap search-div'>
-            <label for="${containerId}-search" class='mt-2 me-2 py-1 d-block'>Search:</label>
-            <input type="search" id="${containerId}-search" class="search-box d-block" placeholder="Search...">
+        <div class="search-div d-flex">
+          <label for="${containerId}-search" class='mt-2 me-2 py-1 d-flex'>Search:</label>
+          <input type="search" id="${containerId}-search" placeholder="Search...">
         </div>
-        `;
+      `;
 
       // Controls container (bottom)
       const bottomControls = document.createElement("div");
       bottomControls.className =
-        "d-flex justify-content-between align-items-center mt-3 pag-div";
+        "d-flex justify-content-between align-items-center m-2 pag-div";
       bottomControls.innerHTML = `
         <!-- Summary -->
         <div id="${containerId}-summary" class="text-muted"></div>
@@ -212,29 +218,37 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
         const startIndex = (currentPage - 1) * pageSize;
         const endIndex = Math.min(startIndex + pageSize, filteredData.length);
         const paginatedData = filteredData.slice(startIndex, endIndex);
-
         tbody.innerHTML = paginatedData
-          .map(
-            (row) =>
-              `<tr>${headers
-                .map((header) => {
-                  if (header.label === "Status" || header.label === "Action") {
-                    return `<td>
-                      <a href='#' class='text-decoration-none text-primary'>${
-                        row[header.key]
-                      }</a>
-                  </td>`;
+          .map((row) => {
+            return `<tr>${headers
+              .map((header) => {
+                if (header.label === "Status" || header.label === "Action") {
+                  if (header.label === "Action") {
+                    // Special handling for Action column
+                    const actionValue = row[header.key];
+                    let actionHTML = "";
+                    if (actionValue === "Download") {
+                      // Create a link that triggers a download
+                      actionHTML = `<a href='#' class='text-decoration-none text-primary bg-light' onclick='downloadFile()'>${actionValue}</a>`;
+                    } else if (actionValue === "Download Views Bank") {
+                      // Create a link that opens the modal
+                      actionHTML = `<a href='#' class='text-decoration-none text-primary' onclick='openModal()'>${actionValue}</a>`;
+                    } else {
+                      actionHTML = `<a href='#' class='text-decoration-none text-primary'>${actionValue}</a>`;
+                    }
+                    return `<td>${actionHTML}</td>`;
                   } else {
-                    return `<td>${row[header.key]}</td>`;
+                    return `<td>${row[header.key] || ""}</td>`;
                   }
-                })
-                .join("")}</tr>`
-          )
+                } else {
+                  return `<td>${row[header.key] || ""}</td>`;
+                }
+              })
+              .join("")}</tr>`;
+          })
           .join("");
-
         updatePagination(filteredData.length, startIndex + 1, endIndex);
       }
-
       // Function to update pagination and summary
       function updatePagination(totalItems, start, end) {
         const summary = document.getElementById(`${containerId}-summary`);
@@ -307,4 +321,128 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
     // If DOM is already loaded, call the function directly
     onDomReady();
   }
+}
+
+// Sample functions to handle the actions
+function downloadFile(value) {
+  // Here you can replace the logic with actual download logic
+  try {
+    // Ensure jsPDF is loaded
+    if (!window.jspdf || !window.jspdf.jsPDF) {
+        console.error("jsPDF library is not loaded. Please include it in your project.");
+        return;
+    }
+
+    // Import jsPDF
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
+
+    // Add dynamic content to the PDF using the 'value' parameter
+    const content = value || "This is your dynamically generated PDF file!";
+    pdf.text(content, 10, 10);
+
+    // Save the PDF with a dynamic filename
+    const fileName = `document_${Date.now()}.pdf`; // Example: document_1677888800000.pdf
+    pdf.save(fileName);
+
+    console.log(`PDF '${fileName}' has been generated successfully.`);
+} catch (error) {
+    console.error("An error occurred while generating the PDF:", error);
+}
+}
+
+function openModal() {
+  // Create the modal dynamically if it doesn't exist
+  let modal = document.getElementById('invoiceModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'invoiceModal';
+    modal.style.display = 'none'; // Initially hidden
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    modal.style.zIndex = '9999';
+    modal.style.justifyContent = 'center';
+    modal.style.alignItems = 'center';
+
+    modal.innerHTML = `
+      <div style="
+        background: white;
+        width: 400px;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      ">
+        <div style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 15px;
+          background: #f5f5f5;
+          border-bottom: 1px solid #ddd;
+        ">
+          <h3 style="margin: 0; font-size: 18px;">Send Invoice</h3>
+          <button onclick="closeModal()" style="
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #888;
+          ">&times;</button>
+        </div>
+        <div style="padding: 15px;">
+          <table style="
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+          ">
+            <thead>
+              <tr>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Select one</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Bank Code</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Bank Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                  <input type="radio" name="bankSelection" />
+                </td>
+                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">001</td>
+                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">HDFC</td>
+              </tr>
+            </tbody>
+          </table>
+          <button onclick="sendInvoice()" style="
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 3px;
+            font-size: 14px;
+            cursor: pointer;
+          ">Send Invoice</button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+  }
+
+  // Show the modal
+  modal.style.display = 'flex';
+}
+
+// Function to close the modal
+function closeModal() {
+  document.getElementById('invoiceModal').style.display = 'none';
+}
+
+// Function to handle the "Send Invoice" button
+function sendInvoice() {
+  alert('Invoice sent successfully!');
+  closeModal();
 }

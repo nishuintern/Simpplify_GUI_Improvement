@@ -574,7 +574,6 @@ aside nav li a:hover .icon-title {
 .offcanvas-header {
   background-color: #141d38;
   color: #ffff;
- 
 }
 
 .offcanvas-header button .btn-close {
@@ -778,6 +777,173 @@ th {
 .bg-option option::before:hover::after{
     background-color: #141d38;
     color: #EEEEEE;
+}
+.pag-text {
+  font-size: var(--pag-text-size);
+  line-height: var(--pag-text-lh);
+  font-weight: var(--pag-text-weight);
+  color: var(--text-color);
+}
+
+.pag-btn-text {
+  font-size: var(--pag-btn-text-size);
+  line-height: var(--pag-btn-text-lh);
+  font-weight: var(--pag-btn-text-weight);
+  color: var(--text-color);
+}
+
+/* Base styles for dropdown */
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.user-dropdown-btn {
+  background: none;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  /* margin-right: 50px; */
+  /* border-radius: 5px;
+  font-size: 14px;
+  font-family: Arial, sans-serif; */
+}
+
+.user-dropdown-btn:hover {
+  background-color: #3C4059;
+}
+
+/* Dropdown content */
+.user-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #141D38;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border: 1px solid #3C4059;
+  border-radius: 5px;
+  right: 1px;
+  top: 50px;
+}
+
+.user-dropdown-content .submenu {
+  background-color: white;
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-dropdown-content .submenu:last-child {
+  border-bottom: none;
+}
+
+/* Hover effect on links */
+.user-dropdown-content .submenu:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.user-dropdown:hover .user-dropdown-content {
+  display: block;
+}
+
+.btn-togg-drop {
+  background: none;
+  color: white;
+  border: none;
+  box-sizing: border-box;
+}
+
+.btn-togg-drop :hover {
+  background-color: #3C4059;
+  border: 1px solid #141D38;
+  /* padding:5px; */
+}
+
+
+th {
+  background-color: var(--table-th-bg-color);
+  position: relative;
+  cursor: pointer;
+  font-size: var(--th-text-size);
+  line-height: var(--th-text-lh);
+  font-weight: var(--th-text-weight);
+  color: var(--text-color);
+}
+
+td {
+  font-size: var(--td-text-size);
+  line-height: var(--td-text-lh);
+  font-weight: var(--td-text-weight);
+  color: var(--text-color);
+}
+
+th .sort-icons {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 4px;
+}
+
+th .sort-icons i {
+  font-size: 12px;
+  /* color: #6c757d; */
+  cursor: pointer;
+  border: 1px solid #BABED8;
+}
+
+/* th .sort-icons i.active {
+  color: #007bff;
+}
+
+.pagination .page-item .page-link {
+  color: #007bff;
+} */
+
+.pagination .page-item.active .page-link {
+  background-color: #FE660C;
+  color: #FFFFFF;
+  border: none;
+}
+
+.sortable-header {
+  display: flexbox;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  gap: 8px
+}
+
+.sort-icons {
+  display: flex;
+  flex-direction: column;
+}
+
+.sort-icon {
+  cursor: pointer;
+  font-size: 5px;
+  line-height: 1;
+}
+
+.page-size-container label,
+.search-div label {
+  font-weight: var(--label-text-weight);
+  font-size: var(--label-text-size);
+  line-height: var(--label-text-font-lh);
+}
+
+.pag-div div {
+  font-weight: var(--pag-text-weight);
+  font-size: var(--pag-text-size);
+  line-height: var(--pag-text-lh);
 }
 /* Responsive Design */
 @media (min-width: 320px) and (max-width: 998px) {

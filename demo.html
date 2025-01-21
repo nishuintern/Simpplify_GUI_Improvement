@@ -3,266 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PO Acceptance Modal</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      max-width: 500px;
-      background: white;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-      z-index: 1000;
-    }
-
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-      background-color: #f2f2f2;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .modal-header h2 {
-      margin: 0;
-      font-size: 18px;
-    }
-
-    .modal-header .close {
-      cursor: pointer;
-      font-size: 20px;
-      color: #333;
-    }
-
-    .modal-body {
-      padding: 15px;
-      overflow-y: auto;
-      max-height: 60vh;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 15px;
-    }
-
-    table th, table td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
-
-    table th {
-      background-color: #f9f9f9;
-    }
-
-    .input-field {
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 8px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-    }
-
-    .modal-footer {
-      display: flex;
-      justify-content: flex-end;
-      padding: 10px;
-      background-color: #f2f2f2;
-      border-top: 1px solid #ddd;
-    }
-
-    .modal-footer button {
-      padding: 8px 15px;
-      margin-left: 5px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .btn-save { background-color: orange; color: white; }
-    .btn-accept { background-color: green; color: white; }
-    .btn-reject { background-color: red; color: white; }
-    .btn-query { background-color: blue; color: white; }
-
-    .btn-save:hover, .btn-accept:hover, .btn-reject:hover, .btn-query:hover {
-      opacity: 0.8;
-    }
-
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 999;
-    }
-
-    @media (max-height: 600px) {
-      .modal-body {
-        max-height: 50vh;
-      }
-    }
-  </style>
+  <title>Send Invoice Modal</title>
 </head>
 <body>
+  <!-- Button to Open Modal -->
+  <button onclick="openModal()" style="
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+  ">Open Modal</button>
 
-<button id="openModal">Open Modal</button>
+  <script>
+    // JavaScript to dynamically create the modal
+    function createModal() {
+      const modal = document.createElement('div');
+      modal.id = 'invoiceModal';
+      modal.style.display = 'none'; // Initially hidden
+      modal.style.position = 'fixed';
+      modal.style.top = '0';
+      modal.style.left = '0';
+      modal.style.width = '100%';
+      modal.style.height = '100%';
+      modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+      modal.style.zIndex = '9999';
+      modal.style.justifyContent = 'center';
+      modal.style.alignItems = 'center';
 
-<div class="modal-overlay" id="modalOverlay"></div>
+      modal.innerHTML = `
+        <div style="
+          background: white;
+          width: 400px;
+          border-radius: 5px;
+          overflow: hidden;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          animation: fadeIn 0.3s ease-in-out;
+        ">
+          <div style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+          ">
+            <h3 style="margin: 0; font-size: 18px;">Send Invoice</h3>
+            <button onclick="closeModal()" style="
+              background: none;
+              border: none;
+              font-size: 20px;
+              cursor: pointer;
+              color: #888;
+            ">&times;</button>
+          </div>
+          <div style="padding: 15px;">
+            <table style="
+              width: 100%;
+              border-collapse: collapse;
+              margin-bottom: 20px;
+            ">
+              <thead>
+                <tr>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Select one</th>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Bank Code</th>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Bank Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                    <input type="radio" name="bankSelection" />
+                  </td>
+                  <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">001</td>
+                  <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">HDFC</td>
+                </tr>
+              </tbody>
+            </table>
+            <button onclick="sendInvoice()" style="
+              background: #28a745;
+              color: white;
+              border: none;
+              padding: 10px 15px;
+              border-radius: 3px;
+              font-size: 14px;
+              cursor: pointer;
+            ">Send Invoice</button>
+          </div>
+        </div>
+      `;
 
-<div class="modal" id="poModal">
-  <div class="modal-header">
-    <h2>PO Acceptance</h2>
-    <span class="close" id="closeModal">&times;</span>
-  </div>
-  <div class="modal-body">
-    <table>
-      <thead>
-        <tr>
-          <th>Sr.No</th>
-          <th>Term &amp; Condition</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>TERM AND CONDITION 1</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>TERM AND CONDITION 2</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>TERM AND CONDITION 3</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>TERM AND CONDITION 4</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <textarea id="queryField" class="input-field" placeholder="Enter query..."></textarea>
-    <textarea id="remarksField" class="input-field" placeholder="Enter remarks..."></textarea>
-  </div>
-  <div class="modal-footer">
-    <button class="btn-save" id="saveButton">SAVE</button>
-    <button class="btn-accept" id="acceptButton">ACCEPT</button>
-    <button class="btn-reject">REJECT</button>
-    <button class="btn-query" id="queryButton">QUERY</button>
-  </div>
-
-  <div class="modal-body">
-    <h3>Query Table</h3>
-    <table id="queryTable">
-      <thead>
-        <tr>
-          <th>Sr.No</th>
-          <th>Query</th>
-          <th>Reply</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="modal-body">
-    <h3>Accepted Terms</h3>
-    <table id="acceptedTable">
-      <thead>
-        <tr>
-          <th>Sr.No</th>
-          <th>Query</th>
-          <th>Reply</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<script>
-  const openModalBtn = document.getElementById('openModal');
-  const modal = document.getElementById('poModal');
-  const closeModalBtn = document.getElementById('closeModal');
-  const modalOverlay = document.getElementById('modalOverlay');
-  const queryField = document.getElementById('queryField');
-  const remarksField = document.getElementById('remarksField');
-  const queryTable = document.getElementById('queryTable').querySelector('tbody');
-  const acceptedTable = document.getElementById('acceptedTable').querySelector('tbody');
-
-  openModalBtn.addEventListener('click', () => {
-    modal.style.display = 'block';
-    modalOverlay.style.display = 'block';
-  });
-
-  closeModalBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    modalOverlay.style.display = 'none';
-  });
-
-  modalOverlay.addEventListener('click', () => {
-    modal.style.display = 'none';
-    modalOverlay.style.display = 'none';
-  });
-
-  document.getElementById('queryButton').addEventListener('click', () => {
-    const queryValue = queryField.value.trim();
-    const remarksValue = remarksField.value.trim();
-
-    if (queryValue) {
-      const row = queryTable.insertRow();
-      row.insertCell(0).textContent = queryTable.rows.length;
-      row.insertCell(1).textContent = queryValue;
-      row.insertCell(2).textContent = remarksValue || "N/A";
-
-      queryField.value = '';
-      remarksField.value = '';
+      document.body.appendChild(modal);
     }
-  });
 
-  document.getElementById('saveButton').addEventListener('click', () => {
-    const queries = [];
-    queryTable.querySelectorAll('tr').forEach(row => {
-      const cells = row.querySelectorAll('td');
-      queries.push({
-        srNo: cells[0].textContent,
-        query: cells[1].textContent,
-        reply: cells[2].textContent
-      });
-    });
+    // Function to open the modal
+    function openModal() {
+      document.getElementById('invoiceModal').style.display = 'flex';
+    }
 
-    localStorage.setItem('queries', JSON.stringify(queries));
-    alert('Data saved to local storage!');
-  });
+    // Function to close the modal
+    function closeModal() {
+      document.getElementById('invoiceModal').style.display = 'none';
+    }
 
-  document.getElementById('acceptButton').addEventListener('click', () => {
-    const queries = JSON.parse(localStorage.getItem('queries')) || [];
-    queries.forEach(query => {
-      const row = acceptedTable.insertRow();
-      row.insertCell(0).textContent = acceptedTable.rows.length;
-      row.insertCell(1).textContent = query.query;
-      row.insertCell(2).textContent = query.reply;
-    });
-    alert('Queries added to Accepted Terms table!');
-  });
-</script>
+    // Function to handle "Send Invoice" button
+    function sendInvoice() {
+      alert('Invoice sent successfully!');
+      closeModal();
+    }
 
+    // Initialize the modal on page load
+    createModal();
+  </script>
 </body>
 </html>

@@ -112,11 +112,11 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       // Add pagination, search, and controls
       const topControls = document.createElement("div");
       topControls.className =
-        "d-flex justify-content-between align-items-center m-3";
+        "d-flex justify-content-between align-items-center m-2";
       topControls.innerHTML = `
-        <div class="page-size-container">
-          <label for="${containerId}-pageSize">Page Size:</label>
-          <select id="${containerId}-pageSize">
+        <div class="page-size-container d-flex align-items-center">
+          <label for="${containerId}-pageSize" class='me-1'>Page Size:</label>
+          <select id="${containerId}-pageSize" class='px-3 py-1'>
             ${pageSizeOptions
               .map(
                 (size) =>
@@ -127,15 +127,15 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
               .join("")}
           </select>
         </div>
-        <div class="search-div">
-          <label for="${containerId}-search" class='mt-2 me-2 py-1 d-block'>Search:</label>
+        <div class="search-div d-flex">
+          <label for="${containerId}-search" class='mt-2 me-2 py-1 d-flex'>Search:</label>
           <input type="search" id="${containerId}-search" placeholder="Search...">
         </div>
       `;
 
       const bottomControls = document.createElement("div");
       bottomControls.className =
-        "d-flex justify-content-between align-items-center mt-3";
+        "d-flex justify-content-between align-items-center m-2";
       bottomControls.innerHTML = `
         <div id="${containerId}-summary" class="text-muted"></div>
         <nav>

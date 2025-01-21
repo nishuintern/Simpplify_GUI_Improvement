@@ -146,11 +146,11 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       // Controls container (top)
       const topControls = document.createElement("div");
       topControls.className =
-        "d-flex justify-content-between align-items-center m-3";
+        "d-flex justify-content-between align-items-center m-2";
       topControls.innerHTML = `
-        <div class='d-lg-flex d-md-block d-sm-block justify-content-lg-between text-nowrap page-size-container'>
-            <label for="${containerId}-pageSize" class='mt-2 me-2 d-block'>Page Size:</label>
-            <select id="${containerId}-pageSize" class="px-3 py-2 d-block">
+        <div class="page-size-container d-flex align-items-center">
+          <label for="${containerId}-pageSize" class='me-1'>Page Size:</label>
+          <select id="${containerId}-pageSize" class='px-3 py-1'>
             ${pageSizeOptions
               .map(
                 (size) =>
@@ -159,18 +159,18 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
                   }>${size}</option>`
               )
               .join("")}
-            </select>
+          </select>
         </div>
-        <div class='d-lg-flex d-md-block d-sm-block justify-content-lg-between text-nowrap search-div'>
-            <label for="${containerId}-search" class='mt-2 me-2 py-1 d-block'>Search:</label>
-            <input type="search" id="${containerId}-search" class="search-box d-block" placeholder="Search...">
+        <div class="search-div d-flex">
+          <label for="${containerId}-search" class='mt-2 me-2 py-1 d-flex'>Search:</label>
+          <input type="search" id="${containerId}-search" placeholder="Search...">
         </div>
-        `;
+      `;
 
       // Controls container (bottom)
       const bottomControls = document.createElement("div");
       bottomControls.className =
-        "d-flex justify-content-between align-items-center mt-3 pag-div";
+        "d-flex justify-content-between align-items-center m-2 pag-div";
       bottomControls.innerHTML = `
         <!-- Summary -->
         <div id="${containerId}-summary" class="text-muted"></div>
@@ -216,19 +216,19 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
           {
             class: 'btn-blue',
             text: 'Download',
-            onClick: 'handleBlueButton',
+            onClick: 'handleBlueButton();',
             backgroundColor: '#007bff',
           },
           {
             class: 'btn-orange',
             text: 'Dispatch',
-            onClick: 'handleOrangeButton',
+            onClick: 'handleOrangeButton("Hello");',
             backgroundColor: '#fd7e14',
           },
           {
             class: 'btn-green',
             text: 'ASN',
-            onClick: 'handleGreenButton',
+            onClick: 'handleGreenButton("World");',
             backgroundColor: '#28a745',
           }
         ];
@@ -244,7 +244,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
                           (config) => `
                             <button
                               class='${config.class} text-white btn btn-sm btn-lg btn-md px-lg-2'
-                              onclick='${config.onClick}(${row[header.key]})'
+                              onclick='${config.onClick}(${row[header.value]})'
                               style='background-color: ${config.backgroundColor};'>
                               ${config.text}
                             </button>`
