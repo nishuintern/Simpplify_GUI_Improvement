@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/TableManager.css" />
-    <link rel="stylesheet" href="/css/OrderManagement/OrderDispatch.css" />
+    <link rel="stylesheet" href="/html/Dashboard/User/PartyProfile.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -22,6 +21,9 @@
           <div class="logo-container">
             <img src="/icons/newton icon copy 1.svg" alt="Company Logo" />
             <h3>Simplify</h3>
+            <!-- <button id="toggleBtn" onclick="toggleSidebar();">
+            <img src="/icons/menu.svg" style="width: 20px; height: 20px;" alt="Menu" />
+          </button> -->
           </div>
         </div>
         <nav>
@@ -33,23 +35,22 @@
                   <span>Dashboard</span>
                 </div>
               </a>
-            </li>
-            <li>
-              <a href="/html/OrderManagement/OrderDispatch.html">
-                <div class="menu-item active">
-                  <img
-                    src="/icons/icon-park-outline_transaction-order.svg"
-                    alt="Order Management"
-                  />
-
-                  <span>Order Management</span>
-                </div>
-              </a>
               <img
                 src="/icons/Glyph_ undefined 1.svg"
                 alt="Toggle Menu"
                 class="toggle-img"
               />
+            </li>
+            <li>
+              <a href="/html/OrderManagement/OrderDispatch.html">
+                <div class="menu-item">
+                  <img
+                    src="/icons/icon-park-outline_transaction-order.svg"
+                    alt="Order Management"
+                  />
+                  <span>Order Management</span>
+                </div>
+              </a>
             </li>
             <li>
               <a href="/html/Quotation/QuotationDetails.html">
@@ -107,19 +108,21 @@
       <div class="main-content">
         <!-- Header -->
         <header
-          class="header d-sm-flex justify-content-sm-between justify-content-lg-between justify-content-md-between align-items-center"
+          class="d-sm-flex justify-content-sm-between justify-content-lg-between justify-content-md-between align-items-center"
         >
-        <div class="d-lg-flex d-md-none d-sm-none">
-          <button
-            class="bg-transparent border-0 text-primary"
-            id="toggle-sidebar"
+          <div class="d-lg-flex d-md-none d-sm-none">
+            <button
+              class="bg-transparent border-0 text-primary"
+              id="toggle-sidebar"
+            >
+              <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
+            </button>
+          </div>
+          <div
+            class="d-lg-none d-md-flex d-sm-flex justify-content-sm-start justify-content-md-start"
           >
-            <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
-          </button>
-        </div>
-          <div class="d-lg-none d-md-flex d-sm-flex">
             <img src="/icons/newton icon copy 1.svg" alt="Company" />
-            <span class="fs-4 m-2">Simpplify</span>
+            <span class="fs-4 m-2 text-white">Simpplify</span>
             <button
               class="bg-transparent border-0 m-1 pointer-event"
               type="button"
@@ -130,8 +133,22 @@
               <img src="/icons/menu.svg" alt="" />
             </button>
           </div>
-          <nav>
-            <div class="dropdown me-sm-1 me-md-1 mt-sm-3 mt-md-3">
+          <nav class="d-flex p-2">
+            <div
+              class="dropdown me-sm-1 me-md-1 mt-sm-3 mt-md-3 align-content-center"
+            >
+              <!-- <button
+                class="btn-togg-drop dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span class="lang-text">Language</span>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">English</a></li>
+                  <li><a class="dropdown-item" href="#">Hindi</a></li>
+                </ul>
+              </button> -->
               <select
                 name="lang"
                 id="lang-text"
@@ -396,7 +413,6 @@
                 </div>
               </div>
             </div>
-
             <a href="#help">
               <div class="user-dropdown">
                 <button class="user-dropdown-btn">
@@ -458,95 +474,196 @@
           </nav>
         </header>
         <!-- Dashboard Heading -->
-        <div class="row-container">
-          <div id="subSidebar0" class="sub-sidebar" style="z-index: 1000">
-            <span class="ps-3 pt-5 title-text">Order Management</span>
-            <hr />
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/html/OrderManagement/OrderDispatch.html"
-                  >Order Dispatch</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/html/OrderManagement/OrderAck.html"
-                  >Order Acknowledgement</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/html/OrderManagement/Invoice.html"
-                  >Invoice</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/html/OrderManagement/BuyerMapping.html"
-                  >Buyer Mapping Discount</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/html/OrderManagement/ItemCatalog.html"
-                  >Item Catalog</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  href="/html/OrderManagement/Item.html"
-                  >Item</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/html/OrderManagement/PoStatus.html"
-                  >PO Status</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/html/OrderManagement/InvoiceDashboard.html"
-                  >Invoice Dashboard</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/html/OrderManagement/MyInvoices.html"
-                  >My Invoice</a
-                >
-              </li>
-            </ul>
+        <div class="dashboard-heading">
+          <div class="d-flex">
+            <a href="/html/OrderManagement//Item.html">
+              <img src="/icons/Arrow back ios (2).svg" alt="" />
+            </a>
+            <h3>Add/Edit Item</h3>
           </div>
-          <div class="">
-            <div class="dashboard-heading">
-              <div class="d-flex">
-                <a href="/html/index.html">
-                  <img src="/icons/Arrow back ios (2).svg" alt="" />
-                </a>
-                <h3>Item List</h3>
-              </div>
-              <div class="d-flex text-decoration-none">
-                <a href="/html/OrderManagement/AddItem.html" class="me-2">
-                  <img src="/icons/formkit_add.svg" alt="" />
-                </a>
-                <a href="">
-                  <img src="/icons/Synchronize.svg" alt="" />
-                </a>
-              </div>
-            </div>
-            <div id="item-list" class=""></div>
+          <div>
+            <a href="" class="text-decoration-none me-2">
+              <img src="/icons/Synchronize.svg" alt="" />
+            </a>
+            <button class="border-0">
+              <img
+                src="/icons/save.svg"
+                alt=""
+                id="SaveBtn"
+                onclick="saveDataToLocalStorage();"
+              />
+            </button>
           </div>
         </div>
+
+        <main class="main-content" id="mainContent">
+          <div
+            class="d-flex justify-content-between flex-column profile-update-container"
+          >
+            <form action="" id="itemForm" class="container-fluid mt-4">
+              <div class="row mb-3">
+                <!-- Item Code -->
+                <div class="col-12 col-md-6 mb-3">
+                  <label for="itemCode" class="form-label">Item Code*</label>
+                  <input type="text" id="itemCode" class="form-control" />
+                  <div
+                    id="itemCodeError"
+                    class="text-danger mt-1"
+                    style="display: none"
+                  >
+                    Item Code is required.
+                  </div>
+                </div>
+                <!-- Item Description -->
+                <div class="col-12 col-md-6 mb-3">
+                  <label for="itemDescription" class="form-label"
+                    >Item Description*</label
+                  >
+                  <input
+                    type="text"
+                    id="itemDescription"
+                    class="form-control"
+                  />
+                  <div
+                    id="itemDescriptionError"
+                    class="text-danger mt-1"
+                    style="display: none"
+                  >
+                    Item Description is required.
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <!-- Item Specification -->
+                <div class="col-12 col-md-6 mb-3">
+                  <label for="itemSpecification" class="form-label"
+                    >Item Specification*</label
+                  >
+                  <input
+                    type="text"
+                    id="itemSpecification"
+                    class="form-control"
+                  />
+                  <div
+                    id="itemSpecificationError"
+                    class="text-danger mt-1"
+                    style="display: none"
+                  >
+                    Item Specification required.
+                  </div>
+                </div>
+                <!-- Image -->
+                <div class="col-12 col-md-6 mb-3">
+                  <label for="image" class="form-label">Image*</label>
+                  <input type="file" id="image" class="form-control" />
+                  <div
+                    id="imageError"
+                    class="text-danger mt-1"
+                    style="display: none"
+                  >
+                    Image required.
+                  </div>
+                </div>
+              </div>
+              <div></div>
+            </form>
+          </div>
+        </main>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/index.js"></script>
-    <script src="/js/tableManagerItem.js"></script>
     <script>
-      initializeTableManager("/js/tableConfigs.json");
+      function saveDataToLocalStorage() {
+        console.log("Saving form data to localStorage!");
+
+        // Input fields
+        const itemCode = document.getElementById("itemCode");
+        const itemDescription = document.getElementById("itemDescription");
+        const itemSpecification = document.getElementById("itemSpecification");
+        const image = document.getElementById("image");
+
+        // Error message elements
+        const itemCodeError = document.getElementById("itemCodeError");
+        const itemDescriptionError = document.getElementById(
+          "itemDescriptionError"
+        );
+        const itemSpecificationError = document.getElementById(
+          "itemSpecificationError"
+        );
+        const imageError = document.getElementById("imageError");
+
+        // Validate fields
+        let isValid = true;
+
+        // Item Code validation
+        if (!itemCode.value.trim()) {
+          itemCodeError.style.display = "block";
+          isValid = false;
+        } else {
+          itemCodeError.style.display = "none";
+        }
+
+        // Item Description validation
+        if (!itemDescription.value.trim()) {
+          itemDescriptionError.style.display = "block";
+          isValid = false;
+        } else {
+          itemDescriptionError.style.display = "none";
+        }
+
+        // Item Specification validation
+        if (!itemSpecification.value.trim()) {
+          itemSpecificationError.style.display = "block";
+          isValid = false;
+        } else {
+          itemSpecificationError.style.display = "none";
+        }
+
+        // Image validation
+        if (!image.files || image.files.length === 0) {
+          imageError.style.display = "block";
+          isValid = false;
+        } else {
+          imageError.style.display = "none";
+        }
+
+        if (isValid) {
+          // Prepare the form data
+          const formData = {
+            itemCode: itemCode.value.trim(),
+            itemDescription: itemDescription.value.trim(),
+            itemSpecification: itemSpecification.value.trim(),
+          };
+
+          // Read the file content
+          const file = image.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (event) {
+              const fileContent = event.target.result; // Base64 encoded string
+              formData.imagePath = fileContent;
+
+              // Save to localStorage
+              localStorage.setItem("formData", JSON.stringify(formData));
+              console.log("Form data saved to localStorage:", formData);
+
+              // Notify the user
+              alert("Form data has been saved successfully!");
+            };
+
+            // Read file as Data URL
+            reader.readAsDataURL(file);
+          }
+        }
+      }
+
+      // Attach event listener to the save button
+      document.addEventListener("DOMContentLoaded", () => {
+        const saveBtn = document.getElementById("saveBtn");
+        saveBtn.addEventListener("click", saveDataToLocalStorage);
+      });
     </script>
   </body>
 </html>

@@ -329,8 +329,10 @@ function downloadFile(value) {
   try {
     // Ensure jsPDF is loaded
     if (!window.jspdf || !window.jspdf.jsPDF) {
-        console.error("jsPDF library is not loaded. Please include it in your project.");
-        return;
+      console.error(
+        "jsPDF library is not loaded. Please include it in your project."
+      );
+      return;
     }
 
     // Import jsPDF
@@ -346,27 +348,27 @@ function downloadFile(value) {
     pdf.save(fileName);
 
     console.log(`PDF '${fileName}' has been generated successfully.`);
-} catch (error) {
+  } catch (error) {
     console.error("An error occurred while generating the PDF:", error);
-}
+  }
 }
 
 function openModal() {
   // Create the modal dynamically if it doesn't exist
-  let modal = document.getElementById('invoiceModal');
+  let modal = document.getElementById("invoiceModal");
   if (!modal) {
-    modal = document.createElement('div');
-    modal.id = 'invoiceModal';
-    modal.style.display = 'none'; // Initially hidden
-    modal.style.position = 'fixed';
-    modal.style.top = '0';
-    modal.style.left = '0';
-    modal.style.width = '100%';
-    modal.style.height = '100%';
-    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    modal.style.zIndex = '9999';
-    modal.style.justifyContent = 'center';
-    modal.style.alignItems = 'center';
+    modal = document.createElement("div");
+    modal.id = "invoiceModal";
+    modal.style.display = "none"; // Initially hidden
+    modal.style.position = "fixed";
+    modal.style.top = "0";
+    modal.style.left = "0";
+    modal.style.width = "100%";
+    modal.style.height = "100%";
+    modal.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    modal.style.zIndex = "9999";
+    modal.style.justifyContent = "center";
+    modal.style.alignItems = "center";
 
     modal.innerHTML = `
       <div style="
@@ -433,16 +435,16 @@ function openModal() {
   }
 
   // Show the modal
-  modal.style.display = 'flex';
+  modal.style.display = "flex";
 }
 
 // Function to close the modal
 function closeModal() {
-  document.getElementById('invoiceModal').style.display = 'none';
+  document.getElementById("invoiceModal").style.display = "none";
 }
 
 // Function to handle the "Send Invoice" button
 function sendInvoice() {
-  alert('Invoice sent successfully!');
+  alert("Invoice sent successfully!");
   closeModal();
 }

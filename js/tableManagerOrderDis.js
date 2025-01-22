@@ -1,9 +1,11 @@
 function initializeTableManager(configUrl = "/js/tableConfigs.json") {
   const onDomReady = () => {
-     fetch(configUrl)
+    fetch(configUrl)
       .then((response) => {
         if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.statusText}`);
+          throw new Error(
+            `Network response was not ok: ${response.statusText}`
+          );
         }
         return response.json();
       })
@@ -16,7 +18,9 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
             fetch(config.dataUrl)
               .then((response) => {
                 if (!response.ok) {
-                  throw new Error(`Error fetching table data: ${response.statusText}`);
+                  throw new Error(
+                    `Error fetching table data: ${response.statusText}`
+                  );
                 }
                 return response.json();
               })
@@ -32,7 +36,9 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
           }
         });
       })
-      .catch((error) => console.error("Error loading table configurations:", error));
+      .catch((error) =>
+        console.error("Error loading table configurations:", error)
+      );
 
     function convertTableConfig(input) {
       return input.map((table) => ({
@@ -69,15 +75,16 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
 
       // Create table structure
       const tableDiv = document.createElement("div");
-      tableDiv.className = "table-responsive-lg table-responsive-md table-responsive-sm";
+      tableDiv.className =
+        "table-responsive-lg table-responsive-md table-responsive-sm";
       const table = document.createElement("table");
       table.className = "table  text-nowrap";
       const thead = document.createElement("thead");
       thead.className = "table table-secondary";
       const tbody = document.createElement("tbody");
       tbody.id = `${containerId}-tbody`;
-      tbody.className="table text-wrap overflow-x-auto";
-      tbody.className="table text-wrap";
+      tbody.className = "table text-wrap overflow-x-auto";
+      tbody.className = "table text-wrap";
       const tfooter = document.createElement("tfoot");
       tfooter.className = "table table-secondary";
       table.appendChild(thead);
@@ -214,23 +221,23 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
         const paginatedData = filteredData.slice(startIndex, endIndex);
         const buttonConfigs = [
           {
-            class: 'btn-blue',
-            text: 'Download',
-            onClick: 'handleBlueButton();',
-            backgroundColor: '#007bff',
+            class: "btn-blue",
+            text: "Download",
+            onClick: "handleBlueButton();",
+            backgroundColor: "#007bff",
           },
           {
-            class: 'btn-orange',
-            text: 'Dispatch',
+            class: "btn-orange",
+            text: "Dispatch",
             onClick: 'handleOrangeButton("Hello");',
-            backgroundColor: '#fd7e14',
+            backgroundColor: "#fd7e14",
           },
           {
-            class: 'btn-green',
-            text: 'ASN',
+            class: "btn-green",
+            text: "ASN",
             onClick: 'handleGreenButton("World");',
-            backgroundColor: '#28a745',
-          }
+            backgroundColor: "#28a745",
+          },
         ];
         tbody.innerHTML = paginatedData
           .map(
@@ -243,9 +250,13 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
                         .map(
                           (config) => `
                             <button
-                              class='${config.class} text-white btn btn-sm btn-lg btn-md px-lg-2'
+                              class='${
+                                config.class
+                              } text-white btn btn-sm btn-lg btn-md px-lg-2'
                               onclick='${config.onClick}(${row[header.value]})'
-                              style='background-color: ${config.backgroundColor};'>
+                              style='background-color: ${
+                                config.backgroundColor
+                              };'>
                               ${config.text}
                             </button>`
                         )
@@ -339,37 +350,42 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
 // Example functions for handling button clicks
 function handleBlueButton(value) {
   try {
-      // Ensure jsPDF is loaded
-      if (!window.jspdf || !window.jspdf.jsPDF) {
-          console.error("jsPDF library is not loaded. Please include it in your project.");
-          return;
-      }
+    // Ensure jsPDF is loaded
+    if (!window.jspdf || !window.jspdf.jsPDF) {
+      console.error(
+        "jsPDF library is not loaded. Please include it in your project."
+      );
+      return;
+    }
 
-      // Import jsPDF
-      const { jsPDF } = window.jspdf;
-      const pdf = new jsPDF();
+    // Import jsPDF
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
 
-      // Add dynamic content to the PDF using the 'value' parameter
-      const content = value || "This is your dynamically generated PDF file!";
-      pdf.text(content, 10, 10);
+    // Add dynamic content to the PDF using the 'value' parameter
+    const content = value || "This is your dynamically generated PDF file!";
+    pdf.text(content, 10, 10);
 
-      // Save the PDF with a dynamic filename
-      const fileName = `document_${Date.now()}.pdf`; // Example: document_1677888800000.pdf
-      pdf.save(fileName);
+    // Save the PDF with a dynamic filename
+    const fileName = `document_${Date.now()}.pdf`; // Example: document_1677888800000.pdf
+    pdf.save(fileName);
 
-      console.log(`PDF '${fileName}' has been generated successfully.`);
+    console.log(`PDF '${fileName}' has been generated successfully.`);
   } catch (error) {
-      console.error("An error occurred while generating the PDF:", error);
+    console.error("An error occurred while generating the PDF:", error);
   }
 }
 
-
 function handleOrangeButton(value) {
-  console.log('Dispatch button clicked with value:', value);
+  console.log("Dispatch button clicked with value:", value);
   // Add your functionality here
+  window.location =
+    "http://127.0.0.1:5500/html/OrderManagement/SupplierForm.html";
 }
 
 function handleGreenButton(value) {
-  console.log('ASN button clicked with value:', value);
+  console.log("ASN button clicked with value:", value);
   // Add your functionality here
+  window.location =
+    "http://127.0.0.1:5500/html/OrderManagement/SupplierFormASN.html";
 }

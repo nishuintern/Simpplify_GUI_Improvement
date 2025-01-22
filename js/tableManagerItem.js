@@ -3,7 +3,9 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
     fetch(configUrl)
       .then((response) => {
         if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.statusText}`);
+          throw new Error(
+            `Network response was not ok: ${response.statusText}`
+          );
         }
         return response.json();
       })
@@ -16,7 +18,9 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
             fetch(config.dataUrl)
               .then((response) => {
                 if (!response.ok) {
-                  throw new Error(`Error fetching table data: ${response.statusText}`);
+                  throw new Error(
+                    `Error fetching table data: ${response.statusText}`
+                  );
                 }
                 return response.json();
               })
@@ -32,7 +36,9 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
           }
         });
       })
-      .catch((error) => console.error("Error loading table configurations:", error));
+      .catch((error) =>
+        console.error("Error loading table configurations:", error)
+      );
 
     function convertTableConfig(input) {
       return input.map((table) => ({
@@ -95,6 +101,9 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
           sortOrder = sortOrder === "asc" ? "desc" : "asc";
           renderTable();
         });
+
+        // Append the header cell to the header row
+        headerRow.appendChild(th);
       });
 
       // Append the header row to thead
@@ -171,18 +180,18 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
         const paginatedData = filteredData.slice(startIndex, endIndex);
         const buttonConfigs = [
           {
-            class: 'btn-show-img',
-            text: 'Show Image',
-            onClick: 'handleBlueButton',
-            backgroundColor: '#ffff',
-            color:'#424F9C',
+            class: "btn-show-img",
+            text: "Show Image",
+            onClick: "handleBlueButton",
+            backgroundColor: "#ffff",
+            color: "#424F9C",
           },
           {
-            class: 'btn-blue',
-            text: 'Map/Edit HSN',
-            onClick: 'handleOrangeButton',
-            backgroundColor: '#027EDC',
-            color:'#FFFFFF',
+            class: "btn-blue",
+            text: "Map/Edit HSN",
+            onClick: "handleOrangeButton",
+            backgroundColor: "#027EDC",
+            color: "#FFFFFF",
           },
         ];
         tbody.innerHTML = paginatedData
@@ -197,8 +206,12 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
                           (config) => `
                             <button
                               class='${config.class}'
-                              onclick='${config.onClick}(${row[header.key]})'
-                              style='background-color: ${config.backgroundColor}; color:${config.color}; background-image: ${config.backgroundImage};'>
+                              onclick='${config.onClick}(${row[header.value]})'
+                              style='background-color: ${
+                                config.backgroundColor
+                              }; color:${config.color}; background-image: ${
+                            config.backgroundImage
+                          };'>
                               ${config.text}
                             </button>`
                         )
@@ -291,16 +304,17 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
 
 // Example functions for handling button clicks
 function handleBlueButton(value) {
-  console.log('Download button clicked with value:', value);
+  console.log("Download button clicked with value:", value);
   // Add your functionality here
 }
 
 function handleOrangeButton(value) {
-  console.log('Dispatch button clicked with value:', value);
+  console.log("Dispatch button clicked with value:", value);
   // Add your functionality here
+  window.location='http://127.0.0.1:5500/html/OrderManagement/ItemHSNMapping.html'
 }
 
 function handleGreenButton(value) {
-  console.log('ASN button clicked with value:', value);
+  console.log("ASN button clicked with value:", value);
   // Add your functionality here
 }
