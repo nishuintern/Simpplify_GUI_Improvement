@@ -230,9 +230,9 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
                     if (actionValue === "Download") {
                       // Create a link that triggers a download
                       actionHTML = `<a href='#' class='text-decoration-none text-primary bg-light' onclick='downloadFile()'>${actionValue}</a>`;
-                    } else if (actionValue === "Download Views Bank") {
+                    } else if (actionValue === "Download View Bank") {
                       // Create a link that opens the modal
-                      actionHTML = `<a href='#' class='text-decoration-none text-primary' onclick='openModal()'>${actionValue}</a>`;
+                      actionHTML = `<a href='#' class='text-decoration-none text-primary bg-light' onclick='openSendInvoiceModal()'>${actionValue}</a>`;
                     } else {
                       actionHTML = `<a href='#' class='text-decoration-none text-primary'>${actionValue}</a>`;
                     }
@@ -353,97 +353,106 @@ function downloadFile(value) {
   }
 }
 
-function openModal() {
-  // Create the modal dynamically if it doesn't exist
-  let modal = document.getElementById("invoiceModal");
-  if (!modal) {
-    modal = document.createElement("div");
-    modal.id = "invoiceModal";
-    modal.style.display = "none"; // Initially hidden
-    modal.style.position = "fixed";
-    modal.style.top = "0";
-    modal.style.left = "0";
-    modal.style.width = "100%";
-    modal.style.height = "100%";
-    modal.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-    modal.style.zIndex = "9999";
-    modal.style.justifyContent = "center";
-    modal.style.alignItems = "center";
+function openSendInvoiceModal() {
+  function openModal() {
+    // Create the modal if it doesn't exist, and show it
+    const modal = createModal();
+    modal.style.display = "flex";
+  }
+  function createModal() {
+    // Check if the modal already exists
+    let modal = document.getElementById("invoiceModal");
+    if (!modal) {
+      // Dynamically create the modal
+      modal = document.createElement("div");
+      modal.id = "invoiceModal";
+      modal.style.display = "none"; // Initially hidden
+      modal.style.position = "fixed";
+      modal.style.top = "0";
+      modal.style.left = "0";
+      modal.style.width = "100%";
+      modal.style.height = "100%";
+      modal.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+      modal.style.zIndex = "9999";
+      modal.style.justifyContent = "center";
+      modal.style.alignItems = "center";
 
-    modal.innerHTML = `
-      <div style="
-        background: white;
-        width: 400px;
-        border-radius: 5px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      ">
+      modal.innerHTML = `
         <div style="
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 10px 15px;
-          background: #f5f5f5;
-          border-bottom: 1px solid #ddd;
+          background: white;
+          width: 400px;
+          border-radius: 5px;
+          overflow: hidden;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          animation: fadeIn 0.3s ease-in-out;
         ">
-          <h3 style="margin: 0; font-size: 18px;">Send Invoice</h3>
-          <button onclick="closeModal()" style="
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            color: #888;
-          ">&times;</button>
-        </div>
-        <div style="padding: 15px;">
-          <table style="
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-          ">
-            <thead>
-              <tr>
-                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Select one</th>
-                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Bank Code</th>
-                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Bank Name</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                  <input type="radio" name="bankSelection" />
-                </td>
-                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">001</td>
-                <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">HDFC</td>
-              </tr>
-            </tbody>
-          </table>
-          <button onclick="sendInvoice()" style="
-            background: #28a745;
-            color: white;
-            border: none;
+          <div style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 10px 15px;
-            border-radius: 3px;
-            font-size: 14px;
-            cursor: pointer;
-          ">Send Invoice</button>
+            background: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+          ">
+            <h3 style="margin: 0; font-size: 18px;">Send Invoice</h3>
+            <button onclick="closeModal()" style="
+              background: none;
+              border: none;
+              font-size: 20px;
+              cursor: pointer;
+              color: #888;
+            ">&times;</button>
+          </div>
+          <div style="padding: 15px;">
+            <table style="
+              width: 100%;
+              border-collapse: collapse;
+              margin-bottom: 20px;
+            ">
+              <thead>
+                <tr>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Select one</th>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Bank Code</th>
+                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Bank Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                    <input type="radio" name="bankSelection" />
+                  </td>
+                  <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">001</td>
+                  <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">HDFC</td>
+                </tr>
+              </tbody>
+            </table>
+            <button onclick="sendInvoice()" style="
+              background: #28a745;
+              color: white;
+              border: none;
+              padding: 10px 15px;
+              border-radius: 3px;
+              font-size: 14px;
+              cursor: pointer;
+            ">Send Invoice</button>
+          </div>
         </div>
-      </div>
-    `;
+      `;
 
-    document.body.appendChild(modal);
+      document.body.appendChild(modal);
+    }
+    return modal;
   }
 
-  // Show the modal
-  modal.style.display = "flex";
+  openModal();
 }
-
-// Function to close the modal
 function closeModal() {
-  document.getElementById("invoiceModal").style.display = "none";
+  // Hide the modal if it exists
+  const modal = document.getElementById("invoiceModal");
+  if (modal) {
+    modal.style.display = "none";
+  }
 }
-
-// Function to handle the "Send Invoice" button
 function sendInvoice() {
   alert("Invoice sent successfully!");
   closeModal();

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/TableManager.css">
+    <link rel="stylesheet" href="/css/TableManager.css" />
     <link rel="stylesheet" href="/css/OrderManagement/OrderDispatch.css" />
     <link rel="stylesheet" href="/css/OrderManagement/Buyer.css" />
     <link rel="stylesheet" href="/css/style.css" />
@@ -111,14 +111,14 @@
         <header
           class="header d-sm-flex justify-content-sm-between justify-content-lg-between justify-content-md-between align-items-center"
         >
-        <div class="d-lg-flex d-md-none d-sm-none">
-          <button
-            class="bg-transparent border-0 text-primary"
-            id="toggle-sidebar"
-          >
-            <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
-          </button>
-        </div>
+          <div class="d-lg-flex d-md-none d-sm-none">
+            <button
+              class="bg-transparent border-0 text-primary"
+              id="toggle-sidebar"
+            >
+              <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
+            </button>
+          </div>
           <div class="d-lg-none d-md-flex d-sm-flex">
             <img src="/icons/newton icon copy 1.svg" alt="Company" />
             <span class="fs-4 m-2">Simpplify</span>
@@ -460,8 +460,8 @@
           </nav>
         </header>
         <!-- Dashboard Heading -->
-        <div class="row-container">
-          <div id="subSidebar0" class="sub-sidebar" style="z-index: 1000">
+        <div class="">
+          <div id="subSidebar0" class="d-none" style="z-index: 1000">
             <span class="ps-3 pt-5 title-text">Order Management</span>
             <hr />
             <ul class="nav flex-column">
@@ -536,24 +536,87 @@
               <div>
                 <label class="m-3" for="buyer-customer">
                   <span>Customer</span>
-                  <select class="ms-4 py-2 px-lg-5 px-md-3 px-sm-2" name="size" id="buyer-customer">
+                  <select
+                    class="ms-4 py-1 px-lg-5 px-md-3 px-sm-2"
+                    name="size"
+                    id="buyer-customer"
+                  >
                     <option value="Customer">Select Customer</option>
-                    <option value="Customer">Indoasian</option>
+                    <option value="Indoasian">Indoasian</option>
                   </select>
                 </label>
               </div>
               <div>
                 <label class="m-3" for="buyer-bank">
                   <span class="me-4">Bank</span>
-                  <select class="py-2 px-lg-5 px-md-3 px-sm-2" name="size" id="buyer-bank">
+                  <select
+                    class="py-1 px-lg-5 px-md-3 px-sm-2"
+                    name="size"
+                    id="buyer-bank"
+                  >
                     <option value="bank">Select Bank</option>
-                    <option value="bank">HDFC</option>
-                    <option value="bank">HSFC</option>
+                    <option value="HDFC">HDFC</option>
+                    <option value="HSFC">HSFC</option>
                   </select>
                 </label>
               </div>
             </div>
-            <div id="buyer-mapping" class="table-responsive m-2"></div>
+
+            <div class="d-flex justify-content-between">
+              <div>
+                <label class="m-3" for="page-size">
+                  <span>Page Size :</span>
+                  <select class="px-3 py-1" name="size" id="sizeOfPage">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                  </select>
+                </label>
+              </div>
+              <div>
+                <label class="m-3" for="search">
+                  <span>Search:</span>
+                  <input class="ps-5" type="text" id="search-input" />
+                </label>
+              </div>
+            </div>
+
+            <div
+              class="table table-responsive"
+              style="max-height: 40vh; overflow: auto"
+            >
+              <table class="table">
+                <thead class="table-secondary">
+                  <tr>
+                    <th>Customer</th>
+                    <th>Bank Code</th>
+                    <th>Bank Name</th>
+                  </tr>
+                </thead>
+                <div>
+                  <tbody id="table-body">
+                    <!-- Data will be dynamically inserted here -->
+                  </tbody>
+                </div>
+              </table>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <span id="pagination-info">Showing 1 to 5 of 10 entries</span>
+              <nav aria-label="...">
+                <ul class="pagination" id="pagination-links">
+                  <li class="page-item" id="previous-btn">
+                    <a class="page-link" href="#">Previous</a>
+                  </li>
+                  <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item" id="next-btn">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
       </div>
@@ -565,6 +628,187 @@
     <!-- <script src="/js/dropdownFilter.js"></script> -->
     <script>
       initializeTableManager("/js/tableConfigs.json");
+    </script>
+    <script>
+      // Example Data
+      const data = [
+        { customer: "Indoasian", bankCode: "001", bankName: "HSFC" },
+        { customer: "Indoasian", bankCode: "002", bankName: "HSFC" },
+        { customer: "Indoasian", bankCode: "003", bankName: "HDFC" },
+        { customer: "Indoasian", bankCode: "001", bankName: "HSFC" },
+        { customer: "Indoasian", bankCode: "005", bankName: "HDFC" },
+        { customer: "Indoasian", bankCode: "003", bankName: "HSFC" },
+        { customer: "Indoasian", bankCode: "002", bankName: "HDFC" },
+        { customer: "Indoasian", bankCode: "001", bankName: "HSFC" },
+        { customer: "Indoasian", bankCode: "001", bankName: "HDFC" },
+        { customer: "Indoasian", bankCode: "006", bankName: "HSFC" },
+      ];
+
+      let currentPage = 1;
+      let pageSize = 5;
+      let filteredData = [...data]; // Initially, no filters are applied
+
+      // Render Table Function
+      function renderTable(data) {
+        const tableBody = document.getElementById("table-body");
+        tableBody.innerHTML = "";
+        data.forEach((item) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+      <td>${item.customer}</td>
+      <td>${item.bankCode}</td>
+      <td>${item.bankName}</td>
+    `;
+          tableBody.appendChild(row);
+        });
+
+        updatePaginationInfo(data);
+      }
+
+      // Update Pagination Info (Showing X to Y of Z entries)
+      function updatePaginationInfo(data) {
+        const paginationInfo = document.getElementById("pagination-info");
+        const totalEntries = data.length;
+        const startIndex = (currentPage - 1) * pageSize + 1;
+        const endIndex = Math.min(currentPage * pageSize, totalEntries);
+        paginationInfo.textContent = `Showing ${startIndex} to ${endIndex} of ${totalEntries} entries`;
+
+        updatePaginationLinks(data);
+      }
+
+      // Update Pagination Links (Previous, Next, and page numbers)
+      function updatePaginationLinks(data) {
+        const paginationLinks = document.getElementById("pagination-links");
+        const totalPages = Math.ceil(data.length / pageSize);
+        const pageItems = paginationLinks.querySelectorAll(".page-item");
+
+        // Remove active class from all pages
+        pageItems.forEach((item) => item.classList.remove("active"));
+
+        // Disable previous button on first page
+        const previousBtn = document.getElementById("previous-btn");
+        if (currentPage === 1) {
+          previousBtn.classList.add("disabled");
+        } else {
+          previousBtn.classList.remove("disabled");
+        }
+
+        // Disable next button on last page
+        const nextBtn = document.getElementById("next-btn");
+        if (currentPage === totalPages) {
+          nextBtn.classList.add("disabled");
+        } else {
+          nextBtn.classList.remove("disabled");
+        }
+
+        // Add the active class to the current page
+        paginationLinks.querySelectorAll(".page-link").forEach((link) => {
+          const pageNum = parseInt(link.textContent);
+          if (pageNum === currentPage) {
+            link.parentElement.classList.add("active");
+          }
+        });
+      }
+
+      // Handle Page Navigation (Previous, Next)
+      document.getElementById("previous-btn").addEventListener("click", (e) => {
+        e.preventDefault();
+        if (currentPage > 1) {
+          currentPage--;
+          renderTable(
+            filteredData.slice(
+              (currentPage - 1) * pageSize,
+              currentPage * pageSize
+            )
+          );
+        }
+      });
+
+      document.getElementById("next-btn").addEventListener("click", (e) => {
+        e.preventDefault();
+        const totalPages = Math.ceil(filteredData.length / pageSize);
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderTable(
+            filteredData.slice(
+              (currentPage - 1) * pageSize,
+              currentPage * pageSize
+            )
+          );
+        }
+      });
+
+      // Handle Filter and Search Logic
+      function applyFilters() {
+        // Get filter values
+        const customerFilter = document
+          .getElementById("buyer-customer")
+          .value.trim();
+        const bankFilter = document.getElementById("buyer-bank").value.trim();
+        const searchQuery = document
+          .getElementById("search-input")
+          .value.toLowerCase()
+          .trim();
+
+        // Apply filters to the data
+        filteredData = data.filter((item) => {
+          // Check if the item matches the customer filter
+          const matchesCustomer =
+            customerFilter === "" || // No filter applied for customer
+            item.customer.toUpperCase() === customerFilter.toUpperCase(); // Exact match
+
+          // Check if the item matches the bank filter
+          const matchesBank = bankFilter === "" || // No filter applied for bank
+          item.bankName.toUpperCase() === bankFilter.toUpperCase(); // Exact match
+
+          // Check if the item matches the search query
+          const matchesSearch =
+            searchQuery === "" || // No search query applied
+            item.customer.toLowerCase().includes(searchQuery) || // Search matches customer
+            item.bankCode.toLowerCase().includes(searchQuery) || // Search matches bank code
+            item.bankName.toLowerCase().includes(searchQuery); // Search matches bank name
+
+          // Return true if all conditions are met
+          return matchesCustomer && matchesBank && matchesSearch;
+        });
+
+        // Paginate the filtered data and render the table
+        const paginatedData = filteredData.slice(
+          (currentPage - 1) * pageSize,
+          currentPage * pageSize
+        );
+        renderTable(paginatedData);
+
+        // Update pagination info (optional)
+        updatePaginationInfo();
+      }
+
+      // Event Listeners for Dropdown Filters and Search Input
+      document
+        .getElementById("buyer-customer")
+        .addEventListener("change", applyFilters);
+      document
+        .getElementById("buyer-bank")
+        .addEventListener("change", applyFilters);
+      document
+        .getElementById("search-input")
+        .addEventListener("input", applyFilters);
+
+      // Event Listener for Page Size Change
+      document.getElementById("sizeOfPage").addEventListener("change", (e) => {
+        pageSize = parseInt(e.target.value);
+        renderTable(
+          filteredData.slice(
+            (currentPage - 1) * pageSize,
+            currentPage * pageSize
+          )
+        );
+      });
+
+      // Initialize Table Rendering
+      renderTable(
+        filteredData.slice((currentPage - 1) * pageSize, currentPage * pageSize)
+      );
     </script>
   </body>
 </html>

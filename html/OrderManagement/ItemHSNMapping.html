@@ -490,7 +490,7 @@
                 src="/icons/save.svg"
                 alt=""
                 id="SaveBtn"
-                onclick="saveDataToLocalStorage();"
+                onclick="storeDataToLocalStorage();"
               />
             </button>
           </div>
@@ -507,9 +507,9 @@
                   <label for="Chapter" class="form-label">Chapter*</label>
                   <select name="chapter" id="chapter" class="form-select">
                     <option value="">Select Chapter</option>
-                    <option value="1">Chapter 1</option>
-                    <option value="2">Chapter 2</option>
-                    <option value="3">Chapter 3</option>
+                    <option value="Chapter 1">Chapter 1</option>
+                    <option value="Chapter 2">Chapter 2</option>
+                    <option value="Chapter 3">Chapter 3</option>
                   </select>
                   <div
                     id="ChapterError"
@@ -524,9 +524,9 @@
                   <label for="Heading" class="form-label">Heading*</label>
                   <select name="heading" id="heading" class="form-select">
                     <option value="">Select Heading</option>
-                    <option value="1">Heading 1</option>
-                    <option value="2">Heading 2</option>
-                    <option value="3">Heading 3</option>
+                    <option value="Heading 1">Heading 1</option>
+                    <option value="Heading 2">Heading 2</option>
+                    <option value="Heading 3">Heading 3</option>
                   </select>
                   <div
                     id="HeadingError"
@@ -573,90 +573,71 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/index.js"></script>
     <script>
-      function saveDataToLocalStorage() {
-        console.log("Saving form data to localStorage!");
+      function storeDataToLocalStorage() {
+        console.log("Attempting to store form data to localStorage!");
 
-        // Input fields
-        const Chapter = document.getElementById("Chapter");
-        const Heading = document.getElementById("Heading");
-        const HSNCode = document.getElementById("HSNCode");
-        // const image = document.getElementById("image");
+        // Fetch the input fields
+        const chapter = document.getElementById("chapter");
+        const heading = document.getElementById("heading");
+        const hsnCode = document.getElementById("HSNCode");
 
-        // Error message elements
-        const ChapterError = document.getElementById("chapterError");
-        const HeadingError = document.getElementById("HeadingError");
-        const HSNCodeError = document.getElementById("HSNCodeError");
-        // const imageError = document.getElementById("imageError");
+        // Fetch the error message elements
+        const chapterError = document.getElementById("ChapterError");
+        const headingError = document.getElementById("HeadingError");
+        const hsnCodeError = document.getElementById("HSNCodeError");
 
-        // Validate fields
+        // Validation flags
         let isValid = true;
 
-        // Item Code validation
-        if (!Chapter.value.trim()) {
+        // Chapter validation
+        if (!chapter.value.trim()) {
           chapterError.style.display = "block";
           isValid = false;
         } else {
           chapterError.style.display = "none";
         }
 
-        // Item Description validation
-        if (!Heading.value.trim()) {
-          HeadingError.style.display = "block";
+        // Heading validation
+        if (!heading.value.trim()) {
+          headingError.style.display = "block";
           isValid = false;
         } else {
-          HeadingError.style.display = "none";
+          headingError.style.display = "none";
         }
 
-        // Item Specification validation
-        if (!HSNCode.value.trim()) {
-          HSNCodeError.style.display = "block";
+        // HSN Code validation
+        if (!hsnCode.value.trim()) {
+          hsnCodeError.style.display = "block";
           isValid = false;
         } else {
-          HSNCodeError.style.display = "none";
+          hsnCodeError.style.display = "none";
         }
 
-        // Image validation
-        // if (!image.files || image.files.length === 0) {
-        //   imageError.style.display = "block";
-        //   isValid = false;
-        // } else {
-        //   imageError.style.display = "none";
-        // }
-
+        // If all fields are valid, save to localStorage
         if (isValid) {
-          // Prepare the form data
           const formData = {
-            Chapter: Chapter.value.trim(),
-            Heading: Heading.value.trim(),
-            HSNCode: HSNCode.value.trim(),
+            Chapter: chapter.value.trim(),
+            Heading: heading.value.trim(),
+            HSNCode: hsnCode.value.trim(),
           };
 
-          // Read the file content
-          const file = image.files[0];
-          if (file) {
-            // const reader = new FileReader();
-            reader.onload = function (event) {
-              // const fileContent = event.target.result; // Base64 encoded string
-              // formData.imagePath = fileContent;
+          localStorage.setItem("formData", JSON.stringify(formData));
+          console.log("Form data saved to localStorage:", formData);
 
-              // Save to localStorage
-              localStorage.setItem("formData", JSON.stringify(formData));
-              console.log("Form data saved to localStorage:", formData);
-
-              // Notify the user
-              alert("Form data has been saved successfully!");
-            };
-
-            // Read file as Data URL
-            reader.readAsDataURL(file);
-          }
+          // Notify the user
+          alert("Form data has been saved successfully!");
+        } else {
+          // Notify the user about validation errors
+          alert("Please fill in all required fields before submitting.");
         }
       }
 
       // Attach event listener to the save button
       document.addEventListener("DOMContentLoaded", () => {
         const saveBtn = document.getElementById("saveBtn");
-        saveBtn.addEventListener("click", saveDataToLocalStorage);
+        if (saveBtn) {
+          saveBtn.addEventListener("click", storeDataToLocalStorage);
+        }
       });
     </script>
   </body>

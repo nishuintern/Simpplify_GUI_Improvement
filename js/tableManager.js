@@ -230,7 +230,6 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
                   rowClass = "table-danger"; // Red background for "not win"
                 }
               }
-
               return `<tr class="${rowClass}">${headers
                 .map((header) => `<td >${row[header.key] || ""}</td>`)
                 .join("")}</tr>`;

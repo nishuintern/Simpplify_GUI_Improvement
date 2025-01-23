@@ -182,7 +182,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
           {
             class: "btn-show-img",
             text: "Show Image",
-            onClick: "handleBlueButton",
+            onClick: "openModal();",
             backgroundColor: "#ffff",
             color: "#424F9C",
           },
@@ -303,15 +303,111 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
 }
 
 // Example functions for handling button clicks
-function handleBlueButton(value) {
-  console.log("Download button clicked with value:", value);
-  // Add your functionality here
+function openModal(itemDescription) {
+  // Array of image URLs
+  const images = [
+    "/images/washing-machine.jfif",
+    "/images/router.jfif",
+    "/images/copper-wire.jfif",
+    "/images/wiper-motor.jfif",
+  ];
+
+  // Randomly select an image
+  const randomIndex = Math.floor(Math.random() * images.length);
+  const randomImage = images[randomIndex];
+
+  // Create the modal dynamically
+  let modal = document.getElementById("dynamicModal");
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "dynamicModal";
+    modal.style.position = "fixed";
+    modal.style.top = "0";
+    modal.style.left = "0";
+    modal.style.width = "100%";
+    modal.style.height = "100%";
+    modal.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    modal.style.display = "flex";
+    modal.style.justifyContent = "center";
+    modal.style.alignItems = "center";
+    modal.style.zIndex = "10000";
+
+    modal.innerHTML = `
+      <div style="
+        background: white;
+        width: 400px;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      ">
+        <div style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 15px;
+          background: #f5f5f5;
+          border-bottom: 1px solid #ddd;
+        ">
+          <h3 style="margin: 0; font-size: 18px;" id="modalTitle">Images</h3>
+          <button onclick="closeModal()" style="
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #888;
+          ">&times;</button>
+        </div>
+        <div style="padding: 15px; text-align: center;">
+          <p id="itemDescription" style="font-size: 16px; font-weight: bold; margin-bottom: 15px;"></p>
+          <img id="modalImage" src="" alt="Random Image" style="width: 100%; border: 1px solid #ddd; border-radius: 5px;">
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+
+  // Update modal content dynamically
+  document.getElementById("itemDescription").textContent = itemDescription;
+  document.getElementById("modalImage").src = randomImage;
+
+  // Show the modal
+  modal.style.display = "flex";
 }
+
+// Close the modal
+function closeModal() {
+  const modal = document.getElementById("dynamicModal");
+  if (modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Dynamically create a button to open the modal
+function createOpenModalButton() {
+  const openModalButton = document.createElement("button");
+  openModalButton.textContent = "Open Modal";
+  openModalButton.style.backgroundColor = "#007bff";
+  openModalButton.style.color = "white";
+  openModalButton.style.border = "none";
+  openModalButton.style.padding = "10px 15px";
+  openModalButton.style.borderRadius = "5px";
+  openModalButton.style.fontSize = "14px";
+  openModalButton.style.cursor = "pointer";
+  openModalButton.style.margin = "20px";
+
+  openModalButton.onclick = openModal;
+
+  document.body.appendChild(openModalButton);
+}
+
+// Call the function to create the button
+createOpenModalButton();
 
 function handleOrangeButton(value) {
   console.log("Dispatch button clicked with value:", value);
   // Add your functionality here
-  window.location='http://127.0.0.1:5500/html/OrderManagement/ItemHSNMapping.html'
+  window.location =
+    "http://127.0.0.1:5500/html/OrderManagement/ItemHSNMapping.html";
 }
 
 function handleGreenButton(value) {

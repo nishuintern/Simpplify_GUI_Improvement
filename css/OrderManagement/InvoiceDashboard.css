@@ -248,21 +248,6 @@ main {
   overflow: hidden;
 }
 
-aside {
-  grid-column: 1;
-  background-color: #141d38;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: auto;
-  transition: width 0.3s ease; /* Smooth transition */
-}
-
-aside:hover {
-  width: 250px; /* Expanded width on hover */
-}
-
 aside::-webkit-scrollbar {
   display: none;
   /* Hides scrollbar */
@@ -328,86 +313,66 @@ aside::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding-top: 5px; */
   padding-left: 5px;
-  /* height: 100dvh; */
+  height: 100dvh;
   transition: width 0.3s ease;
   overflow: hidden;
 }
 
-.sidebar a span {
-  margin: 12px;
-  color: #fff;
-  text-wrap: nowrap;
-  display: none;
+.sidebar.expanded {
+  width: 228px;
+  align-items: flex-start;
+  overflow-y: auto;
 }
 
-.sidebar:hover {
-  width: auto;
-  display: block;
-  align-items: start;
+.logo-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo-container img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  flex-shrink: 0; /* Prevent resizing */
+}
+
+.logo-container .title {
+  display: none; /* Hidden by default */
+  font-size: 18px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.sidebar.expanded .logo-container .title {
+  display: block; /* Visible when sidebar is expanded */
 }
 
 .menu-item {
   display: flex;
   align-items: center;
-  /* padding: 10px 15px; */
   width: 100%;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
+  padding: 5px 15px;
 }
 
 .menu-item img {
   width: 30px;
   height: 30px;
-  /* margin-right: 15px; */
-  margin-left: auto;
+  margin-right: 10px;
+  flex-shrink: 0;
 }
 
 .menu-item span {
-  display: none;
   font-size: 16px;
   white-space: nowrap;
+  display: none; /* Hidden by default */
 }
 
-.sidebar:hover .menu-item img {
-  margin-left: 10px;
-}
-
-.sidebar:hover .menu-item span {
-  display: block;
-}
-
-.sidebar .logo img {
-  display: flex;
-  width: 50px;
-  margin-bottom: 10px;
-  margin-top: 20px;
-  cursor: pointer;
-  align-items: center;
-}
-
-.sidebar .logo img :hover {
-  display: flex;
-  justify-items: start;
-}
-
-.logo-container {
-  display: flex;
-  /* justify-self: center; */
-}
-
-.logo-container h3 {
-  margin: 15px;
-  color: #fff;
-  display: none;
-  white-space: nowrap;
-}
-
-.sidebar:hover .logo-container h3 {
-  display: block;
-  margin-top: 30px;
-  margin-left: 10px;
+.sidebar.expanded .menu-item span {
+  display: inline; /* Visible when sidebar is expanded */
 }
 
 .sidebar nav ul {
@@ -419,45 +384,39 @@ aside::-webkit-scrollbar {
 
 .sidebar nav ul li {
   display: flex;
-  justify-items: end;
-  /* margin: 10px 0; */
-  position: relative;
   align-items: center;
-  /* margin-top: 10px; */
 }
 
 .sidebar nav ul li a {
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 2px;
+  width: 100%;
+  padding: 5px;
   transition: background-color 0.3s ease;
 }
 
 .sidebar nav ul li a:hover {
-  color: ffffff;
   background-color: #3c4059;
   border-radius: 4px;
-  width: 100%;
 }
 
 .sidebar nav ul li a .icon {
-  margin-right: 10px;
-  font-size: 24px;
+  width: 40px; /* Fixed width for icons */
+  text-align: center;
+  font-size: 20px;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .sidebar nav ul li a .title {
-  display: none;
-  font-size: 16px;
+  display: none; /* Hidden by default */
   margin-left: 10px;
-  white-space: nowrap;
 }
 
-.sidebar:hover nav ul li a .title {
-  display: inline;
+.sidebar.expanded nav ul li a .title {
+  display: inline; /* Visible when sidebar is expanded */
 }
 
 /* Main Content */
@@ -686,60 +645,7 @@ input[type="radio"]:checked {
   /* Modern browsers support */
 }
 
-.sidenav {
-  background-color: #141d38;
-  margin: 0;
-  padding: 0;
-  /* width: 30px; */
-  /* transition: width 0.3s ease; */
-  position: relative;
-  /* overflow: hidden; */
-  /* Smooth transition */
-}
 
-.sidenav:hover {
-  width: 20px;
-}
-
-.sidenav:hover .sub-sidebar {
-  display: none;
-  background-color: #f8f9fa;
-  border-left: 1px solid #dee2e6;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  padding: 10px;
-}
-
-/* .sidenav .content {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    position: absolute;
-    color: white;
-    left: 60px; 
-    top: auto;
-
-}
-.sidenav:hover .content{
-    opacity: 1;
-} */
-
-nav span a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-nav ul li {
-  margin-top: 20px;
-}
-
-/* .nav-link.active {
-    border: 1px solid #3C4059;
-    padding-left: 4px;
-    background-color: #3C4059;
-} */
 aside nav {
   width: auto;
 }
@@ -1081,76 +987,6 @@ th .sort-icons i {
   color: #ffffff;
   border: none;
 }
-
-/* .sortable-header {
-  display: flexbox;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  gap: 8px;
-}
-
-.sort-icons {
-  display: flex;
-  flex-direction: column;
-}
-
-.sort-icon {
-  cursor: pointer;
-  font-size: 5px;
-  line-height: 1;
-} */
-
-.page-size-container label,
-.search-div label {
-  font-weight: var(--label-text-weight);
-  font-size: var(--label-text-size);
-  line-height: var(--label-text-font-lh);
-}
-
-.pag-div div {
-  font-weight: var(--pag-text-weight);
-  font-size: var(--pag-text-size);
-  line-height: var(--pag-text-lh);
-}
-
-/* Responsive Design */
-/* @media (max-width: 768px) {
-  .tables-section {
-    grid-template-columns: 1fr;
-  }
-
-  .sidebar {
-    width: 80px;
-  }
-
-  .sidebar ul li {
-    display: flex;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-
-  .sidebar:hover {
-    width: 80px;
-  }
-
-  .sidebar:hover .menu-item span {
-    display: none;
-  }
-
-  .header {
-    font-size: 14px;
-  }
-
-  .search-and-todo {
-    grid-template-columns: 1fr;
-  }
-
-  aside {
-    display: none;
-  }
-} */
-
 input[type="date"] {
   border: 1px solid #babed8;
 }
@@ -1183,9 +1019,8 @@ input:focus {
 }
 
 .card-title {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
-
 
 .card-text {
   text-align: center;
@@ -1194,7 +1029,7 @@ input:focus {
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
-    minmax(210px,1px)
+    minmax(210px, 1px)
   ); /* Flexible columns */
   grid-gap: 20px; /* Space between grid items */
   padding: 30px; /* Padding around the grid */
@@ -1203,27 +1038,26 @@ input:focus {
 }
 
 .form-control,
-        .btn {
-            height: 40px; /* Consistent height for all inputs and buttons */
-        }
+.btn {
+  height: 40px; /* Consistent height for all inputs and buttons */
+}
 
-        .form-container {
-            display: flex;
-            flex-wrap: wrap; /* Ensures wrapping on smaller screens */
-            gap: 15px; /* Adds spacing between elements */
-            justify-content: flex-start;
-            align-items: center;
-        }
+.form-container {
+  display: flex;
+  flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+  gap: 15px; /* Adds spacing between elements */
+  justify-content: flex-start;
+  align-items: center;
+}
 
-        @media (max-width: 768px) {
-            .form-container .form-group {
-                flex: 1 1 100%; /* Make fields full-width on smaller screens */
-            }
+@media (max-width: 768px) {
+  .form-container .form-group {
+    flex: 1 1 100%; /* Make fields full-width on smaller screens */
+  }
 
-            .form-control,
-            .btn {
-                height: 35px; /* Slightly smaller height for smaller screens */
-                font-size: 14px;
-            }
-        }
-
+  .form-control,
+  .btn {
+    height: 35px; /* Slightly smaller height for smaller screens */
+    font-size: 14px;
+  }
+}

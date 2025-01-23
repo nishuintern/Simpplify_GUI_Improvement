@@ -111,14 +111,14 @@
         <header
           class="header d-sm-flex justify-content-sm-between justify-content-lg-between justify-content-md-between align-items-center"
         >
-        <div class="d-lg-flex d-md-none d-sm-none">
-          <button
-            class="bg-transparent border-0 text-primary"
-            id="toggle-sidebar"
-          >
-            <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
-          </button>
-        </div>
+          <div class="d-lg-flex d-md-none d-sm-none">
+            <button
+              class="bg-transparent border-0 text-primary"
+              id="toggle-sidebar"
+            >
+              <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
+            </button>
+          </div>
           <div class="d-lg-none d-md-flex d-sm-flex">
             <img src="/icons/newton icon copy 1.svg" alt="Company" />
             <span class="fs-4 m-2">Simpplify</span>
@@ -491,7 +491,9 @@
                 <a href="" class="text-decoration-none me-4">
                   <img src="/icons/save.svg" alt="" id="saveData" />
                 </a>
-                <img src="/icons/Synchronize.svg" alt="" />
+                <a href="">
+                  <img src="/icons/Synchronize.svg" alt="" />
+                </a>
               </div>
             </div>
             <div class="container-fluid mt-2 mb-3 content-scroll">
@@ -518,7 +520,7 @@
                         <div class="radio-group">
                           <label
                             ><input
-                            id="inter-exter"
+                              id="inter-exter"
                               type="radio"
                               name="internalExternal"
                               value="internal"
@@ -528,7 +530,7 @@
                           >
                           <label
                             ><input
-                            id="inter-exter"
+                              id="inter-exter"
                               type="radio"
                               name="internalExternal"
                               value="external"
@@ -586,7 +588,9 @@
                       </select>
                     </div>
                     <div class="form-row">
-                      <label for="check-box" class="form-label col-4">Invoiced</label>
+                      <label for="check-box" class="form-label col-4"
+                        >Invoiced</label
+                      >
                       <div class="col-8">
                         <input id="check-box" type="checkbox" id="invoiced" />
                       </div>
@@ -757,7 +761,9 @@
                                 <table class="table table-bordered">
                                   <thead>
                                     <tr>
-                                      <th scope="col" class="table-secondary">Document</th>
+                                      <th scope="col" class="table-secondary">
+                                        Document
+                                      </th>
                                     </tr>
                                   </thead>
                                   <tbody>
@@ -792,7 +798,8 @@
                       type="text"
                       id="subject"
                       class="form-control"
-                      placeholder="Enter subject">
+                      placeholder="Enter subject"
+                    />
                   </div>
                   <div class="form-row">
                     <label for="log" class="form-label">Log</label>
