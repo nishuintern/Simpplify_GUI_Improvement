@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/TableManager.css">
+    <link rel="stylesheet" href="/css/TableManager.css" />
     <link rel="stylesheet" href="/css/OrderManagement/OrderDispatch.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/OrderManagement/POStatus.css" />
@@ -16,9 +16,9 @@
     <title>Simplify</title>
   </head>
   <body>
-    <div class="">
+    <div class="dashboard-container">
       <!-- Sidebar -->
-      <aside class="sidebar collapse d-none">
+      <aside class="sidebar collapse d-lg-block d-sm-none d-md-none">
         <div class="logo">
           <div class="logo-container">
             <img src="/icons/newton icon copy 1.svg" alt="Company Logo" />
@@ -110,14 +110,14 @@
         <header
           class="header d-sm-flex justify-content-sm-between justify-content-lg-between justify-content-md-between align-items-center"
         >
-        <div class="d-lg-flex d-md-none d-sm-none">
-          <button
-            class="bg-transparent border-0 text-primary"
-            id="toggle-sidebar"
-          >
-            <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
-          </button>
-        </div>
+          <div class="d-lg-flex d-md-none d-sm-none">
+            <button
+              class="bg-transparent border-0 text-primary"
+              id="toggle-sidebar"
+            >
+              <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
+            </button>
+          </div>
           <div class="d-lg-none d-md-flex d-sm-flex">
             <img src="/icons/newton icon copy 1.svg" alt="Company" />
             <span class="fs-4 m-2">Simpplify</span>
@@ -459,8 +459,8 @@
           </nav>
         </header>
         <!-- Dashboard Heading -->
-        <div class="row-container">
-          <div id="subSidebar0" class="sub-sidebar" style="z-index: 1000">
+        <div class="">
+          <div id="subSidebar0" class="d-none" style="z-index: 1000">
             <span class="ps-3 pt-5 title-text">Order Management</span>
             <hr />
             <ul class="nav flex-column">
@@ -536,88 +536,91 @@
             <div class="cus-ban">
               <span class="ms-5">Po Status Report</span>
             </div>
-            <form
-              action=""
-              class="d-flex justify-content-between ms-sm-5 flex-fill"
-            >
-              <div>
-                <div
-                  class="d-lg-flex d-md-flex d-sm-flex my-lg-3 my-sm-2 mb-sm-1 mb-md-1"
-                >
-                  <label
-                    for="locationName"
-                    class="d-block mb-sm-2 me-sm-1 me-md-2"
+            <div class="d-flex justify-content-center">
+              <form
+                action=""
+                class="d-flex justify-content-between ms-sm-5 flex-fill"
+              >
+                <div>
+                  <div
+                    class="d-lg-flex d-md-flex d-sm-flex my-lg-3 my-sm-2 mb-sm-1 mb-md-1"
                   >
-                    <span
-                      class="pe-md-1 d-sm-block d-lg-flex d-md-block my-lg-2 my-sm-2 my-md-2 text-nowrap"
-                      >Location Name</span
+                    <label
+                      for="locationName"
+                      class="d-block mb-sm-2 me-sm-1 me-md-2"
                     >
-                    <input
-                      id="locationName"
-                      type="search"
-                      class="px-lg-5 px-sm-2 px-md-3"
-                      list="locationNameList"
-                    />
-                    <datalist id="locationNameList"></datalist>
-                  </label>
-                  <label for="indentNo" class="mb-sm-2 ms-lg-5">
-                    <span
-                      class="pe-md-1 d-sm-block d-lg-flex d-md-block my-lg-2 my-sm-2 my-md-2"
-                      >Indent No.</span
-                    >
-                    <input
-                      id="indentNo"
-                      type="search"
-                      class="px-lg-5 px-sm-2 px-md-3"
-                      list="indentNoList"
-                    />
-                    <datalist id="indentNoList"></datalist>
-                  </label>
-                </div>
-                <div
-                  class="d-md-flex d-sm-flex d-lg-flex my-md-2 my-lg-3 my-sm-2"
-                >
-                  <label
-                    for="POType"
-                    class="d-block mb-sm-1 mb-md-1 me-sm-1 me-md-2"
+                      <span
+                        class="pe-md-1 d-sm-block d-lg-flex d-md-block my-lg-2 my-sm-2 my-md-2 text-nowrap"
+                        >Location Name</span
+                      >
+                      <input
+                        id="locationName"
+                        type="search"
+                        class="px-lg-5 px-sm-2 px-md-3"
+                        list="locationNameList"
+                      />
+                      <datalist id="locationNameList"></datalist>
+                    </label>
+                    <label for="indentNo" class="mb-sm-2 ms-lg-5">
+                      <span
+                        class="pe-md-1 d-sm-block d-lg-flex d-md-block my-lg-2 my-sm-2 my-md-2"
+                        >Indent No.</span
+                      >
+                      <input
+                        id="indentNo"
+                        type="search"
+                        class="px-lg-5 px-sm-2 px-md-3"
+                        list="indentNoList"
+                      />
+                      <datalist id="indentNoList"></datalist>
+                    </label>
+                  </div>
+                  <div
+                    class="d-md-flex d-sm-flex d-lg-flex my-md-2 my-lg-3 my-sm-2"
                   >
-                    <span
-                      class="pe-md-1 d-sm-block d-lg-flex d-md-block my-lg-2 my-sm-2 my-md-2"
-                      >PO Type</span
+                    <label
+                      for="POType"
+                      class="d-block mb-sm-1 mb-md-1 me-sm-1 me-md-2"
                     >
-                    <input
-                      id="POType"
-                      type="search"
-                      class="px-lg-5 px-sm-2 px-md-3"
-                      list="POTypeList"
-                    />
-                    <datalist id="POTypeList"></datalist>
-                  </label>
-                  <label for="status" class="d-block mb-sm-4 ms-lg-5">
-                    <span
-                      class="pe-md-1 d-sm-block d-lg-flex d-md-block my-lg-2 my-sm-2 my-md-2"
-                      >Status</span
+                      <span
+                        class="pe-md-1 d-sm-block d-lg-flex d-md-block my-lg-2 my-sm-2 my-md-2"
+                        >PO Type</span
+                      >
+                      <input
+                        id="POType"
+                        type="search"
+                        class="px-lg-5 px-sm-2 px-md-3"
+                        list="POTypeList"
+                      />
+                      <datalist id="POTypeList"></datalist>
+                    </label>
+                    <label for="status" class="d-block mb-sm-4 ms-lg-5">
+                      <span
+                        class="pe-md-1 d-sm-block d-lg-flex d-md-block my-lg-2 my-sm-2 my-md-2"
+                        >Status</span
+                      >
+                      <input
+                        id="status"
+                        type="search"
+                        class="px-lg-5 px-sm-2 px-md-3"
+                        list="statusList"
+                      />
+                      <datalist id="statusList"></datalist>
+                    </label>
+                  </div>
+                  <div class="d-flex justify-content-end">
+                    <button
+                      id="searchButton"
+                      type="button"
+                      class="text-center border-0 px-md-5 px-lg-5 px-sm-3 py-1 px-lg-3"
                     >
-                    <input
-                      id="status"
-                      type="search"
-                      class="px-lg-5 px-sm-2 px-md-3"
-                      list="statusList"
-                    />
-                    <datalist id="statusList"></datalist>
-                  </label>
+                      <span>Search</span>
+                    </button>
+                  </div>
                 </div>
-                <div class="d-flex justify-content-end">
-                  <button
-                    id="searchButton"
-                    type="button"
-                    class="text-center border-0 px-md-5 px-lg-5 px-sm-3 py-1 px-lg-3"
-                  >
-                    <span>Search</span>
-                  </button>
-                </div>
-              </div>
-            </form>
+              </form>
+            </div>
+
             <!-- <div id="invoice" class="table-responsive m-2"></div> -->
           </div>
         </div>

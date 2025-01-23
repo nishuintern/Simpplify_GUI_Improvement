@@ -179,7 +179,17 @@ body {
   .sidebar.expanded nav ul li a .title {
     display: inline; /* Visible when sidebar is expanded */
   }
-  
+  .toggle-img {
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      margin-left: auto;
+    }
+
+    .sidebar.collapsed .toggle-img {
+      display: inline;
+    }
+
 /* Main Content */
 .main-content {
     flex: 1;

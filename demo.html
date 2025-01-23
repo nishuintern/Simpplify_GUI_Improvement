@@ -3,119 +3,294 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Send Invoice Modal</title>
+  <title>Collapsible Sidebar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+
+    /* Sidebar styles */
+    .sidebar {
+      width: 250px;
+      background-color: #333;
+      color: #fff;
+      transition: width 0.3s ease;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .sidebar.collapsed {
+      width: 80px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .logo-container img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .logo-container h3 {
+      display: none;
+    }
+
+    .sidebar.collapsed .logo-container h3 {
+      display: none;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #444;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+    }
+
+    nav ul li a .menu-item {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li a .menu-item img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    nav ul li a .menu-item span {
+      display: inline;
+    }
+
+    .sidebar.collapsed nav ul li a .menu-item span {
+      display: none;
+    }
+
+    .toggle-img {
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      margin-left: auto;
+    }
+
+    .sidebar.collapsed .toggle-img {
+      display: inline;
+    }
+
+    .sub-sidebar {
+      background-color: #444;
+      color: #fff;
+      display: none;
+      padding: 10px;
+    }
+
+    .sub-sidebar.open {
+      display: block;
+    }
+
+    .sub-sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sub-sidebar ul li {
+      padding: 5px 0;
+    }
+
+    .sub-sidebar ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <!-- Button to Open Modal -->
-  <button onclick="openModal()" style="
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 3px;
-    font-size: 14px;
-    cursor: pointer;
-  ">Open Modal</button>
+  <aside class="sidebar collapsed d-sm-none d-md-none d-lg-block" id="sidebar">
+    <div class="logo">
+      <div class="logo-container">
+        <img src="/icons/newton icon copy 1.svg" alt="Company Logo" />
+        <h3>Simplify</h3>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a href="/html/index.html">
+            <div class="menu-item">
+              <img src="/icons/iconamoon_home@2x.svg" alt="Dashboard" />
+              <span>Dashboard</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/html/OrderManagement/OrderDispatch.html">
+            <div class="menu-item active">
+              <img
+                src="/icons/icon-park-outline_transaction-order.svg"
+                alt="Order Management"
+              />
+              <span>Order Management</span>
+            </div>
+          </a>
+          <img
+            src="/icons/Glyph_ undefined 1.svg"
+            alt="Toggle Menu"
+            class="toggle-img"
+            data-target="subSidebar0"
+          />
+        </li>
+        <li>
+          <a href="/html/Quotation/QuotationDetails.html">
+            <div class="menu-item">
+              <img src="/icons/Checkout.svg" alt="Quotation" />
+              <span>Quotation Details</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/html/ReverseAuction/ReverseAuction.html">
+            <div class="menu-item">
+              <img src="/icons/Sell.svg" alt="Reverse Auction" />
+              <span>Reverse Auction</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/html/AuctionEngine/AuctionEngine.html">
+            <div class="menu-item">
+              <img src="/icons/Service.svg" alt="Auction Engine" />
+              <span>Auction Engine</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/html/RFP/RFP.html">
+            <div class="menu-item">
+              <img src="/icons/Invite.svg" alt="Request For Proposal" />
+              <span>Request For Proposal</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/html/TaskManager/TaskManager.html">
+            <div class="menu-item">
+              <img src="/icons/Task.svg" alt="Task Manager" />
+              <span>Task Manager</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/html/Setting/UserTenantMapping.html">
+            <div class="menu-item">
+              <img src="/icons/uil_setting.png" alt="Setting" />
+              <span>Setting</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div id="subSidebar0" class="sub-sidebar">
+    <span class="ps-3 pt-5 title-text">Order Management</span>
+    <hr />
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a
+          class="nav-link active"
+          href="/html/OrderManagement/OrderDispatch.html"
+          >Order Dispatch</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/html/OrderManagement/OrderAck.html"
+          >Order Acknowledgement</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/html/OrderManagement/Invoice.html"
+          >Invoice</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="/html/OrderManagement/BuyerMapping.html"
+          >Buyer Mapping Discount</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="/html/OrderManagement/ItemCatalog.html"
+          >Item Catalog</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/html/OrderManagement/Item.html"
+          >Item</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/html/OrderManagement/PoStatus.html"
+          >PO Status</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="/html/OrderManagement/InvoiceDashboard.html"
+          >Invoice Dashboard</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/html/OrderManagement/MyInvoices.html"
+          >My Invoice</a
+        >
+      </li>
+    </ul>
+  </div>
 
   <script>
-    // JavaScript to dynamically create the modal
-    function createModal() {
-      const modal = document.createElement('div');
-      modal.id = 'invoiceModal';
-      modal.style.display = 'none'; // Initially hidden
-      modal.style.position = 'fixed';
-      modal.style.top = '0';
-      modal.style.left = '0';
-      modal.style.width = '100%';
-      modal.style.height = '100%';
-      modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-      modal.style.zIndex = '9999';
-      modal.style.justifyContent = 'center';
-      modal.style.alignItems = 'center';
+    const sidebar = document.getElementById('sidebar');
+    const toggleImages = document.querySelectorAll('.toggle-img');
 
-      modal.innerHTML = `
-        <div style="
-          background: white;
-          width: 400px;
-          border-radius: 5px;
-          overflow: hidden;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-          animation: fadeIn 0.3s ease-in-out;
-        ">
-          <div style="
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 15px;
-            background: #f5f5f5;
-            border-bottom: 1px solid #ddd;
-          ">
-            <h3 style="margin: 0; font-size: 18px;">Send Invoice</h3>
-            <button onclick="closeModal()" style="
-              background: none;
-              border: none;
-              font-size: 20px;
-              cursor: pointer;
-              color: #888;
-            ">&times;</button>
-          </div>
-          <div style="padding: 15px;">
-            <table style="
-              width: 100%;
-              border-collapse: collapse;
-              margin-bottom: 20px;
-            ">
-              <thead>
-                <tr>
-                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Select one</th>
-                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Bank Code</th>
-                  <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Bank Name</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                    <input type="radio" name="bankSelection" />
-                  </td>
-                  <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">001</td>
-                  <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">HDFC</td>
-                </tr>
-              </tbody>
-            </table>
-            <button onclick="sendInvoice()" style="
-              background: #28a745;
-              color: white;
-              border: none;
-              padding: 10px 15px;
-              border-radius: 3px;
-              font-size: 14px;
-              cursor: pointer;
-            ">Send Invoice</button>
-          </div>
-        </div>
-      `;
+    // Sidebar toggle functionality
+    sidebar.addEventListener('click', (e) => {
+      if (e.target.id === 'toggleSidebar') {
+        sidebar.classList.toggle('collapsed');
+      }
+    });
 
-      document.body.appendChild(modal);
-    }
-
-    // Function to open the modal
-    function openModal() {
-      document.getElementById('invoiceModal').style.display = 'flex';
-    }
-
-    // Function to close the modal
-    function closeModal() {
-      document.getElementById('invoiceModal').style.display = 'none';
-    }
-
-    // Function to handle "Send Invoice" button
-    function sendInvoice() {
-      alert('Invoice sent successfully!');
-      closeModal();
-    }
-
-    // Initialize the modal on page load
-    createModal();
+    // Sub-sidebar toggle functionality
+    toggleImages.forEach(img => {
+      img.addEventListener('click', (e) => {
+        const targetId = e.target.getAttribute('data-target');
+        const subSidebar = document.getElementById(targetId);
+        subSidebar.classList.toggle('open');
+      });
+    });
   </script>
 </body>
 </html>
