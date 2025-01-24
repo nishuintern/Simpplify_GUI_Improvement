@@ -49,6 +49,7 @@
                 src="/icons/Glyph_ undefined 1.svg"
                 alt="Toggle Menu"
                 class="toggle-img"
+                onclick="showSubsidebar();"
                 style="margin-right: 20px !important"
               />
             </li>
@@ -457,88 +458,181 @@
           </nav>
         </header>
         <!-- Dashboard Heading -->
-        <div class="">
-          <div
-            id="subSidebar0"
-            class="sub-sidebar d-none"
-            style="z-index: 1000"
-          >
-            <span class="ps-3 pt-5 title-text">Order Management</span>
-            <hr />
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  href="/html/OrderManagement/OrderDispatch.html"
-                  >Order Dispatch</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/html/OrderManagement/OrderAck.html"
-                  >Order Acknowledgement</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/html/OrderManagement/Invoice.html"
-                  >Invoice</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/html/OrderManagement/BuyerMapping.html"
-                  >Buyer Mapping Discount</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/html/OrderManagement/ItemCatalog.html"
-                  >Item Catalog</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/html/OrderManagement/Item.html"
-                  >Item</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/html/OrderManagement/PoStatus.html"
-                  >PO Status</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/html/OrderManagement/InvoiceDashboard.html"
-                  >Invoice Dashboard</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/html/OrderManagement/MyInvoices.html"
-                  >My Invoice</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="content-container">
-            <div class="dashboard-heading">
-              <div class="d-flex">
-                <a href="/html/index.html">
-                  <img src="/icons/Arrow back ios (2).svg" alt="" />
-                </a>
-                <h3>Order Dispatch</h3>
-              </div>
-              <a href="">
-                <img src="/icons/Synchronize.svg" alt="" />
-              </a>
+        <div id="hiddenDiv" class="d-block">
+          <div>
+            <div
+              id="subSidebar0"
+              class="sub-sidebar d-none"
+              style="z-index: 1000"
+            >
+              <span class="ps-3 pt-5 title-text">Order Management</span>
+              <hr />
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    href="/html/OrderManagement/OrderDispatch.html"
+                    >Order Dispatch</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/html/OrderManagement/OrderAck.html"
+                    >Order Acknowledgement</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/html/OrderManagement/Invoice.html"
+                    >Invoice</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="/html/OrderManagement/BuyerMapping.html"
+                    >Buyer Mapping Discount</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="/html/OrderManagement/ItemCatalog.html"
+                    >Item Catalog</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/html/OrderManagement/Item.html"
+                    >Item</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/html/OrderManagement/PoStatus.html"
+                    >PO Status</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="/html/OrderManagement/InvoiceDashboard.html"
+                    >Invoice Dashboard</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="/html/OrderManagement/MyInvoices.html"
+                    >My Invoice</a
+                  >
+                </li>
+              </ul>
             </div>
-            <div class="content-scroll">
-              <div
-                id="orderDis"
-                class="table-responsive"
-                style="overflow-y: scroll; overflow-x: scroll"
-              ></div>
+            <div class="content-container">
+              <div class="dashboard-heading">
+                <div class="d-flex">
+                  <a href="/html/index.html">
+                    <img src="/icons/Arrow back ios (2).svg" alt="" />
+                  </a>
+                  <h3>Order Dispatch</h3>
+                </div>
+                <a href="">
+                  <img src="/icons/Synchronize.svg" alt="" />
+                </a>
+              </div>
+              <div class="content-scroll">
+                <div
+                  id="orderDis"
+                  class="table-responsive m-0"
+                  style="overflow-y: scroll; overflow-x: scroll"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="visibleDiv" class="d-none">
+          <div class="row-container">
+            <div
+              id="subSidebar0"
+              class="sub-sidebar d-lg-block"
+              style="z-index: 1000"
+            >
+              <span class="ps-3 pt-5 title-text">Order Management</span>
+              <hr />
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    href="/html/OrderManagement/OrderDispatch.html"
+                    >Order Dispatch</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/html/OrderManagement/OrderAck.html"
+                    >Order Acknowledgement</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/html/OrderManagement/Invoice.html"
+                    >Invoice</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="/html/OrderManagement/BuyerMapping.html"
+                    >Buyer Mapping Discount</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="/html/OrderManagement/ItemCatalog.html"
+                    >Item Catalog</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/html/OrderManagement/Item.html"
+                    >Item</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/html/OrderManagement/PoStatus.html"
+                    >PO Status</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="/html/OrderManagement/InvoiceDashboard.html"
+                    >Invoice Dashboard</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="/html/OrderManagement/MyInvoices.html"
+                    >My Invoice</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="content-container">
+              <div class="dashboard-heading">
+                <div class="d-flex">
+                  <a href="/html/index.html">
+                    <img src="/icons/Arrow back ios (2).svg" alt="" />
+                  </a>
+                  <h3>Order Dispatch</h3>
+                </div>
+                <a href="">
+                  <img src="/icons/Synchronize.svg" alt="" />
+                </a>
+              </div>
+              <div class="content-scroll">
+                <div
+                  id="orderDis"
+                  class="table-responsive"
+                  style="overflow-y: scroll; overflow-x: scroll"
+                ></div>
+              </div>
             </div>
           </div>
         </div>
@@ -551,6 +645,30 @@
     <script src="/js/tableManagerOrderDis.js"></script>
     <script>
       initializeTableManager("/js/tableConfigs.json");
+    </script>
+    <script>
+      function showSubsidebar() {
+        const hiddenDiv=document.getElementById("hiddenDiv");
+        const visibleDiv=document.getElementById("visibleDiv");
+        hiddenDiv.style.display="block";
+        visibleDiv.style.display="none";
+        if(hiddenDiv.classList.contains("d-block")){
+          hiddenDiv.classList.remove("d-block");
+          hiddenDiv.classList.add("d-none");
+          visibleDiv.classList.remove("d-none");
+          visibleDiv.classList.add("d-block");
+        }else if(visibleDiv.classList.contains("d-none")){
+          visibleDiv.classList.remove("d-none");
+          visibleDiv.classList.add('d-block');
+          hiddenDiv.classList.remove("d-block");
+          hiddenDiv.classList.add("d-none");
+        }else{
+          visibleDiv.classList.remove("d-block");
+          visibleDiv.classList.add("d-none");
+          hiddenDiv.classList.remove("d-none");
+          hiddenDiv.classList.add("d-block");
+        }
+      }
     </script>
   </body>
 </html>

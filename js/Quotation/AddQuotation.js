@@ -239,6 +239,7 @@ class MultiFormHandler {
   constructor(formsSelector, buttonSelector) {
     this.formsSelector = formsSelector; // Selector for all forms
     this.buttonSelector = buttonSelector; // Selector for the button
+    this.localStorageKey = "formData"; // Key to save form data in local storage
     this.quotations = []; // Array to store all added quotations
     this.init();
   }
@@ -251,6 +252,8 @@ class MultiFormHandler {
     } else {
       console.error("Button not found");
     }
+
+    this.addInputChangeListeners(); // Save to local storage on form changes
   }
 
   // Validate mandatory fields for both inputs and selects
@@ -294,7 +297,9 @@ class MultiFormHandler {
     });
 
     if (!isValid) {
-      console.error("Mandatory fields are not filled. Please complete all required fields.");
+      console.error(
+        "Mandatory fields are not filled. Please complete all required fields."
+      );
     }
 
     return isValid;
@@ -327,6 +332,7 @@ class MultiFormHandler {
   handleFormSubmission() {
     if (this.validateMandatoryFields()) {
       this.addQuotation(); // Proceed if validation passes
+      this.saveToLocalStorage(); // Save form data to local storage
     }
   }
 
@@ -336,17 +342,121 @@ class MultiFormHandler {
     this.quotations.push(addNewTask); // Add new data to the array
     console.log("Add New Task:", this.quotations);
   }
+
+  // Save form data to local storage
+  saveToLocalStorage() {
+    const formData = this.getAllFormData();
+    localStorage.setItem(this.localStorageKey, JSON.stringify(formData));
+    console.log("Form data saved to local storage:", formData);
+  }
+
+  // Add event listeners to save data to local storage when fields change
+  addInputChangeListeners() {
+    const forms = document.querySelectorAll(this.formsSelector);
+
+    forms.forEach((form) => {
+      const inputs = form.querySelectorAll("input, select");
+      inputs.forEach((input) => {
+        input.addEventListener("input", () => this.saveToLocalStorage());
+      });
+    });
+  }
 }
 
-// Usage example:
-// new MultiFormHandler(".form-class", "#submit-button");
 
 // Usage example:
 // new MultiFormHandler(".form-class", "#submit-button");
 
+// Usage example:
+// new MultiFormHandler(".form-class", "#submit-button");
+function saveTableDataToLocalStorage() {
+  const tableBody = document.getElementById("itemTableBody");
+  const rows = tableBody.querySelectorAll("tr");
+
+  const data = Array.from(rows).map((row) => {
+    const cells = row.querySelectorAll("td");
+    return Array.from(cells)
+      .slice(0, -1)
+      .map((cell) => cell.textContent); // Exclude the delete button cell
+  });
+
+  localStorage.setItem("tableData", JSON.stringify(data));
+}
+document.getElementById("submitAll").addEventListener("click", function () {
+  // Collect values from form fields
+  const indent = document.getElementById("indent").value;
+  const itemCode = document.getElementById("itemCode").value;
+  const hsnSac = document.getElementById("hsnSac").value;
+  const qty = document.getElementById("qty").value;
+  const cgst = document.getElementById("cgst").value;
+  const cgstAmt = document.getElementById("cgstAmt").value;
+  const igst = document.getElementById("igst").value;
+  const igstAmt = document.getElementById("igstAmt").value;
+  const sgst = document.getElementById("sgst").value;
+  const sgstAmt = document.getElementById("sgstAmt").value;
+  const approved = document.getElementById("approved").value;
+  const purchaseUnit = document.getElementById("purchaseUnit").value;
+  const rateUnit = document.getElementById("rateUnit").value;
+  const packFlag = document.getElementById("packFlag").value;
+  const disType = document.getElementById("disType").value;
+  const discount = document.getElementById("discount").value;
+  const total = document.getElementById("total").value;
+
+  // Check if required fields are filled
+  if (
+    indent === "Select Indent" ||
+    itemCode === "Select" ||
+    approved === "Select Approved"
+  ) {
+    alert("Please fill all required fields.");
+    return;
+  }
+
+  // Create a new table row
+  const tableBody = document.getElementById("itemTableBody");
+  const newRow = document.createElement("tr");
+
+  newRow.innerHTML = `
+    <td>${indent}</td>
+    <td>${itemCode}</td>
+    <td>${hsnSac || "-"}</td>
+    <td>${qty || "-"}</td>
+    <td>${packFlag || "-"}</td>
+    <td>${discount || "-"}</td>
+    <td>${approved}</td>
+    <td>${disType || "-"}</td>
+    <td>${discount || "-"}</td>
+    <td>${purchaseUnit || "-"}</td>
+    <td>${rateUnit || "-"}</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td>${cgst || "-"}</td>
+    <td>${cgstAmt || "-"}</td>
+    <td>${igst || "-"}</td>
+    <td>${igstAmt || "-"}</td>
+    <td>${sgst || "-"}</td>
+    <td>${sgstAmt || "-"}</td>
+    <td>${total || "-"}</td>
+    <td><button class="btn btn-danger btn-sm rounded-2 deleteRow">Delete</button></td>
+  `;
+
+  // Append the row to the table body
+  tableBody.appendChild(newRow);
+
+  // Save table data to local storage
+  saveTableDataToLocalStorage();
+  // Clear the form
+  document.getElementById("quotationForm").reset();
+
+  // Add event listener to delete button
+  newRow.querySelector(".deleteRow").addEventListener("click", function () {
+    this.closest("tr").remove();
+    saveTableDataToLocalStorage(); // Update local storage
+  });
+});
 document.addEventListener("DOMContentLoaded", () => {
   new MultiFormHandler("form", "#submitAll"); // Pass the form selector and button selector
 });
-
 
 new MultiFormHandler("form", "#submitAll");

@@ -233,6 +233,9 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
                     } else if (actionValue === "Download View Bank") {
                       // Create a link that opens the modal
                       actionHTML = `<a href='#' class='text-decoration-none text-primary bg-light' onclick='openSendInvoiceModal()'>${actionValue}</a>`;
+                    } else if (actionValue === "Re Quote") {
+                      // Create a link that opens the modal
+                      actionHTML = `<a href='#' class='text-decoration-none text-primary bg-light' onclick='openRequoteForm()'>${actionValue}</a>`;
                     } else {
                       actionHTML = `<a href='#' class='text-decoration-none text-primary'>${actionValue}</a>`;
                     }
@@ -456,4 +459,9 @@ function closeModal() {
 function sendInvoice() {
   alert("Invoice sent successfully!");
   closeModal();
+}
+
+function openRequoteForm(){
+  // Open the requote form modal here
+  window.location='http://127.0.0.1:5500/html/Quotation/ReQuotation.html';
 }
