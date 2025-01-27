@@ -868,4 +868,7 @@ th .sort-icons i {
     .lang-text{
         margin-top: 16px;
     }
+    .sidebar-btn{
+        display:none;
+    }
   }
