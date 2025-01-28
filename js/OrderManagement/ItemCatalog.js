@@ -55,7 +55,7 @@ function updateCards(products) {
 
     products.forEach((product) => {
         const card = document.createElement("div");
-        card.className = "col-lg-auto col-md-auto mb-4";
+        card.className = "col-lg-auto col-md-auto col-sm-auto mb-4 justify-content-sm-center";
 
         card.innerHTML = `
         <div class="card" style="width: 263px; height: 257px;">

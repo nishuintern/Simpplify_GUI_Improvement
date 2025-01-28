@@ -245,3 +245,10 @@ th .sort-icons i {
     overflow-x: hidden;
     height: calc(100vh - 30vh);
 }
+
+@media (max-width: 600px){
+.card{
+    width: 100%;
+    height: 250px;
+}
+}

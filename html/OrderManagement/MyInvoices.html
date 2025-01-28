@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/TableManager.css">
+    <link rel="stylesheet" href="/css/TableManager.css" />
     <!-- <link rel="stylesheet" href="/css/OrderManagement/OrderDispatch.css"> -->
     <link rel="stylesheet" href="/css/OrderManagement/MyInvoices.css" />
     <link rel="stylesheet" href="/css/style.css" />
@@ -111,14 +111,14 @@
         <header
           class="header d-sm-flex justify-content-sm-between justify-content-lg-between justify-content-md-between algin-items-center"
         >
-        <div class="d-lg-flex d-md-none d-sm-none sidebar-btn">
-          <button
-            class="bg-transparent border-0 text-primary"
-            id="toggle-sidebar"
-          >
-            <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
-          </button>
-        </div>
+          <div class="d-lg-flex d-md-none d-sm-none sidebar-btn">
+            <button
+              class="bg-transparent border-0 text-primary"
+              id="toggle-sidebar"
+            >
+              <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
+            </button>
+          </div>
           <div class="d-lg-none d-md-flex d-sm-flex">
             <img src="/icons/newton icon copy 1.svg" alt="Company" />
             <span class="fs-4 m-2">Simpplify</span>
@@ -461,7 +461,11 @@
         </header>
         <!-- Dashboard Heading -->
         <div class="">
-          <div id="subSidebar0" class="sub-sidebar d-none" style="z-index: 1000">
+          <div
+            id="subSidebar0"
+            class="sub-sidebar d-none"
+            style="z-index: 1000"
+          >
             <span class="ps-3 pt-5 title-text">Order Management</span>
             <hr />
             <ul class="nav flex-column">
@@ -876,8 +880,7 @@
                   tabindex="0"
                 >
                   <div class="border-1">
-                    <div class="table-responsive">
-                    </div>
+                    <div class="table-responsive"></div>
                     <div id="my-pending" class=""></div>
 
                     <!-- <div class="d-flex justify-content-between">
@@ -1008,6 +1011,14 @@
         </div>
       </div>
     </div>
+    <footer class="sticky-bottom">
+      <div class="footer-text">
+        <p class="text-center">
+          CopyRight©<span class="ms-1">All rights reserved</span
+          ><span class="ms-2 fw-bold">Nippon Data System LTD</span>
+        </p>
+      </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/index.js"></script>
     <script src="/js/tableManager.js"></script>

@@ -1,288 +1,318 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    top: 0;
-    bottom: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 :root {
-    --heading-bg-color: #EEEEEE;
-    --header-sidebar-bg-color: #141D38;
-    --text-color: #3C4059;
-    --secondary-text-color: #FFFFFF;
-    --border-color: #BABED8;
-    --table-th-bg-color: #ECEFF3;
-    --pag-bg-color: #FE660C;
-    --table-striped-bg-color: #ECEFF3;
-    --lang-text-font-weight: 500;
-    --lang-text-font-size: 14px;
-    --lang-text-font-lh: 16.41px;
-    --heading-font-weight: 700;
-    --heading-font-size: 22px;
-    --heading-font-lh: 33px;
-    --card-text-title-weight: 500;
-    --card-text-title-size: 16px;
-    --card-text-title-lh: 24px;
-    --label-text-weight: 500;
-    --label-text-size: 14px;
-    --label-text-lh: 21px;
-    --th-text-weight: 500;
-    --th-text-size: 11px;
-    --th-text-lh: 12.89px;
-    --td-text-weight: 400;
-    --td-text-size: 10px;
-    --td-text-lh: 11.72px;
-    --btn-search-text-weight: 500;
-    --btn-search-text-size: 12px;
-    --btn-search-text-lh: 18px;
-    --pag-text-weight: 400;
-    --pag-text-size: 12px;
-    --pag-text-lh: 14.06px;
-    --pag-btn-text-weight: 400;
-    --pag-btn-text-size: 13px;
-    --pag-btn-text-lh: 15.23px;
-    --search-po-card-width: 640px;
-    --search-po-card-height: 273px;
+  --heading-bg-color: #eeeeee;
+  --header-sidebar-bg-color: #141d38;
+  --text-color: #3c4059;
+  --secondary-text-color: #ffffff;
+  --border-color: #babed8;
+  --table-th-bg-color: #eceff3;
+  --pag-bg-color: #fe660c;
+  --table-striped-bg-color: #eceff3;
+  --lang-text-font-weight: 500;
+  --lang-text-font-size: 14px;
+  --lang-text-font-lh: 16.41px;
+  --heading-font-weight: 700;
+  --heading-font-size: 22px;
+  --heading-font-lh: 33px;
+  --card-text-title-weight: 500;
+  --card-text-title-size: 16px;
+  --card-text-title-lh: 24px;
+  --label-text-weight: 500;
+  --label-text-size: 14px;
+  --label-text-lh: 21px;
+  --th-text-weight: 500;
+  --th-text-size: 11px;
+  --th-text-lh: 12.89px;
+  --td-text-weight: 400;
+  --td-text-size: 10px;
+  --td-text-lh: 11.72px;
+  --btn-search-text-weight: 500;
+  --btn-search-text-size: 12px;
+  --btn-search-text-lh: 18px;
+  --pag-text-weight: 400;
+  --pag-text-size: 12px;
+  --pag-text-lh: 14.06px;
+  --pag-btn-text-weight: 400;
+  --pag-btn-text-size: 13px;
+  --pag-btn-text-lh: 15.23px;
+  --search-po-card-width: 640px;
+  --search-po-card-height: 273px;
 }
 
 .po-status-header {
-    display: flex;
-    justify-content: space-between;
-    background-color: #EEEEEE;
-    padding: 10px;
-    font-family: Roboto;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 33px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-
+  display: flex;
+  justify-content: space-between;
+  background-color: #eeeeee;
+  padding: 10px;
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 33px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 .po-status-header img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .po-status-nav-link {
-    color: #3C4059;
-    text-decoration: none;
-    font-family: Roboto;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 19.5px;
-    text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-
+  color: #3c4059;
+  text-decoration: none;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 19.5px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 .invoices-nav-link.active {
-    color: #FE660C;
-    text-decoration: underline;
-    font-family: Roboto;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 19.5px;
-    text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-
+  color: #fe660c;
+  text-decoration: underline;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 19.5px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 .invoices-nav-link:hover {
-    color: #FE660C;
-    text-decoration: underline;
-    font-family: Roboto;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 19.5px;
-    text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-
+  color: #fe660c;
+  text-decoration: underline;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 19.5px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 .border-invoice {
-    border-bottom: 1px solid #3C4059;
+  border-bottom: 1px solid #3c4059;
 }
 
 .cus-ban {
-    border-bottom: 1px solid #BABED8;
-    margin-top: 5px;
-    padding-bottom: 5px;
+  border-bottom: 1px solid #babed8;
+  margin-top: 5px;
+  padding-bottom: 5px;
 }
 
 .cus-ban span {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
 .container-1 {
-
-    height: 49px;
-    border-top: 1px solid #BABED8;
-    border-left: 1px solid #BABED8;
-    border-bottom: 1px solid #BABED8;
-    border-right: 1px solid #BABED8;
-    align-items: center;
+  height: 49px;
+  border-top: 1px solid #babed8;
+  border-left: 1px solid #babed8;
+  border-bottom: 1px solid #babed8;
+  border-right: 1px solid #babed8;
+  align-items: center;
 }
 
 .container-2 {
-    width: 35px;
-    height: 35px;
-    border: solid 1px #BABED8;
-    margin-left: 14px;
-    margin-right: 10px;
-    border-radius: 4px;
+  width: 35px;
+  height: 35px;
+  border: solid 1px #babed8;
+  margin-left: 14px;
+  margin-right: 10px;
+  border-radius: 4px;
 }
 
 .container-2 span img {
-    margin: 3px;
+  margin: 3px;
 }
 
 h4 {
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 16.41px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.41px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 h4 span {
-    font-family: Roboto;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 15.23px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15.23px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 th {
-    background-color: var(--table-th-bg-color);
-    position: relative;
-    cursor: pointer;
-    font-size: var(--th-text-size);
-    line-height: var(--th-text-lh);
-    font-weight: var(--th-text-weight);
-    color: var(--text-color);
+  background-color: var(--table-th-bg-color);
+  position: relative;
+  cursor: pointer;
+  font-size: var(--th-text-size);
+  line-height: var(--th-text-lh);
+  font-weight: var(--th-text-weight);
+  color: var(--text-color);
 }
 
 td {
-    font-size: var(--td-text-size);
-    line-height: var(--td-text-lh);
-    font-weight: var(--td-text-weight);
-    color: var(--text-color);
+  font-size: var(--td-text-size);
+  line-height: var(--td-text-lh);
+  font-weight: var(--td-text-weight);
+  color: var(--text-color);
 }
 
 th .sort-icons {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    gap: 4px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 4px;
 }
 
 th .sort-icons i {
-    font-size: 12px;
-    /* color: #6c757d; */
-    cursor: pointer;
-    border: 1px solid #BABED8;
+  font-size: 12px;
+  /* color: #6c757d; */
+  cursor: pointer;
+  border: 1px solid #babed8;
 }
 
 .pagination .page-item.active .page-link {
-    background-color: #FE660C;
-    color: #FFFFFF;
-    border: none;
+  background-color: #fe660c;
+  color: #ffffff;
+  border: none;
 }
 
 .sortable-header {
-    display: flexbox;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    gap: 8px
+  display: flexbox;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  gap: 8px;
 }
 
 .sort-icons {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .sort-icon {
-    cursor: pointer;
-    font-size: 5px;
-    line-height: 1;
+  cursor: pointer;
+  font-size: 5px;
+  line-height: 1;
 }
 
 .page-size-container label,
 .search-div label {
-    font-weight: var(--label-text-weight);
-    font-size: var(--label-text-size);
-    line-height: var(--label-text-font-lh);
+  font-weight: var(--label-text-weight);
+  font-size: var(--label-text-size);
+  line-height: var(--label-text-font-lh);
 }
 
 .pag-div div {
-    font-weight: var(--pag-text-weight);
-    font-size: var(--pag-text-size);
-    line-height: var(--pag-text-lh);
+  font-weight: var(--pag-text-weight);
+  font-size: var(--pag-text-size);
+  line-height: var(--pag-text-lh);
 }
 
 input {
-    width: auto;
-    height: 40px;
-    top: 210px;
-    left: 292px;
-    gap: 0px;
-    border-radius: 4px 0px 0px 0px;
-    border: 0.5px 0px 0px 0px solid #00000040;
-    opacity: 0px;
-
+  width: auto;
+  height: 40px;
+  top: 210px;
+  left: 292px;
+  gap: 0px;
+  border-radius: 4px 0px 0px 0px;
+  border: 0.5px 0px 0px 0px solid #00000040;
+  opacity: 0px;
 }
 
 label span {
-    width: auto;
-    height: 21px;
-    top: 182px;
-    left: 292px;
-    gap: 0px;
-    opacity: 0px;
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 21px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+  width: auto;
+  height: 21px;
+  top: 182px;
+  left: 292px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 form button {
-    /* width: 118px;
+  /* width: 118px;
     height: 40px;
     top: 372px; */
-    gap: 0px;
-    border-radius: 4px 0px 0px 0px;
-    opacity: 0px;
-    align-items: center;
-    background-color: #333333;
-    color: #FFFFFF;
- margin-right: 37%;
+  gap: 0px;
+  border-radius: 4px 0px 0px 0px;
+  opacity: 0px;
+  align-items: center;
+  background-color: #333333;
+  color: #ffffff;
+  margin-right: 37%;
 }
 
 form button span {
-    font-family: Roboto;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 18px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+@media (max-width: 575.98px) {
+  .form-container form {
+    flex-direction: column !important; /* Stack elements vertically */
+    align-items: center; /* Center align the form */
+    padding: 0 10px; /* Add padding to avoid content touching edges */
+  }
 
+  .form-container label {
+    display: flex; /* Ensure proper alignment of the label and input */
+    flex-direction: column; /* Stack label text and input vertically */
+    width: 100%; /* Make labels take the full width */
+    margin-bottom: 10px; /* Add spacing between labels */
+  }
+
+  .form-container input {
+    width: 100%; /* Ensure inputs span the full width */
+    padding: 8px; /* Adjust padding for smaller screens */
+    box-sizing: border-box; /* Include padding and border in the width */
+  }
+
+  .form-container button {
+    width: 100%; /* Make the button take the full width */
+    padding: 30px; /* Adjust button padding */
+    margin-top: 15px; /* Add spacing above the button */
+    margin-left: 50%;
+  }
+
+  .form-container .d-flex {
+    flex-wrap: wrap; /* Allow child elements to wrap in smaller screens */
+    justify-content: center; /* Center align elements */
+  }
+
+  .form-container span {
+    margin-bottom: 5px; /* Add spacing below label text */
+     /* Center align label text for smaller screens */
+  }
 }

@@ -77,6 +77,10 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       const tableDiv = document.createElement("div");
       tableDiv.className =
         "table-responsive-lg table-responsive-md table-responsive-sm custom-scrollbar";
+      tableDiv.style.maxWidth = "100%";
+      tableDiv.style.maxHeight = "40vh";
+      tableDiv.style.overflowY = "scroll";
+      tableDiv.style.overflowX="Scroll";
       const table = document.createElement("table");
       table.className = "table  text-nowrap";
       const thead = document.createElement("thead");

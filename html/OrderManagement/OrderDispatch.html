@@ -119,12 +119,6 @@
             <h5 class="offcanvas-title" id="subSidebar0Label">
               Order Management
             </h5>
-            <!-- <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button> -->
           </div>
           <div class="sub-sidebar-line"><hr /></div>
           <div class="offcanvas-body">
@@ -492,6 +486,14 @@
         </div>
       </div>
     </div>
+    <footer class="sticky-bottom">
+      <div class="footer-text">
+        <p class="text-center">
+          CopyRight©<span class="ms-1">All rights reserved</span
+          ><span class="ms-2 fw-bold">Nippon Data System LTD</span>
+        </p>
+      </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="/js/index.js"></script>
@@ -500,15 +502,15 @@
     <script>
       initializeTableManager("/js/tableConfigs.json");
     </script>
-    <script>
-      function showSubsidebar() {
-        const subSidebar = document.getElementsByClassName("sub-sidebar");
-        const contentContainer =
-          document.getElementsByClassName("content-container");
-        for (let i = 0; i < subSidebar.length; i++) {
-          subSidebar[i].style.display = "none";
+    <!-- <script>
+      function toggleSubSidebar(id) {
+        const element = document.getElementById(id);
+        if (element.classList.contains("show")) {
+          element.classList.remove("show");
+        } else {
+          element.classList.add("show");
         }
       }
-    </script>
+    </script> -->
   </body>
 </html>
