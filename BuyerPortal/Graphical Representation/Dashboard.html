@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="ml-16">
+      <div class="bg-[#EEEEEE] p-2">
+        <div class="flex justify-between">
+          <div class="flex">
+            <img
+              src="/icons/Arrow back ios (2).svg"
+              alt="back"
+              style="cursor: pointer"
+            />
+            <span class="font-bold text-xl">Dashboard</span>
+          </div>
+          <a href="">
+            <img
+              src="/icons/Synchronize.svg"
+              alt="back"
+              style="cursor: pointer"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="mt-5 flex flex-column -mx-2">
+        <!-- Search Purchase Order Details -->
+        <div
+          class="bg-white p-6 rounded-lg shadow-md border border-[#BABED8] mx-2 sm:w-full md:w-1/2 lg:w-1/2"
+        >
+          <h2 class="text-xl font-bold border-b pb-2">
+            Search Purchase Order Details
+          </h2>
+          <label class="block text-gray-700 mb-2 mt-2">Supplier Name</label>
+          <input
+            type="text"
+            class="w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+            placeholder="Enter supplier name"
+          />
+          <div class="mt-4">
+            <label class="block text-gray-700 mb-2">Search By</label>
+            <div class="flex items-center space-x-4">
+              <label class="flex items-center">
+                <input
+                  type="radio"
+                  name="searchBy"
+                  class="text-orange-500 focus:ring-orange-500"
+                  checked
+                />
+                <span class="ml-2">PO Number</span>
+              </label>
+              <label class="flex items-center">
+                <input
+                  type="radio"
+                  name="searchBy"
+                  class="text-orange-500 focus:ring-orange-500"
+                />
+                <span class="ml-2">Date</span>
+              </label>
+            </div>
+          </div>
+          <div class="mt-4">
+            <label class="block text-gray-700 mb-2">PO Number</label>
+            <input
+              type="text"
+              class="w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+              placeholder="Enter PO number"
+            />
+          </div>
+          <div class="mt-4 text-right">
+            <button
+              class="bg-white-500 text-black px-4 py-2 rounded hover:bg-white-600 border border-[#BABED8]"
+              style="cursor: pointer"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+
+        <!-- TodoList -->
+        <div
+          class="bg-white p-6 rounded-lg shadow-md border border-gray-300 overflow-auto mx-2 sm:w-full md:w-1/2 lg:w-1/2"
+        >
+          <h2 class="text-lg font-semibold mb-4 border-b pb-2">To Do List</h2>
+          <!-- <div
+            class="flex flex-col md:flex-row justify-between mb-4 space-y-2 md:space-y-0"
+          >
+            <div class="flex items-center space-x-2">
+              <label class="text-gray-700 font-medium">Page Size :</label>
+              <select
+                id="pageSize"
+                class="border rounded px-3 py-1 focus:outline-none focus:ring focus:border-blue-300"
+              >
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+              </select>
+            </div>
+            <div class="flex items-center space-x-2">
+              <label class="text-gray-700 font-medium">Search :</label>
+              <input
+                type="text"
+                id="searchInput"
+                class="border rounded px-3 py-1 focus:outline-none focus:ring focus:border-blue-300"
+                placeholder="Enter search keyword"
+              />
+            </div>
+          </div> -->
+
+          <div class="overflow-x-auto">
+            <table
+              class="w-full border-collapse border rounded-md shadow-sm whitespace-nowrap overflow-hidden"
+            >
+              <thead class="bg-gray-100 text-gray-700">
+                <tr class="text-left">
+                  <th class="border p-3 cursor-pointer" onclick="sortTable(0)">
+                    Task ID ⬍
+                  </th>
+                  <th
+                    class="border p-3 text-center cursor-pointer"
+                    onclick="sortTable(1)"
+                  >
+                    Assign To ⬍
+                  </th>
+                  <th
+                    class="border p-3 text-center cursor-pointer"
+                    onclick="sortTable(2)"
+                  >
+                    Assign To User ⬍
+                  </th>
+                  <th
+                    class="border p-3 text-center cursor-pointer"
+                    onclick="sortTable(3)"
+                  >
+                    Subject ⬍
+                  </th>
+                  <th
+                    class="border p-3 text-center cursor-pointer"
+                    onclick="sortTable(4)"
+                  >
+                    Start Date ⬍
+                  </th>
+                  <th
+                    class="border p-3 text-center cursor-pointer"
+                    onclick="sortTable(5)"
+                  >
+                    End Date ⬍
+                  </th>
+                  <!-- <th
+                    class="border p-3 text-center cursor-pointer"
+                    onclick="sortTable(6)"
+                  >
+                    Invoice ⬍
+                  </th> -->
+                </tr>
+              </thead>
+              <tbody id="tableTodo" class="bg-white">
+                <!-- Dynamic Rows Will Be Inserted Here -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- <div
+            class="mt-4 flex flex-col md:flex-row justify-between items-center text-gray-700 text-sm space-y-2 md:space-y-0"
+          >
+            <span id="entriesInfo">Showing 1 to 1 of (4 Entries)</span>
+            <div class="flex items-center space-x-2">
+              <button
+                id="prevPage"
+                class="border px-4 py-1 rounded bg-gray-200 hover:bg-gray-300"
+              >
+                Previous
+              </button>
+              <span
+                id="currentPage"
+                class="border px-4 py-1 rounded bg-orange-500 text-white"
+                >1</span
+              >
+              <button
+                id="nextPage"
+                class="border px-4 py-1 rounded bg-gray-200 hover:bg-gray-300"
+              >
+                Next
+              </button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <div class="mt-5 flex flex-column -mx-2">
+        <!-- Search Purchase Order Details -->
+        <!-- <div
+          class="bg-white p-6 rounded-lg shadow-md border border-[#BABED8] mx-2 sm:w-full md:w-1/2 lg:w-1/2"
+        >
+          <h2 class="text-xl font-bold border-b pb-2">
+            Search Purchase Order Details
+          </h2>
+          <label class="block text-gray-700 mb-2 mt-2">Supplier Name</label>
+          <input
+            type="text"
+            class="w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+            placeholder="Enter supplier name"
+          />
+          <div class="mt-4">
+            <label class="block text-gray-700 mb-2">Search By</label>
+            <div class="flex items-center space-x-4">
+              <label class="flex items-center">
+                <input
+                  type="radio"
+                  name="searchBy"
+                  class="text-orange-500 focus:ring-orange-500"
+                  checked
+                />
+                <span class="ml-2">PO Number</span>
+              </label>
+              <label class="flex items-center">
+                <input
+                  type="radio"
+                  name="searchBy"
+                  class="text-orange-500 focus:ring-orange-500"
+                />
+                <span class="ml-2">Date</span>
+              </label>
+            </div>
+          </div>
+          <div class="mt-4">
+            <label class="block text-gray-700 mb-2">PO Number</label>
+            <input
+              type="text"
+              class="w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+              placeholder="Enter PO number"
+            />
+          </div>
+          <div class="mt-4 text-right">
+            <button
+              class="bg-white-500 text-black px-4 py-2 rounded hover:bg-white-600 border border-[#BABED8]"
+              style="cursor: pointer"
+            >
+              Search
+            </button>
+          </div>
+        </div> -->
+
+        <!-- Buyer Order Details -->
+        <div
+          class="bg-white p-6 rounded-lg shadow-md border border-gray-300 overflow-auto mx-2 sm:w-full md:w-1/2 lg:w-1/2"
+        >
+          <h2 class="text-lg font-semibold mb-4 border-b pb-2">
+            Buyer Order Details
+          </h2>
+          <div
+            class="flex flex-col md:flex-row justify-between mb-4 space-y-2 md:space-y-0"
+          >
+            <div class="flex items-center space-x-2">
+              <label class="text-gray-700 font-medium">Page Size :</label>
+              <select
+                id="pageSize"
+                class="border rounded px-3 py-1 focus:outline-none focus:ring focus:border-blue-300"
+              >
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+              </select>
+            </div>
+            <div class="flex items-center space-x-2">
+              <label class="text-gray-700 font-medium">Search :</label>
+              <input
+                type="text"
+                id="searchInput"
+                class="border rounded px-3 py-1 focus:outline-none focus:ring focus:border-blue-300"
+                placeholder="Enter search keyword"
+              />
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table
+              class="w-full border-collapse border rounded-md shadow-sm whitespace-nowrap overflow-hidden"
+            >
+              <thead class="bg-gray-100 text-gray-700">
+                <tr class="text-left">
+                  <th class="border p-3 cursor-pointer" onclick="sortTable(0)">
+                    Supplier Name ⬍
+                  </th>
+                  <th
+                    class="border p-3 text-center cursor-pointer"
+                    onclick="sortTable(1)"
+                  >
+                    All Po ⬍
+                  </th>
+                  <th
+                    class="border p-3 text-center cursor-pointer"
+                    onclick="sortTable(2)"
+                  >
+                    New ⬍
+                  </th>
+                  <th
+                    class="border p-3 text-center cursor-pointer"
+                    onclick="sortTable(3)"
+                  >
+                    Changed ⬍
+                  </th>
+                  <th
+                    class="border p-3 text-center cursor-pointer"
+                    onclick="sortTable(4)"
+                  >
+                    Confirmed ⬍
+                  </th>
+                  <th
+                    class="border p-3 text-center cursor-pointer"
+                    onclick="sortTable(5)"
+                  >
+                    In-Progress ⬍
+                  </th>
+                  <th
+                    class="border p-3 text-center cursor-pointer"
+                    onclick="sortTable(6)"
+                  >
+                    Invoice ⬍
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="table1Body" class="bg-white">
+                <!-- Dynamic Rows Will Be Inserted Here -->
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            class="mt-4 flex flex-col md:flex-row justify-between items-center text-gray-700 text-sm space-y-2 md:space-y-0"
+          >
+            <span id="entriesInfo">Showing 1 to 1 of (4 Entries)</span>
+            <div class="flex items-center space-x-2">
+              <button
+                id="prevPage"
+                class="border px-4 py-1 rounded bg-gray-200 hover:bg-gray-300"
+              >
+                Previous
+              </button>
+              <span
+                id="currentPage"
+                class="border px-4 py-1 rounded bg-orange-500 text-white"
+                >1</span
+              >
+              <button
+                id="nextPage"
+                class="border px-4 py-1 rounded bg-gray-200 hover:bg-gray-300"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Task Report -->
+        <div
+          class="bg-white p-6 rounded-lg shadow-md border border-gray-300 overflow-auto mx-2 sm:w-full md:w-1/2 lg:w-1/2"
+        >
+          <h2 class="text-lg font-semibold mb-4 border-b pb-2">Task Report</h2>
+          <div
+            class="flex flex-col md:flex-row justify-between mb-4 space-y-2 md:space-y-0"
+          >
+            <div class="flex items-center space-x-2">
+              <label class="text-gray-700 font-medium">Page Size :</label>
+              <select
+                id="pageSize"
+                class="border rounded px-3 py-1 focus:outline-none focus:ring focus:border-blue-300"
+              >
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+              </select>
+            </div>
+            <div class="flex items-center space-x-2">
+              <label class="text-gray-700 font-medium">Search :</label>
+              <input
+                type="text"
+                id="searchInput"
+                class="border rounded px-3 py-1 focus:outline-none focus:ring focus:border-blue-300"
+                placeholder="Enter search keyword"
+              />
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table
+              class="w-full border-collapse border rounded-md shadow-sm whitespace-nowrap overflow-hidden"
+            >
+              <thead class="bg-gray-100 text-gray-700" id="">
+                <tr class="text-left">
+                  <th class="border p-3 cursor-pointer" onclick="sortTable(0)">
+                    Task ID ⬍
+                  </th>
+                  <th
+                    class="border p-3 text-center cursor-pointer"
+                    onclick="sortTable(1)"
+                  >
+                    Assign By ⬍
+                  </th>
+                  <th
+                    class="border p-3 text-center cursor-pointer"
+                    onclick="sortTable(2)"
+                  >
+                    Assign By User ⬍
+                  </th>
+                  <th
+                    class="border p-3 text-center cursor-pointer"
+                    onclick="sortTable(3)"
+                  >
+                    Assign To ⬍
+                  </th>
+                  <th
+                    class="border p-3 text-center cursor-pointer"
+                    onclick="sortTable(4)"
+                  >
+                    Assign To User ⬍
+                  </th>
+                  <!-- <th
+                  class="border p-3 text-center cursor-pointer"
+                  onclick="sortTable(5)"
+                >
+                  In-Progress ⬍
+                </th>
+                <th
+                  class="border p-3 text-center cursor-pointer"
+                  onclick="sortTable(6)"
+                >
+                  Invoice ⬍
+                </th> -->
+                </tr>
+              </thead>
+              <tbody id="tableTask" class="bg-white">
+                <!-- Dynamic Rows Will Be Inserted Here -->
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            class="mt-4 flex flex-col md:flex-row justify-between items-center text-gray-700 text-sm space-y-2 md:space-y-0"
+          >
+            <span id="entriesInfo">Showing 1 to 1 of (4 Entries)</span>
+            <div class="flex items-center space-x-2">
+              <button
+                id="prevPage"
+                class="border px-4 py-1 rounded bg-gray-200 hover:bg-gray-300"
+              >
+                Previous
+              </button>
+              <span
+                id="currentPage"
+                class="border px-4 py-1 rounded bg-orange-500 text-white"
+                >1</span
+              >
+              <button
+                id="nextPage"
+                class="border px-4 py-1 rounded bg-gray-200 hover:bg-gray-300"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <script>
+      const data = [
+        {
+          supplier: "14/67, MCD Flat Sector220",
+          allPo: 29,
+          new: 9,
+          changed: 0,
+          confirmed: 10,
+          inProgress: 0,
+          invoice: 0,
+        },
+        {
+          supplier: "XYZ Suppliers",
+          allPo: 15,
+          new: 3,
+          changed: 2,
+          confirmed: 5,
+          inProgress: 1,
+          invoice: 4,
+        },
+        {
+          supplier: "ABC Traders",
+          allPo: 12,
+          new: 4,
+          changed: 1,
+          confirmed: 6,
+          inProgress: 0,
+          invoice: 1,
+        },
+        {
+          supplier: "LMN Enterprises",
+          allPo: 18,
+          new: 6,
+          changed: 2,
+          confirmed: 7,
+          inProgress: 1,
+          invoice: 2,
+        },
+        {
+          taskid: "LMN Enterprises",
+          assignto: 18,
+          assigntouser: 6,
+          subject: 2,
+          startdate: 7,
+          enddate: 1,
+        },
+      ];
+
+      let pageSize = 10;
+      let currentPage = 1;
+      let sortDirection = {};
+
+      function renderTable() {
+        const searchQuery = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const filteredData = data.filter((item) =>
+          item.supplier.toLowerCase().includes(searchQuery)
+        );
+        const startIndex = (currentPage - 1) * pageSize;
+        const paginatedData = filteredData.slice(
+          startIndex,
+          startIndex + pageSize
+        );
+        const tableTodo=document.getElementById("tableTodo");
+        paginatedData.forEach((row) => {
+          const tr = document.createElement("tr");
+          tr.classList.add("hover:bg-gray-50");
+          tr.innerHTML = `
+                    <td class="border p-3">${row.taskid}</td>
+                    <td class="border p-3 text-center">${row.assignto}</td>
+                    <td class="border p-3 text-center">${row.assigntouser}</td>
+                    <td class="border p-3 text-center">${row.subject}</td>
+                    <td class="border p-3 text-center">${row.startdate}</td>
+                    <td class="border p-3 text-center">${row.enddate}</td>
+                    
+                `;
+          tableBody.appendChild(tr);
+        });
+
+        const tableBody = document.getElementById("tableBody");
+        tableBody.innerHTML = "";
+
+        paginatedData.forEach((row) => {
+          const tr = document.createElement("tr");
+          tr.classList.add("hover:bg-gray-50");
+          tr.innerHTML = `
+                    <td class="border p-3">${row.supplier}</td>
+                    <td class="border p-3 text-center">${row.allPo}</td>
+                    <td class="border p-3 text-center">${row.new}</td>
+                    <td class="border p-3 text-center">${row.changed}</td>
+                    <td class="border p-3 text-center">${row.confirmed}</td>
+                    <td class="border p-3 text-center">${row.inProgress}</td>
+                    <td class="border p-3 text-center">${row.invoice}</td>
+                `;
+          tableBody.appendChild(tr);
+        });
+
+        document.getElementById("entriesInfo").innerText = `Showing ${
+          startIndex + 1
+        } to ${Math.min(startIndex + pageSize, filteredData.length)} of (${
+          filteredData.length
+        } Entries)`;
+        document.getElementById("currentPage").innerText = currentPage;
+      }
+
+      function sortTable(columnIndex) {
+        const keys = [
+          "supplier",
+          "allPo",
+          "new",
+          "changed",
+          "confirmed",
+          "inProgress",
+          "invoice",
+        ];
+        const key = keys[columnIndex];
+
+        sortDirection[key] = !sortDirection[key];
+        data.sort((a, b) => {
+          if (a[key] < b[key]) return sortDirection[key] ? -1 : 1;
+          if (a[key] > b[key]) return sortDirection[key] ? 1 : -1;
+          return 0;
+        });
+        renderTable();
+      }
+
+      document
+        .getElementById("pageSize")
+        .addEventListener("change", (event) => {
+          pageSize = parseInt(event.target.value);
+          currentPage = 1;
+          renderTable();
+        });
+
+      document.getElementById("searchInput").addEventListener("input", () => {
+        currentPage = 1;
+        renderTable();
+      });
+
+      document.getElementById("prevPage").addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          renderTable();
+        }
+      });
+
+      document.getElementById("nextPage").addEventListener("click", () => {
+        const totalPages = Math.ceil(data.length / pageSize);
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderTable();
+        }
+      });
+
+      renderTable();
+    </script> -->
+    <!-- <script>
+    async function fetchDataAndRenderTable(apiUrl, tableBodyId, staticData = null) {
+    try {
+        let data = staticData;  // Use static data if provided
+
+        // Fetch data from API if apiUrl is provided
+        if (apiUrl) {
+            const response = await fetch(apiUrl);
+            if (!response.ok) throw new Error("Failed to fetch data");
+            data = await response.json();
+        }
+
+        let pageSize = 10;
+        let currentPage = 1;
+
+        function renderTable() {
+            const searchQuery = document.getElementById("searchInput").value.toLowerCase();
+            const filteredData = data.filter(item => item.supplier.toLowerCase().includes(searchQuery)); // Adjust filtering based on your data structure
+            const startIndex = (currentPage - 1) * pageSize;
+            const paginatedData = filteredData.slice(startIndex, startIndex + pageSize);
+
+            const tableBody = document.getElementById(tableBodyId);
+            tableBody.innerHTML = "";  // Clear existing rows
+
+            paginatedData.forEach(row => {
+                const tr = document.createElement("tr");
+                tr.classList.add("hover:bg-gray-50");
+                tr.innerHTML = `
+                    <td class="border p-3">${row.supplier}</td>
+                    <td class="border p-3 text-center">${row.allPo}</td>
+                    <td class="border p-3 text-center">${row.new}</td>
+                    <td class="border p-3 text-center">${row.changed}</td>
+                    <td class="border p-3 text-center">${row.confirmed}</td>
+                    <td class="border p-3 text-center">${row.inProgress}</td>
+                    <td class="border p-3 text-center">${row.invoice}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+
+            document.getElementById("entriesInfo").innerText = `Showing ${startIndex + 1} to ${Math.min(startIndex + pageSize, filteredData.length)} of (${filteredData.length} Entries)`;
+            document.getElementById("currentPage").innerText = currentPage;
+        }
+
+        // Event listeners for pagination, search, and page size
+        document.getElementById("pageSize").addEventListener("change", event => {
+            pageSize = parseInt(event.target.value);
+            currentPage = 1;
+            renderTable();
+        });
+
+        document.getElementById("searchInput").addEventListener("input", () => {
+            currentPage = 1;
+            renderTable();
+        });
+
+        document.getElementById("prevPage").addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderTable();
+            }
+        });
+
+        document.getElementById("nextPage").addEventListener("click", () => {
+            const totalPages = Math.ceil(filteredData.length / pageSize);
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderTable();
+            }
+        });
+
+        renderTable();
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+}
+
+// Example usage for multiple tables:
+
+// Table 1 with API URL
+// fetchDataAndRenderTable(null, "tableTodo",staticData);
+
+// Table 2 with static data (no API URL)
+const staticData = [
+    {
+        "supplier": "Static Supplier A",
+        "allPo": 10,
+        "new": 2,
+        "changed": 1,
+        "confirmed": 5,
+        "inProgress": 1,
+        "invoice": 1
+    },
+    {
+        "supplier": "Static Supplier B",
+        "allPo": 20,
+        "new": 5,
+        "changed": 2,
+        "confirmed": 10,
+        "inProgress": 2,
+        "invoice": 1
+    },
+    {
+        "taskid": "Static Supplier B",
+        "assignto": 20,
+        "assigntouser": 5,
+        "Subject": 2,
+        "startdate": 10,
+        "endstart": 2,
+    }
+];
+fetchDataAndRenderTable(null, "tableBody", staticData);  // Pass staticData when no API URL
+
+</script> -->
+    <script>
+      async function fetchDataAndRenderTable(
+        apiUrl,
+        tableBodyId,
+        headerId,
+        staticData = null,
+        dynamicHeaders = null
+      ) {
+        try {
+          let data = staticData; // Use static data if provided
+
+          // Fetch data from API if apiUrl is provided
+          if (apiUrl) {
+            const response = await fetch(apiUrl);
+            if (!response.ok) throw new Error("Failed to fetch data");
+            data = await response.json();
+          }
+
+          // Use dynamicHeaders or derive from data keys if no headers are provided
+          const columns = dynamicHeaders || Object.keys(data[0] || {}); // Use the keys of the first object as column headers
+
+          let pageSize = 10;
+          let currentPage = 1;
+
+          function renderTable() {
+            const searchQuery = document
+              .getElementById("searchInput")
+              .value.toLowerCase();
+            const filteredData = data.filter((item) =>
+              Object.values(item).some((val) =>
+                String(val).toLowerCase().includes(searchQuery)
+              )
+            ); // Adjust filtering based on your data structure
+            const startIndex = (currentPage - 1) * pageSize;
+            const paginatedData = filteredData.slice(
+              startIndex,
+              startIndex + pageSize
+            );
+
+            const tableBody = document.getElementById(tableBodyId);
+            const tableHeader = document.getElementById(headerId);
+
+            // Clear existing rows and header
+            tableBody.innerHTML = "";
+            tableHeader.innerHTML = "";
+
+            // Dynamically render the table header
+            const headerRow = document.createElement("tr");
+            columns.forEach((col) => {
+              const th = document.createElement("th");
+              th.classList.add("border", "p-3", "text-center");
+              th.innerText = col.charAt(0).toUpperCase() + col.slice(1); // Capitalize first letter of each column name
+              headerRow.appendChild(th);
+            });
+            tableHeader.appendChild(headerRow);
+
+            // Dynamically render the table rows
+            paginatedData.forEach((row) => {
+              const tr = document.createElement("tr");
+              tr.classList.add("hover:bg-gray-50");
+              columns.forEach((col) => {
+                const td = document.createElement("td");
+                td.classList.add("border", "p-3", "text-center");
+                td.innerText = row[col] || ""; // Display the value of each field in the row
+                tr.appendChild(td);
+              });
+              tableBody.appendChild(tr);
+            });
+
+            document.getElementById("entriesInfo").innerText = `Showing ${
+              startIndex + 1
+            } to ${Math.min(startIndex + pageSize, filteredData.length)} of (${
+              filteredData.length
+            } Entries)`;
+            document.getElementById("currentPage").innerText = currentPage;
+          }
+
+          // Event listeners for pagination, search, and page size
+          document
+            .getElementById("pageSize")
+            .addEventListener("change", (event) => {
+              pageSize = parseInt(event.target.value);
+              currentPage = 1;
+              renderTable();
+            });
+
+          document
+            .getElementById("searchInput")
+            .addEventListener("input", () => {
+              currentPage = 1;
+              renderTable();
+            });
+
+          document.getElementById("prevPage").addEventListener("click", () => {
+            if (currentPage > 1) {
+              currentPage--;
+              renderTable();
+            }
+          });
+
+          document.getElementById("nextPage").addEventListener("click", () => {
+            const totalPages = Math.ceil(filteredData.length / pageSize);
+            if (currentPage < totalPages) {
+              currentPage++;
+              renderTable();
+            }
+          });
+
+          renderTable();
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      }
+
+      // Example usage for multiple tables with different headers:
+
+      // Table 1 with dynamic header and API URL
+      fetchDataAndRenderTable(
+        "table1Body",
+        "table1Header",
+        staticData,
+      );
+
+      // Table 2 with static data and custom header
+      const staticData = [
+        {
+          supplier: "Static Supplier A",
+          allPo: 10,
+          new: 2,
+          changed: 1,
+          confirmed: 5,
+          inProgress: 1,
+          invoice: 1,
+        },
+        {
+          supplier: "Static Supplier B",
+          allPo: 20,
+          new: 5,
+          changed: 2,
+          confirmed: 10,
+          inProgress: 2,
+          invoice: 1,
+        },
+      ];
+
+      const customHeadersTable2 = [
+        "supplier",
+        "allPo",
+        "new",
+        "changed",
+        "confirmed",
+        "inProgress",
+        "invoice",
+      ];
+      fetchDataAndRenderTable(
+        null,
+        "table2Body",
+        "table2Header",
+        staticData,
+        customHeadersTable2
+      ); // Pass staticData and customHeadersTable2
+
+      // Table 3 with a different header structure
+      const customHeadersTable3 = ["supplier", "confirmed", "invoice"];
+      const staticDataTable3 = [
+        {
+          supplier: "Supplier C",
+          confirmed: 15,
+          invoice: 5,
+        },
+        {
+          supplier: "Supplier D",
+          confirmed: 18,
+          invoice: 8,
+        },
+      ];
+      fetchDataAndRenderTable(
+        null,
+        "table3Body",
+        "table3Header",
+        staticDataTable3,
+        customHeadersTable3
+      ); // Different header for table 3
+    </script>
+  </body>
+</html>
