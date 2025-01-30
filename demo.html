@@ -10,85 +10,198 @@
       rel="stylesheet"
     />
     <style>
-      /* Base styles for the offcanvas */
-      .offcanvas {
+      /* Sidebar */
+      .sidebar {
+        width: 80px;
+        background-color: #141d38;
+        color: #fff;
+        height: 100vh;
         position: fixed;
+        left: 0;
         top: 0;
-        right: -300px; /* Start offcanvas hidden to the right */
-        width: 300px;
-        height: 100%;
-        background-color: #f8f9fa;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-        z-index: 1050; /* Adjust to ensure it layers above other content */
-        transition: right 0.3s ease;
+        transition: width 0.3s ease-in-out;
+        z-index: 1050;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
       }
 
-      /* Open state for the offcanvas */
-      .offcanvas.open {
-        right: 0;
+      /* Sidebar Expanded */
+      .sidebar.expanded {
+        width: 228px;
       }
 
-      /* Offcanvas content styles */
-      .offcanvas-content {
-        padding: 20px;
+      /* Subsidebar (Order Management) */
+      .subsidebar-canvas {
+        width: 250px;
+        position: fixed;
+        left: 80px; /* Default when sidebar is collapsed */
+        top: 0;
+        height: 100vh;
+        background: white;
+        z-index: 1040;
+        border-left: 1px solid #ccc;
+        transition: transform 0.3s ease-in-out, left 0.3s ease-in-out;
+        transform: translateX(-100%);
       }
 
-      /* Close button styling */
-      .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: transparent;
-        border: none;
-        font-size: 18px;
-        cursor: pointer;
+      /* Show Subsidebar */
+      .subsidebar-canvas.show {
+        transform: translateX(0);
       }
 
-      /* Ensure page content remains visible and interactive */
-      body {
-        overflow: auto;
+      /* Adjust Subsidebar when Sidebar is Expanded */
+      .sidebar.expanded + .subsidebar-canvas {
+        left: 228px; /* Move right when sidebar expands */
+      }
+
+      /* Main Content */
+      .main-content {
+        margin-left: 330px; /* Sidebar (80px) + Subsidebar (250px) */
+        transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+      }
+
+      /* Adjust Main Content when Sidebar is Expanded */
+      .sidebar.expanded ~ .subsidebar-canvas.show ~ .main-content {
+        margin-left: 478px; /* Sidebar (228px) + Subsidebar (250px) */
+      }
+
+      /* Responsive Behavior */
+      @media (max-width: 992px) {
+        .main-content {
+          margin-left: 250px; /* Adjust for smaller screens */
+        }
+
+        .sidebar.expanded ~ .subsidebar-canvas.show ~ .main-content {
+          margin-left: 350px; /* Adjust for expanded sidebar */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .main-content {
+          margin-left: 80px;
+          width: calc(100% - 80px); /* Shrink content */
+        }
+
+        .sidebar.expanded ~ .subsidebar-canvas.show ~ .main-content {
+          margin-left: 228px;
+          width: calc(100% - 228px); /* Adjust content width */
+        }
       }
     </style>
   </head>
   <body>
-    <div id="offcanvas" class="offcanvas">
-      <div class="offcanvas-content">
-        <button id="closeOffcanvas" class="close-btn">Close</button>
-        <p>This is the offcanvas content.</p>
-      </div>
-    </div>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="sidebar collapsed">
+        <div class="logo-container">
+          <img src="/icons/newton icon.svg" alt="Logo" />
+          <img
+            src="/icons/Glyph_ undefined 1.svg"
+            alt="Toggle Menu"
+            class="toggle-img"
+            onclick="showSubsidebar();"
+            aria-controls="subSidebar0"
+          />
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#">
+                <div class="menu-item">
+                  <img src="/icons/icon.svg" alt="Dashboard" />
+                  <span>Dashboard</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
 
-    <button id="openOffcanvas">Open Offcanvas</button>
-    <div>
-      <p>Other page content that should still be interactable.</p>
+      <!-- Sub Sidebar -->
+      <div class="subsidebar-canvas" id="subSidebar0">
+        <div class="offcanvas-header">
+          <h5>Order Management</h5>
+        </div>
+        <div class="offcanvas-body">
+          <ul>
+            <li><a href="#">Order Dispatch</a></li>
+            <li><a href="#">Order Acknowledgement</a></li>
+            <li><a href="#">Invoice</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <header>
+          <button id="toggle-sidebar">
+            <img src="/icons/menu.svg" alt="menu" />
+          </button>
+        </header>
+        <div class="content-container">
+          <h3>Order Dispatch</h3>
+          <p>Welcome to Order Dispatch</p>
+        </div>
+      </div>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const offcanvas = document.getElementById("offcanvas");
-        const openButton = document.getElementById("openOffcanvas");
-        const closeButton = document.getElementById("closeOffcanvas");
+      document.addEventListener("DOMContentLoaded", function () {
+        const sidebar = document.querySelector(".sidebar");
+        const subsidebar = document.querySelector(".subsidebar-canvas");
+        const mainContent = document.querySelector(".main-content");
+        const toggleSidebarButton = document.getElementById("toggle-sidebar");
+        const subsidebarToggleButton = document.querySelector(".toggle-img");
 
-        // Open offcanvas
-        openButton.addEventListener("click", () => {
-          offcanvas.classList.add("open");
+        // Sidebar Toggle Function
+        toggleSidebarButton.addEventListener("click", () => {
+          sidebar.classList.toggle("expanded");
+          sidebar.classList.toggle("collapsed");
+
+          if (sidebar.classList.contains("expanded")) {
+            subsidebar.style.left = "228px";
+            mainContent.style.marginLeft = subsidebar.classList.contains("show")
+              ? "478px"
+              : "228px";
+          } else {
+            subsidebar.style.left = "80px"; // Keep subsidebar aligned
+            mainContent.style.marginLeft = subsidebar.classList.contains("show")
+              ? "330px"
+              : "80px";
+          }
         });
 
-        // Close offcanvas
-        closeButton.addEventListener("click", () => {
-          offcanvas.classList.remove("open");
+        // Subsidebar Toggle Function
+        subsidebarToggleButton.addEventListener("click", () => {
+          subsidebar.classList.toggle("show");
+
+          if (subsidebar.classList.contains("show")) {
+            mainContent.style.marginLeft = sidebar.classList.contains(
+              "expanded"
+            )
+              ? "478px"
+              : "330px";
+          } else {
+            mainContent.style.marginLeft = sidebar.classList.contains(
+              "expanded"
+            )
+              ? "228px"
+              : "80px";
+          }
         });
 
-        // Close offcanvas when clicking outside of it
-        document.addEventListener("click", (event) => {
-          if (
-            offcanvas.classList.contains("open") &&
-            !offcanvas.contains(event.target) &&
-            event.target !== openButton
-          ) {
-            offcanvas.classList.remove("open");
+        // Adjust screen on resize
+        window.addEventListener("resize", () => {
+          if (window.innerWidth < 992) {
+            mainContent.style.width = "calc(100% - 80px)";
+          } else if (window.innerWidth < 768) {
+            mainContent.style.width = "calc(100% - 228px)";
+          } else {
+            mainContent.style.width = "auto";
           }
         });
       });

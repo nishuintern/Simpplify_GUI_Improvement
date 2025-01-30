@@ -1,4 +1,19 @@
 .subsidebar-canvas {
+  min-width: 250px;
+  position: absolute;
+  right: 0;
+  margin-top: 20px;
+  height: 100vh;
+  background: white;
+  z-index: 1050; /* Ensure it's above main content */
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.subsidebar-canvas.show {
+  transform: translateX(0);
+}
+.subsidebar-canvas {
   width: 18% !important;
   height: 89%;
   margin-top: 5%;
@@ -15,6 +30,7 @@
 .subsidebar-canvas .offcanvas-body {
   background-color: white;
 }
+
 /* after expanded it */
 /* width: 17%;
     height: 90.8%;
