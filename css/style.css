@@ -884,7 +884,7 @@ td {
   color: var(--text-color);
 }
 
-th .sort-icons {
+/* th .sort-icons {
   position: absolute;
   right: 10px;
   top: 50%;
@@ -895,10 +895,9 @@ th .sort-icons {
 
 th .sort-icons i {
   font-size: 12px;
-  /* color: #6c757d; */
   cursor: pointer;
   border: 1px solid #BABED8;
-}
+} */
 
 /* th .sort-icons i.active {
   color: #007bff;
@@ -914,7 +913,7 @@ th .sort-icons i {
   border: none;
 }
 
-.sortable-header {
+/* .sortable-header {
   display: flexbox;
   align-items: center;
   justify-content: space-between;
@@ -931,7 +930,7 @@ th .sort-icons i {
   cursor: pointer;
   font-size: 5px;
   line-height: 1;
-}
+} */
 
 .page-size-container label,
 .search-div label {

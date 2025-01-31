@@ -127,4 +127,24 @@ body {
     margin: 0;
 }
 
+.sortable-header {
+    display: flexbox;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    gap: 8px;
+  }
+  
+  .sort-icons {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sort-icon {
+    cursor: pointer;
+    font-size: 5px;
+    line-height: 1;
+  }
+  
+
 /* Responsive Design */

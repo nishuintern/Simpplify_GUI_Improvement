@@ -845,7 +845,7 @@ th .sort-icons i {
   border: none;
 }
 
-.sortable-header {
+/* .sortable-header {
   display: flexbox;
   align-items: center;
   justify-content: space-between;
@@ -862,7 +862,7 @@ th .sort-icons i {
   cursor: pointer;
   font-size: 5px;
   line-height: 1;
-}
+} */
 
 .page-size-container label,
 .search-div label {

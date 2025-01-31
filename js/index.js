@@ -70,6 +70,10 @@ toggleSidebarButton.addEventListener("click", () => {
 //   window.location.href = searchUrl;
 // }
 
+const profileLink=document.getElementById('profile-link').addEventListener('click',function(e){
+  e.preventDefault();
+});
+
 function searchPoNumber(event) {
   event.preventDefault(); // Prevent the default form submission
 
