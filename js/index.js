@@ -70,9 +70,9 @@ toggleSidebarButton.addEventListener("click", () => {
 //   window.location.href = searchUrl;
 // }
 
-const profileLink=document.getElementById('profile-link').addEventListener('click',function(e){
-  e.preventDefault();
-});
+// const profileLink=document.getElementById('profile-link').addEventListener('click',function(e){
+//   e.preventDefault();
+// });
 
 function searchPoNumber(event) {
   event.preventDefault(); // Prevent the default form submission
@@ -416,6 +416,11 @@ i18next.init({
     // }
   },
 });
+
+  function changeLanguage(lang) {
+    document.getElementById("lang-text").value = lang;
+    alert("Language changed to " + (lang === "en" ? "English" : "Hindi"));
+  }
 
 // document.getElementById('language-selector').addEventListener('change', function () {
 //     i18next.changeLanguage(this.value, function (err, t) {

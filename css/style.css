@@ -200,6 +200,7 @@ body {
   justify-content: end;
   align-items: end;
   padding: 10px;
+  height: 60px;
 }
 
 .header nav {
@@ -313,6 +314,23 @@ text-decoration-skip-ink: none;
 header {
   background-color: var(--header-sidebar-bg-color);
 }
+/* Remove default Bootstrap hover background */
+.dropdown-toggle {
+  background-color: transparent !important;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Show white background on hover */
+.dropdown-toggle:hover {
+  background-color: none !important;
+}
+
+/* Prevent icon color from changing */
+.dropdown-toggle img {
+  transition: none;
+}
+
 
 .lang-text,
 .dropdown-item,
@@ -1068,4 +1086,46 @@ th .sort-icons i {
     display: flex;
     justify-content: space-between;
   }
+}
+
+/* ✅ Show dropdown normally on `sm`, `md`, `lg` screens */
+@media (min-width: 576px) {
+  .desktop-dropdown {
+    display: block !important;
+  }
+  .offcanvas-toggle {
+    display: none !important; /* Hide toggle button on larger screens */
+  }
+}
+
+/* ✅ Show Offcanvas button only on `xs` screens */
+@media (max-width: 575.98px) {
+  .desktop-dropdown {
+    display: none !important;
+  }
+  .offcanvas-toggle {
+    display: block !important; /* Show toggle button only on small screens */
+  }
+}
+
+/* Remove default Bootstrap hover background */
+.dropdown-toggle {
+  background-color: transparent !important;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Remove blue background from all dropdown items by default */
+.dropdown-item:focus, 
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: transparent !important;
+}
+
+/* Apply blue background only to header's desktop dropdown items */
+.header .desktop-dropdown .dropdown-item:focus,
+.header .desktop-dropdown .dropdown-item.active,
+.header .desktop-dropdown .dropdown-item:active {
+  background-color: transparent !important; /* Bootstrap's default blue */
+  color: white !important; /* Ensure text is visible */
 }

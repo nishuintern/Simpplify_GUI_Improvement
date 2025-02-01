@@ -141,7 +141,7 @@
             </button>
           </div>
           <nav class="d-flex p-2">
-            <div class="dropdown me-1 mt-3">
+            <!-- <div class="dropdown me-1 mt-3">
               <button
                 class="btn-togg-drop dropdown-toggle"
                 type="button"
@@ -154,8 +154,8 @@
                 <li><a class="dropdown-item" href="#">English</a></li>
                 <li><a class="dropdown-item" href="#">Hindi</a></li>
               </ul>
-            </div>
-            <a href="#help">
+            </div> -->
+            <!-- <a href="#help">
               <div class="user-dropdown">
                 <button class="user-dropdown-btn">
                   <span>
@@ -212,7 +212,265 @@
                   >
                 </div>
               </div>
-            </a>
+            </a> -->
+           <!-- Toggle Button (Visible Only on Small Screens) -->
+
+            <!-- Offcanvas Menu (Sliding Sidebar) -->
+            <!-- 🔹 Offcanvas Toggle Button (Visible Only on XS Screens) -->
+            <button
+              class="bg-transparent border-0 offcanvas-toggle"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+            >
+              <img src="/icons/menu.svg" alt="" />
+            </button>
+
+            <!-- 🔹 Offcanvas Menu (Only for XS Screens) -->
+            <div
+              class="offcanvas offcanvas-end"
+              tabindex="-1"
+              id="offcanvasRight"
+              aria-labelledby="offcanvasRightLabel"
+              aria-controls="offcanvasRight"
+            >
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                ></button>
+              </div>
+              <div class="offcanvas-body">
+                <!-- Dropdown Menu for Offcanvas -->
+                <div class="d-flex align-items-start flex-column gap-3">
+                  <!-- Language Selector Dropdown -->
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-light text-white dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      Language
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="javascript:void(0);"
+                          onclick="changeLanguage('en')"
+                          >English</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="javascript:void(0);"
+                          onclick="changeLanguage('hi')"
+                          >Hindi</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Help Dropdown -->
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-light dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      <img src="/icons/help.svg" alt="Help" />
+                    </button>
+                    <span class="text-white">Help</span>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#help">HelpLine</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Notification Dropdown -->
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-light dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      <img src="/icons/Doorbell.svg" alt="Notification" />
+                    </button>
+                    <span class="text-white">Notification</span>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#notification"
+                          >Notification 1</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- User Dropdown -->
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-light dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      <img src="/icons/Customer.svg" alt="Customer" />
+                    </button>
+                    <span class="text-white">Profile</span>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="/html/Dashboard/User/PartyProfile.html"
+                          >My Profile</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="/html/Dashboard/User/UserAlertMapping.html"
+                          >User Alert Mapping</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="/html/Dashboard/User/AlertConfig.html"
+                          >Alert Configuration</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="/html/Dashboard/User/SchedularConfig.html"
+                          >Scheduler Configuration</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="/html/loginForm/Login.html"
+                          >Logout</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 🔹 Normal Dropdown Menu (Visible on SM, MD, LG Screens) -->
+            <div class="container mt-0 desktop-dropdown">
+              <div class="d-flex gap-1">
+                <!-- Language Selector Dropdown -->
+                <div class="dropdown mt-1">
+                  <button
+                    class="btn btn-light text-white dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    Language
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="javascript:void(0);"
+                        onclick="changeLanguage('en')"
+                        >English</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="javascript:void(0);"
+                        onclick="changeLanguage('hi')"
+                        >Hindi</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <!-- Help Dropdown -->
+                <div class="dropdown">
+                  <button
+                    class="btn btn-light dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    <img src="/icons/help.svg" alt="Help" />
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#help">HelpLine</a></li>
+                  </ul>
+                </div>
+
+                <!-- Notification Dropdown -->
+                <div class="dropdown">
+                  <button
+                    class="btn btn-light dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    <img src="/icons/Doorbell.svg" alt="Notification" />
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#notification"
+                        >Notification 1</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- User Dropdown -->
+                <div class="dropdown">
+                  <button
+                    class="btn btn-light dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    <img src="/icons/Customer.svg" alt="Customer" />
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/html/Dashboard/User/PartyProfile.html"
+                        >My Profile</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/html/Dashboard/User/UserAlertMapping.html"
+                        >User Alert Mapping</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/html/Dashboard/User/AlertConfig.html"
+                        >Alert Configuration</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/html/Dashboard/User/SchedularConfig.html"
+                        >Scheduler Configuration</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/html/loginForm/Login.html"
+                        >Logout</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </nav>
         </header>
         <!-- Dashboard Heading -->
