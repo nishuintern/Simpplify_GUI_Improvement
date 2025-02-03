@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="/SupplierPortal/TableManager.css" />
+    <link rel="stylesheet" href="/SupplierPortal/style.css" />
+    <!-- <link rel="stylesheet" href="/css/subsidebar.css" /> -->
+    <link rel="stylesheet" href="/SupplierPortal/OrderManagement/MyInvoices.css" />
+    <link rel="stylesheet" href="/SupplierPortal/OrderManagement/OrderDispatch.css" />
+    <!-- <link rel="stylesheet" href="/css/ReverseAuction/ReverseAuction.css"> -->
+    <link rel="stylesheet" href="/SupplierPortal/TaskManger/TaskManager.css" />
+    <link rel="stylesheet" href="/SupplierPortal/TaskManger/AddTaskManager.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <title>Simplify</title>
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside
+        class="sidebar collapsed d-sm-none d-md-none d-lg-block"
+        style="position: relative"
+      >
+        <div class="logo">
+          <div class="logo-container">
+            <img src="/icons/newton icon copy 1.svg" alt="Company Logo" />
+            <h3>Simplify</h3>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="/SupplierPortal/index.html">
+                <div class="menu-item">
+                  <img src="/icons/iconamoon_home@2x.svg" alt="Dashboard" />
+                  <span>Dashboard</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/SupplierPortal/OrderManagement/OrderDispatch.html">
+                <div class="menu-item">
+                  <img
+                    src="/icons/icon-park-outline_transaction-order.svg"
+                    alt="Order Management"
+                  />
+                  <span>Order Management</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/SupplierPortal/Quotation/QuotationDetails.html">
+                <div class="menu-item">
+                  <img src="/icons/Checkout.svg" alt="Quotation" />
+                  <span>Quotation Details</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/SupplierPortal/ReverseAuction/ReverseAuction.html">
+                <div class="menu-item">
+                  <img src="/icons/Sell.svg" alt="Reverse Auction" />
+                  <span>Reverse Auction</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/SupplierPortal/AuctionEngine/AuctionEngine.html">
+                <div class="menu-item">
+                  <img src="/icons/Service.svg" alt="Auction Engine" />
+                  <span>Auction Engine</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/SupplierPortal/RFP/RFP.html">
+                <div class="menu-item">
+                  <img src="/icons/Invite.svg" alt="Request For Proposal" />
+                  <span>Request For Proposal</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/SupplierPortal/TaskManager/TaskManager.html">
+                <div class="menu-item active">
+                  <img src="/icons/Task.svg" alt="Task Manager" />
+                  <span>Task Manager</span>
+                </div>
+              </a>
+              <img
+                src="/icons/Glyph_ undefined 1.svg"
+                alt="Toggle Menu"
+                class="toggle-img"
+                onclick="showSubsidebar();"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#subSidebar0"
+                aria-controls="subSidebar0"
+              />
+            </li>
+            <li>
+              <a href="/SupplierPortal/Setting/UserTenantMapping.html">
+                <div class="menu-item">
+                  <img src="/icons/uil_setting.png" alt="Setting" />
+                  <span>Setting</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div
+          class="offcanvas offcanvas-start subsidebar-canvas"
+          tabindex="-1"
+          id="subSidebar0"
+          aria-labelledby="subSidebar0Label"
+          data-bs-backdrop="false"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="subSidebar0Label">Task Manager</h5>
+            <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+          </div>
+          <div class="sub-sidebar-line"><hr /></div>
+          <div class="offcanvas-body">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="/SupplierPortal/TaskManager/TaskManager.html"
+                  >Task Manager</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Header -->
+        <header
+          class="header d-sm-flex justify-content-sm-between justify-content-lg-between justify-content-md-between align-items-center"
+        >
+          <div class="d-lg-flex d-md-none d-sm-none small-toggle">
+            <button
+              class="bg-transparent border-0 text-primary"
+              id="toggle-sidebar"
+            >
+              <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
+            </button>
+          </div>
+          <div class="d-lg-none d-md-flex d-sm-flex">
+            <img src="/icons/newton icon copy 1.svg" alt="Company" />
+            <span class="fs-4 m-2">Simpplify</span>
+            <button
+              class="bg-transparent border-0 m-1 pointer-event"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasResponsive"
+              aria-controls="offcanvasResponsive"
+            >
+              <img src="/icons/menu.svg" alt="" />
+            </button>
+          </div>
+          <nav>
+            <div class="dropdown me-sm-1 me-md-1 mt-sm-3 mt-md-3">
+              <!-- <select
+                name="lang"
+                id="lang-text"
+                class="lang-text bg-transparent text-white border-0 px-lg-3 px-md-2 px-sm-1 bg-option"
+              >
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+              </select> -->
+              <div class="alert alert-info d-none d-lg-none">
+                Resize your browser to show the responsive offcanvas toggle.
+              </div>
+              <div
+                class="offcanvas offcanvas-lg offcanvas-start d-lg-none"
+                tabindex="-1"
+                id="offcanvasResponsive"
+                aria-labelledby="offcanvasResponsiveLabel"
+                style="width: 250px"
+              >
+                <div class="offcanvas-header">
+                  <img src="/icons/newton icon copy 1.svg" alt="" />
+                  <h5 class="offcanvas-title m-2" id="offcanvasResponsiveLabel">
+                    Simpplify
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    data-bs-target="#offcanvasResponsive"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="list-unstyled w-100 gap-5">
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/SupplierPortal/index.html"
+                        >Dashboard</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <select
+                        id="customDropdown"
+                        class="bg-transparent border-0 text-white bg-option"
+                        onchange="location = this.value;"
+                      >
+                        <option value="Order Management">
+                          Order Management
+                        </option>
+                        <option
+                          value="/SupplierPortal/OrderManagement/OrderDispatch.html"
+                        >
+                          Order Dispatch
+                        </option>
+                        <option value="/SupplierPortal/OrderManagement/orderAck.html">
+                          Order Acknowledgement
+                        </option>
+                        <option value="/SupplierPortal/OrderManagement/Invoice.html">
+                          Invoice
+                        </option>
+                        <option value="/SupplierPortal/OrderManagement/BuyerMapping.html">
+                          Buyer Mapping
+                        </option>
+                        <option value="/SupplierPortal/OrderManagement/ItemCatalog.html">
+                          Item Catalog
+                        </option>
+                        <option value="/SupplierPortal/OrderManagement/Item.html">
+                          Item
+                        </option>
+                        <option value="/SupplierPortal/OrderManagement/POStatus.html">
+                          PO Status
+                        </option>
+                        <option
+                          value="/SupplierPortal/OrderManagement/InvoiceDashboard.html"
+                        >
+                          Invoice Dashboard
+                        </option>
+                        <option value="/SupplierPortal/OrderManagement/MyInvoices.html">
+                          My Invoices
+                        </option>
+                      </select>
+                    </li>
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/SupplierPortal/Quotation/QuotationDetails.html"
+                        >QuotationDetails</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/SupplierPortal/ReverseAuction/ReverseAuction.html"
+                        >Reverse Auction</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/SupplierPortal/AuctionEngine/AuctionEngine.html"
+                        >Auction Engine</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/SupplierPortal/RFP/RFP.html"
+                        >Request For Proposal</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/SupplierPortal/TaskManager/TaskManager.html"
+                        >Task Manager</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <select
+                        id="customDropdown"
+                        class="bg-transparent border-0 text-white bg-option"
+                        onchange="location = this.value;"
+                      >
+                        <option value="setting">Setting</option>
+                        <option value="/SupplierPortal/setting/UserTenantMapping.html">
+                          UserTenantMapping
+                        </option>
+                        <option value="/SupplierPortal/setting/UserMaster.html">
+                          UserMaster
+                        </option>
+                        <option value="/SupplierPortal/OrderManagement/MenuMapping.html">
+                          MenuMapping
+                        </option>
+                      </select>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- <a href="#help">
+              <div class="user-dropdown">
+                <button class="user-dropdown-btn">
+                  <span>
+                    <img src="/icons/help.svg" alt="Customer" />
+                  </span>
+                </button>
+                <div class="user-dropdown-content">
+                  <a class="submenu" href="#help">HelpLine</a>
+                </div>
+              </div>
+            </a>
+            <a href="#notification">
+              <div class="user-dropdown">
+                <button class="user-dropdown-btn">
+                  <span>
+                    <img src="/icons/Doorbell.svg" alt="Customer" />
+                  </span>
+                </button>
+                <div class="user-dropdown-content">
+                  <a class="submenu" href="#help">Notificatuon 1</a>
+                </div>
+              </div>
+            </a>
+            <a href="">
+              <div class="user-dropdown">
+                <button class="user-dropdown-btn">
+                  <span>
+                    <img src="/icons/Customer.svg" alt="Customer" />
+                  </span>
+                </button>
+                <div class="user-dropdown-content">
+                  <a
+                    class="submenu"
+                    href="/SupplierPortal/Dashboard/User/PartyProfile.html"
+                    >My Profile</a
+                  >
+                  <a
+                    class="submenu"
+                    href="/SupplierPortal/Dashboard/User/UserAlertMapping.html"
+                    >User Alert Mapping</a
+                  >
+                  <a
+                    class="submenu"
+                    href="/SupplierPortal/Dashboard/User/AlertConfig.html"
+                    >Alert Configuration</a
+                  >
+                  <a
+                    class="submenu"
+                    href="/SupplierPortal/Dashboard/User/SchedularConfig.html"
+                    >Scheduler Configuration</a
+                  >
+                  <a class="submenu" href="/SupplierPortal/loginForm/Login.html"
+                    >Logout</a
+                  >
+                </div>
+              </div>
+            </a> -->
+           <!-- Toggle Button (Visible Only on Small Screens) -->
+
+            <!-- Offcanvas Menu (Sliding Sidebar) -->
+            <!-- 🔹 Offcanvas Toggle Button (Visible Only on XS Screens) -->
+            <button
+              class="bg-transparent border-0 offcanvas-toggle"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+            >
+              <img src="/icons/menu.svg" alt="" />
+            </button>
+
+            <!-- 🔹 Offcanvas Menu (Only for XS Screens) -->
+            <div
+              class="offcanvas offcanvas-end"
+              tabindex="-1"
+              id="offcanvasRight"
+              aria-labelledby="offcanvasRightLabel"
+              aria-controls="offcanvasRight"
+            >
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                ></button>
+              </div>
+              <div class="offcanvas-body">
+                <!-- Dropdown Menu for Offcanvas -->
+                <div class="d-flex align-items-start flex-column gap-3">
+                  <!-- Language Selector Dropdown -->
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-light text-white dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      Language
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="javascript:void(0);"
+                          onclick="changeLanguage('en')"
+                          >English</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="javascript:void(0);"
+                          onclick="changeLanguage('hi')"
+                          >Hindi</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Help Dropdown -->
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-light dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      <img src="/icons/help.svg" alt="Help" />
+                    </button>
+                    <span class="text-white">Help</span>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#help">HelpLine</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Notification Dropdown -->
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-light dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      <img src="/icons/Doorbell.svg" alt="Notification" />
+                    </button>
+                    <span class="text-white">Notification</span>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#notification"
+                          >Notification 1</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- User Dropdown -->
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-light dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      <img src="/icons/Customer.svg" alt="Customer" />
+                    </button>
+                    <span class="text-white">Profile</span>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="/SupplierPortal/Dashboard/User/PartyProfile.html"
+                          >My Profile</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="/SupplierPortal/Dashboard/User/UserAlertMapping.html"
+                          >User Alert Mapping</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="/SupplierPortal/Dashboard/User/AlertConfig.html"
+                          >Alert Configuration</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="/SupplierPortal/Dashboard/User/SchedularConfig.html"
+                          >Scheduler Configuration</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="/SupplierPortal/loginForm/Login.html"
+                          >Logout</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 🔹 Normal Dropdown Menu (Visible on SM, MD, LG Screens) -->
+            <div class="container mt-3 desktop-dropdown">
+              <div class="d-flex gap-1">
+                <!-- Language Selector Dropdown -->
+                <div class="dropdown mt-1">
+                  <button
+                    class="btn btn-light text-white dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    Language
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="javascript:void(0);"
+                        onclick="changeLanguage('en')"
+                        >English</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="javascript:void(0);"
+                        onclick="changeLanguage('hi')"
+                        >Hindi</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <!-- Help Dropdown -->
+                <div class="dropdown">
+                  <button
+                    class="btn btn-light dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    <img src="/icons/help.svg" alt="Help" />
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#help">HelpLine</a></li>
+                  </ul>
+                </div>
+
+                <!-- Notification Dropdown -->
+                <div class="dropdown">
+                  <button
+                    class="btn btn-light dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    <img src="/icons/Doorbell.svg" alt="Notification" />
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#notification"
+                        >Notification 1</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- User Dropdown -->
+                <div class="dropdown">
+                  <button
+                    class="btn btn-light dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    <img src="/icons/Customer.svg" alt="Customer" />
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/SupplierPortal/Dashboard/User/PartyProfile.html"
+                        >My Profile</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/SupplierPortal/Dashboard/User/UserAlertMapping.html"
+                        >User Alert Mapping</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/SupplierPortal/Dashboard/User/AlertConfig.html"
+                        >Alert Configuration</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/SupplierPortal/Dashboard/User/SchedularConfig.html"
+                        >Scheduler Configuration</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/SupplierPortal/loginForm/Login.html"
+                        >Logout</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <!-- Dashboard Heading -->
+        <div class="">
+          <div
+            id="subSidebar4"
+            class="sub-sidebar d-none"
+            style="z-index: 1000"
+          >
+            <span class="p-2 title-text">Task Manager</span>
+            <hr />
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="/SupplierPortal/TaskManager/TaskManager.html"
+                  >Task Manager</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="dashboard-heading">
+              <div class="d-flex">
+                <a href="/SupplierPortal/TaskManager/TaskManager.html">
+                  <img src="/icons/Arrow back ios (2).svg" alt="" />
+                </a>
+                <h3>Add New Task Manager</h3>
+              </div>
+              <div>
+                <a href="" class="text-decoration-none me-4">
+                  <img src="/icons/save.svg" alt="" id="saveData" />
+                </a>
+                <a href="">
+                  <img src="/icons/Synchronize.svg" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="container-fluid mt-2 mb-3 content-scroll">
+              <form class="form-control" onsubmit="">
+                <div class="row">
+                  <!-- Left Column -->
+                  <div class="col-md-6">
+                    <div class="form-row">
+                      <label for="staffName" class="form-label col-4"
+                        >Staff Name *</label
+                      >
+                      <select id="staffName" class="form-control col-8">
+                        <option value="">SELECT</option>
+                        <option value="3g">
+                          3 G TECHNOLOGY(SHANGHAI) LTD.
+                        </option>
+                      </select>
+                    </div>
+                    <div class="form-row">
+                      <label for="inter-exter" class="form-label col-4"
+                        >Internal/External *</label
+                      >
+                      <div class="col-8">
+                        <div class="radio-group">
+                          <label
+                            ><input
+                              id="inter-exter"
+                              type="radio"
+                              name="internalExternal"
+                              value="internal"
+                              checked
+                            />
+                            Internal</label
+                          >
+                          <label
+                            ><input
+                              id="inter-exter"
+                              type="radio"
+                              name="internalExternal"
+                              value="external"
+                            />
+                            External</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <label for="entity" class="form-label col-4"
+                        >Entity *</label
+                      >
+                      <select id="entity" class="form-control col-8">
+                        <option value="">SELECT</option>
+                        <option value="entity1">Entity 1</option>
+                        <option value="entity2">Entity 2</option>
+                      </select>
+                    </div>
+                    <div class="form-row">
+                      <label for="eventTaskMeeting" class="form-label col-4"
+                        >Event/Task/Meeting</label
+                      >
+                      <select id="eventTaskMeeting" class="form-control col-8">
+                        <option value="task">Task</option>
+                        <option value="meeting">Meeting</option>
+                      </select>
+                    </div>
+                    <div class="form-row">
+                      <label for="startDateTime" class="form-label col-4"
+                        >Start Date/Time *</label
+                      >
+                      <div class="col-8 d-flex gap-2">
+                        <input
+                          type="date"
+                          id="startDateTime"
+                          class="form-control"
+                        />
+                        <select id="startTime" class="form-control">
+                          <option value="am">AM</option>
+                          <option value="pm">PM</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <label for="status" class="form-label col-4"
+                        >Status</label
+                      >
+                      <select id="status" class="form-control col-8">
+                        <option value="">-SELECT-</option>
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                        <option value="rescheduled">Rescheduled</option>
+                      </select>
+                    </div>
+                    <div class="form-row">
+                      <label for="check-box" class="form-label col-4"
+                        >Invoiced</label
+                      >
+                      <div class="col-8">
+                        <input id="check-box" type="checkbox" id="invoiced" />
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <label for="name" class="form-label col-4">Name</label>
+                      <input type="text" id="name" class="form-control col-8" />
+                    </div>
+                    <div class="form-row">
+                      <label for="phone" class="form-label col-4"
+                        >Phone No.</label
+                      >
+                      <input
+                        type="text"
+                        id="phone"
+                        class="form-control col-8"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Right Column -->
+                  <div class="col-md-6">
+                    <div class="form-row">
+                      <label for="completionRights" class="form-label col-4"
+                        >Completion Rights</label
+                      >
+                      <select id="completionRights" class="form-control col-8">
+                        <option value="">-SELECT-</option>
+                        <option value="internal">Internal</option>
+                        <option value="external">External</option>
+                        <option value="both">Both</option>
+                        <option value="admin">Admin</option>
+                      </select>
+                    </div>
+                    <div class="form-row">
+                      <label for="department" class="form-label col-4"
+                        >Department</label
+                      >
+                      <select id="department" class="form-control col-8">
+                        <option value="">-SELECT-</option>
+                        <option value="finance">Finance</option>
+                        <option value="sales">Sales</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="engineering">Engineering</option>
+                      </select>
+                    </div>
+                    <div class="form-row">
+                      <label for="buyerSupplierUsers" class="form-label col-4"
+                        >Buyer/Supplier Users *</label
+                      >
+                      <select
+                        id="buyerSupplierUsers"
+                        class="form-control col-8"
+                      >
+                        <option value="">-SELECT-</option>
+                        <option value="admin">Admin</option>
+                        <option value="manager">Manager</option>
+                        <option value="employee">Employee</option>
+                        <option value="customer">Customer</option>
+                      </select>
+                    </div>
+                    <div class="form-row">
+                      <label for="type" class="form-label col-4">TYPE *</label>
+                      <select id="type" class="form-control col-8">
+                        <option value="">-SELECT-</option>
+                        <option value="task">Task</option>
+                        <option value="meeting">Meeting</option>
+                        <option value="event">Event</option>
+                      </select>
+                    </div>
+                    <div class="form-row">
+                      <label for="endDateTime" class="form-label col-4"
+                        >End Date/Time *</label
+                      >
+                      <div class="col-8 d-flex gap-2">
+                        <input
+                          type="date"
+                          id="endDateTime"
+                          class="form-control"
+                        />
+                        <select id="endTime" class="form-control">
+                          <option value="am">AM</option>
+                          <option value="pm">PM</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <label for="reason" class="form-label col-4"
+                        >Reason</label
+                      >
+                      <select id="reason" class="form-control col-8">
+                        <option value="">-SELECT-</option>
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                        <option value="rescheduled">Rescheduled</option>
+                      </select>
+                    </div>
+                    <div class="form-row">
+                      <label for="priority" class="form-label col-4"
+                        >Priority *</label
+                      >
+                      <select id="priority" class="form-control col-8">
+                        <option value="">-SELECT-</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                        <option value="urgent">Urgent</option>
+                        <option value="critical">Critical</option>
+                        <option value="emergency">Emergency</option>
+                      </select>
+                    </div>
+                    <div class="form-row">
+                      <label for="attachDocument" class="form-label col-4"
+                        >Attach Document
+                      </label>
+                      <span
+                        class="btn btn-outline-light text-dark"
+                        data-bs-toggle="modal"
+                        data-bs-target="#documentDetailsModal"
+                        >Show
+                      </span>
+                      <input
+                        type="file"
+                        id="attachDocument"
+                        class="form-control col-8"
+                      />
+                      <div
+                        class="modal fade"
+                        id="documentDetailsModal"
+                        tabindex="-1"
+                        aria-labelledby="documentDetailsModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog modal-md">
+                          <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h5
+                                class="modal-title"
+                                id="documentDetailsModalLabel"
+                              >
+                                Document Details
+                              </h5>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <!-- Modal Body -->
+                            <div class="modal-body">
+                              <!-- Dropdown -->
+                              <!-- <div class="mb-3">
+                                <label for="documentSelect" class="form-label"
+                                  >Document</label
+                                >
+                                <select id="documentSelect" class="form-select">
+                                  <option value="">Select a document</option>
+                                  <option value="doc1">Document 1</option>
+                                  <option value="doc2">Document 2</option>
+                                </select>
+                              </div> -->
+
+                              <!-- Table -->
+                              <div class="table-responsive">
+                                <table class="table table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" class="table-secondary">
+                                        Document
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td class="no-data">
+                                        No data to display
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+
+                            <!-- Modal Footer -->
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Close
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <label for="subject" class="form-label">SUBJECT</label>
+                    <input
+                      type="text"
+                      id="subject"
+                      class="form-control"
+                      placeholder="Enter subject"
+                    />
+                  </div>
+                  <div class="form-row">
+                    <label for="log" class="form-label">Log</label>
+                    <textarea id="log" class="form-control" rows="8"></textarea>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sticky-bottom">
+      <div class="footer-text">
+        <p class="text-center">
+          CopyRight©<span class="ms-1">All rights reserved</span
+          ><span class="ms-2 fw-bold">Nippon Data System LTD</span>
+        </p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="../index.js"></script>
+    <script src="../OrderManagement/OrderDispatch.js"></script>
+    <script src="../tableManager2.js"></script>
+    <script src="../OrderManagement/MyInvoices.js"></script>
+    <script>
+      initializeTableManager("../tableConfigs.json");
+    </script>
+    <script src="../TaskManger/AddTaskManager.js"></script>
+  </body>
+</html>

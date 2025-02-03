@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="/SupplierPortal/TableManager.css" />
+    <link rel="stylesheet" href="/SupplierPortal/style.css" />
+    <!-- <link rel="stylesheet" href="/css/subsidebar.css" /> -->
+    <link rel="stylesheet" href="/SupplierPortal/OrderManagement/OrderDispatch.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <title>Simplify</title>
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside
+        class="sidebar collapsed d-sm-none d-md-none d-lg-block"
+        style="position: relative"
+      >
+        <div class="logo">
+          <div class="logo-container">
+            <img src="/icons/newton icon copy 1.svg" alt="Company Logo" />
+            <h3>Simplify</h3>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="/SupplierPortal/index.html">
+                <div class="menu-item">
+                  <img src="/icons/iconamoon_home@2x.svg" alt="Dashboard" />
+                  <span>Dashboard</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/SupplierPortal/OrderManagement/OrderDispatch.html">
+                <div class="menu-item active">
+                  <img
+                    src="/icons/icon-park-outline_transaction-order.svg"
+                    alt="Order Management"
+                  />
+                  <span>Order Management</span>
+                </div>
+              </a>
+              <img
+                src="/icons/Glyph_ undefined 1.svg"
+                alt="Toggle Menu"
+                class="toggle-img"
+                onclick="showSubsidebar();"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#subSidebar0"
+                aria-controls="subSidebar0"
+              />
+            </li>
+            <li>
+              <a href="/SupplierPortal/Quotation/QuotationDetails.html">
+                <div class="menu-item">
+                  <img src="/icons/Checkout.svg" alt="Quotation" />
+                  <span>Quotation Details</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/SupplierPortal/ReverseAuction/ReverseAuction.html">
+                <div class="menu-item">
+                  <img src="/icons/Sell.svg" alt="Reverse Auction" />
+                  <span>Reverse Auction</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/SupplierPortal/AuctionEngine/AuctionEngine.html">
+                <div class="menu-item">
+                  <img src="/icons/Service.svg" alt="Auction Engine" />
+                  <span>Auction Engine</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/SupplierPortal/RFP/RFP.html">
+                <div class="menu-item">
+                  <img src="/icons/Invite.svg" alt="Request For Proposal" />
+                  <span>Request For Proposal</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/SupplierPortal/TaskManager/TaskManager.html">
+                <div class="menu-item">
+                  <img src="/icons/Task.svg" alt="Task Manager" />
+                  <span>Task Manager</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/SupplierPortal/Setting/UserTenantMapping.html">
+                <div class="menu-item">
+                  <img src="/icons/uil_setting.png" alt="Setting" />
+                  <span>Setting</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div
+          class="offcanvas offcanvas-start subsidebar-canvas"
+          tabindex="-1"
+          id="subSidebar0"
+          aria-labelledby="subSidebar0Label"
+          data-bs-backdrop="false"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="subSidebar0Label">
+              Order Management
+            </h5>
+            <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+          </div>
+          <div class="sub-sidebar-line"><hr /></div>
+          <div class="offcanvas-body">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="/SupplierPortal/OrderManagement/OrderDispatch.html"
+                  >Order Dispatch</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/SupplierPortal/OrderManagement/OrderAck.html"
+                  >Order Acknowledgement</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/SupplierPortal/OrderManagement/Invoice.html"
+                  >Invoice</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="/SupplierPortal/OrderManagement/BuyerMapping.html"
+                  >Buyer Mapping Discount</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="/SupplierPortal/OrderManagement/ItemCatalog.html"
+                  >Item Catalog</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/SupplierPortal/OrderManagement/Item.html"
+                  >Item</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/SupplierPortal/OrderManagement/PoStatus.html"
+                  >PO Status</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="/SupplierPortal/OrderManagement/InvoiceDashboard.html"
+                  >Invoice Dashboard</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/SupplierPortal/OrderManagement/MyInvoices.html"
+                  >My Invoice</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Header -->
+        <header
+          class="header d-sm-flex justify-content-sm-between justify-content-lg-between justify-content-md-between align-items-center"
+        >
+          <div class="d-lg-flex d-md-none d-sm-none small-toggle">
+            <button
+              class="bg-transparent border-0 text-primary"
+              id="toggle-sidebar"
+            >
+              <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
+            </button>
+          </div>
+          <div class="d-lg-none d-md-flex d-sm-flex">
+            <img src="/icons/newton icon copy 1.svg" alt="Company" />
+            <span class="fs-4 m-2">Simpplify</span>
+            <button
+              class="bg-transparent border-0 m-1 pointer-event"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasResponsive"
+              aria-controls="offcanvasResponsive"
+            >
+              <img src="/icons/menu.svg" alt="" />
+            </button>
+          </div>
+          <nav>
+            <div class="dropdown me-sm-1 me-md-1 mt-sm-3 mt-md-3">
+              <!-- <select
+                name="lang"
+                id="lang-text"
+                class="lang-text bg-transparent text-white border-0 px-lg-3 px-md-2 px-sm-1 bg-option"
+              >
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+              </select> -->
+              <div class="alert alert-info d-none d-lg-none">
+                Resize your browser to show the responsive offcanvas toggle.
+              </div>
+              <div
+                class="offcanvas offcanvas-lg offcanvas-start d-lg-none"
+                tabindex="-1"
+                id="offcanvasResponsive"
+                aria-labelledby="offcanvasResponsiveLabel"
+                style="width: 250px"
+              >
+                <div class="offcanvas-header">
+                  <img src="/icons/newton icon copy 1.svg" alt="" />
+                  <h5 class="offcanvas-title m-2" id="offcanvasResponsiveLabel">
+                    Simpplify
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    data-bs-target="#offcanvasResponsive"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="list-unstyled w-100 gap-5">
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/SupplierPortal/index.html"
+                        >Dashboard</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <select
+                        id="customDropdown"
+                        class="bg-transparent border-0 text-white bg-option"
+                        onchange="location = this.value;"
+                      >
+                        <option value="Order Management">
+                          Order Management
+                        </option>
+                        <option
+                          value="/SupplierPortal/OrderManagement/OrderDispatch.html"
+                        >
+                          Order Dispatch
+                        </option>
+                        <option value="/SupplierPortal/OrderManagement/orderAck.html">
+                          Order Acknowledgement
+                        </option>
+                        <option value="/SupplierPortal/OrderManagement/Invoice.html">
+                          Invoice
+                        </option>
+                        <option value="/SupplierPortal/OrderManagement/BuyerMapping.html">
+                          Buyer Mapping
+                        </option>
+                        <option value="/SupplierPortal/OrderManagement/ItemCatalog.html">
+                          Item Catalog
+                        </option>
+                        <option value="/SupplierPortal/OrderManagement/Item.html">
+                          Item
+                        </option>
+                        <option value="/SupplierPortal/OrderManagement/POStatus.html">
+                          PO Status
+                        </option>
+                        <option
+                          value="/SupplierPortal/OrderManagement/InvoiceDashboard.html"
+                        >
+                          Invoice Dashboard
+                        </option>
+                        <option value="/SupplierPortal/OrderManagement/MyInvoices.html">
+                          My Invoices
+                        </option>
+                      </select>
+                    </li>
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/SupplierPortal/Quotation/QuotationDetails.html"
+                        >QuotationDetails</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/SupplierPortal/ReverseAuction/ReverseAuction.html"
+                        >Reverse Auction</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/SupplierPortal/AuctionEngine/AuctionEngine.html"
+                        >Auction Engine</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/SupplierPortal/RFP/RFP.html"
+                        >Request For Proposal</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <a
+                        class="text-decoration-none text-white"
+                        href="/SupplierPortal/TaskManager/TaskManager.html"
+                        >Task Manager</a
+                      >
+                    </li>
+                    <li class="m-4">
+                      <select
+                        id="customDropdown"
+                        class="bg-transparent border-0 text-white bg-option"
+                        onchange="location = this.value;"
+                      >
+                        <option value="setting">Setting</option>
+                        <option value="/SupplierPortal/setting/UserTenantMapping.html">
+                          UserTenantMapping
+                        </option>
+                        <option value="/SupplierPortal/setting/UserMaster.html">
+                          UserMaster
+                        </option>
+                        <option value="/SupplierPortal/OrderManagement/MenuMapping.html">
+                          MenuMapping
+                        </option>
+                      </select>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- <a href="#help">
+              <div class="user-dropdown">
+                <button class="user-dropdown-btn">
+                  <span>
+                    <img src="/icons/help.svg" alt="Customer" />
+                  </span>
+                </button>
+                <div class="user-dropdown-content">
+                  <a class="submenu" href="#help">HelpLine</a>
+                </div>
+              </div>
+            </a>
+            <a href="#notification">
+              <div class="user-dropdown">
+                <button class="user-dropdown-btn">
+                  <span>
+                    <img src="/icons/Doorbell.svg" alt="Customer" />
+                  </span>
+                </button>
+                <div class="user-dropdown-content">
+                  <a class="submenu" href="#help">Notificatuon 1</a>
+                </div>
+              </div>
+            </a>
+            <a href="">
+              <div class="user-dropdown">
+                <button class="user-dropdown-btn">
+                  <span>
+                    <img src="/icons/Customer.svg" alt="Customer" />
+                  </span>
+                </button>
+                <div class="user-dropdown-content">
+                  <a
+                    class="submenu"
+                    href="/SupplierPortal/Dashboard/User/PartyProfile.html"
+                    >My Profile</a
+                  >
+                  <a
+                    class="submenu"
+                    href="/SupplierPortal/Dashboard/User/UserAlertMapping.html"
+                    >User Alert Mapping</a
+                  >
+                  <a
+                    class="submenu"
+                    href="/SupplierPortal/Dashboard/User/AlertConfig.html"
+                    >Alert Configuration</a
+                  >
+                  <a
+                    class="submenu"
+                    href="/SupplierPortal/Dashboard/User/SchedularConfig.html"
+                    >Scheduler Configuration</a
+                  >
+                  <a class="submenu" href="/SupplierPortal/loginForm/Login.html"
+                    >Logout</a
+                  >
+                </div>
+              </div>
+            </a> -->
+            <!-- Toggle Button (Visible Only on Small Screens) -->
+
+            <!-- Offcanvas Menu (Sliding Sidebar) -->
+            <!-- 🔹 Offcanvas Toggle Button (Visible Only on XS Screens) -->
+            <button
+              class="bg-transparent border-0 offcanvas-toggle"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+            >
+              <img src="/icons/menu.svg" alt="" />
+            </button>
+
+            <!-- 🔹 Offcanvas Menu (Only for XS Screens) -->
+            <div
+              class="offcanvas offcanvas-end"
+              tabindex="-1"
+              id="offcanvasRight"
+              aria-labelledby="offcanvasRightLabel"
+              aria-controls="offcanvasRight"
+            >
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                ></button>
+              </div>
+              <div class="offcanvas-body">
+                <!-- Dropdown Menu for Offcanvas -->
+                <div class="d-flex align-items-start flex-column gap-3">
+                  <!-- Language Selector Dropdown -->
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-light text-white dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      Language
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="javascript:void(0);"
+                          onclick="changeLanguage('en')"
+                          >English</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="javascript:void(0);"
+                          onclick="changeLanguage('hi')"
+                          >Hindi</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Help Dropdown -->
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-light dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      <img src="/icons/help.svg" alt="Help" />
+                    </button>
+                    <span class="text-white">Help</span>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#help">HelpLine</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Notification Dropdown -->
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-light dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      <img src="/icons/Doorbell.svg" alt="Notification" />
+                    </button>
+                    <span class="text-white">Notification</span>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#notification"
+                          >Notification 1</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- User Dropdown -->
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-light dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      <img src="/icons/Customer.svg" alt="Customer" />
+                    </button>
+                    <span class="text-white">Profile</span>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="/SupplierPortal/Dashboard/User/PartyProfile.html"
+                          >My Profile</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="/SupplierPortal/Dashboard/User/UserAlertMapping.html"
+                          >User Alert Mapping</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="/SupplierPortal/Dashboard/User/AlertConfig.html"
+                          >Alert Configuration</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="/SupplierPortal/Dashboard/User/SchedularConfig.html"
+                          >Scheduler Configuration</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="/SupplierPortal/loginForm/Login.html"
+                          >Logout</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 🔹 Normal Dropdown Menu (Visible on SM, MD, LG Screens) -->
+            <div class="container mt-3 desktop-dropdown">
+              <div class="d-flex gap-1">
+                <!-- Language Selector Dropdown -->
+                <div class="dropdown mt-1">
+                  <button
+                    class="btn btn-light text-white dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    Language
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="javascript:void(0);"
+                        onclick="changeLanguage('en')"
+                        >English</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="javascript:void(0);"
+                        onclick="changeLanguage('hi')"
+                        >Hindi</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <!-- Help Dropdown -->
+                <div class="dropdown">
+                  <button
+                    class="btn btn-light dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    <img src="/icons/help.svg" alt="Help" />
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#help">HelpLine</a></li>
+                  </ul>
+                </div>
+
+                <!-- Notification Dropdown -->
+                <div class="dropdown">
+                  <button
+                    class="btn btn-light dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    <img src="/icons/Doorbell.svg" alt="Notification" />
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#notification"
+                        >Notification 1</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- User Dropdown -->
+                <div class="dropdown">
+                  <button
+                    class="btn btn-light dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    <img src="/icons/Customer.svg" alt="Customer" />
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/SupplierPortal/Dashboard/User/PartyProfile.html"
+                        >My Profile</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/SupplierPortal/Dashboard/User/UserAlertMapping.html"
+                        >User Alert Mapping</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/SupplierPortal/Dashboard/User/AlertConfig.html"
+                        >Alert Configuration</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/SupplierPortal/Dashboard/User/SchedularConfig.html"
+                        >Scheduler Configuration</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/SupplierPortal/loginForm/Login.html"
+                        >Logout</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <!-- Dashboard Heading -->
+        <div class="">
+          <div id="subSidebar0" class="d-none" style="z-index: 1000">
+            <span class="ps-3 pt-5 title-text">Order Management</span>
+            <hr />
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="/SupplierPortal/OrderManagement/OrderDispatch.html"
+                  >Order Dispatch</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/SupplierPortal/OrderManagement/OrderAck.html"
+                  >Order Acknowledgement</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/SupplierPortal/OrderManagement/Invoice.html"
+                  >Invoice</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="/SupplierPortal/OrderManagement/BuyerMapping.html"
+                  >Buyer Mapping Discount</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="/SupplierPortal/OrderManagement/ItemCatalog.html"
+                  >Item Catalog</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/SupplierPortal/OrderManagement/Item.html"
+                  >Item</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/SupplierPortal/OrderManagement/PoStatus.html"
+                  >PO Status</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="/SupplierPortal/OrderManagement/InvoiceDashboard.html"
+                  >Invoice Dashboard</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/SupplierPortal/OrderManagement/MyInvoices.html"
+                  >My Invoice</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="">
+            <div class="dashboard-heading">
+              <div class="d-flex">
+                <a href="/SupplierPortal/index.html">
+                  <img src="/icons/Arrow back ios (2).svg" alt="" />
+                </a>
+                <h3>Bank For Cash Discount</h3>
+              </div>
+              <a href="">
+                <img src="/icons/Synchronize.svg" alt="" />
+              </a>
+            </div>
+            <div class="d-flex justify-content-between cus-ban">
+              <div>
+                <label class="m-3" for="buyer-customer">
+                  <span>Customer</span>
+                  <select
+                    class="ms-4 py-1 px-lg-5 px-md-3 px-sm-2"
+                    name="size"
+                    id="buyer-customer"
+                  >
+                    <option value="Customer">Select Customer</option>
+                    <option value="Indoasian">Indoasian</option>
+                  </select>
+                </label>
+              </div>
+              <div>
+                <label class="m-3" for="buyer-bank">
+                  <span class="me-4">Bank</span>
+                  <select
+                    class="py-1 px-lg-5 px-md-3 px-sm-2"
+                    name="size"
+                    id="buyer-bank"
+                  >
+                    <option value="bank">Select Bank</option>
+                    <option value="HDFC">HDFC</option>
+                    <option value="HSFC">HSFC</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <div>
+                <label class="m-3" for="page-size">
+                  <span>Page Size :</span>
+                  <select class="px-3 py-1" name="size" id="sizeOfPage">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                  </select>
+                </label>
+              </div>
+              <div>
+                <label class="m-3" for="search">
+                  <span>Search:</span>
+                  <input class="ps-5" type="text" id="search-input" />
+                </label>
+              </div>
+            </div>
+
+            <div
+              class="table table-responsive"
+              style="max-height: 40vh; overflow: auto"
+            >
+              <table class="table">
+                <thead class="table-secondary">
+                  <tr>
+                    <th>Customer</th>
+                    <th>Bank Code</th>
+                    <th>Bank Name</th>
+                  </tr>
+                </thead>
+                <div>
+                  <tbody id="table-body">
+                    <!-- Data will be dynamically inserted here -->
+                  </tbody>
+                </div>
+              </table>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <span id="pagination-info">Showing 1 to 5 of 10 entries</span>
+              <nav aria-label="...">
+                <ul class="pagination" id="pagination-links">
+                  <li class="page-item" id="previous-btn">
+                    <a class="page-link" href="#">Previous</a>
+                  </li>
+                  <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item" id="next-btn">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sticky-bottom">
+      <div class="footer-text">
+        <p class="text-center">
+          CopyRight©<span class="ms-1">All rights reserved</span
+          ><span class="ms-2 fw-bold">Nippon Data System LTD</span>
+        </p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="/SupplierPortal/index.js"></script>
+    <script src="/SupplierPortal/OrderManagement/OrderDispatch.js"></script>
+    <script src="/SupplierPortal/tableManagerOrderDis.js"></script>
+    <script>
+      initializeTableManager("/SupplierPortal/tableConfigs.json");
+    </script>
+    <!-- <script>
+      function toggleSubSidebar(id) {
+        const element = document.getElementById(id);
+        if (element.classList.contains("show")) {
+          element.classList.remove("show");
+        } else {
+          element.classList.add("show");
+        }
+      }
+    </script> -->
+    <script>
+      // Example Data
+      const data = [
+        { customer: "Indoasian", bankCode: "001", bankName: "HSFC" },
+        { customer: "Indoasian", bankCode: "002", bankName: "HSFC" },
+        { customer: "Indoasian", bankCode: "003", bankName: "HDFC" },
+        { customer: "Indoasian", bankCode: "001", bankName: "HSFC" },
+        { customer: "Indoasian", bankCode: "005", bankName: "HDFC" },
+        { customer: "Indoasian", bankCode: "003", bankName: "HSFC" },
+        { customer: "Indoasian", bankCode: "002", bankName: "HDFC" },
+        { customer: "Indoasian", bankCode: "001", bankName: "HSFC" },
+        { customer: "Indoasian", bankCode: "001", bankName: "HDFC" },
+        { customer: "Indoasian", bankCode: "006", bankName: "HSFC" },
+      ];
+
+      let currentPage = 1;
+      let pageSize = 5;
+      let filteredData = [...data]; // Initially, no filters are applied
+
+      // Render Table Function
+      function renderTable(data) {
+        const tableBody = document.getElementById("table-body");
+        tableBody.innerHTML = "";
+        data.forEach((item) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+      <td>${item.customer}</td>
+      <td>${item.bankCode}</td>
+      <td>${item.bankName}</td>
+    `;
+          tableBody.appendChild(row);
+        });
+
+        updatePaginationInfo(data);
+      }
+
+      // Update Pagination Info (Showing X to Y of Z entries)
+      function updatePaginationInfo(data) {
+        const paginationInfo = document.getElementById("pagination-info");
+        const totalEntries = data.length;
+        const startIndex = (currentPage - 1) * pageSize + 1;
+        const endIndex = Math.min(currentPage * pageSize, totalEntries);
+        paginationInfo.textContent = `Showing ${startIndex} to ${endIndex} of ${totalEntries} entries`;
+
+        updatePaginationLinks(data);
+      }
+
+      // Update Pagination Links (Previous, Next, and page numbers)
+      function updatePaginationLinks(data) {
+        const paginationLinks = document.getElementById("pagination-links");
+        const totalPages = Math.ceil(data.length / pageSize);
+        const pageItems = paginationLinks.querySelectorAll(".page-item");
+
+        // Remove active class from all pages
+        pageItems.forEach((item) => item.classList.remove("active"));
+
+        // Disable previous button on first page
+        const previousBtn = document.getElementById("previous-btn");
+        if (currentPage === 1) {
+          previousBtn.classList.add("disabled");
+        } else {
+          previousBtn.classList.remove("disabled");
+        }
+
+        // Disable next button on last page
+        const nextBtn = document.getElementById("next-btn");
+        if (currentPage === totalPages) {
+          nextBtn.classList.add("disabled");
+        } else {
+          nextBtn.classList.remove("disabled");
+        }
+
+        // Add the active class to the current page
+        paginationLinks.querySelectorAll(".page-link").forEach((link) => {
+          const pageNum = parseInt(link.textContent);
+          if (pageNum === currentPage) {
+            link.parentElement.classList.add("active");
+          }
+        });
+      }
+
+      // Handle Page Navigation (Previous, Next)
+      document.getElementById("previous-btn").addEventListener("click", (e) => {
+        e.preventDefault();
+        if (currentPage > 1) {
+          currentPage--;
+          renderTable(
+            filteredData.slice(
+              (currentPage - 1) * pageSize,
+              currentPage * pageSize
+            )
+          );
+        }
+      });
+
+      document.getElementById("next-btn").addEventListener("click", (e) => {
+        e.preventDefault();
+        const totalPages = Math.ceil(filteredData.length / pageSize);
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderTable(
+            filteredData.slice(
+              (currentPage - 1) * pageSize,
+              currentPage * pageSize
+            )
+          );
+        }
+      });
+
+      // Handle Filter and Search Logic
+      function applyFilters() {
+        // Get filter values
+        const customerFilter = document
+          .getElementById("buyer-customer")
+          .value.trim();
+        const bankFilter = document.getElementById("buyer-bank").value.trim();
+        const searchQuery = document
+          .getElementById("search-input")
+          .value.toLowerCase()
+          .trim();
+
+        // Apply filters to the data
+        filteredData = data.filter((item) => {
+          // Check if the item matches the customer filter
+          const matchesCustomer =
+            customerFilter === "" || // No filter applied for customer
+            item.customer.toUpperCase() === customerFilter.toUpperCase(); // Exact match
+
+          // Check if the item matches the bank filter
+          const matchesBank =
+            bankFilter === "" || // No filter applied for bank
+            item.bankName.toUpperCase() === bankFilter.toUpperCase(); // Exact match
+
+          // Check if the item matches the search query
+          const matchesSearch =
+            searchQuery === "" || // No search query applied
+            item.customer.toLowerCase().includes(searchQuery) || // Search matches customer
+            item.bankCode.toLowerCase().includes(searchQuery) || // Search matches bank code
+            item.bankName.toLowerCase().includes(searchQuery); // Search matches bank name
+
+          // Return true if all conditions are met
+          return matchesCustomer && matchesBank && matchesSearch;
+        });
+
+        // Paginate the filtered data and render the table
+        const paginatedData = filteredData.slice(
+          (currentPage - 1) * pageSize,
+          currentPage * pageSize
+        );
+        renderTable(paginatedData);
+
+        // Update pagination info (optional)
+        updatePaginationInfo();
+      }
+
+      // Event Listeners for Dropdown Filters and Search Input
+      document
+        .getElementById("buyer-customer")
+        .addEventListener("change", applyFilters);
+      document
+        .getElementById("buyer-bank")
+        .addEventListener("change", applyFilters);
+      document
+        .getElementById("search-input")
+        .addEventListener("input", applyFilters);
+
+      // Event Listener for Page Size Change
+      document.getElementById("sizeOfPage").addEventListener("change", (e) => {
+        pageSize = parseInt(e.target.value);
+        renderTable(
+          filteredData.slice(
+            (currentPage - 1) * pageSize,
+            currentPage * pageSize
+          )
+        );
+      });
+
+      // Initialize Table Rendering
+      renderTable(
+        filteredData.slice((currentPage - 1) * pageSize, currentPage * pageSize)
+      );
+    </script>
+  </body>
+</html>
