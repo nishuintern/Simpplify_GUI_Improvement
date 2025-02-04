@@ -139,11 +139,13 @@ body {
 .sidebar.expanded .menu-item span {
   display: inline; /* Visible when sidebar is expanded */
 }
-
+.sidebar nav{
+  margin-right: 20px;
+}
 .sidebar nav ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin:0px;
   width: 100%;
 }
 
@@ -159,7 +161,7 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 5px;
+  padding-top: 5px;
   transition: background-color 0.3s ease;
 }
 
@@ -856,6 +858,17 @@ th {
   font-family: Arial, sans-serif;
   border-bottom: 1px solid #ddd;
 }
+.notification-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #BABED8;
+  color: var(--bs-link-color);
+  display: inline-flex
+;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
 
 .user-dropdown-content .submenu:last-child {
   border-bottom: none;
@@ -1065,6 +1078,35 @@ th .sort-icons i {
     line-height: var(--td-text-lh);
     color: var(--text-color);
   }
+  .subsidebar-canvas {
+    /* width: 10%; */
+    max-width: 250px !important;
+    min-width: 180px !important;
+    position: fixed;
+    left: 80px; /* Default: When sidebar is collapsed */
+    margin-top: 60px;
+    /* height: 100vh; */
+    background: white;
+    z-index: 1040;
+    height: calc(100vh - 60px);
+    /* border-left: 1px solid #ccc; */
+    transition: transform 0.3s ease-in-out, left 0.3s ease-in-out;
+    transform: translateX(100%); /* Initially hidden */
+}
+.subsidebar-canvas .offcanvas-header {
+    background-color: white !important;
+    color:#141d38
+}
+
+/* Offcanvas Body White */
+.subsidebar-canvas .offcanvas-body {
+    background-color: white !important;
+    margin-top: -6%;
+}
+
+.subsidebar-canvas.show {
+  transform: translateX(0); /* Show on toggle */
+}
 /* 
   @media (min-width: 768px) {
     .card {
@@ -1119,7 +1161,7 @@ th .sort-icons i {
 .dropdown-item:focus, 
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: transparent !important;
+  background-color: #eeeeee !important;
 }
 
 
@@ -1127,6 +1169,6 @@ th .sort-icons i {
 .header .desktop-dropdown .dropdown-item:focus,
 .header .desktop-dropdown .dropdown-item.active,
 .header .desktop-dropdown .dropdown-item:active {
-  background-color: none !important; /* Bootstrap's default blue */
-  color: white !important; /* Ensure text is visible */
+  background-color: #eeeeee !important; /* Bootstrap's default blue */
+  color: #0000 !important; /* Ensure text is visible */
 }

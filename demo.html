@@ -3,215 +3,195 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dropdown Menu with Offcanvas</title>
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      crossorigin="anonymous"
     />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Sidebar with Offcanvas Menus</title>
   </head>
   <body>
-    <div
-      class="dropdown-menu notification shadow-sm border-0 show"
-      style="
-        position: absolute;
-        inset: 0px 0px auto auto;
-        margin: 0px;
-        transform: translate(-16px, 42px);
-      "
-      data-popper-placement="bottom-end"
-    >
-      <div class="title-header fs-5">Notification</div>
-      <ul class="list-inline d-flex py-2 px-4 top-list justify-content-end">
-        <li class="list-inline-item">
-          <a class="btnMarkAllRead">Mark all as read</a>
-        </li>
-        <li class="list-inline-item">
-          <a
-            class="btnTurnOff"
-            data-id="1"
-            href1="/SystemCodesMaster/TurnOffNotification"
-            >Turn off alerts</a
-          >
-        </li>
-        <li class="list-inline-item">
-          <a href="/SettingNotifications">Settings</a>
-        </li>
-      </ul>
-      <ul
-        class="notification-list"
-        style="max-height: 345px; overflow-y: scroll"
-      >
-        <li class="NID" data-id="59">
-          <div class="d-flex" href="#">
-            <div class="flex-shrink-0 notification-icon">
-              <i class="icon icon-ic_fluent_mail_checkmark_20_regular"></i>
-            </div>
-            <div class="flex-grow-1 ms-3">
-              <div class="d-flex justify-content-between">
-                <h6>ACCOUNT ASSIGNED</h6>
-                <span class="time-stamp">16/01/2025 09:18:AM</span>
-              </div>
-              <div class="notification-info">
-                <p>
-                  Account :
-                  <a
-                    href="/SystemCodesMaster/..//SalesAccount/editAccount?AccountId=PP0003"
-                    class="NID1"
-                    data-id="59"
-                    >Sorav Saini</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="NID" data-id="54">
-          <div class="d-flex" href="#">
-            <div class="flex-shrink-0 notification-icon">
-              <i class="icon icon-ic_fluent_mail_checkmark_20_regular"></i>
-            </div>
-            <div class="flex-grow-1 ms-3">
-              <div class="d-flex justify-content-between">
-                <h6>ACCOUNT ASSIGNED</h6>
-                <span class="time-stamp">16/01/2025 02:53:AM</span>
-              </div>
-              <div class="notification-info">
-                <p>
-                  Account :
-                  <a
-                    href="/SystemCodesMaster/..//SalesAccount/editAccount?AccountId=PP0002"
-                    class="NID1"
-                    data-id="54"
-                    >Connector</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="NID" data-id="53">
-          <div class="d-flex" href="#">
-            <div class="flex-shrink-0 notification-icon">
-              <i class="icon icon-ic_fluent_mail_checkmark_20_regular"></i>
-            </div>
-            <div class="flex-grow-1 ms-3">
-              <div class="d-flex justify-content-between">
-                <h6>LEAD ASSIGNED</h6>
-                <span class="time-stamp">15/01/2025 17:42:PM</span>
-              </div>
-              <div class="notification-info">
-                <p>
-                  Lead :
-                  <a
-                    href="/SystemCodesMaster/..//SalesManageLead/editLead?LeadId=APL150125000031"
-                    class="NID1"
-                    data-id="53"
-                    >Ashish Mishra</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="NID" data-id="52">
-          <div class="d-flex" href="#">
-            <div class="flex-shrink-0 notification-icon">
-              <i class="icon icon-ic_fluent_mail_checkmark_20_regular"></i>
-            </div>
-            <div class="flex-grow-1 ms-3">
-              <div class="d-flex justify-content-between">
-                <h6>LEAD ASSIGNED</h6>
-                <span class="time-stamp">15/01/2025 17:18:PM</span>
-              </div>
-              <div class="notification-info">
-                <p>
-                  Lead :
-                  <a
-                    href="/SystemCodesMaster/..//SalesManageLead/editLead?LeadId=APL150125000029"
-                    class="NID1"
-                    data-id="52"
-                    >Ameve Sharma</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="NID" data-id="51">
-          <div class="d-flex" href="#">
-            <div class="flex-shrink-0 notification-icon">
-              <i class="icon icon-ic_fluent_mail_checkmark_20_regular"></i>
-            </div>
-            <div class="flex-grow-1 ms-3">
-              <div class="d-flex justify-content-between">
-                <h6>LEAD ASSIGNED</h6>
-                <span class="time-stamp">14/01/2025 09:52:AM</span>
-              </div>
-              <div class="notification-info">
-                <p>
-                  Lead :
-                  <a
-                    href="/SystemCodesMaster/..//SalesManageLead/editLead?LeadId=APL140125000028"
-                    class="NID1"
-                    data-id="51"
-                    >SACHIN
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="NID" data-id="49">
-          <div class="d-flex" href="#">
-            <div class="flex-shrink-0 notification-icon">
-              <i class="icon icon-ic_fluent_mail_checkmark_20_regular"></i>
-            </div>
-            <div class="flex-grow-1 ms-3">
-              <div class="d-flex justify-content-between">
-                <h6>ACCOUNT ASSIGNED</h6>
-                <span class="time-stamp">10/01/2025 05:45:AM</span>
-              </div>
-              <div class="notification-info">
-                <p>
-                  Account :
-                  <a
-                    href="/SystemCodesMaster/..//SalesAccount/editAccount?AccountId=PP0001"
-                    class="NID1"
-                    data-id="49"
-                    >DSA</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="NID" data-id="41">
-          <div class="d-flex" href="#">
-            <div class="flex-shrink-0 notification-icon">
-              <i class="icon icon-ic_fluent_mail_checkmark_20_regular"></i>
-            </div>
-            <div class="flex-grow-1 ms-3">
-              <div class="d-flex justify-content-between">
-                <h6>LEAD ASSIGNED</h6>
-                <span class="time-stamp">09/01/2025 10:09:AM</span>
-              </div>
-              <div class="notification-info">
-                <p>
-                  Lead :
-                  <a
-                    href="/SystemCodesMaster/..//SalesManageLead/editLead?LeadId=APL090125000025"
-                    class="NID1"
-                    data-id="41"
-                    >Lead1</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav>
+          <ul>
+            <!-- Dashboard -->
+            <li>
+              <a href="#" data-bs-toggle="offcanvas" data-bs-target="#subSidebar1">
+                <div class="menu-item">
+                  <img src="/icons/iconamoon_home@2x.svg" alt="Dashboard" />
+                  <span>Dashboard</span>
+                </div>
+              </a>
+            </li>
+
+            <!-- Order Management -->
+            <li>
+              <a href="#" data-bs-toggle="offcanvas" data-bs-target="#subSidebar2">
+                <div class="menu-item">
+                  <img src="/icons/icon-park-outline_transaction-order.svg" alt="Order Management" />
+                  <span>Order Management</span>
+                </div>
+              </a>
+            </li>
+
+            <!-- Quotation -->
+            <li>
+              <a href="#" data-bs-toggle="offcanvas" data-bs-target="#subSidebar3">
+                <div class="menu-item">
+                  <img src="/icons/Checkout.svg" alt="Quotation" />
+                  <span>Quotation</span>
+                </div>
+              </a>
+            </li>
+
+            <!-- Reverse Auction -->
+            <li>
+              <a href="#" data-bs-toggle="offcanvas" data-bs-target="#subSidebar4">
+                <div class="menu-item">
+                  <img src="/icons/Sell.svg" alt="Reverse Auction" />
+                  <span>Reverse Auction</span>
+                </div>
+              </a>
+            </li>
+
+            <!-- Auction Engine -->
+            <li>
+              <a href="#" data-bs-toggle="offcanvas" data-bs-target="#subSidebar5">
+                <div class="menu-item">
+                  <img src="/icons/Service.svg" alt="Auction Engine" />
+                  <span>Auction Engine</span>
+                </div>
+              </a>
+            </li>
+
+            <!-- RFP -->
+            <li>
+              <a href="#" data-bs-toggle="offcanvas" data-bs-target="#subSidebar6">
+                <div class="menu-item">
+                  <img src="/icons/Invite.svg" alt="Request For Proposal" />
+                  <span>Request For Proposal</span>
+                </div>
+              </a>
+            </li>
+
+            <!-- Settings -->
+            <li>
+              <a href="#" data-bs-toggle="offcanvas" data-bs-target="#subSidebar7">
+                <div class="menu-item">
+                  <img src="/icons/uil_setting.png" alt="Setting" />
+                  <span>Settings</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <header class="bg-white d-flex justify-content-between p-3">
+          <h3>Dashboard</h3>
+        </header>
+      </div>
     </div>
-    <script></script>
+
+    <!-- Offcanvas Subsidebars -->
+    <div class="offcanvas offcanvas-start subsidebar-canvas" id="subSidebar1">
+      <div class="offcanvas-header">
+        <h5>Dashboard Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-unstyled">
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Statistics</a></li>
+          <li><a href="#">Reports</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start subsidebar-canvas" id="subSidebar2">
+      <div class="offcanvas-header">
+        <h5>Order Management</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-unstyled">
+          <li><a href="#">Order Dispatch</a></li>
+          <li><a href="#">Order Acknowledgement</a></li>
+          <li><a href="#">Invoice Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start subsidebar-canvas" id="subSidebar3">
+      <div class="offcanvas-header">
+        <h5>Quotation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-unstyled">
+          <li><a href="#">Quotation Requests</a></li>
+          <li><a href="#">Pending Approvals</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start subsidebar-canvas" id="subSidebar4">
+      <div class="offcanvas-header">
+        <h5>Reverse Auction</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-unstyled">
+          <li><a href="#">Active Auctions</a></li>
+          <li><a href="#">Completed Auctions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start subsidebar-canvas" id="subSidebar5">
+      <div class="offcanvas-header">
+        <h5>Auction Engine</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-unstyled">
+          <li><a href="#">New Auction</a></li>
+          <li><a href="#">Bidding History</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start subsidebar-canvas" id="subSidebar6">
+      <div class="offcanvas-header">
+        <h5>Request For Proposal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-unstyled">
+          <li><a href="#">New RFP</a></li>
+          <li><a href="#">RFP Status</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start subsidebar-canvas" id="subSidebar7">
+      <div class="offcanvas-header">
+        <h5>Settings</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-unstyled">
+          <li><a href="#">User Management</a></li>
+          <li><a href="#">System Settings</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
