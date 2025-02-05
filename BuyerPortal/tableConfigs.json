@@ -1,0 +1,1627 @@
+[
+  {
+    "tableId": "#todo-1",
+    "columns": [
+      {
+        "data": "TaskID",
+        "title": "Task ID"
+      },
+      {
+        "data": "AssignTo",
+        "title": "Assign To"
+      },
+      {
+        "data": "AssignToUser",
+        "title": "Assign To User"
+      },
+      {
+        "data": "Subject",
+        "title": "Subject"
+      },
+      {
+        "data": "StartDate",
+        "title": "Start Date"
+      },
+      {
+        "data": "EndDate",
+        "title": "End Date"
+      }
+    ],
+    "data": [
+      {
+        "TaskID": "20180710TSK000006",
+        "AssignTo": "3 G Technology(Shanghai)Ltd.",
+        "AssignToUser": "threetech.12@gmail.com",
+        "Subject": "Task One",
+        "StartDate": "7/10/2024",
+        "EndDate": "7/12/2024"
+      },
+      {
+        "TaskID": "20180710TSK000007",
+        "AssignTo": "Tech Solutions",
+        "AssignToUser": "techsol.34@gmail.com",
+        "Subject": "Task Two",
+        "StartDate": "7/11/2024",
+        "EndDate": "7/13/2024"
+      }
+    ]
+  },
+  {
+    "tableId": "#todo-2",
+    "columns": [
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "EnquiryNo",
+        "title": "Enquiry No."
+      },
+      {
+        "data": "IndentType",
+        "title": "Indent Type"
+      },
+      {
+        "data": "EventName",
+        "title": "Event Name"
+      },
+      {
+        "data": "CustomerCode",
+        "title": "Customer Code"
+      }
+    ],
+    "data": [
+      {
+        "Location": "400002",
+        "EnquiryNo": "201802ENQ000001",
+        "IndentType": "INDENT INDIGENEOUS -HO",
+        "EventName": "EngApr2-1",
+        "CustomerCode": "TC00000003"
+      },
+      {
+        "Location": "400003",
+        "EnquiryNo": "201802ENQ000001",
+        "IndentType": "INDENT INDIGENEOUS -HO",
+        "EventName": "EngApr2-1",
+        "CustomerCode": "TC00000003"
+      }
+    ]
+  },
+  {
+    "tableId": "#por",
+    "columns": [
+      {
+        "data": "SupplierName",
+        "title": "Supplier Name"
+      },
+      {
+        "data": "AllPo",
+        "title": "All Po"
+      },
+      {
+        "data": "New",
+        "title": "New"
+      },
+      {
+        "data": "Changed",
+        "title": "Changed"
+      },
+      {
+        "data": "Confirmed",
+        "title": "Confirmed"
+      },
+      {
+        "data": "InProgress",
+        "title": "In-Progress"
+      },
+      {
+        "data": "Invoice",
+        "title": "Invoice"
+      }
+    ],
+    "data": [
+      {
+        "SupplierName": "Indoasian",
+        "AllPo": "29",
+        "New": "9",
+        "Changed": "0",
+        "Confirmed": "10",
+        "InProgress": "0",
+        "Invoice": "0"
+      }
+    ]
+  },
+  {
+    "tableId": "#ir",
+    "columns": [
+      {
+        "data": "CustomerName",
+        "title": "Customer Name"
+      },
+      {
+        "data": "Sent",
+        "title": "Sent"
+      },
+      {
+        "data": "Approved",
+        "title": "Approved"
+      },
+      {
+        "data": "Rejected",
+        "title": "Rejected"
+      },
+      {
+        "data": "Confirmed",
+        "title": "Confirmed"
+      },
+      {
+        "data": "InProgress",
+        "title": "In-Progress"
+      }
+    ],
+    "data": [
+      {
+        "CustomerName": "Indoasian1",
+        "Sent": "45",
+        "Approved": "0",
+        "Rejected": "0",
+        "Confirmed": "1",
+        "InProgress": "0"
+      },
+      {
+        "CustomerName": "Indoasian2",
+        "Sent": "60",
+        "Approved": "0",
+        "Rejected": "0",
+        "Confirmed": "1",
+        "InProgress": "1"
+      }
+    ]
+  },
+  {
+    "tableId": "#tsk",
+    "columns": [
+      {
+        "data": "TaskID",
+        "title": "Task ID"
+      },
+      {
+        "data": "AssignBy",
+        "title": "Assign By"
+      },
+      {
+        "data": "AssignByUser",
+        "title": "Assign By User"
+      },
+      {
+        "data": "AssignTo",
+        "title": "Assign To"
+      },
+      {
+        "data": "AssignToUser",
+        "title": "Assign To User"
+      }
+    ],
+    "data": [
+      {
+        "TaskID": "2018071TSK000006",
+        "AssignBy": "3 G Technology(Shanghai)Ltd.",
+        "AssignByUser": "threetech.12@gmail.com",
+        "AssignTo": "3 G Technology(Shanghai)Ltd.",
+        "AssignToUser": "threetech.12@gmail.com"
+      }
+    ]
+  },
+  {
+    "tableId": "#runningBids",
+    "columns": [
+      {
+        "data": "EventCode",
+        "title": "Event Code"
+      },
+      {
+        "data": "EventName",
+        "title": "Event Name"
+      },
+      {
+        "data": "OpeningDate",
+        "title": "Opening Date"
+      },
+      {
+        "data": "OpeningTime",
+        "title": "Opening Time"
+      },
+      {
+        "data": "OpeningBidTime",
+        "title": "Opening Bid Time"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "EventCode": " ",
+        "EventName": " ",
+        "OpeningDate": " ",
+        "OpeningTime": " ",
+        "OpeningBidTime": "",
+        "Action": ""
+      }
+    ]
+  },
+  {
+    "tableId": "#upcomingBids",
+    "columns": [
+      {
+        "data": "EventCode",
+        "title": "Event Code"
+      },
+      {
+        "data": "EventName",
+        "title": "Event Name"
+      },
+      {
+        "data": "OpeningDate",
+        "title": "Opening Date"
+      },
+      {
+        "data": "OpeningTime",
+        "title": "Opening Time"
+      },
+      {
+        "data": "OpeningBidAmount",
+        "title": "Opening Bid Amount"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "EventCode": " ",
+        "EventName": " ",
+        "OpeningDate": " ",
+        "OpeningTime": " ",
+        "OpeningBidTime": "",
+        "Action": ""
+      }
+    ]
+  },
+  {
+    "tableId": "#watchBids",
+    "columns": [
+      {
+        "data": "EventCode",
+        "title": "Event Code"
+      },
+      {
+        "data": "EventName",
+        "title": "Event Name"
+      },
+      {
+        "data": "OpeningDate",
+        "title": "Opening Date"
+      },
+      {
+        "data": "OpeningTime",
+        "title": "Opening Time"
+      },
+      {
+        "data": "OpeningBidAmount",
+        "title": "Opening Bid Amount"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "EventCode": "20240709ENQ000003",
+        "EventName": "Event 7base",
+        "OpeningDate": "07/09/2024",
+        "OpeningTime": "313:00:00",
+        "OpeningBidAmount": "300.00",
+        "Action": "win"
+      },
+      {
+        "EventCode": "20240709ENQ000004",
+        "EventName": "Event 7base",
+        "OpeningDate": "07/09/2024",
+        "OpeningTime": "313:00:00",
+        "OpeningBidAmount": "300.00",
+        "Action": "not sure"
+      },
+      {
+        "EventCode": "20240709ENQ000005",
+        "EventName": "Event 7base",
+        "OpeningDate": "07/09/2024",
+        "OpeningTime": "313:00:00",
+        "OpeningBidAmount": "300.00",
+        "Action": "not win"
+      }
+    ]
+  },
+  {
+    "tableId": "#orderDis",
+    "columns": [
+      {
+        "data": "CustomerName",
+        "title": "Customer Name"
+      },
+      {
+        "data": "PONo",
+        "title": "PO No."
+      },
+      {
+        "data": "Date",
+        "title": "Date"
+      },
+      {
+        "data": "Validity",
+        "title": "Validity"
+      },
+      {
+        "data": "Amount",
+        "title": "Amount"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "CustomerName": "Indoasian",
+        "PONo": "20240828NPO000001",
+        "Date": "8/28/2024",
+        "Validity": "",
+        "Amount": "22800.00",
+        "Action": "Download Dispatch ASN"
+      },
+      {
+        "CustomerName": "Indoasian",
+        "PONo": "20240828NPO000001",
+        "Date": "8/28/2024",
+        "Validity": "",
+        "Amount": "22800.00",
+        "Action": "Download Dispatch ASN"
+      },
+      {
+        "CustomerName": "Indoasian",
+        "PONo": "20240828NPO000001",
+        "Date": "8/28/2024",
+        "Validity": "",
+        "Amount": "22800.00",
+        "Action": "Download Dispatch ASN"
+      }
+    ]
+  },
+  {
+    "tableId": "#engine-running",
+    "columns": [
+      {
+        "data": "EventCode",
+        "title": "Event Code"
+      },
+      {
+        "data": "EventName",
+        "title": "Event Name"
+      },
+      {
+        "data": "OpeningDate",
+        "title": "Opening Date"
+      },
+      {
+        "data": "OpeningTime",
+        "title": "Opening Time"
+      },
+      {
+        "data": "OpeningBidTime",
+        "title": "Opening Bid Time"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "EventCode": "20240709ENQ000003",
+        "EventName": "Event 7base",
+        "OpeningDate": "07/09/2024",
+        "OpeningTime": "313:00:00",
+        "OpeningBidTime": "300.00",
+        "Action": "300.00"
+      },
+      {
+        "EventCode": "20240709ENQ000004",
+        "EventName": "Event 7base",
+        "OpeningDate": "07/09/2024",
+        "OpeningTime": "313:00:00",
+        "OpeningBidTime": "300.00",
+        "Action": "300.00"
+      },
+      {
+        "EventCode": "20240709ENQ000005",
+        "EventName": "Event 7base",
+        "OpeningDate": "07/09/2024",
+        "OpeningTime": "313:00:00",
+        "OpeningBidTime": "300.00",
+        "Action": "300.00"
+      }
+    ]
+  },
+  {
+    "tableId": "#engine-upcoming",
+    "columns": [
+      {
+        "data": "EventCode",
+        "title": "Event Code"
+      },
+      {
+        "data": "EventName",
+        "title": "Event Name"
+      },
+      {
+        "data": "OpeningDate",
+        "title": "Opening Date"
+      },
+      {
+        "data": "OpeningTime",
+        "title": "Opening Time"
+      },
+      {
+        "data": "OpeningBidAmount",
+        "title": "Opening Bid Amount"
+      }
+    ],
+    "data": [
+      {
+        "EventCode": "20240709ENQ000003",
+        "EventName": "Event 7base",
+        "OpeningDate": "07/09/2024",
+        "OpeningTime": "313:00:00",
+        "OpeningBidAmount": "300.00"
+      },
+      {
+        "EventCode": "20240709ENQ000004",
+        "EventName": "Event 7base",
+        "OpeningDate": "07/09/2024",
+        "OpeningTime": "313:00:00",
+        "OpeningBidAmount": "300.00"
+      },
+      {
+        "EventCode": "20240709ENQ000005",
+        "EventName": "Event 7base",
+        "OpeningDate": "07/09/2024",
+        "OpeningTime": "313:00:00",
+        "OpeningBidAmount": "300.00"
+      }
+    ]
+  },
+  {
+    "tableId": "#engine-watch",
+    "columns": [
+      {
+        "data": "CustomerName",
+        "title": "Customer Name"
+      },
+      {
+        "data": "PONo",
+        "title": "PO No."
+      },
+      {
+        "data": "Date",
+        "title": "Date"
+      },
+      {
+        "data": "Validity",
+        "title": "Validity"
+      },
+      {
+        "data": "Amount",
+        "title": "Amount"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "CustomerName": "20240709ENQ000003",
+        "PONo": "Event 7base",
+        "Date": "07/09/2024",
+        "validity": "313:00:00",
+        "Amount": "300.00",
+        "Action": "Download Dispatch ASN"
+      },
+      {
+        "CustomerName": "20240709ENQ000003",
+        "PONo": "Event 7base",
+        "Date": "07/09/2024",
+        "validity": "313:00:00",
+        "Amount": "300.00",
+        "Action": "Download Dispatch ASN"
+      },
+      {
+        "CustomerName": "20240709ENQ000003",
+        "PONo": "Event 7base",
+        "Date": "07/09/2024",
+        "validity": "313:00:00",
+        "Amount": "300.00",
+        "Action": "Download Dispatch ASN"
+      }
+    ]
+  },
+  {
+    "tableId": "#orderAck",
+    "columns": [
+      {
+        "data": "CustomerName",
+        "title": "Customer Name"
+      },
+      {
+        "data": "OrderNo.",
+        "title": "Order No."
+      },
+      {
+        "data": "PODate",
+        "title": "PO Date"
+      },
+      {
+        "data": "ValidityDate",
+        "title": "Validity Date"
+      },
+      {
+        "data": "OrderAmount",
+        "title": "Order Amount"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "CustomerName": "Indoasian",
+        "OrderNo.": "20240828NPO000001",
+        "PODate": "8/28/2024",
+        "ValidityDate": "",
+        "OrderAmount": "22800.00",
+        "Action": "Download Checked Download"
+      },
+      {
+        "CustomerName": "Indoasian",
+        "OrderNo.": "20240828NPO000001",
+        "PODate": "8/28/2024",
+        "ValidityDate": "",
+        "OrderAmount": "22800.00",
+        "Action": "Download Checked Download"
+      },
+      {
+        "CustomerName": "Indoasian",
+        "OrderNo.": "20240828NPO000001",
+        "PODate": "8/28/2024",
+        "ValidityDate": "",
+        "OrderAmount": "22800.00",
+        "Action": "Download Checked Download"
+      }
+    ]
+  },
+  {
+    "tableId": "#invoices",
+    "columns": [
+      {
+        "data": "InvoiceNo.",
+        "title": "Invoice No."
+      },
+      {
+        "data": "DispatchNo.",
+        "title": "Dispatch No."
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "InvoiceNo.": "1011020",
+        "DispatchNo.": "0123",
+        "Action": "Download"
+      },
+      {
+        "InvoiceNo.": "124",
+        "DispatchNo.": "1111143",
+        "Action": "Download View Bank"
+      },
+      {
+        "InvoiceNo.": "123412",
+        "DispatchNo.": "1111190",
+        "Action": "Download"
+      }
+    ]
+  },
+  {
+    "tableId": "#buyer-mapping",
+    "columns": [
+      {
+        "data": "Customer",
+        "title": "Customer"
+      },
+      {
+        "data": "BankCode",
+        "title": "Bank Code"
+      },
+      {
+        "data": "BankName",
+        "title": "Bank Name"
+      }
+    ],
+    "data": [
+      {
+        "Customer": "Indoasian",
+        "BankCode": "001",
+        "BankName": "HDFC"
+      },
+      {
+        "Customer": "Indoasian",
+        "BankCode": "001",
+        "BankName": "HDSC"
+      },
+      {
+        "Customer": "Indoasian",
+        "BankCode": "001",
+        "BankName": "HDFC"
+      }
+    ]
+  },
+  {
+    "tableId": "#invoice",
+    "columns": [
+      {
+        "data": "InvoiceNo.",
+        "title": "Invoice No."
+      },
+      {
+        "data": "DispatchNo.",
+        "title": "Dispatch No."
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "InvoiceNo.": "1011020",
+        "DispatchNo.": "0123",
+        "Action": "Download"
+      },
+      {
+        "InvoiceNo.": "124",
+        "DispatchNo.": "1111143",
+        "Action": "Download View Bank"
+      },
+      {
+        "InvoiceNo.": "123412",
+        "DispatchNo.": "1111190",
+        "Action": "Download"
+      }
+    ]
+  },
+  {
+    "tableId": "#item-list",
+    "columns": [
+      {
+        "data": "ItemCode",
+        "title": "Item Code"
+      },
+      {
+        "data": "ItemDescription",
+        "title": "Item Description"
+      },
+      {
+        "data": "ItemSpecification",
+        "title": "Item Specification"
+      },
+      {
+        "data": "ChapterCode",
+        "title": "Chapter Code"
+      },
+      {
+        "data": "HeadingCode",
+        "title": "Heading Code"
+      },
+      {
+        "data": "HSNCode",
+        "title": "HSN Code"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "ItemCode": "Item 1",
+        "ItemDescription": "Item Description",
+        "ItemSpecification": "Item Spec",
+        "ChapterCode": "02",
+        "HeadingCode": "02",
+        "HSNCode": "02020005",
+        "Action": "Show Image  Map/Edit HSN"
+      },
+      {
+        "ItemCode": "ITMWM00002",
+        "ItemDescription": "Washing Machine",
+        "ItemSpecification": "Semiconductor material",
+        "ChapterCode": "01",
+        "HeadingCode": "03",
+        "HSNCode": "01030001",
+        "Action": "Show Image  Map/Edit HSN"
+      },
+      {
+        "ItemCode": "ITEM00045",
+        "ItemDescription": "Wiper Motor",
+        "ItemSpecification": "DC based motor wiperskip the car",
+        "ChapterCode": "38",
+        "HeadingCode": "01",
+        "HSNCode": "38010001",
+        "Action": "Show Image  Map/Edit HSN"
+      }
+    ]
+  },
+  {
+    "tableId": "#invoice-dashboard",
+    "columns": [
+      {
+        "data": "DispatchId",
+        "title": "Dispatch Id"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "VendorName",
+        "title": "Vendor Name"
+      },
+      {
+        "data": "InvoiceNo.",
+        "title": "Invoice No."
+      },
+      {
+        "data": "SourceOfInvoice",
+        "title": "Source Of Invoice"
+      },
+      {
+        "data": "InvoiceAmount",
+        "title": "Invoice Amount"
+      },
+      {
+        "data": "PONo.",
+        "title": "PO No."
+      },
+      {
+        "data": "MSME",
+        "title": "MSME"
+      },
+      {
+        "data": "DateOfShipment",
+        "title": "Date Of Shipment"
+      },
+      {
+        "data": "ExpectedDeliveryDate",
+        "title": "ExpectedDeliveryDate"
+      }
+    ],
+    "data": [
+      {
+        "DispatchId": " ",
+        "Location": " ",
+        "VendorName": " ",
+        "InvoiceNo.": " ",
+        "SourceOfInvoice": " ",
+        "InvoiceAmount": " ",
+        "PONo.": " ",
+        "MSME": " ",
+        "DateOfShipment": " ",
+        "ExpectedDeliveryDate": " "
+      }
+    ]
+  },
+  {
+    "tableId": "#task-manager",
+    "columns": [
+      {
+        "data": "TaskID",
+        "title": "Task ID"
+      },
+      {
+        "data": "AssignBy",
+        "title": "Assign By"
+      },
+      {
+        "data": "AssignByUser",
+        "title": "Assign By User"
+      },
+      {
+        "data": "AssignToUser",
+        "title": "Assign To User"
+      },
+      {
+        "data": "Subject",
+        "title": "Subject"
+      },
+      {
+        "data": "StartDate",
+        "title": "Start Date"
+      },
+      {
+        "data": "EndDate",
+        "title": "End Date"
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      }
+    ],
+    "data": [
+      {
+        "TaskID": "20180710TSK000006 ",
+        "AssignBy": "3 G Technology (Shanghai) Ltd.",
+        "AssignByUser": "threetech.12@gmail.com",
+        "AssignToUser": "3 g Technology (Shanghai) Ltd",
+        "Subject": "ertert",
+        "StartDate": "7/12/2024 12:00:00AM",
+        "EndDate": "7/12/2024 12:00:00AM",
+        "Status": "ACTIVE"
+      }
+    ]
+  },
+  {
+    "tableId": "#user-tenant-mapping",
+    "columns": [
+      {
+        "data": "PartyCode",
+        "title": "Party Code"
+      },
+      {
+        "data": "SupplierName",
+        "title": "Supplier Name"
+      },
+      {
+        "data": "UserCode(E-mail)",
+        "title": "User Code (E-mail)"
+      },
+      {
+        "data": "TCode",
+        "title": "T Code"
+      },
+      {
+        "data": "CompanyName",
+        "title": "Company Name"
+      }
+    ],
+    "data": [
+      {
+        "PartyCode": "",
+        "SupplierName": "",
+        "UserCode(E-mail)": "",
+        "TCode": "",
+        "CompanyName": ""
+      }
+    ]
+  },
+  {
+    "tableId": "#user-master",
+    "columns": [
+      {
+        "data": "PartyCode",
+        "title": "Party Code"
+      },
+      {
+        "data": "E-mailID",
+        "title": "E-mail ID"
+      },
+      {
+        "data": "Name",
+        "title": "Name"
+      },
+      {
+        "data": "MobileAccess",
+        "title": "Mobile Access"
+      },
+      {
+        "data": "IMEIValidation",
+        "title": "IMEI Validation"
+      },
+      {
+        "data": "IPValidation",
+        "title": "IP Validation"
+      },
+      {
+        "data": "MACValidation",
+        "title": "MAC Validation"
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      }
+    ],
+    "data": [
+      {
+        "PartyCode": "3GT5685895",
+        "E-mailID": "threerech.12@gmail.com",
+        "Name": "Suresh",
+        "MobileAccess": "No",
+        "IMEIValidation": "No",
+        "IPValidation": "No",
+        "MACValidation": "No",
+        "Status": "ACTIVE"
+      },
+      {
+        "PartyCode": "3GT5685895",
+        "E-mailID": "threerech.12@gmail.com",
+        "Name": "Suresh",
+        "MobileAccess": "No",
+        "IMEIValidation": "No",
+        "IPValidation": "No",
+        "MACValidation": "No",
+        "Status": "ACTIVE"
+      },
+      {
+        "PartyCode": "3GT5685895",
+        "E-mailID": "threerech.12@gmail.com",
+        "Name": "Suresh",
+        "MobileAccess": "No",
+        "IMEIValidation": "No",
+        "IPValidation": "No",
+        "MACValidation": "No",
+        "Status": "ACTIVE"
+      },
+      {
+        "PartyCode": "3GT5685895",
+        "E-mailID": "threerech.12@gmail.com",
+        "Name": "Suresh",
+        "MobileAccess": "No",
+        "IMEIValidation": "No",
+        "IPValidation": "No",
+        "MACValidation": "No",
+        "Status": "ACTIVE"
+      }
+    ]
+  },
+  {
+    "tableId": "#need-to-act",
+    "columns": [
+      {
+        "data": "DispatchId",
+        "title": "Dispatch Id"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "VendorName",
+        "title": "Vendor Name"
+      },
+      {
+        "data": "InvoiceNo.",
+        "title": "Invoice No."
+      },
+      {
+        "data": "InvoiceDate",
+        "title": "Invoice Date"
+      },
+      {
+        "data": "PONo.",
+        "title": "PO No."
+      },
+      {
+        "data": "MSME",
+        "title": "MSME"
+      },
+      {
+        "data": "PaymentDt",
+        "title": "Payment Dt"
+      },
+      {
+        "data": "PaidAmt",
+        "title": "Paid Amt"
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      },
+      {
+        "data": "CreationDt",
+        "title": "Creation Dt"
+      },
+      {
+        "data": "PendingDy",
+        "title": "Pending Dy"
+      },
+      {
+        "data": "InvoiceAmt",
+        "title": "Invoice Amt"
+      }
+    ],
+    "data": [
+      {
+        "DispatchId": "20240821DISP000003",
+        "Location": "NEDSPL-HO",
+        "VendorName": "3G Technology (Shanghai)LTD.",
+        "InvoiceNo.": "20140821INV000003",
+        "InvoiceDate": "21/08/2024",
+        "PONo.": "20240815NPO000001",
+        "MSME": "No",
+        "PaymentDt": "",
+        "PaidAmt": "Rejected",
+        "Status": "ACTIVE",
+        "CreationDt": "21/08/2024",
+        "PendingDy": "0",
+        "InvoiceAmt": "1140.00"
+      },
+      {
+        "DispatchId": "20240821DISP000003",
+        "Location": "NEDSPL-HO",
+        "VendorName": "3G Technology (Shanghai)LTD.",
+        "InvoiceNo.": "20140821INV000003",
+        "InvoiceDate": "21/08/2024",
+        "PONo.": "20240815NPO000001",
+        "MSME": "No",
+        "PaymentDt": "",
+        "PaidAmt": "Rejected",
+        "Status": "ACTIVE",
+        "CreationDt": "21/08/2024",
+        "PendingDy": "0",
+        "InvoiceAmt": "1140.00"
+      }
+    ]
+  },
+  {
+    "tableId": "#my-invoice-history",
+    "columns": [
+      {
+        "data": "DispatchId",
+        "title": "Dispatch Id"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "VendorName",
+        "title": "Vendor Name"
+      },
+      {
+        "data": "InvoiceNo.",
+        "title": "Invoice No."
+      },
+      {
+        "data": "InvoiceDate",
+        "title": "Invoice Date"
+      },
+      {
+        "data": "PONo.",
+        "title": "PO No."
+      },
+      {
+        "data": "MSME",
+        "title": "MSME"
+      },
+      {
+        "data": "PaymentDt",
+        "title": "Payment Dt"
+      },
+      {
+        "data": "PaidAmt",
+        "title": "Paid Amt"
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      },
+      {
+        "data": "CreationDt",
+        "title": "Creation Dt"
+      },
+      {
+        "data": "PendingDy",
+        "title": "Pending Dy"
+      },
+      {
+        "data": "InvoiceAmt",
+        "title": "Invoice Amt"
+      }
+    ],
+    "data": [
+      {
+        "DispatchId": "20240821DISP000003",
+        "Location": "NEDSPL-HO",
+        "VendorName": "3G Technology (Shanghai)LTD.",
+        "InvoiceNo.": "20140821INV000003",
+        "InvoiceDate": "21/08/2024",
+        "PONo.": "20240815NPO000001",
+        "MSME": "No",
+        "PaymentDt": "",
+        "PaidAmt": "Rejected",
+        "Status": "ACTIVE",
+        "CreationDt": "21/08/2024",
+        "PendingDy": "0",
+        "InvoiceAmt": "1140.00"
+      },
+      {
+        "DispatchId": "20240821DISP000003",
+        "Location": "NEDSPL-HO",
+        "VendorName": "3G Technology (Shanghai)LTD.",
+        "InvoiceNo.": "20140821INV000003",
+        "InvoiceDate": "21/08/2024",
+        "PONo.": "20240815NPO000001",
+        "MSME": "No",
+        "PaymentDt": "",
+        "PaidAmt": "Rejected",
+        "Status": "ACTIVE",
+        "CreationDt": "21/08/2024",
+        "PendingDy": "0",
+        "InvoiceAmt": "1140.00"
+      }
+    ]
+  },
+  {
+    "tableId": "#my-pending",
+    "columns": [
+      {
+        "data": "DispatchId",
+        "title": "Dispatch Id"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "VendorName",
+        "title": "Vendor Name"
+      },
+      {
+        "data": "InvoiceNo.",
+        "title": "Invoice No."
+      },
+      {
+        "data": "InvoiceDate",
+        "title": "Invoice Date"
+      },
+      {
+        "data": "PONo.",
+        "title": "PO No."
+      },
+      {
+        "data": "MSME",
+        "title": "MSME"
+      },
+      {
+        "data": "PaymentDt",
+        "title": "Payment Dt"
+      },
+      {
+        "data": "PaidAmt",
+        "title": "Paid Amt"
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      },
+      {
+        "data": "CreationDt",
+        "title": "Creation Dt"
+      },
+      {
+        "data": "PendingDy",
+        "title": "Pending Dy"
+      },
+      {
+        "data": "InvoiceAmt",
+        "title": "Invoice Amt"
+      }
+    ],
+    "data": [
+      {
+        "DispatchId": "20240821DISP000003",
+        "Location": "NEDSPL-HO",
+        "VendorName": "3G Technology (Shanghai)LTD.",
+        "InvoiceNo.": "20140821INV000003",
+        "InvoiceDate": "21/08/2024",
+        "PONo.": "20240815NPO000001",
+        "MSME": "No",
+        "PaymentDt": "",
+        "PaidAmt": "Rejected",
+        "Status": "ACTIVE",
+        "CreationDt": "21/08/2024",
+        "PendingDy": "0",
+        "InvoiceAmt": "1140.00"
+      },
+      {
+        "DispatchId": "20240821DISP000003",
+        "Location": "NEDSPL-HO",
+        "VendorName": "3G Technology (Shanghai)LTD.",
+        "InvoiceNo.": "20140821INV000003",
+        "InvoiceDate": "21/08/2024",
+        "PONo.": "20240815NPO000001",
+        "MSME": "No",
+        "PaymentDt": "",
+        "PaidAmt": "Rejected",
+        "Status": "ACTIVE",
+        "CreationDt": "21/08/2024",
+        "PendingDy": "0",
+        "InvoiceAmt": "1140.00"
+      }
+    ]
+  },
+  {
+    "tableId": "#rfp-running",
+    "columns": [
+      {
+        "data": "RFPCode",
+        "title": "RFP Code"
+      },
+      {
+        "data": "RFPDescription",
+        "title": "RFP Description"
+      },
+      {
+        "data": "RFPRequirement",
+        "title": "RFP Requirement"
+      },
+      {
+        "data": "OpeningDate",
+        "title": "Opening Date"
+      },
+      {
+        "data": "OpeningTime",
+        "title": "Opening Time"
+      },
+      {
+        "data": "ClosingDate",
+        "title": "ClosingDate"
+      },
+      {
+        "data": "ClosingTime",
+        "title": "Closing Time"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "RFPCode": " ",
+        "RFPDescription": " ",
+        "RFPRequirement": " ",
+        "OpeningDate": " ",
+        "OpeningTime": " ",
+        "ClosingDate": " ",
+        "ClosingTime": " ",
+        "Action": " "
+      }
+    ]
+  },
+  {
+    "tableId": "#rfp-upcoming",
+    "columns": [
+      {
+        "data": "RFPCode",
+        "title": "RFP Code"
+      },
+      {
+        "data": "RFPDescription",
+        "title": "RFP Description"
+      },
+      {
+        "data": "RFPRequirement",
+        "title": "RFP Requirement"
+      },
+      {
+        "data": "OpeningDate",
+        "title": "Opening Date"
+      },
+      {
+        "data": "OpeningTime",
+        "title": "Opening Time"
+      },
+      {
+        "data": "ClosingDate",
+        "title": "ClosingDate"
+      },
+      {
+        "data": "ClosingTime",
+        "title": "Closing Time"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "RFPCode": " ",
+        "RFPDescription": " ",
+        "RFPRequirement": " ",
+        "OpeningDate": " ",
+        "OpeningTime": " ",
+        "ClosingDate": " ",
+        "ClosingTime": " ",
+        "Action": " "
+      }
+    ]
+  },
+  {
+    "tableId": "#recent",
+    "columns": [
+      {
+        "data": "QuotationNo.",
+        "title": "Quotation No."
+      },
+      {
+        "data": "QuotationType",
+        "title": "Quotation Type"
+      },
+      {
+        "data": "PartyName",
+        "title": "Party Name"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "EnquiryNo.",
+        "title": "Enquiry No."
+      },
+      {
+        "data": "EnquiryDate",
+        "title": "Enquiry Date"
+      },
+      {
+        "data": "PONo.",
+        "title": "PO No."
+      },
+      {
+        "data": "PODate",
+        "title": "PO Date"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate": "28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Re Quote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate": "28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Re Quote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate": "28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Re Quote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate": "28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Re Quote"
+      }
+    ]
+  },
+  {
+    "tableId": "#history",
+    "columns": [
+      {
+        "data": "QuotationNo.",
+        "title": "Quotation No."
+      },
+      {
+        "data": "QuotationType",
+        "title": "Quotation Type"
+      },
+      {
+        "data": "PartyName",
+        "title": "Party Name"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "EnquiryNo.",
+        "title": "Enquiry No."
+      },
+      {
+        "data": "EnquiryDate",
+        "title": "Enquiry Date"
+      },
+      {
+        "data": "PONo.",
+        "title": "PO No."
+      },
+      {
+        "data": "PODate",
+        "title": "PO Date"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate": "28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Re Quote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate": "28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Re Quote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate": "28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Re Quote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate": "28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Re Quote"
+      }
+    ]
+  },
+  {
+    "tableId": "#buyer-order",
+    "columns": [
+      {
+        "data": "TaskID",
+        "title": "Task ID"
+      },
+      {
+        "data": "AssignBy",
+        "title": "Assign By"
+      },
+      {
+        "data": "AssignByUser",
+        "title": "Assign By User"
+      },
+      {
+        "data": "AssignTo",
+        "title": "Assign To"
+      },
+      {
+        "data": "AssignToUser",
+        "title": "Assign To User"
+      },
+      {
+        "data": "Subject",
+        "title": "Subject"
+      },
+      {
+        "data": "StartDate",
+        "title": "Start Date"
+      },
+      {
+        "data": "EndDate",
+        "title": "End Date"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "TaskID": "20180604TSK000001",
+        "AssignBy": "INDOASIAN",
+        "AssignByUser": "indoasian1",
+        "AssignTo": "INDOASIAN",
+        "AssignToUser.": "indoasian1",
+        "Subject": "Invoice",
+        "StartDate": "6/4/2018 12:00:00 AM",
+        "EndDate": "6/7/2018 12:00:00 AM",
+        "Action": "ACTIVE"
+      },
+      {
+        "TaskID": "20180604TSK000001",
+        "AssignBy": "INDOASIAN",
+        "AssignByUser": "indoasian1",
+        "AssignTo": "INDOASIAN",
+        "AssignToUser.": "indoasian1",
+        "Subject": "Invoice",
+        "StartDate": "6/4/2018 12:00:00 AM",
+        "EndDate": "6/7/2018 12:00:00 AM",
+        "Action": "ACTIVE"
+      },
+      {
+        "TaskID": "20180604TSK000001",
+        "AssignBy": "INDOASIAN",
+        "AssignByUser": "indoasian1",
+        "AssignTo": "INDOASIAN",
+        "AssignToUser.": "indoasian1",
+        "Subject": "Invoice",
+        "StartDate": "6/4/2018 12:00:00 AM",
+        "EndDate": "6/7/2018 12:00:00 AM",
+        "Action": "ACTIVE"
+      },
+      {
+        "TaskID": "20180604TSK000001",
+        "AssignBy": "INDOASIAN",
+        "AssignByUser": "indoasian1",
+        "AssignTo": "INDOASIAN",
+        "AssignToUser.": "indoasian1",
+        "Subject": "Invoice",
+        "StartDate": "6/4/2018 12:00:00 AM",
+        "EndDate": "6/7/2018 12:00:00 AM",
+        "Action": "ACTIVE"
+      }
+    ]
+  }
+]

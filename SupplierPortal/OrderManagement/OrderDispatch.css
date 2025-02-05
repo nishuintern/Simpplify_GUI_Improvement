@@ -159,29 +159,29 @@ body {
   transition: background-color 0.3s ease;
 }
 .subsidebar-canvas {
-    /* width: 10%; */
-    max-width: 250px !important;
-    min-width: 180px !important;
-    position: fixed;
-    left: 80px; /* Default: When sidebar is collapsed */
-    margin-top: 60px;
-    /* height: 100vh; */
-    background: white;
-    z-index: 1040;
-    height: calc(100vh - 60px);
-    /* border-left: 1px solid #ccc; */
-    transition: transform 0.3s ease-in-out, left 0.3s ease-in-out;
-    transform: translateX(100%); /* Initially hidden */
+  /* width: 10%; */
+  max-width: 250px !important;
+  min-width: 180px !important;
+  position: fixed;
+  left: 80px; /* Default: When sidebar is collapsed */
+  margin-top: 60px;
+  /* height: 100vh; */
+  background: white;
+  z-index: 1040;
+  height: calc(100vh - 60px);
+  /* border-left: 1px solid #ccc; */
+  transition: transform 0.3s ease-in-out, left 0.3s ease-in-out;
+  transform: translateX(100%); /* Initially hidden */
 }
 .subsidebar-canvas .offcanvas-header {
-    background-color: white !important;
-    color:#141d38
+  background-color: white !important;
+  color: #141d38;
 }
 
 /* Offcanvas Body White */
 .subsidebar-canvas .offcanvas-body {
-    background-color: white !important;
-    margin-top: -6%;
+  background-color: white !important;
+  margin-top: -6%;
 }
 
 .subsidebar-canvas.show {
@@ -340,7 +340,7 @@ body {
   overflow-y: auto;
 }
 .sidebar.expanded + .subsidebar-canvas.show {
-    left: 228px; /* When sidebar expands */
+  left: 228px; /* When sidebar expands */
 }
 
 header {
@@ -651,7 +651,16 @@ aside nav li a:hover .icon-title {
   padding: 10px;
   border-radius: 5px;
 }
-
+.notification-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #babed8;
+  color: var(--bs-link-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
 .icons-link.active {
   background-color: #3c4059;
   display: block;
@@ -838,8 +847,8 @@ th .sort-icons i {
 .pagination .page-item .page-link {
     color: #007bff;
 } */
-.cus-ban{
-    border: 1px solid var(--border-color);
+.cus-ban {
+  border: 1px solid var(--border-color);
 }
 .pagination .page-item.active .page-link {
   background-color: #fe660c;

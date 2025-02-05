@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --heading-bg-color: #eeeeee;
+  --header-sidebar-bg-color: #141d38;
+  --text-color: #3c4059;
+  --secondary-text-color: #ffffff;
+  --border-color: #babed8;
+  --table-th-bg-color: #eceff3;
+  --pag-bg-color: #fe660c;
+  --table-striped-bg-color: #eceff3;
+  --lang-text-font-weight: 500;
+  --lang-text-font-size: 0.875rem !important;
+  --lang-text-font-lh: 1.25rem;
+
+  --heading-font-weight: 700;
+  --heading-font-size: 1.375rem !important;
+  --heading-font-lh: 2.0625rem;
+
+  --card-text-title-weight: 500;
+  --card-text-title-size: 1rem !important;
+  --card-text-title-lh: 1.5rem;
+
+  --label-text-weight: 500;
+  --label-text-size: 0.875rem !important;
+  --label-text-lh: 1.3125rem;
+
+  --th-text-weight: 500;
+  --th-text-size: 0.688rem !important;
+  --th-text-lh: 0.875rem;
+
+  --td-text-weight: 400;
+  --td-text-size: 0.625rem !important;
+  --td-text-lh: 0.875rem;
+
+  --btn-search-text-weight: 500;
+  --btn-search-text-size: 0.75rem !important;
+  --btn-search-text-lh: 1.125rem;
+
+  --pag-text-weight: 400;
+  --pag-text-size: 0.75rem !important;
+  --pag-text-lh: 0.875rem;
+
+  --pag-btn-text-weight: 400;
+  --pag-btn-text-size: 0.813rem !important;
+  --pag-btn-text-lh: 0.95rem;
+
+  --search-po-card-width: 100%;
+  --search-po-card-height: auto;
+}
+
+td {
+  font-size: var(--td-text-size);
+  line-height: var(--td-text-lh);
+  font-weight: var(--td-text-weight);
+  color: var(--text-color);
+}
+
+th .sort-icons {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 4px;
+}
+
+th .sort-icons i {
+  font-size: 12px;
+  /* color: #6c757d; */
+  cursor: pointer;
+  border: 1px solid #babed8;
+}
+
+/* th .sort-icons i.active {
+      color: #007bff;
+  }
+  
+  .pagination .page-item .page-link {
+      color: #007bff;
+  } */
+
+.pagination .page-item.active .page-link {
+  background-color: #fe660c;
+  color: #ffffff;
+  border: none;
+}
+
+.sortable-header {
+  display: flexbox;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  gap: 8px;
+}
+
+.sort-icons {
+  display: flex;
+  flex-direction: column;
+}
+
+.sort-icon {
+  cursor: pointer;
+  font-size: 5px;
+  line-height: 1;
+}
+
+.page-size-container label,
+.search-div label {
+  font-weight: var(--label-text-weight);
+  font-size: var(--label-text-size);
+  line-height: var(--label-text-font-lh);
+}
+
+.pag-div div {
+  font-weight: var(--pag-text-weight);
+  font-size: var(--pag-text-size);
+  line-height: var(--pag-text-lh);
+}
+
+.btn-blue{
+    background-color: #027EDC;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+.btn-orange{
+    background-color: #FE660C;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+.btn-green{
+    background-color: #3D9B3E;
+    color: #ffffff;
+    border:none;
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+.btn-green-icon{
+    background-image: url(/icons/flat-color-icons_ok\ \(1\).png);
+    background-color: #3D9B3E;
+    color: #ffffff;
+    border:none;
+    border-radius: 4px;
+    padding: 16px 32px;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 5rem;
+}
+.btn-show-img{
+    background-color: transparent;
+    border: none;
+    padding: 8px 16px;
+    color: #424F9C;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.06px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    /* width: 33%; */
+
+}
+.greenRow{
+  background-color: green !important;
+  color:white !important;
+}
+
+.table-responsive-lg {
+  max-height: 80vh; /* Limits height to 80% of the viewport */
+  overflow-y: auto; /* Enables vertical scrolling */
+  overflow-x: auto; /* Enables horizontal scrolling */
+}
+
+.table-responsive-md,
+.table-responsive-sm {
+  max-height: 60vh; /* Smaller height for medium and small screens */
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.table {
+  white-space: nowrap; /* Prevents column wrapping unless explicitly set */
+}
+
+.sort-icons {
+  margin-left: auto;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #007bff; /* Blue active page */
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    font-size: 12px; /* Smaller font for pagination on small screens */
+  }
+}
+
+

@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/SupplierPortal/Dashboard/User/PartyProfile.css" />
     <link rel="stylesheet" href="/SupplierPortal/style.css" />
+    <link
+      rel="stylesheet"
+      href="/SupplierPortal/Dashboard/User/PartyProfile.css"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,7 +19,7 @@
   <body>
     <div class="dashboard-container">
       <!-- Sidebar -->
-      <aside class="sidebar collapse d-sm-none d-md-none d-lg-block">
+      <aside class="sidebar collapsed d-sm-block d-md-block d-lg-block">
         <div class="logo">
           <div class="logo-container">
             <img src="/icons/newton icon copy 1.svg" alt="Company Logo" />
@@ -32,14 +35,14 @@
               <a href="/SupplierPortal/index.html">
                 <div class="menu-item">
                   <img src="/icons/iconamoon_home@2x.svg" alt="Dashboard" />
-                  <span>Dashboard</span>
+                  <!-- <span>Dashboard</span> -->
                 </div>
               </a>
-              <img
+              <!-- <img
                 src="/icons/Glyph_ undefined 1.svg"
                 alt="Toggle Menu"
                 class="toggle-img"
-              />
+              /> -->
             </li>
             <li>
               <a href="/SupplierPortal/OrderManagement/OrderDispatch.html">
@@ -48,57 +51,121 @@
                     src="/icons/icon-park-outline_transaction-order.svg"
                     alt="Order Management"
                   />
-                  <span>Order Management</span>
+
+                  <!-- <span>Order Management</span> -->
                 </div>
               </a>
+              <img
+                src="/icons/Glyph_ undefined 1.svg"
+                alt="Toggle Menu"
+                class="toggle-img"
+                onclick="showSubsidebar();"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#subSidebar0"
+                aria-controls="subSidebar0"
+              />
             </li>
             <li>
               <a href="/SupplierPortal/Quotation/QuotationDetails.html">
                 <div class="menu-item">
                   <img src="/icons/Checkout.svg" alt="Quotation" />
-                  <span>Quotation Details</span>
+                  <!-- <span>Quotation Details</span> -->
                 </div>
               </a>
+              <img
+                src="/icons/Glyph_ undefined 1.svg"
+                alt="Toggle Menu"
+                class="toggle-img"
+                onclick="showSubsidebar();"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#subSidebar1"
+                aria-controls="subSidebar1"
+              />
             </li>
             <li>
               <a href="/SupplierPortal/ReverseAuction/ReverseAuction.html">
                 <div class="menu-item">
                   <img src="/icons/Sell.svg" alt="Reverse Auction" />
-                  <span>Reverse Auction</span>
+                  <!-- <span>Reverse Auction</span> -->
                 </div>
               </a>
+              <img
+                src="/icons/Glyph_ undefined 1.svg"
+                alt="Toggle Menu"
+                class="toggle-img"
+                onclick="showSubsidebar();"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#subSidebar2"
+                aria-controls="subSidebar2"
+              />
             </li>
             <li>
               <a href="/SupplierPortal/AuctionEngine/AuctionEngine.html">
                 <div class="menu-item">
                   <img src="/icons/Service.svg" alt="Auction Engine" />
-                  <span>Auction Engine</span>
+                  <!-- <span>Auction Engine</span> -->
                 </div>
               </a>
+              <img
+                src="/icons/Glyph_ undefined 1.svg"
+                alt="Toggle Menu"
+                class="toggle-img"
+                onclick="showSubsidebar();"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#subSidebar3"
+                aria-controls="subSidebar3"
+              />
             </li>
             <li>
               <a href="/SupplierPortal/RFP/RFP.html">
                 <div class="menu-item">
                   <img src="/icons/Invite.svg" alt="Request For Proposal" />
-                  <span>Request For Proposal</span>
+                  <!-- <span>Request For Proposal</span> -->
                 </div>
               </a>
+              <img
+                src="/icons/Glyph_ undefined 1.svg"
+                alt="Toggle Menu"
+                class="toggle-img"
+                onclick="showSubsidebar();"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#subSidebar4"
+                aria-controls="subSidebar4"
+              />
             </li>
             <li>
               <a href="/SupplierPortal/TaskManager/TaskManager.html">
                 <div class="menu-item">
                   <img src="/icons/Task.svg" alt="Task Manager" />
-                  <span>Task Manager</span>
+                  <!-- <span>Task Manager</span> -->
                 </div>
               </a>
+              <img
+                src="/icons/Glyph_ undefined 1.svg"
+                alt="Toggle Menu"
+                class="toggle-img"
+                onclick="showSubsidebar();"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#subSidebar5"
+                aria-controls="subSidebar5"
+              />
             </li>
             <li>
               <a href="/SupplierPortal/Setting/UserTenantMapping.html">
                 <div class="menu-item">
                   <img src="/icons/uil_setting.png" alt="Setting" />
-                  <span>Setting</span>
+                  <!-- <span>Setting</span> -->
                 </div>
               </a>
+              <img
+                src="/icons/Glyph_ undefined 1.svg"
+                alt="Toggle Menu"
+                class="toggle-img"
+                onclick="showSubsidebar();"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#subSidebar6"
+                aria-controls="subSidebar6"
+              />
             </li>
           </ul>
         </nav>
@@ -118,7 +185,9 @@
               <img src="/icons/menu.svg" alt="menu" style="cursor: pointer" />
             </button>
           </div>
-          <div class="d-lg-none d-md-flex d-sm-flex justify-content-sm-start justify-content-md-start">
+          <div
+            class="d-lg-none d-md-flex d-sm-flex justify-content-sm-start justify-content-md-start"
+          >
             <img src="/icons/newton icon copy 1.svg" alt="Company" />
             <span class="fs-4 m-2 text-white">Simpplify</span>
             <button
@@ -326,22 +395,34 @@
                         >
                           Order Dispatch
                         </option>
-                        <option value="/SupplierPortal/OrderManagement/orderAck.html">
+                        <option
+                          value="/SupplierPortal/OrderManagement/orderAck.html"
+                        >
                           Order Acknowledgement
                         </option>
-                        <option value="/SupplierPortal/OrderManagement/Invoice.html">
+                        <option
+                          value="/SupplierPortal/OrderManagement/Invoice.html"
+                        >
                           Invoice
                         </option>
-                        <option value="/SupplierPortal/OrderManagement/BuyerMapping.html">
+                        <option
+                          value="/SupplierPortal/OrderManagement/BuyerMapping.html"
+                        >
                           Buyer Mapping
                         </option>
-                        <option value="/SupplierPortal/OrderManagement/ItemCatalog.html">
+                        <option
+                          value="/SupplierPortal/OrderManagement/ItemCatalog.html"
+                        >
                           Item Catalog
                         </option>
-                        <option value="/SupplierPortal/OrderManagement/Item.html">
+                        <option
+                          value="/SupplierPortal/OrderManagement/Item.html"
+                        >
                           Item
                         </option>
-                        <option value="/SupplierPortal/OrderManagement/POStatus.html">
+                        <option
+                          value="/SupplierPortal/OrderManagement/POStatus.html"
+                        >
                           PO Status
                         </option>
                         <option
@@ -349,7 +430,9 @@
                         >
                           Invoice Dashboard
                         </option>
-                        <option value="/SupplierPortal/OrderManagement/MyInvoices.html">
+                        <option
+                          value="/SupplierPortal/OrderManagement/MyInvoices.html"
+                        >
                           My Invoices
                         </option>
                       </select>
@@ -396,13 +479,17 @@
                         onchange="location = this.value;"
                       >
                         <option value="setting">Setting</option>
-                        <option value="/SupplierPortal/setting/UserTenantMapping.html">
+                        <option
+                          value="/SupplierPortal/setting/UserTenantMapping.html"
+                        >
                           UserTenantMapping
                         </option>
                         <option value="/SupplierPortal/setting/UserMaster.html">
                           UserMaster
                         </option>
-                        <option value="/SupplierPortal/OrderManagement/MenuMapping.html">
+                        <option
+                          value="/SupplierPortal/OrderManagement/MenuMapping.html"
+                        >
                           MenuMapping
                         </option>
                       </select>
@@ -469,7 +556,7 @@
                 </div>
               </div>
             </a> -->
-           <!-- Toggle Button (Visible Only on Small Screens) -->
+            <!-- Toggle Button (Visible Only on Small Screens) -->
 
             <!-- Offcanvas Menu (Sliding Sidebar) -->
             <!-- 🔹 Offcanvas Toggle Button (Visible Only on XS Screens) -->
@@ -719,7 +806,9 @@
                       >
                     </li>
                     <li>
-                      <a class="dropdown-item" href="/SupplierPortal/loginForm/Login.html"
+                      <a
+                        class="dropdown-item"
+                        href="/SupplierPortal/loginForm/Login.html"
                         >Logout</a
                       >
                     </li>
@@ -776,11 +865,11 @@
             </div>
           </div>
         </main>
-        <footer class="sticky-bottom">
+        <!-- <footer class="sticky-bottom">
           <div class="footer-text">
             <p class="text-center">CopyRight©<span class="ms-1">All rights reserved</span><span class="ms-2 fw-bold">Nippon Data System LTD</span></p>
           </div>
-        </footer>
+        </footer> -->
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

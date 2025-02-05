@@ -864,13 +864,15 @@ th {
 .notification-icon {
   width: 40px;
   height: 40px;
+  top: 5px;
+  right: 5px;
   border: 1px solid #BABED8;
   color: var(--bs-link-color);
-  display: inline-flex
-;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: 50% !important;
+  padding: 0px !important;
 }
 
 .user-dropdown-content .submenu:last-child {
