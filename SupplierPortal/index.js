@@ -1,15 +1,15 @@
-const toggleSidebarButton = document.getElementById("toggle-sidebar");
-const sidebar = document.querySelector(".sidebar");
+// const toggleSidebarButton = document.getElementById("toggle-sidebar");
+// const sidebar = document.querySelector(".sidebar");
 
-toggleSidebarButton.addEventListener("click", () => {
-  if (sidebar.classList.contains("collapsed")) {
-    sidebar.classList.toggle("expanded");
-  } else if (sidebar.classList.contains("collapsed")) {
-    sidebar.classList.toggle("collapsed");
-  } else {
-    sidebar.classList.toggle("collapsed");
-  }
-});
+// toggleSidebarButton.addEventListener("click", () => {
+//   if (sidebar.classList.contains("collapsed")) {
+//     sidebar.classList.toggle("expanded");
+//   } else if (sidebar.classList.contains("collapsed")) {
+//     sidebar.classList.toggle("collapsed");
+//   } else {
+//     sidebar.classList.toggle("collapsed");
+//   }
+// });
 
 //Po Search
 // function searchPoNumber(event) {
@@ -120,7 +120,8 @@ function searchPoNumber(event) {
 
   // (Optional) Render the table dynamically or redirect
   // renderTable(formData); // Uncomment if table rendering is on the same page
-  window.location.href = "/html/Dashboard/DashboardSearchRes/SearchRes.html"; // Uncomment if navigation to another page is required
+  window.location.href =
+    "/SupplierPortal/Dashboard/DashboardSearchRes/SearchRes.html"; // Uncomment if navigation to another page is required
 }
 
 function renderTable(data) {
@@ -417,10 +418,10 @@ i18next.init({
   },
 });
 
-  function changeLanguage(lang) {
-    document.getElementById("lang-text").value = lang;
-    alert("Language changed to " + (lang === "en" ? "English" : "Hindi"));
-  }
+function changeLanguage(lang) {
+  document.getElementById("lang-text").value = lang;
+  alert("Language changed to " + (lang === "en" ? "English" : "Hindi"));
+}
 
 // document.getElementById('language-selector').addEventListener('change', function () {
 //     i18next.changeLanguage(this.value, function (err, t) {
@@ -693,25 +694,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to adjust offcanvas position
   function adjustSubsidebarPosition() {
-      if (subsidebar.classList.contains("show")) {
-          subsidebar.style.left = sidebar.classList.contains("expanded") ? "250px" : "80px";
-      }
+    if (subsidebar.classList.contains("show")) {
+      subsidebar.style.left = sidebar.classList.contains("expanded")
+        ? "250px"
+        : "80px";
+    }
   }
 
   // Sidebar Toggle Function
   toggleSidebarButton.addEventListener("click", () => {
-      sidebar.classList.toggle("expanded");
-      sidebar.classList.toggle("collapsed");
+    sidebar.classList.toggle("expanded");
+    sidebar.classList.toggle("collapsed");
 
-      // Adjust offcanvas position if it is open
-      adjustSubsidebarPosition();
+    // Adjust offcanvas position if it is open
+    adjustSubsidebarPosition();
   });
 
   // Subsidebar (Offcanvas) Toggle Function
   subsidebarToggleButton.addEventListener("click", () => {
-      subsidebar.classList.toggle("show");
+    subsidebar.classList.toggle("show");
 
-      // Adjust position based on sidebar state
-      adjustSubsidebarPosition();
+    // Adjust position based on sidebar state
+    adjustSubsidebarPosition();
   });
+});
+
+document.getElementById("sidebar-toggle").addEventListener("click", function() {
+  document.querySelector(".sidebar").classList.toggle("show-sidebar");
 });
