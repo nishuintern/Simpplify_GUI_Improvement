@@ -196,6 +196,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+.cus-ban {
+  border: 1px solid #babed8;
+}
 
 /* Header */
 .header {
@@ -979,6 +982,89 @@ th .sort-icons i {
   font-weight: var(--pag-text-weight);
   font-size: var(--pag-text-size);
   line-height: var(--pag-text-lh);
+}
+/* Card Container of Invoice Dashboard */
+.card {
+  width: 210px !important;
+  height: 166px !important;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-title {
+  margin-top: 0.5rem;
+}
+
+.card-text {
+  text-align: center;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(210px, 1px)
+  ); /* Flexible columns */
+  grid-gap: 20px; /* Space between grid items */
+  padding: 30px; /* Padding around the grid */
+  box-sizing: border-box; /* Include padding and borders in the dimensions */
+  width: 100%; /* Full width of the container */
+}
+.tabs {
+  border-bottom: 1px solid #3C4059;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+  /* Space between tabs */
+}
+
+/* Individual tabs */
+.tab {
+  color: #3C4059;
+  /* Default text color */
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: color 0.3s ease;
+  border: none;
+  background: transparent;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 13px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+
+}
+
+/* Active tab with orange underline */
+.tab.active {
+  color: #FE660C;
+  border-bottom: 1px solid #FE660C;
+}
+
+.nav-underline .tab-item.active {
+  border-bottom: 2px solid #FE660C;
+  margin-bottom: -1px;
+}
+
+/* .nav-item.active{
+  border-bottom: 1px solid #FE660C;;
+} */
+/* Hover effect for tabs */
+/* .tab:hover {
+  color: black;
+} */
+
+/* Make sure to override Bootstrap's styles if needed */
+.nav-item {
+  margin: 0;
 }
 /* Responsive Design */
 @media (min-width: 320px) and (max-width: 998px) {

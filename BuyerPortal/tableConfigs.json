@@ -1623,5 +1623,1528 @@
         "Action": "ACTIVE"
       }
     ]
+  },
+  {
+    "tableId": "#project-manager-table",
+    "columns": [
+      {
+        "data": "ProjectName",
+        "title": "Project Name"
+      },
+      {
+        "data": "Portfolio",
+        "title": "Portfolio"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "StartDate",
+        "title": "Start Date"
+      },
+      {
+        "data": "EndDate",
+        "title": "End Date"
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      }
+    ],
+    "data": [
+      {
+        "ProjectName": "Baba Business",
+        "Portfolio": "Packsys International",
+        "Location": "",
+        "StartDate": "27/06/2024",
+        "EndDate": "27/06/2024",
+        "Status": "ACTIVE"
+      },
+      {
+        "ProjectName": "cbs project ABC",
+        "Portfolio": "Earth Copia Residential",
+        "Location": "",
+        "StartDate": "27/06/2024",
+        "EndDate": "27/06/2024",
+        "Status": "ACTIVE"
+      },
+      {
+        "ProjectName": "Defense Project",
+        "Portfolio": "Taxsense",
+        "Location": "176, 1st floor near model cinemagandi road",
+        "StartDate": "27/06/2024",
+        "EndDate": "27/06/2024",
+        "Status": "ACTIVE"
+      },
+      {
+        "ProjectName": "Baba Business",
+        "Portfolio": "Packsys International",
+        "Location": "",
+        "StartDate": "27/06/2024",
+        "EndDate": "27/06/2024",
+        "Status": "ACTIVE"
+      },
+      {
+        "ProjectName": "Baba Business",
+        "Portfolio": "Packsys International",
+        "Location": "",
+        "StartDate": "27/06/2024",
+        "EndDate": "27/06/2024",
+        "Status": "ACTIVE"
+      },
+      {
+        "ProjectName": "cbs project ABC",
+        "Portfolio": "Earth Copia Residential",
+        "Location": "",
+        "StartDate": "27/06/2024",
+        "EndDate": "27/06/2024",
+        "Status": "ACTIVE"
+      },
+      {
+        "ProjectName": "cbs project ABC",
+        "Portfolio": "Earth Copia Residential",
+        "Location": "",
+        "StartDate": "27/06/2024",
+        "EndDate": "27/06/2024",
+        "Status": "ACTIVE"
+      },
+      {
+        "ProjectName": "cbs project ABC",
+        "Portfolio": "Earth Copia Residential",
+        "Location": "",
+        "StartDate": "27/06/2024",
+        "EndDate": "27/06/2024",
+        "Status": "ACTIVE"
+      },
+      {
+        "ProjectName": "cbs project ABC",
+        "Portfolio": "Earth Copia Residential",
+        "Location": "",
+        "StartDate": "27/06/2024",
+        "EndDate": "27/06/2024",
+        "Status": "ACTIVE"
+      },
+      {
+        "ProjectName": "cbs project ABC",
+        "Portfolio": "Earth Copia Residential",
+        "Location": "",
+        "StartDate": "27/06/2024",
+        "EndDate": "27/06/2024",
+        "Status": "ACTIVE"
+      }
+    ]
+  },
+  {
+    "tableId": "#asn-details",
+    "columns": [
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "VendorName",
+        "title": "Vendor Name"
+      },
+      {
+        "data": "PONo.",
+        "title": "PO No."
+      },
+      {
+        "data": "ASNNo.",
+        "title": "ASN No."
+      },
+      {
+        "data": "ASNDate.",
+        "title": "ASNDate."
+      },
+      {
+        "data": "InvoiceNo",
+        "title": "Invoice No"
+      },
+      {
+        "data": "InvoiceDate",
+        "title": "Invoice Date"
+      },
+      {
+        "data": "InvoiceAmount",
+        "title": "Invoice Amount"
+      },
+      {
+        "data": "ExpectedDateOfShip",
+        "title": "Expected Date Of Ship"
+      }
+    ],
+    "data": [
+      {
+        "Location": "NEDSPL-HO",
+        "VendorName": "3 G Technology(Shanghai)Ltd.",
+        "PONo.": "20240815NPO000001",
+        "ASNNo.": "20240820DISP000001",
+        "ASNDate.": "27/06/2024",
+        "InvoiceNo": "27/06/2024",
+        "InvoiceDate": "27/06/2024",
+        "InvoiceAmount": "",
+        "ExpectedDateOfShip": "22/08/2024"
+      },
+      {
+        "Location": "NEDSPL-HO",
+        "VendorName": "3 G Technology(Shanghai)Ltd.",
+        "PONo.": "20240815NPO000001",
+        "ASNNo.": "20240820DISP000001",
+        "ASNDate.": "27/06/2024",
+        "InvoiceNo": "27/06/2024",
+        "InvoiceDate": "27/06/2024",
+        "InvoiceAmount": "",
+        "ExpectedDateOfShip": "22/08/2024"
+      },
+      {
+        "Location": "NEDSPL-HO",
+        "VendorName": "3 G Technology(Shanghai)Ltd.",
+        "PONo.": "20240815NPO000001",
+        "ASNNo.": "20240820DISP000001",
+        "ASNDate.": "27/06/2024",
+        "InvoiceNo": "27/06/2024",
+        "InvoiceDate": "27/06/2024",
+        "InvoiceAmount": "",
+        "ExpectedDateOfShip": "22/08/2024"
+      },
+      {
+        "Location": "NEDSPL-HO",
+        "VendorName": "3 G Technology(Shanghai)Ltd.",
+        "PONo.": "20240815NPO000001",
+        "ASNNo.": "20240820DISP000001",
+        "ASNDate.": "27/06/2024",
+        "InvoiceNo": "27/06/2024",
+        "InvoiceDate": "27/06/2024",
+        "InvoiceAmount": "",
+        "ExpectedDateOfShip": "22/08/2024"
+      }
+    ]
+  },
+  {
+    "tableId": "#invoice-ai-extraction",
+    "columns": [
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "VendorName",
+        "title": "Vendor Name"
+      },
+      {
+        "data": "InvoiceNo",
+        "title": "Invoice No"
+      },
+      {
+        "data": "InvoiceDate",
+        "title": "Invoice Date"
+      },
+      {
+        "data": "InvoiceAmount",
+        "title": "Invoice Amount"
+      },
+      {
+        "data": "PONo.",
+        "title": "PO No."
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      },
+      {
+        "data": "CreationDt",
+        "title": "Creation Dt"
+      }
+    ],
+    "data": [
+      {
+        "Location": "NEDSPL-HO",
+        "VendorName": "3 G Technology(Shanghai)Ltd.",
+        "InvoiceNo": "INV-100",
+        "InvoiceDate": "21/08/2024",
+        "InvoiceAmount": "100.00",
+        "PONo.": "PO-3333",
+        "Status": "Pending",
+        "CreationDt": "21/08/2024"
+      },
+      {
+        "Location": "NEDSPL-HO",
+        "VendorName": "3 G Technology(Shanghai)Ltd.",
+        "InvoiceNo": "INV-100",
+        "InvoiceDate": "21/08/2024",
+        "InvoiceAmount": "100.00",
+        "PONo.": "PO-3333",
+        "Status": "Pending",
+        "CreationDt": "21/08/2024"
+      },
+      {
+        "Location": "NEDSPL-HO",
+        "VendorName": "3 G Technology(Shanghai)Ltd.",
+        "InvoiceNo": "INV-100",
+        "InvoiceDate": "21/08/2024",
+        "InvoiceAmount": "100.00",
+        "PONo.": "PO-3333",
+        "Status": "Pending",
+        "CreationDt": "21/08/2024"
+      },
+      {
+        "Location": "NEDSPL-HO",
+        "VendorName": "3 G Technology(Shanghai)Ltd.",
+        "InvoiceNo": "INV-100",
+        "InvoiceDate": "21/08/2024",
+        "InvoiceAmount": "100.00",
+        "PONo.": "PO-3333",
+        "Status": "Pending",
+        "CreationDt": "21/08/2024"
+      }
+    ]
+  },
+  {
+    "tableId": "#my-work-flow",
+    "columns": [
+      {
+        "data": "ActivityNo",
+        "title": "Activity No"
+      },
+      {
+        "data": "WorkFlowID",
+        "title": "WorkFlowID"
+      },
+      {
+        "data": "WorkFlowName",
+        "title": "Work Flow Name"
+      },
+      {
+        "data": "InstanceID",
+        "title": "Instance ID"
+      },
+      {
+        "data": "CreatedBy",
+        "title": "Created By"
+      },
+      {
+        "data": "CurrentStep",
+        "title": "Current Step"
+      },
+      {
+        "data": "Stage",
+        "title": "Stage"
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      },
+      {
+        "data": "Date",
+        "title": "Date"
+      },
+      {
+        "data": "DelayBy",
+        "title": "Delay By"
+      }
+    ],
+    "data": [
+      {
+        "ActivityNo": "20190223CON000002",
+        "WorkFlowID": "20190213WFL000002",
+        "WorkFlowName": "Contract Life Cycle",
+        "InstanceID": "20190223000002",
+        "CreatedBy": "Rohit",
+        "CurrentStep": "1",
+        "Stage": "Pending",
+        "Status": "Approved",
+        "Date": "21/08/2024 05:00PM",
+        "DelayBy": "2067"
+      },
+      {
+        "ActivityNo": "20190223CON000002",
+        "WorkFlowID": "20190213WFL000002",
+        "WorkFlowName": "Contract Life Cycle",
+        "InstanceID": "20190223000002",
+        "CreatedBy": "Rohit",
+        "CurrentStep": "1",
+        "Stage": "Pending",
+        "Status": "Approved",
+        "Date": "21/08/2024 05:00PM",
+        "DelayBy": "2067"
+      },
+      {
+        "ActivityNo": "20190223CON000002",
+        "WorkFlowID": "20190213WFL000002",
+        "WorkFlowName": "Contract Life Cycle",
+        "InstanceID": "20190223000002",
+        "CreatedBy": "Rohit",
+        "CurrentStep": "1",
+        "Stage": "Pending",
+        "Status": "Approved",
+        "Date": "21/08/2024 05:00PM",
+        "DelayBy": "2067"
+      },
+      {
+        "ActivityNo": "20190223CON000002",
+        "WorkFlowID": "20190213WFL000002",
+        "WorkFlowName": "Contract Life Cycle",
+        "InstanceID": "20190223000002",
+        "CreatedBy": "Rohit",
+        "CurrentStep": "1",
+        "Stage": "Pending",
+        "Status": "Approved",
+        "Date": "21/08/2024 05:00PM",
+        "DelayBy": "2067"
+      }
+    ]
+  },
+  {
+    "tableId": "#auto-work-flow",
+    "columns": [
+      {
+        "data": "Name",
+        "title": "Name"
+      },
+      {
+        "data": "Type",
+        "title": "Type"
+      },
+      {
+        "data": "WorkFlowName",
+        "title": "Work Flow Name"
+      },
+      {
+        "data": "ManageBy",
+        "title": "Manage By"
+      },
+      {
+        "data": "CreatedBy",
+        "title": "Created By"
+      },
+      {
+        "data": "EffectiveDate",
+        "title": "Effective Date"
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      }
+    ],
+    "data": [
+      {
+        "Name": "Comparative",
+        "Type": "Enquiry Approval",
+        "WorkFlowName": "Contract Life Cycle",
+        "ManageBy": "20190223000002",
+        "CreatedBy": "Rohit",
+        "EffectiveDate": "13/02/2024 05:00PM",
+        "Status": "Active"
+      },
+      {
+        "Name": "Comparative",
+        "Type": "Enquiry Approval",
+        "WorkFlowName": "Contract Life Cycle",
+        "ManageBy": "20190223000002",
+        "CreatedBy": "Rohit",
+        "EffectiveDate": "13/02/2024 05:00PM",
+        "Status": "Active"
+      },
+      {
+        "Name": "Comparative",
+        "Type": "Enquiry Approval",
+        "WorkFlowName": "Contract Life Cycle",
+        "ManageBy": "20190223000002",
+        "CreatedBy": "Rohit",
+        "EffectiveDate": "13/02/2024 05:00PM",
+        "Status": "Active"
+      },
+      {
+        "Name": "Comparative",
+        "Type": "Enquiry Approval",
+        "WorkFlowName": "Contract Life Cycle",
+        "ManageBy": "20190223000002",
+        "CreatedBy": "Rohit",
+        "EffectiveDate": "13/02/2024 05:00PM",
+        "Status": "Active"
+      }
+    ]
+  },
+  {
+    "tableId": "#enquiry-entry",
+    "columns": [
+      {
+        "data": "EnquiryNo.",
+        "title": "Enquiry No."
+      },
+      {
+        "data": "EventName",
+        "title": "Event Name"
+      },
+      {
+        "data": "EnquiryDel.Date",
+        "title": "Enquiry Del. Date"
+      },
+      {
+        "data": "EnquiryDate",
+        "title": "Enquiry Date"
+      },
+      {
+        "data": "LocationCode",
+        "title": "Location Code"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "EnquiryNo.": "20240828ENQ000001",
+        "EventName": "Test 1",
+        "EnquiryDel.Date": "28/08/2024",
+        "EnquiryDate": "28/08/2024",
+        "LocationCode": "300001",
+        "Action": "Create Task Cancel Enquiry"
+      },
+      {
+        "EnquiryNo.": "20240828ENQ000001",
+        "EventName": "Test 1",
+        "EnquiryDel.Date": "28/08/2024",
+        "EnquiryDate": "28/08/2024",
+        "LocationCode": "300001",
+        "Action": "Create Task Cancel Enquiry"
+      },
+      {
+        "EnquiryNo.": "20240828ENQ000001",
+        "EventName": "Test 1",
+        "EnquiryDel.Date": "28/08/2024",
+        "EnquiryDate": "28/08/2024",
+        "LocationCode": "300001",
+        "Action": "Create Task Cancel Enquiry"
+      },
+      {
+        "EnquiryNo.": "20240828ENQ000001",
+        "EventName": "Test 1",
+        "EnquiryDel.Date": "28/08/2024",
+        "EnquiryDate": "28/08/2024",
+        "LocationCode": "300001",
+        "Action": "Create Task Cancel Enquiry"
+      }
+    ]
+  },
+  {
+    "tableId": "#quotation-details",
+    "columns": [
+      {
+        "data": "EnquiryNo.",
+        "title": "Enquiry No."
+      },
+      {
+        "data": "EventName",
+        "title": "Event Name"
+      },
+      {
+        "data": "OpeningDate",
+        "title": "Opening Date"
+      },
+      {
+        "data": "OpeningTime",
+        "title": "Opening Time"
+      },
+      {
+        "data": "OpeningBidAmount",
+        "title": "Opening Bid Amount"
+      },
+      {
+        "data": "ClosingDate",
+        "title": "Closing Date"
+      },
+      {
+        "data": "ClosingTime",
+        "title": "Closing Time"
+      },
+      {
+        "data": "BidDeduction",
+        "title": "Bid Deduction"
+      },
+      {
+        "data": "EnquiryDescription",
+        "title": "Enquiry Description"
+      },
+      {
+        "data": "LocationCode",
+        "title": "Location Code"
+      },
+      {
+        "data": "TotalSupplier",
+        "title": "Total Supplier"
+      },
+      {
+        "data": "TotalBid",
+        "title": "Total Bid"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "EnquiryNo.": "20240828ENQ000001",
+        "EventName": "Event7base",
+        "OpeningDate": "28/08/2024",
+        "OpeningTime": "13:00:00",
+        "OpeningBidAmount": "300.00",
+        "ClosingDate": "11/07/2024",
+        "ClosingTime": "16:00:00",
+        "BidDeduction": "50.00",
+        "EnquiryDescription": "descr 6dec18",
+        "LocationCode": "300001",
+        "TotalSupplier": "2",
+        "TotalBid": "1",
+        "Action": "Create Task Cancel Enquiry"
+      },
+      {
+        "EnquiryNo.": "20240828ENQ000001",
+        "EventName": "Event7base",
+        "OpeningDate": "28/08/2024",
+        "OpeningTime": "13:00:00",
+        "OpeningBidAmount": "300.00",
+        "ClosingDate": "11/07/2024",
+        "ClosingTime": "16:00:00",
+        "BidDeduction": "50.00",
+        "EnquiryDescription": "descr 6dec18",
+        "LocationCode": "300001",
+        "TotalSupplier": "2",
+        "TotalBid": "1",
+        "Action": "Create Task Cancel Enquiry"
+      },
+      {
+        "EnquiryNo.": "20240828ENQ000001",
+        "EventName": "Event7base",
+        "OpeningDate": "28/08/2024",
+        "OpeningTime": "13:00:00",
+        "OpeningBidAmount": "300.00",
+        "ClosingDate": "11/07/2024",
+        "ClosingTime": "16:00:00",
+        "BidDeduction": "50.00",
+        "EnquiryDescription": "descr 6dec18",
+        "LocationCode": "300001",
+        "TotalSupplier": "2",
+        "TotalBid": "1",
+        "Action": "Create Task Cancel Enquiry"
+      },
+      {
+        "EnquiryNo.": "20240828ENQ000001",
+        "EventName": "Event7base",
+        "OpeningDate": "28/08/2024",
+        "OpeningTime": "13:00:00",
+        "OpeningBidAmount": "300.00",
+        "ClosingDate": "11/07/2024",
+        "ClosingTime": "16:00:00",
+        "BidDeduction": "50.00",
+        "EnquiryDescription": "descr 6dec18",
+        "LocationCode": "300001",
+        "TotalSupplier": "2",
+        "TotalBid": "1",
+        "Action": "Create Task Cancel Enquiry"
+      }
+    ]
+  },
+  {
+    "tableId": "#recent-buyer",
+    "columns": [
+      {
+        "data": "QuotationNo.",
+        "title": "Quotation No."
+      },
+      {
+        "data": "QuotationType",
+        "title": "Quotation Type"
+      },
+      {
+        "data": "PartyName",
+        "title": "Party Name"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "EnquiryNo.",
+        "title": "Enquiry No."
+      },
+      {
+        "data": "EnquiryDate",
+        "title": "Enquiry Date"
+      },
+      {
+        "data": "PONo.",
+        "title": "PO No."
+      },
+      {
+        "data": "PODate",
+        "title": "PO Date"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate": "28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Allow For Requote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate": "28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Allow For Requote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate": "28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Allow For Requote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate": "28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Allow For Requote"
+      }
+    ]
+  },
+  {
+    "tableId": "#history-buyer",
+    "columns": [
+      {
+        "data": "QuotationNo.",
+        "title": "Quotation No."
+      },
+      {
+        "data": "QuotationType",
+        "title": "Quotation Type"
+      },
+      {
+        "data": "PartyName",
+        "title": "Party Name"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "EnquiryNo.",
+        "title": "Enquiry No."
+      },
+      {
+        "data": "EnquiryDate",
+        "title": "Enquiry Date"
+      },
+      {
+        "data": "PONo.",
+        "title": "PO No."
+      },
+      {
+        "data": "PODate",
+        "title": "PO Date"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate": "28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Allow For Requote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate": "28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Allow For Requote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate": "28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Allow For Requote"
+      },
+      {
+        "QuotationNo.": "20240821DISP000003",
+        "QuotationType": "Work Order For Customer",
+        "PartyName": "3G Technology(Shanghai)LTD.",
+        "Location": "Delhi",
+        "EnquiryNo.": "20240828ENQ000001",
+        "EnquiryDate": "28/08/2024",
+        "PONo.": "20240828NPO000001",
+        "PODate": "28/08/2024",
+        "Action": "Allow For Requote"
+      }
+    ]
+  },
+  {
+    "tableId": "#indent-master",
+    "columns": [
+      {
+        "data": "IndentNumber",
+        "title": "Indent Number"
+      },
+      {
+        "data": "IndentDate",
+        "title": "Indent Date"
+      },
+      {
+        "data": "IndentType",
+        "title": "Indent Type"
+      },
+      {
+        "data": "Project",
+        "title": "Project"
+      },
+      {
+        "data": "Activity",
+        "title": "Activity"
+      },
+      {
+        "data": "FromDepartment",
+        "title": "From Department"
+      },
+      {
+        "data": "ToDepartment",
+        "title": "To Department"
+      },
+      {
+        "data": "EnquiryNo",
+        "title": "Enquiry No"
+      },
+      {
+        "data": "EnquiryDate",
+        "title": "Enquiry Date"
+      },
+      {
+        "data": "PONo",
+        "title": "PO No"
+      },
+      {
+        "data": "PODate",
+        "title": "PO Date"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "IndentNumber": "20240821DISP000003",
+        "IndentDate": "2024-08-28",
+        "IndentType": "INDENT INDIGENEOUS -HO",
+        "Project": "GLASS 3X3",
+        "Activity": "SEMI-FINISHED FAME MACHO BLACK",
+        "FromDepartment": "Marketing",
+        "ToDepartment": "Marketing",
+        "EnquiryNo": "",
+        "EnquiryDate": "",
+        "PONo": "",
+        "PODate": "",
+        "Action": "Show Quotations Create Task"
+      },
+      {
+        "IndentNumber": "20240821DISP000003",
+        "IndentDate": "2024-08-28",
+        "IndentType": "INDENT INDIGENEOUS -HO",
+        "Project": "GLASS 3X3",
+        "Activity": "SEMI-FINISHED FAME MACHO BLACK",
+        "FromDepartment": "Marketing",
+        "ToDepartment": "Marketing",
+        "EnquiryNo": "",
+        "EnquiryDate": "",
+        "PONo": "",
+        "PODate": "",
+        "Action": "Show Quotations Create Task"
+      },
+      {
+        "IndentNumber": "20240821DISP000003",
+        "IndentDate": "2024-08-28",
+        "IndentType": "INDENT INDIGENEOUS -HO",
+        "Project": "GLASS 3X3",
+        "Activity": "SEMI-FINISHED FAME MACHO BLACK",
+        "FromDepartment": "Marketing",
+        "ToDepartment": "Marketing",
+        "EnquiryNo": "",
+        "EnquiryDate": "",
+        "PONo": "",
+        "PODate": "",
+        "Action": "Show Quotations Create Task"
+      },
+      {
+        "IndentNumber": "20240821DISP000003",
+        "IndentDate": "2024-08-28",
+        "IndentType": "INDENT INDIGENEOUS -HO",
+        "Project": "GLASS 3X3",
+        "Activity": "SEMI-FINISHED FAME MACHO BLACK",
+        "FromDepartment": "Marketing",
+        "ToDepartment": "Marketing",
+        "EnquiryNo": "",
+        "EnquiryDate": "",
+        "PONo": "",
+        "PODate": "",
+        "Action": "Show Quotations Create Task"
+      }
+    ]
+  },
+  {
+    "tableId": "#recent-po",
+    "columns": [
+      {
+        "data": "POType",
+        "title": "PO Type"
+      },
+      {
+        "data": "PONumber",
+        "title": "PO Number"
+      },
+      {
+        "data": "PODate",
+        "title": "PO Date"
+      },
+      {
+        "data": "PartryName",
+        "title": "Partry Name"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "POAmount",
+        "title": "PO Amount"
+      },
+      {
+        "data": "ASNNo",
+        "title": "ASN No"
+      },
+      {
+        "data": "ExpectedDispatchDate",
+        "title": "ExpectedDispatchDate"
+      },
+      {
+        "data": "INV NO",
+        "title": "INVNO"
+      },
+      {
+        "data": "INVDate",
+        "title": "INV Date"
+      },
+      {
+        "data": "Inv Status",
+        "title": "Inv Status"
+      },
+      {
+        "data": "PaymentAmount",
+        "title": "Payment Amount"
+      },
+      {
+        "data": "DeliveryDate",
+        "title": "Delivery Date"
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      },
+      {
+        "data": "ViewT&C",
+        "title": "View T&C"
+      }
+    ],
+    "data": [
+      {
+        "POType": "Purchase Order(General)",
+        "PONumber": "20240828NPO000001",
+        "PODate": "Aug 28 2024",
+        "PartyName": "3 G Technology(Shanghai)Ltd.",
+        "Location": "Delhi",
+        "POAmount": "22800.00",
+        "Quotation": "20240828QUT000001",
+        "ASNNo": "20240828DISP000001",
+        "ExpectedDispatchDate": "8/30/2024 12:00:00 AM",
+        "INVNO": "INV000203",
+        "INVDate": "9/14/2024 12:00:00 AM",
+        "INVStatus": "PENDING",
+        "PaymentAmount": "",
+        "DeliveryDate": "28/08/2024",
+        "Status": "ACCEPTED",
+        "ViewT&C": "View Details"
+      },
+      {
+        "POType": "Purchase Order(General)",
+        "PONumber": "20240828NPO000001",
+        "PODate": "Aug 28 2024",
+        "PartyName": "3 G Technology(Shanghai)Ltd.",
+        "Location": "Delhi",
+        "POAmount": "22800.00",
+        "Quotation": "20240828QUT000001",
+        "ASNNo": "20240828DISP000001",
+        "ExpectedDispatchDate": "8/30/2024 12:00:00 AM",
+        "INVNO": "INV000203",
+        "INVDate": "9/14/2024 12:00:00 AM",
+        "INVStatus": "PENDING",
+        "PaymentAmount": "",
+        "DeliveryDate": "28/08/2024",
+        "Status": "ACCEPTED",
+        "ViewT&C": "View Details"
+      },
+      {
+        "POType": "Purchase Order(General)",
+        "PONumber": "20240828NPO000001",
+        "PODate": "Aug 28 2024",
+        "PartyName": "3 G Technology(Shanghai)Ltd.",
+        "Location": "Delhi",
+        "POAmount": "22800.00",
+        "Quotation": "20240828QUT000001",
+        "ASNNo": "20240828DISP000001",
+        "ExpectedDispatchDate": "8/30/2024 12:00:00 AM",
+        "INVNO": "INV000203",
+        "INVDate": "9/14/2024 12:00:00 AM",
+        "INVStatus": "PENDING",
+        "PaymentAmount": "",
+        "DeliveryDate": "28/08/2024",
+        "Status": "ACCEPTED",
+        "ViewT&C": "View Details"
+      },
+      {
+        "POType": "Purchase Order(General)",
+        "PONumber": "20240828NPO000001",
+        "PODate": "Aug 28 2024",
+        "PartyName": "3 G Technology(Shanghai)Ltd.",
+        "Location": "Delhi",
+        "POAmount": "22800.00",
+        "Quotation": "20240828QUT000001",
+        "ASNNo": "20240828DISP000001",
+        "ExpectedDispatchDate": "8/30/2024 12:00:00 AM",
+        "INVNO": "INV000203",
+        "INVDate": "9/14/2024 12:00:00 AM",
+        "INVStatus": "PENDING",
+        "PaymentAmount": "",
+        "DeliveryDate": "28/08/2024",
+        "Status": "ACCEPTED",
+        "ViewT&C": "View Details"
+      }
+    ]
+  },
+  {
+    "tableId": "#history-po",
+    "columns": [
+      {
+        "data": "POType",
+        "title": "PO Type"
+      },
+      {
+        "data": "PONumber",
+        "title": "PO Number"
+      },
+      {
+        "data": "PODate",
+        "title": "PO Date"
+      },
+      {
+        "data": "PartryName",
+        "title": "Partry Name"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "POAmount",
+        "title": "PO Amount"
+      },
+      {
+        "data": "ASNNo",
+        "title": "ASN No"
+      },
+      {
+        "data": "ExpectedDispatchDate",
+        "title": "ExpectedDispatchDate"
+      },
+      {
+        "data": "INV NO",
+        "title": "INVNO"
+      },
+      {
+        "data": "INVDate",
+        "title": "INV Date"
+      },
+      {
+        "data": "Inv Status",
+        "title": "Inv Status"
+      },
+      {
+        "data": "PaymentAmount",
+        "title": "Payment Amount"
+      },
+      {
+        "data": "DeliveryDate",
+        "title": "Delivery Date"
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      },
+      {
+        "data": "ViewT&C",
+        "title": "View T&C"
+      }
+    ],
+    "data": [
+      {
+        "POType": "Purchase Order(General)",
+        "PONumber": "20240828NPO000001",
+        "PODate": "Aug 28 2024",
+        "PartyName": "3 G Technology(Shanghai)Ltd.",
+        "Location": "Delhi",
+        "POAmount": "22800.00",
+        "Quotation": "20240828QUT000001",
+        "ASNNo": "20240828DISP000001",
+        "ExpectedDispatchDate": "8/30/2024 12:00:00 AM",
+        "INVNO": "INV000203",
+        "INVDate": "9/14/2024 12:00:00 AM",
+        "INVStatus": "PENDING",
+        "PaymentAmount": "",
+        "DeliveryDate": "28/08/2024",
+        "Status": "COMPLITED WITHIN DELIVERY DATE",
+        "ViewT&C": "View Details"
+      },
+      {
+        "POType": "Purchase Order(General)",
+        "PONumber": "20240828NPO000001",
+        "PODate": "Aug 28 2024",
+        "PartyName": "3 G Technology(Shanghai)Ltd.",
+        "Location": "Delhi",
+        "POAmount": "22800.00",
+        "Quotation": "20240828QUT000001",
+        "ASNNo": "20240828DISP000001",
+        "ExpectedDispatchDate": "8/30/2024 12:00:00 AM",
+        "INVNO": "INV000203",
+        "INVDate": "9/14/2024 12:00:00 AM",
+        "INVStatus": "PENDING",
+        "PaymentAmount": "",
+        "DeliveryDate": "28/08/2024",
+        "Status": "COMPLITED WITHIN DELIVERY DATE",
+        "ViewT&C": "View Details"
+      },
+      {
+        "POType": "Purchase Order(General)",
+        "PONumber": "20240828NPO000001",
+        "PODate": "Aug 28 2024",
+        "PartyName": "3 G Technology(Shanghai)Ltd.",
+        "Location": "Delhi",
+        "POAmount": "22800.00",
+        "Quotation": "20240828QUT000001",
+        "ASNNo": "20240828DISP000001",
+        "ExpectedDispatchDate": "8/30/2024 12:00:00 AM",
+        "INVNO": "INV000203",
+        "INVDate": "9/14/2024 12:00:00 AM",
+        "INVStatus": "PENDING",
+        "PaymentAmount": "",
+        "DeliveryDate": "28/08/2024",
+        "Status": "COMPLITED WITHIN DELIVERY DATE",
+        "ViewT&C": "View Details"
+      },
+      {
+        "POType": "Purchase Order(General)",
+        "PONumber": "20240828NPO000001",
+        "PODate": "Aug 28 2024",
+        "PartyName": "3 G Technology(Shanghai)Ltd.",
+        "Location": "Delhi",
+        "POAmount": "22800.00",
+        "Quotation": "20240828QUT000001",
+        "ASNNo": "20240828DISP000001",
+        "ExpectedDispatchDate": "8/30/2024 12:00:00 AM",
+        "INVNO": "INV000203",
+        "INVDate": "9/14/2024 12:00:00 AM",
+        "INVStatus": "PENDING",
+        "PaymentAmount": "",
+        "DeliveryDate": "28/08/2024",
+        "Status": "COMPLITED WITHIN DELIVERY DATE",
+        "ViewT&C": "View Details"
+      }
+    ]
+  },
+  {
+    "tableId": "#auction-engine-buyer",
+    "columns": [
+      {
+        "data": "EventNO",
+        "title": "Event NO"
+      },
+      {
+        "data": "EventEnterDate",
+        "title": "Event Enter Date"
+      },
+      {
+        "data": "OpeningDate",
+        "title": "Opening Date"
+      },
+      {
+        "data": "OpeningTime",
+        "title": "Opening Time"
+      },
+      {
+        "data": "ClosingDate",
+        "title": "Closing Date"
+      },
+      {
+        "data": "ClosingTime",
+        "title": "Closing Time"
+      },
+      {
+        "data": "OpeningBid",
+        "title": "Opening Bid"
+      },
+      {
+        "data": "Description",
+        "title": "Description"
+      },
+      {
+        "data": "LocationCode",
+        "title": "Location Code"
+      }
+    ],
+    "data": [
+      {
+        "EventNO": "20240709AUC000001",
+        "EventEnterDate": "09/07/2024",
+        "OpeningDate": "09/07/2024",
+        "OpeningTime": "14:00:00",
+        "ClosingDate": "10/07/2024",
+        "ClosingTime": "17:00:00",
+        "OpeningBid": "200.00000",
+        "Description": "desc",
+        "LocationCode": "10001"
+      },
+      {
+        "EventNO": "20240709AUC000001",
+        "EventEnterDate": "09/07/2024",
+        "OpeningDate": "09/07/2024",
+        "OpeningTime": "14:00:00",
+        "ClosingDate": "10/07/2024",
+        "ClosingTime": "17:00:00",
+        "OpeningBid": "200.00000",
+        "Description": "desc",
+        "LocationCode": "10001"
+      },
+      {
+        "EventNO": "20240709AUC000001",
+        "EventEnterDate": "09/07/2024",
+        "OpeningDate": "09/07/2024",
+        "OpeningTime": "14:00:00",
+        "ClosingDate": "10/07/2024",
+        "ClosingTime": "17:00:00",
+        "OpeningBid": "200.00000",
+        "Description": "desc",
+        "LocationCode": "10001"
+      },
+      {
+        "EventNO": "20240709AUC000001",
+        "EventEnterDate": "09/07/2024",
+        "OpeningDate": "09/07/2024",
+        "OpeningTime": "14:00:00",
+        "ClosingDate": "10/07/2024",
+        "ClosingTime": "17:00:00",
+        "OpeningBid": "200.00000",
+        "Description": "desc",
+        "LocationCode": "10001"
+      }
+    ]
+  },
+  {
+    "tableId": "#rfp-buyer",
+    "columns": [
+      {
+        "data": "RFPNO.",
+        "title": "RFP NO."
+      },
+      {
+        "data": "Requirement",
+        "title": "Requirement"
+      },
+      {
+        "data": "Description",
+        "title": "Description"
+      },
+      {
+        "data": "OpeningDate",
+        "title": "Opening Date"
+      },
+      {
+        "data": "OpeningTime",
+        "title": "Opening Time"
+      },
+      {
+        "data": "ClosingDate",
+        "title": "ClosingDate"
+      },
+      {
+        "data": "ClosingTime",
+        "title": "Closing Time"
+      },
+      {
+        "data": "Action",
+        "title": "Action"
+      }
+    ],
+    "data": [
+      {
+        "RFPNO.": "20240709RFP000001",
+        "Requirement": "Camera spec",
+        "Description": "RFP Camera",
+        "OpeningDate": "7/9/2024 12:00:00 AM",
+        "OpeningTime": "14:00:00",
+        "ClosingDate": "7/10/2024",
+        "ClosingTime": "03:30:00",
+        "Action": "Extend Date"
+      },
+      {
+        "RFPNO.": "20240709RFP000001",
+        "Requirement": "Camera spec",
+        "Description": "RFP Camera",
+        "OpeningDate": "7/9/2024 12:00:00 AM",
+        "OpeningTime": "14:00:00",
+        "ClosingDate": "7/10/2024",
+        "ClosingTime": "03:30:00",
+        "Action": "Extend Date"
+      },
+      {
+        "RFPNO.": "20240709RFP000001",
+        "Requirement": "Camera spec",
+        "Description": "RFP Camera",
+        "OpeningDate": "7/9/2024 12:00:00 AM",
+        "OpeningTime": "14:00:00",
+        "ClosingDate": "7/10/2024",
+        "ClosingTime": "03:30:00",
+        "Action": "Extend Date"
+      },
+      {
+        "RFPNO.": "20240709RFP000001",
+        "Requirement": "Camera spec",
+        "Description": "RFP Camera",
+        "OpeningDate": "7/9/2024 12:00:00 AM",
+        "OpeningTime": "14:00:00",
+        "ClosingDate": "7/10/2024",
+        "ClosingTime": "03:30:00",
+        "Action": "Extend Date"
+      }
+    ]
+  },
+  {
+    "tableId": "#task-manager-buyer",
+    "columns": [
+      {
+        "data": "TaskID",
+        "title": "Task ID"
+      },
+      {
+        "data": "AssignBy",
+        "title": "Assign By"
+      },
+      {
+        "data": "AssignByUser",
+        "title": "Assign By User"
+      },
+      {
+        "data": "AssignToUser",
+        "title": "Assign To User"
+      },
+      {
+        "data": "Subject",
+        "title": "Subject"
+      },
+      {
+        "data": "StartDate",
+        "title": "Start Date"
+      },
+      {
+        "data": "EndDate",
+        "title": "End Date"
+      },
+      {
+        "data": "TransactionNO.",
+        "title": "Transaction NO."
+      },
+      {
+        "data": "TransactionType",
+        "title": "Transaction Type"
+      },
+      {
+        "data": "Status",
+        "title": "Status"
+      }
+    ],
+    "data": [
+      {
+        "TaskID": "20180710TSK000006 ",
+        "AssignBy": "3 G Technology (Shanghai) Ltd.",
+        "AssignByUser": "threetech.12@gmail.com",
+        "AssignToUser": "3 g Technology (Shanghai) Ltd",
+        "Subject": "ertert",
+        "StartDate": "7/12/2024 12:00:00AM",
+        "EndDate": "7/12/2024 12:00:00AM",
+        "TransactionNO.": "20181026ENQ000001",
+        "TransactionType": "ENQUIRY",
+        "Status": "ACTIVE"
+      },
+      {
+        "TaskID": "20180710TSK000006 ",
+        "AssignBy": "3 G Technology (Shanghai) Ltd.",
+        "AssignByUser": "threetech.12@gmail.com",
+        "AssignToUser": "3 g Technology (Shanghai) Ltd",
+        "Subject": "ertert",
+        "StartDate": "7/12/2024 12:00:00AM",
+        "EndDate": "7/12/2024 12:00:00AM",
+        "TransactionNO.": "20181026ENQ000001",
+        "TransactionType": "ENQUIRY",
+        "Status": "ACTIVE"
+      },
+      {
+        "TaskID": "20180710TSK000006 ",
+        "AssignBy": "3 G Technology (Shanghai) Ltd.",
+        "AssignByUser": "threetech.12@gmail.com",
+        "AssignToUser": "3 g Technology (Shanghai) Ltd",
+        "Subject": "ertert",
+        "StartDate": "7/12/2024 12:00:00AM",
+        "EndDate": "7/12/2024 12:00:00AM",
+        "TransactionNO.": "20181026ENQ000001",
+        "TransactionType": "ENQUIRY",
+        "Status": "ACTIVE"
+      },
+      {
+        "TaskID": "20180710TSK000006 ",
+        "AssignBy": "3 G Technology (Shanghai) Ltd.",
+        "AssignByUser": "threetech.12@gmail.com",
+        "AssignToUser": "3 g Technology (Shanghai) Ltd",
+        "Subject": "ertert",
+        "StartDate": "7/12/2024 12:00:00AM",
+        "EndDate": "7/12/2024 12:00:00AM",
+        "TransactionNO.": "20181026ENQ000001",
+        "TransactionType": "ENQUIRY",
+        "Status": "ACTIVE"
+      },
+      {
+        "TaskID": "20180710TSK000006 ",
+        "AssignBy": "3 G Technology (Shanghai) Ltd.",
+        "AssignByUser": "threetech.12@gmail.com",
+        "AssignToUser": "3 g Technology (Shanghai) Ltd",
+        "Subject": "ertert",
+        "StartDate": "7/12/2024 12:00:00AM",
+        "EndDate": "7/12/2024 12:00:00AM",
+        "TransactionNO.": "20181026ENQ000001",
+        "TransactionType": "ENQUIRY",
+        "Status": "ACTIVE"
+      }
+    ]
+  },
+  {
+    "tableId": "#contract",
+    "columns": [
+      {
+        "data": "PONumber",
+        "title": "PO Number"
+      },
+      {
+        "data": "PODate",
+        "title": "PO Date"
+      },
+      {
+        "data": "PartyCode",
+        "title": "Party Code"
+      },
+      {
+        "data": "Location",
+        "title": "Location"
+      },
+      {
+        "data": "ViewT&C",
+        "title": "View T&C"
+      }
+    ],
+    "data": [
+      {
+        "PONumber": "20240815NPO1",
+        "PODate": "Aug 15 2024",
+        "PartyCode": "3GT5685895",
+        "Location": "100001",
+        "ViewT&C": "View Details"
+      },
+      {
+        "PONumber": "20240815NPO1",
+        "PODate": "Aug 15 2024",
+        "PartyCode": "3GT5685895",
+        "Location": "100001",
+        "ViewT&C": "View Details"
+      },
+      {
+        "PONumber": "20240815NPO1",
+        "PODate": "Aug 15 2024",
+        "PartyCode": "3GT5685895",
+        "Location": "100001",
+        "ViewT&C": "View Details"
+      },
+      {
+        "PONumber": "20240815NPO1",
+        "PODate": "Aug 15 2024",
+        "PartyCode": "3GT5685895",
+        "Location": "100001",
+        "ViewT&C": "View Details"
+      },
+      {
+        "PONumber": "20240815NPO1",
+        "PODate": "Aug 15 2024",
+        "PartyCode": "3GT5685895",
+        "Location": "100001",
+        "ViewT&C": "View Details"
+      }
+    ]
   }
 ]

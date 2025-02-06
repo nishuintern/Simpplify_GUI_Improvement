@@ -222,7 +222,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
           .map((row) => {
             return `<tr>${headers
               .map((header) => {
-                if (header.label === "Status" || header.label === "Action") {
+                if (header.label === "Status" || header.label === "Action"||header.label==="View T&C") {
                   if (header.label === "Action") {
                     // Special handling for Action column
                     const actionValue = row[header.key];

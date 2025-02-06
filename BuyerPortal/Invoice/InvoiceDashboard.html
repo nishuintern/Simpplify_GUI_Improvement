@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="TableManager.css" />
-    <link rel="stylesheet" href="/BuyerPortal/Graphical Representation/Dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="/BuyerPortal/Graphical Representation/Dashboard.css"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -36,7 +39,7 @@
             <ul>
               <li>
                 <a href="/BuyerPortal/Graphical Representation/Dashboard.html">
-                  <div class="menu-item ">
+                  <div class="menu-item">
                     <img src="/icons/iconamoon_home@2x.svg" alt="Dashboard" />
                     <!-- <span>Dashboard</span> -->
                   </div>
@@ -1119,222 +1122,279 @@
             </div>
             <div class="sub-sidebar-line"><hr /></div>
             <div
-            class="offcanvas-body"
-            style="background-color: white; color: #000; margin-top: -15px"
+              class="offcanvas-body"
+              style="background-color: white; color: #000; margin-top: -15px"
             >
-            <ul class="nav flex-column">
+              <ul class="nav flex-column">
                 <li class="nav-item">
-                <a
+                  <a
                     class="nav-link active"
                     href="/BuyerPortal/Task Master/TaskManager.html"
                     style="color: #3c4059"
                     >Task Manager</a
-                >
+                  >
                 </li>
-            </ul>
+              </ul>
             </div>
-        </div>
-        <!-- SubSidebar 11 -->
-        <div
+          </div>
+          <!-- SubSidebar 11 -->
+          <div
             class="offcanvas offcanvas-start subsidebar-canvas"
             tabindex="-1"
             id="subSidebar11"
             aria-labelledby="subSidebar11Label"
             data-bs-backdrop="false"
             style="
-            background-color: white;
-            color: #000;
-            max-width: 250px;
-            margin-top: 70px;
-            left: 80px;
+              background-color: white;
+              color: #000;
+              max-width: 250px;
+              margin-top: 70px;
+              left: 80px;
             "
-        >
+          >
             <div
-            class="offcanvas-header"
-            style="background-color: white; color: #000"
+              class="offcanvas-header"
+              style="background-color: white; color: #000"
             >
-            <h5 class="offcanvas-title" id="subSidebar0Label">
+              <h5 class="offcanvas-title" id="subSidebar0Label">
                 Contract Management
-            </h5>
-            <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+              </h5>
+              <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
             </div>
             <div class="sub-sidebar-line"><hr /></div>
             <div
-            class="offcanvas-body"
-            style="background-color: white; color: #000; margin-top: -15px"
+              class="offcanvas-body"
+              style="background-color: white; color: #000; margin-top: -15px"
             >
-            <ul class="nav flex-column">
+              <ul class="nav flex-column">
                 <li class="nav-item">
-                <a
+                  <a
                     class="nav-link active"
                     href="/BuyerPortal/Contract Management/ContractManagement.html"
                     style="color: #3c4059"
                     >Contract Management</a
-                >
+                  >
                 </li>
-            </ul>
+              </ul>
             </div>
-        </div>
+          </div>
         </header>
         <!-- Dashboard Heading -->
         <div class="dashboard-heading">
-        <h3>Invoice Dashboard</h3>
-        <a href="">
+          <div class="d-flex">
+            <a href="/BuyerPortal/Invoice/index.html">
+              <img src="/icons/Arrow back ios (2).svg" alt="back" />
+            </a>
+            <h3>Invoice Dashboard</h3>
+          </div>
+          <a href="">
             <img src="/icons/Synchronize.svg" alt="" />
-        </a>
+          </a>
         </div>
 
-        <!-- <main class="main-content content container-fluid" id="mainContent">
-          <div class="row mt-3 ms-2 me-2">
-            <section
-              class="col-md-12 col-lg-5 col-sm-12 me-6 mb-4 search-po-card container-fluid"
+        <main class="main-content content container-fluid" id="mainContent">
+          <div>
+            <div
+              class="filters d-lg-flex d-md-block d-sm-flex justify-content-lg-start justify-content-sm-between justify-content-md-between align-items-md-center align-items-sm-center cus-ban"
             >
-              <form onsubmit="searchPoNumber(event)">
-                <div class="search-po">
-                  <h4 class="pt-2 ps-1 m-sm-4 card-heading">
-                    Search PO Number Details
-                  </h4>
-                  <hr />
-                  <label
-                    for="customer-input"
-                    class="d-lg-flex d-sm-block d-md-block"
+              <div
+                class="d-lg-block d-sm-flex justify-content-sm-between justify-content-md-between d-md-flex ms-lg-1 ms-md-1 ms-sm-1"
+              >
+                <label class="m-sm-2" for="fan-year">
+                  <span>Financial Year</span>
+                  <select
+                    class="px-sm-2 px-lg-4 px-md-2 py-lg-1 py-md-2 py-sm-2 mt-sm-1 ms-lg-3"
+                    name="size"
+                    id="financial-year"
                   >
-                    <span
-                      class="ms-sm-4 ms-lg-1 me-lg-1 ms-md-1 card-inside-text label-text d-lg-flex align-items-center"
-                      >Customer</span
-                    >
-                    <input
-                      id="customer-input"
-                      class="ms-sm-4 px-sm-5 py-sm-1 ms-lg-3 px-lg-5 py-lg-1 py-sm-1 customer-input ms-md-3"
-                      list="customer-list"
-                      placeholder="Select or type customer"
-                    />
-                    <datalist id="customer-list">
-                      <option value="User 1"></option>
-                      <option value="User 2"></option>
-                      <option value="User 3"></option>
-                    </datalist>
-                  </label>
-                  <hr />
-                  <label
-                    for="searchBy"
-                    class="d-lg-flex d-sm-flex d-md-flex justify-content-sm-start"
-                  >
-                    <span
-                      class="ms-sm-2 card-inside-text label-text d-lg-flex d-md-flex d-sm-flex align-items-center"
-                      >Search By</span
-                    >
-                    <span class="ms-sm-5 ms-lg-4">
-                      <input
-                        type="radio"
-                        id="po-no"
-                        name="searchBy"
-                        value="po-no"
-                        checked
-                      />
-                      <label for="po-no" class="card-inside-text label-text"
-                        >PO Number</label
+                    <option value="default">Select Year</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                  </select>
+                </label>
+                <div>
+                  <div class="d-none" id="search-container">
+                    <label class="ms-lg-5 m-sm-1" for="location">
+                      <span>Location</span>
+                      <select
+                        class="px-lg-4 py-lg-1 px-md-2 px-md-2 px-sm-2 px-sm-1 ms-1 mt-sm-1 ms-lg-3"
+                        name="location"
+                        id="location"
                       >
-                    </span>
-                    <span class="ms-sm-5 ms-lg-4">
-                      <input
-                        type="radio"
-                        id="date"
-                        name="searchBy"
-                        value="date"
-                      />
-                      <label for="date" class="card-inside-text label-text"
-                        >Date</label
-                      >
-                    </span>
-                  </label>
-                  <hr />
-                  <div
-                    id="dynamic-input"
-                    class="ms-sm-1 ms-md-2 me-lg-auto d-flex flex-column ms-lg-2"
-                  >
-                    <label
-                      for="po-search"
-                      class="d-lg-flex d-sm-block d-md-block"
-                    >
-                      <span
-                        class="ms-sm-4 ms-lg-1 me-lg-1 ms-md-1 card-inside-text label-text d-lg-flex align-items-center"
-                        >PO Number</span
-                      >
-                      <input
-                        id="po-search"
-                        class="ms-sm-4 px-sm-5 py-sm-1 ms-lg-3 px-lg-5 py-lg-1 py-sm-1 customer-input ms-md-3"
-                        list="po-number-list"
-                        placeholder="Select or type Po Number"
-                      />
-                      <datalist id="po-number-list">
-                        <option value="PO-001"></option>
-                        <option value="PO-002"></option>
-                        <option value="PO-003"></option>
-                      </datalist>
+                        <option value="default">Location</option>
+                        <option value="Location1">Location 1</option>
+                        <option value="Location2">Location 2</option>
+                        <option value="Location3">Location 3</option>
+                      </select>
                     </label>
                   </div>
-                  <div
-                    id="error-message"
-                    style="color: red; font-weight: bold"
-                  ></div>
-                  <hr />
-                  <div class="d-flex justify-content-end">
-                    <button id="searchPoBtn" type="submit" class="search-btn">
-                      <span class="btn-search-text px-md-5 py-md-1"
-                        >Search</span
-                      >
-                    </button>
+                  <div class="d-none" id="fromDate-container">
+                    <label
+                      for="from-date"
+                      class="m-lg-3 m-sm-1 me-2 text-nowrap"
+                      ><span>From Date</span></label
+                    >
+                    <input
+                      type="date"
+                      id="from-date"
+                      class="ms-lg-1 ps-2 pe-2 px-lg-4 py-lg-1"
+                    />
                   </div>
                 </div>
-              </form>
-            </section>
-            <section class="col-md-12 col-sm-12 col-lg-6 mb-4 container-fluid">
-              <form action="#">
-                <div class="search-po label-text">
-                  <h4 class="p-2 card-heading">To Do List</h4>
-                  <hr />
-                  <div
-                    id="todo-1"
-                    class="table-responsive overflow-auto custom-scrollbar"
-                  ></div>
-                </div>
-              </form>
-            </section>
-          </div>
-          <div class="row mt-3 ms-2 container-fluid"></div>
-          <div class="row mt-3 ms-2 container-fluid">
-            <section class="col-sm-12 col-md-12 col-lg-5 mb-4 container-fluid">
-              <div class="search-po">
-                <h4 class="p-2 card-heading">Buyer Order Status</h4>
-                <hr />
-                <div
-                  id="por"
-                  class="table-responsive overflow-auto custom-scrollbar"
-                ></div>
               </div>
-            </section>
-            <section class="col-sm-12 col-md-12 col-lg-6 mb-4 container-fluid">
-              <form action="#">
-                <div class="search-po">
-                  <h4 class="p-2 card-heading">Invoice Report</h4>
-                  <hr />
-                  <div
-                    id="buyer-order"
-                    class="table-responsive overflow-auto custom-scrollbar"
-                  ></div>
+              <!-- <div id=" additional-filters">
+          </div> -->
+              <div
+                class="d-lg-block d-sm-block d-md-block ms-lg-3 ms-md-1 ms-sm-1"
+              >
+                <label class="m-sm-1 m-lg-1 m-md-1" for="search">
+                  <span class="me-lg-4 me-md-2 me-sm-2">Search By</span>
+                  <select
+                    class="px-sm-2 px-lg-4 px-md-2 py-lg-1 py-md-2 py-sm-2"
+                    name="searchBy"
+                    id="search-by"
+                  >
+                    <option value="default">Select</option>
+                    <option value="ALL">ALL</option>
+                    <option value="Location">Location</option>
+                    <option value="MaterialInTransits">
+                      Material In Transits
+                    </option>
+                    <option value="Date">Date</option>
+                  </select>
+                </label>
+                <div class="d-none" id="toDate-container">
+                  <label for="to-date" class="mt-lg-3 m-sm-1 text-nowrap"
+                    ><span>To Date</span></label
+                  >
+                  <input
+                    type="date"
+                    id="to-date"
+                    class="ms-lg-5 ps-2 pe-2 px-lg-4 py-lg-1"
+                  />
                 </div>
-              </form>
-            </section>
+              </div>
+              <div class="d-sm-block d-md-block d-lg-block ms-3 p-1">
+                <button
+                  class="btn btn-dark btn-sm me-sm-2 me-md-2 me-lg-2 p-2 px-lg-4 px-sm-2 px-md-3"
+                  id="search-btn"
+                  onclick="()=>handleSearchByChange();"
+                >
+                  Search
+                </button>
+                <button
+                  class="btn btn-primary btn-sm me-lg-2 p-2 px-lg-4 px-md-3 px-sm-2"
+                  id="material-transit-btn"
+                >
+                  Material Transist
+                </button>
+                <button
+                  class="btn btn-light btn-sm p-2 px-lg-4 px-sm-2 px-md-3"
+                  id="history-btn"
+                >
+                  History
+                </button>
+              </div>
+            </div>
+            <div class="content-scroll">
+              <div id="card-container" class="ms-3 mt-3">
+                <!-- Cards here (unchanged for now) -->
+                <div class="card-container">
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card d-flex justify-content-center p-2">
+                      <div
+                        class="card-body d-flex flex-column align-items-center"
+                      >
+                        <img src="/icons/Vector.svg" alt="" />
+                        <h6 class="mt-1 card-title">21</h6>
+                        <p class="card-text">My Invoice</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card d-flex justify-content-center p-2">
+                      <div
+                        class="card-body d-flex flex-column align-items-center"
+                      >
+                        <img src="/icons/flat-color-icons_ok (2).svg" alt="" />
+                        <h6 class="mt-1 card-title">00</h6>
+                        <p class="card-text">Created</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card d-flex justify-content-center p-2">
+                      <div
+                        class="card-body d-flex flex-column align-items-center"
+                      >
+                        <img src="/icons/la_file-invoice.svg" alt="" />
+                        <h6 class="mt-1 card-title">18</h6>
+                        <p class="card-text">L1 Pending</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card d-flex justify-content-center p-2">
+                      <div
+                        class="card-body d-flex flex-column align-items-center"
+                      >
+                        <img src="/icons/flat-color-icons_ok (3).svg" alt="" />
+                        <h6 class="mt-1 card-title">18</h6>
+                        <p class="card-text">L1 Pending More than 7 Days</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-auto col-md-4 col-sm-6 mb-4">
+                    <div class="card d-flex justify-content-center p-2">
+                      <div
+                        class="card-body d-flex flex-column align-items-center"
+                      >
+                        <img src="/icons/flat-color-icons_ok (1).png" alt="" />
+                        <h6 class="mt-1 card-title">00</h6>
+                        <p class="card-text">L3 Pending</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card d-flex justify-content-center p-2">
+                      <div
+                        class="card-body d-flex flex-column align-items-center"
+                      >
+                        <img src="/icons/la_file-invoice (1).svg" alt="" />
+                        <h6 class="mt-1 card-title">01</h6>
+                        <p class="card-text">Approved</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card d-flex justify-content-center p-2">
+                      <div
+                        class="card-body d-flex flex-column align-items-center"
+                      >
+                        <img src="/icons/marketeq_rejected-file-2.svg" alt="" />
+                        <h6 class="mt-1 card-title">01</h6>
+                        <p class="card-text">Rejected</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="line"></div>
+              <div id="invoice-dashboard" class=""></div>
+            </div>
           </div>
-        </main> -->
-    </div>
+        </main>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../index.js"></script>
     <script src="../tableManager.js"></script>
+    <script src="../Invoice/InvoiceDashboard.js"></script>
     <script>
-    initializeTableManager("../tableConfigs.json");
+      initializeTableManager("../tableConfigs.json");
     </script>
-</body>
+  </body>
 </html>
