@@ -6,11 +6,12 @@
       class="btn btn-light d-lg-none d-md-none me-2"
       type="button"
       data-bs-toggle="offcanvas" data-bs-target="#mainSidebar" data-bs-backdrop="false"
+      style="border: 1px solid #000;"
     >
-      <img src="/icons/menu.svg" alt="Menu" />
+      <img src="/icons/menu.svg" alt="Menu" style="background-color: #babed8;"/>
     </button>
     <div
-      class="d-flex w-100 search-bar px-2 align-content-center border-1"
+      class="d-flex w-100 search-bar px-2 align-items-center border-1"
       style="border: 1px solid #babed8"
     >
       <span
@@ -18,12 +19,11 @@
           src="/icons/searchbar.svg"
           alt=""
           style="cursor: pointer"
-          class="mt-2"
       /></span>
       <input
         type="text"
         placeholder="Search.."
-        class="form-control px-5"
+        class="px-5 py-3 form-control"
         style="border: none"
       />
     </div>
@@ -365,13 +365,13 @@
 
         <div class="dropdown">
           <button
-            class="btn btn-light dropdown-toggle position-relative"
+            class="btn btn-light dropdown-toggle"
             type="button"
             data-bs-toggle="dropdown"
           >
             <span
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-              style="margin-top: 2px; margin-left: -28px"
+              class="start-100 translate-middle badge rounded-pill bg-danger"
+              style="margin-top: -20px; margin-left: -20px"
             >
               7
             </span>
@@ -657,7 +657,8 @@
       background-color: white;
       color: #000;
       max-width: 250px;
-      margin-top: 70px;
+      margin-top: 5.5rem !important;
+      height: calc(100vh-5.5rem) !important;
       left: 80px;
     "
   >
@@ -673,7 +674,7 @@
       <ul class="nav flex-column">
         <li class="nav-item">
           <a
-            class="nav-link active"
+            class="nav-link"
             href="/SupplierPortal/OrderManagement/OrderDispatch.html"
             style="color: #3c4059"
             >Order Dispatch</a
@@ -757,7 +758,8 @@
       background-color: white;
       color: #000;
       max-width: 250px;
-      margin-top: 70px;
+      margin-top: 5.5rem !important;
+      height: calc(100vh-5.5rem) !important;
       left: 80px;
     "
   >
@@ -793,7 +795,8 @@
       background-color: white;
       color: #000;
       max-width: 250px;
-      margin-top: 70px;
+      margin-top: 5.5rem !important;
+      height: calc(100vh-5.5rem) !important;
       left: 80px;
     "
   >
@@ -829,7 +832,8 @@
       background-color: white;
       color: #000;
       max-width: 250px;
-      margin-top: 70px;
+      margin-top: 5.5rem !important;
+      height: calc(100vh-5.5rem) !important;
       left: 80px;
     "
   >
@@ -865,7 +869,8 @@
       background-color: white;
       color: #000;
       max-width: 250px;
-      margin-top: 70px;
+      margin-top: 5.5rem !important;
+      height: calc(100vh-5.5rem) !important;
       left: 80px;
     "
   >
@@ -903,7 +908,8 @@
       background-color: white;
       color: #000;
       max-width: 250px;
-      margin-top: 70px;
+      margin-top: 5.5rem !important;
+      height: calc(100vh-5.5rem) !important;
       left: 80px;
     "
   >
@@ -939,7 +945,8 @@
       background-color: white;
       color: #000;
       max-width: 250px;
-      margin-top: 70px;
+      margin-top: 5.5rem !important;
+      height: calc(100vh-5.5rem) !important;
       left: 80px;
     "
   >
@@ -983,18 +990,18 @@
   </div>
 </header>
 <!-- Offcanvas Sidebar -->
-<div class="offcanvas offcanvas-start" id="mainSidebar" data-bs-backdrop="static" style="max-width: 80px;">
+<div class="offcanvas offcanvas-start" id="mainSidebar" data-bs-backdrop="static" style="max-width: 80px !important;">
   <div class="offcanvas-header">
     <img src="/icons/newton icon copy 1.svg" alt="">
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" style="margin-left: 20px;"></button>
   </div>
   <div class="offcanvas-body">
-    <nav>
-      <ul class="nav-list m-auto">
+    <nav style="margin: -18px;">
+      <ul class="nav-list">
         <li>
           <a href="/SupplierPortal/index.html">
             <div class="menu-item">
-              <img src="/icons/iconamoon_home@2x.svg" alt="Dashboard" />
+              <img src="/icons/iconamoon_home@2x.svg" alt="Dashboard" style="margin-right: -5px;"/>
             </div>
           </a>
         </li>
@@ -1002,7 +1009,7 @@
           <div class="menu-item-container">
             <a href="/SupplierPortal/OrderManagement/OrderDispatch.html">
               <div class="menu-item">
-                <img src="/icons/icon-park-outline_transaction-order.svg" alt="Order Management" />
+                <img src="/icons/icon-park-outline_transaction-order.svg" alt="Order Management" style="margin-right: -5px;"/>
               </div>
             </a>
             <img src="/icons/Glyph_ undefined 1.svg" alt="Toggle Menu" class="toggle-img" data-bs-toggle="offcanvas" data-bs-target="#subSidebar0" />
@@ -1012,7 +1019,7 @@
           <div class="menu-item-container">
             <a href="/SupplierPortal/Quotation/QuotationDetails.html">
               <div class="menu-item">
-                <img src="/icons/Checkout.svg" alt="Quotation" />
+                <img src="/icons/Checkout.svg" alt="Quotation" style="margin-right: -5px;"/>
               </div>
             </a>
             <img src="/icons/Glyph_ undefined 1.svg" alt="Toggle Menu" class="toggle-img" data-bs-toggle="offcanvas" data-bs-target="#subSidebar1" />
@@ -1022,7 +1029,7 @@
           <div class="menu-item-container">
             <a href="/SupplierPortal/ReverseAuction/ReverseAuction.html">
               <div class="menu-item">
-                <img src="/icons/Sell.svg" alt="Reverse Auction" />
+                <img src="/icons/Sell.svg" alt="Reverse Auction" style="margin-right: -5px;"/>
               </div>
             </a>
             <img src="/icons/Glyph_ undefined 1.svg" alt="Toggle Menu" class="toggle-img" data-bs-toggle="offcanvas" data-bs-target="#subSidebar2" />
@@ -1032,7 +1039,7 @@
           <div class="menu-item-container">
             <a href="/SupplierPortal/AuctionEngine/AuctionEngine.html">
               <div class="menu-item">
-                <img src="/icons/Service.svg" alt="Auction Engine" />
+                <img src="/icons/Service.svg" alt="Auction Engine" style="margin-right: -5px;"/>
               </div>
             </a>
             <img src="/icons/Glyph_ undefined 1.svg" alt="Toggle Menu" class="toggle-img" data-bs-toggle="offcanvas" data-bs-target="#subSidebar3" />
@@ -1042,7 +1049,7 @@
           <div class="menu-item-container">
             <a href="/SupplierPortal/RFP/RFP.html">
               <div class="menu-item">
-                <img src="/icons/Invite.svg" alt="Request For Proposal" />
+                <img src="/icons/Invite.svg" alt="Request For Proposal" style="margin-right: -5px;"/>
               </div>
             </a>
             <img src="/icons/Glyph_ undefined 1.svg" alt="Toggle Menu" class="toggle-img" data-bs-toggle="offcanvas" data-bs-target="#subSidebar4" />
@@ -1052,7 +1059,7 @@
           <div class="menu-item-container">
             <a href="/SupplierPortal/TaskManager/TaskManager.html">
               <div class="menu-item">
-                <img src="/icons/Task.svg" alt="Task Manager" />
+                <img src="/icons/Task.svg" alt="Task Manager" style="margin-right: -5px;"/>
               </div>
             </a>
             <img src="/icons/Glyph_ undefined 1.svg" alt="Toggle Menu" class="toggle-img" data-bs-toggle="offcanvas" data-bs-target="#subSidebar5" />
@@ -1062,7 +1069,7 @@
           <div class="menu-item-container">
             <a href="/SupplierPortal/Setting/UserTenantMapping.html">
               <div class="menu-item">
-                <img src="/icons/uil_setting.png" alt="Setting" />
+                <img src="/icons/uil_setting.png" alt="Setting" style="margin-right: -5px;"/>
               </div>
             </a>
             <img src="/icons/Glyph_ undefined 1.svg" alt="Toggle Menu" class="toggle-img" data-bs-toggle="offcanvas" data-bs-target="#subSidebar6" />

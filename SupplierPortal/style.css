@@ -1091,11 +1091,11 @@ th .sort-icons i {
     min-width: 180px !important;
     position: fixed;
     left: 80px; /* Default: When sidebar is collapsed */
-    margin-top: 60px;
+    margin-top: 0px !important;
     /* height: 100vh; */
     background: white;
     z-index: 1040;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 0px);
     /* border-left: 1px solid #ccc; */
     transition: transform 0.3s ease-in-out, left 0.3s ease-in-out;
     transform: translateX(100%); /* Initially hidden */
@@ -1238,4 +1238,32 @@ th .sort-icons i {
   font-size: 24px;
   cursor: pointer;
   z-index: 1050;
+}
+
+
+/* Subsidebar ke active links */
+.subsidebar-canvas .nav-link {
+  color: #3c4059;
+  transition: color 0.3s ease-in-out;
+}
+
+.subsidebar-canvas .nav-link.active {
+  color: #F39C12
+  !important; /* Active link ka color */
+  font-weight: 400; /* Active link bold ho jaye */
+}
+
+/* Sidebar ke three dots wale icons active */
+.toggle-img {
+  filter: grayscale(100%);
+  transition: all 0.3s ease-in-out;
+}
+
+.toggle-img.active-icon {
+  filter: grayscale(0%);
+  border-radius: 50%;
+  background-color: rgba(255, 87, 51, 0.2); /* Light highlight */
+}
+.search-bar input {
+  flex-grow: 1;
 }

@@ -114,7 +114,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       topControls.className =
         "d-flex justify-content-between align-items-center m-2";
       topControls.innerHTML = `
-        <div class="page-size-container d-flex align-items-center">
+        <div class="page-size-container d-flex align-items-center mobile-page">
           <label for="${containerId}-pageSize" class='me-1'>Page Size:</label>
           <select id="${containerId}-pageSize" class='px-3 py-1'>
             ${pageSizeOptions
@@ -127,7 +127,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
               .join("")}
           </select>
         </div>
-        <div class="search-div d-flex">
+        <div class="search-div d-flex mobile-search">
           <label for="${containerId}-search" class='mt-2 me-2 py-1 d-flex'>Search:</label>
           <input type="search" id="${containerId}-search" placeholder="Search...">
         </div>

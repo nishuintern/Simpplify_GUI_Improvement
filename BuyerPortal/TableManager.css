@@ -204,4 +204,63 @@ th .sort-icons i {
   }
 }
 
+@media (max-width: 576px) {
+  /* Make table container responsive */
+  .custom-scrollbar {
+    overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+  }
 
+  /* Table styling */
+  .table {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  /* Table headers */
+  .table thead th {
+    font-size: 12px;
+    padding: 8px;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  /* Table body */
+  .table tbody td {
+    font-size: 12px;
+    padding: 6px;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  /* Sortable headers (clickable) */
+  .sortable-header {
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  /* Search and pagination controls */
+  .search-div input {
+    width: 100px;
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .page-size-container select {
+    font-size: 12px;
+    padding: 3px;
+  }
+
+  /* Pagination buttons */
+  .pagination .page-item .page-link {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  /* Summary text */
+  #summary {
+    font-size: 12px;
+  }
+}

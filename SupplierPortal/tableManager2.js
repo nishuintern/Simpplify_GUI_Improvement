@@ -76,7 +76,8 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       // Create table structure
       const tableDiv = document.createElement("div");
       tableDiv.className =
-        "table-responsive-lg table-responsive-md table-responsive-sm custom-scrollbar";
+        "table-responsive";
+        tableDiv.style.overflowX = "auto";
       const table = document.createElement("table");
       table.className = "table  text-nowrap";
       const thead = document.createElement("thead");

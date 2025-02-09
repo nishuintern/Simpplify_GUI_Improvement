@@ -407,7 +407,7 @@ function handleOrangeButton(value) {
   console.log("Dispatch button clicked with value:", value);
   // Add your functionality here
   window.location =
-    "http://127.0.0.1:5500/html/OrderManagement/ItemHSNMapping.html";
+    "http://127.0.0.1:5500/SupplierPortal/OrderManagement/ItemHSNMapping.html";
 }
 
 function handleGreenButton(value) {

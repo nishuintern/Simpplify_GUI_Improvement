@@ -255,7 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   historyButton.addEventListener("click", () => {
-    window.location.href = "/html/Dashboard/InvoiceHistory.html";
+    window.location.href = "/SupplierPortal/Dashboard/InvoiceHistory.html";
   });
 });
 
