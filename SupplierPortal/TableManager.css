@@ -205,3 +205,18 @@ th .sort-icons i {
 }
 
 
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* Horizontal Scroll Enable */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}

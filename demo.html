@@ -1,1168 +1,1080 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nippon Data CRM</title>
-
-    <!-- Google Fonts -->
-    <!-- Main Css -->
-    <link rel="stylesheet" href="nippon.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
-    <link href="FluentSystemIcons-Regular.css" rel="stylesheet">
-    <style type="text/css">
-        .dataTables_info {
-            padding-left: 6px;
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Management</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom CSS for small devices */
+      @media (max-width: 767.98px) {
+        .table-responsive {
+          overflow-x: auto; /* Enable horizontal scrolling for tables */
         }
 
-        .dataTables_paginate {
-            margin-top: -30px !important;
-            padding-bottom: 2px;
-            padding-right: 10px;
+        .table th,
+        .table td {
+          font-size: 0.8rem; /* Smaller font size for table cells */
         }
 
-        .search-auto-complete1 {
-            background: #fff;
-            border: 1px solid #BABED8;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-            border-radius: 0px 0px 4px 4px;
-            margin-top: -2px;
-            position: absolute;
-            z-index: 1;
-            width: 100%;
-            display: none;
+        .page-size-search {
+          flex-direction: column; /* Stack page size and search vertically on small screens */
+          gap: 0.5rem; /* Add some spacing between elements */
         }
 
-        .sidewidth {
-            margin-right: -64px !important;
+        .page-size-search label {
+          margin-bottom: 0; /* Remove margin for better alignment */
         }
 
-        .cke_notifications_area {
-            display: none !important;
+        .pagination {
+          justify-content: center; /* Center pagination on small screens */
         }
+      }
     </style>
-    <!-- Scripts -->
-    <script src="https://cdn.ckeditor.com/4.19.1/standard-all/ckeditor.js"></script><style>.cke{visibility:hidden;}</style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js" crossorigin="anonymous"></script>
-    <script src="/Content/javascriptsNew/jquery.sortable.js"></script>
-    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/rowreorder/1.2.7/js/dataTables.rowReorder.min.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-    <!-- End of Icon css -->
-<script type="text/javascript" src="https://cdn.ckeditor.com/4.19.1/standard-all/config.js?t=M6K8"></script><link rel="stylesheet" type="text/css" href="https://cdn.ckeditor.com/4.19.1/standard-all/skins/moono-lisa/editor.css?t=M6K8"><script type="text/javascript" src="https://cdn.ckeditor.com/4.19.1/standard-all/lang/en-gb.js?t=M6K8"></script><script type="text/javascript" src="https://cdn.ckeditor.com/4.19.1/standard-all/styles.js?t=M6K8"></script><link rel="stylesheet" type="text/css" href="https://cdn.ckeditor.com/4.19.1/standard-all/plugins/scayt/skins/moono-lisa/scayt.css?t=M6K8"><link rel="stylesheet" type="text/css" href="https://cdn.ckeditor.com/4.19.1/standard-all/plugins/scayt/dialogs/dialog.css?t=M6K8"><link rel="stylesheet" type="text/css" href="https://cdn.ckeditor.com/4.19.1/standard-all/plugins/tableselection/styles/tableselection.css?t=M6K8"><link rel="stylesheet" type="text/css" href="https://cdn.ckeditor.com/4.19.1/standard-all/plugins/dialog/styles/dialog.css?t=M6K8"></head>
-<body id="Body">
-  <input type="hidden" id="hdfN" />
-  <div class="sidebar" style="width:64px;z-index:1002;">
-      <button class="mobile-close btn btn-outline-secondary me-2">
-          <span class="">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
-              </svg>
-          </span>
-      </button>
-      <div class="logo mb-3" style="margin-left:10px;margin-top:-7px;margin-bottom:-10px">
-          <a href="#" class="">
-              <img src="/Content/assets/images/newtonIcon32.png" alt="Newton" style="margin-left:0px;margin-top:7px" />
-          </a>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1 class="mb-4">Order Management</h1>
+
+      <!-- Order Dispatch Section -->
+      <div class="mb-4">
+        <h2>Order Dispatch</h2>
+        <ul class="list-unstyled">
+          <li><strong>Order Acknowledgement</strong></li>
+          <li>Invoice</li>
+          <li>Buyer Mapping Discount</li>
+          <li>Item Catalog</li>
+          <li>Item</li>
+          <li>PO Status</li>
+          <li>Invoice Dashboard</li>
+          <li>My invoices</li>
+        </ul>
       </div>
-      <div id="secMainMenu" data-refresh-url="/UserMenu/_Tree">
-          <ul class="nav compact" style="margin-top:-10px;margin-left:-11px">
 
-              <li class="nav-item dropend sub-menu" style="margin-left:-11px;height:40px;">
-                  <a class="nav-link  active" href="/Home" id="navbarDropdown" role="button"
-                     aria-expanded="false">
-                      <i class="icon icon-ic_fluent_home_24_regular"></i>
-                  </a>
-              </li>
-          </ul>
+      <!-- Page Size and Search -->
+      <div
+        class="d-flex justify-content-between align-items-center mb-3 page-size-search"
+      >
+        <div>
+          <label for="page-size">Page Size:</label>
+          <select
+            id="page-size"
+            class="form-select form-select-sm d-inline-block w-auto"
+          >
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+          </select>
+        </div>
+        <div>
+          <label for="search">Search:</label>
+          <input
+            type="text"
+            id="search"
+            class="form-control form-control-sm d-inline-block w-auto"
+            placeholder="Search..."
+          />
+        </div>
       </div>
-      
-  </div>
-  <div class="main-container">
-      <header>
-          <div class="container-fluid">
 
-              <div class="d-flex justify-content-between flex-column flex-lg-row flex-md-row flex-sm-row">
-                  <div class="flex-grow-1 d-flex align-items-center header-mobile">
-                      <button class="mobile-nav btn btn-outline-secondary me-2">
-                          <span class="">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                                  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-                              </svg>
-                          </span>
-                      </button>
-                      <div class="search global-search d-inline-flex" id="">
-                          <div class="input-group">
-                              <span class="input-group-text" id="basic-addon1">
-                                  <i class="icon icon-ic_fluent_search_12_regular"></i>
-                              </span>
-                              <input type="text" id="btnSearchCRM" class="form-control" placeholder="Search in your crm"
-                                     aria-label="Search in your crm" aria-describedby="basic-addon1" />
-                          </div>
-                          <div class="search-auto-complete1" style="margin-top: 40px;z-index: 1001;overflow-y: scroll;max-height: 400px;">
-                              <div style="float: right;">
-                                  <button class="btn" style="" id="btnResetSearchCRM">
-                                      <i class="icon icon-ic_fluent_presence_offline_20_regular"></i>
-                                  </button>
-                              </div>
-                              <div class="inner-search-body" id="divSearchCRM" data-refresh-url="/SystemCodesMaster/_SearchCRMText">
-                              </div>
-                          </div>
+      <!-- Table -->
+      <!-- <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Customer Name</th>
+              <th>Order No.</th>
+              <th>PO Date</th>
+              <th>Validity Date</th>
+              <th>Order Amount</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Indossian</td>
+              <td>2024/8/28/NPO000001</td>
+              <td>8/28/2024</td>
+              <td>22800.00</td>
+              <td></td>
+              <td>
+                <button class="btn btn-sm btn-outline-primary">Download</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Indossian</td>
+              <td>2024/8/28/NPO000001</td>
+              <td>8/28/2024</td>
+              <td>22800.00</td>
+              <td></td>
+              <td>
+                <button class="btn btn-sm btn-outline-primary">Download</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Indossian</td>
+              <td>2024/8/28/NPO000001</td>
+              <td>8/28/2024</td>
+              <td>22800.00</td>
+              <td></td>
+              <td>
+                <button class="btn btn-sm btn-outline-primary">Download</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Indossian</td>
+              <td>2024/8/28/NPO000001</td>
+              <td>8/28/2024</td>
+              <td>22800.00</td>
+              <td></td>
+              <td>
+                <button class="btn btn-sm btn-outline-primary">Download</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Indossian</td>
+              <td>2024/8/28/NPO000001</td>
+              <td>8/28/2024</td>
+              <td>22800.00</td>
+              <td></td>
+              <td>
+                <button class="btn btn-sm btn-outline-primary">Download</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Indossian</td>
+              <td>2024/8/28/NPO000001</td>
+              <td>8/28/2024</td>
+              <td>22800.00</td>
+              <td></td>
+              <td>
+                <button class="btn btn-sm btn-outline-primary">Download</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Indossian</td>
+              <td>2024/8/28/NPO000001</td>
+              <td>8/28/2024</td>
+              <td>22800.00</td>
+              <td></td>
+              <td>
+                <button class="btn btn-sm btn-outline-primary">Download</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Indossian</td>
+              <td>2024/8/28/NPO000001</td>
+              <td>8/28/2024</td>
+              <td>22800.00</td>
+              <td></td>
+              <td>
+                <button class="btn btn-sm btn-outline-primary">Download</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div> -->
+      <div class="tableview default-view">
+        <div>
+          <div id="ListDiv0" data-refresh-url="/SalesManageLead/_List">
+            <!-- bulk view assign -->
+            <style>
+              .dataTables_info {
+                padding-left: 6px;
+              }
 
+              .form-control-sm {
+                width: 235px !important;
+                margin-top: 5px;
+                margin-right: 8px;
+              }
 
+              .dataTables_paginate {
+                margin-top: -30px !important;
+                padding-bottom: 2px;
+                padding-right: 10px;
+              }
 
-                      </div>
-                  </div>
-                  <ul class="nav right-nav">
-                      <li class="nav-item">
-                          <div class="btn-group dropdown d-inline-flex me-2">
-                              <a class="btn btn-outline-secondary dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-                                  Language
-                              </a>
-                              <ul class="dropdown-menu" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 39px);" data-popper-placement="bottom-start">
-                                  <li>
-                                      <a class="dropdown-item Language" style="cursor: pointer;" data-val="en">
-                                          English
-                                      </a>
-                                  </li>
-                                  <li>
-                                      <a class="dropdown-item Language" style="cursor: pointer;" data-val="Hi">
-                                          Hindi
-                                      </a>
-                                  </li>
-                              </ul>
-                          </div>
-                      </li>
-                      <li class="nav-item dropdown add">
-                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                             aria-expanded="false">
-                              <i class="icon icon-ic_fluent_add_16_regular"></i>
-                          </a>
-                          <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
-                              <li>
-                                  <h5 class="dropdown-header">Records</h5>
-                              </li>
+              th:first-child,
+              td:first-child {
+                position: sticky !important;
+                left: 0px;
+                z-index: 1;
+                background-color: #fbfafa !important;
+              }
+            </style>
 
-                              <li>
-                                  <a class="dropdown-item" href="/SalesContact">
-                                      <i class="icon icon-ic_fluent_person_circle_20_regular"></i> <span>
-                                          Add Contact
-                                      </span>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a class="dropdown-item" href="/SalesAccount">
-                                      <i class="icon icon-ic_fluent_building_multiple_20_regular"></i> <span>
-                                          Add Account
-                                      </span>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a class="dropdown-item" href="/SalesManageLead">
-                                      <i class="icon icon-ic_fluent_person_24_regular"></i> <span>
-                                          Add Lead
-                                      </span>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a class="dropdown-item" href="/SalesDeal">
-                                      <i class="icon icon-ic_fluent_handshake_24_regular"></i> <span>
-                                          AddDeal
-                                      </span>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a class="dropdown-item" href="/SalesProduct">
-                                      <i class="icon icon-ic_fluent_box_16_regular"></i>
-                                      <span>Add Product</span>
-                                  </a>
-                              </li>
-                              <li>
-                                  <h5 class="dropdown-header">Sales Activity</h5>
-                              </li>
-                              <li>
-                                  <a class="dropdown-item addTask" href="#">
-                                      <i class="icon icon-ic_fluent_tasks_app_20_regular "></i> <span>
-                                          Add Task
-                                      </span>
-                                  </a>
+            <div class="bulk-action p-2" style="width: 800px !important">
+              <button class="btn btn-outline-secondary" id="btnOwnerLeads">
+                Change Owner
+              </button>
+              <button class="btn btn-outline-secondary" id="btnAssignLeads">
+                Change Assign To
+              </button>
+              <button class="btn btn-outline-secondary" id="btnChangeState">
+                Change Stage
+              </button>
 
-                              </li>
-                          </ul>
-                      </li>
-                      
-                      <li class="nav-item dropdown">
-
-                          <div id="divAddNotification" data-refresh-url="/SystemCodesMaster/_AddNotifications"></div>
-                      </li>
-                      <li class="nav-item dropdown">
-                          <a class="nav-link profile dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
-                             href="#">A</a>
-                          <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 profile-drop">
-                              <li>
-                                  <h5 class="dropdown-header">ADMIN</h5>
-                              </li>
-
-                              
-
-                              <li>
-                                  <a class="dropdown-item" href="/CalendarView">
-                                      <i class="icon icon-ic_fluent_calendar_mail_16_regular"></i>
-                                      <span>Calendar and Conferencing</span>
-                                  </a>
-                              </li>
-
-                              <li>
-                                  <a class="dropdown-item" href="/SettingEmailLibrary">
-                                      <i class="icon icon-ic_fluent_mail_add_16_regular"></i> <span>
-                                          Email Templates
-                                      </span>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a class="dropdown-item" href="/SalesAutomation">
-                                      <i class="icon icon-ic_fluent_target_arrow_20_regular"></i> <span>
-                                          SalesSequences
-                                      </span>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a class="dropdown-item" href="/WorkflowMaster">
-                                      <i class="icon icon-ic_fluent_target_arrow_20_regular"></i> <span>
-                                          Workflow Builder
-                                      </span>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a class="dropdown-item" target="_blank" href="https://play.google.com/store/apps/details?id=com.newton.newtonsales">
-                                      <i class="icon icon-ic_fluent_phone_20_regular"></i> <span>
-                                          Download App
-                                      </span>
-                                  </a>
-                              </li>
-                              <li>
-                                  
-<form action="/Config/LogOff" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="NzB5lcq1VNSz9UPiKanehVT5WJsD-bjW3JbLDszzdDpCCaohRj9LCF5Lv6TNysHUDVHtD5iyyOqHcXD_FwLoOPwUTU0UG5DA4cuC5cs0BW41" />    <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-default btn-flat">
-      <i class="icon icon-ic_fluent_arrow_exit_20_regular"></i>
-      <span> Logout</span>
-  </a>
-</form>
-                              </li>
-                          </ul>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </header>
-      <!-- header -->
-      <!-- End of Header -->
-      <!-- Mid header -->
-      <!-- end fof Mid header -->
-      <!-- Table view -->
-      <!-- Filter-right -->
-      <div class="offcanvas offcanvas-end filters" data-bs-scroll="true" tabindex="-1" id="offcanvasRight"
-           aria-labelledby="offcanvasRightLabel" data-bs-backdrop="false">
-          <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasTopLabel">Filters</h5>
+              <button class="btn btn-outline-secondary" id="btnDeleteLeads">
+                Delete Leads
+              </button>
+              <button
+                class="btn btn-outline-secondary"
+                id="btnSendEmailLeads"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#ActivityEmail"
+              >
+                Send Email
+              </button>
 
               <div class="dropdown">
-                  <a class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="icon icon-ic_fluent_add_circle_20_regular"></i> Add Filter
-                  </a>
-                  <div class="dropdown-menu add-filter-dropdown">
-                      <div class="search">
-                          <div class="input-group">
-                              <span class="input-group-text" id="basic-addon1">
-                                  <i class="icon icon-ic_fluent_search_12_regular"></i>
-                              </span>
-                              <input type="text" class="form-control" placeholder="Add a field to filter"
-                                     aria-label="Add a field to filter" aria-describedby="basic-addon1">
-                          </div>
-                      </div>
-                      <ul class="filters-ul">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-
-                      </ul>
-                  </div>
-              </div>
-              <button type="button" class="btn-close d-block d-sm-none d-lg-none d-xl-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-              <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                      <div class="inside-content">
-                          <div class="inside-content-top">
-                              <div class="flex-grow-1 d-inline-flex align-items-center">
-                                  <h4>Sales owner</h4>
-                              </div>
-                              <div class="d-inline-flex align-items-center">
-                                  <div class="dropdown">
-                                      <a data-bs-placement="right" data-bs-title="Contains"
-                                         class="btn btn-link dropdown-toggle nippon-tooltip" href="#" role="button"
-                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                          <span>contains</span> <i class="icon icon-ic_fluent_more_vertical_16_regular"></i>
-                                      </a>
-
-                                      <ul class="dropdown-menu">
-                                          <li><a class="dropdown-item" href="#">Contains</a></li>
-                                          <li><a class="dropdown-item" href="#">does not contain</a></li>
-                                          <li><a class="dropdown-item" href="#">is not empty (has any value)</a></li>
-                                      </ul>
-                                  </div>
-                              </div>
-                              <a href="#" class="btn btn-link">
-                                  <i class="icon icon-ic_fluent_dismiss_circle_20_regular"></i>
-                              </a>
-                          </div>
-                          <div class="inside-content-bottom">
-                              <ul class="list-group list-group-flush">
-                                  <li class="list-group-item">
-                                      <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                          <label class="form-check-label" for="flexCheckDefault">
-                                              Me
-                                          </label>
-                                      </div>
-                                  </li>
-                                  <li class="list-group-item">
-                                      <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                          <label class="form-check-label" for="flexCheckDefault">
-                                              Unassigned
-                                          </label>
-                                      </div>
-                                  </li>
-                                  <li class="list-group-item">
-                                      <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                          <label class="form-check-label" for="flexCheckDefault">
-                                              Sumit Mehta
-                                          </label>
-                                      </div>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-
+                <button
+                  class="btn btn-outline-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Add Tags
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <button
+                      class="dropdown-item editc"
+                      type="button"
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#AddTad"
+                      aria-controls="offcanvasRight"
+                    >
+                      Add Tag
+                    </button>
                   </li>
-                  <li class="list-group-item">An item</li>
-              </ul>
-          </div>
-          <div class="offcanvas-footer">
-              <button class="btn btn-link w-180">Reset</button>
-              <button class="btn btn-primary w-180" disabled>Apply</button>
-          </div>
-      </div>
-      <!-- End of Filter right -->
-      <!-- Contatct Filter start -->
-      
-      <!-- End fo Contact Filter -->
-      <!-- Mail box -->
-      <div class="offcanvas offcanvas-bottom mailbox" tabindex="-1" id="offcanvasBottom"
-           aria-labelledby="offcanvasBottomLabel">
-          <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasBottomLabel">New Message</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body small">
-              <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="To"
-                         aria-label="Dollar amount (with dot and two decimal places)">
-                  <a class="input-group-text" href="#">Cc</a>
-                  <a class="input-group-text" href="#">Bcc</a>
+                  <li>
+                    <a id="btnUpdateTag" class="dropdown-item" href="#"
+                      >Remove Tags</a
+                    >
+                  </li>
+                </ul>
               </div>
-              <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Subject"
-                         aria-label="Dollar amount (with dot and two decimal places)">
-                  <span class="input-group-text">
-                      <button type="button" class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown"
-                              aria-expanded="false">
-                          Add Placeholder
-                      </button>
-                      <ul class="dropdown-menu dropdown-menu-end">
-                          <li>
-                              <div class="input-group">
-                                  <span class="input-group-text" href="#">
-                                      <i class="icon icon-ic_fluent_search_12_regular"></i>
-                                  </span>
-                                  <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <!-- end of bulk view assign -->
 
-                              </div>
-                          </li>
-                          <li>
-                              <h5 class="dropdown-header">Contact fields</h5>
-                          </li>
-                          <li><a class="dropdown-item" href="#">Full Name</a></li>
-                          <li><a class="dropdown-item" href="#">Last Name</a></li>
-                          <li><a class="dropdown-item" href="#">Account</a></li>
-
-                          <li><a class="dropdown-item" href="#">Email</a></li>
-                      </ul>
-                  </span>
-                  <span class="input-group-text">
-                      <button type="button" class="dropdown-toggle btn btn-link" data-bs-toggle="dropdown"
-                              aria-expanded="false">
-                          Add Template
-                      </button>
-                      <ul class="dropdown-menu dropdown-menu-end">
-
-                          <li>
-                              <h5 class="dropdown-header">Template</h5>
-                          </li>
-                          <li><a class="dropdown-item" href="#">Follow-up on deal marked as Won</a></li>
-                          <li><a class="dropdown-item" href="#">Follow-up on stage update</a></li>
-                          <li><a class="dropdown-item" href="#">Account</a></li>
-                          <li>
-                              <hr class="dropdown-divider">
-                          </li>
-                          <li>
-                              <a class="dropdown-item create-template" href="#">
-                                  <i class="icon icon-ic_fluent_add_circle_20_regular"></i> &nbsp;Creat Template
-                              </a>
-                          </li>
-                      </ul>
-                  </span>
+            <div
+              id="myTable_wrapper"
+              class="dataTables_wrapper dt-bootstrap5 no-footer"
+            >
+              <div id="dtTop">
+                <div id="myTable_filter" class="dataTables_filter">
+                  <label
+                    >Search:<input
+                      type="search"
+                      class="form-control form-control-sm"
+                      placeholder=""
+                      aria-controls="myTable"
+                  /></label>
+                </div>
               </div>
-              <div class="editor">
-                  <textarea cols="80" id="editor1" name="editor1" rows="10"
-                            data-sample-short>
-                      &lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href=&quot;https://ckeditor.com/&quot;&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;
-                  </textarea>
+              <div class="dataTables_scroll">
+                <div
+                  class="dataTables_scrollHead"
+                  style="
+                    overflow: hidden;
+                    position: relative;
+                    border: 0px;
+                    width: 100%;
+                  "
+                >
+                  <div
+                    class="dataTables_scrollHeadInner"
+                    style="
+                      box-sizing: content-box;
+                      width: 2511px;
+                      padding-right: 0px;
+                    "
+                  >
+                    <table
+                      class="table-hover ember-view table ui-list no-footer dataTable"
+                      style="width: 2511px; margin-left: 0px"
+                      role="grid"
+                      aria-describedby="myTable_info"
+                    >
+                      <thead>
+                        <tr role="row">
+                          <th
+                            width="50px"
+                            class="text-center sorting_asc"
+                            data-exclude="true"
+                            data-f-bold="true"
+                            tabindex="0"
+                            aria-controls="myTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="
+                    
+                        
+                    
+                : activate to sort column descending"
+                            style="width: 50px"
+                            aria-sort="ascending"
+                          >
+                            <div class="form-check">
+                              <input
+                                class="form-check-input CHKALL"
+                                type="checkbox"
+                                value=""
+                                id="bulkact"
+                              />
+                            </div>
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="myTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Borrower Name : activate to sort column ascending"
+                            style="width: 150px"
+                          >
+                            <span>Borrower Name </span>
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="myTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Mobile No: activate to sort column ascending"
+                            style="width: 150px"
+                          >
+                            <span>Mobile No</span>
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="myTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Email Id: activate to sort column ascending"
+                            style="width: 150px"
+                          >
+                            <span>Email Id</span>
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="myTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Loan Type: activate to sort column ascending"
+                            style="width: 150px"
+                          >
+                            <span>Loan Type</span>
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="myTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Income Monthly: activate to sort column ascending"
+                            style="width: 150px"
+                          >
+                            <span>Income Monthly</span>
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="myTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Credit Bureau Score : activate to sort column ascending"
+                            style="width: 150px"
+                          >
+                            <span>Credit Bureau Score </span>
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="myTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Required Loan Amount: activate to sort column ascending"
+                            style="width: 150px"
+                          >
+                            <span>Required Loan Amount</span>
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="myTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Stage: activate to sort column ascending"
+                            style="width: 150px"
+                          >
+                            <span>Stage</span>
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="myTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Lead Owner: activate to sort column ascending"
+                            style="width: 150px"
+                          >
+                            <span>Lead Owner</span>
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="myTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Lead Type: activate to sort column ascending"
+                            style="width: 150px"
+                          >
+                            <span>Lead Type</span>
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="myTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="City: activate to sort column ascending"
+                            style="width: 150px"
+                          >
+                            <span>City</span>
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="myTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Source: activate to sort column ascending"
+                            style="width: 150px"
+                          >
+                            <span>Source</span>
+                          </th>
+                          <th
+                            data-exclude="true"
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="myTable"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Action: activate to sort column ascending"
+                            style="width: 150px"
+                          >
+                            <span>Action</span>
+                          </th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+                <div
+                  class="dataTables_scrollBody"
+                  style="
+                    position: relative;
+                    overflow: auto;
+                    width: 100%;
+                    max-height: 380px;
+                    height: 380px;
+                  "
+                >
+                  <table
+                    id="myTable"
+                    class="table-hover ember-view table ui-list no-footer dataTable"
+                    style="width: 100%"
+                    role="grid"
+                    aria-describedby="myTable_info"
+                  >
+                    <thead>
+                      <tr role="row" style="height: 0px">
+                        <th
+                          width="50px"
+                          class="text-center sorting_asc"
+                          data-exclude="true"
+                          data-f-bold="true"
+                          aria-controls="myTable"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="
+                    
+                        
+                    
+                : activate to sort column descending"
+                          style="
+                            width: 50px;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+                            border-top-width: 0px;
+                            border-bottom-width: 0px;
+                            height: 0px;
+                          "
+                          aria-sort="ascending"
+                        >
+                          <div
+                            class="dataTables_sizing"
+                            style="height: 0px; overflow: hidden"
+                          >
+                            <div class="form-check">
+                              <input
+                                class="form-check-input CHKALL"
+                                type="checkbox"
+                                value=""
+                                id="bulkact"
+                              />
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="sorting"
+                          aria-controls="myTable"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Borrower Name : activate to sort column ascending"
+                          style="
+                            width: 150px;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+                            border-top-width: 0px;
+                            border-bottom-width: 0px;
+                            height: 0px;
+                          "
+                        >
+                          <div
+                            class="dataTables_sizing"
+                            style="height: 0px; overflow: hidden"
+                          >
+                            <span>Borrower Name </span>
+                          </div>
+                        </th>
+                        <th
+                          class="sorting"
+                          aria-controls="myTable"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Mobile No: activate to sort column ascending"
+                          style="
+                            width: 150px;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+                            border-top-width: 0px;
+                            border-bottom-width: 0px;
+                            height: 0px;
+                          "
+                        >
+                          <div
+                            class="dataTables_sizing"
+                            style="height: 0px; overflow: hidden"
+                          >
+                            <span>Mobile No</span>
+                          </div>
+                        </th>
+                        <th
+                          class="sorting"
+                          aria-controls="myTable"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Email Id: activate to sort column ascending"
+                          style="
+                            width: 150px;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+                            border-top-width: 0px;
+                            border-bottom-width: 0px;
+                            height: 0px;
+                          "
+                        >
+                          <div
+                            class="dataTables_sizing"
+                            style="height: 0px; overflow: hidden"
+                          >
+                            <span>Email Id</span>
+                          </div>
+                        </th>
+                        <th
+                          class="sorting"
+                          aria-controls="myTable"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Loan Type: activate to sort column ascending"
+                          style="
+                            width: 150px;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+                            border-top-width: 0px;
+                            border-bottom-width: 0px;
+                            height: 0px;
+                          "
+                        >
+                          <div
+                            class="dataTables_sizing"
+                            style="height: 0px; overflow: hidden"
+                          >
+                            <span>Loan Type</span>
+                          </div>
+                        </th>
+                        <th
+                          class="sorting"
+                          aria-controls="myTable"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Income Monthly: activate to sort column ascending"
+                          style="
+                            width: 150px;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+                            border-top-width: 0px;
+                            border-bottom-width: 0px;
+                            height: 0px;
+                          "
+                        >
+                          <div
+                            class="dataTables_sizing"
+                            style="height: 0px; overflow: hidden"
+                          >
+                            <span>Income Monthly</span>
+                          </div>
+                        </th>
+                        <th
+                          class="sorting"
+                          aria-controls="myTable"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Credit Bureau Score : activate to sort column ascending"
+                          style="
+                            width: 150px;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+                            border-top-width: 0px;
+                            border-bottom-width: 0px;
+                            height: 0px;
+                          "
+                        >
+                          <div
+                            class="dataTables_sizing"
+                            style="height: 0px; overflow: hidden"
+                          >
+                            <span>Credit Bureau Score </span>
+                          </div>
+                        </th>
+                        <th
+                          class="sorting"
+                          aria-controls="myTable"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Required Loan Amount: activate to sort column ascending"
+                          style="
+                            width: 150px;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+                            border-top-width: 0px;
+                            border-bottom-width: 0px;
+                            height: 0px;
+                          "
+                        >
+                          <div
+                            class="dataTables_sizing"
+                            style="height: 0px; overflow: hidden"
+                          >
+                            <span>Required Loan Amount</span>
+                          </div>
+                        </th>
+                        <th
+                          class="sorting"
+                          aria-controls="myTable"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Stage: activate to sort column ascending"
+                          style="
+                            width: 150px;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+                            border-top-width: 0px;
+                            border-bottom-width: 0px;
+                            height: 0px;
+                          "
+                        >
+                          <div
+                            class="dataTables_sizing"
+                            style="height: 0px; overflow: hidden"
+                          >
+                            <span>Stage</span>
+                          </div>
+                        </th>
+                        <th
+                          class="sorting"
+                          aria-controls="myTable"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Lead Owner: activate to sort column ascending"
+                          style="
+                            width: 150px;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+                            border-top-width: 0px;
+                            border-bottom-width: 0px;
+                            height: 0px;
+                          "
+                        >
+                          <div
+                            class="dataTables_sizing"
+                            style="height: 0px; overflow: hidden"
+                          >
+                            <span>Lead Owner</span>
+                          </div>
+                        </th>
+                        <th
+                          class="sorting"
+                          aria-controls="myTable"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Lead Type: activate to sort column ascending"
+                          style="
+                            width: 150px;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+                            border-top-width: 0px;
+                            border-bottom-width: 0px;
+                            height: 0px;
+                          "
+                        >
+                          <div
+                            class="dataTables_sizing"
+                            style="height: 0px; overflow: hidden"
+                          >
+                            <span>Lead Type</span>
+                          </div>
+                        </th>
+                        <th
+                          class="sorting"
+                          aria-controls="myTable"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="City: activate to sort column ascending"
+                          style="
+                            width: 150px;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+                            border-top-width: 0px;
+                            border-bottom-width: 0px;
+                            height: 0px;
+                          "
+                        >
+                          <div
+                            class="dataTables_sizing"
+                            style="height: 0px; overflow: hidden"
+                          >
+                            <span>City</span>
+                          </div>
+                        </th>
+                        <th
+                          class="sorting"
+                          aria-controls="myTable"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Source: activate to sort column ascending"
+                          style="
+                            width: 150px;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+                            border-top-width: 0px;
+                            border-bottom-width: 0px;
+                            height: 0px;
+                          "
+                        >
+                          <div
+                            class="dataTables_sizing"
+                            style="height: 0px; overflow: hidden"
+                          >
+                            <span>Source</span>
+                          </div>
+                        </th>
+                        <th
+                          data-exclude="true"
+                          class="sorting"
+                          aria-controls="myTable"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Action: activate to sort column ascending"
+                          style="
+                            width: 150px;
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+                            border-top-width: 0px;
+                            border-bottom-width: 0px;
+                            height: 0px;
+                          "
+                        >
+                          <div
+                            class="dataTables_sizing"
+                            style="height: 0px; overflow: hidden"
+                          >
+                            <span>Action</span>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr class="odd">
+                        <td valign="top" colspan="14" class="dataTables_empty">
+                          No data available in table
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-
-          </div>
-          <div class="offcanvas-footer">
-
-              <button class="btn btn-primary w-180">Send</button>
-              <div class="icon-section">
-                  <div class="dropdown">
-                      <button class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown">
-                          <i class="icon icon-ic_fluent_more_vertical_16_regular"></i>
-                      </button>
-                      <ul class="dropdown-menu p-3">
-                          <li>
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                  <label class="form-check-label" for="flexCheckDefault">
-                                      Link conversation to Contact
-                                  </label>
-                              </div>
-                          </li>
-                          <li>
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                  <label class="form-check-label" for="flexCheckDefault">
-                                      Link conversation to Deal
-                                  </label>
-                              </div>
-                          </li>
-                          <li>
-                              <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                  <label class="form-check-label" for="flexCheckDefault">
-                                      Add unsubscribe link
-                                  </label>
-                              </div>
-                          </li>
-
-
-                      </ul>
-                  </div>
-                  <button class="btn btn-link"><i class="icon icon-ic_fluent_delete_20_regular"></i></button>
+              <div id="dtBottom">
+                <div
+                  class="dataTables_info"
+                  id="myTable_info"
+                  role="status"
+                  aria-live="polite"
+                >
+                  Showing 0 to 0 of 0 entries
+                </div>
+                <div
+                  class="dataTables_paginate paging_simple_numbers"
+                  id="myTable_paginate"
+                >
+                  <ul class="pagination">
+                    <li
+                      class="paginate_button page-item previous disabled"
+                      id="myTable_previous"
+                    >
+                      <a
+                        href="#"
+                        aria-controls="myTable"
+                        data-dt-idx="0"
+                        tabindex="0"
+                        class="page-link"
+                        >Previous</a
+                      >
+                    </li>
+                    <li
+                      class="paginate_button page-item next disabled"
+                      id="myTable_next"
+                    >
+                      <a
+                        href="#"
+                        aria-controls="myTable"
+                        data-dt-idx="1"
+                        tabindex="0"
+                        class="page-link"
+                        >Next</a
+                      >
+                    </li>
+                  </ul>
+                </div>
               </div>
+              <div class="clear"></div>
+            </div>
 
-
-          </div>
-      </div>
-      <div id="DivAddTasks" data-refresh-url="/SystemCodesMaster/_AddTasks"></div>
-      <div id="DivAddProducts" data-bs-toggle="offcanvas" data-bs-target="#AddProductModel" aria-controls="AddProductModel" data-refresh-url="/SystemModule/_AddProduct"></div>
-      <!-- End of Mail box -->
-      <!-- What is new Sidebar -->
-      <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="whatnew"
-           aria-labelledby="whatnewLabel">
-          <div class="offcanvas-header bg-primary text-white">
-              <h5 class="offcanvas-title" id="whatnewExampleLabel">What's New</h5>
-              <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-              <div class="card border-0 shadow-sm">
-                  <div class="card-body">
-                      <div class="d-flex align-items-center py-1">
-                          <span class="badge new-features rounded-pill">NEW FEATURE</span>&nbsp; <span class="date">
-                              July
-                              13, 2022
-                          </span>
-                      </div>
-                      <a href="#" class="card-title fs-4 d-block mb-2">Introducing Record Types</a>
-
-                      <p class="card-text">
-                          Does your business involve dealing with different categories of contacts,
-                          accounts, and deals? B2B contacts, B2C contacts, enterprise accounts, mid-market accounts—there
-                          are just so many types. Unless you've found your own way to differentiate all of these records,
-                          it can be a bit of a daze.
-                      </p>
-                      <p class="card-text">
-                          To make life easier, record types are here. Once your admin configures the
-                          different record types your business needs, use them to categorize your contacts, accounts,
-                          deals, and and even custom modules. You can also set up advanced automations based on record
-                          types.
-                      </p>
-                      <a href="#">Learn More</a>
-                  </div>
-              </div>
-              <div class="card border-0 shadow-sm">
-                  <div class="card-body">
-                      <div class="d-flex align-items-center py-1">
-                          <span class="badge update-feature rounded-pill">NEW FEATURE</span>&nbsp; <span class="date">
-                              July
-                              13, 2022
-                          </span>
-                      </div>
-                      <a href="#" class="card-title fs-4 d-block mb-2">Introducing Record Types</a>
-
-                      <p class="card-text">
-                          Does your business involve dealing with different categories of contacts,
-                          accounts, and deals? B2B contacts, B2C contacts, enterprise accounts, mid-market accounts—there
-                          are just so many types. Unless you've found your own way to differentiate all of these records,
-                          it can be a bit of a daze.
-                      </p>
-                      <p class="card-text">
-                          To make life easier, record types are here. Once your admin configures the
-                          different record types your business needs, use them to categorize your contacts, accounts,
-                          deals, and and even custom modules. You can also set up advanced automations based on record
-                          types.
-                      </p>
-                      <a href="#">Learn More</a>
-                  </div>
-              </div>
-              <div class="card border-0 shadow-sm">
-                  <div class="card-body">
-                      <div class="d-flex align-items-center py-1">
-                          <span class="badge new-features rounded-pill announcement">Announcement</span>&nbsp; <span class="date">July 13, 2022</span>
-                      </div>
-                      <a href="#" class="card-title fs-4 d-block mb-2">Introducing Record Types</a>
-
-                      <p class="card-text">
-                          Does your business involve dealing with different categories of contacts,
-                          accounts, and deals? B2B contacts, B2C contacts, enterprise accounts, mid-market accounts—there
-                          are just so many types. Unless you've found your own way to differentiate all of these records,
-                          it can be a bit of a daze.
-                      </p>
-                      <p class="card-text">
-                          To make life easier, record types are here. Once your admin configures the
-                          different record types your business needs, use them to categorize your contacts, accounts,
-                          deals, and and even custom modules. You can also set up advanced automations based on record
-                          types.
-                      </p>
-                      <a href="#">Learn More</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-      <!-- Add Deal Form -->
-      <!-- End of what's new sidebar -->
-      <!-- end of sidebar -->
-      <!-- Modal view -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                      Are you sure want to close
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <!-- End of modal veiw -->
-
-      <div class="toast-container position-fixed bottom-0 end-0 p-3">
-          <div id="liveToast1" class="toast success" style="border: 1px solid #198754; border-left: 4px solid #198754; background: #fff;" role="alert" aria-live="assertive" aria-atomic="true">
-              <div class="toast-inside" style="display: flex;">
-                  <div class="toast-icon" style="background: #d1e7dd; display: inline-flex; align-items: center; justify-content: center; font-size: 2rem; padding: 0.5rem; color: #146c43; justify-content: center;">
-                      <i class="icon icon-ic_fluent_checkmark_circle_20_regular"></i>
-                  </div>
-                  <div class="toast-body" style="font-size: 1rem; padding: var(--bs-toast-padding-x); word-wrap: break-word;">
-                      <h6>Success</h6>
-                      <div id="divToastmsg1"></div>
-                  </div>
-                  <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-              </div>
-
-          </div>
-      </div>
-
-      <div class="toast-container position-fixed top-0 end-0 p-3">
-          <div id="liveToasterror1" class="toast error" role="alert" style="border: 1px solid #dc3545; border-left: 4px solid #dc3545; background: #fff;" aria-live="assertive" aria-atomic="true">
-              <div class="toast-inside" style="display: flex;">
-                  <div class="toast-icon" style="color: #b02a37; background: #f8d7da; background: #d1e7dd; display: inline-flex; align-items: center; justify-content: center; font-size: 2rem; padding: 0.5rem; color: #146c43; color: #b02a37; background: #f8d7da;">
-                      <i class="icon icon-ic_fluent_dismiss_circle_16_regular"></i>
-                  </div>
-                  <div class="toast-body" style="font-size: 1rem; padding: var(--bs-toast-padding-x); word-wrap: break-word;">
-                      <h6>Error</h6>
-                      <div id="divToastErrormsg1"></div>
-                  </div>
-                  <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-              </div>
-          </div>
-      </div>
-<style>
-  .card-tools {
-      float: right;
-      margin-right: -.625rem;
-  }
-
-  .maximized-card {
-      height: 100% !important;
-      left: 0;
-      max-height: 100% !important;
-      max-width: 100% !important;
-      position: fixed;
-      top: 0;
-      width: 100% !important;
-      z-index: 9999;
-  }
-</style>
-
-
-<div class="mid-header">
-  <div class="container-fluid">
-      <input type="hidden" id="hdfDashboardId" value="17" />
-  </div>
-</div>
-
-  <div class="card-body" style="background-color:white;">
-      <div class="container-fluid tab-content">
-          <div class="row" id="myTabContent">
-
-
-          </div>
-      </div>
-  </div>
-
-
-<script>
-  window.onload = function () {
-      PopulateDashboard();
-  }
-
-  function PopulateDashboard() {
-      var formData = new FormData();
-      formData.append("ID", $("#hdfDashboardId").val());
-      var theHREF = '/MyDashboards/GetDashboardReports';
-      try {
-          $.ajax({
-              type: "POST",
-              async: false,
-              url: theHREF,
-              processData: false, // Don't process the files
-              contentType: false,
-              data: formData,
-              success: function (response) {
-                  debugger;
-
-                  $("#myTabContent").empty();
-                  $.each(response, function (data, value) {
-                      debugger;
-                      if (value.ReportType == "Table") {
-                          $("#myTabContent").append(' <div class="col-md-4" style="padding-top:10px;"> <div class="card" style="width:414px;"><div class="card-header"><div class="card-tools"><button class="btn btn-tool REF" type="button"><i class="icon icon-ic_fluent_arrow_clockwise_24_regular"></i></button>                         <button class="btn btn-tool maxim" type="button" data-card-widget="maximize"><i class="icon icon-ic_fluent_expand_up_right_24_regular"></i></button> <a class="btn btn-tool" onclick="RemoveDashboard(' + value.ReportId + ')" ><i class="icon icon-ic_fluent_delete_24_regular"></i></a></div><span><h5 class="card-title">' + value.ReportTitle + '</h5></span></div><div class="card-body overflow-auto" style="height:378px;width:414px;"><div id="chartContainer' + value.ReportId + '" style="height: 350px; width: 100%;"><table class="table table-hover table-striped" style="font-size:12px;"><tbody id="tbldiv' + value.ReportId + '" >');
-
-                          $("#myTabContent").append('</tbody></table></div></div></div></div>');
-                      } else {
-                          $("#myTabContent").append(' <div class="col-md-4" style="padding-top:10px;"> <div class="card" style="width:414px;"><div class="card-header"><div class="card-tools"><button class="btn btn-tool REF" type="button"><i class="icon icon-ic_fluent_arrow_clockwise_24_regular"></i></button>                         <button class="btn btn-tool maxim" type="button" data-card-widget="maximize"><i class="icon icon-ic_fluent_expand_up_right_24_regular"></i></button><a class="btn btn-tool" onclick="RemoveDashboard(' + value.ReportId + ')" ><i class="icon icon-ic_fluent_delete_24_regular"></i></a></div><span><h5 class="card-title">' + value.ReportTitle + '</h5></span></div><div class="card-body overflow-auto" style="height:378px;width:414px;"><div id="chartContainer' + value.ReportId + '" style="height: 350px; width: 100%;"></div></div></div></div>');
-                      }
-
-
-
-                  })
-                  $(".maxim").on("click", function () {
-                      debugger;
-                      if ($(this).closest("div").parent().parent().hasClass("maximized-card")) {
-                          $(this).closest("div").parent().parent().removeClass("maximized-card");
-                      } else {
-                          $(this).closest("div").parent().parent().addClass("maximized-card");
-                      }
+            <script>
+              $("#btnUpdateTag").click(function () {
+                debugger;
+                var temp = false;
+                var SALE_TAG = "";
+                $("#myTable")
+                  .DataTable()
+                  .rows()
+                  .every(function (rowIdx, tableLoop, rowLoop) {
+                    debugger;
+                    if ($(this.node()).find(".chk").prop("checked")) {
+                      temp = true;
+                    }
                   });
-                  $(".REF").on("click", function () {
-                      debugger;
-                      PopulateDashboard();
-                  });
-                  $.each(response, function (data, value) {
-                      if (value.ReportType == "Table") {
-                          debugger;
-                          var NewHtml = '';
-                          NewHtml += '<tr style="text-align:left;">';
-                          $.each(value.DataPointsHeader, function (index, HeaderValue) {
-                              NewHtml += '<td>' + HeaderValue + '</td>';
-                          });
-                          NewHtml += '</tr>';
-                          $.each(value.DataPointsValue, function (index, HeaderValue) {
-                              NewHtml += '<tr style="text-align:left;">';
-                              $.each(HeaderValue.DataPointsValues, function (index, HeaderValue1) {
-                                  NewHtml += '<td>' + HeaderValue1 + '</td>';
-                              });
-                              NewHtml += '</tr>';
-                          });
-                          $("#tbldiv" + value.ReportId).append(NewHtml);
-                      } else {
-                          var chart = new CanvasJS.Chart("chartContainer" + value.ReportId, {
-                              theme: "light2", // "light1", "light2", "dark1", "dark2"
-                              exportEnabled: true,
-                              animationEnabled: true,
-                              title: {
-                                  text: value.ReportTitle, fontSize: 18,
-                                  fontWeight: "bold"
-                              },
-                              data: [{
-                                  type: value.ChartType,//
-                                  startAngle: 180,
-                                  indexLabel: "{label}:{y} ",
-                                  toolTipContent: "<b>{label}:</b> {y}",
-                                  dataPoints: value.DataPoints
-                              }]
-                          });
-                          chart.render();
-                      }
-                  })
-              }
-          });
-      }
-      catch (exc) { }
-  }
-</script>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<script>
-
-  function RemoveDashboard(ReportId) {
-      debugger;
-      var formData = new FormData();
-      formData.append("ReportsId", ReportId);
-      formData.append("DashboardId", $("#hdfDashboardId").val());
-      var theHREF = '/MyDashboards/RemoveDashboardReports';
-      try {
-          $.ajax({
-              type: "POST",
-              async: false,
-              url: theHREF,
-              processData: false, // Don't process the files
-              contentType: false,
-              data: formData,
-              success: function (response) {
-                  debugger;
-                  if (response == "1") {
-                      $("#divToastmsg1").text("Report deleted successfully!");
-                      const toastLiveExample = document.getElementById('liveToast1')
-                      const toast = new bootstrap.Toast(toastLiveExample)
-                      toast.show();
-                      $(".closeactivity").click();
-                      PopulateDashboard();
-                  } else {
-                      const toastLiveExample = document.getElementById('liveToasterror1')
-                      const toast = new bootstrap.Toast(toastLiveExample)
-                      toast.show()
-                      $("#divToastErrormsg1").text(response);
-                  }
-              }
-          });
-      }
-      catch (exc) { }
-  }
-
-</script>
-<script>
-  $(document).ready(function () {
-
-      var notify=0;
-
-      if(notify=="1")
-      {
-
-          if (Notification.permission !== "denied") {
-              Notification.requestPermission().then(permission => {
-                  if (permission === "granted") {
-              }
-      });
-  }
-
-            var URL = "http://localhost:65441/SSE/GetNotificationEvent?APIKey=9245fe4a-d402-451c-b9ed-9c1a04247482&T_CODE=BTC000001&USER_ID=A00005&SESSION_ID=6ee644a0-7b84-4d59-8a94-880c86b180f5";
-
-
-  var source = new EventSource(URL, {
-      headers: {
-          'Content-Type': 'text/event-stream', 'Access-Control-Allow-Origin': '*'
-      },
-      withCredentials: false
-  });
-
-
-  source.onmessage = function (event) {
-      // debugger;
-      var data = JSON.parse(event.data)
-      $(data).each(function (index, obj) {
-          debugger;
-          if (Notification.permission === "granted") {
-              showNotification(obj.TRANS_TYPE,obj.TRANS_NOTIFY_REMARK,obj.TRANS_ACTION_LINK,obj.SUBJECT,obj.NOTIFICATION_ID);
-          }
-      });
-  }
-
-  }
-  function showNotification(DOC_TYPE,_body,_link,SUBJECT_NAME,NotificationId) {
-      const notification = new Notification(DOC_TYPE, {
-          body: _body+" "+SUBJECT_NAME,
-          icon: "/Content/assets/images/newtonIcon32.png"
-      });
-      notification.onclick = () => {
-          var formData = new FormData();
-      formData.append("NotificationId", NotificationId);
-      var theHREF = '/SystemCodesMaster/UpdateNotifications'
-      try {
-          $.ajax({
-              type: "POST",
-              async: false,
-              url: theHREF,
-              processData: false, // Don't process the files
-              contentType: false,
-              data: formData,
-              success: function (response) {
-                  debugger;
-              }
-          });
-      }
-      catch (exc) { }
-      window.open(_link, "_blank"); // Opens Google in a new tab
-      //  window.focus();
-      notification.close();
-  };
-  setTimeout(() => {
-      notification.close();
-  }, 5000);
-  }
-  });
-</script>
-
-
-
-
-
-      <script>
-          //var dataTable = $('.table').DataTable( {
-          //    "sDom": 'rt<"nippon-b"flip>',
-          //    searching: false,
-          //    //   rowReorder: {
-          //    //     selector: 'tr'
-          //    //   }
-          //});
-          sessionStorage.setItem('CRMOPEN',"1");
-
-          const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-          const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-      const tooltip = new bootstrap.Tooltip('.nippon-tooltip', {
-          boundary: document.body // or document.querySelector('#boundary')
-      })
-
-          CKEDITOR.replace('editor1', {
-              toolbarLocation: 'bottom',
-              // Remove some plugins that would conflict with the bottom
-              // toolbar position.
-              removePlugins: 'elementspath,resize',
-              removeButtons: 'PasteFromWord'
-          });
-          $(".global-search .form-control").focus(function () {
-              $(".search-auto-complete").show();
-          });
-          $(".global-search .form-control").focusout(function (e) {
-              $(".search-auto-complete").hide();
-          });
-          $('.c-filter').click(function () {
-              $(this).toggleClass("active");
-              $('.panel-view').toggleClass('show')
-          });
-          $("#bulkact").click(function () {
-
-              $(".bulk-action").toggleClass('show');
-
-          })
-          $(".table-edit").click(function () {
-
-              $(".table-responsive").toggleClass('overflow-visible');
-
-          })
-          $(".secondedit").click(function () {
-
-              $(".table-responsive").toggleClass('overflow-visible');
-
-          })
-          // Initializes  input( name of states)
-          // with a typeahead
-          var $input = $(".typeahead");
-          $input.typeahead({
-              source: [
-                  "Andhra Pradesh",
-                  "Arunachal Pradesh",
-                  "Assam",
-                  "Bihar",
-                  "Chhattisgarh",
-                  "Goa",
-                  "Gujarat",
-                  "Haryana",
-                  "Himachal Pradesh",
-                  "Jharkhand",
-                  "Karnataka",
-                  "Kerala",
-                  "Madhya Pradesh",
-                  "Maharashtra",
-                  "Manipur",
-                  "Meghalaya",
-                  "Mizoram",
-                  "Nagaland",
-                  "Odisha",
-                  "Punjab",
-                  "Rajasthan",
-                  "Sikkim",
-                  "Tamil Nadu",
-                  "Telangana",
-                  "Tripura",
-                  "Uttar Pradesh",
-                  "Uttarakhand",
-                  "West Bengal",
-              ],
-              autoSelect: true,
-          });
-
-          $input.change(function () {
-              var current = $input.typeahead("getActive");
-              matches = [];
-
-              if (current) {
-
-                  // Some item from your input matches
-                  // with entered data
-                  if (current.name == $input.val()) {
-                      matches.push(current.name);
-                  }
-              }
-          });
-          $('.mobile-nav').on('click', function (event) {
-              $('.sidebar').toggleClass('show');
-          });
-          $('.mobile-close').on('click', function (event) {
-              $('.sidebar').toggleClass('show');
-          });
-          $('.secondedit').on('click', function (event) {
-              $(this).parent().toggleClass('open');
-          })
-          $('.list-group-sortable').sortable({
-              placeholderClass: 'list-group-item'
-          });
-          $('.admin-field').sortable({
-              placeholderClass: 'prop-item',
-
-          });
-
-          (() => {
-              'use strict'
-
-              // Fetch all the forms we want to apply custom Bootstrap validation styles to
-              const forms = document.querySelectorAll('.needs-validation')
-
-              // Loop over them and prevent submission
-              Array.from(forms).forEach(form => {
-                  form.addEventListener('.submit', event => {
-                      if (!form.checkValidity()) {
-                          event.preventDefault()
-                          event.stopPropagation()
-          }
-
-          form.classList.add('was-validated')
-          }, false)
-          })
-          })()
-          $('.submit').on('click', function (event) {
-
-              $(".needs-validation").addClass('was-validated');
-
-          });
-
-
-          //$( document ).ready(function() {
-          //  //  $('.date-show').datepicker();
-          //});
-
-          $(function () {
-
-              loadMainMenu();
-              PopulateNotification();
-              // Add Products
-              //$('.AddProducts').on('click', function () {
-              //    var DetailsDiv1 = $("#DivAddProducts");
-              //    var theHREF = DetailsDiv1.attr("data-refresh-url");
-              //    debugger;
-              //    $.ajax({
-              //        type: "POST", url: theHREF, data: { "CODE": "" }, success: function (data) {
-              //            DetailsDiv1.empty().append(data);
-              //            $('#AddProductModel').click();
-              //        }, error: function () {
-              //        }
-              //    });
-              //});
-              //
-              $('.addTask').on('click', function () {
-                  var DetailsDiv1 = $("#DivAddTasks");
-                  var theHREF = DetailsDiv1.attr("data-refresh-url");
-                  debugger;
-                  $.ajax({
-                      type: "POST", url: theHREF, data: { "CODE": "" }, success: function (data) {
-                          DetailsDiv1.empty().append(data);
-                          $("#ddlAssignToA").val('');
-                          $("#ddlColleagues").val('');
-                          $("#ddlTaskTypeA").val('');
-                          $("#txtSubjectA").val('');
-                          $("#ddlOutcomeA").val('0');
-                          $("#txtDescriptionA").val('');
-                          var d = new Date();
-                          var strDate = (new Date()).toISOString().split('T')[0];
-                          $('#txtFromDateA').val(strDate);
-                          $('#txtToDateA').val(strDate);
-                          $('#ddlRelatedToTask').addClass('selectpicker');
-                          $('#ddlRelatedToTask').attr('data-live-search', 'true');
-                          $('#ddlRelatedToTask').selectpicker('refresh');
-                          h = d.getHours(),
-                          m = d.getMinutes();
-                          if (h < 10) h = '0' + h;
-                          if (m < 10) m = '0' + m;
-
-                          $('#txtFromTimeA').val(h + ':' + m);
-                          $('#txtToTimeA').val(h + ':' + m);
-                          $('#AddTaskModel').modal('show');
-                      }, error: function () {
-                      }
-                  });
-              });
-
-          });
-
-          function loadMainMenu() {
-              debugger;
-              var secMainMenu = $("#secMainMenu");
-              if (localStorage["secMainMenuHTML"] != null) { //main menu for user has been already saved in browser memory, so no need reload to it from server.
-                  secMainMenu.empty().append(localStorage["secMainMenuHTML"]);
-              }
-              else { //load main menu for user from server
-                  // secMainMenu.empty().append("&nbsp;&nbsp;&nbsp;&nbsp;Loading menu...");
-                  var theHREF = secMainMenu.attr("data-refresh-url");
-                  //alert("accessing " + theHREF);
-                  $.ajax({
-                      type: "GET", url: theHREF, success: function (data) {
-                          secMainMenu.empty();
-                          localStorage["secMainMenuHTML"] = data;
-                          secMainMenu.empty().append(data);
-                      }, error: function () {
-                          secMainMenu.empty().append("<li>Error in populating the menu.</li>");
-                      }
-                  });
-              }
-          }
-
-          function PopulateNotification() {
-              debugger;
-              var DetailsDiv1 = $("#divAddNotification");
-              var theHREF = DetailsDiv1.attr("data-refresh-url");
-              debugger;
-              $.ajax({
-                  type: "POST", url: theHREF, data: { "NOTIFY_TYPE": "NOTIFICATION" }, success: function (data) {
-                      DetailsDiv1.empty().append(data);
-
-                      if ( sessionStorage.getItem('hdfNN')!= "1") {
-                          $("#loginpopup").addClass("show");
-                          $(".notification").addClass("show");
-                          $(".notification").addClass("sidewidth");
-                          sessionStorage.setItem('hdfNN',"1");
-                      }
-                  }, error: function () {
-                  }
-              });
-          }
-          $(function () {
-
-              $("#btnResetSearchCRM").click(function () {
-                  $(".search-auto-complete1").css("display","none");
-              });
-              $('#btnSearchCRM').on('input', function() {
-                  var newText = $(this).val();
-                  var DetailsDiv1 = $("#divSearchCRM");
-                  var theHREF = DetailsDiv1.attr("data-refresh-url");
-                  debugger;
-                  $.ajax({
-                      type: "POST", url: theHREF, data: { "SearchText":newText }, success: function (data) {
-                          DetailsDiv1.empty().append(data);
-                          $(".search-auto-complete1").css("display","block");
-                      }, error: function () {
-                      }
-                  });
-              });
-
-              $(".Language").click(function () {
-                  var formData = new FormData();
-                  formData.append("lang", $(this).attr("data-val"));
-                  var hrrf = '/Config/ChangeLanguage';
-                  debugger;
+                if (temp) {
                   try {
-
-                      $.ajax({
-                          type: "POST",
-                          async: false,
-                          url: hrrf,
-                          contentType: false,
-                          processData: false,
-                          data: formData,
-                          success: function (response) {
-                              debugger;
-                              if (response == "1") {
-
-                                  window.location.href ='https://test.newtoncrm.com/Home'.replace(/&amp;/g, '&');// '/Home';
-                              }
-                          }
-
+                    var formData = new FormData();
+                    $("#myTable")
+                      .DataTable()
+                      .rows()
+                      .every(function (rowIdx, tableLoop, rowLoop) {
+                        debugger;
+                        if ($(this.node()).find(".chk").prop("checked")) {
+                          formData.append(
+                            "LEAD_ID[]",
+                            $(this.node()).find(".chk").val()
+                          );
+                        }
                       });
-                  }
-                  catch (exc) { }
-              });
-          });
-      </script>
+                    formData.append("TAGID", SALE_TAG);
 
-      <script type="text/javascript">
-          // Create a new EventSource to listen for SSE events
-          function PopUpCall()
-          {
-              var eventSource = new EventSource('/Dialer/Stream');
-              // Listen for messages (events) from the server
-              eventSource.onmessage = function(event) {
-                  // Update the page with the received event data
-                  window.location.href=event.data;
-              };
-              // Handle any errors
-              eventSource.onerror = function(event) {
-                  eventSource.close(); // Close the connection if there's an error
-              };
-          }
-          setInterval(PopUpCall, 2000);
-      </script>
-</body>
+                    var href = $("#btnAddLead").attr("data-add-url");
+                    $.ajax({
+                      type: "POST",
+                      async: false,
+                      url: "/SalesManageLead/SaveLeadTag",
+                      processData: false, // Don't process the files
+                      contentType: false,
+                      data: formData,
+                      success: function (response) {
+                        if (response == "1") {
+                          $("#divToastmsg").text("Tag Updated successfully!");
+                          const toastLiveExample =
+                            document.getElementById("liveToast");
+                          const toast = new bootstrap.Toast(toastLiveExample);
+                          toast.show();
+                          $(".btnG").click();
+                          populateDetailsDiv1();
+                        } else {
+                          const toastLiveExample =
+                            document.getElementById("liveToasterror");
+                          const toast = new bootstrap.Toast(toastLiveExample);
+                          toast.show();
+                          $("#divToastErrormsg").text(
+                            "Some error occured. Please try later"
+                          );
+                        }
+                      },
+                    });
+                  } catch (exc) {}
+                } else {
+                  alert("Please select atleast one record.");
+                }
+              });
+              $(document).ready(function () {
+                var dataTable = $(".table").DataTable({
+                  sDom: 'rt<"nippon-b"flip>',
+                  searching: true,
+                  bLengthChange: false,
+                  scrollCollapse: false,
+                  scrollY: "380px",
+                  scrollX: true,
+                  ordering: true,
+                  info: true,
+                  autoWidth: true,
+                  dom: '<"#dtTop"lf>t<"#dtBottom"ip><"clear">',
+                  bDestroy: true,
+                  //   rowReorder: {
+                  //     selector: 'tr'
+                  //   }
+                });
+              });
+              $("#btnDeleteLeads").click(function () {
+                var temp = false;
+
+                $("#myTable")
+                  .DataTable()
+                  .rows()
+                  .every(function (rowIdx, tableLoop, rowLoop) {
+                    debugger;
+                    if ($(this.node()).find(".chk").prop("checked")) {
+                      temp = true;
+                    }
+                  });
+                if (temp) {
+                  $("#NotesModel").modal("show");
+                } else {
+                  alert("Please select atleast one lead.");
+                }
+              });
+              $("#btnSendEmailLeads").click(function () {
+                var temp = false;
+                var Leads = "";
+                $("#hdfLeadId").val("");
+                $("#myTable")
+                  .DataTable()
+                  .rows()
+                  .every(function (rowIdx, tableLoop, rowLoop) {
+                    debugger;
+                    if ($(this.node()).find(".chk").prop("checked")) {
+                      temp = true;
+                      Leads = Leads + $(this.node()).find(".chk").val() + ",";
+                    }
+                  });
+                if (temp) {
+                  $("#txtToEmail").val(Leads);
+                  $("#hdfLeadId").val("");
+                } else {
+                  alert("Please select atleast one lead.");
+                }
+              });
+              $("#btnOwnerLeads").click(function () {
+                var temp = false;
+
+                $("#myTable")
+                  .DataTable()
+                  .rows()
+                  .every(function (rowIdx, tableLoop, rowLoop) {
+                    debugger;
+                    if ($(this.node()).find(".chk").prop("checked")) {
+                      temp = true;
+                    }
+                  });
+                if (temp) {
+                  $("#ChangeLeadOwner").modal("show");
+                } else {
+                  alert("Please select atleast one lead.");
+                }
+              });
+              $("#btnAssignLeads").click(function () {
+                var temp = false;
+
+                $("#myTable")
+                  .DataTable()
+                  .rows()
+                  .every(function (rowIdx, tableLoop, rowLoop) {
+                    debugger;
+                    if ($(this.node()).find(".chk").prop("checked")) {
+                      temp = true;
+                    }
+                  });
+                if (temp) {
+                  $("#ChangeLeadAssignTo").modal("show");
+                } else {
+                  alert("Please select atleast one lead.");
+                }
+              });
+              $("#btnChangeState").click(function () {
+                var temp = false;
+
+                $("#myTable")
+                  .DataTable()
+                  .rows()
+                  .every(function (rowIdx, tableLoop, rowLoop) {
+                    debugger;
+                    if ($(this.node()).find(".chk").prop("checked")) {
+                      temp = true;
+                    }
+                  });
+                if (temp) {
+                  $("#ChangeStateModel").modal("show");
+                } else {
+                  alert("Please select atleast one lead.");
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+      <!-- Pagination -->
+      <div class="d-flex justify-content-between align-items-center mt-3">
+        <div>Showing 1 to 2 of (18 Entries)</div>
+        <nav aria-label="Page navigation">
+          <ul class="pagination pagination-sm">
+            <li class="page-item">
+              <a class="page-link" href="#">Previous</a>
+            </li>
+            <li class="page-item active">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

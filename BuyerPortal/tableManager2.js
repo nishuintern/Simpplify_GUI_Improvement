@@ -78,7 +78,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       tableDiv.className =
         "table-responsive-lg table-responsive-md table-responsive-sm custom-scrollbar";
       const table = document.createElement("table");
-      table.className = "table  text-nowrap";
+      table.className = "table table-striped table-bordered table-hover";
       const thead = document.createElement("thead");
       thead.className = "table table-secondary";
       const tbody = document.createElement("tbody");
@@ -229,13 +229,13 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
                     let actionHTML = "";
                     if (actionValue === "Download") {
                       // Create a link that triggers a download
-                      actionHTML = `<a href='#' class='text-decoration-none text-primary bg-light' onclick='downloadFile()'>${actionValue}</a>`;
+                      actionHTML = `<a href='#' class='text-decoration-none text-primary' onclick='downloadFile()'>${actionValue}</a>`;
                     } else if (actionValue === "Download View Bank") {
                       // Create a link that opens the modal
-                      actionHTML = `<a href='#' class='text-decoration-none text-primary bg-light' onclick='openSendInvoiceModal()'>${actionValue}</a>`;
+                      actionHTML = `<a href='#' class='text-decoration-none text-primary' onclick='openSendInvoiceModal()'>${actionValue}</a>`;
                     } else if (actionValue === "Re Quote") {
                       // Create a link that opens the modal
-                      actionHTML = `<a href='#' class='text-decoration-none text-primary bg-light' onclick='openRequoteForm()'>${actionValue}</a>`;
+                      actionHTML = `<a href='#' class='text-decoration-none text-primary' onclick='openRequoteForm()'>${actionValue}</a>`;
                     } else {
                       actionHTML = `<a href='#' class='text-decoration-none text-primary'>${actionValue}</a>`;
                     }
