@@ -1,153 +1,576 @@
-<div class="sidebar">
-  <div class="logo">
-    <div class="logo-container">
-      <img src="/icons/newton icon copy 1.svg" alt="Company Logo" />
-      <!-- <h3>Simplify</h3> -->
-      <!-- <button id="toggleBtn" onclick="toggleSidebar();">
-        <img src="/icons/menu.svg" style="width: 20px; height: 20px;" alt="Menu" />
-      </button> -->
-    </div>
+<div class="sidebar" style="width: 64px; z-index: 1002">
+  <button class="mobile-close btn btn-outline-secondary me-2">
+    <span class="">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-x-lg"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+        ></path>
+      </svg>
+    </span>
+  </button>
+  <div class="logo mb-3">
+    <a href="#" class="">
+      <img
+        src="/icons/newton icon copy 1.svg"
+        alt="Newton"
+        style="margin-left: 0px; margin-top: 0px"
+      />
+    </a>
   </div>
-  <nav>
-    <ul>
-      <li>
-        <a href="/SupplierPortal/index.html">
-          <div class="menu-item active">
-            <img src="/icons/iconamoon_home@2x.svg" alt="Dashboard" />
-            <!-- <span>Dashboard</span> -->
-          </div>
+  <div id="secMainMenu" data-refresh-url="/UserMenu/_Tree">
+    <ul class="nav compact" style="margin-top: -10px; margin-left: -11px">
+      <li
+        class="nav-item dropend sub-menu"
+        style="margin-left: -11px; height: 40px"
+      >
+        <a
+          class="nav-link active"
+          href="/Home"
+          id="navbarDropdown"
+          role="button"
+          aria-expanded="false"
+        >
+          <!-- <i class="icon icon-ic_fluent_home_24_regular"></i> -->
+          <img src="/icons/iconamoon_home@2x.svg" alt="home" />
         </a>
-        <!-- <img
-            src="/icons/Glyph_ undefined 1.svg"
-            alt="Toggle Menu"
-            class="toggle-img"
-          /> -->
       </li>
-      <li>
-        <a href="/SupplierPortal/OrderManagement/OrderDispatch.html">
-          <div class="menu-item">
-            <img
-              src="/icons/icon-park-outline_transaction-order.svg"
-              alt="Order Management"
-            />
-
-            <!-- <span>Order Management</span> -->
-          </div>
+      <li
+        class="nav-item dropend sub-menu"
+        style="margin-top: -6px; margin-left: -11px"
+      >
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src="/icons/icon-park-outline_transaction-order.svg"
+            alt="order"
+          />
         </a>
-        <img
-          src="/icons/Glyph_ undefined 1.svg"
-          alt="Toggle Menu"
-          class="toggle-img"
-          onclick="showSubsidebar();"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#subSidebar0"
-          aria-controls="subSidebar0"
-        />
+        <ul
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdown"
+          id="newSetting"
+          style="height: 300px; overflow-y: scroll"
+        >
+          <li>
+            <h5>Order Management</h5>
+          </li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="/SupplierPortal/OrderManagement/OrderDispatch.html"
+            >
+              <span> Order Dispatch </span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="/SupplierPortal/OrderManagement/OrderAck.html"
+            >
+              <span> Order Acknowment </span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="/SupplierPortal/OrderManagement/Invoice.html"
+            >
+              <span> Invoice </span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="/SupplierPortal/OrderManagement/BuyerMapping.html"
+            >
+              <span> Buyer Mapping </span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="/SupplierPortal/OrderManagement/ItemCatalog.html"
+            >
+              <span> Item Catalog </span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="/SupplierPortal/OrderManagement/Item.html"
+            >
+              <span> Item </span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="/SupplierPortal/OrderManagement/PoStatus.html"
+            >
+              <span> PO Status </span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="/SupplierPortal/OrderManagement/InvoiceDashboard.html"
+            >
+              <span> Invoice Dashboard </span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="/SupplierPortal/OrderManagement/MyInvoices.html"
+            >
+              <span> My Invoices </span>
+            </a>
+          </li>
+        </ul>
       </li>
-      <li>
-        <a href="/SupplierPortal/Quotation/QuotationDetails.html">
-          <div class="menu-item">
-            <img src="/icons/Checkout.svg" alt="Quotation" />
-            <!-- <span>Quotation Details</span> -->
-          </div>
+      <li
+        class="nav-item dropend sub-menu"
+        style="margin-top: -6px; margin-left: -11px"
+      >
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbardropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <!-- <i class="icon icon-ic_fluent_launcher_settings_20_regular"></i> -->
+          <img src="/icons/Checkout.svg" alt="checkout" />
         </a>
-        <img
-          src="/icons/Glyph_ undefined 1.svg"
-          alt="Toggle Menu"
-          class="toggle-img"
-          onclick="showSubsidebar();"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#subSidebar1"
-          aria-controls="subSidebar1"
-        />
+        <ul
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdown"
+          id="newSetting"
+          style="height: 300px; overflow-y: scroll"
+        >
+          <li>
+            <h5>Quotation Details</h5>
+          </li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="/SupplierPortal/Quotation/QuotationDetails.html"
+            >
+              <span> Quotation Details </span>
+            </a>
+          </li>
+          <!-- <li>
+                      <a class="dropdown-item" href="/DocumentManagement">
+                          <span>
+                              Images &amp; Documents
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="/ViewWorkFlow">
+                          <span>
+                              My Workflow
+                          </span>
+                      </a>
+                  </li> -->
+        </ul>
       </li>
-      <li>
-        <a href="/SupplierPortal/ReverseAuction/ReverseAuction.html">
-          <div class="menu-item">
-            <img src="/icons/Sell.svg" alt="Reverse Auction" />
-            <!-- <span>Reverse Auction</span> -->
-          </div>
+      <li
+        class="nav-item dropend sub-menu"
+        style="margin-top: -6px; margin-left: -11px"
+      >
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <!-- <i class="icon icon-ic_fluent_task_list_add_24_regular"></i> -->
+          <img src="/icons/Sell.svg" alt="sell" />
         </a>
-        <img
-          src="/icons/Glyph_ undefined 1.svg"
-          alt="Toggle Menu"
-          class="toggle-img"
-          onclick="showSubsidebar();"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#subSidebar2"
-          aria-controls="subSidebar2"
-        />
+        <ul
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdown"
+          id="newSetting"
+          style="height: 300px; overflow-y: scroll"
+        >
+          <li>
+            <h5>Reverse Auction</h5>
+          </li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="/SupplierPortal/ReverseAuction/ReverseAuction.html"
+            >
+              <span> Reverse Auction </span>
+            </a>
+          </li>
+          <!-- <li>
+                      <a class="dropdown-item" href="/FBViewCustomForm/ViewForm?FormId=MODU10192">
+                          <span>
+                              Testing_1907
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="/FBViewCustomForm/ViewForm?FormId=MODU005">
+                          <span>
+                              Test Module2
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="/FBViewCustomForm/ViewForm?FormId=MODU006">
+                          <span>
+                              modeul310
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="/FBViewCustomForm/ViewForm?FormId=MODU010">
+                          <span>
+                              Feed back Form
+                          </span>
+                      </a>
+                  </li> -->
+        </ul>
       </li>
-      <li>
-        <a href="/SupplierPortal/AuctionEngine/AuctionEngine.html">
-          <div class="menu-item">
-            <img src="/icons/Service.svg" alt="Auction Engine" />
-            <!-- <span>Auction Engine</span> -->
-          </div>
+      <li
+        class="nav-item dropend sub-menu"
+        style="margin-top: -6px; margin-left: -11px"
+      >
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <!-- <i class="icon icon-ic_fluent_contact_card_24_regular"></i> -->
+          <img src="/icons/Service.svg" alt="service" />
         </a>
-        <img
-          src="/icons/Glyph_ undefined 1.svg"
-          alt="Toggle Menu"
-          class="toggle-img"
-          onclick="showSubsidebar();"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#subSidebar3"
-          aria-controls="subSidebar3"
-        />
+        <ul
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdown"
+          id="newSetting"
+          style="height: 300px; overflow-y: scroll"
+        >
+          <li>
+            <h5>Auction Engine</h5>
+          </li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="/SupplierPortal/AuctionEngine/AuctionEngine.html"
+            >
+              <span> Auction Engine </span>
+            </a>
+          </li>
+        </ul>
       </li>
-      <li>
-        <a href="/SupplierPortal/RFP/RFP.html">
-          <div class="menu-item">
-            <img src="/icons/Invite.svg" alt="Request For Proposal" />
-            <!-- <span>Request For Proposal</span> -->
-          </div>
+      <li
+        class="nav-item dropend sub-menu"
+        style="margin-top: -6px; margin-left: -11px"
+      >
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <!-- <i class="icon icon-ic_fluent_handshake_24_regular"></i> -->
+          <img src="/icons/Invite.svg" alt="Invite" />
         </a>
-        <img
-          src="/icons/Glyph_ undefined 1.svg"
-          alt="Toggle Menu"
-          class="toggle-img"
-          onclick="showSubsidebar();"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#subSidebar4"
-          aria-controls="subSidebar4"
-        />
+        <ul
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdown"
+          id="newSetting"
+          style="height: 300px; overflow-y: scroll"
+        >
+          <li>
+            <h5>Request For proposal</h5>
+          </li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li>
+            <a class="dropdown-item" href="/SupplierPortal/RFP/RFP.html">
+              <span> Request For proposal </span>
+            </a>
+          </li>
+          <!-- <li>
+                      <a class="dropdown-item" href="/SalesQuotation">
+                          <span>
+                              Quotations
+                          </span>
+                      </a>
+                  </li> -->
+        </ul>
       </li>
-      <li>
-        <a href="/SupplierPortal/TaskManager/TaskManager.html">
-          <div class="menu-item">
-            <img src="/icons/Task.svg" alt="Task Manager" />
-            <!-- <span>Task Manager</span> -->
-          </div>
+      <li
+        class="nav-item dropend sub-menu"
+        style="margin-top: -6px; margin-left: -11px"
+      >
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <!-- <i class="icon icon-ic_fluent_contact_card_group_24_regular"></i> -->
+          <img src="/icons/Task.svg" alt="task" />
         </a>
-        <img
-          src="/icons/Glyph_ undefined 1.svg"
-          alt="Toggle Menu"
-          class="toggle-img"
-          onclick="showSubsidebar();"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#subSidebar5"
-          aria-controls="subSidebar5"
-        />
+        <ul
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdown"
+          id="newSetting"
+          style="height: 300px; overflow-y: scroll"
+        >
+          <li>
+            <h5>Task Manager</h5>
+          </li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="/SupplierPortal/TaskManager/TaskManager.html"
+            >
+              <span> Task Manager </span>
+            </a>
+          </li>
+        </ul>
       </li>
-      <li>
-        <a href="/SupplierPortal/Setting/UserTenantMapping.html">
-          <div class="menu-item">
-            <img src="/icons/uil_setting.png" alt="Setting" />
-            <!-- <span>Setting</span> -->
-          </div>
+      <li
+        class="nav-item dropend sub-menu"
+        style="margin-top: -6px; margin-left: -11px"
+      >
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <!-- <i class="icon icon-ic_fluent_chart_multiple_24_regular"></i> -->
+          <img src="/icons/uil_setting.svg" alt="setting" />
         </a>
-        <img
-          src="/icons/Glyph_ undefined 1.svg"
-          alt="Toggle Menu"
-          class="toggle-img"
-          onclick="showSubsidebar();"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#subSidebar6"
-          aria-controls="subSidebar6"
-        />
+        <ul
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdown"
+          id="newSetting"
+          style="height: 300px; overflow-y: scroll"
+        >
+          <li>
+            <h5>Setting</h5>
+          </li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="/SupplierPortal/Setting/UserTenantMapping.html"
+            >
+              <span> User Tenent And Mapping </span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="/SupplierPortal/Setting/UserMaster.html"
+            >
+              <span> User Master </span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="/SupplierPortal/Setting/MenuMapping.html"
+            >
+              <span> Menu Mapping </span>
+            </a>
+          </li>
+          <!-- <li>
+                      <a class="dropdown-item" href="/CalendarView">
+                          <span>
+                              Calendar View
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="/TeamDashboard">
+                          <span>
+                              Team Dashboards
+                          </span>
+                      </a>
+                  </li> -->
+        </ul>
       </li>
+      <!-- <li class="nav-item dropend sub-menu" style="margin-top:-6px;margin-left:-11px">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="icon icon-ic_fluent_communication_person_24_regular"></i>
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="newSetting" style="height:300px;overflow-y:scroll">
+          <li>
+              <h5>Marketing</h5>
+          </li>
+          <li>
+              <hr class="dropdown-divider">
+          </li>
+                  <li>
+                      <a class="dropdown-item" href="/LandingPages">
+                          <span>
+                              Landing Pages
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="/EmailCampaign">
+                          <span>
+                              Email Campaigns
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="/DripCampaign">
+                          <span>
+                              Drip Campaigns
+                          </span>
+                      </a>
+                  </li>
+      </ul>
+  </li>
+  <li class="nav-item dropend sub-menu" style="margin-top:-6px;margin-left:-11px">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="icon icon-ic_fluent_communication_person_24_regular"></i>
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="newSetting" style="height:300px;overflow-y:scroll">
+          <li>
+              <h5>PJP</h5>
+          </li>
+          <li>
+              <hr class="dropdown-divider">
+          </li>
+                  <li>
+                      <a class="dropdown-item" href="/SecondarySales">
+                          <span>
+                              Beat Manager
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="/MarketVisitPlan">
+                          <span>
+                              PJP Manager
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="/SecMasterTargetMaster">
+                          <span>
+                              Target Master
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="/SecTransactionDailyCallReport">
+                          <span>
+                              Daily Call Report
+                          </span>
+                      </a>
+                  </li>
+      </ul>
+  </li>
+  <li class="nav-item dropend sub-menu" style="margin-top:-6px;margin-left:-11px">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="icon icon-ic_fluent_contact_card_24_regular"></i>
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="newSetting" style="height:300px;overflow-y:scroll">
+          <li>
+              <h5>Partner Management</h5>
+          </li>
+          <li>
+              <hr class="dropdown-divider">
+          </li>
+                  <li>
+                      <a class="dropdown-item" href="/CPMMasterChannelPartner">
+                          <span>
+                              Partner Management
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="/CPMMasterOnboardingPartner">
+                          <span>
+                              Onboarding Partners
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="/SettingOnboardMapping">
+                          <span>
+                              Onboard Mapping
+                          </span>
+                      </a>
+                  </li>
+      </ul>
+  </li>
+  <li class="nav-item dropend sub-menu" style="margin-top:-6px;margin-left:-11px">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="icon icon-ic_fluent_task_list_square_ltr_24_regular"></i>
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="newSetting" style="height:300px;overflow-y:scroll">
+          <li>
+              <h5>Order Master</h5>
+          </li>
+          <li>
+              <hr class="dropdown-divider">
+          </li>
+                  <li>
+                      <a class="dropdown-item" href="/SpcTransactionSaleOrder">
+                          <span>
+                              Order
+                          </span>
+                      </a>
+                  </li>
+      </ul>
+  </li> -->
     </ul>
-  </nav>
+  </div>
 </div>
-
-
