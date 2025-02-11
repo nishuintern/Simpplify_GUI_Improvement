@@ -3,163 +3,133 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/SupplierPortal/style.css" />
     <link rel="stylesheet" href="/SupplierPortal/TableManager.css" />
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <!-- <link rel="stylesheet" href="/css/subsidebar.css" /> -->
-    <link
-      rel="stylesheet"
-      href="/SupplierPortal/OrderManagement/OrderDispatch.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/SupplierPortal/OrderManagement/ItemCatalog.css"
-    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../../nippon.css" />
+    <!-- <link rel="stylesheet" href="/SupplierPortal/OrderManagement/ItemCatalog.css"> -->
+    <!-- Icon Css -->
+    <link
+      rel="stylesheet"
+      href="../assets/fonts/FluentSystemIcons-Regular.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"
+    />
+    <!-- End of Icon css -->
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap"
+      rel="stylesheet"
+    />
     <title>Simplify</title>
   </head>
-  <body>
-    <div class="dashboard-container">
-      <!-- Sidebar -->
-      <div id="sidebar-container"></div>
-      <!-- Main Content -->
-      <div class="main-content">
-        <!-- Header -->
-        <div id="header-container"></div>
-        <!-- Dashboard Heading -->
-        <div class="">
-          <div id="subSidebar0" class="d-none" style="z-index: 1000">
-            <span class="ps-3 pt-5 title-text">Order Management</span>
-            <hr />
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/SupplierPortal/OrderManagement/OrderDispatch.html"
-                  >Order Dispatch</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/SupplierPortal/OrderManagement/OrderAck.html"
-                  >Order Acknowledgement</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/SupplierPortal/OrderManagement/Invoice.html"
-                  >Invoice</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/SupplierPortal/OrderManagement/BuyerMapping.html"
-                  >Buyer Mapping Discount</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  href="/SupplierPortal/OrderManagement/ItemCatalog.html"
-                  >Item Catalog</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/SupplierPortal/OrderManagement/Item.html"
-                  >Item</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/SupplierPortal/OrderManagement/PoStatus.html"
-                  >PO Status</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/SupplierPortal/OrderManagement/InvoiceDashboard.html"
-                  >Invoice Dashboard</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/SupplierPortal/OrderManagement/MyInvoices.html"
-                  >My Invoice</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="">
-            <div class="dashboard-heading">
-              <div class="d-flex">
-                <a href="/SupplierPortal/index.html">
-                  <img src="/icons/Arrow back ios (2).svg" alt="" />
-                </a>
-                <h3>Item Catalog</h3>
-              </div>
+  <style>
+    .card-img {
+      object-fit: cover;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .card {
+      border-radius: 4px;
+    }
+    .card-title {
+      background: #eceff3;
+      opacity: 87%;
+      color: var(--text-color);
+    }
+  </style>
+  <body style="background-color: white">
+    <div id="sidebar-container"></div>
+    <div class="main-container">
+      <div id="header-container"></div>
+      <!-- header -->
+      <!-- End of Header -->
+
+      <!-- Mid header -->
+      <div class="mid-header" style="background-color: #eeeeee">
+        <div class="row container-fluid">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <a href="/SupplierPortal/index.html" class="me-2">
+                <img src="/icons/Arrow back ios (2).svg" alt="back" />
+              </a>
+              <h2>Item Catalog</h2>
+            </div>
+            <div class="mid-right d-flex justify-content-end">
               <a href="">
-                <img src="/icons/Synchronize.svg" alt="" />
+                <img src="/icons/Synchronize.svg" alt="sync" />
               </a>
             </div>
-            <div class="d-flex justify-content-between cus-ban">
-              <div>
-                <label class="m-3" for="customer-select">
-                  <span>Customer</span>
-                  <select
-                    class="ms-4 py-2 px-lg-5 px-md-4 px-sm-3"
-                    id="customerSelect"
-                  >
-                    <option value="">Select Customer</option>
-                  </select>
-                </label>
-              </div>
-              <div>
-                <label class="m-3" for="bank-select">
-                  <span class="me-4">Bank</span>
-                  <select class="py-2 px-lg-5 px-md-4 px-sm-3" id="bankSelect">
-                    <option value="">Select Bank</option>
-                  </select>
-                </label>
-              </div>
-              <div class="m-3">
-                <button
-                  id="searchButton"
-                  class="btn btn-dark px-lg-5 px-md-5 px-sm-5 py-2 me-5"
-                >
-                  Search
-                </button>
-              </div>
-            </div>
-            <div class="content-scroll">
-              <div id="cardContainer" class="row mt-4 container-fluid">
-                <!-- Cards will be dynamically updated here -->
-              </div>
-            </div>
-            <!-- <div id="invoice" class="table-responsive m-2"></div> -->
           </div>
+        </div>
+      </div>
+      <!-- end fof Mid header -->
+
+      <!-- Table view -->
+      <div
+        class="d-flex justify-content-between cus-ban"
+        style="border: 1px solid #babed8"
+      >
+        <div class="container py-2">
+          <div class="row g-3 align-items-center">
+            <!-- Customer Label & Select -->
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-center">
+              <label class="form-label me-3" for="customerSelect"
+                >Customer</label
+              >
+              <select class="form-select flex-grow-1" id="customerSelect">
+                <option value="">Select Customer</option>
+              </select>
+            </div>
+
+            <!-- Bank Label & Select -->
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-center">
+              <label class="form-label me-3" for="bankSelect">Bank</label>
+              <select class="form-select flex-grow-1" id="bankSelect">
+                <option value="">Select Bank</option>
+              </select>
+            </div>
+
+            <!-- Search Button -->
+            <div
+              class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-md-start justify-content-center"
+            >
+              <button
+                id="searchButton"
+                class="btn btn-dark w-100 w-md-auto px-4 py-2"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-scroll">
+        <div id="cardContainer" class="row mt-4 container-fluid">
+          <!-- Cards will be dynamically updated here -->
         </div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="../loadContent.js"></script>
-    <script src="../index.js"></script>
-    <script src="../OrderManagement/OrderDispatch.js"></script>
+    <script src="/SupplierPortal/loadContent.js"></script>
     <script src="../OrderManagement/ItemCatalog.js"></script>
-    <script src="../tableManagerOrderDis.js"></script>
+    <script src="../tableManager2.js"></script>
+    <script src="../index.js"></script>
     <script>
       initializeTableManager("../tableConfigs.json");
     </script>

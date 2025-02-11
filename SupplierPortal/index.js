@@ -719,6 +719,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.getElementById("sidebar-toggle").addEventListener("click", function() {
-  document.querySelector(".sidebar").classList.toggle("show-sidebar");
+document.getElementsByClassName("mobile-nav").addEventListener("click", function() {
+  debugger;
+  document.querySelector(".sidebar").classList.toggle("show");
 });

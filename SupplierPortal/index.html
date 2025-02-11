@@ -5,33 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link rel="stylesheet" href="TableManager.css" /> -->
     <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
     />
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="../nippon.css" />
     <!-- Icon Css -->
     <link
-    rel="stylesheet"
-    href="/SupplierPortal/assets/fonts/FluentSystemIcons-Regular.css"
+      rel="stylesheet"
+      href="/SupplierPortal/assets/fonts/FluentSystemIcons-Regular.css"
     />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
     />
-    
+
     <link
-    rel="stylesheet"
-    href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"
     />
     <!-- End of Icon css -->
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap"
-    rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap"
+      rel="stylesheet"
     />
     <!-- <link rel="stylesheet" href="style.css" /> -->
     <!-- <link rel="stylesheet" href="/css/main.min.css" /> -->
@@ -40,94 +41,27 @@
 
   <body>
     <div id="sidebar-container"></div>
-    <div class="main-container">
+    <div class="main-container" style="background-color: #FFFFFF;">
       <div id="header-container"></div>
       <!-- header -->
       <!-- End of Header -->
 
       <!-- Mid header -->
-      <div class="mid-header">
-        <div class="container-fluid">
-          <div
-            class="d-flex justify-content-between align-items-center ipad-view"
-          >
-            <!-- <div class="mid-left">
-                      <a href="#" class="btn btn-outline-secondary c-filter">
-                          <i class="icon icon-ic_fluent_navigation_unread_20_regular"></i>
-                      </a>
-                      <nav aria-label="breadcrumb">
-                          <ol class="breadcrumb">
-                              <li class="breadcrumb-item"><a href="#">Contacts</a></li>
-                              <li class="breadcrumb-item active" aria-current="page">My Contacts(1)
-                              </li>
-                          </ol>
-                      </nav>
-
-                  </div> -->
+      <div
+        class="mid-header"
+        style="
+          background-color: #eeeeee;
+          font-family: Roboto;
+          font-weight: 700;
+          font-size: 22px;
+          line-height: 33px;
+          letter-spacing: 0%;
+        "
+      >
+        <div class="row container-fluid">
+          <div class="d-flex justify-content-between align-items-center">
             <h2>Dashboard</h2>
-            <div class="mid-right d-flex justify-content-end">
-              <!-- <div class="mid-right-iner">
-                          <button class="btn btn-outline-primary" id="liveToastBtn">toast</button>
-                          <div class="btn-group me-2">
-                              <button class="btn btn-primary" type="button">
-                                  Import contacts
-                              </button>
-                              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
-                                  data-bs-toggle="dropdown" aria-expanded="false">
-
-                              </button>
-                              <ul class="dropdown-menu">
-                                  <li><a class="dropdown-item" href="#">Import History</a></li>
-
-                              </ul>
-                          </div>
-
-
-                          <a href="index-c-table.html" type="button" class="btn btn-outline-secondary"
-                              data-bs-toggle="tooltip" data-bs-placement="right"
-                              data-bs-title="Switch to compact view">
-                              <span class="def-icon">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                      fill="none">
-                                      <path
-                                          d="M2.75 13.4968H21.25C21.6642 13.4968 22 13.8326 22 14.2468C22 14.6265 21.7178 14.9403 21.3518 14.9899L21.25 14.9968H2.75C2.33579 14.9968 2 14.661 2 14.2468C2 13.8671 2.28215 13.5533 2.64823 13.5036L2.75 13.4968ZM2.75 9H21.25C21.6642 9 22 9.33579 22 9.75C22 10.1297 21.7178 10.4435 21.3518 10.4931L21.25 10.5H2.75C2.33579 10.5 2 10.1642 2 9.75C2 9.3703 2.28215 9.05651 2.64823 9.00685L2.75 9Z"
-                                          fill="inherit" />
-                                      <path
-                                          d="M12 7C11.8543 7 11.7149 6.94806 11.6139 6.85614L7.14956 2.79364C6.94449 2.60702 6.95113 2.31029 7.16442 2.13086C7.37763 1.95143 7.71677 1.95724 7.92185 2.14385L12 5.85495L16.0781 2.14385C16.2832 1.95724 16.6223 1.95143 16.8356 2.13086C17.0489 2.31029 17.0555 2.60702 16.8504 2.79364L12.3861 6.85614C12.2851 6.94806 12.1457 7 12 7Z"
-                                          fill="inherit" />
-                                      <path
-                                          d="M11.5 16.9968C11.6603 16.9968 11.8137 17.0487 11.9248 17.1406L16.8355 21.2031C17.0611 21.3897 17.0538 21.6865 16.8191 21.8659C16.5846 22.0453 16.2115 22.0395 15.986 21.8529L11.5 18.1418L7.01407 21.8529C6.78849 22.0395 6.41545 22.0453 6.18085 21.8659C5.94625 21.6865 5.93893 21.3897 6.16451 21.2031L11.0752 17.1406C11.1863 17.0487 11.3397 16.9968 11.5 16.9968Z"
-                                          fill="inherit" />
-                                  </svg>
-                              </span>
-
-                          </a>
-                          <div class="btn-group ms-2">
-                              <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
-                                  data-bs-target="#editColumn" aria-controls="offcanvasRight">
-                                  <i class="icon icon-ic_fluent_table_freeze_row_20_regular"></i>
-                                  Edit column
-                              </button>
-                              <button type="button"
-                                  class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
-                                  data-bs-toggle="dropdown" aria-expanded="false">
-
-                              </button>
-                              <ul class="dropdown-menu">
-                                  <li><a class="dropdown-item" href="#">Edit Column</a></li>
-                                  <li><a class="dropdown-item" href="#">Add Column</a></li>
-                              </ul>
-                          </div>
-
-                          <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                              aria-controls="offcanvasRight"
-                              class="ms-2 btn btn-outline-secondary position-relative filter"><i
-                                  class="icon icon-ic_fluent_filter_16_regular"></i> Filter <span
-                                  class="position-absolute top-0 start-100 translate-middle badge  rounded-circle bg-nippon">
-                                  99
-
-                              </span></button>
-                      </div> -->
+            <div class="d-flex justify-content-end">
               <a href="">
                 <img src="/icons/Synchronize.svg" alt="sync" />
               </a>
@@ -138,9 +72,10 @@
       <!-- end fof Mid header -->
 
       <!-- Table view -->
-      <div class="row mt-3 ms-2 me-2">
+      <div class="row mt-3 ms-2 me-2" style="background-color: #FFFFFF;">
         <section
-          class="col-md-12 col-lg-5 col-sm-12 me-6 mb-4 search-po-card container-fluid"
+          class="col-md-12 col-lg-5 col-sm-12 me-6 mb-4 search-po-card container-fluid pb-sm-1"
+          style="border: 1px solid #BABED8;"
         >
           <form onsubmit="searchPoNumber(event)">
             <div class="search-po">
@@ -184,18 +119,14 @@
                     name="searchBy"
                     value="po-no"
                     checked
+                    style="accent-color: #ff5733;"
                   />
                   <label for="po-no" class="card-inside-text label-text"
                     >PO Number</label
                   >
                 </span>
                 <span class="ms-sm-5 ms-lg-4">
-                  <input
-                    type="radio"
-                    id="date"
-                    name="searchBy"
-                    value="date"
-                  />
+                  <input type="radio" id="date" name="searchBy" value="date" style="accent-color: #ff5733;"/>
                   <label for="date" class="card-inside-text label-text"
                     >Date</label
                   >
@@ -206,10 +137,7 @@
                 id="dynamic-input"
                 class="ms-sm-1 ms-md-2 me-lg-auto d-flex flex-column ms-lg-2"
               >
-                <label
-                  for="po-search"
-                  class="d-lg-flex d-sm-block d-md-block"
-                >
+                <label for="po-search" class="d-lg-flex d-sm-block d-md-block">
                   <span
                     class="ms-sm-4 ms-lg-1 me-lg-1 ms-md-1 card-inside-text label-text d-lg-flex align-items-center"
                     >PO Number</span
@@ -233,16 +161,14 @@
               ></div>
               <hr />
               <div class="d-flex justify-content-end">
-                <button id="searchPoBtn" type="submit" class="search-btn">
-                  <span class="btn-search-text px-md-5 py-md-1"
-                    >Search</span
-                  >
+                <button id="searchPoBtn" type="submit" class="search-btn border-0 py-2">
+                  <span class="btn-search-text px-md-5 py-md-1">Search</span>
                 </button>
               </div>
             </div>
           </form>
         </section>
-        <section class="col-md-12 col-sm-12 col-lg-6 mb-4 container-fluid">
+        <section class="col-md-12 col-sm-12 col-lg-6 mb-4 container-fluid pb-2" style="background-color: #FFFFFF;border: 1px solid #BABED8;">
           <form action="#">
             <div class="search-po label-text">
               <h4 class="p-2 card-heading">To Do List</h4>
@@ -255,9 +181,9 @@
           </form>
         </section>
       </div>
-      <div class="row mt-3 ms-2 container-fluid">
+      <div class="row mt-3 ms-2 container-fluid" style="background-color: #FFFFFF;">
         <section
-          class="col-sm-12 col-md-12 col-lg-5 mt-2 me-5 mb-4 container-fluid"
+          class="col-sm-12 col-md-12 col-lg-5 mt-2 me-5 mb-4 container-fluid pb-2" style="border: 1px solid #BABED8;"
         >
           <div class="search-po">
             <h4 class="p-2 card-heading">To Do List</h4>
@@ -265,11 +191,11 @@
 
             <div
               id="todo-2"
-              class="table-responsive overflow-auto custom-scrollbar"
+              class="table-responsive overflow-auto custom-scrollbar" style="background-color: #FFFFFF;"
             ></div>
           </div>
         </section>
-        <section class="col-sm-12 col-md-12 col-lg-6 mb-4 container-fluid">
+        <section class="col-sm-12 col-md-12 col-lg-6 mb-4 container-fluid" style="border: 1px solid #BABED8;">
           <div class="search-po">
             <h4 class="p-2 card-heading">Purchase Order Report</h4>
             <hr />
@@ -280,8 +206,8 @@
           </div>
         </section>
       </div>
-      <div class="row mt-3 ms-2 container-fluid">
-        <section class="col-sm-12 col-md-12 col-lg-5 mb-4 container-fluid">
+      <div class="row mt-3 ms-2 container-fluid" style="background-color: #FFFFFF;">
+        <section class="col-sm-12 col-md-12 col-lg-5 mb-4 container-fluid" style="border: 1px solid #BABED8;">
           <form action="#">
             <div class="search-po">
               <h4 class="p-2 card-heading">Invoice Report</h4>
@@ -293,9 +219,7 @@
             </div>
           </form>
         </section>
-        <section
-          class="col-sm-12 col-md-12 col-lg-6 ms-2 mb-5 container-fluid"
-        >
+        <section class="col-sm-12 col-md-12 col-lg-6 ms-2 mb-5 container-fluid" style="border: 1px solid #BABED8;">
           <form action="#">
             <div class="search-po">
               <h4 class="p-2 card-heading">Task Report</h4>
@@ -310,10 +234,17 @@
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="index.js"></script>
+    <script src="/SupplierPortal/index.js"></script>
     <script src="tableManager.js"></script>
     <script src="loadContent.js"></script>
     <script>
+      // $(".mobile-nav").on("click", function (event) {
+      //   debugger;
+      //   $(".sidebar").toggleClass("show");
+      // });
+      // $(".mobile-close").on("click", function (event) {
+      //   $(".sidebar").toggleClass("show");
+      // });
       initializeTableManager("tableConfigs.json");
     </script>
   </body>

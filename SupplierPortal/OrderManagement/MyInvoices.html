@@ -3,589 +3,577 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="/SupplierPortal/TableManager.css" />
-    <link rel="stylesheet" href="/SupplierPortal/style.css" />
-    <!-- <link rel="stylesheet" href="/css/subsidebar.css" /> -->
-    <link
-      rel="stylesheet"
-      href="/SupplierPortal/OrderManagement/MyInvoices.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/SupplierPortal/OrderManagement/OrderDispatch.css"
-    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../../nippon.css" />
+    <!-- Icon Css -->
+    <link
+      rel="stylesheet"
+      href="../assets/fonts/FluentSystemIcons-Regular.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"
+    />
+    <!-- End of Icon css -->
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap"
+      rel="stylesheet"
+    />
     <title>Simplify</title>
   </head>
-  <body>
-    <div class="dashboard-container">
-      <!-- Sidebar -->
-      <div id="sidebar-container"></div>
-      <!-- Main Content -->
-      <div class="main-content">
-        <!-- Header -->
-        <div id="header-container"></div>
-        <!-- Dashboard Heading -->
-        <div class="">
-          <div
-            id="subSidebar0"
-            class="sub-sidebar d-none"
-            style="z-index: 1000"
-          >
-            <span class="ps-3 pt-5 title-text">Order Management</span>
-            <hr />
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/supplierPortal/OrderManagement/OrderDispatch.html"
-                  >Order Dispatch</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/supplierPortal/OrderManagement/OrderAck.html"
-                  >Order Acknowledgement</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/supplierPortal/OrderManagement/Invoice.html"
-                  >Invoice</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/supplierPortal/OrderManagement/BuyerMapping.html"
-                  >Buyer Mapping Discount</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/supplierPortal/OrderManagement/ItemCatalog.html"
-                  >Item Catalog</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/supplierPortal/OrderManagement/Item.html"
-                  >Item</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/supplierPortal/OrderManagement/PoStatus.html"
-                  >PO Status</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/supplierPortal/OrderManagement/InvoiceDashboard.html"
-                  >Invoice Dashboard</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  href="/supplierPortal/OrderManagement/MyInvoices.html"
-                  >My Invoice</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="">
-            <div class="dashboard-heading">
-              <div class="d-flex">
-                <a href="/supplierPortal/index.html">
-                  <img src="/icons/Arrow back ios (2).svg" alt="" />
-                </a>
-                <h3>My Invoices</h3>
-              </div>
+  <style>
+    .tabs {
+      border-bottom: 1px solid #3c4059;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 30px;
+      /* Space between tabs */
+    }
+
+    /* Individual tabs */
+    .tab {
+      color: #3c4059;
+      /* Default text color */
+      padding: 10px 20px;
+      cursor: pointer;
+      text-align: center;
+      transition: color 0.3s ease;
+      border: none;
+      background: transparent;
+      font-family: Roboto;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 13px;
+      text-align: center;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+    }
+
+    /* Active tab with orange underline */
+    .tab.active {
+      color: #fe660c;
+      border-bottom: 1px solid #fe660c;
+    }
+
+    .nav-underline .tab-item.active {
+      border-bottom: 2px solid #fe660c;
+      margin-bottom: -1px;
+    }
+
+    /* .nav-item.active{
+    border-bottom: 1px solid #FE660C;;
+} */
+    /* Hover effect for tabs */
+    /* .tab:hover {
+    color: black;
+} */
+
+    /* Make sure to override Bootstrap's styles if needed */
+    .nav-item {
+      margin: 0;
+    }
+  </style>
+  <body style="background-color: white">
+    <div id="sidebar-container"></div>
+    <div class="main-container">
+      <div id="header-container"></div>
+      <!-- header -->
+      <!-- End of Header -->
+
+      <!-- Mid header -->
+      <div class="mid-header" style="background-color: #eeeeee">
+        <div class="row container-fluid">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <a href="/SupplierPortal/index.html" class="me-2">
+                <img src="/icons/Arrow back ios (2).svg" alt="back" />
+              </a>
+              <h2>My Invoices</h2>
+            </div>
+            <div class="d-flex justify-content-end">
               <a href="">
-                <img src="/icons/Synchronize.svg" alt="" />
+                <img src="/icons/Synchronize.svg" alt="sync" />
               </a>
             </div>
-            <div>
-              <div>
-                <ul
-                  class="nav nav-underline mb-0 tabs"
-                  id="pills-tab"
-                  role="tablist"
-                >
-                  <li class="active nav-item me-5 tab-item" role="presentation">
-                    <span
-                      class="invoices-nav-link border-0 btn-light mt-2 tab active"
-                      id="pills-needToAct-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#pills-needToAct"
-                      type="button"
-                      role="tab"
-                      aria-controls="pills-needToAct"
-                      aria-selected="true"
-                    >
-                      Need To Act
-                    </span>
-                  </li>
-                  <li class="nav-item me-5 tab-item" role="presentation">
-                    <span
-                      class="invoices-nav-link border-0 btn-light mt-2 tab"
-                      id="pills-history-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#pills-history"
-                      type="button"
-                      role="tab"
-                      aria-controls="pills-history"
-                      aria-selected="false"
-                    >
-                      History
-                    </span>
-                  </li>
-                  <li class="nav-item tab-item" role="presentation">
-                    <span
-                      class="invoices-nav-link border-0 btn-light mt-2 tab"
-                      id="pills-pending-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#pills-pending"
-                      type="button"
-                      role="tab"
-                      aria-controls="pills-pending"
-                      aria-selected="false"
-                    >
-                      Pending
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <div class="tab-content" id="pills-tabContent">
-                <div
-                  class="tab-pane fade show active"
-                  id="pills-needToAct"
-                  role="tabpanel"
-                  aria-labelledby="pills-needToAct-tab"
-                  tabindex="0"
-                >
-                  <div id="need-to-act" class="overflow-auto"></div>
-                  <!-- <div>
-                    <div
-                      class="d-flex justify-content-between table-responsive"
-                    >
-                      <div>
-                        <label class="m-3" for="page-size">
-                          <span>Page Size :</span>
-                          <select
-                            class="ps-2 pe-2 px-5 py-1"
-                            name="size"
-                            id="sizeOfPage"
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <ul class="nav nav-underline mb-0 tabs" id="pills-tab" role="tablist">
+            <li class="active nav-item me-5 tab-item" role="presentation">
+              <span
+                class="invoices-nav-link border-0 btn-light mt-2 tab active"
+                id="pills-needToAct-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-needToAct"
+                type="button"
+                role="tab"
+                aria-controls="pills-needToAct"
+                aria-selected="true"
+              >
+                Need To Act
+              </span>
+            </li>
+            <li class="nav-item me-5 tab-item" role="presentation">
+              <span
+                class="invoices-nav-link border-0 btn-light mt-2 tab"
+                id="pills-history-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-history"
+                type="button"
+                role="tab"
+                aria-controls="pills-history"
+                aria-selected="false"
+              >
+                History
+              </span>
+            </li>
+            <li class="nav-item tab-item" role="presentation">
+              <span
+                class="invoices-nav-link border-0 btn-light mt-2 tab"
+                id="pills-pending-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-pending"
+                type="button"
+                role="tab"
+                aria-controls="pills-pending"
+                aria-selected="false"
+              >
+                Pending
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="pills-needToAct"
+            role="tabpanel"
+            aria-labelledby="pills-needToAct-tab"
+            tabindex="0"
+          >
+            <div id="need-to-act" class="overflow-auto"></div>
+            <!-- <div>
+                          <div
+                            class="d-flex justify-content-between table-responsive"
                           >
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                          </select>
-                        </label>
-                      </div>
-                      <div>
-                        <label class="m-3" for="search">
-                          <span>Search</span>
-                          <input class="ps-5" type="text" />
-                        </label>
-                      </div>
-                    </div>
-
-                    <div
-                      class="table-responsive-lg table-responsive-md table-responsive-sm"
-                    >
-                      <table class="table">
-                        <thead class="table-secondary text-nowrap">
-                          <tr>
-                            <th scope="col">Dispatch Id</th>
-                            <th scope="col">Location</th>
-                            <th scope="col">Vendor Name</th>
-                            <th scope="col">Invoice No</th>
-                            <th scope="col">Invoice Date</th>
-                            <th scope="col">PO No.</th>
-                            <th scope="col">MSME</th>
-                            <th scope="col">Payment Dt</th>
-                            <th scope="col">Paid Amt</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Creation Dt</th>
-                            <th scope="col">Pending Dy</th>
-                            <th scope="col">Invoice Amt</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row" class="text-start">
-                              20240821DISP00003
-                            </th>
-                            <td class="text-start">NEDSPL HO</td>
-                            <td class="text-start">
-                              3G Technology(Shanghai)LTD
-                            </td>
-                            <td class="text-start">20140821INV000003</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">20240815NP00000001</td>
-                            <td class="text-start">No</td>
-                            <td class="text-start"></td>
-                            <td class="text-start"></td>
-                            <td class="text-start">Rejected</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">0</td>
-                            <td class="text-start">1140.00</td>
-                          </tr>
-                          <tr>
-                            <th scope="row" class="text-start">
-                              20240821DISP00003
-                            </th>
-                            <td class="text-start">NEDSPL HO</td>
-                            <td class="text-start">
-                              3G Technology(Shanghai)LTD
-                            </td>
-                            <td class="text-start">20140821INV000003</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">20240815NP00000001</td>
-                            <td class="text-start">No</td>
-                            <td class="text-start"></td>
-                            <td class="text-start"></td>
-                            <td class="text-start">Rejected</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">0</td>
-                            <td class="text-start">1140.00</td>
-                          </tr>
-                          <tr>
-                            <th scope="row" class="text-start">
-                              20240821DISP00003
-                            </th>
-                            <td class="text-start">NEDSPL HO</td>
-                            <td class="text-start">
-                              3G Technology(Shanghai)LTD
-                            </td>
-                            <td class="text-start">20140821INV000003</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">20240815NP00000001</td>
-                            <td class="text-start">No</td>
-                            <td class="text-start"></td>
-                            <td class="text-start"></td>
-                            <td class="text-start">Rejected</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">0</td>
-                            <td class="text-start">1140.00</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="d-flex justify-content-between m-4">
-                      <span>Showing 1 to 2 of (10 entries)</span>
-                      <nav aria-label="...">
-                        <ul class="pagination">
-                          <li class="page-item">
-                            <a class="page-link" href="#">Previous</a>
-                          </li>
-                          <li class="page-item active" aria-current="page">
-                            <a class="page-link" href="#">1</a>
-                          </li>
-                          <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div> -->
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="pills-history"
-                  role="tabpanel"
-                  aria-labelledby="pills-history-tab"
-                  tabindex="0"
-                >
-                  <!-- <div class="d-flex justify-content-between">
-                  <div>
-                    <label class="m-3" for="page-size">
-                      <span>Page Size :</span>
-                      <select class="ps-2 pe-2" name="size" id="sizeOfPage">
-                        <option value="10">10</option>
-                      </select>
-                    </label>
-                  </div>
-                  <div>
-                    <label class="m-3" for="search">
-                      <span>Search</span>
-                      <input class="ps-5" type="text" />
-                    </label>
-                  </div>
-                </div> -->
-                  <div class="border-1">
-                    <div id="my-invoice-history" class=""></div>
-                    <!-- <div class="d-flex justify-content-between">
-                      <div>
-                        <label class="m-3" for="page-size">
-                          <span>Page Size :</span>
-                          <select
-                            class="ps-2 pe-2 px-5 py-1"
-                            name="size"
-                            id="sizeOfPage"
+                            <div>
+                              <label class="m-3" for="page-size">
+                                <span>Page Size :</span>
+                                <select
+                                  class="ps-2 pe-2 px-5 py-1"
+                                  name="size"
+                                  id="sizeOfPage"
+                                >
+                                  <option value="10">10</option>
+                                  <option value="20">20</option>
+                                  <option value="50">50</option>
+                                  <option value="100">100</option>
+                                </select>
+                              </label>
+                            </div>
+                            <div>
+                              <label class="m-3" for="search">
+                                <span>Search</span>
+                                <input class="ps-5" type="text" />
+                              </label>
+                            </div>
+                          </div>
+      
+                          <div
+                            class="table-responsive-lg table-responsive-md table-responsive-sm"
                           >
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                          </select>
-                        </label>
-                      </div>
-                      <div>
-                        <label class="m-3" for="search">
-                          <span>Search</span>
-                          <input class="ps-5" type="text" />
-                        </label>
-                      </div>
-                    </div> -->
+                            <table class="table">
+                              <thead class="table-secondary text-nowrap">
+                                <tr>
+                                  <th scope="col">Dispatch Id</th>
+                                  <th scope="col">Location</th>
+                                  <th scope="col">Vendor Name</th>
+                                  <th scope="col">Invoice No</th>
+                                  <th scope="col">Invoice Date</th>
+                                  <th scope="col">PO No.</th>
+                                  <th scope="col">MSME</th>
+                                  <th scope="col">Payment Dt</th>
+                                  <th scope="col">Paid Amt</th>
+                                  <th scope="col">Status</th>
+                                  <th scope="col">Creation Dt</th>
+                                  <th scope="col">Pending Dy</th>
+                                  <th scope="col">Invoice Amt</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row" class="text-start">
+                                    20240821DISP00003
+                                  </th>
+                                  <td class="text-start">NEDSPL HO</td>
+                                  <td class="text-start">
+                                    3G Technology(Shanghai)LTD
+                                  </td>
+                                  <td class="text-start">20140821INV000003</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">20240815NP00000001</td>
+                                  <td class="text-start">No</td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start">Rejected</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">0</td>
+                                  <td class="text-start">1140.00</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="text-start">
+                                    20240821DISP00003
+                                  </th>
+                                  <td class="text-start">NEDSPL HO</td>
+                                  <td class="text-start">
+                                    3G Technology(Shanghai)LTD
+                                  </td>
+                                  <td class="text-start">20140821INV000003</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">20240815NP00000001</td>
+                                  <td class="text-start">No</td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start">Rejected</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">0</td>
+                                  <td class="text-start">1140.00</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="text-start">
+                                    20240821DISP00003
+                                  </th>
+                                  <td class="text-start">NEDSPL HO</td>
+                                  <td class="text-start">
+                                    3G Technology(Shanghai)LTD
+                                  </td>
+                                  <td class="text-start">20140821INV000003</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">20240815NP00000001</td>
+                                  <td class="text-start">No</td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start">Rejected</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">0</td>
+                                  <td class="text-start">1140.00</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="d-flex justify-content-between m-4">
+                            <span>Showing 1 to 2 of (10 entries)</span>
+                            <nav aria-label="...">
+                              <ul class="pagination">
+                                <li class="page-item">
+                                  <a class="page-link" href="#">Previous</a>
+                                </li>
+                                <li class="page-item active" aria-current="page">
+                                  <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                  <a class="page-link" href="#">Next</a>
+                                </li>
+                              </ul>
+                            </nav>
+                          </div>
+                        </div> -->
+          </div>
+          <div
+            class="tab-pane fade"
+            id="pills-history"
+            role="tabpanel"
+            aria-labelledby="pills-history-tab"
+            tabindex="0"
+          >
+            <!-- <div class="d-flex justify-content-between">
+                        <div>
+                          <label class="m-3" for="page-size">
+                            <span>Page Size :</span>
+                            <select class="ps-2 pe-2" name="size" id="sizeOfPage">
+                              <option value="10">10</option>
+                            </select>
+                          </label>
+                        </div>
+                        <div>
+                          <label class="m-3" for="search">
+                            <span>Search</span>
+                            <input class="ps-5" type="text" />
+                          </label>
+                        </div>
+                      </div> -->
+            <div class="border-1">
+              <div id="my-invoice-history" class=""></div>
+              <!-- <div class="d-flex justify-content-between">
+                            <div>
+                              <label class="m-3" for="page-size">
+                                <span>Page Size :</span>
+                                <select
+                                  class="ps-2 pe-2 px-5 py-1"
+                                  name="size"
+                                  id="sizeOfPage"
+                                >
+                                  <option value="10">10</option>
+                                  <option value="20">20</option>
+                                  <option value="50">50</option>
+                                  <option value="100">100</option>
+                                </select>
+                              </label>
+                            </div>
+                            <div>
+                              <label class="m-3" for="search">
+                                <span>Search</span>
+                                <input class="ps-5" type="text" />
+                              </label>
+                            </div>
+                          </div> -->
 
-                    <!-- <div class="table-responsive">
-                      <table class="table">
-                        <thead class="table-secondary text-nowrap">
-                          <tr>
-                            <th scope="col">Dispatch Id</th>
-                            <th scope="col">Location</th>
-                            <th scope="col">Vendor Name</th>
-                            <th scope="col">Invoice No</th>
-                            <th scope="col">Invoice Date</th>
-                            <th scope="col">PO No.</th>
-                            <th scope="col">MSME</th>
-                            <th scope="col">Payment Dt</th>
-                            <th scope="col">Paid Amt</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Creation Dt</th>
-                            <th scope="col">Pending Dy</th>
-                            <th scope="col">Invoice Amt</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row" class="text-start">
-                              20240821DISP00003
-                            </th>
-                            <td class="text-start">NEDSPL HO</td>
-                            <td class="text-start">
-                              3G Technology(Shanghai)LTD
-                            </td>
-                            <td class="text-start">20140821INV000003</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">20240815NP00000001</td>
-                            <td class="text-start">No</td>
-                            <td class="text-start"></td>
-                            <td class="text-start"></td>
-                            <td class="text-start">Rejected</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">0</td>
-                            <td class="text-start">1140.00</td>
-                          </tr>
-                          <tr>
-                            <th scope="row" class="text-start">
-                              20240821DISP00003
-                            </th>
-                            <td class="text-start">NEDSPL HO</td>
-                            <td class="text-start">
-                              3G Technology(Shanghai)LTD
-                            </td>
-                            <td class="text-start">20140821INV000003</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">20240815NP00000001</td>
-                            <td class="text-start">No</td>
-                            <td class="text-start"></td>
-                            <td class="text-start"></td>
-                            <td class="text-start">Rejected</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">0</td>
-                            <td class="text-start">1140.00</td>
-                          </tr>
-                          <tr>
-                            <th scope="row" class="text-start">
-                              20240821DISP00003
-                            </th>
-                            <td class="text-start">NEDSPL HO</td>
-                            <td class="text-start">
-                              3G Technology(Shanghai)LTD
-                            </td>
-                            <td class="text-start">20140821INV000003</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">20240815NP00000001</td>
-                            <td class="text-start">No</td>
-                            <td class="text-start"></td>
-                            <td class="text-start"></td>
-                            <td class="text-start">Rejected</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">0</td>
-                            <td class="text-start">1140.00</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="d-flex justify-content-between m-4">
-                      <span>Showing 1 to 2 of (10 entries)</span>
-                      <nav aria-label="...">
-                        <ul class="pagination">
-                          <li class="page-item">
-                            <a class="page-link" href="#">Previous</a>
-                          </li>
-                          <li class="page-item active" aria-current="page">
-                            <a class="page-link" href="#">1</a>
-                          </li>
-                          <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div> -->
-                  </div>
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="pills-pending"
-                  role="tabpanel"
-                  aria-labelledby="pills-pending-tab"
-                  tabindex="0"
-                >
-                  <div class="border-1">
-                    <div class="table-responsive"></div>
-                    <div id="my-pending" class=""></div>
+              <!-- <div class="table-responsive">
+                            <table class="table">
+                              <thead class="table-secondary text-nowrap">
+                                <tr>
+                                  <th scope="col">Dispatch Id</th>
+                                  <th scope="col">Location</th>
+                                  <th scope="col">Vendor Name</th>
+                                  <th scope="col">Invoice No</th>
+                                  <th scope="col">Invoice Date</th>
+                                  <th scope="col">PO No.</th>
+                                  <th scope="col">MSME</th>
+                                  <th scope="col">Payment Dt</th>
+                                  <th scope="col">Paid Amt</th>
+                                  <th scope="col">Status</th>
+                                  <th scope="col">Creation Dt</th>
+                                  <th scope="col">Pending Dy</th>
+                                  <th scope="col">Invoice Amt</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row" class="text-start">
+                                    20240821DISP00003
+                                  </th>
+                                  <td class="text-start">NEDSPL HO</td>
+                                  <td class="text-start">
+                                    3G Technology(Shanghai)LTD
+                                  </td>
+                                  <td class="text-start">20140821INV000003</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">20240815NP00000001</td>
+                                  <td class="text-start">No</td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start">Rejected</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">0</td>
+                                  <td class="text-start">1140.00</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="text-start">
+                                    20240821DISP00003
+                                  </th>
+                                  <td class="text-start">NEDSPL HO</td>
+                                  <td class="text-start">
+                                    3G Technology(Shanghai)LTD
+                                  </td>
+                                  <td class="text-start">20140821INV000003</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">20240815NP00000001</td>
+                                  <td class="text-start">No</td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start">Rejected</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">0</td>
+                                  <td class="text-start">1140.00</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="text-start">
+                                    20240821DISP00003
+                                  </th>
+                                  <td class="text-start">NEDSPL HO</td>
+                                  <td class="text-start">
+                                    3G Technology(Shanghai)LTD
+                                  </td>
+                                  <td class="text-start">20140821INV000003</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">20240815NP00000001</td>
+                                  <td class="text-start">No</td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start">Rejected</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">0</td>
+                                  <td class="text-start">1140.00</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="d-flex justify-content-between m-4">
+                            <span>Showing 1 to 2 of (10 entries)</span>
+                            <nav aria-label="...">
+                              <ul class="pagination">
+                                <li class="page-item">
+                                  <a class="page-link" href="#">Previous</a>
+                                </li>
+                                <li class="page-item active" aria-current="page">
+                                  <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                  <a class="page-link" href="#">Next</a>
+                                </li>
+                              </ul>
+                            </nav>
+                          </div> -->
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="pills-pending"
+            role="tabpanel"
+            aria-labelledby="pills-pending-tab"
+            tabindex="0"
+          >
+            <div class="border-1">
+              <div class="table-responsive"></div>
+              <div id="my-pending" class=""></div>
 
-                    <!-- <div class="d-flex justify-content-between">
-                      <div>
-                        <label class="m-3" for="page-size">
-                          <span>Page Size :</span>
-                          <select
-                            class="ps-2 pe-2 px-5 py-1"
-                            name="size"
-                            id="sizeOfPage"
-                          >
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                          </select>
-                        </label>
-                      </div>
-                      <div>
-                        <label class="m-3" for="search">
-                          <span>Search</span>
-                          <input class="ps-5" type="text" />
-                        </label>
-                      </div>
-                    </div>
-
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead class="table-secondary text-nowrap">
-                          <tr>
-                            <th scope="col">Dispatch Id</th>
-                            <th scope="col">Location</th>
-                            <th scope="col">Vendor Name</th>
-                            <th scope="col">Invoice No</th>
-                            <th scope="col">Invoice Date</th>
-                            <th scope="col">PO No.</th>
-                            <th scope="col">MSME</th>
-                            <th scope="col">Payment Dt</th>
-                            <th scope="col">Paid Amt</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Creation Dt</th>
-                            <th scope="col">Pending Dy</th>
-                            <th scope="col">Invoice Amt</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row" class="text-start">
-                              20240821DISP00003
-                            </th>
-                            <td class="text-start">NEDSPL HO</td>
-                            <td class="text-start">
-                              3G Technology(Shanghai)LTD
-                            </td>
-                            <td class="text-start">20140821INV000003</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">20240815NP00000001</td>
-                            <td class="text-start">No</td>
-                            <td class="text-start"></td>
-                            <td class="text-start"></td>
-                            <td class="text-start">Rejected</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">0</td>
-                            <td class="text-start">1140.00</td>
-                          </tr>
-                          <tr>
-                            <th scope="row" class="text-start">
-                              20240821DISP00003
-                            </th>
-                            <td class="text-start">NEDSPL HO</td>
-                            <td class="text-start">
-                              3G Technology(Shanghai)LTD
-                            </td>
-                            <td class="text-start">20140821INV000003</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">20240815NP00000001</td>
-                            <td class="text-start">No</td>
-                            <td class="text-start"></td>
-                            <td class="text-start"></td>
-                            <td class="text-start">Rejected</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">0</td>
-                            <td class="text-start">1140.00</td>
-                          </tr>
-                          <tr>
-                            <th scope="row" class="text-start">
-                              20240821DISP00003
-                            </th>
-                            <td class="text-start">NEDSPL HO</td>
-                            <td class="text-start">
-                              3G Technology(Shanghai)LTD
-                            </td>
-                            <td class="text-start">20140821INV000003</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">20240815NP00000001</td>
-                            <td class="text-start">No</td>
-                            <td class="text-start"></td>
-                            <td class="text-start"></td>
-                            <td class="text-start">Rejected</td>
-                            <td class="text-start">21/08/2024</td>
-                            <td class="text-start">0</td>
-                            <td class="text-start">1140.00</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="d-flex justify-content-between m-4">
-                      <span>Showing 1 to 2 of (10 entries)</span>
-                      <nav aria-label="...">
-                        <ul class="pagination">
-                          <li class="page-item">
-                            <a class="page-link" href="#">Previous</a>
-                          </li>
-                          <li class="page-item active" aria-current="page">
-                            <a class="page-link" href="#">1</a>
-                          </li>
-                          <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div> -->
-                  </div>
-                </div>
-              </div>
+              <!-- <div class="d-flex justify-content-between">
+                            <div>
+                              <label class="m-3" for="page-size">
+                                <span>Page Size :</span>
+                                <select
+                                  class="ps-2 pe-2 px-5 py-1"
+                                  name="size"
+                                  id="sizeOfPage"
+                                >
+                                  <option value="10">10</option>
+                                  <option value="20">20</option>
+                                  <option value="50">50</option>
+                                  <option value="100">100</option>
+                                </select>
+                              </label>
+                            </div>
+                            <div>
+                              <label class="m-3" for="search">
+                                <span>Search</span>
+                                <input class="ps-5" type="text" />
+                              </label>
+                            </div>
+                          </div>
+      
+                          <div class="table-responsive">
+                            <table class="table">
+                              <thead class="table-secondary text-nowrap">
+                                <tr>
+                                  <th scope="col">Dispatch Id</th>
+                                  <th scope="col">Location</th>
+                                  <th scope="col">Vendor Name</th>
+                                  <th scope="col">Invoice No</th>
+                                  <th scope="col">Invoice Date</th>
+                                  <th scope="col">PO No.</th>
+                                  <th scope="col">MSME</th>
+                                  <th scope="col">Payment Dt</th>
+                                  <th scope="col">Paid Amt</th>
+                                  <th scope="col">Status</th>
+                                  <th scope="col">Creation Dt</th>
+                                  <th scope="col">Pending Dy</th>
+                                  <th scope="col">Invoice Amt</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row" class="text-start">
+                                    20240821DISP00003
+                                  </th>
+                                  <td class="text-start">NEDSPL HO</td>
+                                  <td class="text-start">
+                                    3G Technology(Shanghai)LTD
+                                  </td>
+                                  <td class="text-start">20140821INV000003</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">20240815NP00000001</td>
+                                  <td class="text-start">No</td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start">Rejected</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">0</td>
+                                  <td class="text-start">1140.00</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="text-start">
+                                    20240821DISP00003
+                                  </th>
+                                  <td class="text-start">NEDSPL HO</td>
+                                  <td class="text-start">
+                                    3G Technology(Shanghai)LTD
+                                  </td>
+                                  <td class="text-start">20140821INV000003</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">20240815NP00000001</td>
+                                  <td class="text-start">No</td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start">Rejected</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">0</td>
+                                  <td class="text-start">1140.00</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="text-start">
+                                    20240821DISP00003
+                                  </th>
+                                  <td class="text-start">NEDSPL HO</td>
+                                  <td class="text-start">
+                                    3G Technology(Shanghai)LTD
+                                  </td>
+                                  <td class="text-start">20140821INV000003</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">20240815NP00000001</td>
+                                  <td class="text-start">No</td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start"></td>
+                                  <td class="text-start">Rejected</td>
+                                  <td class="text-start">21/08/2024</td>
+                                  <td class="text-start">0</td>
+                                  <td class="text-start">1140.00</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="d-flex justify-content-between m-4">
+                            <span>Showing 1 to 2 of (10 entries)</span>
+                            <nav aria-label="...">
+                              <ul class="pagination">
+                                <li class="page-item">
+                                  <a class="page-link" href="#">Previous</a>
+                                </li>
+                                <li class="page-item active" aria-current="page">
+                                  <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                  <a class="page-link" href="#">Next</a>
+                                </li>
+                              </ul>
+                            </nav>
+                          </div> -->
             </div>
           </div>
         </div>
@@ -593,10 +581,10 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="../loadContent.js"></script>
-    <script src="../index.js"></script>
-    <script src="../OrderManagement/OrderDispatch.js"></script>
+    <script src="/SupplierPortal/loadContent.js"></script>
+    <link rel="stylesheet" href="/SupplierPortal/OrderManagement/MyInvoices.js">
     <script src="../tableManager.js"></script>
+    <script src="../index.js"></script>
     <script src="../OrderManagement/MyInvoices.js"></script>
     <script>
       initializeTableManager("../tableConfigs.json");
@@ -610,6 +598,6 @@
           element.classList.add("show");
         }
       }
-    </script> -->
+    </scri> -->
   </body>
 </html>

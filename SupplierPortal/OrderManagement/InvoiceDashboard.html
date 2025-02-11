@@ -3,328 +3,239 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="/SupplierPortal/TableManager.css" />
-    <link rel="stylesheet" href="/SupplierPortal/style.css" />
-    <!-- <link rel="stylesheet" href="/css/subsidebar.css" /> -->
-    <link
-      rel="stylesheet"
-      href="/SupplierPortal/OrderManagement/InvoiceDashboard.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/SupplierPortal/OrderManagement/OrderDispatch.css"
-    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <!-- <link rel="stylesheet" href="/SupplierPortal/OrderManagement/InvoiceDashboard.css"> -->
+    <link rel="stylesheet" href="../../nippon.css" />
+    <!-- Icon Css -->
+    <link
+      rel="stylesheet"
+      href="../assets/fonts/FluentSystemIcons-Regular.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"
+    />
+    <!-- End of Icon css -->
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap"
+      rel="stylesheet"
+    />
     <title>Simplify</title>
   </head>
-  <body>
-    <div class="dashboard-container">
-      <!-- Sidebar -->
-      <div id="sidebar-container"></div>
-      <!-- Main Content -->
-      <div class="main-content">
-        <!-- Header -->
-        <div id="header-container"></div>
-        <!-- Dashboard Heading -->
-        <div class="">
-          <!-- <div
-            id="subSidebar0"
-            class="sub-sidebar d-sm-none d-md-none d-lg-none"
-          >
-            <span class="ps-3 pt-5 title-text">Order Management</span>
-            <hr />
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/SupplierPortal/OrderManagement/OrderDispatch.html"
-                  >Order Dispatch</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/SupplierPortal/OrderManagement/OrderAck.html"
-                  >Order Acknowledgement</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/SupplierPortal/OrderManagement/Invoice.html"
-                  >Invoice</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/SupplierPortal/OrderManagement/BuyerMapping.html"
-                  >Buyer Mapping Discount</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/SupplierPortal/OrderManagement/ItemCatalog.html"
-                  >Item Catalog</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/SupplierPortal/OrderManagement/Item.html"
-                  >Item</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/SupplierPortal/OrderManagement/PoStatus.html"
-                  >PO Status</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  href="/SupplierPortal/OrderManagement/InvoiceDashboard.html"
-                  >Invoice Dashboard</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/SupplierPortal/OrderManagement/MyInvoices.html"
-                  >My Invoice</a
-                >
-              </li>
-            </ul>
-          </div> -->
-          <div class="container-invoice">
-            <div class="dashboard-heading">
-              <div class="d-flex">
-                <a href="/SupplierPortal/index.html">
-                  <img src="/icons/Arrow back ios (2).svg" alt="" />
-                </a>
-                <h3>Invoice Dashboard</h3>
-              </div>
+  <body style="background-color: white">
+    <div id="sidebar-container"></div>
+    <div class="main-container">
+      <div id="header-container"></div>
+      <!-- header -->
+      <!-- End of Header -->
+
+      <!-- Mid header -->
+      <div class="mid-header" style="background-color: #eeeeee">
+        <div class="container-fluid">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <a href="/SupplierPortal/index.html" class="me-2">
+                <img src="/icons/Arrow back ios (2).svg" alt="back" />
+              </a>
+              <h2>Invoice Dashboard</h2>
+            </div>
+            <div class="mid-right d-flex justify-content-end">
               <a href="">
-                <img src="/icons/Synchronize.svg" alt="" />
+                <img src="/icons/Synchronize.svg" alt="sync" />
               </a>
             </div>
-            <div>
-              <div
-                class="filters d-lg-flex d-md-block d-sm-flex justify-content-lg-start justify-content-sm-between justify-content-md-between align-items-md-center align-items-sm-center cus-ban"
-              >
-                <div
-                  class="d-lg-block d-sm-flex justify-content-sm-between justify-content-md-between d-md-flex ms-lg-1 ms-md-1 ms-sm-1"
-                >
-                  <label class="m-sm-2" for="fan-year">
-                    <span>Financial Year</span>
-                    <select
-                      class="px-sm-2 px-lg-4 px-md-2 py-lg-1 py-md-2 py-sm-2 mt-sm-1 ms-lg-3"
-                      name="size"
-                      id="financial-year"
-                    >
-                      <option value="default">Select Year</option>
-                      <option value="2024">2024</option>
-                      <option value="2023">2023</option>
-                      <option value="2022">2022</option>
-                      <option value="2021">2021</option>
-                      <option value="2020">2020</option>
-                    </select>
-                  </label>
-                  <div>
-                    <div class="d-none" id="search-container">
-                      <label class="ms-lg-5 m-sm-1" for="location">
-                        <span>Location</span>
-                        <select
-                          class="px-lg-4 py-lg-1 px-md-2 px-md-2 px-sm-2 px-sm-1 ms-1 mt-sm-1 ms-lg-3"
-                          name="location"
-                          id="location"
-                        >
-                          <option value="default">Location</option>
-                          <option value="Location1">Location 1</option>
-                          <option value="Location2">Location 2</option>
-                          <option value="Location3">Location 3</option>
-                        </select>
-                      </label>
-                    </div>
-                    <div class="d-none" id="fromDate-container">
-                      <label
-                        for="from-date"
-                        class="m-lg-3 m-sm-1 me-2 text-nowrap"
-                        ><span>From Date</span></label
-                      >
-                      <input
-                        type="date"
-                        id="from-date"
-                        class="ms-lg-1 ps-2 pe-2 px-lg-4 py-lg-1"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <!-- <div id=" additional-filters">
-            </div> -->
-                <div
-                  class="d-lg-block d-sm-block d-md-block ms-lg-3 ms-md-1 ms-sm-1"
-                >
-                  <label class="m-sm-1 m-lg-1 m-md-1" for="search">
-                    <span class="me-lg-4 me-md-2 me-sm-2">Search By</span>
-                    <select
-                      class="px-sm-2 px-lg-4 px-md-2 py-lg-1 py-md-2 py-sm-2"
-                      name="searchBy"
-                      id="search-by"
-                    >
-                      <option value="default">Select</option>
-                      <option value="ALL">ALL</option>
-                      <option value="Location">Location</option>
-                      <option value="MaterialInTransits">
-                        Material In Transits
-                      </option>
-                      <option value="Date">Date</option>
-                    </select>
-                  </label>
-                  <div class="d-none" id="toDate-container">
-                    <label for="to-date" class="mt-lg-3 m-sm-1 text-nowrap"
-                      ><span>To Date</span></label
-                    >
-                    <input
-                      type="date"
-                      id="to-date"
-                      class="ms-lg-5 ps-2 pe-2 px-lg-4 py-lg-1"
-                    />
-                  </div>
-                </div>
-                <div class="d-sm-block d-md-block d-lg-block ms-3 p-1">
-                  <button
-                    class="btn btn-dark btn-sm me-sm-2 me-md-2 me-lg-2 p-2 px-lg-4 px-sm-2 px-md-3"
-                    id="search-btn"
-                    onclick="handleSearchByChange();"
-                  >
-                    Search
-                  </button>
-                  <button
-                    class="btn btn-primary btn-sm me-lg-2 p-2 px-lg-4 px-md-3 px-sm-2"
-                    id="material-transit-btn"
-                  >
-                    Material Transist
-                  </button>
-                  <button
-                    class="btn btn-light btn-sm p-2 px-lg-4 px-sm-2 px-md-3"
-                    id="history-btn"
-                  >
-                    History
-                  </button>
-                </div>
-              </div>
-              <div class="content-scroll">
-                <div id="card-container" class="ms-3 mt-3">
-                  <!-- Cards here (unchanged for now) -->
-                  <div class="card-container">
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                      <div class="card d-flex justify-content-center p-2">
-                        <div
-                          class="card-body d-flex flex-column align-items-center"
-                        >
-                          <img src="/icons/Vector.svg" alt="" />
-                          <h6 class="mt-1 card-title">21</h6>
-                          <p class="card-text">My Invoice</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                      <div class="card d-flex justify-content-center p-2">
-                        <div
-                          class="card-body d-flex flex-column align-items-center"
-                        >
-                          <img
-                            src="/icons/flat-color-icons_ok (2).svg"
-                            alt=""
-                          />
-                          <h6 class="mt-1 card-title">00</h6>
-                          <p class="card-text">Created</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                      <div class="card d-flex justify-content-center p-2">
-                        <div
-                          class="card-body d-flex flex-column align-items-center"
-                        >
-                          <img src="/icons/la_file-invoice.svg" alt="" />
-                          <h6 class="mt-1 card-title">18</h6>
-                          <p class="card-text">L1 Pending</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                      <div class="card d-flex justify-content-center p-2">
-                        <div
-                          class="card-body d-flex flex-column align-items-center"
-                        >
-                          <img
-                            src="/icons/flat-color-icons_ok (3).svg"
-                            alt=""
-                          />
-                          <h6 class="mt-1 card-title">18</h6>
-                          <p class="card-text">L1 Pending More than 7 Days</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-auto col-md-4 col-sm-6 mb-4">
-                      <div class="card d-flex justify-content-center p-2">
-                        <div
-                          class="card-body d-flex flex-column align-items-center"
-                        >
-                          <img
-                            src="/icons/flat-color-icons_ok (1).png"
-                            alt=""
-                          />
-                          <h6 class="mt-1 card-title">00</h6>
-                          <p class="card-text">L3 Pending</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                      <div class="card d-flex justify-content-center p-2">
-                        <div
-                          class="card-body d-flex flex-column align-items-center"
-                        >
-                          <img src="/icons/la_file-invoice (1).svg" alt="" />
-                          <h6 class="mt-1 card-title">01</h6>
-                          <p class="card-text">Approved</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                      <div class="card d-flex justify-content-center p-2">
-                        <div
-                          class="card-body d-flex flex-column align-items-center"
-                        >
-                          <img
-                            src="/icons/marketeq_rejected-file-2.svg"
-                            alt=""
-                          />
-                          <h6 class="mt-1 card-title">01</h6>
-                          <p class="card-text">Rejected</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="line"></div>
-                <div class="container-fluid">
-                  <div id="invoice-dashboard" class=""></div>
+          </div>
+        </div>
+      </div>
+      <!-- end fof Mid header -->
+
+      <!-- Table view -->
+      <div>
+        <div
+          class="filters d-flex flex-wrap align-items-center p-3 gap-3"
+          style="border: 1px solid #babed8"
+        >
+          <!-- Financial Year -->
+          <div class="flex-grow-1">
+            <label class="d-block">
+              <span>Financial Year</span>
+              <select class="form-select mt-1" id="financial-year">
+                <option value="default">Select Year</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+              </select>
+            </label>
+          </div>
+
+          <!-- Location -->
+          <div class="flex-grow-1 d-none" id="search-container">
+            <label class="d-block">
+              <span>Location</span>
+              <select class="form-select mt-1" id="location">
+                <option value="default">Location</option>
+                <option value="Location1">Location 1</option>
+                <option value="Location2">Location 2</option>
+                <option value="Location3">Location 3</option>
+              </select>
+            </label>
+          </div>
+
+          <!-- From Date -->
+          <div class="flex-grow-1 d-none" id="fromDate-container">
+            <label class="d-block">
+              <span>From Date</span>
+              <input type="date" id="from-date" class="form-control mt-1" />
+            </label>
+          </div>
+
+          <!-- Search By -->
+          <div class="flex-grow-1">
+            <label class="d-block">
+              <span>Search By</span>
+              <select class="form-select mt-1" id="search-by">
+                <option value="default">Select</option>
+                <option value="ALL">ALL</option>
+                <option value="Location">Location</option>
+                <option value="MaterialInTransits">Material In Transits</option>
+                <option value="Date">Date</option>
+              </select>
+            </label>
+          </div>
+
+          <!-- To Date -->
+          <div class="flex-grow-1 d-none" id="toDate-container">
+            <label class="d-block">
+              <span>To Date</span>
+              <input type="date" id="to-date" class="form-control mt-1" />
+            </label>
+          </div>
+
+          <!-- Buttons (Wrapped on Small Screens) -->
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <button
+              class="btn btn-dark btn-sm px-4 py-2"
+              id="search-btn"
+              onclick="handleSearchByChange();"
+            >
+              Search
+            </button>
+            <button
+              class="btn btn-primary btn-sm px-4 py-2"
+              id="material-transit-btn"
+              style="background-color: #006DFF; color: white;border: none;"
+            >
+              Material Transit
+            </button>
+            <button class="btn btn-light btn-sm px-4 py-2" id="history-btn">
+              History
+            </button>
+          </div>
+        </div>
+
+        <div class="content-scroll">
+          <div id="card-container" class="row ms-3 mt-3">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+              <div class="card d-flex justify-content-center p-2">
+                <div class="card-body d-flex flex-column align-items-center">
+                  <img src="/icons/Vector.svg" alt="" />
+                  <h6 class="mt-1 card-title">21</h6>
+                  <p class="card-text">My Invoice</p>
                 </div>
               </div>
             </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+              <div class="card d-flex justify-content-center p-2">
+                <div class="card-body d-flex flex-column align-items-center">
+                  <img src="/icons/flat-color-icons_ok (2).svg" alt="" />
+                  <h6 class="mt-1 card-title">00</h6>
+                  <p class="card-text">Created</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+              <div class="card d-flex justify-content-center p-2">
+                <div class="card-body d-flex flex-column align-items-center">
+                  <img src="/icons/la_file-invoice.svg" alt="" />
+                  <h6 class="mt-1 card-title">18</h6>
+                  <p class="card-text">L1 Pending</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+              <div class="card d-flex justify-content-center p-2">
+                <div class="card-body d-flex flex-column align-items-center">
+                  <img src="/icons/flat-color-icons_ok (3).svg" alt="" />
+                  <h6 class="mt-1 card-title">18</h6>
+                  <p class="card-text">L1 Pending More than 7 Days</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+              <div class="card d-flex justify-content-center p-2">
+                <div class="card-body d-flex flex-column align-items-center">
+                  <img src="/icons/flat-color-icons_ok (1).png" alt="" />
+                  <h6 class="mt-1 card-title">00</h6>
+                  <p class="card-text">L3 Pending</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+              <div class="card d-flex justify-content-center p-2">
+                <div class="card-body d-flex flex-column align-items-center">
+                  <img src="/icons/la_file-invoice (1).svg" alt="" />
+                  <h6 class="mt-1 card-title">01</h6>
+                  <p class="card-text">Approved</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+              <div class="card d-flex justify-content-center p-2">
+                <div class="card-body d-flex flex-column align-items-center">
+                  <img src="/icons/marketeq_rejected-file-2.svg" alt="" />
+                  <h6 class="mt-1 card-title">01</h6>
+                  <p class="card-text">Rejected</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="line"></div>
+          <div class="container-fluid">
+            <div id="invoice-dashboard" class=""></div>
           </div>
         </div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="../loadContent.js"></script>
-    <script src="../index.js"></script>
+    <script src="/SupplierPortal/loadContent.js"></script>
     <script src="../OrderManagement/OrderDispatch.js"></script>
     <script src="../tableManager.js"></script>
-    <script src="../OrderManagement/InvoiceDashboard.js"></script>
+    <script src="../index.js"></script>
+    <script src="/SupplierPortal/OrderManagement/InvoiceDashboard.js"></script>
     <script>
       initializeTableManager("../tableConfigs.json");
     </script>

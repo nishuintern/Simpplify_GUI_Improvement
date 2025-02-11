@@ -3,340 +3,433 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="/SupplierPortal/TableManager.css" />
-    <link rel="stylesheet" href="/SupplierPortal/style.css" />
-    <!-- <link rel="stylesheet" href="/css/subsidebar.css" /> -->
-    <link
-      rel="stylesheet"
-      href="/SupplierPortal/OrderManagement/MyInvoices.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/SupplierPortal/OrderManagement/OrderDispatch.css"
-    />
-    <!-- <link rel="stylesheet" href="/css/ReverseAuction/ReverseAuction.css"> -->
-    <link rel="stylesheet" href="/SupplierPortal/RFP/RFP.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../../nippon.css" />
+    <!-- Icon Css -->
+    <link
+      rel="stylesheet"
+      href="../assets/fonts/FluentSystemIcons-Regular.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"
+    />
+    <!-- End of Icon css -->
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap"
+      rel="stylesheet"
+    />
     <title>Simplify</title>
   </head>
-  <body>
-    <div class="dashboard-container">
-      <!-- Sidebar -->
-      <div id="sidebar-container"></div>
-      <!-- Main Content -->
-      <div class="main-content">
-        <!-- Header -->
-        <div id="header-container"></div>
-        <!-- Dashboard Heading -->
-        <div class="">
-          <div
-            id="subSidebar4"
-            class="sub-sidebar d-none"
-            style="z-index: 1000"
-          >
-            <span class="p-2 title-text">Request For Proposal</span>
-            <hr />
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" href="/SupplierPortal/RFP/RFP.html"
-                  >Request For Proposal</a
-                >
-              </li>
-            </ul>
-          </div>
+  <style>
+    .tabs {
+      border-bottom: 1px solid #3c4059;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 30px;
+      /* Space between tabs */
+    }
 
-          <div class="">
-            <div class="dashboard-heading">
-              <div class="d-flex">
-                <a href="/SupplierPortal/index.html">
-                  <img src="/icons/Arrow back ios (2).svg" alt="" />
-                </a>
-                <h3>Request For Proposal</h3>
-              </div>
+    /* Individual tabs */
+    .tab {
+      color: #3c4059;
+      /* Default text color */
+      padding: 10px 20px;
+      cursor: pointer;
+      text-align: center;
+      transition: color 0.3s ease;
+      border: none;
+      background: transparent;
+      font-family: Roboto;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 13px;
+      text-align: center;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+    }
+
+    /* Active tab with orange underline */
+    .tab.active {
+      color: #fe660c;
+      border-bottom: 1px solid #fe660c;
+    }
+
+    .nav-underline .tab-item.active {
+      border-bottom: 2px solid #fe660c;
+      margin-bottom: -1px;
+    }
+
+    /* .nav-item.active{
+    border-bottom: 1px solid #FE660C;;
+} */
+    /* Hover effect for tabs */
+    /* .tab:hover {
+    color: black;
+} */
+
+    /* Make sure to override Bootstrap's styles if needed */
+    .nav-item {
+      margin: 0;
+    }
+    .container-1 {
+      height: 49px;
+      border-top: 1px solid #babed8;
+      border-left: 1px solid #babed8;
+      border-bottom: 1px solid #babed8;
+      border-right: 1px solid #babed8;
+      align-items: center;
+    }
+
+    .container-2 {
+      width: 35px;
+      height: 35px;
+      border: solid 1px #babed8;
+      margin-left: 14px;
+      margin-right: 10px;
+      border-radius: 4px;
+    }
+
+    .container-2 span img {
+      margin: 3px;
+    }
+
+    h4 {
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16.41px;
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+    }
+
+    h4 span {
+      font-family: Roboto;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 15.23px;
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+    }
+  </style>
+  <body style="background-color: white">
+    <div id="sidebar-container"></div>
+    <div class="main-container">
+      <div id="header-container"></div>
+      <!-- header -->
+      <!-- End of Header -->
+
+      <!-- Mid header -->
+      <div class="mid-header" style="background-color: #eeeeee">
+        <div class="row container-fluid">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <a href="/SupplierPortal/index.html" class="me-2">
+                <img src="/icons/Arrow back ios (2).svg" alt="back" />
+              </a>
+              <h2>Request For Proposal</h2>
+            </div>
+            <div class="d-flex justify-content-end">
               <a href="">
-                <img src="/icons/Synchronize.svg" alt="" />
+                <img src="/icons/Synchronize.svg" alt="sync" />
               </a>
             </div>
-            <div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <ul class="nav nav-underline mb-0 tabs" id="pills-tab" role="tablist">
+            <li class="nav-item me-5 tab-item active" role="presentation">
+              <span
+                class="invoices-nav-link border-0 btn-light mt-2 tab active"
+                id="pills-rfp-running-bids-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-rfp-running-bids"
+                type="button"
+                role="tab"
+                aria-controls="pills-rfp-running-bids"
+                aria-selected="true"
+              >
+                Running RFP
+              </span>
+            </li>
+            <li class="nav-item me-5 tab-item" role="presentation">
+              <span
+                class="invoices-nav-link border-0 btn-light mt-2 tab"
+                id="pills-rfp-upcoming-bids-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-rfp-upcoming-bids"
+                type="button"
+                role="tab"
+                aria-controls="pills-rfp-upcoming-bids"
+                aria-selected="false"
+              >
+                Upcoming Bids
+              </span>
+            </li>
+            <!-- <li class="nav-item me-5" role="presentation">
+              <span
+                class="invoices-nav-link border-0 btn-light mt-2"
+                id="pills-rfp-watch-bids-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-rfp-watch-bids"
+                type="button"
+                role="tab"
+                aria-controls="pills-rfp-watch-bids"
+                aria-selected="false"
+              >
+                Bids Watch List
+              </span>
+            </li> -->
+          </ul>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="pills-rfp-running-bids"
+            role="tabpanel"
+            aria-labelledby="pills-rfp-running-bids-tab"
+            tabindex="0"
+          >
+            <div id="rfp-running" class=""></div>
+            <!-- <div class="d-flex justify-content-between">
               <div>
-                <ul
-                  class="nav nav-underline mb-0 tabs"
-                  id="pills-tab"
-                  role="tablist"
-                >
-                  <li class="nav-item me-5 tab-item active" role="presentation">
-                    <span
-                      class="invoices-nav-link border-0 btn-light mt-2 tab active"
-                      id="pills-rfp-running-bids-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#pills-rfp-running-bids"
-                      type="button"
-                      role="tab"
-                      aria-controls="pills-rfp-running-bids"
-                      aria-selected="true"
-                    >
-                      Running RFP
-                    </span>
-                  </li>
-                  <li class="nav-item me-5 tab-item" role="presentation">
-                    <span
-                      class="invoices-nav-link border-0 btn-light mt-2 tab"
-                      id="pills-rfp-upcoming-bids-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#pills-rfp-upcoming-bids"
-                      type="button"
-                      role="tab"
-                      aria-controls="pills-rfp-upcoming-bids"
-                      aria-selected="false"
-                    >
-                      Upcoming Bids
-                    </span>
-                  </li>
-                  <!-- <li class="nav-item me-5" role="presentation">
-                    <span
-                      class="invoices-nav-link border-0 btn-light mt-2"
-                      id="pills-rfp-watch-bids-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#pills-rfp-watch-bids"
-                      type="button"
-                      role="tab"
-                      aria-controls="pills-rfp-watch-bids"
-                      aria-selected="false"
-                    >
-                      Bids Watch List
-                    </span>
-                  </li> -->
-                </ul>
+                <label class="m-3" for="page-size">
+                  <span>Page Size :</span>
+                  <select class="ps-2 pe-2" name="size" id="sizeOfPage">
+                    <option value="10">10</option>
+                  </select>
+                </label>
               </div>
-              <div class="tab-content" id="pills-tabContent">
-                <div
-                  class="tab-pane fade show active"
-                  id="pills-rfp-running-bids"
-                  role="tabpanel"
-                  aria-labelledby="pills-rfp-running-bids-tab"
-                  tabindex="0"
-                >
-                  <div id="rfp-running" class=""></div>
-                  <!-- <div class="d-flex justify-content-between">
-                    <div>
-                      <label class="m-3" for="page-size">
-                        <span>Page Size :</span>
-                        <select class="ps-2 pe-2" name="size" id="sizeOfPage">
-                          <option value="10">10</option>
-                        </select>
-                      </label>
-                    </div>
-                    <div>
-                      <label class="m-3" for="search">
-                        <span>Search</span>
-                        <input class="ps-5" type="text" />
-                      </label>
-                    </div>
-                  </div>
-                  <div class="border-1">
-                    <div class="table-responsive flex-fill">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">Event Code</th>
-                            <th scope="col">Event Name</th>
-                            <th scope="col">Opening Date</th>
-                            <th scope="col">Opening Time</th>
-                            <th scope="col">Opening Bid Time</th>
-                            <th scope="col">Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td scope="row">20240821DISP00003</td>
-                            <td>NEDSPL HO</td>
-                            <td>3G Technology(Shanghai)LTD</td>
-                            <td>20140821INV000003</td>
-                            <td>21/08/2024</td>
-                            <td>20240815NP00000001</td>
-                            <td>No</td>
-                            <td></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                  <div class="d-flex justify-content-between m-4">
-                    <span>Showing 1 to 2 of (10 entries)</span>
-                    <nav aria-label="...">
-                      <ul class="pagination">
-                        <li class="page-item">
-                          <a class="page-link" href="#">Previous</a>
-                        </li>
-                        <li class="page-item active" aria-current="page">
-                          <a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">Next</a>
-                        </li>
-                      </ul>
-                    </nav>
-                  </div> -->
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="pills-rfp-upcoming-bids"
-                  role="tabpanel"
-                  aria-labelledby="pills-rfp-upcoming-bids-tab"
-                  tabindex="0"
-                >
-                  <div id="rfp-upcoming" class=""></div>
-                  <!-- <div class="d-flex justify-content-between">
-                    <div>
-                      <label class="m-3" for="page-size">
-                        <span>Page Size :</span>
-                        <select class="ps-2 pe-2" name="size" id="sizeOfPage">
-                          <option value="10">10</option>
-                        </select>
-                      </label>
-                    </div>
-                    <div>
-                      <label class="m-3" for="search">
-                        <span>Search</span>
-                        <input class="ps-5" type="text" />
-                      </label>
-                    </div>
-                  </div>
-                  <div class="border-1">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">Event Code</th>
-                            <th scope="col">Event Name</th>
-                            <th scope="col">Opening Date</th>
-                            <th scope="col">Opening Time</th>
-                            <th scope="col">Opening Bid Time</th>
-                            <th scope="col">Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td scope="row">20240821DISP00003</td>
-                            <td>NEDSPL HO</td>
-                            <td>3G Technology(Shanghai)LTD</td>
-                            <td>20140821INV000003</td>
-                            <td>21/08/2024</td>
-                            <td>20240815NP00000001</td>
-                            <td>No</td>
-                            <td></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                  <div class="d-flex justify-content-between m-4">
-                    <span>Showing 1 to 2 of (10 entries)</span>
-                    <nav aria-label="...">
-                      <ul class="pagination">
-                        <li class="page-item">
-                          <a class="page-link" href="#">Previous</a>
-                        </li>
-                        <li class="page-item active" aria-current="page">
-                          <a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">Next</a>
-                        </li>
-                      </ul>
-                    </nav>
-                  </div> -->
-                </div>
-                <!-- <div
-                  class="tab-pane fade"
-                  id="pills-rfp-watch-bids"
-                  role="tabpanel"
-                  aria-labelledby="pills-rfp-watch-bids-tab"
-                  tabindex="0"
-                >
-                  <div class="d-flex justify-content-between">
-                    <div>
-                      <label class="m-3" for="page-size">
-                        <span>Page Size :</span>
-                        <select class="ps-2 pe-2" name="size" id="sizeOfPage">
-                          <option value="10">10</option>
-                        </select>
-                      </label>
-                    </div>
-                    <div>
-                      <label class="m-3" for="search">
-                        <span>Search</span>
-                        <input class="ps-5" type="text" />
-                      </label>
-                    </div>
-                  </div>
-                  <div class="border-1">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">Event Code</th>
-                            <th scope="col">Event Name</th>
-                            <th scope="col">Opening Date</th>
-                            <th scope="col">Opening Time</th>
-                            <th scope="col">Opening Bid Time</th>
-                            <th scope="col">Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td scope="row">20240821DISP00003</td>
-                            <td>NEDSPL HO</td>
-                            <td>3G Technology(Shanghai)LTD</td>
-                            <td>20140821INV000003</td>
-                            <td>21/08/2024</td>
-                            <td>20240815NP00000001</td>
-                            <td>No</td>
-                            <td></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                  <div class="d-flex justify-content-between m-4">
-                    <span>Showing 1 to 2 of (10 entries)</span>
-                    <nav aria-label="...">
-                      <ul class="pagination">
-                        <li class="page-item">
-                          <a class="page-link" href="#">Previous</a>
-                        </li>
-                        <li class="page-item active" aria-current="page">
-                          <a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">Next</a>
-                        </li>
-                      </ul>
-                    </nav>
-                  </div>
-                </div> -->
+              <div>
+                <label class="m-3" for="search">
+                  <span>Search</span>
+                  <input class="ps-5" type="text" />
+                </label>
               </div>
             </div>
+            <div class="border-1">
+              <div class="table-responsive flex-fill">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Event Code</th>
+                      <th scope="col">Event Name</th>
+                      <th scope="col">Opening Date</th>
+                      <th scope="col">Opening Time</th>
+                      <th scope="col">Opening Bid Time</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td scope="row">20240821DISP00003</td>
+                      <td>NEDSPL HO</td>
+                      <td>3G Technology(Shanghai)LTD</td>
+                      <td>20140821INV000003</td>
+                      <td>21/08/2024</td>
+                      <td>20240815NP00000001</td>
+                      <td>No</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between m-4">
+              <span>Showing 1 to 2 of (10 entries)</span>
+              <nav aria-label="...">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#">Previous</a>
+                  </li>
+                  <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </div> -->
           </div>
+          <div
+            class="tab-pane fade"
+            id="pills-rfp-upcoming-bids"
+            role="tabpanel"
+            aria-labelledby="pills-rfp-upcoming-bids-tab"
+            tabindex="0"
+          >
+            <div id="rfp-upcoming" class=""></div>
+            <!-- <div class="d-flex justify-content-between">
+              <div>
+                <label class="m-3" for="page-size">
+                  <span>Page Size :</span>
+                  <select class="ps-2 pe-2" name="size" id="sizeOfPage">
+                    <option value="10">10</option>
+                  </select>
+                </label>
+              </div>
+              <div>
+                <label class="m-3" for="search">
+                  <span>Search</span>
+                  <input class="ps-5" type="text" />
+                </label>
+              </div>
+            </div>
+            <div class="border-1">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Event Code</th>
+                      <th scope="col">Event Name</th>
+                      <th scope="col">Opening Date</th>
+                      <th scope="col">Opening Time</th>
+                      <th scope="col">Opening Bid Time</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td scope="row">20240821DISP00003</td>
+                      <td>NEDSPL HO</td>
+                      <td>3G Technology(Shanghai)LTD</td>
+                      <td>20140821INV000003</td>
+                      <td>21/08/2024</td>
+                      <td>20240815NP00000001</td>
+                      <td>No</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between m-4">
+              <span>Showing 1 to 2 of (10 entries)</span>
+              <nav aria-label="...">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#">Previous</a>
+                  </li>
+                  <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </div> -->
+          </div>
+          <!-- <div
+            class="tab-pane fade"
+            id="pills-rfp-watch-bids"
+            role="tabpanel"
+            aria-labelledby="pills-rfp-watch-bids-tab"
+            tabindex="0"
+          >
+            <div class="d-flex justify-content-between">
+              <div>
+                <label class="m-3" for="page-size">
+                  <span>Page Size :</span>
+                  <select class="ps-2 pe-2" name="size" id="sizeOfPage">
+                    <option value="10">10</option>
+                  </select>
+                </label>
+              </div>
+              <div>
+                <label class="m-3" for="search">
+                  <span>Search</span>
+                  <input class="ps-5" type="text" />
+                </label>
+              </div>
+            </div>
+            <div class="border-1">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Event Code</th>
+                      <th scope="col">Event Name</th>
+                      <th scope="col">Opening Date</th>
+                      <th scope="col">Opening Time</th>
+                      <th scope="col">Opening Bid Time</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td scope="row">20240821DISP00003</td>
+                      <td>NEDSPL HO</td>
+                      <td>3G Technology(Shanghai)LTD</td>
+                      <td>20140821INV000003</td>
+                      <td>21/08/2024</td>
+                      <td>20240815NP00000001</td>
+                      <td>No</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between m-4">
+              <span>Showing 1 to 2 of (10 entries)</span>
+              <nav aria-label="...">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#">Previous</a>
+                  </li>
+                  <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div> -->
         </div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="../loadContent.js"></script>
-    <script src="../index.js"></script>
+    <script src="/SupplierPortal/loadContent.js"></script>
     <script src="../OrderManagement/OrderDispatch.js"></script>
     <script src="../tableManager.js"></script>
+    <script src="../index.js"></script>
     <script src="../OrderManagement/MyInvoices.js"></script>
     <script>
       initializeTableManager("../tableConfigs.json");
     </script>
-    <script src="../ReverseAuction/ReverseAuction.js"></script>
+    <!-- <script>
+      function toggleSubSidebar(id) {
+        const element = document.getElementById(id);
+        if (element.classList.contains("show")) {
+          element.classList.remove("show");
+        } else {
+          element.classList.add("show");
+        }
+      }
+    </script> -->
   </body>
 </html>
