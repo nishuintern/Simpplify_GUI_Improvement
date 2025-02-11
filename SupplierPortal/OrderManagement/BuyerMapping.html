@@ -35,6 +35,16 @@
     />
     <title>Simplify</title>
   </head>
+  <style>
+    body {
+      overflow: hidden;
+    }
+    .pagination .page-item.active .page-link {
+      background-color: #fe660c;
+      color: #ffffff;
+      border: none;
+    }
+  </style>
   <body style="background-color: white">
     <div id="sidebar-container"></div>
     <div class="main-container">
@@ -130,7 +140,6 @@
           </div>
         </table>
       </div>
-
       <div class="d-flex justify-content-between">
         <span id="pagination-info">Showing 1 to 5 of 10 entries</span>
         <nav aria-label="...">
@@ -200,10 +209,10 @@
         data.forEach((item) => {
           const row = document.createElement("tr");
           row.innerHTML = `
-     <td>${item.customer}</td>
-     <td>${item.bankCode}</td>
-     <td>${item.bankName}</td>
-   `;
+    <td>${item.customer}</td>
+    <td>${item.bankCode}</td>
+    <td>${item.bankName}</td>
+  `;
           tableBody.appendChild(row);
         });
 
