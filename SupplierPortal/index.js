@@ -718,18 +718,5 @@ document.addEventListener("DOMContentLoaded", function () {
     adjustSubsidebarPosition();
   });
 });
-document
-  .getElementsById("mobile")
-  .addEventListener("click", function () {
-    console.log("click");
-    
-    debugger;
-    document.getElementById("sidebar").style.display = "block"; // Show the sidebar
-  });
 
-document
-  .getElementById("mobileCloseBtn")
-  .addEventListener("click", function () {
-    document.getElementById("sidebar").style.display = "none"; // Hide the sidebar
-  });
 
