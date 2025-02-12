@@ -38,10 +38,14 @@
     <!-- <link rel="stylesheet" href="/css/main.min.css" /> -->
     <title>Simplify</title>
   </head>
-
+<style>
+  body {
+    overflow-x: hidden;
+  }
+</style>
   <body>
     <div id="sidebar-container"></div>
-    <div class="main-container" style="background-color: #FFFFFF;">
+    <div class="main-container" style="background-color: #ffffff">
       <div id="header-container"></div>
       <!-- header -->
       <!-- End of Header -->
@@ -72,10 +76,10 @@
       <!-- end fof Mid header -->
 
       <!-- Table view -->
-      <div class="row mt-3 ms-2 me-2" style="background-color: #FFFFFF;">
+      <div class="row mt-3 ms-2 me-2" style="background-color: #ffffff">
         <section
           class="col-md-12 col-lg-5 col-sm-12 me-6 mb-4 search-po-card container-fluid pb-sm-1"
-          style="border: 1px solid #BABED8;"
+          style="border: 1px solid #babed8"
         >
           <form onsubmit="searchPoNumber(event)">
             <div class="search-po">
@@ -119,14 +123,20 @@
                     name="searchBy"
                     value="po-no"
                     checked
-                    style="accent-color: #ff5733;"
+                    style="accent-color: #ff5733"
                   />
                   <label for="po-no" class="card-inside-text label-text"
                     >PO Number</label
                   >
                 </span>
                 <span class="ms-sm-5 ms-lg-4">
-                  <input type="radio" id="date" name="searchBy" value="date" style="accent-color: #ff5733;"/>
+                  <input
+                    type="radio"
+                    id="date"
+                    name="searchBy"
+                    value="date"
+                    style="accent-color: #ff5733"
+                  />
                   <label for="date" class="card-inside-text label-text"
                     >Date</label
                   >
@@ -161,14 +171,21 @@
               ></div>
               <hr />
               <div class="d-flex justify-content-end">
-                <button id="searchPoBtn" type="submit" class="search-btn border-0 py-2">
+                <button
+                  id="searchPoBtn"
+                  type="submit"
+                  class="search-btn border-0 py-2"
+                >
                   <span class="btn-search-text px-md-5 py-md-1">Search</span>
                 </button>
               </div>
             </div>
           </form>
         </section>
-        <section class="col-md-12 col-sm-12 col-lg-6 mb-4 container-fluid pb-2" style="background-color: #FFFFFF;border: 1px solid #BABED8;">
+        <section
+          class="col-md-12 col-sm-12 col-lg-6 mb-4 container-fluid pb-2"
+          style="background-color: #ffffff; border: 1px solid #babed8"
+        >
           <form action="#">
             <div class="search-po label-text">
               <h4 class="p-2 card-heading">To Do List</h4>
@@ -181,9 +198,13 @@
           </form>
         </section>
       </div>
-      <div class="row mt-3 ms-2 container-fluid" style="background-color: #FFFFFF;">
+      <div
+        class="row mt-3 ms-2 container-fluid"
+        style="background-color: #ffffff"
+      >
         <section
-          class="col-sm-12 col-md-12 col-lg-5 mt-2 me-5 mb-4 container-fluid pb-2" style="border: 1px solid #BABED8;"
+          class="col-sm-12 col-md-12 col-lg-5 mt-2 me-5 mb-4 container-fluid pb-2"
+          style="border: 1px solid #babed8"
         >
           <div class="search-po">
             <h4 class="p-2 card-heading">To Do List</h4>
@@ -191,11 +212,15 @@
 
             <div
               id="todo-2"
-              class="table-responsive overflow-auto custom-scrollbar" style="background-color: #FFFFFF;"
+              class="table-responsive overflow-auto custom-scrollbar"
+              style="background-color: #ffffff"
             ></div>
           </div>
         </section>
-        <section class="col-sm-12 col-md-12 col-lg-6 mb-4 container-fluid" style="border: 1px solid #BABED8;">
+        <section
+          class="col-sm-12 col-md-12 col-lg-6 mb-4 container-fluid"
+          style="border: 1px solid #babed8"
+        >
           <div class="search-po">
             <h4 class="p-2 card-heading">Purchase Order Report</h4>
             <hr />
@@ -206,8 +231,14 @@
           </div>
         </section>
       </div>
-      <div class="row mt-3 ms-2 container-fluid" style="background-color: #FFFFFF;">
-        <section class="col-sm-12 col-md-12 col-lg-5 mb-4 container-fluid" style="border: 1px solid #BABED8;">
+      <div
+        class="row mt-3 ms-2 container-fluid"
+        style="background-color: #ffffff"
+      >
+        <section
+          class="col-sm-12 col-md-12 col-lg-5 mb-4 container-fluid"
+          style="border: 1px solid #babed8"
+        >
           <form action="#">
             <div class="search-po">
               <h4 class="p-2 card-heading">Invoice Report</h4>
@@ -219,7 +250,10 @@
             </div>
           </form>
         </section>
-        <section class="col-sm-12 col-md-12 col-lg-6 ms-2 mb-5 container-fluid" style="border: 1px solid #BABED8;">
+        <section
+          class="col-sm-12 col-md-12 col-lg-6 ms-2 mb-5 container-fluid"
+          style="border: 1px solid #babed8"
+        >
           <form action="#">
             <div class="search-po">
               <h4 class="p-2 card-heading">Task Report</h4>

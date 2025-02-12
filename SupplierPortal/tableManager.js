@@ -83,7 +83,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       const thead = document.createElement("thead");
       thead.className = "table p-3";
       const tbody = document.createElement("tbody");
-      tbody.className = "table text-wrap";
+      tbody.className = "table text-nowrap";
       tbody.id = `${containerId}-tbody`;
       table.appendChild(thead);
       table.appendChild(tbody);

@@ -42,17 +42,12 @@
       body {
         overflow: hidden;
       }
-      .pagination .page-item.active .page-link {
-        background-color: #fe660c;
-        color: #ffffff;
-        border: none;
-      }
       padding: 0;
       display: flex;
       gap: 30px;
       /* Space between tabs */
     }
-
+    
     /* Individual tabs */
     .tab {
       color: #3c4059;
@@ -71,30 +66,24 @@
       text-underline-position: from-font;
       text-decoration-skip-ink: none;
     }
-
+    
     /* Active tab with orange underline */
     .tab.active {
       color: #fe660c;
       border-bottom: 1px solid #fe660c;
     }
-
     .nav-underline .tab-item.active {
       border-bottom: 2px solid #fe660c;
       margin-bottom: -1px;
     }
-
-    /* .nav-item.active{
-    border-bottom: 1px solid #FE660C;;
-} */
-    /* Hover effect for tabs */
-    /* .tab:hover {
-    color: black;
-} */
-
-    /* Make sure to override Bootstrap's styles if needed */
-    .nav-item {
-      margin: 0;
-    }
+        .nav-item {
+          margin: 0;
+        }
+        .pagination .page-item.active .page-link {
+          background-color: #fe660c;
+          color: #ffffff;
+          border: none;
+        }
   </style>
   <body style="background-color: white">
     <div id="sidebar-container"></div>

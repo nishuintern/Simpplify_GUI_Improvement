@@ -718,8 +718,18 @@ document.addEventListener("DOMContentLoaded", function () {
     adjustSubsidebarPosition();
   });
 });
+document
+  .getElementsById("mobile")
+  .addEventListener("click", function () {
+    console.log("click");
+    
+    debugger;
+    document.getElementById("sidebar").style.display = "block"; // Show the sidebar
+  });
 
-document.getElementsByClassName("mobile-nav").addEventListener("click", function() {
-  debugger;
-  document.querySelector(".sidebar").classList.toggle("show");
-});
+document
+  .getElementById("mobileCloseBtn")
+  .addEventListener("click", function () {
+    document.getElementById("sidebar").style.display = "none"; // Hide the sidebar
+  });
+

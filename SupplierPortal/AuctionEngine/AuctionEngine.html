@@ -36,9 +36,6 @@
     <title>Simplify</title>
   </head>
   <style>
-    body {
-      overflow: hidden;
-    }
     .pagination .page-item.active .page-link {
       background-color: #fe660c;
       color: #ffffff;
@@ -431,7 +428,7 @@ text-decoration-skip-ink: none;
             >
               <button
                 class="btn btn-sm btn-success me-2 border-2 rounded-5"
-                onclick="openOfferScreen();"
+                onclick="openOfferScreen2();"
               >
                 Show Bid
               </button>
@@ -466,15 +463,6 @@ text-decoration-skip-ink: none;
     <script>
       initializeTableManager("../tableConfigs.json");
     </script>
-    <!-- <script>
-      function toggleSubSidebar(id) {
-        const element = document.getElementById(id);
-        if (element.classList.contains("show")) {
-          element.classList.remove("show");
-        } else {
-          element.classList.add("show");
-        }
-      }
-    </script> -->
+    <script src="/SupplierPortal/AuctionEngine/AuctionEngine.js"></script>
   </body>
 </html>

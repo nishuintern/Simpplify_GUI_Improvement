@@ -98,49 +98,13 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       // Add table headers with sorting
       headers.forEach((header) => {
         const th = document.createElement("th");
+        th.textContent = header.label;
         th.className = "sortable-header";
-        th.style.display = "flexbox"; // Use flex layout for header
-        th.style.alignItems = "center";
-        th.style.justifyContent = "space-between"; // Push icons to the right
 
-        const textSpan = document.createElement("span");
-        textSpan.textContent = header.label;
-        textSpan.style.marginRight = "20px";
-
-        const sortIcons = document.createElement("span");
-        sortIcons.className = "sort-icons";
-        sortIcons.style.display = "flex";
-        sortIcons.style.flexDirection = "column";
-        sortIcons.style.marginLeft = "8px"; // Add gap between text and icons
-        sortIcons.paddingLeft = "5px";
-        const ascIcon = document.createElement("span");
-        ascIcon.className = "sort-icon sort-asc";
-        ascIcon.dataset.column = header.key;
-        ascIcon.dataset.order = "asc";
-        ascIcon.title = "Sort Ascending";
-        ascIcon.innerHTML = "&#9650;"; // Up arrow
-
-        const descIcon = document.createElement("span");
-        descIcon.className = "sort-icon sort-desc";
-        descIcon.dataset.column = header.key;
-        descIcon.dataset.order = "desc";
-        descIcon.title = "Sort Descending";
-        descIcon.innerHTML = "&#9660;"; // Down arrow
-
-        sortIcons.appendChild(ascIcon);
-        sortIcons.appendChild(descIcon);
-
-        th.appendChild(textSpan);
-        th.appendChild(sortIcons);
-
-        th.addEventListener("click", (event) => {
-          const target = event.target.closest(".sort-icon");
-          if (!target) return; // Ignore clicks outside icons
-          const column = target.dataset.column || header.key;
-          const order =
-            target.dataset.order || (sortOrder === "asc" ? "desc" : "asc");
-          sortColumn = column;
-          sortOrder = order;
+        // Sorting event
+        th.addEventListener("click", () => {
+          sortColumn = header.key;
+          sortOrder = sortOrder === "asc" ? "desc" : "asc";
           renderTable();
         });
 
@@ -246,6 +210,9 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
                 .map((header) => {
                   if (header.label === "Status" || header.label === "Action") {
                     return `<td>
+                    <div  class="btn-group flex-wrap act-btn"
+                  role="group"
+                  aria-label="Basic example">
                       ${buttonConfigs
                         .map(
                           (config) => `
@@ -261,6 +228,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
                             </button>`
                         )
                         .join("")}
+                        </div>
                     </td>`;
                   } else {
                     return `<td>${row[header.key]}</td>`;

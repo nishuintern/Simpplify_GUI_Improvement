@@ -75,9 +75,8 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
 
       // Create table structure
       const tableDiv = document.createElement("div");
-      tableDiv.className =
-        "table-responsive";
-        tableDiv.style.overflowX = "auto";
+      tableDiv.className = "table-responsive";
+      tableDiv.style.overflowX = "auto";
       const table = document.createElement("table");
       table.className = "table  text-nowrap";
       const thead = document.createElement("thead");
@@ -98,55 +97,18 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       // Add table headers with sorting
       headers.forEach((header) => {
         const th = document.createElement("th");
+        th.textContent = header.label;
         th.className = "sortable-header";
-        th.style.display = "flexbox"; // Use flex layout for header
-        th.style.alignItems = "center";
-        th.style.justifyContent = "space-between"; // Push icons to the right
 
-        const textSpan = document.createElement("span");
-        textSpan.textContent = header.label;
-        textSpan.style.marginRight = "20px";
-
-        const sortIcons = document.createElement("span");
-        sortIcons.className = "sort-icons";
-        sortIcons.style.display = "flex";
-        sortIcons.style.flexDirection = "column";
-        sortIcons.style.marginLeft = "8px"; // Add gap between text and icons
-        sortIcons.paddingLeft = "5px";
-        const ascIcon = document.createElement("span");
-        ascIcon.className = "sort-icon sort-asc";
-        ascIcon.dataset.column = header.key;
-        ascIcon.dataset.order = "asc";
-        ascIcon.title = "Sort Ascending";
-        ascIcon.innerHTML = "&#9650;"; // Up arrow
-
-        const descIcon = document.createElement("span");
-        descIcon.className = "sort-icon sort-desc";
-        descIcon.dataset.column = header.key;
-        descIcon.dataset.order = "desc";
-        descIcon.title = "Sort Descending";
-        descIcon.innerHTML = "&#9660;"; // Down arrow
-
-        sortIcons.appendChild(ascIcon);
-        sortIcons.appendChild(descIcon);
-
-        th.appendChild(textSpan);
-        th.appendChild(sortIcons);
-
-        th.addEventListener("click", (event) => {
-          const target = event.target.closest(".sort-icon");
-          if (!target) return; // Ignore clicks outside icons
-          const column = target.dataset.column || header.key;
-          const order =
-            target.dataset.order || (sortOrder === "asc" ? "desc" : "asc");
-          sortColumn = column;
-          sortOrder = order;
+        // Sorting event
+        th.addEventListener("click", () => {
+          sortColumn = header.key;
+          sortOrder = sortOrder === "asc" ? "desc" : "asc";
           renderTable();
         });
 
         headerRow.appendChild(th);
       });
-
       // Append the header row to thead
       thead.appendChild(headerRow);
 
@@ -208,6 +170,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
         const searchValue = document
           .getElementById(`${containerId}-search`)
           .value.toLowerCase();
+
         let filteredData = data.filter((row) => {
           return Object.values(row).some((value) =>
             value.toString().toLowerCase().includes(searchValue)
@@ -219,31 +182,29 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
         const startIndex = (currentPage - 1) * pageSize;
         const endIndex = Math.min(startIndex + pageSize, filteredData.length);
         const paginatedData = filteredData.slice(startIndex, endIndex);
+
         tbody.innerHTML = paginatedData
           .map((row) => {
             return `<tr>${headers
               .map((header) => {
-                if (header.label === "Status" || header.label === "Action") {
-                  if (header.label === "Action") {
-                    // Special handling for Action column
-                    const actionValue = row[header.key];
-                    let actionHTML = "";
-                    if (actionValue === "Download") {
-                      // Create a link that triggers a download
-                      actionHTML = `<a href='#' class='text-decoration-none text-primary bg-light' onclick='downloadFile()'>${actionValue}</a>`;
-                    } else if (actionValue === "Download View Bank") {
-                      // Create a link that opens the modal
-                      actionHTML = `<a href='#' class='text-decoration-none text-primary bg-light' onclick='openSendInvoiceModal()'>${actionValue}</a>`;
-                    } else if (actionValue === "Re Quote") {
-                      // Create a link that opens the modal
-                      actionHTML = `<a href='#' class='text-decoration-none text-primary bg-light' onclick='openRequoteForm()'>${actionValue}</a>`;
-                    } else {
-                      actionHTML = `<a href='#' class='text-decoration-none text-primary'>${actionValue}</a>`;
-                    }
-                    return `<td>${actionHTML}</td>`;
+                if (header.label === "Status") {
+                  // Add Bootstrap text-primary class and onclick function for Status
+                  const statusValue = row[header.key] || "";
+                  return `<td onclick="handleStatusClick('${statusValue}')" style='color:#3F5B9C'>${statusValue}</td>`;
+                } else if (header.label === "Action") {
+                  // Special handling for Action column
+                  const actionValue = row[header.key];
+                  let actionHTML = "";
+                  if (actionValue === "Download") {
+                    actionHTML = `<a href='#' class='text-decoration-none' onclick='downloadFile()' style='color:#3F5B9C'>${actionValue}</a>`;
+                  } else if (actionValue === "Download View Bank") {
+                    actionHTML = `<a href='#' class='text-decoration-none' onclick='openSendInvoiceModal()' style='color:#3F5B9C'>${actionValue}</a>`;
+                  } else if (actionValue === "Re Quote") {
+                    actionHTML = `<a href='#' class='text-decoration-none' onclick='openRequoteForm()' style='color:#3F5B9C'>${actionValue}</a>`;
                   } else {
-                    return `<td>${row[header.key] || ""}</td>`;
+                    actionHTML = `<a href='#' class='text-decoration-none'>${actionValue}</a>`;
                   }
+                  return `<td>${actionHTML}</td>`;
                 } else {
                   return `<td>${row[header.key] || ""}</td>`;
                 }
@@ -251,8 +212,12 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
               .join("")}</tr>`;
           })
           .join("");
+
         updatePagination(filteredData.length, startIndex + 1, endIndex);
       }
+
+      // Example function to handle the Status click event
+
       // Function to update pagination and summary
       function updatePagination(totalItems, start, end) {
         const summary = document.getElementById(`${containerId}-summary`);
@@ -462,7 +427,11 @@ function sendInvoice() {
   closeModal();
 }
 
-function openRequoteForm(){
+function openRequoteForm() {
   // Open the requote form modal here
-  window.location='http://127.0.0.1:5500/SupplierPortal/Quotation/ReQuotation.html';
+  window.location =
+    "http://127.0.0.1:5500/SupplierPortal/Quotation/ReQuotation.html";
+}
+function handleStatusClick(statusValue) {
+  alert(`Status clicked: ${statusValue}`);
 }

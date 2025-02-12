@@ -223,6 +223,18 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
             return `<tr>${headers
               .map((header) => {
                 if (header.label === "Status" || header.label === "Action"||header.label==="View T&C") {
+                  if(header.label==="Status"){
+                    // Special handling for Status column
+                    let statusHTML = "";
+                    if (row.status === "Active") {
+                      statusHTML = `<span class='badge bg-success'>Active</span>`;
+                    } else if (row.status === "Inactive") {
+                      statusHTML = `<span class='badge bg-danger'>Inactive</span>`;
+                    } else {
+                      statusHTML = `<span class='badge bg-warning'>Unknown</span>`;
+                    }
+                    return `<td>${statusHTML}</td>`;
+                  }
                   if (header.label === "Action") {
                     // Special handling for Action column
                     const actionValue = row[header.key];

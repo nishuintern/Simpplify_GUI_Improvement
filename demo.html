@@ -1,1080 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Order Management</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <style>
-      /* Custom CSS for small devices */
-      @media (max-width: 767.98px) {
-        .table-responsive {
-          overflow-x: auto; /* Enable horizontal scrolling for tables */
-        }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Table UI</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+  <style>
+    /* Custom styling to match the design */
+    .table th {
+      background-color: #e9ecef;
+      color: #000;
+    }
 
-        .table th,
-        .table td {
-          font-size: 0.8rem; /* Smaller font size for table cells */
-        }
+    .table tbody tr {
+      background-color: #000;
+      color: #fff;
+    }
 
-        .page-size-search {
-          flex-direction: column; /* Stack page size and search vertically on small screens */
-          gap: 0.5rem; /* Add some spacing between elements */
-        }
+    .table tbody tr:hover {
+      background-color: #111;
+    }
 
-        .page-size-search label {
-          margin-bottom: 0; /* Remove margin for better alignment */
-        }
+    .btn-download {
+      background-color: #007bff;
+      color: #fff;
+    }
 
-        .pagination {
-          justify-content: center; /* Center pagination on small screens */
-        }
+    .btn-dispatch {
+      background-color: #ff6700;
+      color: #fff;
+    }
+
+    .btn-asn {
+      background-color: #28a745;
+      color: #fff;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+      .table-responsive {
+        font-size: 14px;
       }
-    </style>
-  </head>
-  <body>
-    <div class="container mt-4">
-      <h1 class="mb-4">Order Management</h1>
 
-      <!-- Order Dispatch Section -->
-      <div class="mb-4">
-        <h2>Order Dispatch</h2>
-        <ul class="list-unstyled">
-          <li><strong>Order Acknowledgement</strong></li>
-          <li>Invoice</li>
-          <li>Buyer Mapping Discount</li>
-          <li>Item Catalog</li>
-          <li>Item</li>
-          <li>PO Status</li>
-          <li>Invoice Dashboard</li>
-          <li>My invoices</li>
-        </ul>
-      </div>
-
-      <!-- Page Size and Search -->
-      <div
-        class="d-flex justify-content-between align-items-center mb-3 page-size-search"
-      >
-        <div>
-          <label for="page-size">Page Size:</label>
-          <select
-            id="page-size"
-            class="form-select form-select-sm d-inline-block w-auto"
-          >
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="50">50</option>
-          </select>
-        </div>
-        <div>
-          <label for="search">Search:</label>
-          <input
-            type="text"
-            id="search"
-            class="form-control form-control-sm d-inline-block w-auto"
-            placeholder="Search..."
-          />
-        </div>
-      </div>
-
-      <!-- Table -->
-      <!-- <div class="table-responsive">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Customer Name</th>
-              <th>Order No.</th>
-              <th>PO Date</th>
-              <th>Validity Date</th>
-              <th>Order Amount</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Indossian</td>
-              <td>2024/8/28/NPO000001</td>
-              <td>8/28/2024</td>
-              <td>22800.00</td>
-              <td></td>
-              <td>
-                <button class="btn btn-sm btn-outline-primary">Download</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Indossian</td>
-              <td>2024/8/28/NPO000001</td>
-              <td>8/28/2024</td>
-              <td>22800.00</td>
-              <td></td>
-              <td>
-                <button class="btn btn-sm btn-outline-primary">Download</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Indossian</td>
-              <td>2024/8/28/NPO000001</td>
-              <td>8/28/2024</td>
-              <td>22800.00</td>
-              <td></td>
-              <td>
-                <button class="btn btn-sm btn-outline-primary">Download</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Indossian</td>
-              <td>2024/8/28/NPO000001</td>
-              <td>8/28/2024</td>
-              <td>22800.00</td>
-              <td></td>
-              <td>
-                <button class="btn btn-sm btn-outline-primary">Download</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Indossian</td>
-              <td>2024/8/28/NPO000001</td>
-              <td>8/28/2024</td>
-              <td>22800.00</td>
-              <td></td>
-              <td>
-                <button class="btn btn-sm btn-outline-primary">Download</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Indossian</td>
-              <td>2024/8/28/NPO000001</td>
-              <td>8/28/2024</td>
-              <td>22800.00</td>
-              <td></td>
-              <td>
-                <button class="btn btn-sm btn-outline-primary">Download</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Indossian</td>
-              <td>2024/8/28/NPO000001</td>
-              <td>8/28/2024</td>
-              <td>22800.00</td>
-              <td></td>
-              <td>
-                <button class="btn btn-sm btn-outline-primary">Download</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Indossian</td>
-              <td>2024/8/28/NPO000001</td>
-              <td>8/28/2024</td>
-              <td>22800.00</td>
-              <td></td>
-              <td>
-                <button class="btn btn-sm btn-outline-primary">Download</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div> -->
-      <div class="tableview default-view">
-        <div>
-          <div id="ListDiv0" data-refresh-url="/SalesManageLead/_List">
-            <!-- bulk view assign -->
-            <style>
-              .dataTables_info {
-                padding-left: 6px;
-              }
-
-              .form-control-sm {
-                width: 235px !important;
-                margin-top: 5px;
-                margin-right: 8px;
-              }
-
-              .dataTables_paginate {
-                margin-top: -30px !important;
-                padding-bottom: 2px;
-                padding-right: 10px;
-              }
-
-              th:first-child,
-              td:first-child {
-                position: sticky !important;
-                left: 0px;
-                z-index: 1;
-                background-color: #fbfafa !important;
-              }
-            </style>
-
-            <div class="bulk-action p-2" style="width: 800px !important">
-              <button class="btn btn-outline-secondary" id="btnOwnerLeads">
-                Change Owner
-              </button>
-              <button class="btn btn-outline-secondary" id="btnAssignLeads">
-                Change Assign To
-              </button>
-              <button class="btn btn-outline-secondary" id="btnChangeState">
-                Change Stage
-              </button>
-
-              <button class="btn btn-outline-secondary" id="btnDeleteLeads">
-                Delete Leads
-              </button>
-              <button
-                class="btn btn-outline-secondary"
-                id="btnSendEmailLeads"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#ActivityEmail"
-              >
-                Send Email
-              </button>
-
-              <div class="dropdown">
-                <button
-                  class="btn btn-outline-secondary dropdown-toggle"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Add Tags
-                </button>
-                <ul class="dropdown-menu">
-                  <li>
-                    <button
-                      class="dropdown-item editc"
-                      type="button"
-                      data-bs-toggle="offcanvas"
-                      data-bs-target="#AddTad"
-                      aria-controls="offcanvasRight"
-                    >
-                      Add Tag
-                    </button>
-                  </li>
-                  <li>
-                    <a id="btnUpdateTag" class="dropdown-item" href="#"
-                      >Remove Tags</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- end of bulk view assign -->
-
-            <div
-              id="myTable_wrapper"
-              class="dataTables_wrapper dt-bootstrap5 no-footer"
-            >
-              <div id="dtTop">
-                <div id="myTable_filter" class="dataTables_filter">
-                  <label
-                    >Search:<input
-                      type="search"
-                      class="form-control form-control-sm"
-                      placeholder=""
-                      aria-controls="myTable"
-                  /></label>
-                </div>
-              </div>
-              <div class="dataTables_scroll">
-                <div
-                  class="dataTables_scrollHead"
-                  style="
-                    overflow: hidden;
-                    position: relative;
-                    border: 0px;
-                    width: 100%;
-                  "
-                >
-                  <div
-                    class="dataTables_scrollHeadInner"
-                    style="
-                      box-sizing: content-box;
-                      width: 2511px;
-                      padding-right: 0px;
-                    "
-                  >
-                    <table
-                      class="table-hover ember-view table ui-list no-footer dataTable"
-                      style="width: 2511px; margin-left: 0px"
-                      role="grid"
-                      aria-describedby="myTable_info"
-                    >
-                      <thead>
-                        <tr role="row">
-                          <th
-                            width="50px"
-                            class="text-center sorting_asc"
-                            data-exclude="true"
-                            data-f-bold="true"
-                            tabindex="0"
-                            aria-controls="myTable"
-                            rowspan="1"
-                            colspan="1"
-                            aria-label="
-                    
-                        
-                    
-                : activate to sort column descending"
-                            style="width: 50px"
-                            aria-sort="ascending"
-                          >
-                            <div class="form-check">
-                              <input
-                                class="form-check-input CHKALL"
-                                type="checkbox"
-                                value=""
-                                id="bulkact"
-                              />
-                            </div>
-                          </th>
-                          <th
-                            class="sorting"
-                            tabindex="0"
-                            aria-controls="myTable"
-                            rowspan="1"
-                            colspan="1"
-                            aria-label="Borrower Name : activate to sort column ascending"
-                            style="width: 150px"
-                          >
-                            <span>Borrower Name </span>
-                          </th>
-                          <th
-                            class="sorting"
-                            tabindex="0"
-                            aria-controls="myTable"
-                            rowspan="1"
-                            colspan="1"
-                            aria-label="Mobile No: activate to sort column ascending"
-                            style="width: 150px"
-                          >
-                            <span>Mobile No</span>
-                          </th>
-                          <th
-                            class="sorting"
-                            tabindex="0"
-                            aria-controls="myTable"
-                            rowspan="1"
-                            colspan="1"
-                            aria-label="Email Id: activate to sort column ascending"
-                            style="width: 150px"
-                          >
-                            <span>Email Id</span>
-                          </th>
-                          <th
-                            class="sorting"
-                            tabindex="0"
-                            aria-controls="myTable"
-                            rowspan="1"
-                            colspan="1"
-                            aria-label="Loan Type: activate to sort column ascending"
-                            style="width: 150px"
-                          >
-                            <span>Loan Type</span>
-                          </th>
-                          <th
-                            class="sorting"
-                            tabindex="0"
-                            aria-controls="myTable"
-                            rowspan="1"
-                            colspan="1"
-                            aria-label="Income Monthly: activate to sort column ascending"
-                            style="width: 150px"
-                          >
-                            <span>Income Monthly</span>
-                          </th>
-                          <th
-                            class="sorting"
-                            tabindex="0"
-                            aria-controls="myTable"
-                            rowspan="1"
-                            colspan="1"
-                            aria-label="Credit Bureau Score : activate to sort column ascending"
-                            style="width: 150px"
-                          >
-                            <span>Credit Bureau Score </span>
-                          </th>
-                          <th
-                            class="sorting"
-                            tabindex="0"
-                            aria-controls="myTable"
-                            rowspan="1"
-                            colspan="1"
-                            aria-label="Required Loan Amount: activate to sort column ascending"
-                            style="width: 150px"
-                          >
-                            <span>Required Loan Amount</span>
-                          </th>
-                          <th
-                            class="sorting"
-                            tabindex="0"
-                            aria-controls="myTable"
-                            rowspan="1"
-                            colspan="1"
-                            aria-label="Stage: activate to sort column ascending"
-                            style="width: 150px"
-                          >
-                            <span>Stage</span>
-                          </th>
-                          <th
-                            class="sorting"
-                            tabindex="0"
-                            aria-controls="myTable"
-                            rowspan="1"
-                            colspan="1"
-                            aria-label="Lead Owner: activate to sort column ascending"
-                            style="width: 150px"
-                          >
-                            <span>Lead Owner</span>
-                          </th>
-                          <th
-                            class="sorting"
-                            tabindex="0"
-                            aria-controls="myTable"
-                            rowspan="1"
-                            colspan="1"
-                            aria-label="Lead Type: activate to sort column ascending"
-                            style="width: 150px"
-                          >
-                            <span>Lead Type</span>
-                          </th>
-                          <th
-                            class="sorting"
-                            tabindex="0"
-                            aria-controls="myTable"
-                            rowspan="1"
-                            colspan="1"
-                            aria-label="City: activate to sort column ascending"
-                            style="width: 150px"
-                          >
-                            <span>City</span>
-                          </th>
-                          <th
-                            class="sorting"
-                            tabindex="0"
-                            aria-controls="myTable"
-                            rowspan="1"
-                            colspan="1"
-                            aria-label="Source: activate to sort column ascending"
-                            style="width: 150px"
-                          >
-                            <span>Source</span>
-                          </th>
-                          <th
-                            data-exclude="true"
-                            class="sorting"
-                            tabindex="0"
-                            aria-controls="myTable"
-                            rowspan="1"
-                            colspan="1"
-                            aria-label="Action: activate to sort column ascending"
-                            style="width: 150px"
-                          >
-                            <span>Action</span>
-                          </th>
-                        </tr>
-                      </thead>
-                    </table>
-                  </div>
-                </div>
-                <div
-                  class="dataTables_scrollBody"
-                  style="
-                    position: relative;
-                    overflow: auto;
-                    width: 100%;
-                    max-height: 380px;
-                    height: 380px;
-                  "
-                >
-                  <table
-                    id="myTable"
-                    class="table-hover ember-view table ui-list no-footer dataTable"
-                    style="width: 100%"
-                    role="grid"
-                    aria-describedby="myTable_info"
-                  >
-                    <thead>
-                      <tr role="row" style="height: 0px">
-                        <th
-                          width="50px"
-                          class="text-center sorting_asc"
-                          data-exclude="true"
-                          data-f-bold="true"
-                          aria-controls="myTable"
-                          rowspan="1"
-                          colspan="1"
-                          aria-label="
-                    
-                        
-                    
-                : activate to sort column descending"
-                          style="
-                            width: 50px;
-                            padding-top: 0px;
-                            padding-bottom: 0px;
-                            border-top-width: 0px;
-                            border-bottom-width: 0px;
-                            height: 0px;
-                          "
-                          aria-sort="ascending"
-                        >
-                          <div
-                            class="dataTables_sizing"
-                            style="height: 0px; overflow: hidden"
-                          >
-                            <div class="form-check">
-                              <input
-                                class="form-check-input CHKALL"
-                                type="checkbox"
-                                value=""
-                                id="bulkact"
-                              />
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="sorting"
-                          aria-controls="myTable"
-                          rowspan="1"
-                          colspan="1"
-                          aria-label="Borrower Name : activate to sort column ascending"
-                          style="
-                            width: 150px;
-                            padding-top: 0px;
-                            padding-bottom: 0px;
-                            border-top-width: 0px;
-                            border-bottom-width: 0px;
-                            height: 0px;
-                          "
-                        >
-                          <div
-                            class="dataTables_sizing"
-                            style="height: 0px; overflow: hidden"
-                          >
-                            <span>Borrower Name </span>
-                          </div>
-                        </th>
-                        <th
-                          class="sorting"
-                          aria-controls="myTable"
-                          rowspan="1"
-                          colspan="1"
-                          aria-label="Mobile No: activate to sort column ascending"
-                          style="
-                            width: 150px;
-                            padding-top: 0px;
-                            padding-bottom: 0px;
-                            border-top-width: 0px;
-                            border-bottom-width: 0px;
-                            height: 0px;
-                          "
-                        >
-                          <div
-                            class="dataTables_sizing"
-                            style="height: 0px; overflow: hidden"
-                          >
-                            <span>Mobile No</span>
-                          </div>
-                        </th>
-                        <th
-                          class="sorting"
-                          aria-controls="myTable"
-                          rowspan="1"
-                          colspan="1"
-                          aria-label="Email Id: activate to sort column ascending"
-                          style="
-                            width: 150px;
-                            padding-top: 0px;
-                            padding-bottom: 0px;
-                            border-top-width: 0px;
-                            border-bottom-width: 0px;
-                            height: 0px;
-                          "
-                        >
-                          <div
-                            class="dataTables_sizing"
-                            style="height: 0px; overflow: hidden"
-                          >
-                            <span>Email Id</span>
-                          </div>
-                        </th>
-                        <th
-                          class="sorting"
-                          aria-controls="myTable"
-                          rowspan="1"
-                          colspan="1"
-                          aria-label="Loan Type: activate to sort column ascending"
-                          style="
-                            width: 150px;
-                            padding-top: 0px;
-                            padding-bottom: 0px;
-                            border-top-width: 0px;
-                            border-bottom-width: 0px;
-                            height: 0px;
-                          "
-                        >
-                          <div
-                            class="dataTables_sizing"
-                            style="height: 0px; overflow: hidden"
-                          >
-                            <span>Loan Type</span>
-                          </div>
-                        </th>
-                        <th
-                          class="sorting"
-                          aria-controls="myTable"
-                          rowspan="1"
-                          colspan="1"
-                          aria-label="Income Monthly: activate to sort column ascending"
-                          style="
-                            width: 150px;
-                            padding-top: 0px;
-                            padding-bottom: 0px;
-                            border-top-width: 0px;
-                            border-bottom-width: 0px;
-                            height: 0px;
-                          "
-                        >
-                          <div
-                            class="dataTables_sizing"
-                            style="height: 0px; overflow: hidden"
-                          >
-                            <span>Income Monthly</span>
-                          </div>
-                        </th>
-                        <th
-                          class="sorting"
-                          aria-controls="myTable"
-                          rowspan="1"
-                          colspan="1"
-                          aria-label="Credit Bureau Score : activate to sort column ascending"
-                          style="
-                            width: 150px;
-                            padding-top: 0px;
-                            padding-bottom: 0px;
-                            border-top-width: 0px;
-                            border-bottom-width: 0px;
-                            height: 0px;
-                          "
-                        >
-                          <div
-                            class="dataTables_sizing"
-                            style="height: 0px; overflow: hidden"
-                          >
-                            <span>Credit Bureau Score </span>
-                          </div>
-                        </th>
-                        <th
-                          class="sorting"
-                          aria-controls="myTable"
-                          rowspan="1"
-                          colspan="1"
-                          aria-label="Required Loan Amount: activate to sort column ascending"
-                          style="
-                            width: 150px;
-                            padding-top: 0px;
-                            padding-bottom: 0px;
-                            border-top-width: 0px;
-                            border-bottom-width: 0px;
-                            height: 0px;
-                          "
-                        >
-                          <div
-                            class="dataTables_sizing"
-                            style="height: 0px; overflow: hidden"
-                          >
-                            <span>Required Loan Amount</span>
-                          </div>
-                        </th>
-                        <th
-                          class="sorting"
-                          aria-controls="myTable"
-                          rowspan="1"
-                          colspan="1"
-                          aria-label="Stage: activate to sort column ascending"
-                          style="
-                            width: 150px;
-                            padding-top: 0px;
-                            padding-bottom: 0px;
-                            border-top-width: 0px;
-                            border-bottom-width: 0px;
-                            height: 0px;
-                          "
-                        >
-                          <div
-                            class="dataTables_sizing"
-                            style="height: 0px; overflow: hidden"
-                          >
-                            <span>Stage</span>
-                          </div>
-                        </th>
-                        <th
-                          class="sorting"
-                          aria-controls="myTable"
-                          rowspan="1"
-                          colspan="1"
-                          aria-label="Lead Owner: activate to sort column ascending"
-                          style="
-                            width: 150px;
-                            padding-top: 0px;
-                            padding-bottom: 0px;
-                            border-top-width: 0px;
-                            border-bottom-width: 0px;
-                            height: 0px;
-                          "
-                        >
-                          <div
-                            class="dataTables_sizing"
-                            style="height: 0px; overflow: hidden"
-                          >
-                            <span>Lead Owner</span>
-                          </div>
-                        </th>
-                        <th
-                          class="sorting"
-                          aria-controls="myTable"
-                          rowspan="1"
-                          colspan="1"
-                          aria-label="Lead Type: activate to sort column ascending"
-                          style="
-                            width: 150px;
-                            padding-top: 0px;
-                            padding-bottom: 0px;
-                            border-top-width: 0px;
-                            border-bottom-width: 0px;
-                            height: 0px;
-                          "
-                        >
-                          <div
-                            class="dataTables_sizing"
-                            style="height: 0px; overflow: hidden"
-                          >
-                            <span>Lead Type</span>
-                          </div>
-                        </th>
-                        <th
-                          class="sorting"
-                          aria-controls="myTable"
-                          rowspan="1"
-                          colspan="1"
-                          aria-label="City: activate to sort column ascending"
-                          style="
-                            width: 150px;
-                            padding-top: 0px;
-                            padding-bottom: 0px;
-                            border-top-width: 0px;
-                            border-bottom-width: 0px;
-                            height: 0px;
-                          "
-                        >
-                          <div
-                            class="dataTables_sizing"
-                            style="height: 0px; overflow: hidden"
-                          >
-                            <span>City</span>
-                          </div>
-                        </th>
-                        <th
-                          class="sorting"
-                          aria-controls="myTable"
-                          rowspan="1"
-                          colspan="1"
-                          aria-label="Source: activate to sort column ascending"
-                          style="
-                            width: 150px;
-                            padding-top: 0px;
-                            padding-bottom: 0px;
-                            border-top-width: 0px;
-                            border-bottom-width: 0px;
-                            height: 0px;
-                          "
-                        >
-                          <div
-                            class="dataTables_sizing"
-                            style="height: 0px; overflow: hidden"
-                          >
-                            <span>Source</span>
-                          </div>
-                        </th>
-                        <th
-                          data-exclude="true"
-                          class="sorting"
-                          aria-controls="myTable"
-                          rowspan="1"
-                          colspan="1"
-                          aria-label="Action: activate to sort column ascending"
-                          style="
-                            width: 150px;
-                            padding-top: 0px;
-                            padding-bottom: 0px;
-                            border-top-width: 0px;
-                            border-bottom-width: 0px;
-                            height: 0px;
-                          "
-                        >
-                          <div
-                            class="dataTables_sizing"
-                            style="height: 0px; overflow: hidden"
-                          >
-                            <span>Action</span>
-                          </div>
-                        </th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <tr class="odd">
-                        <td valign="top" colspan="14" class="dataTables_empty">
-                          No data available in table
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div id="dtBottom">
-                <div
-                  class="dataTables_info"
-                  id="myTable_info"
-                  role="status"
-                  aria-live="polite"
-                >
-                  Showing 0 to 0 of 0 entries
-                </div>
-                <div
-                  class="dataTables_paginate paging_simple_numbers"
-                  id="myTable_paginate"
-                >
-                  <ul class="pagination">
-                    <li
-                      class="paginate_button page-item previous disabled"
-                      id="myTable_previous"
-                    >
-                      <a
-                        href="#"
-                        aria-controls="myTable"
-                        data-dt-idx="0"
-                        tabindex="0"
-                        class="page-link"
-                        >Previous</a
-                      >
-                    </li>
-                    <li
-                      class="paginate_button page-item next disabled"
-                      id="myTable_next"
-                    >
-                      <a
-                        href="#"
-                        aria-controls="myTable"
-                        data-dt-idx="1"
-                        tabindex="0"
-                        class="page-link"
-                        >Next</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="clear"></div>
-            </div>
-
-            <script>
-              $("#btnUpdateTag").click(function () {
-                debugger;
-                var temp = false;
-                var SALE_TAG = "";
-                $("#myTable")
-                  .DataTable()
-                  .rows()
-                  .every(function (rowIdx, tableLoop, rowLoop) {
-                    debugger;
-                    if ($(this.node()).find(".chk").prop("checked")) {
-                      temp = true;
-                    }
-                  });
-                if (temp) {
-                  try {
-                    var formData = new FormData();
-                    $("#myTable")
-                      .DataTable()
-                      .rows()
-                      .every(function (rowIdx, tableLoop, rowLoop) {
-                        debugger;
-                        if ($(this.node()).find(".chk").prop("checked")) {
-                          formData.append(
-                            "LEAD_ID[]",
-                            $(this.node()).find(".chk").val()
-                          );
-                        }
-                      });
-                    formData.append("TAGID", SALE_TAG);
-
-                    var href = $("#btnAddLead").attr("data-add-url");
-                    $.ajax({
-                      type: "POST",
-                      async: false,
-                      url: "/SalesManageLead/SaveLeadTag",
-                      processData: false, // Don't process the files
-                      contentType: false,
-                      data: formData,
-                      success: function (response) {
-                        if (response == "1") {
-                          $("#divToastmsg").text("Tag Updated successfully!");
-                          const toastLiveExample =
-                            document.getElementById("liveToast");
-                          const toast = new bootstrap.Toast(toastLiveExample);
-                          toast.show();
-                          $(".btnG").click();
-                          populateDetailsDiv1();
-                        } else {
-                          const toastLiveExample =
-                            document.getElementById("liveToasterror");
-                          const toast = new bootstrap.Toast(toastLiveExample);
-                          toast.show();
-                          $("#divToastErrormsg").text(
-                            "Some error occured. Please try later"
-                          );
-                        }
-                      },
-                    });
-                  } catch (exc) {}
-                } else {
-                  alert("Please select atleast one record.");
-                }
-              });
-              $(document).ready(function () {
-                var dataTable = $(".table").DataTable({
-                  sDom: 'rt<"nippon-b"flip>',
-                  searching: true,
-                  bLengthChange: false,
-                  scrollCollapse: false,
-                  scrollY: "380px",
-                  scrollX: true,
-                  ordering: true,
-                  info: true,
-                  autoWidth: true,
-                  dom: '<"#dtTop"lf>t<"#dtBottom"ip><"clear">',
-                  bDestroy: true,
-                  //   rowReorder: {
-                  //     selector: 'tr'
-                  //   }
-                });
-              });
-              $("#btnDeleteLeads").click(function () {
-                var temp = false;
-
-                $("#myTable")
-                  .DataTable()
-                  .rows()
-                  .every(function (rowIdx, tableLoop, rowLoop) {
-                    debugger;
-                    if ($(this.node()).find(".chk").prop("checked")) {
-                      temp = true;
-                    }
-                  });
-                if (temp) {
-                  $("#NotesModel").modal("show");
-                } else {
-                  alert("Please select atleast one lead.");
-                }
-              });
-              $("#btnSendEmailLeads").click(function () {
-                var temp = false;
-                var Leads = "";
-                $("#hdfLeadId").val("");
-                $("#myTable")
-                  .DataTable()
-                  .rows()
-                  .every(function (rowIdx, tableLoop, rowLoop) {
-                    debugger;
-                    if ($(this.node()).find(".chk").prop("checked")) {
-                      temp = true;
-                      Leads = Leads + $(this.node()).find(".chk").val() + ",";
-                    }
-                  });
-                if (temp) {
-                  $("#txtToEmail").val(Leads);
-                  $("#hdfLeadId").val("");
-                } else {
-                  alert("Please select atleast one lead.");
-                }
-              });
-              $("#btnOwnerLeads").click(function () {
-                var temp = false;
-
-                $("#myTable")
-                  .DataTable()
-                  .rows()
-                  .every(function (rowIdx, tableLoop, rowLoop) {
-                    debugger;
-                    if ($(this.node()).find(".chk").prop("checked")) {
-                      temp = true;
-                    }
-                  });
-                if (temp) {
-                  $("#ChangeLeadOwner").modal("show");
-                } else {
-                  alert("Please select atleast one lead.");
-                }
-              });
-              $("#btnAssignLeads").click(function () {
-                var temp = false;
-
-                $("#myTable")
-                  .DataTable()
-                  .rows()
-                  .every(function (rowIdx, tableLoop, rowLoop) {
-                    debugger;
-                    if ($(this.node()).find(".chk").prop("checked")) {
-                      temp = true;
-                    }
-                  });
-                if (temp) {
-                  $("#ChangeLeadAssignTo").modal("show");
-                } else {
-                  alert("Please select atleast one lead.");
-                }
-              });
-              $("#btnChangeState").click(function () {
-                var temp = false;
-
-                $("#myTable")
-                  .DataTable()
-                  .rows()
-                  .every(function (rowIdx, tableLoop, rowLoop) {
-                    debugger;
-                    if ($(this.node()).find(".chk").prop("checked")) {
-                      temp = true;
-                    }
-                  });
-                if (temp) {
-                  $("#ChangeStateModel").modal("show");
-                } else {
-                  alert("Please select atleast one lead.");
-                }
-              });
-            </script>
-          </div>
-        </div>
-      </div>
-      <!-- Pagination -->
-      <div class="d-flex justify-content-between align-items-center mt-3">
-        <div>Showing 1 to 2 of (18 Entries)</div>
-        <nav aria-label="Page navigation">
-          <ul class="pagination pagination-sm">
-            <li class="page-item">
-              <a class="page-link" href="#">Previous</a>
-            </li>
-            <li class="page-item active">
-              <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-          </ul>
-        </nav>
-      </div>
+      .btn {
+        font-size: 12px;
+        padding: 4px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <div class="table-responsive">
+      <table class="table text-nowrap">
+        <thead>
+          <tr>
+            <th>Customer Name</th>
+            <th>PO No.</th>
+            <th>Date</th>
+            <th>Validity</th>
+            <th>Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Sample data rows -->
+          <tr>
+            <td>Indosalan</td>
+            <td>20240828/MPO000001</td>
+            <td>8/28/2024</td>
+            <td>8/28/2024</td>
+            <td>22,800.00</td>
+            <td>
+              <button class="btn btn-download btn-sm">Download</button>
+              <button class="btn btn-dispatch btn-sm">Dispatch</button>
+              <button class="btn btn-asn btn-sm">ASN</button>
+            </td>
+          </tr>
+          <!-- Duplicate rows for demonstration -->
+          <tr>
+            <td>Indosalan</td>
+            <td>20240828/MPO000001</td>
+            <td>8/28/2024</td>
+            <td>8/28/2024</td>
+            <td>22,800.00</td>
+            <td>
+              <button class="btn btn-download btn-sm">Download</button>
+              <button class="btn btn-dispatch btn-sm">Dispatch</button>
+              <button class="btn btn-asn btn-sm">ASN</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Indosalan</td>
+            <td>20240828/MPO000001</td>
+            <td>8/28/2024</td>
+            <td>8/28/2024</td>
+            <td>22,800.00</td>
+            <td>
+              <button class="btn btn-download btn-sm">Download</button>
+              <button class="btn btn-dispatch btn-sm">Dispatch</button>
+              <button class="btn btn-asn btn-sm">ASN</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+
+    <!-- Pagination -->
+    <nav>
+      <ul class="pagination justify-content-end">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item active">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
