@@ -121,7 +121,7 @@ function searchPoNumber(event) {
     // (Optional) Render the table dynamically or redirect
     // renderTable(formData); // Uncomment if table rendering is on the same page
     window.location.href =
-      "/SupplierPortal/Dashboard/DashboardSearchRes/SearchRes.html"; // Uncomment if navigation to another page is required
+      "/BuyerPortal/Dashboard/DashboardSearchRes/SearchRes.html"; // Uncomment if navigation to another page is required
   }
   
   function renderTable(data) {
