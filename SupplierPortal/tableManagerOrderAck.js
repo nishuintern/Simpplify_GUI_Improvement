@@ -214,14 +214,14 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
                 .map((header) => {
                   if (header.label === "Status" || header.label === "Action") {
                     return `<td>
-                    <div class="btn-group flex-wrap act-btn">
+                    <div class="btn-group">
                     ${buttonConfigs
                     .map(
                       (config) => `
                       <button
                       class='${
                         config.class
-                        } text-white btn btn-sm btn-lg btn-md'
+                        } text-white'
                         onclick='${config.onClick}(${row[header.value]})'
                         style='background-color: ${
                           config.backgroundColor

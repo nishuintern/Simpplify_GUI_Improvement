@@ -3,15 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="TableManager.css" /> -->
+    <link rel="stylesheet" href="/SupplierPortal/TableManager.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <link rel="stylesheet" href="../nippon.css" />
+    <link rel="stylesheet" href="/nippon.css" />
     <!-- Icon Css -->
     <link
       rel="stylesheet"
@@ -34,16 +33,9 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap"
       rel="stylesheet"
     />
-    <!-- <link rel="stylesheet" href="style.css" /> -->
-    <!-- <link rel="stylesheet" href="/css/main.min.css" /> -->
     <title>Simplify</title>
-    <style>
-      body {
-        overflow-x: hidden;
-      }
-    </style>
   </head>
-  <body>
+  <body style="background-color: white">
     <div
       class="sidebar"
       style="width: 64px; z-index: 1002; background-color: #141d38"
@@ -74,14 +66,14 @@
         </a>
       </div>
       <div id="secMainMenu" data-refresh-url="/UserMenu/_Tree">
-        <ul class="nav compact" style="margin-top: 0px; margin-left: -6px;">
+        <ul class="nav compact" style="margin-top: 0px; margin-left: -6px">
           <li
             class="nav-item dropend sub-menu"
             style="margin-left: -11px; height: 40px"
           >
             <a
               class="nav-link active"
-              href="/BuyerPortal/index.html"
+              href="/SupplierPortal/index.html"
               id="navbarDropdown"
               role="button"
               aria-expanded="false"
@@ -96,13 +88,16 @@
           >
             <a
               class="nav-link dropdown-toggle"
-              href="/BuyerPortal/Graphical Representation/Dashboard.html"
+              href="/SupplierPortal/OrderManagement/OrderDispatch.html"
               id="navbarDropdown"
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <img src="/icons/Vector (2).svg" alt="Graphical Representation" />
+              <img
+                src="/icons/icon-park-outline_transaction-order.svg"
+                alt="order"
+              />
             </a>
             <ul
               class="dropdown-menu"
@@ -111,7 +106,7 @@
               style="height: 300px; overflow-y: scroll"
             >
               <li>
-                <h5>Graphical Representation</h5>
+                <h5>Order Management</h5>
               </li>
               <li>
                 <hr class="dropdown-divider" />
@@ -119,20 +114,20 @@
               <li>
                 <a
                   class="dropdown-item"
-                  href="/BuyerPortal/Graphical Representation/Dashboard.html"
+                  href="/SupplierPortal/OrderManagement/OrderDispatch.html"
                 >
-                  <span>Dashboard</span>
+                  <span> Order Dispatch </span>
                 </a>
               </li>
               <li>
                 <a
                   class="dropdown-item"
-                  href="/BuyerPortal/Graphical Representation/NewDashboard.html"
+                  href="/SupplierPortal/OrderManagement/OrderAck.html"
                 >
-                  <span>New Dashboard</span>
+                  <span> Order Acknowment </span>
                 </a>
               </li>
-              <!-- <li>
+              <li>
                 <a
                   class="dropdown-item"
                   href="/SupplierPortal/OrderManagement/Invoice.html"
@@ -187,7 +182,7 @@
                 >
                   <span> My Invoices </span>
                 </a>
-              </li> -->
+              </li>
             </ul>
           </li>
           <li
@@ -196,14 +191,14 @@
           >
             <a
               class="nav-link dropdown-toggle"
-              href="/BuyerPortal/Request Master/RequestMaster.html"
+              href="/SupplierPortal/Quotation/QuotationDetails.html"
               id="navbardropdown"
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
               <!-- <i class="icon icon-ic_fluent_launcher_settings_20_regular"></i> -->
-              <img src="/icons/carbon_request-quote.svg" alt="Request Master" />
+              <img src="/icons/Checkout.svg" alt="checkout" />
             </a>
             <ul
               class="dropdown-menu"
@@ -212,7 +207,7 @@
               style="height: 300px; overflow-y: scroll"
             >
               <li>
-                <h5>Request Master</h5>
+                <h5>Quotation Details</h5>
               </li>
               <li>
                 <hr class="dropdown-divider" />
@@ -220,9 +215,9 @@
               <li>
                 <a
                   class="dropdown-item"
-                  href="/BuyerPortal/Request Master/RequestMaster.html"
+                  href="/SupplierPortal/Quotation/QuotationDetails.html"
                 >
-                  <span> Request Master </span>
+                  <span> Quotation Details </span>
                 </a>
               </li>
               <!-- <li>
@@ -247,14 +242,14 @@
           >
             <a
               class="nav-link dropdown-toggle"
-              href="/BuyerPortal/Project Manager/ProjectManager.html"
+              href="/SupplierPortal/ReverseAuction/ReverseAuction.html"
               id="navbarDropdown"
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
               <!-- <i class="icon icon-ic_fluent_task_list_add_24_regular"></i> -->
-              <img src="/icons/si_projects-line.svg" alt="Project Manager" />
+              <img src="/icons/Sell.svg" alt="sell" />
             </a>
             <ul
               class="dropdown-menu"
@@ -263,7 +258,7 @@
               style="height: 300px; overflow-y: scroll"
             >
               <li>
-                <h5>Project Manager</h5>
+                <h5>Reverse Auction</h5>
               </li>
               <li>
                 <hr class="dropdown-divider" />
@@ -271,9 +266,9 @@
               <li>
                 <a
                   class="dropdown-item"
-                  href="/BuyerPortal/Project Manager/ProjectManager.html"
+                  href="/SupplierPortal/ReverseAuction/ReverseAuction.html"
                 >
-                  <span>Project Manager</span>
+                  <span> Reverse Auction </span>
                 </a>
               </li>
               <!-- <li>
@@ -312,244 +307,14 @@
           >
             <a
               class="nav-link dropdown-toggle"
-              href="/BuyerPortal/Invoice/InvoiceDashboard.html"
+              href="/SupplierPortal/AuctionEngine/AuctionEngine.html"
               id="navbarDropdown"
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
               <!-- <i class="icon icon-ic_fluent_contact_card_24_regular"></i> -->
-              <img
-                src="/icons/icon-park-outline_transaction-order.svg"
-                alt="service"
-              />
-            </a>
-            <ul
-              class="dropdown-menu"
-              aria-labelledby="navbarDropdown"
-              id="newSetting"
-              style="height: 300px; overflow-y: scroll"
-            >
-              <li>
-                <h5>Invoice</h5>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/BuyerPortal/Invoice/InvoiceDashboard.html"
-                >
-                  <span> Invoice Dashboard</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/BuyerPortal/Invoice/ASNDetails.html"
-                >
-                  <span>ASN Details</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/BuyerPortal/Invoice/NewtonDocumentAI.html"
-                >
-                  <span> AI Extraction</span>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li
-            class="nav-item dropend sub-menu"
-            style="margin-top: -6px; margin-left: -11px"
-          >
-            <a
-              class="nav-link dropdown-toggle"
-              href="/BuyerPortal/Workflow Manager/MyWorkFlow.html"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <!-- <i class="icon icon-ic_fluent_handshake_24_regular"></i> -->
-              <img src="/icons/arcticons_workflowy.svg" alt="Invite" />
-            </a>
-            <ul
-              class="dropdown-menu"
-              aria-labelledby="navbarDropdown"
-              id="newSetting"
-              style="height: 300px; overflow-y: scroll"
-            >
-              <li>
-                <h5>Work Flow Manager</h5>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/BuyerPortal/Workflow Manager/MyWorkFlow.html"
-                >
-                  <span> My Work Flow </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/BuyerPortal/Workflow Manager/WorkFlowMaster.html"
-                >
-                  <span> Work Flow Manager </span>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li
-            class="nav-item dropend sub-menu"
-            style="margin-top: -6px; margin-left: -11px"
-          >
-            <a
-              class="nav-link dropdown-toggle"
-              href="/BuyerPortal/Purchase/EnquiryEntry.html"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <!-- <i class="icon icon-ic_fluent_contact_card_group_24_regular"></i> -->
-              <img src="/icons/bx_purchase-tag.svg" alt="Purchase" />
-            </a>
-            <ul
-              class="dropdown-menu"
-              aria-labelledby="navbarDropdown"
-              id="newSetting"
-              style="height: 300px; overflow-y: scroll"
-            >
-              <li>
-                <h5>Purchase</h5>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/BuyerPortal/Purchase/EnquiryEntry.html"
-                >
-                  <span> Enquiry Entry </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/BuyerPortal/Purchase/QuotationMaster.html"
-                >
-                  <span>Quotation Master</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/BuyerPortal/Purchase/PurchaseRequistionEntry.html"
-                >
-                  <span> Purchase Requisition Entry </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/BuyerPortal/Purchase/NewOrderPurchase.html"
-                >
-                  <span> New Purchase Order </span>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li
-            class="nav-item dropend sub-menu"
-            style="margin-top: -6px; margin-left: -11px"
-          >
-            <a
-              class="nav-link dropdown-toggle"
-              href="/BuyerPortal/Comparative/Comparative.html"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <!-- <i class="icon icon-ic_fluent_chart_multiple_24_regular"></i> -->
-              <img src="/icons/lsicon_tree-outline.svg" alt="Comparative" />
-            </a>
-            <ul
-              class="dropdown-menu"
-              aria-labelledby="navbarDropdown"
-              id="newSetting"
-              style="height: 300px; overflow-y: scroll"
-            >
-              <li>
-                <h5>Comparative</h5>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/BuyerPortal/Comparative/Comparative.html"
-                >
-                  <span>Comparative</span>
-                </a>
-              </li>
-              <!-- <li>
-                <a
-                  class="dropdown-item"
-                  href="/SupplierPortal/Setting/UserMaster.html"
-                >
-                  <span> User Master </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/SupplierPortal/Setting/MenuMapping.html"
-                >
-                  <span> Menu Mapping </span>
-                </a>
-              </li> -->
-              <li>
-                <!-- <a class="dropdown-item" href="/CalendarView">
-                              <span>
-                                  Calendar View
-                              </span>
-                          </a>
-                      </li>
-                      <li>
-                          <a class="dropdown-item" href="/TeamDashboard">
-                              <span>
-                                  Team Dashboards
-                              </span>
-                          </a>
-                      </li> -->
-              </li>
-            </ul>
-          </li>
-          <li
-            class="nav-item dropend sub-menu"
-            style="margin-top: -6px; margin-left: -11px"
-          >
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <!-- <i class="icon icon-ic_fluent_communication_person_24_regular"></i> -->
-              <img src="/icons/Service.svg" alt="AuctionEngine" />
+              <img src="/icons/Service.svg" alt="service" />
             </a>
             <ul
               class="dropdown-menu"
@@ -566,12 +331,177 @@
               <li>
                 <a
                   class="dropdown-item"
-                  href="/BuyerPortal/Auction Engine/AuctionEngine.html"
+                  href="/SupplierPortal/AuctionEngine/AuctionEngine.html"
                 >
                   <span> Auction Engine </span>
                 </a>
               </li>
+            </ul>
+          </li>
+          <li
+            class="nav-item dropend sub-menu"
+            style="margin-top: -6px; margin-left: -11px"
+          >
+            <a
+              class="nav-link dropdown-toggle"
+              href="/SupplierPortal/RFP/RFP.html"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <!-- <i class="icon icon-ic_fluent_handshake_24_regular"></i> -->
+              <img src="/icons/Invite.svg" alt="Invite" />
+            </a>
+            <ul
+              class="dropdown-menu"
+              aria-labelledby="navbarDropdown"
+              id="newSetting"
+              style="height: 300px; overflow-y: scroll"
+            >
+              <li>
+                <h5>Request For proposal</h5>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item" href="/SupplierPortal/RFP/RFP.html">
+                  <span> Request For proposal </span>
+                </a>
+              </li>
               <!-- <li>
+                          <a class="dropdown-item" href="/SalesQuotation">
+                              <span>
+                                  Quotations
+                              </span>
+                          </a>
+                      </li> -->
+            </ul>
+          </li>
+          <li
+            class="nav-item dropend sub-menu"
+            style="margin-top: -6px; margin-left: -11px"
+          >
+            <a
+              class="nav-link dropdown-toggle"
+              href="/SupplierPortal/TaskManager/TaskManager.html"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <!-- <i class="icon icon-ic_fluent_contact_card_group_24_regular"></i> -->
+              <img src="/icons/Task.svg" alt="task" />
+            </a>
+            <ul
+              class="dropdown-menu"
+              aria-labelledby="navbarDropdown"
+              id="newSetting"
+              style="height: 300px; overflow-y: scroll"
+            >
+              <li>
+                <h5>Task Manager</h5>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="/SupplierPortal/TaskManager/TaskManager.html"
+                >
+                  <span> Task Manager </span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li
+            class="nav-item dropend sub-menu"
+            style="margin-top: -6px; margin-left: -11px"
+          >
+            <a
+              class="nav-link dropdown-toggle"
+              href="/SupplierPortal/Setting/UserTenantMapping.html"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <!-- <i class="icon icon-ic_fluent_chart_multiple_24_regular"></i> -->
+              <img src="/icons/uil_setting.svg" alt="setting" />
+            </a>
+            <ul
+              class="dropdown-menu"
+              aria-labelledby="navbarDropdown"
+              id="newSetting"
+              style="height: 300px; overflow-y: scroll"
+            >
+              <li>
+                <h5>Setting</h5>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="/SupplierPortal/Setting/UserTenantMapping.html"
+                >
+                  <span> User Tenent And Mapping </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="/SupplierPortal/Setting/UserMaster.html"
+                >
+                  <span> User Master </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="/SupplierPortal/Setting/MenuMapping.html"
+                >
+                  <span> Menu Mapping </span>
+                </a>
+              </li>
+              <!-- <li>
+                          <a class="dropdown-item" href="/CalendarView">
+                              <span>
+                                  Calendar View
+                              </span>
+                          </a>
+                      </li>
+                      <li>
+                          <a class="dropdown-item" href="/TeamDashboard">
+                              <span>
+                                  Team Dashboards
+                              </span>
+                          </a>
+                      </li> -->
+            </ul>
+          </li>
+          <!-- <li class="nav-item dropend sub-menu" style="margin-top:-6px;margin-left:-11px">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="icon icon-ic_fluent_communication_person_24_regular"></i>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="newSetting" style="height:300px;overflow-y:scroll">
+              <li>
+                  <h5>Marketing</h5>
+              </li>
+              <li>
+                  <hr class="dropdown-divider">
+              </li>
+                      <li>
+                          <a class="dropdown-item" href="/LandingPages">
+                              <span>
+                                  Landing Pages
+                              </span>
+                          </a>
+                      </li>
+                      <li>
                           <a class="dropdown-item" href="/EmailCampaign">
                               <span>
                                   Email Campaigns
@@ -584,42 +514,28 @@
                                   Drip Campaigns
                               </span>
                           </a>
-                      </li> -->
-            </ul>
-          </li>
-          <li
-            class="nav-item dropend sub-menu"
-            style="margin-top: -6px; margin-left: -11px"
-          >
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <!-- <i class="icon icon-ic_fluent_communication_person_24_regular"></i> -->
-              <img src="/icons/Invite.svg" alt="invite" />
-            </a>
-            <ul
-              class="dropdown-menu"
-              aria-labelledby="navbarDropdown"
-              id="newSetting"
-              style="height: 300px; overflow-y: scroll"
-            >
+                      </li>
+          </ul>
+      </li>
+      <li class="nav-item dropend sub-menu" style="margin-top:-6px;margin-left:-11px">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="icon icon-ic_fluent_communication_person_24_regular"></i>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="newSetting" style="height:300px;overflow-y:scroll">
               <li>
-                <h5>RFP</h5>
+                  <h5>PJP</h5>
               </li>
               <li>
-                <hr class="dropdown-divider" />
+                  <hr class="dropdown-divider">
               </li>
-              <li>
-                <a class="dropdown-item" href="/BuyerPortal/RFP/RFP.html">
-                  <span> RFP </span>
-                </a>
-              </li>
-              <!-- <li>
+                      <li>
+                          <a class="dropdown-item" href="/SecondarySales">
+                              <span>
+                                  Beat Manager
+                              </span>
+                          </a>
+                      </li>
+                      <li>
                           <a class="dropdown-item" href="/MarketVisitPlan">
                               <span>
                                   PJP Manager
@@ -639,45 +555,28 @@
                                   Daily Call Report
                               </span>
                           </a>
-                      </li> -->
-            </ul>
-          </li>
-          <li
-            class="nav-item dropend sub-menu"
-            style="margin-top: -6px; margin-left: -11px"
-          >
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <!-- <i class="icon icon-ic_fluent_contact_card_24_regular"></i> -->
-              <img src="/icons/Task.svg" alt="Customer" />
-            </a>
-            <ul
-              class="dropdown-menu"
-              aria-labelledby="navbarDropdown"
-              id="newSetting"
-              style="height: 300px; overflow-y: scroll"
-            >
+                      </li>
+          </ul>
+      </li>
+      <li class="nav-item dropend sub-menu" style="margin-top:-6px;margin-left:-11px">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="icon icon-ic_fluent_contact_card_24_regular"></i>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="newSetting" style="height:300px;overflow-y:scroll">
               <li>
-                <h5>Task Manager</h5>
+                  <h5>Partner Management</h5>
               </li>
               <li>
-                <hr class="dropdown-divider" />
+                  <hr class="dropdown-divider">
               </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/BuyerPortal/Task Master/TaskManager.html"
-                >
-                  <span> Task Manager </span>
-                </a>
-              </li>
-              <!-- <li>
+                      <li>
+                          <a class="dropdown-item" href="/CPMMasterChannelPartner">
+                              <span>
+                                  Partner Management
+                              </span>
+                          </a>
+                      </li>
+                      <li>
                           <a class="dropdown-item" href="/CPMMasterOnboardingPartner">
                               <span>
                                   Onboarding Partners
@@ -690,54 +589,34 @@
                                   Onboard Mapping
                               </span>
                           </a>
-                      </li> -->
-            </ul>
-          </li>
-          <li
-            class="nav-item dropend sub-menu"
-            style="margin-top: -6px; margin-left: -11px"
-          >
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <!-- <i class="icon icon-ic_fluent_task_list_square_ltr_24_regular"></i> -->
-              <img
-                src="/icons/lsicon_contract-outline.svg"
-                alt="ContractManagement"
-              />
-            </a>
-            <ul
-              class="dropdown-menu"
-              aria-labelledby="navbarDropdown"
-              id="newSetting"
-              style="height: 300px; overflow-y: scroll"
-            >
+                      </li>
+          </ul>
+      </li>
+      <li class="nav-item dropend sub-menu" style="margin-top:-6px;margin-left:-11px">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="icon icon-ic_fluent_task_list_square_ltr_24_regular"></i>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="newSetting" style="height:300px;overflow-y:scroll">
               <li>
-                <h5>Contract Management</h5>
+                  <h5>Order Master</h5>
               </li>
               <li>
-                <hr class="dropdown-divider" />
+                  <hr class="dropdown-divider">
               </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/BuyerPortal/Contract Management/ContractManagement.html"
-                >
-                  <span> Contract Management </span>
-                </a>
-              </li>
-            </ul>
-          </li>
+                      <li>
+                          <a class="dropdown-item" href="/SpcTransactionSaleOrder">
+                              <span>
+                                  Order
+                              </span>
+                          </a>
+                      </li>
+          </ul>
+      </li> -->
         </ul>
       </div>
     </div>
 
-    <div class="main-container" style="background-color: #ffffff">
+    <div class="main-container">
       <header>
         <div class="container-fluid">
           <div
@@ -1056,7 +935,7 @@
                   <li>
                     <a
                       class="dropdown-item"
-                      href="/BuyerPortal/Dashboard/User/PartyProfile.html"
+                      href="/SupplierPortal/Dashboard/User/PartyProfile.html"
                     >
                       <!-- <i class="icon"></i>  -->
                       <span>Profile</span></a
@@ -1070,7 +949,7 @@
                   <li>
                     <a
                       class="dropdown-item"
-                      href="/BuyerPortal/Dashboard/User/UserAlertMapping.html"
+                      href="/SupplierPortal/Dashboard/User/UserAlertMapping.html"
                     >
                       <!-- <i class="icon icon-ic_fluent_calendar_mail_16_regular"></i> -->
                       <span>User Alert Mapping</span></a
@@ -1080,7 +959,7 @@
                   <li>
                     <a
                       class="dropdown-item"
-                      href="/BuyerPortal/Dashboard/User/AlertConfig.html"
+                      href="/SupplierPortal/Dashboard/User/AlertConfig.html"
                     >
                       <!-- <i class="icon icon-ic_fluent_mail_add_16_regular"></i>  -->
                       <span>Alert Configuration</span></a
@@ -1089,7 +968,7 @@
                   <li>
                     <a
                       class="dropdown-item"
-                      href="/BuyerPortal/Dashboard/User/SchedularConfig.html"
+                      href="/SupplierPortal/Dashboard/User/SchedularConfig.html"
                     >
                       <!-- <i class="icon icon-ic_fluent_target_arrow_20_regular"></i> -->
                       <span>Secheduler Configuration</span></a
@@ -1104,7 +983,7 @@
                   </li>
                   <li>
                     <a
-                      href="/BuyerPortal/loginForm/Login.html"
+                      href="/SupplierPortal/loginForm/Login.html"
                       class="dropdown-item"
                       ><i class="icon icon-ic_fluent_arrow_exit_20_regular"></i>
                       <span>Logout</span></a
@@ -1120,20 +999,18 @@
       <!-- End of Header -->
 
       <!-- Mid header -->
-      <div
-        class="mid-header"
-        style="
-          background-color: #eeeeee;
-          font-family: Roboto;
-          font-weight: 700;
-          font-size: 22px;
-          line-height: 33px;
-          letter-spacing: 0%;
-        "
-      >
+      <div class="mid-header" style="background-color: #eeeeee">
         <div class="row container-fluid">
           <div class="d-flex justify-content-between align-items-center">
-            <h2>Dashboard</h2>
+            <div class="d-flex align-items-center">
+              <a
+                href="/SupplierPortal/index.html"
+                class="me-2"
+              >
+                <img src="/icons/Arrow back ios (2).svg" alt="back" />
+              </a>
+              <h2>Purchase Order Report</h2>
+            </div>
             <div class="d-flex justify-content-end">
               <a href="">
                 <img src="/icons/Synchronize.svg" alt="sync" />
@@ -1142,199 +1019,51 @@
           </div>
         </div>
       </div>
-      <!-- end fof Mid header -->
-
-      <!-- Table view -->
-      <div class="row mt-3 ms-2 me-2">
-        <section
-          class="col-md-12 col-lg-5 col-sm-12 me-6 mb-4 search-po-card container-fluid"
-          style="border: 1px solid #babed8"
-        >
-          <form onsubmit="searchPoNumber(event)">
-            <div class="search-po">
-              <h4 class="pt-2 ps-1 m-sm-4 card-heading">
-                Search PO Number Details
-              </h4>
-              <hr />
-              <label
-                for="customer-input"
-                class="d-lg-flex d-sm-block d-md-block"
-              >
-                <span
-                  class="ms-sm-4 ms-lg-1 me-lg-1 ms-md-1 card-inside-text label-text d-lg-flex align-items-center"
-                  >Customer</span
-                >
-                <input
-                  id="customer-input"
-                  class="ms-sm-4 px-sm-5 py-sm-1 ms-lg-3 px-lg-5 py-lg-1 py-sm-1 customer-input ms-md-3"
-                  list="customer-list"
-                  placeholder="Select or type customer"
-                />
-                <datalist id="customer-list">
-                  <option value="User 1"></option>
-                  <option value="User 2"></option>
-                  <option value="User 3"></option>
-                </datalist>
-              </label>
-              <hr />
-              <label
-                for="searchBy"
-                class="d-lg-flex d-sm-flex d-md-flex justify-content-sm-start"
-              >
-                <span
-                  class="ms-sm-2 card-inside-text label-text d-lg-flex d-md-flex d-sm-flex align-items-center"
-                  >Search By</span
-                >
-                <span class="ms-sm-5 ms-lg-4">
-                  <input
-                    type="radio"
-                    id="po-no"
-                    name="searchBy"
-                    value="po-no"
-                    checked
-                    style="accent-color: #ff5733"
-                  />
-                  <label for="po-no" class="card-inside-text label-text"
-                    >PO Number</label
-                  >
-                </span>
-                <span class="ms-sm-5 ms-lg-4">
-                  <input
-                    type="radio"
-                    id="date"
-                    name="searchBy"
-                    value="date"
-                    style="accent-color: #ff5733"
-                  />
-                  <label for="date" class="card-inside-text label-text"
-                    >Date</label
-                  >
-                </span>
-              </label>
-              <hr />
-              <div
-                id="dynamic-input"
-                class="ms-sm-1 ms-md-2 me-lg-auto d-flex flex-column ms-lg-2"
-              >
-                <label
-                  for="po-search"
-                  class="d-lg-flex d-sm-block d-md-block"
-                >
-                  <span
-                    class="ms-sm-4 ms-lg-1 me-lg-1 ms-md-1 card-inside-text label-text d-lg-flex align-items-center"
-                    >PO Number</span
-                  >
-                  <input
-                    id="po-search"
-                    class="ms-sm-4 px-sm-5 py-sm-1 ms-lg-3 px-lg-5 py-lg-1 py-sm-1 customer-input ms-md-3"
-                    list="po-number-list"
-                    placeholder="Select or type Po Number"
-                  />
-                  <datalist id="po-number-list">
-                    <option value="PO-001"></option>
-                    <option value="PO-002"></option>
-                    <option value="PO-003"></option>
-                  </datalist>
-                </label>
-              </div>
-              <div
-                id="error-message"
-                style="color: red; font-weight: bold"
-              ></div>
-              <hr />
-              <div class="d-flex justify-content-end">
-                <button id="searchPoBtn" type="submit" class="search-btn">
-                  <span class="btn-search-text px-md-5 py-md-1"
-                    >Search</span
-                  >
-                </button>
-              </div>
-            </div>
-          </form>
-        </section>
-        <section class="col-md-12 col-sm-12 col-lg-6 mb-4 container-fluid" style="border: 1px solid #babed8;background-color: white;">
-          <form action="#">
-            <div class="search-po label-text">
-              <h4 class="p-2 card-heading">To Do List</h4>
-              <hr />
-              <div
-                id="todo-1"
-                class="table-responsive overflow-auto custom-scrollbar"
-              ></div>
-            </div>
-          </form>
-        </section>
-      </div>
-      <div class="row mt-3 ms-2 container-fluid">
-        <!-- <section
-          class="col-sm-12 col-md-12 col-lg-5 mt-2 me-5 mb-4 container-fluid"
-        >
-          <div class="search-po">
-            <h4 class="p-2 card-heading">To Do List</h4>
-            <hr />
-
-            <div
-              id="todo-2"
-              class="table-responsive overflow-auto custom-scrollbar"
-            ></div>
-          </div>
-        </section> -->
-      </div>
-      <div class="row mt-3 ms-2 container-fluid" style="background-color: white;">
-        <section class="col-sm-12 col-md-12 col-lg-5 mb-4 container-fluid" style="border: 1px solid #babed8;">
-          <div class="search-po">
-            <h4 class="p-2 card-heading">Buyer Order Status</h4>
-            <hr />
-            <div
-              id="por"
-              class="table-responsive overflow-auto custom-scrollbar"
-            ></div>
-          </div>
-        </section>
-        <section class="col-sm-12 col-md-12 col-lg-6 mb-4 container-fluid" style="border: 1px solid #babed8">
-          <form action="#">
-            <div class="search-po">
-              <h4 class="p-2 card-heading">Invoice Report</h4>
-              <hr />
-              <div
-                id="buyer-order"
-                class="table-responsive overflow-auto custom-scrollbar"
-              ></div>
-            </div>
-          </form>
-        </section>
-        <!-- <section
-          class="col-sm-12 col-md-12 col-lg-6 ms-2 mb-5 container-fluid"
-        >
-          <form action="#">
-            <div class="search-po">
-              <h4 class="p-2 card-heading">Task Report</h4>
-              <hr />
-              <div
-                id="tsk"
-                class="table-responsive overflow-auto custom-scrollbar"
-              ></div>
-            </div>
-          </form>
-        </section> -->
+      <div class="profile-container">
+        <div id="tableSection" class="table-responsive">
+          <table class="table">
+            <thead
+              class="table-secondary"
+              style="background-color: #eceff3"
+            >
+              <tr>
+                <th>PO Number</th>
+                <th>Location Code</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody id="mainTableBody"></tbody>
+          </table>
+        </div>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/SupplierPortal/index.js"></script>
-    <script src="tableManager.js"></script>
-    <script src="loadContent.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="/SupplierPortal/loadContent.js"></script>
+    <script src="../OrderManagement/OrderDispatch.js"></script>
+    <script src="../tableManager2.js"></script>
+    <script src="../index.js"></script>
+    <script src="/SupplierPortal/Dashboard/DashboardSearchRes/SearchRes.js"></script>
     <script>
-      initializeTableManager("tableConfigs.json");
+      initializeTableManager("../tableConfigs.json");
+    </script>
+     <script>
+      $(document).ready(function () {
+  $('.mobile-nav').on('click', function () {
+      $('.sidebar').toggleClass('show');
+  });
+  $('.mobile-close').on('click', function () {
+      $('.sidebar').toggleClass('show');
+  });
+})
     </script>
     <script>
-      $(".mobile-nav").on("click", function (event) {
-        $(".sidebar").toggleClass("show");
-      });
-      $(".mobile-close").on("click", function (event) {
-        $(".sidebar").toggleClass("show");
-      });
+      function punchBid() {
+        alert("Bid Punch Sucessfully");
+      }
     </script>
   </body>
 </html>

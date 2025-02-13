@@ -209,8 +209,8 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
               `<tr>${headers
                 .map((header) => {
                   if (header.label === "Status" || header.label === "Action") {
-                    return `<td>
-                    <div  class="btn-group flex-wrap act-btn"
+                    return `<td class='text-end'>
+                    <div  class="btn-group"
                   role="group"
                   aria-label="Basic example">
                       ${buttonConfigs
@@ -219,7 +219,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
                             <button
                               class='${
                                 config.class
-                              } text-white btn btn-sm btn-lg btn-md px-lg-2'
+                              } text-white border-0'
                               onclick='${config.onClick}(${row[header.value]})'
                               style='background-color: ${
                                 config.backgroundColor
