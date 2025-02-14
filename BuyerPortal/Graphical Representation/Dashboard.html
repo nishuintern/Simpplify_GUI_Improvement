@@ -1302,90 +1302,33 @@
           </div>
         </section> -->
       </div>
-      <div class="row mt-3 ms-2 container-fluid" style="background-color: white;">
-        <section class="col-sm-12 col-md-12 col-lg-5 mb-4 container-fluid" style="border: 1px solid #babed8;">
-          <div class="search-po">
-            <h4 class="p-2 card-heading">Buyer Order Status</h4>
-            <hr />
-            <div id="por" class="table-responsive overflow-auto custom-scrollbar"><div class="d-flex justify-content-between align-items-center m-2">
-              <div class="page-size-container d-flex align-items-center mobile-page">
-                <label for="por-pageSize" class="me-1">Page Size:</label>
-                <select id="por-pageSize" class="px-3 py-1">
-                  <option value="5" selected="">5</option><option value="10">10</option><option value="15">15</option>
-                </select>
-              </div>
-              <div class="search-div d-flex mobile-search">
-                <label for="por-search" class="mt-2 me-2 py-1 d-flex">Search:</label>
-                <input type="search" id="por-search" placeholder="Search...">
-              </div>
-            </div><div class="table-responsive-lg table-responsive-md table-responsive-sm custom-scrollbar"><table class="table text-nowrap"><thead class="table table-secondary p-3"><tr><th class="sortable-header">Supplier Name</th><th class="sortable-header">All Po</th><th class="sortable-header">New</th><th class="sortable-header">Changed</th><th class="sortable-header">Confirmed</th><th class="sortable-header">In-Progress</th><th class="sortable-header">Invoice</th></tr></thead><tbody class="table text-wrap" id="por-tbody"><tr class=""><td>Indoasian</td><td>29</td><td>9</td><td>0</td><td>10</td><td>0</td><td>0</td></tr></tbody></table></div><div class="d-flex justify-content-between align-items-center m-2">
-              <div id="por-summary" class="text-muted">Showing 1 to 1 of (1 Entries)</div>
-              <nav>
-                <ul class="pagination" id="por-pagination">
-                  <li class="page-item disabled">
-                    <button class="page-link" onclick="changePage(0)">Previous</button>
-                  </li>
-                    <li class="page-item active">
-                      <button class="page-link" onclick="changePage(1)">1</button>
-                    </li>
-                  <li class="page-item disabled">
-                    <button class="page-link" onclick="changePage(2)">Next</button>
-                  </li>
-                </ul>
-              </nav>
-            </div></div>
-          </div>
-        </section>
-        <section class="col-sm-12 col-md-12 col-lg-6 mb-4 container-fluid" style="border: 1px solid #babed8">
-          <form action="#">
-            <div class="search-po">
-              <h4 class="p-2 card-heading">Invoice Report</h4>
-              <hr />
-              <div id="buyer-order" class="table-responsive overflow-auto custom-scrollbar"><div class="d-flex justify-content-between align-items-center m-2">
-                <div class="page-size-container d-flex align-items-center mobile-page">
-                  <label for="buyer-order-pageSize" class="me-1">Page Size:</label>
-                  <select id="buyer-order-pageSize" class="px-3 py-1">
-                    <option value="5" selected="">5</option><option value="10">10</option><option value="15">15</option>
-                  </select>
-                </div>
-                <div class="search-div d-flex mobile-search">
-                  <label for="buyer-order-search" class="mt-2 me-2 py-1 d-flex">Search:</label>
-                  <input type="search" id="buyer-order-search" placeholder="Search...">
-                </div>
-              </div><div class="table-responsive-lg table-responsive-md table-responsive-sm custom-scrollbar"><table class="table text-nowrap"><thead class="table table-secondary p-3"><tr><th class="sortable-header">Task ID</th><th class="sortable-header">Assign By</th><th class="sortable-header">Assign By User</th><th class="sortable-header">Assign To</th><th class="sortable-header">Assign To User</th><th class="sortable-header">Subject</th><th class="sortable-header">Start Date</th><th class="sortable-header">End Date</th><th class="sortable-header">Action</th></tr></thead><tbody class="table text-wrap" id="buyer-order-tbody"><tr class=""><td>20180604TSK000001</td><td>INDOASIAN</td><td>indoasian1</td><td>INDOASIAN</td><td></td><td>Invoice</td><td>6/4/2018 12:00:00 AM</td><td>6/7/2018 12:00:00 AM</td><td>ACTIVE</td></tr><tr class=""><td>20180604TSK000001</td><td>INDOASIAN</td><td>indoasian1</td><td>INDOASIAN</td><td></td><td>Invoice</td><td>6/4/2018 12:00:00 AM</td><td>6/7/2018 12:00:00 AM</td><td>ACTIVE</td></tr><tr class=""><td>20180604TSK000001</td><td>INDOASIAN</td><td>indoasian1</td><td>INDOASIAN</td><td></td><td>Invoice</td><td>6/4/2018 12:00:00 AM</td><td>6/7/2018 12:00:00 AM</td><td>ACTIVE</td></tr><tr class=""><td>20180604TSK000001</td><td>INDOASIAN</td><td>indoasian1</td><td>INDOASIAN</td><td></td><td>Invoice</td><td>6/4/2018 12:00:00 AM</td><td>6/7/2018 12:00:00 AM</td><td>ACTIVE</td></tr></tbody></table></div><div class="d-flex justify-content-between align-items-center m-2">
-                <div id="buyer-order-summary" class="text-muted">Showing 1 to 4 of (4 Entries)</div>
-                <nav>
-                  <ul class="pagination" id="buyer-order-pagination">
-                    <li class="page-item disabled">
-                      <button class="page-link" onclick="changePage(0)">Previous</button>
-                    </li>
-                      <li class="page-item active">
-                        <button class="page-link" onclick="changePage(1)">1</button>
-                      </li>
-                    <li class="page-item disabled">
-                      <button class="page-link" onclick="changePage(2)">Next</button>
-                    </li>
-                  </ul>
-                </nav>
-              </div></div>
-            </div>
-          </form>
-        </section>
-        <!-- <section
-          class="col-sm-12 col-md-12 col-lg-6 ms-2 mb-5 container-fluid"
-        >
-          <form action="#">
-            <div class="search-po">
-              <h4 class="p-2 card-heading">Task Report</h4>
-              <hr />
-              <div
-                id="tsk"
-                class="table-responsive overflow-auto custom-scrollbar"
-              ></div>
-            </div>
-          </form>
-        </section> -->
-      </div>
+      <div id="por" class="table-responsive overflow-auto custom-scrollbar"><div class="d-flex justify-content-between align-items-center m-2">
+        <div class="page-size-container d-flex align-items-center mobile-page">
+          <label for="por-pageSize" class="me-1">Page Size:</label>
+          <select id="por-pageSize" class="px-3 py-1">
+            <option value="5" selected="">5</option><option value="10">10</option><option value="15">15</option>
+          </select>
+        </div>
+        <div class="search-div d-flex mobile-search">
+          <label for="por-search" class="mt-2 me-2 py-1 d-flex">Search:</label>
+          <input type="search" id="por-search" placeholder="Search...">
+        </div>
+      </div><div class="table-responsive-lg table-responsive-md table-responsive-sm custom-scrollbar"><table class="table text-nowrap"><thead class="table table-secondary p-3"><tr><th class="sortable-header">Supplier Name</th><th class="sortable-header">All Po</th><th class="sortable-header">New</th><th class="sortable-header">Changed</th><th class="sortable-header">Confirmed</th><th class="sortable-header">In-Progress</th><th class="sortable-header">Invoice</th><th class="sortable-header">Failed</th></tr></thead><tbody class="table text-wrap" id="por-tbody"><tr class=""><td>14/67, MCD Flat Sector?20</td><td>29</td><td>9</td><td>0</td><td>10</td><td>0</td><td>0</td><td>0</td></tr></tbody></table></div><div class="d-flex justify-content-between align-items-center m-2">
+        <div id="por-summary" class="text-muted">Showing 1 to 1 of (1 Entries)</div>
+        <nav>
+          <ul class="pagination" id="por-pagination">
+            <li class="page-item disabled">
+              <button class="page-link" onclick="changePage(0)">Previous</button>
+            </li>
+              <li class="page-item active">
+                <button class="page-link" onclick="changePage(1)">1</button>
+              </li>
+            <li class="page-item disabled">
+              <button class="page-link" onclick="changePage(2)">Next</button>
+            </li>
+          </ul>
+        </nav>
+      </div></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

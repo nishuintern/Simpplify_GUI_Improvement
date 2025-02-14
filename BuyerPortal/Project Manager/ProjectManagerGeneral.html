@@ -1146,14 +1146,14 @@
         <div class="row container-fluid">
           <div class="d-flex justify-content-between align-items-center">
             <div class="d-flex">
-              <a href="/BuyerPortal/index.html">
+              <a href="/BuyerPortal/Project Manager/ProjectManager.html">
                 <img src="/icons/Arrow back ios (2).svg" alt="back">
               </a>
-              <h2>Project Manager</h2>
+              <h2>Project Manager General</h2>
             </div>
             <div class="d-flex justify-content-end">
-              <a href="/BuyerPortal/Project Manager/ProjectManagerGeneral.html" class="me-2">
-                <img src="/icons/formkit_add.svg" alt="">
+              <a href="" class="me-2">
+                <img src="/icons/save.svg" alt="save">
               </a>
               <a href="">
                 <img src="/icons/Synchronize.svg" alt="sync" />
@@ -1163,94 +1163,124 @@
         </div>
       </div>
       <!-- end fof Mid header -->
-
+<!-- Tabs -->
+ <div class="py-1" style="background-color: #EEEEEE;border: 1px solid #BABED8;">
+<ul class="list-unstyled d-flex gap-5 mt-2 ms-2">
+    <li>
+        <a href="#">General</a>
+    </li>
+    <li>
+        <a href="#">Notes</a>
+    </li>
+    <li>
+        <a href="#">Resources</a>
+    </li>
+    <li>
+        <a href="#">Activity</a>
+    </li>
+    <li>
+        <a href="#">Mile Stones</a>
+    </li>
+</ul>
+ </div>
       <!-- Table view -->
-      <div class="container-fluid mt-3">
-        <div>
-            <div>
-              <div class="row mb-3">
-                <div class="d-flex justify-content-between align-items-center m-2">
-                  <div class="page-size-container d-flex align-items-center">
-                    <label for="containerId-pageSize" class="me-1">Page Size:</label>
-                    <select id="containerId-pageSize" class="px-3 py-1">
-                      <option value="5" selected>5</option>
-                      <option value="10">10</option>
-                      <option value="20">20</option>
-                    </select>
-                  </div>
-                  <div class="search-div d-flex">
-                    <label for="containerId-search" class="mt-2 me-2 py-1 d-flex">Search:</label>
-                    <input type="search" id="containerId-search" placeholder="Search...">
-                  </div>
+      <div class="container mt-3">
+        <div class="form-container mb-3">
+            <h5 class="mb-3 p-2" style="border: 1px solid #ECEFF3; background: #ECEFF3;">General</h5>
+            <form>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="entityType" class="form-label">Entity Type*</label>
+                        <select id="entityType" class="form-select" disabled>
+                            <option>PROJECT</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="phone" class="form-label">Phone</label>
+                        <div class="d-flex">
+                            <input type="text" class="form-control me-2" placeholder="">
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="projectName" class="form-label">Project Name*</label>
+                        <input type="text" id="projectName" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="projectType" class="form-label">Project Type</label>
+                        <select id="projectType" class="form-select">
+                            <option>-SELECT-</option>
+                            <option>1</option>
+                            <option>L</option>
+                            <option>O</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="stage" class="form-label">Stage</label>
+                        <select id="stage" class="form-select">
+                            <option>-SELECT-</option>
+                            <option>I</option>
+                            <option>II</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="portfolio" class="form-label">Portfolio</label>
+                        <select id="portfolio" class="form-select">
+                            <option>-SELECT-</option>
+                            <option>Earth Copia Residential</option>
+                            <option>-SELECT-</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="department" class="form-label">Department</label>
+                        <select id="department" class="form-select">
+                            <option>-SELECT-</option>
+                            <option>Admin</option>
+                            <option>IT</option>
+                            <option>Logistics</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="mode" class="form-label">Mode</label>
+                        <select id="mode" class="form-select">
+                            <option>-SELECT-</option>
+                            <option>Live</option>
+                            <option>Simulate</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="startDate" class="form-label">Start Date</label>
+                        <input type="date" id="startDate" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="endDate" class="form-label">End Date</label>
+                        <input type="date" id="endDate" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" id="location" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="budget" class="form-label">Budget</label>
+                        <input type="number" id="budget" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="assignMore" class="form-label">Assign More</label>
+                        <input type="text" id="assignMore" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="status" class="form-label">Status</label>
+                        <select id="status" class="form-select">
+                            <option>ACTIVE</option>
+                            <option>Suspend</option>
+                        </select>
+                    </div>
                 </div>
-              </div>
-                <div class="table-responsive">
-                <table class="table  table-responsive">
-                    <thead class="sortable-header text-nowrap">
-                        <tr>
-                            <th class="sortable-header">Project Name</th>
-                            <th class="sortable-header">Portfolio</th>
-                            <th class="sortable-header">Location</th>
-                            <th class="sortable-header">Start Date</th>
-                            <th class="sortable-header">End Date</th>
-                            <th class="sortable-header">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Baba Business</td>
-                            <td>Packsys International</td>
-                            <td></td>
-                            <td>27/06/2024</td>
-                            <td>27/06/2024</td>
-                            <td>27/06/2024</td>
-                        </tr>
-                        <tr>
-                          <td>cbs project ABC</td>
-                          <td>Earth Copia Residential</td>
-                          <td></td>
-                          <td>27/06/2024</td>
-                          <td>27/06/2024</td>
-                          <td>27/06/2024</td>
-                      </tr>
-                      <tr>
-                        <td>Defense Project</td>
-                        <td>Taxsense</td>
-                        <td>176, 1st floor near model cinemagandi road</td>
-                        <td>27/06/2024</td>
-                        <td>27/06/2024</td>
-                        <td>27/06/2024</td>
-                    </tr>
-                    <tr>
-                      <td>Baba Business</td>
-                      <td>Packsys International</td>
-                      <td></td>
-                      <td>27/06/2024</td>
-                      <td>27/06/2024</td>
-                      <td>27/06/2024</td>
-                  </tr>
-                  <tr>
-                    <td>Defense Project</td>
-                    <td>Taxsense</td>
-                    <td>176, 1st floor near model cinemagandi road</td>
-                    <td>27/06/2024</td>
-                    <td>27/06/2024</td>
-                    <td>27/06/2024</td>
-                </tr>
-                    </tbody>
-                </table>
-              </div>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>Showing 1 to 1 of 4 Entries</div>
-                    <nav>
-                        <ul class="pagination mb-0">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
     </div>

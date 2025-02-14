@@ -117,17 +117,22 @@
       {
         "data": "Invoice",
         "title": "Invoice"
+      },
+      {
+        "data": "Failed",
+        "title": "Failed"
       }
     ],
     "data": [
       {
-        "SupplierName": "Indoasian",
+        "SupplierName": "14/67, MCD Flat Sector?20",
         "AllPo": "29",
         "New": "9",
         "Changed": "0",
         "Confirmed": "10",
         "InProgress": "0",
-        "Invoice": "0"
+        "Invoice": "0",
+        "Failed": "0"
       }
     ]
   },
