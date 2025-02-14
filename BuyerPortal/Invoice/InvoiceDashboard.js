@@ -101,6 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   historyButton.addEventListener("click", () => {
-    window.location.href = "/html/Dashboard/InvoiceHistory.html";
+    window.location.href = "http://127.0.0.1:5500/BuyerPortal/Dashboard/InvoiceHistory.html";
   });
 });
