@@ -21,7 +21,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
     />
-    <link rel="stylesheet" href="/SupplierPortal/Dashboard/User/PartyProfile.css">
 
     <link
       rel="stylesheet"
@@ -41,6 +40,10 @@
     <style>
       body {
         overflow-x: hidden;
+        background-color: white;
+      }
+      a{
+        text-decoration: none !important;
       }
     </style>
   </head>
@@ -97,7 +100,7 @@
           >
             <a
               class="nav-link dropdown-toggle"
-              href="/BuyerPortal/Graphical Representation/Dashboard.html"
+              href="/BuyerPortal/Graphical Representation/NewDashboard.html"
               id="navbarDropdown"
               role="button"
               data-bs-toggle="dropdown"
@@ -120,17 +123,17 @@
               <li>
                 <a
                   class="dropdown-item"
-                  href="/BuyerPortal/Graphical Representation/Dashboard.html"
+                  href="/BuyerPortal/Graphical Representation/NewDashboard.html"
                 >
-                  <span>Dashboard</span>
+                  <span>New Dashboard</span>
                 </a>
               </li>
               <li>
                 <a
                   class="dropdown-item"
-                  href="/BuyerPortal/Graphical Representation/NewDashboard.html"
+                  href="/BuyerPortal/Graphical Representation/Dashboard.html"
                 >
-                  <span>New Dashboard</span>
+                  <span>Dashboard</span>
                 </a>
               </li>
               <!-- <li>
@@ -312,7 +315,7 @@
             style="margin-top: -6px; margin-left: -11px"
           >
             <a
-              class="nav-link dropdown-toggle"
+              class="nav-link dropdown-toggle active"
               href="/BuyerPortal/Invoice/InvoiceDashboard.html"
               id="navbarDropdown"
               role="button"
@@ -1166,148 +1169,429 @@
       <!-- End of Header -->
 
       <!-- Mid header -->
-      <div class="mid-header" style="background-color: #eeeeee">
+      <div
+        class="mid-header"
+        style="
+          background-color: #eeeeee;
+          font-family: Roboto;
+          font-weight: 700;
+          font-size: 22px;
+          line-height: 33px;
+          letter-spacing: 0%;
+        "
+      >
         <div class="row container-fluid">
           <div class="d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
-              <a
-                href="/BuyerPortal/Dashboard/User/PartyProfile.html"
-                class="me-2"
-              >
-                <img src="/icons/Arrow back ios (2).svg" alt="back" />
+            <div class="d-flex">
+              <a href="/BuyerPortal/index.html">
+                <img src="/icons/Arrow back ios (2).svg" alt="back">
               </a>
-              <h2>Update Password</h2>
+              <h2>Supplier ASN</h2>
             </div>
             <div class="d-flex justify-content-end">
-              <a href="">
-                <img src="/icons/Synchronize.svg" alt="">
-              </a>
+              <div><a href=""><img src="/icons/save.svg" alt="add" class="me-2"></a>
+                <a href="">
+                  <img src="/icons/Synchronize.svg" alt="sync" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div
-      class="d-flex justify-content-between flex-column profile-update-container"
-    >
-      <form action="" id="partyForm" class="container-fluid mt-4">
-        <div class="row mb-3">
-          <!-- Party Code -->
-          <div class="col-12 col-md-6 mb-3">
-            <label for="partyCode" class="form-label">Party Code:</label>
-            <input type="text" id="partyCode" class="form-control" />
-            <div
-              id="partyCodeError"
-              class="text-danger mt-1"
-              style="display: none"
-            >
-              Party Code is required.
-            </div>
-          </div>
-          <!-- Party Name -->
-          <div class="col-12 col-md-6 mb-3">
-            <label for="partName" class="form-label">Party Name:</label>
-            <input type="text" id="partName" class="form-control" />
-            <div
-              id="partNameError"
-              class="text-danger mt-1"
-              style="display: none"
-            >
-              Party Name is required.
-            </div>
-          </div>
-        </div>
+      <!-- end fof Mid header -->
 
-        <div class="row mb-3">
-          <!-- Role -->
-          <div class="col-12 col-md-6 mb-3">
-            <label for="Role" class="form-label">Role:</label>
-            <input type="text" id="Role" class="form-control" />
-            <div
-              id="roleError"
-              class="text-danger mt-1"
-              style="display: none"
-            >
-              Role is required.
+      <!-- Table view -->
+      <div class="overflow-auto" style="max-height: 80vh">
+        <div
+          class="d-flex justify-content-between flex-column profile-update-container"
+        >
+          <form action="" id="supplierForm" class="form-control">
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label for="InvoiceType" class="form-label"
+                  >Invoice Type *</label
+                >
+                <select
+                  name="InvoiceType"
+                  id="InvoiceType"
+                  class="form-select required"
+                  disabled
+                >
+                  <option value="">Select</option>
+                  <option value="invoice po" selected>Invoice PO</option>
+                  <option value="non invoice po">Non Invoice PO</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label for="customerName" class="form-label"
+                  >Customer Name*</label
+                >
+                <select
+                  name="customerName required"
+                  id="customerName"
+                  class="form-select"
+                >
+                  <option value="">Select</option>
+                  <option value="invoice po" selected>Indoasian</option>
+                </select>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <label for="OrderNo" class="form-label">Order No*</label>
+                <select
+                  name="OrderNo"
+                  id="OrderNo"
+                  class="form-select required"
+                >
+                  <option value="">Select</option>
+                  <option value="invoice po" selected>20240815NPO000001</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label for="ASNNo" class="form-label">ASN No.</label>
+                <select name="ASNNo" id="ASNNo" class="form-select">
+                  <option value="">Select</option>
+                  <option value="invoice po" selected>20240815NPO000001</option>
+                </select>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <label for="ASNDate" class="form-label">ASN Date</label>
+                <input type="input" class="form-control" id="ASNDate" name="date" oninput="output.value=ASNDate.value" placeholder="8/24/2024"/>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label for="ShipmentDate" class="form-label"
+                  >Shipment Date</label
+                >
+                <input type="date" id="ShipmentDate" class="form-control" />
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <label for="EstimatedDeliveryDate" class="form-label"
+                  >Estimated Delivery Date</label
+                >
+                <input
+                  type="input"
+                  name="EstimatedDeliveryDate"
+                  id="EstimatedDeliveryDate"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label for="TransporterName" class="form-label"
+                  >Transporter Name</label
+                >
+                <input
+                  type="text"
+                  id="TransporterName"
+                  class="form-control"
+                  placeholder="ABC"
+                />
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <label for="VehicleNo" class="form-label">Vehicle No</label>
+                <input type="text" id="VehicleNo" class="form-control" placeholder="123" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label for="CarrierTrackingNo" class="form-label"
+                  >Carrier Tracking No.</label
+                >
+                <input
+                  type="text"
+                  id="CarrierTrackingNo"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <label for="ModeOfTransport" class="form-label"
+                  >Mode Of Transport</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="ModeOfTransport"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label for="InvoiceNo" class="form-label">Invoice No</label>
+                <input type="text" class="form-control" id="InvoiceNo" />
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <label for="InvoiceDate" class="form-label"
+                  >Invoice Date</label
+                >
+                <input type="date" id="InvoiceDate" class="form-control" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label for="ChallanNo" class="form-label">Challan No</label>
+                <input type="text" id="ChallanNo" class="form-control" />
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <label for="ChallanDate" class="form-label"
+                  >Challan Date</label
+                >
+                <input type="date" class="form-control" id="ChallanDate" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label for="GRLRNo" class="form-label">GR/LR No</label>
+                <input type="text" class="form-control" id="GRLRNo" />
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <label for="GRLRDate" class="form-label">GR/LR Date</label>
+                <input type="date" id="GRLRDate" class="form-control" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label for="AttachInvoice" class="form-label"
+                  >Attach Invoice</label
+                >
+                <a href="#" class="btn btn-link">View</a>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <label for="ShipmentDocument" class="form-label"
+                  >Shipment Document</label
+                >
+                <a href="#" class="btn btn-link">View</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label for="AttachInvoice" class="form-label"
+                  >Attach Invoice</label
+                >
+                <a href="#" class="btn btn-link">View</a>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <label for="ShipmentDocument" class="form-label"
+                  >Shipment Document</label
+                >
+                <a href="#" class="btn btn-link">View</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label for="EWayBill" class="form-label">E-Way Bill</label>
+                <a href="#" class="btn btn-link">View</a>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <label for="InspectionReport" class="form-label"
+                  >Inspection Report</label
+                >
+                <a href="#" class="btn btn-link">View</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label for="WarrantyCertificate" class="form-label"
+                  >Warranty Certificate</label
+                >
+                <a href="#" class="btn btn-link">View</a>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <label for="MaterialTestCertificate" class="form-label"
+                  >Material Test Certificate</label
+                >
+                <a href="#" class="btn btn-link">View</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label for="OtherDocument" class="form-label"
+                  >Other Document</label
+                >
+                <a href="#" class="btn btn-link">View</a>
+              </div>
+            </div>
+          </form>
+          <div class="mt-3 container-fluid">
+            <!-- <div class="table table-responsive">
+              <table class="table table-responsive table-bordered">
+                <thead class="table-secondary">
+                  <tr>
+                    <th>Item Code</th>
+                    <th>Item Name</th>
+                    <th>Order Qty</th>
+                    <th>Pending</th>
+                    <th>Dispatch</th>
+                    <th>Rate</th>
+                    <th>Basic Amount</th>
+                    <th>Discount%</th>
+                    <th>CGST%</th>
+                    <th>CGST Amount</th>
+                    <th>SGST%</th>
+                    <th>SGST Amount</th>
+                    <th>IGST Amount</th>
+                    <th>Net Amt</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <select
+                        name="itemCode"
+                        id="itemCodeSelect"
+                        class="px-2 py-1"
+                      >
+                        <option value="">Select</option>
+                        <option value="123442">123442</option>
+                      </select>
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="px-1 py-1"
+                        data-type="string"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="px-1 py-1"
+                        data-type="number"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="px-1 py-1"
+                        data-type="number"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="px-1 py-1"
+                        data-type="number"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="px-1 py-1"
+                        data-type="number"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="px-1 py-1"
+                        data-type="number"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="px-1 py-1"
+                        data-type="number"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="px-1 py-1"
+                        data-type="number"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="px-1 py-1"
+                        data-type="number"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="px-1 py-1"
+                        data-type="number"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="px-1 py-1"
+                        data-type="number"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="px-1 py-1"
+                        data-type="number"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="px-1 py-1"
+                        data-type="number"
+                      />
+                    </td>
+                    <td>
+                      <button
+                        class="btn btn-primary text-nowrap add-item-btn"
+                      >
+                        Add Item
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div> -->
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="table-secondary">
+                  <tr>
+                    <th>Item Code</th>
+                    <th>Item Name</th>
+                    <th>Order Qty</th>
+                    <th>Pending</th>
+                    <th>Dispatch</th>
+                    <th>Rate</th>
+                    <th>Basic Amount</th>
+                    <th>Discount%</th>
+                    <th>CGST%</th>
+                    <th>CGST Amount</th>
+                    <th>SGST%</th>
+                    <th>SGST Amount</th>
+                    <th>IGST Amount</th>
+                    <th>Net Amt</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody">
+                  <tr>
+                    <td colspan="14" style="text-align: center">
+                      No data to display
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-12 text-center">
-            <button
-              type="button"
-              class="btn btn-dark px-5 py-2"
-              id="updateBtn"
-            >
-              Update
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/SupplierPortal/index.js"></script>
-    <script src="tableManager.js"></script>
+    <script src="/BuyerPortal/index.js"></script>
+    <script src="tableManager2.js"></script>
     <script src="loadContent.js"></script>
-    <script>
-      // Add event listener for form submission
-      document
-        .getElementById("updateBtn")
-        .addEventListener("click", function (event) {
-          // Prevent form submission
-          event.preventDefault();
 
-          // Get the form elements
-          const partyCode = document.getElementById("partyCode");
-          const partName = document.getElementById("partName");
-          const role = document.getElementById("Role");
-
-          // Get the error message elements
-          const partyCodeError = document.getElementById("partyCodeError");
-          const partNameError = document.getElementById("partNameError");
-          const roleError = document.getElementById("roleError");
-
-          // Reset error messages and border color
-          partyCodeError.style.display = "none";
-          partNameError.style.display = "none";
-          roleError.style.display = "none";
-          partyCode.style.borderColor = "";
-          partName.style.borderColor = "";
-          role.style.borderColor = "";
-
-          // Validation flags
-          let valid = true;
-
-          // Validate Party Code
-          if (!partyCode.value.trim()) {
-            valid = false;
-            partyCode.style.borderColor = "red"; // Highlight the input
-            partyCodeError.style.display = "block"; // Show error message
-          }
-
-          // Validate Party Name
-          if (!partName.value.trim()) {
-            valid = false;
-            partName.style.borderColor = "red"; // Highlight the input
-            partNameError.style.display = "block"; // Show error message
-          }
-
-          // Validate Role
-          if (!role.value.trim()) {
-            valid = false;
-            role.style.borderColor = "red"; // Highlight the input
-            roleError.style.display = "block"; // Show error message
-          }
-
-          // If all validations pass, proceed with the update (e.g., submit or process data)
-          if (valid) {
-            alert("Form is valid. Proceed with update.");
-            // You can add additional code to submit the form or handle the data
-          }
-        });
-    </script>
     <script>
       initializeTableManager("tableConfigs.json");
     </script>

@@ -21,7 +21,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
     />
-    <link rel="stylesheet" href="/SupplierPortal/Dashboard/User/PartyProfile.css">
 
     <link
       rel="stylesheet"
@@ -42,6 +41,18 @@
       body {
         overflow-x: hidden;
       }
+      .card {
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .pagination .page-item .page-link {
+            border-radius: 5px;
+        }
+        .pagination .page-item.active .page-link {
+            background-color: #f97316; /* Orange */
+            border-color: #f97316;
+        }
     </style>
   </head>
   <body>
@@ -97,7 +108,7 @@
           >
             <a
               class="nav-link dropdown-toggle"
-              href="/BuyerPortal/Graphical Representation/Dashboard.html"
+              href="/BuyerPortal/Graphical Representation/NewDashboard.html"
               id="navbarDropdown"
               role="button"
               data-bs-toggle="dropdown"
@@ -120,17 +131,17 @@
               <li>
                 <a
                   class="dropdown-item"
-                  href="/BuyerPortal/Graphical Representation/Dashboard.html"
+                  href="/BuyerPortal/Graphical Representation/NewDashboard.html"
                 >
-                  <span>Dashboard</span>
+                  <span>New Dashboard</span>
                 </a>
               </li>
               <li>
                 <a
                   class="dropdown-item"
-                  href="/BuyerPortal/Graphical Representation/NewDashboard.html"
+                  href="/BuyerPortal/Graphical Representation/Dashboard.html"
                 >
-                  <span>New Dashboard</span>
+                  <span>Dashboard</span>
                 </a>
               </li>
               <!-- <li>
@@ -458,7 +469,7 @@
             style="margin-top: -6px; margin-left: -11px"
           >
             <a
-              class="nav-link dropdown-toggle"
+              class="nav-link dropdown-toggle active"
               href="/BuyerPortal/Purchase/EnquiryEntry.html"
               id="navbarDropdown"
               role="button"
@@ -1166,148 +1177,164 @@
       <!-- End of Header -->
 
       <!-- Mid header -->
-      <div class="mid-header" style="background-color: #eeeeee">
+      <div
+        class="mid-header"
+        style="
+          background-color: #eeeeee;
+          font-family: Roboto;
+          font-weight: 700;
+          font-size: 22px;
+          line-height: 33px;
+          letter-spacing: 0%;
+        "
+      >
         <div class="row container-fluid">
           <div class="d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
-              <a
-                href="/BuyerPortal/Dashboard/User/PartyProfile.html"
-                class="me-2"
-              >
-                <img src="/icons/Arrow back ios (2).svg" alt="back" />
+            <div class="d-flex">
+              <a href="/BuyerPortal/Purchase/EnquiryEntry.html">
+                <img src="/icons/Arrow back ios (2).svg" alt="back">
               </a>
-              <h2>Update Password</h2>
+              <h2>Add New Enquiry</h2>
             </div>
             <div class="d-flex justify-content-end">
+              <a href="" class="me-2">
+                <img src="/icons/save.svg" alt="">
+              </a>
               <a href="">
-                <img src="/icons/Synchronize.svg" alt="">
+                <img src="/icons/Synchronize.svg" alt="sync" />
               </a>
             </div>
           </div>
         </div>
       </div>
-      <div
-      class="d-flex justify-content-between flex-column profile-update-container"
-    >
-      <form action="" id="partyForm" class="container-fluid mt-4">
-        <div class="row mb-3">
-          <!-- Party Code -->
-          <div class="col-12 col-md-6 mb-3">
-            <label for="partyCode" class="form-label">Party Code:</label>
-            <input type="text" id="partyCode" class="form-control" />
-            <div
-              id="partyCodeError"
-              class="text-danger mt-1"
-              style="display: none"
-            >
-              Party Code is required.
+      <!-- end fof Mid header -->
+      <div class="container-fluid mt-4">
+        <form>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label class="form-label">Event Name *</label>
+                    <input type="text" class="form-control" placeholder="Enter Event Name">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Location *</label>
+                    <select class="form-select">
+                        <option>Select Location</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Indent Type *</label>
+                    <select class="form-select">
+                        <option>SELECT</option>
+                    </select>
+                </div>
             </div>
-          </div>
-          <!-- Party Name -->
-          <div class="col-12 col-md-6 mb-3">
-            <label for="partName" class="form-label">Party Name:</label>
-            <input type="text" id="partName" class="form-control" />
-            <div
-              id="partNameError"
-              class="text-danger mt-1"
-              style="display: none"
-            >
-              Party Name is required.
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label class="form-label">Enquiry Type *</label>
+                    <select class="form-select">
+                        <option>SELECT</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Delivery Date *</label>
+                    <input type="date" class="form-control">
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <!-- Role -->
-          <div class="col-12 col-md-6 mb-3">
-            <label for="Role" class="form-label">Role:</label>
-            <input type="text" id="Role" class="form-control" />
-            <div
-              id="roleError"
-              class="text-danger mt-1"
-              style="display: none"
-            >
-              Role is required.
+            <hr>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label class="form-label">Chapter</label>
+                    <select class="form-select">
+                        <option>Select Chapter</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Heading</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">HSN Code</label>
+                    <input type="text" class="form-control">
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-12 text-center">
-            <button
-              type="button"
-              class="btn btn-dark px-5 py-2"
-              id="updateBtn"
-            >
-              Update
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label class="form-label">Select Supplier *</label>
+                    <select class="form-select">
+                        <option>SELECT</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Registered Supplier</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Unregistered Supplier</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label class="form-label">Attach Document</label>
+                    <input type="file" class="form-control">
+                </div>
+            </div>
+            <hr>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label class="form-label">Indent #</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">ITEM CODE *</label>
+                    <select class="form-select">
+                        <option>SELECT</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">ITEM NAME</label>
+                    <input type="text" class="form-control" disabled>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label class="form-label">Item Spec.</label>
+                    <input type="text" class="form-control" disabled>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Indt. Qty.</label>
+                    <input type="text" class="form-control" disabled>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Qty</label>
+                    <input type="number" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label class="form-label">Currency *</label>
+                    <select class="form-select">
+                        <option>SELECT</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Remarks</label>
+                    <textarea class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-end">
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/SupplierPortal/index.js"></script>
+    <script src="/BuyerPortal/index.js"></script>
     <script src="tableManager.js"></script>
     <script src="loadContent.js"></script>
-    <script>
-      // Add event listener for form submission
-      document
-        .getElementById("updateBtn")
-        .addEventListener("click", function (event) {
-          // Prevent form submission
-          event.preventDefault();
 
-          // Get the form elements
-          const partyCode = document.getElementById("partyCode");
-          const partName = document.getElementById("partName");
-          const role = document.getElementById("Role");
-
-          // Get the error message elements
-          const partyCodeError = document.getElementById("partyCodeError");
-          const partNameError = document.getElementById("partNameError");
-          const roleError = document.getElementById("roleError");
-
-          // Reset error messages and border color
-          partyCodeError.style.display = "none";
-          partNameError.style.display = "none";
-          roleError.style.display = "none";
-          partyCode.style.borderColor = "";
-          partName.style.borderColor = "";
-          role.style.borderColor = "";
-
-          // Validation flags
-          let valid = true;
-
-          // Validate Party Code
-          if (!partyCode.value.trim()) {
-            valid = false;
-            partyCode.style.borderColor = "red"; // Highlight the input
-            partyCodeError.style.display = "block"; // Show error message
-          }
-
-          // Validate Party Name
-          if (!partName.value.trim()) {
-            valid = false;
-            partName.style.borderColor = "red"; // Highlight the input
-            partNameError.style.display = "block"; // Show error message
-          }
-
-          // Validate Role
-          if (!role.value.trim()) {
-            valid = false;
-            role.style.borderColor = "red"; // Highlight the input
-            roleError.style.display = "block"; // Show error message
-          }
-
-          // If all validations pass, proceed with the update (e.g., submit or process data)
-          if (valid) {
-            alert("Form is valid. Proceed with update.");
-            // You can add additional code to submit the form or handle the data
-          }
-        });
-    </script>
     <script>
       initializeTableManager("tableConfigs.json");
     </script>

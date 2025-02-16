@@ -21,7 +21,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
     />
-    <link rel="stylesheet" href="/SupplierPortal/Dashboard/User/PartyProfile.css">
 
     <link
       rel="stylesheet"
@@ -41,7 +40,13 @@
     <style>
       body {
         overflow-x: hidden;
+        background-color: white;
       }
+      .btn-primary {
+            background-color: #007bff !important;
+            border-color: #007bff !important;
+        }
+
     </style>
   </head>
   <body>
@@ -97,7 +102,7 @@
           >
             <a
               class="nav-link dropdown-toggle"
-              href="/BuyerPortal/Graphical Representation/Dashboard.html"
+              href="/BuyerPortal/Graphical Representation/NewDashboard.html"
               id="navbarDropdown"
               role="button"
               data-bs-toggle="dropdown"
@@ -120,17 +125,17 @@
               <li>
                 <a
                   class="dropdown-item"
-                  href="/BuyerPortal/Graphical Representation/Dashboard.html"
+                  href="/BuyerPortal/Graphical Representation/NewDashboard.html"
                 >
-                  <span>Dashboard</span>
+                  <span>New Dashboard</span>
                 </a>
               </li>
               <li>
                 <a
                   class="dropdown-item"
-                  href="/BuyerPortal/Graphical Representation/NewDashboard.html"
+                  href="/BuyerPortal/Graphical Representation/Dashboard.html"
                 >
-                  <span>New Dashboard</span>
+                  <span>Dashboard</span>
                 </a>
               </li>
               <!-- <li>
@@ -312,7 +317,7 @@
             style="margin-top: -6px; margin-left: -11px"
           >
             <a
-              class="nav-link dropdown-toggle"
+              class="nav-link dropdown-toggle active"
               href="/BuyerPortal/Invoice/InvoiceDashboard.html"
               id="navbarDropdown"
               role="button"
@@ -358,7 +363,7 @@
                   class="dropdown-item"
                   href="/BuyerPortal/Invoice/NewtonDocumentAI.html"
                 >
-                  <span>NEWTON Documents AI</span>
+                  <span> NEWTON Documents AI</span>
                 </a>
               </li>
             </ul>
@@ -1166,148 +1171,192 @@
       <!-- End of Header -->
 
       <!-- Mid header -->
-      <div class="mid-header" style="background-color: #eeeeee">
+      <div
+        class="mid-header"
+        style="
+          background-color: #eeeeee;
+          font-family: Roboto;
+          font-weight: 700;
+          font-size: 22px;
+          line-height: 33px;
+          letter-spacing: 0%;
+        "
+      >
         <div class="row container-fluid">
           <div class="d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
-              <a
-                href="/BuyerPortal/Dashboard/User/PartyProfile.html"
-                class="me-2"
-              >
-                <img src="/icons/Arrow back ios (2).svg" alt="back" />
+            <div class="d-flex">
+              <a href="/BuyerPortal/Invoice/NewtonDocumentAI.html">
+                <img src="/icons/Arrow back ios (2).svg" alt="back">
               </a>
-              <h2>Update Password</h2>
+              <h2>Newton Document AI</h2>
             </div>
-            <div class="d-flex justify-content-end">
+            <div class="d-flex">
               <a href="">
-                <img src="/icons/Synchronize.svg" alt="">
+                <img src="/icons/save.svg" class="me-3" alt="" />
+              </a>
+              <a href="">
+                <img src="/icons/Synchronize.svg" alt="" />
               </a>
             </div>
           </div>
         </div>
       </div>
-      <div
-      class="d-flex justify-content-between flex-column profile-update-container"
-    >
-      <form action="" id="partyForm" class="container-fluid mt-4">
-        <div class="row mb-3">
-          <!-- Party Code -->
-          <div class="col-12 col-md-6 mb-3">
-            <label for="partyCode" class="form-label">Party Code:</label>
-            <input type="text" id="partyCode" class="form-control" />
-            <div
-              id="partyCodeError"
-              class="text-danger mt-1"
-              style="display: none"
-            >
-              Party Code is required.
-            </div>
-          </div>
-          <!-- Party Name -->
-          <div class="col-12 col-md-6 mb-3">
-            <label for="partName" class="form-label">Party Name:</label>
-            <input type="text" id="partName" class="form-control" />
-            <div
-              id="partNameError"
-              class="text-danger mt-1"
-              style="display: none"
-            >
-              Party Name is required.
-            </div>
-          </div>
-        </div>
+      <!-- end fof Mid header -->
 
+      <!-- Table view -->
+      <div class="container-fluid mt-3">
         <div class="row mb-3">
-          <!-- Role -->
-          <div class="col-12 col-md-6 mb-3">
-            <label for="Role" class="form-label">Role:</label>
-            <input type="text" id="Role" class="form-control" />
-            <div
-              id="roleError"
-              class="text-danger mt-1"
-              style="display: none"
-            >
-              Role is required.
+            <label class="col-sm-2 col-form-label">Supplier Name*</label>
+            <div class="col-sm-10">
+                <select class="form-select">
+                    <option selected>3GTS68595 (3 G TECHNOLOGY(SHANGHAI) LTD)</option>
+                </select>
             </div>
-          </div>
         </div>
-
-        <div class="row">
-          <div class="col-12 text-center">
-            <button
-              type="button"
-              class="btn btn-dark px-5 py-2"
-              id="updateBtn"
-            >
-              Update
-            </button>
-          </div>
+        
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Attach Invoice*</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control">
+            </div>
         </div>
-      </form>
+        
+        <div class="row mb-3">
+            <div class="col-sm-12 d-flex flex-wrap gap-2">
+                <button class="btn btn-primary">NEWTON AI EXTRACTED</button>
+                <button class="btn btn-primary">VIEW EDIT SUMMARY</button>
+                <button class="btn btn-primary">SHOW CONFIDENCE</button>
+                <button class="btn btn-primary">UPLOAD</button>
+                <button class="btn btn-primary">SCAN & EXTRACT</button>
+                <button class="btn btn-primary">SAVE</button>
+                <button class="btn btn-primary">FINAL SUBMIT</button>
+            </div>
+        </div>
     </div>
+    <hr>
+    <div class="container-fluid mt-2">
+      <div class="row">
+          <!-- Left Section -->
+          <div class="col-md-6 bg-light p-4 border">
+          </div>
+          <!-- Right Section with Tabs -->
+          <div class="col-md-6 p-4 border">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab">General Details</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="invoice-tab" data-bs-toggle="tab" data-bs-target="#invoice" type="button" role="tab">Invoice Summary</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="item-tab" data-bs-toggle="tab" data-bs-target="#item" type="button" role="tab">Item Details</button>
+                  </li>
+              </ul>
+              
+              <div class="tab-content mt-3" id="myTabContent">
+                  <!-- General Details Tab -->
+                  <div class="tab-pane fade show active" id="general" role="tabpanel">
+                      <form>
+                          <label>Vendor Name</label>
+                          <input type="text" class="form-control mb-2">
+                          <label>Vendor Address</label>
+                          <input type="text" class="form-control mb-2">
+                          <label>Vendor GSTN</label>
+                          <input type="text" class="form-control mb-2">
+                          <label>Customer Name</label>
+                          <input type="text" class="form-control mb-2">
+                          <label>Customer Address</label>
+                          <input type="text" class="form-control mb-2">
+                          <label>Customer GSTN</label>
+                          <input type="text" class="form-control mb-2">
+                          <label>Shipping Address</label>
+                          <input type="text" class="form-control mb-2">
+                          <label>Billing Address</label>
+                          <input type="text" class="form-control mb-2">
+                          <label>PO NO.</label>
+                          <input type="text" class="form-control mb-2">
+                          <label>Payment Term</label>
+                          <input type="text" class="form-control mb-2">
+                          <label>Transporter Name</label>
+                          <input type="text" class="form-control mb-2">
+                          <label>Vehicle No</label>
+                          <input type="text" class="form-control mb-2">
+                          <label>Carrier Tracking No.</label>
+                          <input type="text" class="form-control mb-2">
+                          <label>Mode Of Transport</label>
+                          <input type="text" class="form-control mb-2">
+                          <label>Challan No</label>
+                          <input type="text" class="form-control mb-2">
+                          <label>Challan Date</label>
+                          <input type="date" class="form-control mb-2">
+                          <label>GR/LR No</label>
+                          <input type="text" class="form-control mb-2">
+                          <label>GR/LR Date</label>
+                          <input type="date" class="form-control mb-2">
+                      </form>
+                  </div>
+                  
+                  <!-- Invoice Summary Tab -->
+                  <div class="tab-pane fade" id="invoice" role="tabpanel">
+                    <form>
+                      <label>Invoice No*</label>
+                      <input type="text" class="form-control mb-2">
+                      <label>Invoice Date*</label>
+                      <input type="date" class="form-control mb-2">
+                      <label>Invoice Amount</label>
+                      <input type="text" class="form-control mb-2">
+                      <label>Sub Total Amount</label>
+                      <input type="text" class="form-control mb-2">
+                      <label>Tax Amount</label>
+                      <input type="text" class="form-control mb-2">
+                      <label>Attach Invoice</label>
+                      <input type="text" class="form-control mb-2">
+                  </form>
+                  </div>
+                  
+                  <!-- Item Details Tab -->
+                  <div class="tab-pane fade" id="item" role="tabpanel">
+                    <div class="table-responsive">
+                      <table class="table text-nowrap">
+                        <thead class="table-secondary">
+                          <tr>
+                            <th>SrNo</th>
+                            <th>Item Name</th>
+                            <th>Quantity</th>
+                            <th>Rate</th>
+                            <th>Basic Amount</th>
+                            <th>Discount%</th>
+                            <th>Disc. Amount</th>
+                            <th>CGST%</th>
+                            <th>CGST Amount</th>
+                            <th>SGST%</th>
+                            <th>SGST Amount</th>
+                            <th>IGST%</th>
+                            <th>IGST Amount</th>
+                            <th>Net Amt</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                          <tr>
+                            <td colspan="14" style="text-align: center">
+                              No data to display
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/SupplierPortal/index.js"></script>
-    <script src="tableManager.js"></script>
+    <script src="/BuyerPortal/index.js"></script>
+    <script src="tableManager2.js"></script>
     <script src="loadContent.js"></script>
-    <script>
-      // Add event listener for form submission
-      document
-        .getElementById("updateBtn")
-        .addEventListener("click", function (event) {
-          // Prevent form submission
-          event.preventDefault();
 
-          // Get the form elements
-          const partyCode = document.getElementById("partyCode");
-          const partName = document.getElementById("partName");
-          const role = document.getElementById("Role");
-
-          // Get the error message elements
-          const partyCodeError = document.getElementById("partyCodeError");
-          const partNameError = document.getElementById("partNameError");
-          const roleError = document.getElementById("roleError");
-
-          // Reset error messages and border color
-          partyCodeError.style.display = "none";
-          partNameError.style.display = "none";
-          roleError.style.display = "none";
-          partyCode.style.borderColor = "";
-          partName.style.borderColor = "";
-          role.style.borderColor = "";
-
-          // Validation flags
-          let valid = true;
-
-          // Validate Party Code
-          if (!partyCode.value.trim()) {
-            valid = false;
-            partyCode.style.borderColor = "red"; // Highlight the input
-            partyCodeError.style.display = "block"; // Show error message
-          }
-
-          // Validate Party Name
-          if (!partName.value.trim()) {
-            valid = false;
-            partName.style.borderColor = "red"; // Highlight the input
-            partNameError.style.display = "block"; // Show error message
-          }
-
-          // Validate Role
-          if (!role.value.trim()) {
-            valid = false;
-            role.style.borderColor = "red"; // Highlight the input
-            roleError.style.display = "block"; // Show error message
-          }
-
-          // If all validations pass, proceed with the update (e.g., submit or process data)
-          if (valid) {
-            alert("Form is valid. Proceed with update.");
-            // You can add additional code to submit the form or handle the data
-          }
-        });
-    </script>
     <script>
       initializeTableManager("tableConfigs.json");
     </script>
