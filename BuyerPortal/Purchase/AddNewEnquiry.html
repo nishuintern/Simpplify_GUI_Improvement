@@ -53,6 +53,17 @@
             background-color: #f97316; /* Orange */
             border-color: #f97316;
         }
+        .dropdown-menu {
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .search-input {
+      width: 100%;
+      padding: 8px;
+      border: none;
+      outline: none;
+      box-sizing: border-box;
+    }
     </style>
   </head>
   <body>
@@ -1219,12 +1230,17 @@
                     <label class="form-label">Location *</label>
                     <select class="form-select">
                         <option>Select Location</option>
+                        <option>Delhi</option>
+                        <option>Chennai</option>
+                        <option>Gurgaon</option>
                     </select>
                 </div>
                 <div class="col-md-4">
                     <label class="form-label">Indent Type *</label>
                     <select class="form-select">
                         <option>SELECT</option>
+                        <option>Indent Indigenous-HO</option>
+                        <option>Indent Import-HO</option>
                     </select>
                 </div>
             </div>
@@ -1233,6 +1249,8 @@
                     <label class="form-label">Enquiry Type *</label>
                     <select class="form-select">
                         <option>SELECT</option>
+                        <option>Regular</option>
+                        <option>Reverse Auction</option>
                     </select>
                 </div>
                 <div class="col-md-4">
@@ -1243,10 +1261,25 @@
             <hr>
             <div class="row mb-3">
                 <div class="col-md-4">
-                    <label class="form-label">Chapter</label>
-                    <select class="form-select">
-                        <option>Select Chapter</option>
-                    </select>
+                  <label for="dropdown" class="form-label">Chapter</label>
+                  <div class="dropdown">
+                    <button class="dropdown-toggle px-5 py-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="border: 1px solid #BABED8 !important;">
+                      Selected Chapter
+                    </button>
+                    <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton" id="dropdown-options">
+                      <input type="text" class="search-input" placeholder="Search..." id="search-input" style="border: 1px solid #BABED8;">
+                      <li><a class="dropdown-item" href="#">Oliver Hansen</a></li>
+                      <li><a class="dropdown-item" href="#">Van Henry</a></li>
+                      <li><a class="dropdown-item" href="#">April Tucker</a></li>
+                      <li><a class="dropdown-item" href="#">Ralph Hubbard</a></li>
+                      <li><a class="dropdown-item" href="#">Omar Alexander</a></li>
+                      <li><a class="dropdown-item" href="#">Carlos Abbott</a></li>
+                      <li><a class="dropdown-item" href="#">Miriam Wagner</a></li>
+                      <li><a class="dropdown-item" href="#">Bradley Wilkerson</a></li>
+                      <li><a class="dropdown-item" href="#">Virginia Andrews</a></li>
+                      <li><a class="dropdown-item" href="#">Kelly Snyder</a></li>
+                    </ul>
+                  </div>
                 </div>
                 <div class="col-md-4">
                     <label class="form-label">Heading</label>
@@ -1345,6 +1378,18 @@
       $(".mobile-close").on("click", function (event) {
         $(".sidebar").toggleClass("show");
       });
+      document.getElementById("search-input").addEventListener("input", function() {
+    const filter = this.value.toLowerCase();
+    const items = document.querySelectorAll("#dropdown-options .dropdown-item");
+
+    items.forEach(function(item) {
+      if (item.textContent.toLowerCase().includes(filter)) {
+        item.style.display = "block"; // Show items that match the search
+      } else {
+        item.style.display = "none"; // Hide items that don't match
+      }
+    });
+  });
     </script>
   </body>
 </html>

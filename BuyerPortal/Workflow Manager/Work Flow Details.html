@@ -1213,7 +1213,7 @@
       <!-- Table view -->
       <div class="container-fluid mt-3">
         <div class="card">
-            <h4 class="mb-3">Workflow Detail</h4>
+            <h4 class="mb-3 p-2" style="border: 1px solid #BABED8;">Workflow Detail</h4>
             <div class="row">
                 <div class="col-md-6">
                     <p><strong>Name:</strong> Contract Life Cycle</p>
@@ -1231,14 +1231,17 @@
                 </div>
             </div>
             <hr>
-            <h5>Previous Step Response</h5>
+            <h5>Previous Step <span>0</span> Response</h5>
             <div class="row">
-                <div class="col-md-6">
-                    <p><strong>Previous Stage:</strong> -</p>
-                    <p><strong>Previous Remark:</strong> -</p>
+                <div class="col-md-4">
+                    <p>Previous Stage:</p>
+                    <p>Previous Remark:</p>
                 </div>
-                <div class="col-md-6">
-                    <p><strong>Previous Actor:</strong> -</p>
+                <div class="col-md-4">
+                    <p>Previous Actor:</p>
+                </div>
+                <div class="col-md-4">
+                    <p>Start Date:</p>
                 </div>
             </div>
             <hr>
@@ -1272,9 +1275,10 @@
         </div>
     </div>
       <div class="container-fluid mt-3 bg-white py-3">
+        <h5 class="p-2" style="border: 1px solid #BABED8;">Work Flow History</h5>
         <div>
             <div>
-              <div class="row mb-3">
+              <div class="row mb-3 mt-3">
                 <div class="d-flex justify-content-between align-items-center mx-1">
                   <div class="page-size-container d-flex align-items-center">
                     <label for="containerId-pageSize" class="me-1">Page Size:</label>
@@ -1290,13 +1294,13 @@
                   </div>
                 </div>
               </div>
-                <div class="table-responsive">
+              <div class="table-responsive">
                 <table class="table  table-responsive">
-                    <thead class="sortable-header text-nowrap">
-                        <tr>
-                            <th class="sortable-header">Step</th>
-                            <th class="sortable-header">Stage</th>
-                            <th class="sortable-header">Actor</th>
+                  <thead class="sortable-header text-nowrap">
+                    <tr>
+                      <th class="sortable-header">Step</th>
+                      <th class="sortable-header">Stage</th>
+                      <th class="sortable-header">Actor</th>
                             <th class="sortable-header">Response</th>
                             <th class="sortable-header">Status</th>
                             <th class="sortable-header">Date</th>

@@ -312,7 +312,7 @@
             style="margin-top: -6px; margin-left: -11px"
           >
             <a
-              class="nav-link dropdown-toggle"
+              class="nav-link dropdown-toggle active"
               href="/BuyerPortal/Invoice/InvoiceDashboard.html"
               id="navbarDropdown"
               role="button"
@@ -413,7 +413,7 @@
             style="margin-top: -6px; margin-left: -11px"
           >
             <a
-              class="nav-link dropdown-toggle active"
+              class="nav-link dropdown-toggle"
               href="/BuyerPortal/Order/OrderDashboard.html"
               id="navbarDropdown"
               role="button"
@@ -710,7 +710,7 @@
               style="height: 300px; overflow-y: scroll"
             >
               <li>
-                <h5>Task Master</h5>
+                <h5>Task Manager</h5>
               </li>
               <li>
                 <hr class="dropdown-divider" />
@@ -720,7 +720,7 @@
                   class="dropdown-item"
                   href="/BuyerPortal/Task Master/TaskManager.html"
                 >
-                  <span> Task Master </span>
+                  <span> Task Manager </span>
                 </a>
               </li>
               <!-- <li>
@@ -1204,7 +1204,7 @@
           <!-- Financial Year -->
           <div class="flex-grow-1">
             <label class="d-block">
-              <span>Financial Year</span>
+              <span style="font-weight: 500;">Financial Year</span>
               <select class="form-select mt-1" id="financial-year">
                 <option value="default">Select Year</option>
                 <option value="2024">2024</option>
@@ -1219,7 +1219,7 @@
           <!-- Location -->
           <div class="flex-grow-1 d-none" id="search-container">
             <label class="d-block">
-              <span>Location</span>
+              <span  style="font-weight: 500;">Location</span>
               <select class="form-select mt-1" id="location">
                 <option value="default">Location</option>
                 <option value="Location1">Location 1</option>
@@ -1232,7 +1232,7 @@
           <!-- From Date -->
           <div class="flex-grow-1 d-none" id="fromDate-container">
             <label class="d-block">
-              <span>From Date</span>
+              <span  style="font-weight: 500;">From Date</span>
               <input type="date" id="from-date" class="form-control mt-1" />
             </label>
           </div>
@@ -1240,12 +1240,12 @@
           <!-- Search By -->
           <div class="flex-grow-1">
             <label class="d-block">
-              <span>Search By</span>
+              <span  style="font-weight: 500;">Search By</span>
               <select class="form-select mt-1" id="search-by">
                 <option value="default">Select</option>
                 <option value="ALL">ALL</option>
-                <option value="Location">Location</option>
-                <option value="MaterialInTransits">Material In Transits</option>
+                <!-- <option value="Location">Location</option>
+                <option value="MaterialInTransits">Material In Transits</option> -->
                 <option value="Date">Date</option>
               </select>
             </label>
@@ -1254,28 +1254,29 @@
           <!-- To Date -->
           <div class="flex-grow-1 d-none" id="toDate-container">
             <label class="d-block">
-              <span>To Date</span>
+              <span  style="font-weight: 500;">To Date</span>
               <input type="date" id="to-date" class="form-control mt-1" />
             </label>
           </div>
 
           <!-- Buttons (Wrapped on Small Screens) -->
-          <div class="d-flex flex-wrap gap-2 mt-3">
-            <!-- <button
-              class="btn btn-dark btn-sm px-4 py-2"
-              id="search-btn"
-              onclick="handleSearchByChange();"
-            >
-              Search
-            </button> -->
+          <div class="d-flex flex-wrap gap-2" style="margin-top: 22px !important;">
             <button
-              class="btn btn-dark btn-sm px-4 py-2 mt-2 border-0"
+              class="px-4 py-2"
               id="search-btn"
               onclick="handleSearchByChange();"
+              style="background-color: #006DFF; color: white;border: none;"
             >
               Search
             </button>
-            <!-- <button class="btn btn-light btn-sm px-4 py-2" id="history-btn">
+            <!-- <button
+              class="btn btn-primary btn-sm px-4 py-2"
+              id="material-transit-btn"
+              style="background-color: #006DFF; color: white;border: none;"
+            >
+              Material Transit
+            </button>
+            <button class="btn btn-light btn-sm px-4 py-2" id="history-btn">
               History
             </button> -->
           </div>
@@ -1288,7 +1289,7 @@
                 <div class="card-body d-flex flex-column align-items-center">
                   <img src="/icons/Vector.svg" alt="" />
                   <h6 class="mt-1 card-title">01</h6>
-                  <p class="card-text">My Order</p>
+                  <p class="card-text">My Orders</p>
                 </div>
               </div>
             </div>
@@ -1306,7 +1307,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
               <div class="card d-flex justify-content-center p-2">
                 <div class="card-body d-flex flex-column align-items-center">
-                  <img src="/icons/la_file-invoice.svg" alt="" />
+                  <img src="/icons/flat-color-icons_ok (1).png" alt="" />
                   <h6 class="mt-1 card-title">00</h6>
                   <p class="card-text">L1 Pending</p>
                 </div>
@@ -1316,7 +1317,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
               <div class="card d-flex justify-content-center p-2">
                 <div class="card-body d-flex flex-column align-items-center">
-                  <img src="/icons/flat-color-icons_ok (3).svg" alt="" />
+                  <img src="/icons/flat-color-icons_ok (1).png" alt="" />
                   <h6 class="mt-1 card-title">00</h6>
                   <p class="card-text">L1 Pending More than 7 Days</p>
                 </div>
@@ -1332,7 +1333,7 @@
                 </div>
               </div>
             </div>
-           <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
               <div class="card d-flex justify-content-center p-2">
                 <div class="card-body d-flex flex-column align-items-center">
                   <img src="/icons/flat-color-icons_ok (1).png" alt="" />
@@ -1346,7 +1347,7 @@
               <div class="card d-flex justify-content-center p-2">
                 <div class="card-body d-flex flex-column align-items-center">
                   <img src="/icons/la_file-invoice (1).svg" alt="" />
-                  <h6 class="mt-1 card-title">01</h6>
+                  <h6 class="mt-1 card-title">00</h6>
                   <p class="card-text">Approved</p>
                 </div>
               </div>
@@ -1356,7 +1357,7 @@
               <div class="card d-flex justify-content-center p-2">
                 <div class="card-body d-flex flex-column align-items-center">
                   <img src="/icons/marketeq_rejected-file-2.svg" alt="" />
-                  <h6 class="mt-1 card-title">01</h6>
+                  <h6 class="mt-1 card-title">00</h6>
                   <p class="card-text">Rejected</p>
                 </div>
               </div>
@@ -1370,7 +1371,7 @@
                     <div class="row mb-3">
                       <div class="d-flex justify-content-between align-items-center m-2">
                         <div class="page-size-container d-flex align-items-center">
-                          <label for="containerId-pageSize" class="me-1">Page Size:</label>
+                          <label for="containerId-pageSize" class="me-1"  style="font-weight: 400;">Page Size:</label>
                           <select id="containerId-pageSize" class="px-3 py-1">
                             <option value="5" selected>5</option>
                             <option value="10">10</option>
@@ -1378,7 +1379,7 @@
                           </select>
                         </div>
                         <div class="search-div d-flex me-1">
-                          <label for="containerId-search" class="mt-2 me-2 py-1 d-flex">Search:</label>
+                          <label for="containerId-search" class="mt-2 me-2 py-1 d-flex"  style="font-weight: 400;">Search:</label>
                           <input type="search" id="containerId-search" placeholder="Search...">
                         </div>
                       </div>
@@ -1388,14 +1389,18 @@
                         <thead class="sortable-header text-nowrap">
                             <tr>
                               <th class="sortable-header">Location</th>
-                                <th class="sortable-header">Shipper</th>
+                              <th class="sortable-header">Shipper</th>
                                 <th class="sortable-header">Booking No.</th>
                                 <th class="sortable-header">Booking Date</th>
-                                <th class="sortable-header">Vendor Name</th>
-                                <th class="sortable-header">Total Weight</th>
                                 <th class="sortable-header">Vessel</th>
+                                <!-- <th class="sortable-header">Invoice Amount</th>
+                                <th class="sortable-header">PO No.</th>
+                                <th class="sortable-header">MSME</th>
+                                <th class="sortable-header">Date Of Shipment</th>
+                                <th class="sortable-header">Expected Delivery Date</th> -->
                                 <th class="sortable-header">Status</th>
                                 <th class="sortable-header">Creation Date</th>
+                                <!-- <th class="sortable-header">Pending Days</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -1425,7 +1430,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/BuyerPortal/index.js"></script>
     <script src="tableManager2.js"></script>
-    <script src="/BuyerPortal/Invoice/InvoiceDashboard.js"></script>
+    <script src="InvoiceDashboard.js"></script>
 
     <script>
       initializeTableManager("tableConfigs.json");

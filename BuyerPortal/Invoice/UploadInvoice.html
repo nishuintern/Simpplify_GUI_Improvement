@@ -46,6 +46,9 @@
             background-color: #007bff !important;
             border-color: #007bff !important;
         }
+        label{
+          font-weight: 700;
+        }
 
     </style>
   </head>
@@ -1257,7 +1260,115 @@
                   <!-- General Details Tab -->
                   <div class="tab-pane fade show active" id="general" role="tabpanel">
                       <form>
-                          <label>Vendor Name</label>
+                        <div class="row mb-3">
+                          <label for="vendorName" class="col-sm-4 col-form-label">Vendor Name</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="vendorName">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="vendorAddress" class="col-sm-4 col-form-label">Vendor Address</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="vendorAddress">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="vendorGSTN" class="col-sm-4 col-form-label">Vendor GSTN</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="vendorGSTN">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="CustomerName" class="col-sm-4 col-form-label">Customer Name</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="CustomerName">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="CustomerAddress" class="col-sm-4 col-form-label">Customer Address</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="CustomerAddress">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="CustomerGSTN" class="col-sm-4 col-form-label">Customer GSTN</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="CustomerGSTN">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="ShippingAddress" class="col-sm-4 col-form-label">Shipping Address</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="ShippingAddress">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="BillingAddress" class="col-sm-4 col-form-label">Billing Address</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="BillingAddress">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="PONO." class="col-sm-4 col-form-label">PO NO.</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="PONO.">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="PaymentTerm" class="col-sm-4 col-form-label">Payment Term</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="PaymentTerm">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="TransporterName" class="col-sm-4 col-form-label">Transporter Name</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="TransporterName">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="VehicleNo" class="col-sm-4 col-form-label">Vehicle No</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="VehicleNo">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="CarrierTrackingNo." class="col-sm-4 col-form-label">Carrier Tracking No.</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="CarrierTrackingNo.">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="ModeOfTransport" class="col-sm-4 col-form-label">Mode Of Transport</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="ModeOfTransport">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="ChallanNo" class="col-sm-4 col-form-label">Challan No</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="ChallanNo">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="ChallanDate" class="col-sm-4 col-form-label">Challan Date</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="ChallanDate">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="GR/LRNo" class="col-sm-4 col-form-label">GR/LR No</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="GR/LRNo">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="GR/LRDate" class="col-sm-4 col-form-label">GR/LR Date</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" id="GR/LRDate">
+                          </div>
+                        </div>
+                          <!-- <label>Vendor Name</label>
                           <input type="text" class="form-control mb-2">
                           <label>Vendor Address</label>
                           <input type="text" class="form-control mb-2">
@@ -1292,14 +1403,52 @@
                           <label>GR/LR No</label>
                           <input type="text" class="form-control mb-2">
                           <label>GR/LR Date</label>
-                          <input type="date" class="form-control mb-2">
+                          <input type="date" class="form-control mb-2"> -->
                       </form>
                   </div>
                   
                   <!-- Invoice Summary Tab -->
                   <div class="tab-pane fade" id="invoice" role="tabpanel">
                     <form>
-                      <label>Invoice No*</label>
+                      <div class="row mb-3">
+                        <label for="InvoiceNo" class="col-sm-4 col-form-label">Invoice No*</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="InvoiceNo">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="InvoiceDate" class="col-sm-4 col-form-label">Invoice Date*</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="InvoiceDate">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="InvoiceAmount" class="col-sm-4 col-form-label">Invoice Amount</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="InvoiceAmount">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="SubTotalAmount" class="col-sm-4 col-form-label">Sub Total Amount</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="SubTotalAmount">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="TaxAmount" class="col-sm-4 col-form-label">Tax Amount</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="TaxAmount">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="AttachInvoice" class="col-sm-4 col-form-label">Attach Invoice</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="AttachInvoice">
+                        </div>
+                      </div>
+                      <a href="#" class="text-decoration-none" style="color: #007bff;">View</a>
+                    
+                      <!-- <label>Invoice No*</label>
                       <input type="text" class="form-control mb-2">
                       <label>Invoice Date*</label>
                       <input type="date" class="form-control mb-2">
@@ -1310,7 +1459,7 @@
                       <label>Tax Amount</label>
                       <input type="text" class="form-control mb-2">
                       <label>Attach Invoice</label>
-                      <input type="text" class="form-control mb-2">
+                      <input type="text" class="form-control mb-2"> -->
                   </form>
                   </div>
                   

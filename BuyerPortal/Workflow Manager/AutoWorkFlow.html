@@ -1221,65 +1221,80 @@
       <!-- end fof Mid header -->
 
       <!-- Table view -->
-      <div class="container-fluid ">
+      <div class="container-fluid pb-4">
         <h6 class="section-title py-2 px-1" style="border: 1px solid #BABED8;">Workflow Definition</h6>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <label>Name*</label>
                 <input type="text" class="form-control">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <label>Effective Date*</label>
                 <input type="date" class="form-control">
             </div>
-            <div class="col-md-6 mt-2">
-                <label>Type</label>
-                <select class="form-select">
-                    <option>CONTRACT LIFE CYCLE</option>
-                </select>
-            </div>
-            <div class="col-md-6 mt-2">
+            <div class="col-md-4">
                 <label>Manage By</label>
                 <select class="form-select">
                     <option>-SELECT-</option>
+                    <option>Chandra</option>
+                    <option>Raman</option>
+                    <option>Rohit</option>
                 </select>
             </div>
-            <div class="col-md-6 mt-2">
-                <label>Condition</label>
+            <div class="col-md-4 mt-2">
+                <label>Type</label>
                 <select class="form-select">
-                    <option>-SELECT-</option>
+                    <option>CONTRACT LIFE CYCLE</option>
+                    <option>Enquiry Approval</option>
+                    <option>Invoice Approval</option>
+                    <option>PO Approval</option>
                 </select>
-            </div>
-            <div class="col-md-6 mt-2">
-                <label>Created By</label>
-                <select class="form-select">
-                    <option>-SELECT-</option>
-                </select>
-            </div>
-            <div class="col-md-6 mt-2">
+              </div>
+              <div class="col-md-4 mt-2">
+                  <label>Created By</label>
+                  <select class="form-select">
+                      <option>-SELECT-</option>
+                      <option>Chandra</option>
+                      <option>Raman</option>
+                      <option>Rohit</option>
+                  </select>
+              </div>
+              <div class="col-md-4 mt-2">
                 <label>Status*</label>
                 <select class="form-select">
-                    <option>ACTIVE</option>
+                  <option>ACTIVE</option>
+                  <option>INACTIVE</option>
                 </select>
+              </div>
+              <div class="col-md-4 mt-2">
+                  <label>Condition</label>
+                  <select class="form-select">
+                      <option>-SELECT-</option>
+                      <option>Dummy-1 </option>
+                      <option>Dummy-2</option>
+                  </select>
+              </div>
             </div>
-        </div>
 
         <h6 class="section-title py-2 px-1" style="border: 1px solid #BABED8;">Role Define</h6>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label class="fw-bold">Role</label>
                 <input type="text" class="form-control">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label class="fw-bold">Actor</label>
-                <button class="btn btn-custom w-100">CONDITIONAL</button>
+                <button class="btn-custom w-100">CONDITIONAL</button>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3 mt-3">
+              <input type="text" class="form-control">
+            </div>
+            <div class="col-md-3">
                 <label class="fw-bold">Response</label>
-                <button class="btn btn-custom w-100">ADD MORE</button>
+                <button class="btn-custom w-100">ADD MORE</button>
             </div>
         </div>
-
+<hr>
         <h6 class="section-title py-2 px-1" style="border: 1px solid #BABED8;">Stage Define</h6>
         <div class="row">
             <div class="col-md-3">
@@ -1300,14 +1315,14 @@
             </div>
             <div class="col-md-3">
                 <label class="fw-bold">Entry Field</label>
-                <button class="btn btn-custom w-100">ADD FIELD</button>
+                <button class="btn-custom w-100">ADD FIELD</button>
             </div>
             <div class="col-md-3">
                 <label class="fw-bold">Response</label>
-                <button class="btn btn-custom w-100">ADD MORE</button>
+                <button class="btn-custom w-100">ADD MORE</button>
             </div>
         </div>
-
+<hr>
         <h6 class="section-title py-2 px-1" style="border: 1px solid #BABED8;">Work Flow Sequence</h6>
         <div class="row">
             <div class="col-md-3">
@@ -1320,7 +1335,7 @@
             </div>
             <div class="col-md-3">
                 <label class="fw-bold">Next Step</label>
-                <button class="btn btn-custom w-100">NEXT STEP</button>
+                <button class="btn-custom w-100">NEXT STEP</button>
             </div>
         </div>
     </div>
