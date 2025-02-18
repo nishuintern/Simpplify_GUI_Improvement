@@ -3,62 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Searchable Dropdown</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Select2 with Search and Checkbox</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
   <style>
-    .dropdown-menu {
-      max-height: 200px;
-      overflow-y: auto;
-    }
-    .search-input {
-      width: 100%;
-      padding: 8px;
-      border: none;
-      outline: none;
-      box-sizing: border-box;
+    .select2-container--default .select2-selection--multiple {
+      min-height: 38px; /* Adjust height to match Bootstrap inputs */
+      border: 1px solid #ced4da;
     }
   </style>
 </head>
 <body>
-
-<div class="container mt-5">
-  <label for="dropdown" class="form-label">Searchable Dropdown</label>
-  <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-      Select an option
-    </button>
-    <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton" id="dropdown-options">
-      <input type="text" class="search-input" placeholder="Search..." id="search-input">
-      <li><a class="dropdown-item" href="#">Oliver Hansen</a></li>
-      <li><a class="dropdown-item" href="#">Van Henry</a></li>
-      <li><a class="dropdown-item" href="#">April Tucker</a></li>
-      <li><a class="dropdown-item" href="#">Ralph Hubbard</a></li>
-      <li><a class="dropdown-item" href="#">Omar Alexander</a></li>
-      <li><a class="dropdown-item" href="#">Carlos Abbott</a></li>
-      <li><a class="dropdown-item" href="#">Miriam Wagner</a></li>
-      <li><a class="dropdown-item" href="#">Bradley Wilkerson</a></li>
-      <li><a class="dropdown-item" href="#">Virginia Andrews</a></li>
-      <li><a class="dropdown-item" href="#">Kelly Snyder</a></li>
-    </ul>
+  <div class="container mt-3">
+    <label for="enquiry" class="form-label fw-bold">Enquiry*</label>
+    <select id="enquiry" class="form-select select2" multiple>
+      <option value="20180713ENQ000001">20180713ENQ000001</option>
+      <option value="20180713ENQ000002">20180713ENQ000002</option>
+      <option value="20180713ENQ000003">20180713ENQ000003</option>
+      <option value="20180713ENQ000004">20180713ENQ000004</option>
+      <option value="20180713ENQ000005">20180713ENQ000005</option>
+      <option value="20180713ENQ000006">20180713ENQ000006</option>
+      <option value="20180713ENQ000007">20180713ENQ000007</option>
+      <option value="20180713ENQ000008">20180713ENQ000008</option>
+      <option value="20180713ENQ000009">20180713ENQ000009</option>
+      <option value="20180713ENQ000010">20180713ENQ000010</option>
+    </select>
   </div>
-</div>
 
-<script>
-  document.getElementById("search-input").addEventListener("input", function() {
-    const filter = this.value.toLowerCase();
-    const items = document.querySelectorAll("#dropdown-options .dropdown-item");
-
-    items.forEach(function(item) {
-      if (item.textContent.toLowerCase().includes(filter)) {
-        item.style.display = "block"; // Show items that match the search
-      } else {
-        item.style.display = "none"; // Hide items that don't match
-      }
+  <script>
+    // Initialize Select2 with search and multi-select functionality
+    $(document).ready(function() {
+      $('#enquiry').select2({
+        placeholder: "Select enquiries",
+        allowClear: true,
+        closeOnSelect: false // Keeps the dropdown open for multiple selections
+      });
     });
-  });
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+  </script>
 </body>
 </html>

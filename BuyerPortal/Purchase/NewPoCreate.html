@@ -1215,16 +1215,31 @@
                     <label class="form-label">PO Type *</label>
                     <select class="form-select">
                         <option>SELECT</option>
+                        <option>Purchase Order (Wood)</option>
+                        <option>Purchase Order (Import-Fixed Assets)</option>
+                        <option>Purchase Order (General)</option>
                     </select>
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <label class="form-label">Enquiry Number *</label>
-                    <input type="text" class="form-control" value="20180402ENQ000001" readonly>
+                    <!-- <input type="text" class="form-control" value="20180402ENQ000001" readonly> -->
+                     <select name="" id="" class="form-select">
+                      <option value="">20180402ENQ000001</option>
+                      <option value="">20180402ENQ000002</option>
+                      <option value="">20180402ENQ000003</option>
+                      <option value="">20180402ENQ000004</option>
+                      <option value="">20180402ENQ000005</option>
+                     </select>
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <label class="form-label">Supplier Name *</label>
                     <select class="form-select">
                         <option>SELECT</option>
+                        <option>Supplier 1</option>
+                        <option>Supplier 2</option>
+                        <option>Supplier 3</option>
+                        <option>Supplier 4</option>
+                        <option>Supplier 5</option>
                     </select>
                 </div>
             </div>
@@ -1234,6 +1249,10 @@
                     <label class="form-label mb-2">Location *</label>
                     <select class="form-select">
                         <option>Select Location</option>
+                        <option>Delhi</option>
+                        <option>Chennai</option>
+                        <option>Gurgaon</option>
+                        <option>Banglore</option>
                     </select>
                 </div>
                 <div class="col-md-6 col-sm-12 mb-2">
@@ -1259,13 +1278,17 @@
                   <label class="form-label">strPayementTerm *</label>
                   <select class="form-select">
                       <option>Select</option>
+                      <option>15 Days</option>
+                      <option>30 Days</option>
+                      <option>45 Days</option>
+                      <option>60 Days</option>
                   </select>
               </div>
             </div>
         </form>
         
         <div class="row mb-3">
-            <div class="col-12 table-responsive mt-3">
+            <div class="col-12 table-responsive mt-3 card py-2" style="max-width: 98%;">
               <table class="table table-bordered">
                 <thead class="table-secondary">
                   <tr>
@@ -1338,7 +1361,7 @@
                       <input type="text" class="px-1 py-1" data-type="number" />
                     </td>
                     <td>
-                      <button class="btn btn-primary text-nowrap add-item-btn">
+                      <button class="text-nowrap add-item-btn text-white py-2 px-4 border-0" style="background-color: #027EDC;">
                         Add Item
                       </button>
                     </td>

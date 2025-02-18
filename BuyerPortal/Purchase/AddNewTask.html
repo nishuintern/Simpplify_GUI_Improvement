@@ -1191,7 +1191,7 @@
         <div class="row container-fluid">
           <div class="d-flex justify-content-between align-items-center">
             <div class="d-flex">
-              <a href="/BuyerPortal/Purchase/E">
+              <a href="/BuyerPortal/Purchase/EnquiryEntry.html">
                 <img src="/icons/Arrow back ios (2).svg" alt="back">
               </a>
               <h2>Add New Task</h2>
@@ -1254,8 +1254,8 @@
                 <label for="entity" class="form-label col-4">Entity *</label>
                 <select id="entity" class="form-control col-8">
                   <option value="">SELECT</option>
-                  <option value="entity1">Entity 1</option>
-                  <option value="entity2">Entity 2</option>
+                  <option value="entity1">Select</option>
+                  <option value="entity2">Indoasian(TC0000003)</option>
                 </select>
               </div>
               <div class="form-row">
@@ -1264,6 +1264,7 @@
                 >
                 <select id="eventTaskMeeting" class="form-control col-8">
                   <option value="task">Task</option>
+                  <option value="event">Event</option>
                   <option value="meeting">Meeting</option>
                 </select>
               </div>
@@ -1272,11 +1273,11 @@
                   >Start Date/Time *</label
                 >
                 <div class="col-8 d-flex gap-2">
-                  <input type="date" id="startDateTime" class="form-control" />
-                  <select id="startTime" class="form-control">
+                  <input type="datetime-local" id="startDateTime" class="form-control" />
+                  <!-- <select id="startTime" class="form-control">
                     <option value="am">AM</option>
                     <option value="pm">PM</option>
-                  </select>
+                  </select> -->
                 </div>
               </div>
               <div class="form-row">
@@ -1313,10 +1314,8 @@
                 >
                 <select id="completionRights" class="form-control col-8">
                   <option value="">-SELECT-</option>
-                  <option value="internal">Internal</option>
-                  <option value="external">External</option>
-                  <option value="both">Both</option>
-                  <option value="admin">Admin</option>
+                  <option value="internal">Assignor</option>
+                  <option value="external">Assignee</option>
                 </select>
               </div>
               <div class="form-row">
@@ -1325,10 +1324,10 @@
                 >
                 <select id="department" class="form-control col-8">
                   <option value="">-SELECT-</option>
-                  <option value="finance">Finance</option>
-                  <option value="sales">Sales</option>
-                  <option value="marketing">Marketing</option>
-                  <option value="engineering">Engineering</option>
+                  <option value="finance">Admin</option>
+                  <option value="sales">IT</option>
+                  <option value="marketing">Logistic</option>
+                  <option value="engineering">Sales</option>
                 </select>
               </div>
               <div class="form-row">
@@ -1347,9 +1346,11 @@
                 <label for="type" class="form-label col-4">TYPE *</label>
                 <select id="type" class="form-control col-8">
                   <option value="">-SELECT-</option>
-                  <option value="task">Task</option>
-                  <option value="meeting">Meeting</option>
-                  <option value="event">Event</option>
+                  <option value="task">Contract Life Cycle</option>
+                  <option value="meeting">Enquiry Approval</option>
+                  <option value="event">Invoice Approval</option>
+                  <option value="event">PO Approval</option>
+                  <option value="event">Vendor Approval</option>
                 </select>
               </div>
               <div class="form-row">
@@ -1357,21 +1358,21 @@
                   >End Date/Time *</label
                 >
                 <div class="col-8 d-flex gap-2">
-                  <input type="date" id="endDateTime" class="form-control" />
-                  <select id="endTime" class="form-control">
+                  <input type="datetime-local" id="endDateTime" class="form-control" />
+                  <!-- <select id="endTime" class="form-control">
                     <option value="am">AM</option>
                     <option value="pm">PM</option>
-                  </select>
+                  </select> -->
                 </div>
               </div>
               <div class="form-row">
                 <label for="reason" class="form-label col-4">Reason</label>
                 <select id="reason" class="form-control col-8">
                   <option value="">-SELECT-</option>
-                  <option value="pending">Pending</option>
+                  <!-- <option value="pending">Pending</option>
                   <option value="completed">Completed</option>
                   <option value="cancelled">Cancelled</option>
-                  <option value="rescheduled">Rescheduled</option>
+                  <option value="rescheduled">Rescheduled</option> -->
                 </select>
               </div>
               <div class="form-row">
@@ -1381,11 +1382,11 @@
                 <select id="priority" class="form-control col-8">
                   <option value="">-SELECT-</option>
                   <option value="high">High</option>
-                  <option value="medium">Medium</option>
                   <option value="low">Low</option>
-                  <option value="urgent">Urgent</option>
+                  <option value="Normal">Normal</option>
+                  <!-- <option value="urgent">Urgent</option>
                   <option value="critical">Critical</option>
-                  <option value="emergency">Emergency</option>
+                  <option value="emergency">Emergency</option> -->
                 </select>
               </div>
               <div class="form-row">

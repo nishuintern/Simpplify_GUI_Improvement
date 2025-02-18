@@ -22,6 +22,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
     />
 
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"
@@ -57,6 +59,14 @@
             background-color: #f97316; /* Orange */
             border-color: #f97316;
         }
+        .select2-container .select2-selection--single {
+  height: 34px !important;
+}
+
+.select2-container--default .select2-selection--single {
+  border: 1px solid #ccc !important;
+  border-radius: 0px !important;
+}
     </style>
   </head>
   <body>
@@ -1215,7 +1225,7 @@
 <div class="p-2" style="border: 1px solid #BABED8;">
   <div class="container my-4">
     <div class="form-section">
-      <div class="row mb-3">
+      <!-- <div class="row mb-3 d-flex justify-content-center">
         <label for="enquiry" class="col-form-label col-md-2 fw-bold">Enquiry*</label>
         <div class="col-md-4">
           <select id="enquiry" class="form-select">
@@ -1229,12 +1239,31 @@
             <option>20180713ENQ000008</option>
             <option>20180713ENQ000009</option>
             <option>20180713ENQ000010</option>
-            <!-- Add more options as needed -->
           </select>
         </div>
+      </div> -->
+      <div class="container-fluid">
+        <div class="row mb-3 justify-content-center">
+          <form class="col-md-6">
+            <div class="d-flex align-items-center">
+              <label for="enquiry" class="col-form-label col-md-2 fw-bold">Enquiry*</label>
+              <select class="form-select select2">
+                <option>20180713ENQ000001</option>
+              <option>20180713ENQ000002</option>
+              <option>20180713ENQ000003</option>
+              <option>20180713ENQ000004</option>
+              <option>20180713ENQ000005</option>
+              <option>20180713ENQ000006</option>
+              <option>20180713ENQ000007</option>
+              <option>20180713ENQ000008</option>
+              <option>20180713ENQ000009</option>
+              <option>20180713ENQ000010</option>
+              </select>
+            </div>
+          </form>
+        </div>
       </div>
-  
-      <div class="row mb-3">
+      <div class="row mb-3 mt-3">
         <div class="col-md-6">
           <div class="row">
             <label class="col-md-4 form-label">Event ID :</label>
@@ -1621,6 +1650,7 @@
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/BuyerPortal/index.js"></script>
     <script src="tableManager.js"></script>
@@ -1636,6 +1666,7 @@
       $(".mobile-close").on("click", function (event) {
         $(".sidebar").toggleClass("show");
       });
+      $('.select2').select2();
     </script>
   </body>
 </html>
