@@ -1253,39 +1253,54 @@
                 </div>
                 <div class="col-md-6 col-lg-4 col-sm-12 ">
                     <label class="form-label">Opening Time *</label>
-                    <select class="form-select" required>
-                        <option selected>SELECT</option>
+                    <select class="form-select select2" id="openingTime">
+                      <option selected>Select</option>
+                      <option selected>00:00</option>
+                      <option selected>01:00</option>
+                      <option selected>01:15</option>
+                      <option selected>01:30</option>
+                      <option selected>01:45</option>
+                      <option selected>02:00</option>
                     </select>
-                </div>
-                <div class="col-md-6 col-lg-4 col-sm-12 ">
-                  <label class="form-label">Closing Time *</label>
-                  <select class="form-select" required>
-                    <option selected>SELECT</option>
-                  </select>
                 </div>
                 <div class="col-md-6 col-lg-4 col-sm-12 ">
                     <label class="form-label">Closing Date *</label>
                     <input type="date" class="form-control" required>
                 </div>
+                <div class="col-md-6 col-lg-4 col-sm-12 ">
+                  <label class="form-label">Closing Time *</label>
+                  <select class="form-select select2" id="closingTime">
+                    <option selected>Select</option>
+                    <option selected>00:00</option>
+                    <option selected>01:00</option>
+                    <option selected>01:15</option>
+                    <option selected>01:30</option>
+                    <option selected>01:45</option>
+                    <option selected>02:00</option>
+                  </select>
+                </div>
               <div class="col-md-6 col-lg-4 col-sm-12 ">
                   <label class="form-label">Any Supplier *</label>
                   <select class="form-select" required>
                       <option selected>SELECT</option>
+                      <option selected>Any 5</option>
+                      <option selected>Any 10</option>
+                      <option selected>Any 15</option>
                   </select>
               </div>
               <div class="col-md-6">
                   <label class="form-label">Registered Supplier</label>
-                  <div class="border-box">
-                      <div><input type="checkbox"> SUGANDHA AIRAN</div>
-                      <div><input type="checkbox"> NATIONAL ELECTRICALS AND WORKS</div>
-                  </div>
+                  <select multiple class="form-select select2">
+                      <option>SUGANDHA AIRAN</option>
+                      <option> NATIONAL ELECTRICALS AND WORKS</option>
+                  </select>
               </div>
               <div class="col-md-6">
                   <label class="form-label">Unregistered Supplier</label>
-                  <div class="border-box">
-                      <div><input type="checkbox"> ASHOKA BEARING ENTERPRISES</div>
-                      <div><input type="checkbox"> Balaji Switchgears Pvt. Ltd.</div>
-                  </div>
+                  <select multiple class="form-select select2">
+                      <option> ASHOKA BEARING ENTERPRISES</option>
+                      <option> Balaji Switchgears Pvt. Ltd.</option>
+                  </select>
               </div>
           </div>
           <hr>
@@ -1293,7 +1308,7 @@
           <div class="row g-3">
               <div class="col-md-6 col-lg-4 col-sm-12 ">
                   <label class="form-label">Item Code *</label>
-                  <select class="form-select" required>
+                  <select class="form-select select2" required>
                       <option selected>SELECT</option>
                   </select>
               </div>
@@ -1317,38 +1332,43 @@
               </div>
               <div class="col-md-6 col-lg-4 col-sm-12 ">
                   <label class="form-label">Currency *</label>
-                  <select class="form-select" required>
+                  <select class="form-select select2" required>
                       <option selected>SELECT</option>
+                      <option>Afghan afghani</option>
+                    <option>European euro</option>
+                    <option>United dollar</option>
+                    <option>Indian rupee</option>
+                    <option>Cuban peso</option>
                   </select>
               </div>
               <div class="col-md-12 text-end">
-                  <button type="button" class="btn btn-success">Add Item</button>
+                  <button type="button" class="px-5 py-2 text-white border-0" style="background-color: #027EDC;">Add Item</button>
               </div>
           </div>
           <hr>
           <h5>RFP Eligibility</h5>
           <div class="row g-3 mb-4">
-              <div class="col-md-6">
+              <div class="col-md-6 col-lg-4">
                   <label class="form-label">Question</label>
                   <input type="text" class="form-control">
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 col-lg-4">
                   <label class="form-label">Description</label>
-                  <textarea class="form-control"></textarea>
+                  <textarea class="form-control" rows="2"></textarea>
               </div>
-              <div class="col-md-6 col-lg-4 col-sm-12 ">
+              <div class="col-md-6 col-lg-4 col-sm-12  mb-4">
+                  <label class="form-label">Upload Document</label>
+                  <input type="file" class="form-control">
+              </div>
+              <div class="col-md-6 col-lg-6 col-sm-12 mb-4">
                   <label class="form-label">Answer Options *</label>
                   <div>
                       <input type="radio" name="answer" checked> Boolean
                       <input type="radio" name="answer"> Subjective
                   </div>
               </div>
-              <div class="col-md-6 col-lg-4 col-sm-12  mb-4">
-                  <label class="form-label">Upload Document</label>
-                  <input type="file" class="form-control">
-              </div>
-              <div class="col-md-6 col-lg-4 col-sm-12  text-end">
-                  <button type="button" class="btn btn-primary">Add</button>
+              <div class="col-md-6 col-lg-6 col-sm-12  text-end">
+                  <button type="button" class="px-5 py-2 text-white border-0 float-end" style="background-color: #027EDC;">Add</button>
               </div>
           </div>
       </form>
