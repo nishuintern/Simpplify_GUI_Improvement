@@ -21,7 +21,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
     />
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"
@@ -40,39 +40,39 @@
     <style>
       body {
         overflow-x: hidden;
-        background-color: white;
       }
-      form label{
-        font-weight: 700;
-      }
-      .form-label{
-        font-weight:700;
-      }
-      .btn-primary{
-        background-color:#027EDC !important;
-        border-color: #027EDC !important;
+      .card {
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .pagination .page-item .page-link {
+            border-radius: 5px;
+        }
+        .pagination .page-item.active .page-link {
+            background-color: #f97316; /* Orange */
+            border-color: #f97316;
+        }
+        .select2-container .select2-selection--single {
+  height: 34px !important;
+}
+.select2-container--default .select2-selection--single {
+  border: 1px solid #ccc !important;
+  border-radius: 0px !important;
+}
+.btn-primary {
+        background-color: #027edc !important;
+        border-color: #027edc !important;
       }
       .btn-primary:active,
-.btn-primary:focus,
-.btn-primary:hover,
-.btn-primary:focus:active,
-.btn-primary:hover:active {
-  background-color: #027EDC !important;
-  border-color: #027EDC !important;
-  box-shadow: none !important; /* Optional: Remove Bootstrap's default focus outline */
-}
-.container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 10px;
-        }
-        .pdf-container {
-            width: 100%;
-            height: 90vh; /* Adjust height */
-            border: 1px solid #ddd;
-        }
-
+      .btn-primary:focus,
+      .btn-primary:hover,
+      .btn-primary:focus:active,
+      .btn-primary:hover:active {
+        background-color: #027edc !important;
+        border-color: #027edc !important;
+        box-shadow: none !important; /* Optional: Remove Bootstrap's default focus outline */
+      }
     </style>
   </head>
   <body>
@@ -389,7 +389,7 @@
                   class="dropdown-item"
                   href="/BuyerPortal/Invoice/NewtonDocumentAI.html"
                 >
-                  <span> NEWTON Documents AI</span>
+                  <span>NEWTON Documents AI</span>
                 </a>
               </li>
             </ul>
@@ -444,7 +444,7 @@
             style="margin-top: -6px; margin-left: -11px"
           >
             <a
-              class="nav-link dropdown-toggle active"
+              class="nav-link dropdown-toggle"
               href="/BuyerPortal/Order/OrderDashboard.html"
               id="navbarDropdown"
               role="button"
@@ -775,7 +775,7 @@
             style="margin-top: -6px; margin-left: -11px"
           >
             <a
-              class="nav-link dropdown-toggle"
+              class="nav-link dropdown-toggle active"
               href="#"
               id="navbarDropdown"
               role="button"
@@ -814,7 +814,7 @@
       </div>
     </div>
 
-    <div class="main-container" style="background-color: #ffffff;">
+    <div class="main-container" style="background-color: #ffffff">
       <header>
         <div class="container-fluid">
           <div
@@ -1211,397 +1211,230 @@
         <div class="row container-fluid">
           <div class="d-flex justify-content-between align-items-center">
             <div class="d-flex">
-              <a href="/BuyerPortal/Order/NewtonDocumentAI.html">
+              <a href="/BuyerPortal/Contract Management/ContractManagement.html">
                 <img src="/icons/Arrow back ios (2).svg" alt="back">
               </a>
-              <h2>Newton Document AI</h2>
+              <h2>Details</h2>
             </div>
-            <div class="d-flex">
+            <div class="d-flex justify-content-end">
+              <!-- <a href="" class="me-2">
+                <img src="/icons/save.svg" alt="">
+              </a> -->
               <a href="">
-                <img src="/icons/save.svg" class="me-3" alt="" />
-              </a>
-              <a href="">
-                <img src="/icons/Synchronize.svg" alt="" />
+                <img src="/icons/Synchronize.svg" alt="sync" />
               </a>
             </div>
           </div>
         </div>
       </div>
       <!-- end fof Mid header -->
-
-      <!-- Table view -->
-      <div class="container-fluid mt-4">
-        <div class="row">
-          <!-- Left column: File upload -->
-          <div class="col-lg-6 col-md-6 mb-3">
-            <label for="attachInvoice" class="form-label">Attach Invoice</label>
-            <input type="file" class="form-control" id="attachInvoice">
-          </div>
-          <!-- Right column: Buttons in a grid -->
-          <div class="col-md-6 col-lg-6 col-sm-12">
-            <!-- Nested row for buttons; g-2 adds spacing between columns -->
-            <div class="row g-2">
-              <div class="col-md-6 col-sm-12 col-lg-3">
-                <button type="button" class="btn btn-primary text-white  border-0 w-100 py-2" style="background-color:blue ;">UPLOAD</button>
-              </div>
-              <div class="col-md-6 col-sm-12 col-lg-3">
-                <button type="button" class="btn btn-primary text-white border-0 w-100 py-2" style="background-color:blue ;">SCAN &amp; EXTRACT</button>
-              </div>
-              <div class="col-md-6 col-sm-12 col-lg-3">
-                <button type="button" class="btn btn-primary text-white border-0 w-100 py-2" style="background-color:blue ;">SAVE</button>
-              </div>
-              <div class="col-md-6 col-sm-12 col-lg-3">
-                <button type="button" class="btn btn-primary text-white border-0 w-100 py-2" style="background-color:blue ;">FINAL SUBMIT</button>
-              </div>
-              <div class="col-md-6 col-sm-12 col-lg-3">
-                <button type="button" class="btn btn-primary text-white border-0 w-100  py-2" style="background-color:blue ;">SHOW CONFIDENCE</button>
-              </div>
+      <div class="container-fluid mt-3">
+        <div class="card">
+          <!-- <div class="form-container mt-3 mb-3 mx-4">
+            <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
+              <h5 class="mb-3 p-2">RFP Details</h5>
+              <img src="/icons/Arrow_down.svg" class="px-2" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" alt="doubleArrow">
+            </div>
+              <form class="collapse" id="collapseExample">
+                  <div class="row mt-3">
+                    <div class="col-lg-4">
+                      <div class="row">
+                        <label class="col-lg-3 select">RFP ID :</label>
+                        <p class="col-lg-6">20240708RFP000001</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="row">
+                        <label class="col-lg-3 select">RFP Req. :</label>
+                        <p class="col-lg-6">manpower</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="row">
+                        <label class="col-lg-3 select">RFP Desc. :</label>
+                        <p class="col-lg-6">RFP45</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-2">
+                    <div class="col-lg-4">
+                      <div class="row">
+                        <label class="col-lg-3 select">Opening Date:</label>
+                        <p class="col-lg-6">7/9/2024</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="row">
+                        <label class="col-lg-3 select">Opening Time :</label>
+                        <p class="col-lg-6">01:00:00
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="row">
+                        <label class="col-lg-3 select">Closing Date :
+                        </label>
+                        <p class="col-lg-6">7/13/2024
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-2">
+                    <div class="col-lg-4">
+                      <div class="row">
+                        <label class="col-lg-3 select">Closing Time:
+                        </label>
+                        <p class="col-lg-6">02:00:00
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="row">
+                        <label class="col-lg-3 select">Client IP:
+                        </label>
+                        <p class="col-lg-6">203.115.98.221
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+              </form>
+          </div> -->
+          <div class="form-container mt-3 mb-3 mx-4">
+            <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
+              <h5 class="mb-3 p-2">Item Details</h5>
+              <img src="/icons/Arrow_down.svg" class="px-2" data-bs-toggle="collapse" href="#collapseItem" role="button" aria-expanded="false" aria-controls="collapseExample" alt="doubleArrow">
             </div>
           </div>
-        </div>
-        <hr>
-        <div class="row">
-          <!-- Left Side: Attach Invoice & Buttons -->
-          <div class="col-md-6 col-lg-6" style="border: 1px solid #BABED8;">
-            <!-- Attach Invoice -->
-            <iframe src="/sample.pdf" class="pdf-container d-none"></iframe>
-
+          <div class="collpase px-3" id="collapseItem">
+            <table class="table table-responsive">
+              <thead>
+                <tr>
+                  <th>Item Code</th>
+                  <th>Item Name</th>
+                  <th>Item Spec.</th>
+                  <th>Item Quantity</th>
+                  <th>Currency</th>
+                  <th>Opening Bid Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>901010100000001</td>
+                  <td>GLASS 3X3</td>
+                  <td>spec</td>
+                  <td>4.000</td>
+                  <td>Indian</td>
+                  <td>2000.00</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-      
-          <!-- Right Side: Form Fields -->
-          <div class="col-md-6 col-lg-6 p-2" style="border: 1px solid #BABED8; height: 100vh;overflow-y: auto;">
-            <form>
-              <!-- Booking Reference -->
-              <div class="row mb-3">
-                <label for="bookingReference" class="col-sm-4 col-form-label">Booking Reference</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="bookingReference">
-                </div>
-              </div>
-      
-              <!-- Shipper -->
-              <div class="row mb-3">
-                <label for="shipper" class="col-sm-4 col-form-label">Shipper</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="shipper">
-                </div>
-              </div>
-      
-              <!-- Forwarder -->
-              <div class="row mb-3">
-                <label for="forwarder" class="col-sm-4 col-form-label">Forwarder</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="forwarder">
-                </div>
-              </div>
-      
-              <!-- Destination Port (POD) -->
-              <div class="row mb-3">
-                <label for="destinationPort" class="col-sm-4 col-form-label">Destination Port (POD)</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="destinationPort">
-                </div>
-              </div>
-      
-              <!-- Container Type/Size -->
-              <div class="row mb-3">
-                <label for="containerTypeSize" class="col-sm-4 col-form-label">Container Type/Size</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="containerTypeSize">
-                </div>
-              </div>
-      
-              <!-- Commodity -->
-              <div class="row mb-3">
-                <label for="commodity" class="col-sm-4 col-form-label">Commodity</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="commodity">
-                </div>
-              </div>
-      
-              <!-- Vessel -->
-              <div class="row mb-3">
-                <label for="vessel" class="col-sm-4 col-form-label">Vessel</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="vessel">
-                </div>
-              </div>
-      
-              <!-- Port of Loading (POL) -->
-              <div class="row mb-3">
-                <label for="portOfLoading" class="col-sm-4 col-form-label">Port of Loading (POL)</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="portOfLoading">
-                </div>
-              </div>
-      
-              <!-- Return Location for Empty Container -->
-              <div class="row mb-3">
-                <label for="returnLocationEmpty" class="col-sm-4 col-form-label">
-                  Return Location for Empty Container
-                </label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="returnLocationEmpty">
-                </div>
-              </div>
-      
-              <!-- Pick-up Location for Empty Container -->
-              <div class="row mb-3">
-                <label for="pickupLocationEmpty" class="col-sm-4 col-form-label">
-                  Pick-up Location for Empty Container
-                </label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="pickupLocationEmpty">
-                </div>
-              </div>
-      
-              <!-- Booking Date -->
-              <div class="row mb-3">
-                <label for="bookingDate" class="col-sm-4 col-form-label">Booking Date</label>
-                <div class="col-sm-8">
-                  <input type="date" class="form-control" id="bookingDate">
-                </div>
-              </div>
-      
-              <!-- Estimated Time of Departure (ETD) -->
-              <div class="row mb-3">
-                <label for="etd" class="col-sm-4 col-form-label">Estimated Time of Departure (ETD)</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="etd">
-                </div>
-              </div>
-      
-              <!-- Validity of Release Order -->
-              <div class="row mb-3">
-                <label for="validityReleaseOrder" class="col-sm-4 col-form-label">Validity of Release Order</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="validityReleaseOrder">
-                </div>
-              </div>
-              <!-- Notes -->
-              <div class="row mb-3">
-                <label for="Notes" class="col-sm-4 col-form-label">Notes</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="Notes">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="Booking Number" class="col-sm-4 col-form-label">Booking Number</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="Booking Number">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="Line" class="col-sm-4 col-form-label">Line</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="Line">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="Vessel/Voltage" class="col-sm-4 col-form-label">Vessel/Voltage</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="Vessel/Voltage">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="Connecting Vessel/Voltage" class="col-sm-4 col-form-label">Connecting Vessel/Voltage</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="Connecting Vessel/Voltage">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="Loading Terminal" class="col-sm-4 col-form-label">Loading Terminal</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="Loading Terminal">
-                </div>
-              </div><div class="row mb-3">
-                <label for="Port Of Discharge (POD)" class="col-sm-4 col-form-label">Port Of Discharge (POD)</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="Port Of Discharge (POD)">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="Final Place Of Delivery (POD)" class="col-sm-4 col-form-label">Final Place Of Delivery (POD)</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="Final Place Of Delivery (POD)">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="Ramp Cut-off Date/Time" class="col-sm-4 col-form-label">Ramp Cut-off Date/Time</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="Ramp Cut-off Date/Time">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="Estimated Time Of Arrival (ETA)" class="col-sm-4 col-form-label">Estimated Time Of Arrival (ETA)</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="Estimated Time Of Arrival (ETA)">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="Gross Weight (KGS)" class="col-sm-4 col-form-label">Gross Weight (KGS)</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="Gross Weight (KGS)">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="Empty Pick Up Location" class="col-sm-4 col-form-label">Empty Pick Up Location</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="Empty Pick Up Location">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="Remarks" class="col-sm-4 col-form-label">Remarks</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="Remarks">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="Detention/Charges" class="col-sm-4 col-form-label">Detention/Charges</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="Detention/Charges">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="Hazardous Cargo Declaration" class="col-sm-4 col-form-label">Hazardous Cargo Declaration</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="Hazardous Cargo Declaration">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="specialConditions" class="col-sm-4 col-form-label">Special Conditions</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="specialConditions">
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="date" class="col-sm-4 col-form-label">date</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="date">
-                </div>
-              </div>
-
-      
-              <!-- Empty Pick-up Location -->
-              <div class="row mb-3">
-                <label for="emptyPickupLocation" class="col-sm-4 col-form-label">Empty Pick-up Location</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="emptyPickupLocation">
-                </div>
-              </div>
-      
-              <!-- Remarks -->
-              <div class="row mb-3">
-                <label for="remarks" class="col-sm-4 col-form-label">Remarks</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="remarks">
-                </div>
-              </div>
-      
-              <!-- Detention/Charges -->
-              <div class="row mb-3">
-                <label for="detentionCharges" class="col-sm-4 col-form-label">Detention/Charges</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="detentionCharges">
-                </div>
-              </div>
-      
-              <!-- Hazardous Cargo Declaration -->
-              <div class="row mb-3">
-                <label for="hazardousCargo" class="col-sm-4 col-form-label">Hazardous Cargo Declaration</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="hazardousCargo">
-                </div>
-              </div>
-      
-              <!-- Special Conditions -->
-              <div class="row mb-3">
-                <label for="specialConditions" class="col-sm-4 col-form-label">Special Conditions</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="specialConditions">
-                </div>
-              </div>
-      
-              <!-- Date -->
-              <div class="row mb-3">
-                <label for="dateField" class="col-sm-4 col-form-label">Date</label>
-                <div class="col-sm-8">
-                  <input type="date" class="form-control" id="dateField">
-                </div>
-              </div>
-      
-              <!-- ETA -->
-              <div class="row mb-3">
-                <label for="eta" class="col-sm-4 col-form-label">ETA</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="eta">
-                </div>
-              </div>
-      
-              <!-- ETD -->
-              <div class="row mb-3">
-                <label for="etd2" class="col-sm-4 col-form-label">ETD</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="etd2">
-                </div>
-              </div>
-      
-              <!-- Weight (KGS) -->
-              <div class="row mb-3">
-                <label for="weightKgs" class="col-sm-4 col-form-label">Weight (KGS)</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="weightKgs">
-                </div>
-              </div>
-      
-              <!-- Stuffing Point -->
-              <div class="row mb-3">
-                <label for="stuffingPoint" class="col-sm-4 col-form-label">Stuffing Point</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="stuffingPoint">
-                </div>
-              </div>
-      
-              <!-- Surveyor -->
-              <div class="row mb-3">
-                <label for="surveyor" class="col-sm-4 col-form-label">Surveyor</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="surveyor">
-                </div>
-              </div>
-      
-              <!-- Container Number -->
-              <div class="row mb-3">
-                <label for="containerNumber" class="col-sm-4 col-form-label">Container Number</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="containerNumber">
-                </div>
-              </div>
-      
-              <!-- Capacity (Litres) -->
-              <div class="row mb-3">
-                <label for="capacityLitres" class="col-sm-4 col-form-label">Capacity (Litres)</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="capacityLitres">
-                </div>
-              </div>
-      
-              <!-- Delivery Location -->
-              <div class="row mb-3">
-                <label for="deliveryLocation" class="col-sm-4 col-form-label">Delivery Location</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="deliveryLocation">
-                </div>
-              </div>
-            </form>
+          <div class="form-container mt-3 mb-3 mx-4">
+            <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
+              <h5 class="mb-3 p-2"> Document Details</h5>
+              <img src="/icons/Arrow_down.svg" class="px-2" data-bs-toggle="collapse" href="#collapseSupplier" role="button" aria-expanded="false" aria-controls="collapseExample" alt="doubleArrow">
+            </div>
           </div>
+          <div class="collpase px-3" id="collapseSupplier">
+            <table class="table table-responsive">
+              <thead>
+                <tr>
+                  <th>Location</th>
+                  <th>Supplier Name</th>
+                  <th>Mobile No.</th>
+                  <th>E-mail Id</th>
+                  <th>Checked</th>
+                  <th>Checked ON</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>100001</td>
+                  <td>SUGANDHA AIRAN</td>
+                  <td>9320359958</td>
+                  <td>sugandhajindal1984@gmail.com</td>
+                  <td>ON</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>100001</td>
+                  <td>SUGANDHA AIRAN</td>
+                  <td>9320359958</td>
+                  <td>sugandhajindal1984@gmail.com</td>
+                  <td>ON</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- <div class="form-container mt-3 mb-3 mx-4">
+              <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
+                <h5 class="mb-3 p-2">RFP Eligibility Details</h5>
+                <img src="/icons/Arrow_down.svg" class="px-2" data-bs-toggle="collapse" href="#collapseRFPEligibilityDetails" role="button" aria-expanded="false" aria-controls="collapseExample" alt="doubleArrow">
+              </div>
+            </div>
+            <div class="collpase px-3" id="collapseRFPEligibilityDetails">
+              <table class="table table-responsive">
+                <thead>
+                  <tr>
+                    <th>Sno.</th>
+                    <th>Question</th>
+                    <th>Description</th>
+                    <th>Document</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>ISO</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>Cmmi</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="form-container mt-3 mb-5 mx-4">
+              <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
+                <h5 class="mb-3 p-2">Commercial Bids Details</h5>
+                <img src="/icons/Arrow_down.svg" class="px-2" data-bs-toggle="collapse" href="#collapseCommercialBidsDetails" role="button" aria-expanded="false" aria-controls="collapseExample" alt="doubleArrow">
+              </div>
+            </div>
+            <div class="collpase px-3" id="collapseCommercialBidsDetails">
+              <table class="table table-responsive">
+                <thead>
+                  <tr>
+                    <th>Sno.</th>
+                    <th>RFPID</th>
+                    <th>Supplier Code</th>
+                    <th>Supplier Name</th>
+                    <th>Document</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>20240702RFP000002</td>
+                    <td>3GT5685895</td>
+                    <td>3 G TECHNOLOGY(SHANGHAI) LTD.	</td>
+                    <td><a href="#">Download</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div> -->
         </div>
-      </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/BuyerPortal/index.js"></script>
-    <script src="tableManager2.js"></script>
+    <script src="tableManager.js"></script>
     <script src="loadContent.js"></script>
 
     <script>
@@ -1614,6 +1447,10 @@
       $(".mobile-close").on("click", function (event) {
         $(".sidebar").toggleClass("show");
       });
+      $('.select2').select2({
+  width: '100%',
+   // Ensures full width responsiveness
+});
     </script>
   </body>
 </html>

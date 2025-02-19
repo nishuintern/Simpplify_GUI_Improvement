@@ -60,6 +60,19 @@
   border: 1px solid #ccc !important;
   border-radius: 0px !important;
 }
+.btn-primary {
+        background-color: #027edc !important;
+        border-color: #027edc !important;
+      }
+      .btn-primary:active,
+      .btn-primary:focus,
+      .btn-primary:hover,
+      .btn-primary:focus:active,
+      .btn-primary:hover:active {
+        background-color: #027edc !important;
+        border-color: #027edc !important;
+        box-shadow: none !important; /* Optional: Remove Bootstrap's default focus outline */
+      }
     </style>
   </head>
   <body>
@@ -1300,7 +1313,8 @@
             </div>
         </form>
         <div class="row mb-3">
-            <div class="col-12 table-responsive mt-3">
+          <div class="card" style="max-width: 95%;height: 30vh;">
+            <div class="col-12 table-responsive mt-3" >
               <table class="table table-bordered">
                 <thead class="table-secondary">
                   <tr>
@@ -1389,6 +1403,7 @@
                 </tbody>
               </table>
             </div>
+          </div>
         </div>
         <div class="row">
             <div class="col-12 table-responsive">

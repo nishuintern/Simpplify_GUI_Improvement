@@ -1,46 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Select2 with Search and Checkbox</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-  <style>
-    .select2-container--default .select2-selection--multiple {
-      min-height: 38px; /* Adjust height to match Bootstrap inputs */
-      border: 1px solid #ced4da;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Order PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        .pdf-container {
+            width: 100%;
+            height: 90vh; /* Adjust height */
+            border: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
-  <div class="container mt-3">
-    <label for="enquiry" class="form-label fw-bold">Enquiry*</label>
-    <select id="enquiry" class="form-select select2" multiple>
-      <option value="20180713ENQ000001">20180713ENQ000001</option>
-      <option value="20180713ENQ000002">20180713ENQ000002</option>
-      <option value="20180713ENQ000003">20180713ENQ000003</option>
-      <option value="20180713ENQ000004">20180713ENQ000004</option>
-      <option value="20180713ENQ000005">20180713ENQ000005</option>
-      <option value="20180713ENQ000006">20180713ENQ000006</option>
-      <option value="20180713ENQ000007">20180713ENQ000007</option>
-      <option value="20180713ENQ000008">20180713ENQ000008</option>
-      <option value="20180713ENQ000009">20180713ENQ000009</option>
-      <option value="20180713ENQ000010">20180713ENQ000010</option>
-    </select>
-  </div>
 
-  <script>
-    // Initialize Select2 with search and multi-select functionality
-    $(document).ready(function() {
-      $('#enquiry').select2({
-        placeholder: "Select enquiries",
-        allowClear: true,
-        closeOnSelect: false // Keeps the dropdown open for multiple selections
-      });
-    });
-  </script>
+    <div class="container">
+        <h2>Shipping Order</h2>
+        <iframe src="sample.pdf" class="pdf-container"></iframe>
+    </div>
+
 </body>
 </html>
