@@ -17,7 +17,6 @@
       rel="stylesheet"
       href="/BuyerPortal/assets/fonts/FluentSystemIcons-Regular.css"
     />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
@@ -41,7 +40,6 @@
     <style>
       body {
         overflow-x: hidden;
-        background-color: white;
       }
       .card {
             margin: 20px;
@@ -55,13 +53,22 @@
             background-color: #f97316; /* Orange */
             border-color: #f97316;
         }
-        .select2-container .select2-selection--single {
-  height: 34px !important;
-}
-.select2-container--default .select2-selection--single {
-  border: 1px solid #ccc !important;
-  border-radius: 0px !important;
-}
+        .btn-primary {
+        background-color: #027edc !important;
+        border-color: #027edc !important;
+      }
+      .btn-primary:active,
+      .btn-primary:focus,
+      .btn-primary:hover,
+      .btn-primary:focus:active,
+      .btn-primary:hover:active {
+        background-color: #027edc !important;
+        border-color: #027edc !important;
+        box-shadow: none !important; /* Optional: Remove Bootstrap's default focus outline */
+      }
+      .select{
+        font-weight:500 ;
+      }
     </style>
   </head>
   <body>
@@ -478,7 +485,7 @@
             style="margin-top: -6px; margin-left: -11px"
           >
             <a
-              class="nav-link dropdown-toggle active"
+              class="nav-link dropdown-toggle"
               href="/BuyerPortal/Purchase/EnquiryEntry.html"
               id="navbarDropdown"
               role="button"
@@ -658,7 +665,7 @@
             style="margin-top: -6px; margin-left: -11px"
           >
             <a
-              class="nav-link dropdown-toggle"
+              class="nav-link dropdown-toggle active"
               href="#"
               id="navbarDropdown"
               role="button"
@@ -1130,7 +1137,7 @@
                   </li>
                   <!-- <li><a class="dropdown-item" href="#">
                                 <iclass="icon icon-ic_fluent_arrow_sync_20_regular"></iclass=>
-                                          <span>Sync
+                                           <span>Sync
                                           contact</span></a></li> -->
 
                   <li>
@@ -1200,215 +1207,205 @@
         <div class="row container-fluid">
           <div class="d-flex justify-content-between align-items-center">
             <div class="d-flex">
-              <a href="/BuyerPortal/Purchase/EnquiryEntry.html">
+              <a href="/BuyerPortal/RFP/RFP.html">
                 <img src="/icons/Arrow back ios (2).svg" alt="back">
               </a>
-              <h2>Add New Enquiry</h2>
+              <h2>Request For Proposal Details</h2>
             </div>
             <div class="d-flex justify-content-end">
-              <a href="" class="me-2">
-                <img src="/icons/save.svg" alt="">
-              </a>
               <a href="">
                 <img src="/icons/Synchronize.svg" alt="sync" />
               </a>
+              <!-- <a href="/BuyerPortal/RFP/AddNewRFP.html" class="ms-2">
+                <img src="/icons/formkit_add.svg" alt="">
+              </a> -->
             </div>
           </div>
         </div>
       </div>
-      <!-- end fof Mid header -->
-      <div class="container-fluid mt-4">
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label class="form-label">Event Name *</label>
-                    <input type="text" class="form-control" placeholder="Enter Event Name">
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Location *</label>
-                    <select class="form-select">
-                        <option>Select Location</option>
-                        <option>Delhi</option>
-                        <option>Chennai</option>
-                        <option>Gurgaon</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Indent Type *</label>
-                    <select class="form-select">
-                        <option>SELECT</option>
-                        <option>Indent Indigenous-HO</option>
-                        <option>Indent Import-HO</option>
-                    </select>
-                </div>
+      <div class="container-fluid mt-3">
+<div class="card">
+  <div class="form-container mt-3 mb-3 mx-4">
+    <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
+      <h5 class="mb-3 p-2">RFP Details</h5>
+      <img src="/icons/Arrow_down.svg" class="px-2" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" alt="doubleArrow">
+    </div>
+      <form class="collapse" id="collapseExample">
+          <div class="row mt-3">
+            <div class="col-lg-4">
+              <div class="row">
+                <label class="col-lg-3 select">RFP ID :</label>
+                <p class="col-lg-6">20240708RFP000001</p>
+              </div>
             </div>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label class="form-label">Enquiry Type *</label>
-                    <select class="form-select">
-                        <option>SELECT</option>
-                        <option>Regular</option>
-                        <option>Reverse Auction</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Delivery Date *</label>
-                    <input type="date" class="form-control">
-                </div>
+            <div class="col-lg-4">
+              <div class="row">
+                <label class="col-lg-3 select">RFP Req. :</label>
+                <p class="col-lg-6">manpower</p>
+              </div>
             </div>
-            <hr>
-            <!-- <div class="row mb-3">
-                <div class="col-md-4">
-                  <label for="dropdown" class="form-label">Chapter</label>
-                  <div class="dropdown">
-                    <button class="dropdown-toggle px-5 py-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="border: 1px solid #BABED8 !important;">
-                      Selected Chapter
-                    </button>
-                    <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton" id="dropdown-options">
-                      <input type="text" class="search-input" placeholder="Search..." id="search-input" style="border: 1px solid #BABED8;">
-                      <li><a class="dropdown-item" href="#">01-Live & Animals</a></li>
-                      <li><a class="dropdown-item" href="#">02-Fish & crustanceon</a></li>
-                      <li><a class="dropdown-item" href="#">03-Metals & Edibile Meat Offal</a></li>
-                      <li><a class="dropdown-item" href="#">04-Dairy, Eggs,Honey & ED Products</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Heading</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">HSN Code</label>
-                    <input type="text" class="form-control">
-                </div>
+            <div class="col-lg-4">
+              <div class="row">
+                <label class="col-lg-3 select">RFP Desc. :</label>
+                <p class="col-lg-6">RFP45</p>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-lg-4">
+              <div class="row">
+                <label class="col-lg-3 select">Opening Date:</label>
+                <p class="col-lg-6">7/9/2024</p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="row">
+                <label class="col-lg-3 select">Opening Time :</label>
+                <p class="col-lg-6">01:00:00
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="row">
+                <label class="col-lg-3 select">Closing Date :
+                </label>
+                <p class="col-lg-6">7/13/2024
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-lg-4">
+              <div class="row">
+                <label class="col-lg-3 select">Closing Time:
+                </label>
+                <p class="col-lg-6">02:00:00
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="row">
+                <label class="col-lg-3 select">Client IP:
+                </label>
+                <p class="col-lg-6">203.115.98.221
+                </p>
+              </div>
+            </div>
+            <!-- <div class="col-lg-4">
+              <div class="row">
+                <label class="col-lg-3 select">Closing Date :
+                </label>
+                <p class="col-lg-6">7/13/2024
+                </p>
+              </div>
             </div> -->
-            <div class="row mb-3 mt-3">
-              <div class="col-md-4">
-                <!-- <form class="col-md-6"> -->
-                  <div>
-                    <label for="enquiry" class="fw-semibold">Chapter</label>
-                    <select class="form-select select2 mt-2">
-                      <option value="">Selected Chapter</option>
-                    <option>01-LIVE ANIMALS</option>
-                    <option>02-MEAT & EDIBLE MEAT OFFAL</option>
-                    <option>03-FISH & CRUSTACEANS</option>
-                    <option>04-DAIRY, EGGS, HONEY, & ED. PRODUCTS</option>
-                    <option>05-PRODUCTS OF ANIMAL ORIGIN</option>
-                    <option>06-LIVE TREES & OTHER PLANTS</option>
-                    <option>07-EDIBLE VEGETABLES</option>
-                    <option>08-ED. FRUITS & NUTS, PEEL OF CITRUS/MELONS</option>
-                    <option>09-COFFEE , TEA, MATE & SPICES</option>
-                    <option>10-CEREALS</option>
-                    </select>
-                  </div>
-                <!-- </form> -->
-              </div>
-              <div class="col-md-4">
-                <div>
-                  <label for="heading" class="fw-semibold">Heading</label>
-                  <select class="form-select select2 mt-2">
-                    <option value="">Selected Heading</option>
-                  <option>
-                    01-Horses , Asses, mules And hinnies, live
-                  </option>
-                  <option>02-bovine animals, live</option>
-                  <option>03-FISH & CRUSTACEANS</option>
-                  <option>03-swine , live</option>
-                  <option>04-heep and goats, live</option>
-                  <option>05-chickens, ducks, geese, turkeys, and guineas, live</option>
-                  <option>06-animals, live, nesoi Nesoi - not elsewhere specified of indicated.</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <label for="form-label" class="fw-semibold">HSN Code</label>
-                <select name="" id="" class="form-select select2 mt-2">
-                  <option value="">Selected HSN Code</option>
-                </select>
-              </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label class="form-label">Select Supplier *</label>
-                    <select class="form-select">
-                        <option>SELECT</option>
-                        <option>Any 5</option>
-                        <option>Any 10</option>
-                        <option>Any 15</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Registered Supplier</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Unregistered Supplier</label>
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label class="form-label">Attach Document</label>
-                    <input type="file" class="form-control">
-                </div>
-            </div>
-            <hr>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label class="form-label">Indent #*</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">ITEM CODE *</label>
-                    <select class="form-select">
-                        <option>SELECT</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">ITEM NAME</label>
-                    <input type="text" class="form-control" disabled>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label class="form-label">Item Spec.</label>
-                    <input type="text" class="form-control" disabled>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Indt. Qty.</label>
-                    <input type="text" class="form-control" disabled>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Qty</label>
-                    <input type="number" class="form-control">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label class="form-label">Currency *</label>
-                    <select class="form-select">
-                        <option>SELECT</option>
-                        <option>Afghan afghani</option>
-                        <option>European euro</option>
-                        <option>United dollar</option>
-                        <option>Indian rupee</option>
-                        <option>Cuban peso</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Remarks</label>
-                    <textarea class="form-control"></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-end">
-                    <button type="submit" class="px-5 py-2 my-2 text-white" style="background-color: #027EDC; border: none;">Add</button>
-                </div>
-            </div>
-        </form>
+          </div>
+      </form>
+  </div>
+  <div class="form-container mt-3 mb-3 mx-4">
+    <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
+      <h5 class="mb-3 p-2">Item Details</h5>
+      <img src="/icons/Arrow_down.svg" class="px-2" data-bs-toggle="collapse" href="#collapseItem" role="button" aria-expanded="false" aria-controls="collapseExample" alt="doubleArrow">
+    </div>
+  </div>
+  <div class="collpase px-3" id="collapseItem">
+    <table class="table table-responsive">
+      <thead>
+        <tr>
+          <th>Item Code</th>
+          <th>Item Name</th>
+          <th>Item Spec.</th>
+          <th>Item Quantity</th>
+          <th>Currency</th>
+          <th>Opening Bid Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>901010100000001</td>
+          <td>GLASS 3X3</td>
+          <td>spec</td>
+          <td>4.000</td>
+          <td>Indian</td>
+          <td>2000.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="form-container mt-3 mb-3 mx-4">
+    <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
+      <h5 class="mb-3 p-2">Supplier Details</h5>
+      <img src="/icons/Arrow_down.svg" class="px-2" data-bs-toggle="collapse" href="#collapseSupplier" role="button" aria-expanded="false" aria-controls="collapseExample" alt="doubleArrow">
+    </div>
+  </div>
+  <div class="collpase px-3" id="collapseSupplier">
+    <table class="table table-responsive">
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th>Supplier Name</th>
+          <th>Mobile No.</th>
+          <th>E-mail Id</th>
+          <th>Checked</th>
+          <th>Checked ON</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>100001</td>
+          <td>SUGANDHA AIRAN</td>
+          <td>9320359958</td>
+          <td>sugandhajindal1984@gmail.com</td>
+          <td>ON</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>100001</td>
+          <td>SUGANDHA AIRAN</td>
+          <td>9320359958</td>
+          <td>sugandhajindal1984@gmail.com</td>
+          <td>ON</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="form-container mt-3 mb-3 mx-4">
+      <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
+        <h5 class="mb-3 p-2">RFP Eligibility Details</h5>
+        <img src="/icons/Arrow_down.svg" class="px-2" data-bs-toggle="collapse" href="#collapseRFPEligibilityDetails" role="button" aria-expanded="false" aria-controls="collapseExample" alt="doubleArrow">
+      </div>
+    </div>
+    <div class="collpase px-3" id="collapseRFPEligibilityDetails">
+      <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th>Sno.</th>
+            <th>Question</th>
+            <th>Description</th>
+            <th>Document</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>ISO</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>2</td>
+            <td>Cmmi</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+</div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/BuyerPortal/index.js"></script>
     <script src="tableManager.js"></script>
@@ -1424,38 +1421,6 @@
       $(".mobile-close").on("click", function (event) {
         $(".sidebar").toggleClass("show");
       });
-      $('.select2').select2();
-      $('#heading').select2({
-        placeholder: "Select enquiries",
-        allowClear: true,
-        closeOnSelect: false // Keeps the dropdown open for multiple selections
-      });
     </script>
-   <script>
-    // Filter the items in the dropdown based on search input
-    document.getElementById("search-input").addEventListener("input", function() {
-      const filter = this.value.toLowerCase();
-      const items = document.querySelectorAll("#dropdown-options .dropdown-item");
-  
-      items.forEach(function(item) {
-        if (item.textContent.toLowerCase().includes(filter)) {
-          item.style.display = "block"; // Show items that match the search
-        } else {
-          item.style.display = "none"; // Hide items that don't match
-        }
-      });
-    });
-  
-    // Handle item selection
-    const dropdownButton = document.getElementById("dropdownMenuButton");
-    const dropdownItems = document.querySelectorAll("#dropdown-options .dropdown-item");
-  
-    dropdownItems.forEach(function(item) {
-      item.addEventListener("click", function(e) {
-        e.preventDefault(); // Prevent default anchor behavior
-        dropdownButton.textContent = this.textContent; // Update button text to selected item
-      });
-    });
-  </script>
   </body>
 </html>

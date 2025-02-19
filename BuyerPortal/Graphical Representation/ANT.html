@@ -17,7 +17,6 @@
       rel="stylesheet"
       href="/BuyerPortal/assets/fonts/FluentSystemIcons-Regular.css"
     />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
@@ -41,7 +40,6 @@
     <style>
       body {
         overflow-x: hidden;
-        background-color: white;
       }
       .card {
             margin: 20px;
@@ -55,13 +53,6 @@
             background-color: #f97316; /* Orange */
             border-color: #f97316;
         }
-        .select2-container .select2-selection--single {
-  height: 34px !important;
-}
-.select2-container--default .select2-selection--single {
-  border: 1px solid #ccc !important;
-  border-radius: 0px !important;
-}
     </style>
   </head>
   <body>
@@ -478,7 +469,7 @@
             style="margin-top: -6px; margin-left: -11px"
           >
             <a
-              class="nav-link dropdown-toggle active"
+              class="nav-link dropdown-toggle"
               href="/BuyerPortal/Purchase/EnquiryEntry.html"
               id="navbarDropdown"
               role="button"
@@ -1130,7 +1121,7 @@
                   </li>
                   <!-- <li><a class="dropdown-item" href="#">
                                 <iclass="icon icon-ic_fluent_arrow_sync_20_regular"></iclass=>
-                                          <span>Sync
+                                           <span>Sync
                                           contact</span></a></li> -->
 
                   <li>
@@ -1200,10 +1191,10 @@
         <div class="row container-fluid">
           <div class="d-flex justify-content-between align-items-center">
             <div class="d-flex">
-              <a href="/BuyerPortal/Purchase/EnquiryEntry.html">
+              <a href="/BuyerPortal/Graphical Representation/Dashboard.html">
                 <img src="/icons/Arrow back ios (2).svg" alt="back">
               </a>
-              <h2>Add New Enquiry</h2>
+              <h2>Add New Task</h2>
             </div>
             <div class="d-flex justify-content-end">
               <a href="" class="me-2">
@@ -1217,198 +1208,288 @@
         </div>
       </div>
       <!-- end fof Mid header -->
-      <div class="container-fluid mt-4">
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label class="form-label">Event Name *</label>
-                    <input type="text" class="form-control" placeholder="Enter Event Name">
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Location *</label>
-                    <select class="form-select">
-                        <option>Select Location</option>
-                        <option>Delhi</option>
-                        <option>Chennai</option>
-                        <option>Gurgaon</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Indent Type *</label>
-                    <select class="form-select">
-                        <option>SELECT</option>
-                        <option>Indent Indigenous-HO</option>
-                        <option>Indent Import-HO</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label class="form-label">Enquiry Type *</label>
-                    <select class="form-select">
-                        <option>SELECT</option>
-                        <option>Regular</option>
-                        <option>Reverse Auction</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Delivery Date *</label>
-                    <input type="date" class="form-control">
-                </div>
-            </div>
-            <hr>
-            <!-- <div class="row mb-3">
-                <div class="col-md-4">
-                  <label for="dropdown" class="form-label">Chapter</label>
-                  <div class="dropdown">
-                    <button class="dropdown-toggle px-5 py-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="border: 1px solid #BABED8 !important;">
-                      Selected Chapter
-                    </button>
-                    <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton" id="dropdown-options">
-                      <input type="text" class="search-input" placeholder="Search..." id="search-input" style="border: 1px solid #BABED8;">
-                      <li><a class="dropdown-item" href="#">01-Live & Animals</a></li>
-                      <li><a class="dropdown-item" href="#">02-Fish & crustanceon</a></li>
-                      <li><a class="dropdown-item" href="#">03-Metals & Edibile Meat Offal</a></li>
-                      <li><a class="dropdown-item" href="#">04-Dairy, Eggs,Honey & ED Products</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Heading</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">HSN Code</label>
-                    <input type="text" class="form-control">
-                </div>
-            </div> -->
-            <div class="row mb-3 mt-3">
-              <div class="col-md-4">
-                <!-- <form class="col-md-6"> -->
-                  <div>
-                    <label for="enquiry" class="fw-semibold">Chapter</label>
-                    <select class="form-select select2 mt-2">
-                      <option value="">Selected Chapter</option>
-                    <option>01-LIVE ANIMALS</option>
-                    <option>02-MEAT & EDIBLE MEAT OFFAL</option>
-                    <option>03-FISH & CRUSTACEANS</option>
-                    <option>04-DAIRY, EGGS, HONEY, & ED. PRODUCTS</option>
-                    <option>05-PRODUCTS OF ANIMAL ORIGIN</option>
-                    <option>06-LIVE TREES & OTHER PLANTS</option>
-                    <option>07-EDIBLE VEGETABLES</option>
-                    <option>08-ED. FRUITS & NUTS, PEEL OF CITRUS/MELONS</option>
-                    <option>09-COFFEE , TEA, MATE & SPICES</option>
-                    <option>10-CEREALS</option>
-                    </select>
-                  </div>
-                <!-- </form> -->
-              </div>
-              <div class="col-md-4">
-                <div>
-                  <label for="heading" class="fw-semibold">Heading</label>
-                  <select class="form-select select2 mt-2">
-                    <option value="">Selected Heading</option>
-                  <option>
-                    01-Horses , Asses, mules And hinnies, live
-                  </option>
-                  <option>02-bovine animals, live</option>
-                  <option>03-FISH & CRUSTACEANS</option>
-                  <option>03-swine , live</option>
-                  <option>04-heep and goats, live</option>
-                  <option>05-chickens, ducks, geese, turkeys, and guineas, live</option>
-                  <option>06-animals, live, nesoi Nesoi - not elsewhere specified of indicated.</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <label for="form-label" class="fw-semibold">HSN Code</label>
-                <select name="" id="" class="form-select select2 mt-2">
-                  <option value="">Selected HSN Code</option>
+      <div class="container-fluid mt-2 mb-3 content-scroll">
+        <form class="form-control" onsubmit="">
+          <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-6">
+              <div class="form-row">
+                <label for="staffName" class="form-label col-4"
+                  >Staff Name *</label
+                >
+                <select id="staffName" class="form-control col-8">
+                  <option value="">SELECT</option>
+                  <option value="3g">3 G TECHNOLOGY(SHANGHAI) LTD.</option>
                 </select>
               </div>
+              <div class="form-row">
+                <label for="inter-exter" class="form-label col-4"
+                  >Internal/External *</label
+                >
+                <div class="col-8">
+                  <div class="radio-group">
+                    <label
+                      ><input
+                        id="inter-exter"
+                        type="radio"
+                        name="internalExternal"
+                        value="internal"
+                        checked
+                      />
+                      Internal</label
+                    >
+                    <label
+                      ><input
+                        id="inter-exter"
+                        type="radio"
+                        name="internalExternal"
+                        value="external"
+                      />
+                      External</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <label for="entity" class="form-label col-4">Entity *</label>
+                <select id="entity" class="form-control col-8">
+                  <option value="">SELECT</option>
+                  <option value="entity1">Select</option>
+                  <option value="entity2">Indoasian(TC0000003)</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="eventTaskMeeting" class="form-label col-4"
+                  >Event/Task/Meeting</label
+                >
+                <select id="eventTaskMeeting" class="form-control col-8">
+                  <option value="task">Task</option>
+                  <option value="event">Event</option>
+                  <option value="meeting">Meeting</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="startDateTime" class="form-label col-4"
+                  >Start Date/Time *</label
+                >
+                <div class="col-8 d-flex gap-2">
+                  <input type="datetime-local" id="startDateTime" class="form-control" />
+                  <!-- <select id="startTime" class="form-control">
+                    <option value="am">AM</option>
+                    <option value="pm">PM</option>
+                  </select> -->
+                </div>
+              </div>
+              <div class="form-row">
+                <label for="status" class="form-label col-4">Status</label>
+                <select id="status" class="form-control col-8">
+                  <option value="">-SELECT-</option>
+                  <option value="pending">Pending</option>
+                  <option value="completed">Completed</option>
+                  <option value="cancelled">Cancelled</option>
+                  <option value="rescheduled">Rescheduled</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="check-box" class="form-label col-4">Invoiced</label>
+                <div class="col-8">
+                  <input id="check-box" type="checkbox" id="invoiced" />
+                </div>
+              </div>
+              <div class="form-row">
+                <label for="name" class="form-label col-4">Name</label>
+                <input type="text" id="name" class="form-control col-8" />
+              </div>
+              <div class="form-row">
+                <label for="phone" class="form-label col-4">Phone No.</label>
+                <input type="text" id="phone" class="form-control col-8" />
+              </div>
             </div>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label class="form-label">Select Supplier *</label>
-                    <select class="form-select">
-                        <option>SELECT</option>
-                        <option>Any 5</option>
-                        <option>Any 10</option>
-                        <option>Any 15</option>
-                    </select>
+
+            <!-- Right Column -->
+            <div class="col-md-6">
+              <div class="form-row">
+                <label for="completionRights" class="form-label col-4"
+                  >Completion Rights</label
+                >
+                <select id="completionRights" class="form-control col-8">
+                  <option value="">-SELECT-</option>
+                  <option value="internal">Assignor</option>
+                  <option value="external">Assignee</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="department" class="form-label col-4"
+                  >Department</label
+                >
+                <select id="department" class="form-control col-8">
+                  <option value="">-SELECT-</option>
+                  <option value="finance">Admin</option>
+                  <option value="sales">IT</option>
+                  <option value="marketing">Logistic</option>
+                  <option value="engineering">Sales</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="buyerSupplierUsers" class="form-label col-4"
+                  >Buyer/Supplier Users *</label
+                >
+                <select id="buyerSupplierUsers" class="form-control col-8">
+                  <option value="">-SELECT-</option>
+                  <option value="admin">Admin</option>
+                  <option value="manager">Manager</option>
+                  <option value="employee">Employee</option>
+                  <option value="customer">Customer</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="type" class="form-label col-4">TYPE *</label>
+                <select id="type" class="form-control col-8">
+                  <option value="">-SELECT-</option>
+                  <option value="task">Contract Life Cycle</option>
+                  <option value="meeting">Enquiry Approval</option>
+                  <option value="event">Invoice Approval</option>
+                  <option value="event">PO Approval</option>
+                  <option value="event">Vendor Approval</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="endDateTime" class="form-label col-4"
+                  >End Date/Time *</label
+                >
+                <div class="col-8 d-flex gap-2">
+                  <input type="datetime-local" id="endDateTime" class="form-control" />
+                  <!-- <select id="endTime" class="form-control">
+                    <option value="am">AM</option>
+                    <option value="pm">PM</option>
+                  </select> -->
                 </div>
-                <div class="col-md-4">
-                    <label class="form-label">Registered Supplier</label>
-                    <input type="text" class="form-control">
+              </div>
+              <div class="form-row">
+                <label for="reason" class="form-label col-4">Reason</label>
+                <select id="reason" class="form-control col-8">
+                  <option value="">-SELECT-</option>
+                  <!-- <option value="pending">Pending</option>
+                  <option value="completed">Completed</option>
+                  <option value="cancelled">Cancelled</option>
+                  <option value="rescheduled">Rescheduled</option> -->
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="priority" class="form-label col-4"
+                  >Priority *</label
+                >
+                <select id="priority" class="form-control col-8">
+                  <option value="">-SELECT-</option>
+                  <option value="high">High</option>
+                  <option value="low">Low</option>
+                  <option value="Normal">Normal</option>
+                  <!-- <option value="urgent">Urgent</option>
+                  <option value="critical">Critical</option>
+                  <option value="emergency">Emergency</option> -->
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="attachDocument" class="form-label col-4"
+                  >Attach Document
+                </label>
+                <span
+                  class="btn btn-outline-light text-dark"
+                  data-bs-toggle="modal"
+                  data-bs-target="#documentDetailsModal"
+                  >Show
+                </span>
+                <input
+                  type="file"
+                  id="attachDocument"
+                  class="form-control col-8"
+                />
+                <div
+                  class="modal fade"
+                  id="documentDetailsModal"
+                  tabindex="-1"
+                  aria-labelledby="documentDetailsModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="documentDetailsModalLabel">
+                          Document Details
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <!-- Modal Body -->
+                      <div class="modal-body">
+                        <!-- Dropdown -->
+                        <!-- <div class="mb-3">
+                          <label for="documentSelect" class="form-label"
+                            >Document</label
+                          >
+                          <select id="documentSelect" class="form-select">
+                            <option value="">Select a document</option>
+                            <option value="doc1">Document 1</option>
+                            <option value="doc2">Document 2</option>
+                          </select>
+                        </div> -->
+
+                        <!-- Table -->
+                        <div class="table-responsive">
+                          <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th scope="col" class="table-secondary">
+                                  Document
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="no-data">No data to display</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                      <!-- Modal Footer -->
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-4">
-                    <label class="form-label">Unregistered Supplier</label>
-                    <input type="text" class="form-control">
-                </div>
+              </div>
             </div>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label class="form-label">Attach Document</label>
-                    <input type="file" class="form-control">
-                </div>
+            <div class="form-row">
+              <label for="subject" class="form-label">SUBJECT</label>
+              <input
+                type="text"
+                id="subject"
+                class="form-control"
+                placeholder="Enter subject"
+              />
             </div>
-            <hr>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label class="form-label">Indent #*</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">ITEM CODE *</label>
-                    <select class="form-select">
-                        <option>SELECT</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">ITEM NAME</label>
-                    <input type="text" class="form-control" disabled>
-                </div>
+            <div class="form-row">
+              <label for="log" class="form-label">Log</label>
+              <textarea id="log" class="form-control" rows="8"></textarea>
             </div>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label class="form-label">Item Spec.</label>
-                    <input type="text" class="form-control" disabled>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Indt. Qty.</label>
-                    <input type="text" class="form-control" disabled>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Qty</label>
-                    <input type="number" class="form-control">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label class="form-label">Currency *</label>
-                    <select class="form-select">
-                        <option>SELECT</option>
-                        <option>Afghan afghani</option>
-                        <option>European euro</option>
-                        <option>United dollar</option>
-                        <option>Indian rupee</option>
-                        <option>Cuban peso</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Remarks</label>
-                    <textarea class="form-control"></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-end">
-                    <button type="submit" class="px-5 py-2 my-2 text-white" style="background-color: #027EDC; border: none;">Add</button>
-                </div>
-            </div>
+          </div>
         </form>
-    </div>
+      </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/BuyerPortal/index.js"></script>
     <script src="tableManager.js"></script>
@@ -1424,38 +1505,6 @@
       $(".mobile-close").on("click", function (event) {
         $(".sidebar").toggleClass("show");
       });
-      $('.select2').select2();
-      $('#heading').select2({
-        placeholder: "Select enquiries",
-        allowClear: true,
-        closeOnSelect: false // Keeps the dropdown open for multiple selections
-      });
     </script>
-   <script>
-    // Filter the items in the dropdown based on search input
-    document.getElementById("search-input").addEventListener("input", function() {
-      const filter = this.value.toLowerCase();
-      const items = document.querySelectorAll("#dropdown-options .dropdown-item");
-  
-      items.forEach(function(item) {
-        if (item.textContent.toLowerCase().includes(filter)) {
-          item.style.display = "block"; // Show items that match the search
-        } else {
-          item.style.display = "none"; // Hide items that don't match
-        }
-      });
-    });
-  
-    // Handle item selection
-    const dropdownButton = document.getElementById("dropdownMenuButton");
-    const dropdownItems = document.querySelectorAll("#dropdown-options .dropdown-item");
-  
-    dropdownItems.forEach(function(item) {
-      item.addEventListener("click", function(e) {
-        e.preventDefault(); // Prevent default anchor behavior
-        dropdownButton.textContent = this.textContent; // Update button text to selected item
-      });
-    });
-  </script>
   </body>
 </html>

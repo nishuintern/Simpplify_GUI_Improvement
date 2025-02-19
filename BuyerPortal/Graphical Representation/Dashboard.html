@@ -21,7 +21,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
     />
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"
@@ -40,7 +40,15 @@
     <style>
       body {
         overflow-x: hidden;
+        background-color: white;
       }
+      .select2-container .select2-selection--single {
+        height: 34px !important;
+}
+        .select2-container--default .select2-selection--single {
+          border: 1px solid #ccc !important;
+          border-radius: 0px !important;
+}
     </style>
   </head>
   <body>
@@ -1109,7 +1117,7 @@
                   </li>
                   <!-- <li><a class="dropdown-item" href="#">
                                 <iclass="icon icon-ic_fluent_arrow_sync_20_regular"></iclass=>
-                                           <span>Sync
+                                          <span>Sync
                                           contact</span></a></li> -->
 
                   <li>
@@ -1215,6 +1223,13 @@
                   list="customer-list"
                   placeholder="Select or type customer"
                 />
+                <!-- <select name="" id="" class="select-form select2">
+                  <option value="">Addrash Air Express</option>
+                  <option value="">Addrash Offset Printers</option>
+                  <option value="">Addrash Suppliers</option>
+                  <option value="">Addrash Fabricators</option>
+                  <option value="">Addrash Kumar</option>
+                </select> -->
                 <datalist id="customer-list">
                   <option value="User 1"></option>
                   <option value="User 2"></option>
@@ -1263,7 +1278,7 @@
               >
                 <label for="po-search" class="d-lg-flex d-sm-block d-md-block">
                   <span
-                    class="ms-sm-4 ms-lg-1 me-lg-1 ms-md-1 card-inside-text label-text d-lg-flex align-items-center"
+                    class="ms-sm-4 ms-lg-1 me-lg-1 ms-md-1 card-inside-text label-text d-lg-flex align-items-center text-nowrap"
                     >PO Number</span
                   >
                   <input
@@ -1272,6 +1287,9 @@
                     list="po-number-list"
                     placeholder="Select or type Po Number"
                   />
+                  <!-- <select name="" id="" class="select-form select2">
+                    <option value="">No data</option>
+                  </select> -->
                   <datalist id="po-number-list">
                     <option value="PO-001"></option>
                     <option value="PO-002"></option>
@@ -1313,7 +1331,7 @@
                             <th class="sortable-header">End Date</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody onclick="window.location='ANT.html'">
                         <tr>
                             <td>20230810YSK000001</td>
                             <td>Indoasian</td>
@@ -1383,13 +1401,43 @@
                     <tbody class="text-nowrap">
                         <tr>
                             <td>14/67, MCD Flat Sector?20</td>
-                            <td>20</td>
-                            <td>9</td>
-                            <td>0</td>
-                            <td>10</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">20</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">9</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">10</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
+                        </tr>
+                        <tr>
+                            <td>SUGANDHA AIRAN</td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">20</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">9</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">10</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
+                        </tr>
+                        <tr>
+                            <td>3 G TECHNOLOGY(SHANGHAI) LTD.</td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">9</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">20</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">10</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
+                        </tr>
+                        <tr>
+                            <td>NAVYUG INDUSTRIES</td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">20</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">9</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">10</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
+                            <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1490,6 +1538,7 @@
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/BuyerPortal/index.js"></script>
     <script src="tableManager.js"></script>
@@ -1504,6 +1553,9 @@
       });
       $(".mobile-close").on("click", function (event) {
         $(".sidebar").toggleClass("show");
+      });
+      $('.select2').select2({
+        width:'100%',
       });
     </script>
   </body>

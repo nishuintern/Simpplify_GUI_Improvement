@@ -48,6 +48,19 @@
       .form-label{
         font-weight:700;
       }
+      .btn-primary{
+        background-color:#027EDC !important;
+        border-color: #027EDC !important;
+      }
+      .btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:focus:active,
+.btn-primary:hover:active {
+  background-color: #027EDC !important;
+  border-color: #027EDC !important;
+  box-shadow: none !important; /* Optional: Remove Bootstrap's default focus outline */
+}
     </style>
   </head>
   <body>
@@ -789,7 +802,7 @@
       </div>
     </div>
 
-    <div class="main-container" style="background-color: #ffffff">
+    <div class="main-container" style="background-color: #ffffff;">
       <header>
         <div class="container-fluid">
           <div
@@ -1208,29 +1221,29 @@
       <div class="container-fluid mt-4">
         <div class="row">
           <!-- Left column: File upload -->
-          <div class="col-md-6 mb-3">
+          <div class="col-lg-6 col-md-6 mb-3">
             <label for="attachInvoice" class="form-label">Attach Invoice</label>
             <input type="file" class="form-control" id="attachInvoice">
           </div>
         
           <!-- Right column: Buttons in a grid -->
-          <div class="col-md-6">
+          <div class="col-md-6 col-lg-6 col-sm-12">
             <!-- Nested row for buttons; g-2 adds spacing between columns -->
             <div class="row g-2">
-              <div class="col-12 col-sm-6 col-lg-4">
-                <button type="button" class="text-white border-0 w-100 py-2" style="background-color:blue ;">UPLOAD</button>
+              <div class="col-md-6 col-sm-12 col-lg-3">
+                <button type="button" class="btn btn-primary text-white  border-0 w-100 py-2" style="background-color:blue ;">UPLOAD</button>
               </div>
-              <div class="col-12 col-sm-6 col-lg-4">
-                <button type="button" class="text-white border-0 w-100 py-2" style="background-color:blue ;">SCAN &amp; EXTRACT</button>
+              <div class="col-md-6 col-sm-12 col-lg-3">
+                <button type="button" class="btn btn-primary text-white border-0 w-100 py-2" style="background-color:blue ;">SCAN &amp; EXTRACT</button>
               </div>
-              <div class="col-12 col-sm-6 col-lg-4">
-                <button type="button" class="text-white border-0 w-100 py-2" style="background-color:blue ;">SAVE</button>
+              <div class="col-md-6 col-sm-12 col-lg-3">
+                <button type="button" class="btn btn-primary text-white border-0 w-100 py-2" style="background-color:blue ;">SAVE</button>
               </div>
-              <div class="col-12 col-sm-6 col-lg-4">
-                <button type="button" class="text-white border-0 w-100 py-2" style="background-color:blue ;">FINAL SUBMIT</button>
+              <div class="col-md-6 col-sm-12 col-lg-3">
+                <button type="button" class="btn btn-primary text-white border-0 w-100 py-2" style="background-color:blue ;">FINAL SUBMIT</button>
               </div>
-              <div class="col-12 col-sm-6 col-lg-4">
-                <button type="button" class="text-white border-0 w-100 py-2" style="background-color:blue ;">SHOW CONFIDENCE</button>
+              <div class="col-md-6 col-sm-12 col-lg-3">
+                <button type="button" class="btn btn-primary text-white border-0 w-100  py-2" style="background-color:blue ;">SHOW CONFIDENCE</button>
               </div>
             </div>
           </div>

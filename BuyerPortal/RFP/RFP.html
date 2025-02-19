@@ -53,6 +53,19 @@
             background-color: #f97316; /* Orange */
             border-color: #f97316;
         }
+        .btn-primary {
+        background-color: #027edc !important;
+        border-color: #027edc !important;
+      }
+      .btn-primary:active,
+      .btn-primary:focus,
+      .btn-primary:hover,
+      .btn-primary:focus:active,
+      .btn-primary:hover:active {
+        background-color: #027edc !important;
+        border-color: #027edc !important;
+        box-shadow: none !important; /* Optional: Remove Bootstrap's default focus outline */
+      }
     </style>
   </head>
   <body>
@@ -1263,7 +1276,7 @@
                             <td>7/10/2024 12:00:00 AM</td>
                             <td>03:30:00</td>
                             <td>
-                              <a href="">Extend Date</a>
+                              <a href="" data-bs-toggle="modal" data-bs-target="#extendRFPModal">Extend Date</a>
                             </td>
                         </tr>
                         <tr>
@@ -1283,7 +1296,7 @@
                             <td>7/10/2024 12:00:00 AM</td>
                             <td>03:30:00</td>
                             <td>
-                              <a href="">Extend Date</a>
+                              <a href="" data-bs-toggle="modal" data-bs-target="#extendRFPModal">Extend Date</a>
                             </td>
                         </tr>
                         <tr>
@@ -1303,7 +1316,7 @@
                             <td>7/10/2024 12:00:00 AM</td>
                             <td>03:30:00</td>
                             <td>
-                              <a href="">Extend Date</a>
+                              <a href="" data-bs-toggle="modal" data-bs-target="#extendRFPModal">Extend Date</a>
                             </td>
                         </tr>
                         <tr>
@@ -1323,7 +1336,7 @@
                             <td>7/10/2024 12:00:00 AM</td>
                             <td>03:30:00</td>
                             <td>
-                              <a href="">Extend Date</a>
+                              <a href="" data-bs-toggle="modal" data-bs-target="#extendRFPModal">Extend Date</a>
                             </td>
                         </tr>
                         <tr>
@@ -1343,7 +1356,7 @@
                             <td>7/10/2024 12:00:00 AM</td>
                             <td>03:30:00</td>
                             <td>
-                              <a href="">Extend Date</a>
+                              <a href="" data-bs-toggle="modal" data-bs-target="#extendRFPModal">Extend Date</a>
                             </td>
                         </tr>
                     </tbody>
@@ -1361,6 +1374,37 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="modal fade" id="extendRFPModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="modalLabel">Extend RFP Date</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="rfpNo" class="form-label">RFP NO.</label>
+              <input type="text" class="form-control" id="rfpNo" value="20240709RFP000001" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="closingDate" class="form-label">Closing Date*</label>
+              <input type="date" class="form-control" id="closingDate" required>
+            </div>
+            <div class="mb-3">
+              <label for="closingTime" class="form-label">Closing Time*</label>
+              <select class="form-select" id="closingTime" required>
+                <option value="" selected>Select</option>
+                <option value="09:00">09:00 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <!-- Add more time options as needed -->
+              </select>
+            </div>
+            <button type="button" class="btn btn-primary w-100">Extend Date</button>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- <div class="p-2 mt-3" style="border: 1px solid #BABED8;">
       <h4>Reverse Auction Details</h4>

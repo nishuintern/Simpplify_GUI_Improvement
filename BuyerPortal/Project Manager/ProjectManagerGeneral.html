@@ -1122,7 +1122,7 @@
                   </li>
                   <!-- <li><a class="dropdown-item" href="#">
                                 <iclass="icon icon-ic_fluent_arrow_sync_20_regular"></iclass=>
-                                           <span>Sync
+                                          <span>Sync
                                           contact</span></a></li> -->
 
                   <li>
@@ -1210,7 +1210,7 @@
       </div>
       <!-- end fof Mid header -->
 <!-- Tabs -->
- <div class="py-1" style="background-color: #EEEEEE;border: 1px solid #BABED8;">
+<div class="py-1" style="background-color: #EEEEEE;border: 1px solid #BABED8;">
 <ul class="list-unstyled d-flex gap-5 mt-2 ms-2">
     <li>
         <a href="#">General</a>
@@ -1228,12 +1228,15 @@
         <a href="#">Mile Stones</a>
     </li>
 </ul>
- </div>
+</div>
       <!-- Table view -->
-      <div class="container mt-3">
+      <div class="container-fluid mt-3">
         <div class="form-container mb-3">
-            <h5 class="mb-3 p-2" style="border: 1px solid #ECEFF3; background: #ECEFF3;">General</h5>
-            <form>
+          <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
+            <h5 class="mb-3 p-2">General</h5>
+            <img src="/icons/Arrow_down.svg" class="px-2" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" alt="doubleArrow">
+          </div>
+            <form class="collapse" id="collapseExample">
                 <div class="row g-3">
                     <div class="col-md-6">
                         <label for="entityType" class="form-label">Entity Type*</label>
@@ -1244,7 +1247,7 @@
                     <div class="col-md-6">
                         <label for="phone" class="form-label">Phone</label>
                         <div class="d-flex">
-                            <input type="text" class="form-control me-2" placeholder="">
+                            <input type="text" class="form-control me-2" style="max-width: 50px;" placeholder="">
                             <input type="text" class="form-control" placeholder="">
                         </div>
                     </div>
@@ -1278,7 +1281,8 @@
                         <select id="portfolio" class="form-select">
                             <option>-SELECT-</option>
                             <option>Earth Copia Residential</option>
-                            <option>-SELECT-</option>
+                            <option>Packsys International</option>
+                            <option>Taxense</option>
                         </select>
                     </div>
                     <div class="col-md-6">
@@ -1306,19 +1310,21 @@
                         <label for="endDate" class="form-label">End Date</label>
                         <input type="date" id="endDate" class="form-control">
                     </div>
-                    <div class="col-md-6">
-                        <label for="location" class="form-label">Location</label>
-                        <input type="text" id="location" class="form-control">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="budget" class="form-label">Budget</label>
-                        <input type="number" id="budget" class="form-control">
+                    <div class="row mt-2">
+                      <div class="col-md-6">
+                          <label for="location" class="form-label">Location</label>
+                          <input type="text" id="location" class="form-control">
+                      </div>
+                      <div class="col-md-6">
+                          <label for="budget" class="form-label">Budget</label>
+                          <input type="number" id="budget" class="form-control">
+                      </div>
                     </div>
                     <div class="col-md-6">
                         <label for="assignMore" class="form-label">Assign More</label>
                         <input type="text" id="assignMore" class="form-control">
                     </div>
-                    <div class="col-md-6 mb-3">
+                    <div class="col-md-6 mb-4">
                         <label for="status" class="form-label">Status</label>
                         <select id="status" class="form-select">
                             <option>ACTIVE</option>

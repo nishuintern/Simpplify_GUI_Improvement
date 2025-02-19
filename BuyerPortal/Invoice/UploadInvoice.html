@@ -17,7 +17,10 @@
       rel="stylesheet"
       href="/BuyerPortal/assets/fonts/FluentSystemIcons-Regular.css"
     />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
@@ -44,19 +47,28 @@
         background-color: white;
       }
       .btn-primary {
-            background-color: #007bff !important;
-            border-color: #007bff !important;
-        }
-        label{
-          font-weight: 700;
-        }
-        .select2-container .select2-selection--single {
-  height: 34px !important;
-}
-.select2-container--default .select2-selection--single {
-  border: 1px solid #ccc !important;
-  border-radius: 0px !important;
-}
+        background-color: #027edc !important;
+        border-color: #027edc !important;
+      }
+      .btn-primary:active,
+      .btn-primary:focus,
+      .btn-primary:hover,
+      .btn-primary:focus:active,
+      .btn-primary:hover:active {
+        background-color: #027edc !important;
+        border-color: #027edc !important;
+        box-shadow: none !important; /* Optional: Remove Bootstrap's default focus outline */
+      }
+      label {
+        font-weight: 700;
+      }
+      .select2-container .select2-selection--single {
+        height: 34px !important;
+      }
+      .select2-container--default .select2-selection--single {
+        border: 1px solid #ccc !important;
+        border-radius: 0px !important;
+      }
     </style>
   </head>
   <body>
@@ -72,8 +84,7 @@
             height="16"
             fill="currentColor"
             class="bi bi-x-lg"
-            viewBox="0 0 16 16"
-          >
+            viewBox="0 0 16 16">
             <path
               d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
             ></path>
@@ -90,7 +101,7 @@
         </a>
       </div>
       <div id="secMainMenu" data-refresh-url="/UserMenu/_Tree">
-        <ul class="nav compact" style="margin-top: 0px; margin-left: -6px;">
+        <ul class="nav compact" style="margin-top: 0px; margin-left: -6px">
           <li
             class="nav-item dropend sub-menu"
             style="margin-left: -11px; height: 40px"
@@ -436,7 +447,10 @@
               aria-expanded="false"
             >
               <!-- <i class="icon icon-ic_fluent_handshake_24_regular"></i> -->
-              <img src="/icons/icon-park-outline_transaction-order.svg" alt="order" />
+              <img
+                src="/icons/icon-park-outline_transaction-order.svg"
+                alt="order"
+              />
             </a>
             <ul
               class="dropdown-menu"
@@ -823,7 +837,8 @@
                     <path
                       fill-rule="evenodd"
                       d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-                    /></svg></span>
+                    /></svg
+                ></span>
               </button>
               <div
                 class="search global-search d-inline-flex position-relative"
@@ -1196,7 +1211,7 @@
           <div class="d-flex justify-content-between align-items-center">
             <div class="d-flex">
               <a href="/BuyerPortal/Invoice/NewtonDocumentAI.html">
-                <img src="/icons/Arrow back ios (2).svg" alt="back">
+                <img src="/icons/Arrow back ios (2).svg" alt="back" />
               </a>
               <h2>Newton Document AI</h2>
             </div>
@@ -1216,165 +1231,275 @@
       <!-- Table view -->
       <div class="container-fluid mt-3">
         <div class="row mb-3">
-            <label class="col-sm-2 col-form-label">Supplier Name*</label>
-            <div class="col-sm-10">
-                <select class="form-select select2">
-                    <option selected>3GTS68595 (3 G TECHNOLOGY(SHANGHAI) LTD)</option>
-                </select>
-            </div>
-        </div>
-        
-        <div class="row mb-3">
-            <label class="col-sm-2 col-form-label">Attach Invoice*</label>
-            <div class="col-sm-10">
-                <input type="file" class="form-control">
-            </div>
-        </div>
-        
-        <div class="row mb-3">
-            <div class="col-sm-12 d-flex flex-wrap gap-2">
-                <button class="btn btn-primary">NEWTON AI EXTRACTED</button>
-                <button class="btn btn-primary">VIEW EDIT SUMMARY</button>
-                <button class="btn btn-primary">SHOW CONFIDENCE</button>
-                <button class="btn btn-primary">UPLOAD</button>
-                <button class="btn btn-primary">SCAN & EXTRACT</button>
-                <button class="btn btn-primary">SAVE</button>
-                <button class="btn btn-primary">FINAL SUBMIT</button>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div class="container-fluid mt-2">
-      <div class="row">
-          <!-- Left Section -->
-          <div class="col-md-6 bg-light p-4 border">
+          <label class="col-sm-2 col-form-label">Supplier Name*</label>
+          <div class="col-sm-10">
+            <select class="form-select select2">
+              <option selected>3GTS68595 (3 G TECHNOLOGY(SHANGHAI) LTD)</option>
+            </select>
           </div>
+        </div>
+        <div class="row mb-3">
+          <label class="col-sm-2 col-form-label">Attach Invoice*</label>
+          <div class="col-sm-10">
+            <input type="file" class="form-control" />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-12 d-flex flex-wrap gap-2">
+            <button class="btn btn-primary">NEWTON AI EXTRACTED</button>
+            <button class="btn btn-primary">VIEW EDIT SUMMARY</button>
+            <button class="btn btn-primary">SHOW CONFIDENCE</button>
+            <button class="btn btn-primary">UPLOAD</button>
+            <button class="btn btn-primary">SCAN & EXTRACT</button>
+            <button class="btn btn-primary">SAVE</button>
+            <button class="btn btn-primary">FINAL SUBMIT</button>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="container-fluid mt-2">
+        <div class="row">
+          <!-- Left Section -->
+          <div class="col-md-6 bg-light p-4 border"></div>
           <!-- Right Section with Tabs -->
           <div class="col-md-6 p-4 border">
-              <ul class="nav nav-tabs" id="myTab" role="tablist">
-                  <li class="nav-item" role="presentation">
-                      <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab">General Details</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="invoice-tab" data-bs-toggle="tab" data-bs-target="#invoice" type="button" role="tab">Invoice Summary</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="item-tab" data-bs-toggle="tab" data-bs-target="#item" type="button" role="tab">Item Details</button>
-                  </li>
-              </ul>
-              <div class="tab-content mt-3" id="myTabContent">
-                  <!-- General Details Tab -->
-                  <div class="tab-pane fade show active" id="general" role="tabpanel">
-                      <form>
-                        <div class="row mb-3">
-                          <label for="vendorName" class="col-sm-4 col-form-label">Vendor Name</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="vendorName">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="vendorAddress" class="col-sm-4 col-form-label">Vendor Address</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="vendorAddress">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="vendorGSTN" class="col-sm-4 col-form-label">Vendor GSTN</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="vendorGSTN">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="CustomerName" class="col-sm-4 col-form-label">Customer Name</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="CustomerName">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="CustomerAddress" class="col-sm-4 col-form-label">Customer Address</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="CustomerAddress">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="CustomerGSTN" class="col-sm-4 col-form-label">Customer GSTN</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="CustomerGSTN">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="ShippingAddress" class="col-sm-4 col-form-label">Shipping Address</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="ShippingAddress">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="BillingAddress" class="col-sm-4 col-form-label">Billing Address</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="BillingAddress">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="PONO." class="col-sm-4 col-form-label">PO NO.</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="PONO.">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="PaymentTerm" class="col-sm-4 col-form-label">Payment Term</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="PaymentTerm">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="TransporterName" class="col-sm-4 col-form-label">Transporter Name</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="TransporterName">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="VehicleNo" class="col-sm-4 col-form-label">Vehicle No</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="VehicleNo">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="CarrierTrackingNo." class="col-sm-4 col-form-label">Carrier Tracking No.</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="CarrierTrackingNo.">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="ModeOfTransport" class="col-sm-4 col-form-label">Mode Of Transport</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="ModeOfTransport">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="ChallanNo" class="col-sm-4 col-form-label">Challan No</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="ChallanNo">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="ChallanDate" class="col-sm-4 col-form-label">Challan Date</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="ChallanDate">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="GR/LRNo" class="col-sm-4 col-form-label">GR/LR No</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="GR/LRNo">
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label for="GR/LRDate" class="col-sm-4 col-form-label">GR/LR Date</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="GR/LRDate">
-                          </div>
-                        </div>
-                          <!-- <label>Vendor Name</label>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="general-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#general"
+                  type="button"
+                  role="tab"
+                >
+                  General Details
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="invoice-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#invoice"
+                  type="button"
+                  role="tab"
+                >
+                  Invoice Summary
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="item-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#item"
+                  type="button"
+                  role="tab"
+                >
+                  Item Details
+                </button>
+              </li>
+            </ul>
+            <div class="tab-content mt-3" id="myTabContent">
+              <!-- General Details Tab -->
+              <div
+                class="tab-pane fade show active"
+                id="general"
+                role="tabpanel"
+              >
+                <form>
+                  <div class="row mb-3">
+                    <label for="vendorName" class="col-sm-4 col-form-label"
+                      >Vendor Name</label
+                    >
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="vendorName" />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="vendorAddress" class="col-sm-4 col-form-label"
+                      >Vendor Address</label
+                    >
+                    <div class="col-sm-8">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="vendorAddress"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="vendorGSTN" class="col-sm-4 col-form-label"
+                      >Vendor GSTN</label
+                    >
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="vendorGSTN" />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="CustomerName" class="col-sm-4 col-form-label"
+                      >Customer Name</label
+                    >
+                    <div class="col-sm-8">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="CustomerName"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="CustomerAddress" class="col-sm-4 col-form-label"
+                      >Customer Address</label
+                    >
+                    <div class="col-sm-8">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="CustomerAddress"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="CustomerGSTN" class="col-sm-4 col-form-label"
+                      >Customer GSTN</label
+                    >
+                    <div class="col-sm-8">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="CustomerGSTN"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="ShippingAddress" class="col-sm-4 col-form-label"
+                      >Shipping Address</label
+                    >
+                    <div class="col-sm-8">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="ShippingAddress"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="BillingAddress" class="col-sm-4 col-form-label"
+                      >Billing Address</label
+                    >
+                    <div class="col-sm-8">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="BillingAddress"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="PONO." class="col-sm-4 col-form-label"
+                      >PO NO.</label
+                    >
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="PONO." />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="PaymentTerm" class="col-sm-4 col-form-label"
+                      >Payment Term</label
+                    >
+                    <div class="col-sm-8">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="PaymentTerm"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="TransporterName" class="col-sm-4 col-form-label"
+                      >Transporter Name</label
+                    >
+                    <div class="col-sm-8">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="TransporterName"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="VehicleNo" class="col-sm-4 col-form-label"
+                      >Vehicle No</label
+                    >
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="VehicleNo" />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label
+                      for="CarrierTrackingNo."
+                      class="col-sm-4 col-form-label"
+                      >Carrier Tracking No.</label
+                    >
+                    <div class="col-sm-8">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="CarrierTrackingNo."
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="ModeOfTransport" class="col-sm-4 col-form-label"
+                      >Mode Of Transport</label
+                    >
+                    <div class="col-sm-8">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="ModeOfTransport"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="ChallanNo" class="col-sm-4 col-form-label"
+                      >Challan No</label
+                    >
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="ChallanNo" />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="ChallanDate" class="col-sm-4 col-form-label"
+                      >Challan Date</label
+                    >
+                    <div class="col-sm-8">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="ChallanDate"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="GR/LRNo" class="col-sm-4 col-form-label"
+                      >GR/LR No</label
+                    >
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="GR/LRNo" />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="GR/LRDate" class="col-sm-4 col-form-label"
+                      >GR/LR Date</label
+                    >
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="GR/LRDate" />
+                    </div>
+                  </div>
+                  <!-- <label>Vendor Name</label>
                           <input type="text" class="form-control mb-2">
                           <label>Vendor Address</label>
                           <input type="text" class="form-control mb-2">
@@ -1410,51 +1535,82 @@
                           <input type="text" class="form-control mb-2">
                           <label>GR/LR Date</label>
                           <input type="date" class="form-control mb-2"> -->
-                      </form>
+                </form>
+              </div>
+              <!-- Invoice Summary Tab -->
+              <div class="tab-pane fade" id="invoice" role="tabpanel">
+                <form>
+                  <div class="row mb-3">
+                    <label for="InvoiceNo" class="col-sm-4 col-form-label"
+                      >Invoice No*</label
+                    >
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="InvoiceNo" />
+                    </div>
                   </div>
-                  
-                  <!-- Invoice Summary Tab -->
-                  <div class="tab-pane fade" id="invoice" role="tabpanel">
-                    <form>
-                      <div class="row mb-3">
-                        <label for="InvoiceNo" class="col-sm-4 col-form-label">Invoice No*</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="InvoiceNo">
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <label for="InvoiceDate" class="col-sm-4 col-form-label">Invoice Date*</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="InvoiceDate">
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <label for="InvoiceAmount" class="col-sm-4 col-form-label">Invoice Amount</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="InvoiceAmount">
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <label for="SubTotalAmount" class="col-sm-4 col-form-label">Sub Total Amount</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="SubTotalAmount">
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <label for="TaxAmount" class="col-sm-4 col-form-label">Tax Amount</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="TaxAmount">
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <label for="AttachInvoice" class="col-sm-4 col-form-label">Attach Invoice</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="AttachInvoice">
-                        </div>
-                      </div>
-                      <a href="#" class="text-decoration-none" style="color: #007bff;">View</a>
-                    
-                      <!-- <label>Invoice No*</label>
+                  <div class="row mb-3">
+                    <label for="InvoiceDate" class="col-sm-4 col-form-label"
+                      >Invoice Date*</label
+                    >
+                    <div class="col-sm-8">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="InvoiceDate"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="InvoiceAmount" class="col-sm-4 col-form-label"
+                      >Invoice Amount</label
+                    >
+                    <div class="col-sm-8">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="InvoiceAmount"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="SubTotalAmount" class="col-sm-4 col-form-label"
+                      >Sub Total Amount</label
+                    >
+                    <div class="col-sm-8">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="SubTotalAmount"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="TaxAmount" class="col-sm-4 col-form-label"
+                      >Tax Amount</label
+                    >
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="TaxAmount" />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="AttachInvoice" class="col-sm-4 col-form-label"
+                      >Attach Invoice</label
+                    >
+                    <div class="col-sm-8">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="AttachInvoice"
+                      />
+                    </div>
+                  </div>
+                  <a
+                    href="#"
+                    class="text-decoration-none"
+                    style="color: #007bff"
+                    >View</a
+                  >
+                  <!-- <label>Invoice No*</label>
                       <input type="text" class="form-control mb-2">
                       <label>Invoice Date*</label>
                       <input type="date" class="form-control mb-2">
@@ -1466,45 +1622,44 @@
                       <input type="text" class="form-control mb-2">
                       <label>Attach Invoice</label>
                       <input type="text" class="form-control mb-2"> -->
-                  </form>
-                  </div>
-                  
-                  <!-- Item Details Tab -->
-                  <div class="tab-pane fade" id="item" role="tabpanel">
-                    <div class="table-responsive">
-                      <table class="table text-nowrap">
-                        <thead class="table-secondary">
-                          <tr>
-                            <th>SrNo</th>
-                            <th>Item Name</th>
-                            <th>Quantity</th>
-                            <th>Rate</th>
-                            <th>Basic Amount</th>
-                            <th>Discount%</th>
-                            <th>Disc. Amount</th>
-                            <th>CGST%</th>
-                            <th>CGST Amount</th>
-                            <th>SGST%</th>
-                            <th>SGST Amount</th>
-                            <th>IGST%</th>
-                            <th>IGST Amount</th>
-                            <th>Net Amt</th>
-                          </tr>
-                        </thead>
-                        <tbody id="tableBody">
-                          <tr>
-                            <td colspan="14" style="text-align: center">
-                              No data to display
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+                </form>
               </div>
+              <!-- Item Details Tab -->
+              <div class="tab-pane fade" id="item" role="tabpanel">
+                <div class="table-responsive">
+                  <table class="table text-nowrap">
+                    <thead class="table-secondary">
+                      <tr>
+                        <th>SrNo</th>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        <th>Rate</th>
+                        <th>Basic Amount</th>
+                        <th>Discount%</th>
+                        <th>Disc. Amount</th>
+                        <th>CGST%</th>
+                        <th>CGST Amount</th>
+                        <th>SGST%</th>
+                        <th>SGST Amount</th>
+                        <th>IGST%</th>
+                        <th>IGST Amount</th>
+                        <th>Net Amt</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                      <tr>
+                        <td colspan="14" style="text-align: center">
+                          No data to display
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
       </div>
-  </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
@@ -1523,10 +1678,10 @@
       $(".mobile-close").on("click", function (event) {
         $(".sidebar").toggleClass("show");
       });
-      $('.select2').select2({
-  width: '100%',
-   // Ensures full width responsiveness
-});
+      $(".select2").select2({
+        width: "100%",
+        // Ensures full width responsiveness
+      });
     </script>
   </body>
 </html>
