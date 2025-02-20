@@ -105,6 +105,9 @@
     .nav-item {
       margin: 0;
     }
+    form label{
+      font-weight: 500;
+    }
     </style>
   </head>
   <body>
@@ -1243,73 +1246,123 @@
         <div class="row container-fluid">
           <div class="d-flex justify-content-between align-items-center">
             <div class="d-flex">
-              <a href="/BuyerPortal/index.html">
+              <a href="/BuyerPortal/Purchase/NewOrderPurchase.html">
                 <img src="/icons/Arrow back ios (2).svg" alt="back">
               </a>
               <h2>PO Details</h2>
             </div>
             <div class="d-flex justify-content-end">
-              <a href="/BuyerPortal/Purchase/NewPoCreate.html" class="me-2">
+              <!-- <a href="/BuyerPortal/Purchase/NewPoCreate.html" class="me-2">
                 <img src="/icons/formkit_add.svg" alt="">
-              </a>
+              </a> -->
               <a href="">
                 <img src="/icons/Synchronize.svg" alt="sync" />
               </a>
+              <div class="dropstart">
+                <a href="javascript:void(0);" class="ms-2" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                  <!-- <img src="/icons/cloud_download.svg" alt=""> -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                    <path fill="#3474ee" d="M16 5c-4.12 0-7.36 3.13-7.813 7.125a4.9 4.9 0 0 0-3.843 3.22C1.884 16.054 0 18.248 0 21c0 3.324 2.676 6 6 6h20c3.324 0 6-2.676 6-6c0-1.76-.855-3.336-2.094-4.438c-.232-3.514-3.035-6.318-6.562-6.5C22.14 7.133 19.378 5 16 5m0 2c2.762 0 4.97 1.77 5.75 4.28l.22.72H23c2.755 0 5 2.245 5 5v.5l.406.313A4.07 4.07 0 0 1 30 21c0 2.276-1.724 4-4 4H6c-2.276 0-4-1.724-4-4c0-2.02 1.45-3.588 3.28-3.906l.657-.125l.125-.657C6.362 14.963 7.556 14 9 14h1v-1c0-3.37 2.63-6 6-6m-1 5v6.563l-2.28-2.282l-1.44 1.44l4 4l.72.686l.72-.687l4-4l-1.44-1.44L17 18.563V12z" />
+                  </svg>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <li><button class="dropdown-item" type="button">CSV</button></li>
+                  <li><button class="dropdown-item" type="button">Pdf</button></li>
+                  <li><button class="dropdown-item" type="button">Xls</button></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <!-- end fof Mid header -->
-<!-- <div class="p-2" style="border: 1px solid #BABED8;">
-  <h4>Enquiry Details</h4>
-</div> -->
-      <!-- Table view -->
-      <div>
-        <ul
-          class="nav nav-underline mb-0 tabs"
-          id="pills-tab"
-          role="tablist"
-        >
-          <li class="active nav-item me-5 tab-item" role="presentation">
-            <span
-              class="invoices-nav-link border-0 btn-light mt-2 tab active"
-              id="pills-recent-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-recent"
-              type="button"
-              role="tab"
-              aria-controls="pills-recent"
-              aria-selected="true"
-            >
-              Recent
-            </span>
-          </li>
-          <li class="nav-item me-5 tab-item" role="presentation">
-            <span
-              class="invoices-nav-link border-0 btn-light mt-2 tab"
-              id="pills-history-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-history"
-              type="button"
-              role="tab"
-              aria-controls="pills-history"
-              aria-selected="false"
-            >
-              History
-            </span>
-          </li>
-        </ul>
-      </div>
-      <div class="tab-content" id="pills-tabContent">
-        <div
-          class="tab-pane fade show active"
-          id="pills-recent"
-          role="tabpanel"
-          aria-labelledby="pills-recent-tab"
-          tabindex="0"
-        >
-        <div>
-          <div class="row mb-3">
+      <div class="container-fluid mt-3">
+        <div class="card">
+          <!-- <div class="form-container mt-3 mb-3 mx-4">
+            <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
+              <h5 class="mb-3 p-2">Event Details</h5>
+              <img src="/icons/Arrow_down.svg" class="px-2" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" alt="doubleArrow">
+            </div>
+              <form class="collapse" id="collapseExample">
+                  <div class="row mt-3">
+                    <div class="col-lg-4">
+                      <div class="row">
+                        <label class="col-lg-3 select">Location :
+                        </label>
+                        <p class="col-lg-6">DELHI</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="row">
+                        <label class="col-lg-3 select">Indent Type :
+                        </label>
+                        <p class="col-lg-6">INDENT INDIGENEOUS -HO
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="row">
+                        <label class="col-lg-3 select">Indt. Status :
+                        </label>
+                        <p class="col-lg-6">Open
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-2">
+                    <div class="col-lg-4">
+                      <div class="row">
+                        <label class="col-lg-3 select">Activity :
+                        </label>
+                        <p class="col-lg-6">SEMI-FINISHED FAME MACHO BLACK
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="row">
+                        <label class="col-lg-3 select">CapitalRevenue :
+                        </label>
+                        <p class="col-lg-6">c
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="row">
+                        <label class="col-lg-3 select">Requested By :
+                        </label>
+                        <p class="col-lg-6">csb1
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-2">
+                    <div class="col-lg-4">
+                      <div class="row">
+                        <label class="col-lg-3 select">Release Date :
+                        </label>
+                        <p class="col-lg-6">8/28/2024
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 d-none">
+                      <div class="row">
+                        <label class="col-lg-3 select">Client IP:
+                        </label>
+                        <p class="col-lg-6">203.115.98.221
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+              </form>
+          </div> -->
+
+          <div class="form-container mt-3 mb-3 mx-4">
+            <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
+              <h5 class="mb-3 p-2">Item Details</h5>
+              <img src="/icons/Arrow_down.svg" class="px-2" data-bs-toggle="collapse" href="#collapseItem" role="button" aria-expanded="false" aria-controls="collapseExample" alt="doubleArrow">
+            </div>
+          </div>
+          <div class="collpase px-3" id="collapseItem">
             <div class="d-flex justify-content-between align-items-center m-2">
               <div class="page-size-container d-flex align-items-center">
                 <label for="containerId-pageSize" class="me-1">Page Size:</label>
@@ -1319,491 +1372,329 @@
                   <option value="20">20</option>
                 </select>
               </div>
-              <div class="search-div d-flex my-2 mx-2">
-                <label for="containerId-search" class="mt-2 py-1 d-flex">Search:</label>
-                <input type="search" id="containerId-search" class="mx-3" placeholder="Search...">
+              <div class="search-div d-flex">
+                <label for="containerId-search" class="mt-2 me-2 py-1 d-flex">Search:</label>
+                <input type="search" id="containerId-search" placeholder="Search...">
               </div>
             </div>
+            <table class="table table-responsive">
+              <thead>
+                <tr>
+                  <th>PO Number</th>
+                  <th>Item Code</th>
+                  <th>Item Name</th>
+                  <th>Quantity</th>
+                  <th>Unit Price</th>
+                  <th>Rate Per Unit</th>
+                  <th>Total AMT.</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>20240828NPO000001</td>
+                  <td>105020100000020</td>
+                  <td>COMPONENT ITEM</td>
+                  <td>200.0000</td>
+                  <td>100.00000	</td>
+                  <td>100.0000</td>
+                  <td>22800.00</td>
+                  <td><a href="" data-bs-toggle="modal" data-bs-target="#checklistModal">Attach Checklist</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="d-flex justify-content-between align-items-center my-2">
+              <div>Showing 1 to 1 of 1 Entries</div>
+              <nav>
+                  <ul class="pagination mb-0">
+                      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+              </nav>
           </div>
-            <div class="table-responsive">
-            <table class="table  table-responsive">
-                <thead class="sortable-header text-nowrap">
-                    <tr>
-                      <th class="sortable-header">PO Type</th>
-                      <th class="sortable-header">PO No.</th>
-                      <th class="sortable-header">PO Date</th>
-                      <th class="sortable-header">Party Name</th>
-                      <th class="sortable-header">Location</th>
-                      <th class="sortable-header">PO Amount</th>
-                        <th class="sortable-header">Quotation</th>
-                        <th class="sortable-header">ASN NO</th>
-                        <th class="sortable-header">Expected Dispatch Date</th>
-                        <th class="sortable-header">INV NO</th>
-                        <th class="sortable-header">INV Date</th>
-                        <th class="sortable-header">INV Status</th>
-                        <th class="sortable-header">Payment Amount</th>
-                        <th class="sortable-header">Delivery Date</th>
-                        <th class="sortable-header">Status</th>
-                        <th class="sortable-header">View T&C</th>
-                    </tr>
-                </thead>
-                <tbody ondblclick="window.location='PoDetails.html'">
+          </div>
+          <div class="form-container mt-3 mb-3 mx-4">
+            <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
+              <h5 class="mb-3 p-2">Document Details</h5>
+              <img src="/icons/Arrow_down.svg" class="px-2" data-bs-toggle="collapse" href="#collapsedocument" role="button" aria-expanded="false" aria-controls="collapseExample" alt="doubleArrow">
+            </div>
+          </div>
+          <div class="collpase px-3" id="collapsedocument">
+            <div class="d-flex justify-content-between align-items-center m-2">
+              <div class="page-size-container d-flex align-items-center">
+                <label for="containerId-pageSize" class="me-1">Page Size:</label>
+                <select id="containerId-pageSize" class="px-3 py-1">
+                  <option value="5" selected>5</option>
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                </select>
+              </div>
+              <div class="search-div d-flex">
+                <label for="containerId-search" class="mt-2 me-2 py-1 d-flex">Search:</label>
+                <input type="search" id="containerId-search" placeholder="Search...">
+              </div>
+            </div>
+            <table class="table table-responsive">
+              <thead>
+                <tr>
+                  <th>Document</th>
+                  <!-- <th>Item Name</th>
+                  <th>Item Spec.</th>
+                  <th>Item Quantity</th>
+                  <th>Currency</th>
+                  <th>Opening Bid Amount</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center">No data to display</td>
+                  <!-- <td>GLASS 3X3</td>
+                  <td>spec</td>
+                  <td>4.000</td>
+                  <td>Indian</td>
+                  <td>2000.00</td> -->
+                </tr>
+              </tbody>
+            </table>
+            <div class="d-flex justify-content-between align-items-center my-2">
+              <div>Showing 0 to 0 of 0 Entries</div>
+              <nav>
+                  <ul class="pagination mb-0">
+                      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+              </nav>
+          </div>
+          </div>
+          <!-- <div class="form-container mt-3 mb-3 mx-4">
+              <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
+                <h5 class="mb-3 p-2">RFP Eligibility Details</h5>
+                <img src="/icons/Arrow_down.svg" class="px-2" data-bs-toggle="collapse" href="#collapseRFPEligibilityDetails" role="button" aria-expanded="false" aria-controls="collapseExample" alt="doubleArrow">
+              </div>
+            </div>
+            <div class="collpase px-3" id="collapseRFPEligibilityDetails">
+              <table class="table table-responsive">
+                <thead>
                   <tr>
-                    <td>PURCHASE ORDER (GENERAL)</td>
-                    <td>
-                      20240828NPO000001
-                    </td>
-                    <td>
-                      Aug 28 2024
-                    </td>
-                    <td>
-                      3 G TECHNOLOGY(SHANGHAI) LTD.
-                    </td>
-                    <td>
-                      DELHI
-                    </td>
-                    <td>
-                      22800.00
-                    </td>
-                    <td>
-                    <a href="EventsDetails.html">20240828QUT000001</a>
-                    </td>
-                    <td>
-                      20240828DISP000001
-                    </td>
-                    <td>8/30/2024 12:00:00 AM</td>
-                    <td>
-                      INV000203
-                    </td>
-                    <td>
-                      9/14/2024 12:00:00 AM
-                    </td>
-                    <td>
-                      PENDING
-                    </td>
-                    <td></td>
-                    <td>
-                      28/08/2024
-                    </td>
-                    <td>
-                      ACCEPTED
-                    </td>
-                    <td>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">View Details</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>PURCHASE ORDER (GENERAL)</td>
-                    <td>
-                      20240828NPO000001
-                    </td>
-                    <td>
-                      Aug 28 2024
-                    </td>
-                    <td>
-                      3 G TECHNOLOGY(SHANGHAI) LTD.
-                    </td>
-                    <td>
-                      DELHI
-                    </td>
-                    <td>
-                      22800.00
-                    </td>
-                    <td>
-                    <a href="EventsDetails.html">20240828QUT000001</a>
-                    </td>
-                    <td>
-                      20240828DISP000001
-                    </td>
-                    <td>8/30/2024 12:00:00 AM</td>
-                    <td>
-                      INV000203
-                    </td>
-                    <td>
-                      9/14/2024 12:00:00 AM
-                    </td>
-                    <td>
-                      PENDING
-                    </td>
-                    <td></td>
-                    <td>
-                      28/08/2024
-                    </td>
-                    <td>
-                      ACCEPTED
-                    </td>
-                    <td>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">View Details</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>PURCHASE ORDER (GENERAL)</td>
-                    <td>
-                      20240828NPO000001
-                    </td>
-                    <td>
-                      Aug 28 2024
-                    </td>
-                    <td>
-                      3 G TECHNOLOGY(SHANGHAI) LTD.
-                    </td>
-                    <td>
-                      DELHI
-                    </td>
-                    <td>
-                      22800.00
-                    </td>
-                    <td>
-                    <a href="EventsDetails.html">20240828QUT000001</a>
-                    </td>
-                    <td>
-                      20240828DISP000001
-                    </td>
-                    <td>8/30/2024 12:00:00 AM</td>
-                    <td>
-                      INV000203
-                    </td>
-                    <td>
-                      9/14/2024 12:00:00 AM
-                    </td>
-                    <td>
-                      PENDING
-                    </td>
-                    <td></td>
-                    <td>
-                      28/08/2024
-                    </td>
-                    <td>
-                      ACCEPTED
-                    </td>
-                    <td>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">View Details</a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-          </div>
-            <div class="d-flex justify-content-between align-items-center my-2 mx-2">
-                <div>Showing 1 to 1 of 4 Entries</div>
-                <nav>
-                    <ul class="pagination mb-0">
-                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        </div>
-        <div
-          class="tab-pane fade"
-          id="pills-history"
-          role="tabpanel"
-          aria-labelledby="pills-history-tab"
-          tabindex="0"
-        >
-        <div>
-          <div class="row mb-3">
-            <div class="d-flex justify-content-between align-items-center m-2">
-              <div class="page-size-container d-flex align-items-center">
-                <label for="containerId-pageSize" class="me-1">Page Size:</label>
-                <select id="containerId-pageSize" class="px-3 py-1">
-                  <option value="5" selected>5</option>
-                  <option value="10">10</option>
-                  <option value="20">20</option>
-                </select>
-              </div>
-              <div class="search-div d-flex my-2 mx-2">
-                <label for="containerId-search" class="mt-2 py-1 d-flex">Search:</label>
-                <input type="search" id="containerId-search" class="mx-3" placeholder="Search...">
-              </div>
-            </div>
-          </div>
-            <div class="table-responsive">
-            <table class="table  table-responsive">
-                <thead class="sortable-header text-nowrap">
-                    <tr>
-                      <th class="sortable-header">PO Type</th>
-                      <th class="sortable-header">PO No.</th>
-                      <th class="sortable-header">PO Date</th>
-                      <th class="sortable-header">Party Name</th>
-                      <th class="sortable-header">Location</th>
-                      <th class="sortable-header">PO Amount</th>
-                        <th class="sortable-header">Quotation</th>
-                        <th class="sortable-header">ASN NO</th>
-                        <th class="sortable-header">Expected Dispatch Date</th>
-                        <th class="sortable-header">INV NO</th>
-                        <th class="sortable-header">INV Date</th>
-                        <th class="sortable-header">INV Status</th>
-                        <th class="sortable-header">Payment Amount</th>
-                        <th class="sortable-header">Delivery Date</th>
-                        <th class="sortable-header">Status</th>
-                        <th class="sortable-header">View T&C</th>
-                    </tr>
+                    <th></th>
+                    <th>Sno.</th>
+                    <th>Question</th>
+                    <th>Description</th>
+                    <th>Document</th>
+                  </tr>
                 </thead>
-                <tbody ondblclick="window.location='PoDetails.html'">
-                    <tr>
-                        <td>PURCHASE ORDER (GENERAL)</td>
-                        <td>
-                          20240828NPO000001
-                        </td>
-                        <td>
-                          Aug 28 2024
-                        </td>
-                        <td>
-                          3 G TECHNOLOGY(SHANGHAI) LTD.
-                        </td>
-                        <td>
-                          DELHI
-                        </td>
-                        <td>
-                          22800.00
-                        </td>
-                        <td>
-                        <a href="EventsDetails.html">20240828QUT000001</a>
-                        </td>
-                        <td>
-                          20240828DISP000001
-                        </td>
-                        <td>8/30/2024 12:00:00 AM</td>
-                        <td>
-                          INV000203
-                        </td>
-                        <td>
-                          9/14/2024 12:00:00 AM
-                        </td>
-                        <td>
-                          PENDING
-                        </td>
-                        <td></td>
-                        <td>
-                          28/08/2024
-                        </td>
-                        <td>
-                          COMPLITED WITHIN DELIVERY DATE
-                        </td>
-                        <td>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">View Details</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>PURCHASE ORDER (GENERAL)</td>
-                        <td>
-                          20240828NPO000001
-                        </td>
-                        <td>
-                          Aug 28 2024
-                        </td>
-                        <td>
-                          3 G TECHNOLOGY(SHANGHAI) LTD.
-                        </td>
-                        <td>
-                          DELHI
-                        </td>
-                        <td>
-                          22800.00
-                        </td>
-                        <td>
-                        <a href="EventsDetails.html">20240828QUT000001</a>
-                        </td>
-                        <td>
-                          20240828DISP000001
-                        </td>
-                        <td>8/30/2024 12:00:00 AM</td>
-                        <td>
-                          INV000203
-                        </td>
-                        <td>
-                          9/14/2024 12:00:00 AM
-                        </td>
-                        <td>
-                          PENDING
-                        </td>
-                        <td></td>
-                        <td>
-                          28/08/2024
-                        </td>
-                        <td>
-                          COMPLITED WITHIN DELIVERY DATE
-                        </td>
-                        <td>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">View Details</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>PURCHASE ORDER (GENERAL)</td>
-                        <td>
-                          20240828NPO000001
-                        </td>
-                        <td>
-                          Aug 28 2024
-                        </td>
-                        <td>
-                          3 G TECHNOLOGY(SHANGHAI) LTD.
-                        </td>
-                        <td>
-                          DELHI
-                        </td>
-                        <td>
-                          22800.00
-                        </td>
-                        <td>
-                        <a href="EventsDetails.html">20240828QUT000001</a>
-                        </td>
-                        <td>
-                          20240828DISP000001
-                        </td>
-                        <td>8/30/2024 12:00:00 AM</td>
-                        <td>
-                          INV000203
-                        </td>
-                        <td>
-                          9/14/2024 12:00:00 AM
-                        </td>
-                        <td>
-                          PENDING
-                        </td>
-                        <td></td>
-                        <td>
-                          28/08/2024
-                        </td>
-                        <td>
-                          COMPLITED WITHIN DELIVERY DATE
-                        </td>
-                        <td>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">View Details</a>
-                        </td>
-                    </tr>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="">
+                        <img src="/icons/ph--plus-fill.svg" alt="">
+                      </a>
+                    </td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>ISO</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="">
+                        <img src="/icons/ph--plus-fill.svg" alt="">
+                      </a>
+                    </td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>Cmmi</td>
+                    <td></td>
+                  </tr>
                 </tbody>
-            </table>
-          </div>
-            <div class="d-flex justify-content-between align-items-center my-2 mx-2">
-                <div>Showing 1 to 1 of 4 Entries</div>
-                <nav>
-                    <ul class="pagination mb-0">
-                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                    </ul>
-                </nav>
+              </table>
             </div>
-        </div>
-        </div>
-        <!-- <div
-          class="tab-pane fade"
-          id="pills-pending"
-          role="tabpanel"
-          aria-labelledby="pills-pending-tab"
-          tabindex="0"
-        >
-          <div class="border-1">
-            <div id="watchBids" class=""></div>
-          </div>
-        </div> -->
-        <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <!-- Modal Header -->
-              <div class="modal-header bg-success text-white">
-                <h5 class="modal-title" id="termsModalLabel">Terms & Conditions</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="form-container mt-3 mb-5 mx-4">
+              <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
+                <h5 class="mb-3 p-2">Commercial Bids Details</h5>
+                <img src="/icons/Arrow_down.svg" class="px-2" data-bs-toggle="collapse" href="#collapseCommercialBidsDetails" role="button" aria-expanded="false" aria-controls="collapseExample" alt="doubleArrow">
               </div>
-              <!-- Modal Body -->
-              <div class="modal-body">
-                <!-- Terms & Conditions Section -->
-                <div class="mb-4">
-                  <h6>Terms & Conditions</h6>
-                  <table class="table table-bordered table-striped">
-                    <thead class="table-light">
-                      <tr>
-                        <th>Sr. No</th>
-                        <th>Terms & Condition</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>TERM AND CONDITION 1</td>
-                        <td><input type="checkbox" checked></td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>TERM AND CONDITION 2</td>
-                        <td><input type="checkbox" checked></td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>TERM AND CONDITION 3</td>
-                        <td><input type="checkbox" checked></td>
-                      </tr>
-                    </tbody>
-                  </table>
+            </div>
+            <div class="collpase px-3" id="collapseCommercialBidsDetails">
+              <table class="table table-responsive">
+                <thead>
+                  <tr>
+                    <th>Sno.</th>
+                    <th>RFPID</th>
+                    <th>Supplier Code</th>
+                    <th>Supplier Name</th>
+                    <th>Document</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>20240702RFP000002</td>
+                    <td>3GT5685895</td>
+                    <td>3 G TECHNOLOGY(SHANGHAI) LTD.	</td>
+                    <td><a href="#">Download</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div> -->
+        </div>
+        </div>
+      <!-- <div class="container-fluid mt-3">
+        <div>
+            <div>
+              <div class="row mb-3">
+                <div class="d-flex justify-content-between align-items-center m-2">
+                  <div class="page-size-container d-flex align-items-center">
+                    <label for="containerId-pageSize" class="me-1">Page Size:</label>
+                    <select id="containerId-pageSize" class="px-3 py-1">
+                      <option value="5" selected>5</option>
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                    </select>
+                  </div>
+                  <div class="search-div d-flex">
+                    <label for="containerId-search" class="mt-2 me-2 py-1 d-flex">Search:</label>
+                    <input type="search" id="containerId-search" placeholder="Search...">
+                  </div>
                 </div>
-                <!-- Query Section -->
-                <h6>Query</h6>
-                <div>
-                <table class="table table-bordered table-striped">
-                  <thead class="table-light">
-                    <tr>
-                      <th>Sr. No</th>
-                      <th>Query</th>
-                      <th>Reply</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Query 1</td>
-                        <td><input type="text" value="00"></td>
-                      </tr>
-                  </tbody>
+              </div>
+                <div class="table-responsive">
+                <table class="table  table-responsive">
+                    <thead class="sortable-header text-nowrap">
+                        <tr>
+                            <th class="sortable-header">Quotation ID</th>
+                            <th class="sortable-header">Item Code</th>
+                            <th class="sortable-header">Order Qty</th>
+                            <th class="sortable-header">Rate/Unit</th>
+                            <th class="sortable-header">Activity</th>
+                            <th class="sortable-header">Discount%</th>
+                            <th class="sortable-header">CGST%</th>
+                            <th class="sortable-header">CGST AMNT</th>
+                            <th class="sortable-header">IGST%</th>
+                            <th class="sortable-header">IGST AMNT</th>
+                            <th class="sortable-header">SGST%</th>
+                            <th class="sortable-header">SGST AMNT</th>
+                            <th class="sortable-header">Toatl AMNT</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-nowrap">
+                        <tr>
+                            <td>20240828QUT000001</td>
+                            <td>
+                                105020100000020
+                            </td>
+                            <td>
+                                200.000
+                            </td>
+                            <td>
+                                100.00
+                            </td>
+                            <td>
+                                0.00
+                            </td>
+                            <td>14.00</td>
+                            <td>2800.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>
+                                0.00
+                            </td>
+                            <td>22800.00</td>
+                        </tr>
+                    </tbody>
                 </table>
               </div>
-                <!-- Remarks Section -->
-                <div class="mt-3">
-                  <h6>Remarks</h6>
-                  <table class="table table-bordered table-striped">
-                    <thead class="table-light">
-                      <tr>
-                        <th>Sr. No</th>
-                        <th>Remarks</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>done</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div class="d-flex justify-content-between align-items-center my-2">
+                    <div>Showing 1 to 1 of 4 Entries</div>
+                    <nav>
+                        <ul class="pagination mb-0">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
                 </div>
-              </div>
-              <!-- Modal Footer -->
-              <div class="modal-footer">
-                <button type="button" class="btn btn-warning">SAVE</button>
-              </div>
             </div>
-          </div>
+        </div>
+    </div> -->
+    <div
+    class="modal fade"
+    id="checklistModal"
+    tabindex="-1"
+    aria-labelledby="checklistModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="checklistModalLabel">Checklist Details</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered">
+            <thead class="table-light">
+              <tr>
+                <th>Sr. No</th>
+                <th>Check List Details</th>
+                <th>Checklist ID</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>CHEKLIST1</td>
+                <td>1</td>
+                <td>
+                  <input type="checkbox" checked/>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>TEST1</td>
+                <td>2</td>
+                <td>
+                  <input type="checkbox" checked/>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>TEST2</td>
+                <td>3</td>
+                <td>
+                  <input type="checkbox" checked/>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="button" class="btn btn-warning">Save</button>
         </div>
       </div>
+    </div>
+  </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/BuyerPortal/index.js"></script>
     <script src="tableManager.js"></script>
     <script src="loadContent.js"></script>
-    <script>
-      document.querySelectorAll('.tab-item').forEach(tab => {
-          tab.addEventListener('click', () => {
-              // Remove 'active' class from all tabs
-              document.querySelectorAll('.tab-item').forEach(item => {
-                  item.classList.remove('active');
-              });
-              // Add 'active' class to the clicked tab
-              tab.classList.add('active');
-          });
-      });
-          </script>
     <script>
       initializeTableManager("tableConfigs.json");
     </script>

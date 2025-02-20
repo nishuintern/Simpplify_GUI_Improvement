@@ -78,7 +78,7 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
       tableDiv.className =
         "table-responsive-lg table-responsive-md table-responsive-sm";
       const table = document.createElement("table");
-      table.className = "table  text-nowrap";
+      table.className = "table text-nowrap";
       const thead = document.createElement("thead");
       thead.className = "table table-secondary";
       const tbody = document.createElement("tbody");
@@ -209,10 +209,8 @@ function initializeTableManager(configUrl = "/js/tableConfigs.json") {
               `<tr>${headers
                 .map((header) => {
                   if (header.label === "Status" || header.label === "Action") {
-                    return `<td class='text-end'>
-                    <div  class="btn-group"
-                  role="group"
-                  aria-label="Basic example">
+                    return `<td>
+                    <div  class="btn-group">
                       ${buttonConfigs
                         .map(
                           (config) => `

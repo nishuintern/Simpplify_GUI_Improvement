@@ -40,6 +40,7 @@
     <style>
       body {
         overflow-x: hidden;
+        background-color: white;
       }
       .card {
             margin: 20px;
@@ -1299,7 +1300,7 @@
                   </div>
               </form>
           </div> -->
-          <div class="form-container mt-3 mb-3 mx-4">
+          <div class="form-container mt-3 mb-4 mx-4">
             <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
               <h5 class="mb-3 p-2">Item Details</h5>
               <img src="/icons/Arrow_down.svg" class="px-2" data-bs-toggle="collapse" href="#collapseItem" role="button" aria-expanded="false" aria-controls="collapseExample" alt="doubleArrow">
@@ -1309,22 +1310,26 @@
             <table class="table table-responsive">
               <thead>
                 <tr>
+                  <th>Po Number</th>
                   <th>Item Code</th>
                   <th>Item Name</th>
-                  <th>Item Spec.</th>
-                  <th>Item Quantity</th>
-                  <th>Currency</th>
-                  <th>Opening Bid Amount</th>
+                  <th>Quantity</th>
+                  <th>Unit Price</th>
+                  <th>Rate Per Unit </th>
+                  <th>Total Amount</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>901010100000001</td>
-                  <td>GLASS 3X3</td>
-                  <td>spec</td>
-                  <td>4.000</td>
-                  <td>Indian</td>
-                  <td>2000.00</td>
+                  <td>20240815NPO1</td>
+                  <td>105020100000010</td>
+                  <td>ITEM1</td>
+                  <td>200.0000</td>
+                  <td>200.00000</td>
+                  <td>200.0000</td>
+                  <td>45600.00</td>
+                  <td><a href="#" data-bs-toggle="modal" data-bs-target="#checklistModal">Attach Checklist</a></td>
                 </tr>
               </tbody>
             </table>
@@ -1336,36 +1341,62 @@
             </div>
           </div>
           <div class="collpase px-3" id="collapseSupplier">
+            <div class="row mb-3">
+              <div class="d-flex justify-content-between align-items-center m-2">
+                <div class="page-size-container d-flex align-items-center">
+                  <label for="containerId-pageSize" class="me-1">Page Size:</label>
+                  <select id="containerId-pageSize" class="px-3 py-1">
+                    <option value="5" selected>5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                  </select>
+                </div>
+                <div class="search-div d-flex">
+                  <label for="containerId-search" class="mt-2 me-2 py-1 d-flex">Search:</label>
+                  <input type="search" id="containerId-search" placeholder="Search...">
+                </div>
+              </div>
+            </div>
             <table class="table table-responsive">
               <thead>
                 <tr>
-                  <th>Location</th>
-                  <th>Supplier Name</th>
+                  <th>Document</th>
+                  <!-- <th>Supplier Name</th>
                   <th>Mobile No.</th>
                   <th>E-mail Id</th>
                   <th>Checked</th>
-                  <th>Checked ON</th>
+                  <th>Checked ON</th> -->
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>100001</td>
-                  <td>SUGANDHA AIRAN</td>
+                  <!-- <td>100001</td> -->
+                  <!-- <td>SUGANDHA AIRAN</td>
                   <td>9320359958</td>
                   <td>sugandhajindal1984@gmail.com</td>
                   <td>ON</td>
-                  <td></td>
+                  <td></td> -->
                 </tr>
                 <tr>
-                  <td>100001</td>
-                  <td>SUGANDHA AIRAN</td>
+                  <td class="text-center">No Data to display</td>
+                  <!-- <td>SUGANDHA AIRAN</td>
                   <td>9320359958</td>
                   <td>sugandhajindal1984@gmail.com</td>
                   <td>ON</td>
-                  <td></td>
+                  <td></td> -->
                 </tr>
               </tbody>
             </table>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <div>Showing 0 to 0 of 0 Entries</div>
+              <nav>
+                  <ul class="pagination mb-0">
+                      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+              </nav>
+          </div>
           </div>
           <!-- <div class="form-container mt-3 mb-3 mx-4">
               <div class="d-flex justify-content-between" style="border: 1px solid #ECEFF3; background: #ECEFF3;">
@@ -1428,6 +1459,75 @@
               </table>
             </div> -->
         </div>
+        <div
+        class="modal fade"
+        id="checklistModal"
+        tabindex="-1"
+        aria-labelledby="checklistModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="checklistModalLabel">Checklist Details</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <table class="table table-bordered">
+                <thead class="table-light">
+                  <tr>
+                    <th>Sr. No</th>
+                    <th>Check List Details</th>
+                    <th>Checklist ID</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>CHEKLIST1</td>
+                    <td>1</td>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>TEST1</td>
+                    <td>2</td>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>TEST2</td>
+                    <td>3</td>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-warning">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
