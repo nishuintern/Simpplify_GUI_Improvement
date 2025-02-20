@@ -1,1535 +1,2367 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nippon Data CRM</title>
 
     <!-- Google Fonts -->
     <!-- Main Css -->
-    <link rel="stylesheet" href="nippon.css">
+    <link rel="stylesheet" href="nippon.css" />
     <!-- Icon Css -->
-    <link rel="stylesheet" href="./assets/fonts/FluentSystemIcons-Regular.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css">
+    <link
+      rel="stylesheet"
+      href="./assets/fonts/FluentSystemIcons-Regular.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
+    />
 
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"
+    />
     <!-- End of Icon css -->
     <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
-<!-- end of google fonts -->
-<style>
-   /* .sub-menu:hover .dropdown-menu {
-  display: block !important;
-} */
-</style>
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- end of google fonts -->
+    <style>
+      .sidebar {
+        max-height: 100vh;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #888 #f1f1f1;
+      }
 
-<body>
-<div class="sidebar">
-    <button class="mobile-close btn btn-outline-secondary me-2">
-        <span class=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-        </svg></span>
-    </button>
-    <div class="logo mb-3">
-        <a href="#" class="">
-            <img src="./assets/images/logo.png" alt="Logo" />
+      .sidebar::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .sidebar::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+      }
+
+      .sidebar::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      @media (max-width: 768px) {
+        .sidebar {
+          width: 80vw;
+          position: fixed;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          background: white;
+          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+          transform: translateX(-100%);
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .sidebar.open {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <button class="mobile-close btn btn-outline-secondary me-2">
+        <span
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-x-lg"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+            /></svg
+        ></span>
+      </button>
+      <div class="logo mb-3">
+        <a href="#">
+          <img src="./assets/images/logo.png" alt="Logo" />
         </a>
-    </div>
-    <ul class="nav compact" style="overflow-y:auto;z-index: 1000;">
+      </div>
+      <ul class="nav compact">
         <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">
-                <i class="icon icon-ic_fluent_home_12_regular"></i>
-            </a>
+          <a class="nav-link" aria-current="page" href="#">
+            <i class="icon icon-ic_fluent_home_12_regular"></i>
+          </a>
         </li>
         <li class="nav-item dropend sub-menu">
-            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="icon icon-ic_fluent_person_24_regular"></i>
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                    <h5 class="fw-bold">CONTACTS AND ACCOUNTS</h5>
-                </li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">
-                        <i class="icon icon-ic_fluent_home_24_regular"></i> <span>Contacts</span>
-                    </a></li>
-
-                <li><a class="dropdown-item" href="#"><i
-                            class="icon icon-ic_fluent_building_multiple_20_regular"></i> <span>Accounts</span></a>
-                </li>
-            </ul>
+          <a
+            class="nav-link dropdown-toggle active"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="icon icon-ic_fluent_person_24_regular"></i>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <h5 class="fw-bold">CONTACTS AND ACCOUNTS</h5>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="icon icon-ic_fluent_home_24_regular"></i>
+                <span>Contacts</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="icon icon-ic_fluent_building_multiple_20_regular"></i>
+                <span>Accounts</span>
+              </a>
+            </li>
+          </ul>
         </li>
-    </ul>
-</div>
+      </ul>
+    </div>
+
     <div class="main-container">
-        <header>
-            <div class="container-fluid">
-               
-                <div class="d-flex justify-content-between flex-column flex-lg-row flex-md-row flex-sm-row">
-                    <div class="flex-grow-1 d-flex align-items-center header-mobile position-relative">
-                    <button class="mobile-nav btn btn-outline-secondary me-2">
-                        <span class=""><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                          </svg></span>
-                    </button>
-                    <div class="search global-search d-inline-flex position-relative" id="">
-                        <div class="input-group">
-                            <span class="input-group-text" id="basic-addon1"><i
-                                    class="icon icon-ic_fluent_search_12_regular"></i></span>
-                            <input type="text" class="form-control" placeholder="Search in your crm"
-                                aria-label="Search in your crm" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="search-auto-complete">
-                            <div class="top-search">
-                                <div class="row">
-                                    <div class="col-11">
-                                        <div class="search-radio">
-                                            <input type="radio" value="all" name="top-search" />
-                                            <label for="top-search">All</label>
-                                        </div>
-                                        <div class="search-radio">
-                                            <input type="radio" value="all" name="top-search" />
-                                            <label for="top-search">Contact</label>
-                                        </div>
-                                        <div class="search-radio">
-                                            <input type="radio" value="all" name="top-search" />
-                                            <label for="top-search">Accounts</label>
-                                        </div>
-                                        <div class="search-radio">
-                                            <input type="radio" value="all" name="top-search" />
-                                            <label for="top-search">Deal</label>
-                                        </div>
-                                        <div class="search-radio">
-                                            <input type="radio" value="all" name="top-search" />
-                                            <label for="top-search">Chat Conversation</label>
-                                        </div>
-                                        <div class="search-radio">
-                                            <input type="radio" value="all" name="top-search" />
-                                            <label for="top-search">Meeting</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-1">
-                                        <button class="btn btn-link"><i
-                                                class="icon icon-ic_fluent_more_vertical_16_regular"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="inner-search-body">
-                                <h5>Contact (1)</h5>
-                                <ul class="avtar">
-                                    <li> <a href="#">
-                                            <div class="list-first">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0 rounded-circle">
-                                                        <img src="./assets/images/Avatar/Image-40.png" alt="...">
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h4>Jane Cooper</h4>
-                                                        <p>jane.cooper@example.com</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="list-second">
-                                                <p>Sumit Mehta </p>
-                                                <p>Updated 2 day ago</p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h5>Mailing(1)</h5>
-                                <ul>
-                                    <li> <a href="#">
-                                            <div class="list-first">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0 rounded-circle icon-box">
-                                                        <i class="icon icon-ic_fluent_calendar_ltr_16_regular"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h4>(sample) meeting - final discussion about the deal</h4>
-                                                        <ul>
-                                                            <li>
-                                                                Jun 26, 2022 <span>|</span> 16:00 - 18:00
-                                                            </li>
-                                                            <li>Jane Sampleton (sample)</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="list-second">
-                                                <p>Sumit Mehta </p>
-                                                <p>Updated 2 day ago</p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h5>Task(1)</h5>
-                                <ul>
-                                    <li> <a href="#">
-                                            <div class="list-first">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0 rounded-circle icon-box">
-                                                        <i class="icon icon-ic_fluent_clipboard_task_20_regular"></i>
-                                                    </div>
-                                                    <div class="flex-grow-1 ms-3">
-                                                        <h4>(sample) send the proposal document</h4>
-                                                        <ul>
-                                                            <li>
-                                                                Jun 26, 2022 <span>|</span> 16:00 - 18:00
-                                                            </li>
-                                                            <li>Jane Sampleton (sample)</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="list-second">
-                                                <p>Sumit Mehta </p>
-                                                <p>Updated 2 day ago</p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-
-                    </div>
-                    </div>
-                    <ul class="nav right-nav">
-                        <li class="nav-item dropdown add">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <i class="icon icon-ic_fluent_add_16_regular"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
-                                <li>
-                                    <h5 class="dropdown-header">Records</h5>
-                                </li>
-
-                                <li><a class="dropdown-item" href="#"><i
-                                            class="icon icon-ic_fluent_person_circle_20_regular"></i> <span>Add
-                                            Contact</span></a></li>
-                                <li><a class="dropdown-item" href="#"><i
-                                            class="icon icon-ic_fluent_building_multiple_20_regular"></i> <span>Add
-                                            Account</span></a></li>
-
-                                <li><a class="dropdown-item" type="button" data-bs-toggle="offcanvas"
-                                        data-bs-target="#addDeal" aria-controls="offcanvasRight" href="#addDeal"><i
-                                            class="icon icon-ic_fluent_box_16_regular"></i>
-                                        <span>Add Deal</span></a></li>
-                                <li>
-                                    <h5 class="dropdown-header">Sales</h5>
-                                </li>
-                                <li><a class="dropdown-item" href="#"><i
-                                            class="icon icon-ic_fluent_person_circle_20_regular"></i> <span>Add
-                                            Contact</span></a></li>
-                                <li><a class="dropdown-item" href="#"><i
-                                            class="icon icon-ic_fluent_building_multiple_20_regular"></i> <span>Add
-                                            Account</span></a></li>
-
-                                <li><a class="dropdown-item" href="#"><i class="icon icon-ic_fluent_box_16_regular"></i>
-                                        <span>Add Account</span></a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mail" data-bs-toggle="offcanvas" aria-controls="offcanvasBottom"
-                                href="#offcanvasBottom"><i class="icon icon-ic_fluent_mail_20_regular"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mail position-relative" data-bs-placement="bottom"
-                                data-bs-title="What's new" data-bs-toggle="offcanvas" href="#whatnew" role="button"
-                                aria-controls="offcanvasExample"><i class="icon icon-ic_fluent_rocket_20_regular"></i>
-                                <span class="position-absolute badge rounded-pill bg-danger">
-                                    9
-                                    <span class="visually-hidden">unread messages</span>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link mail position-relative dropdown-toggle notification-drowpdown"
-                                type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
-                                    class="icon icon-ic_fluent_alert_20_regular"></i>
-                                <span class="position-absolute badge rounded-pill bg-danger">
-                                    9
-                                    <span class="visually-hidden">unread messages</span>
-                                </span></a>
-                            <div class="dropdown-menu notification shadow-sm border-0">
-                                <div class="title-header fs-5">Notification</div>
-                                <ul class="list-inline d-flex py-2 px-4 top-list justify-content-end">
-                                    <li class="list-inline-item"><a href="">Mark all as read</a></li>
-                                    <li class="list-inline-item"><a href="">Turn off alerts</a></li>
-                                    <li class="list-inline-item"><a href="">Settings</a></li>
-                                </ul>
-                                <ul class="notification-list">
-                                    <li class="unread">
-                                        <div class="d-flex" href="#">
-                                            <div class="flex-shrink-0 notification-icon">
-                                                <i class="icon icon-ic_fluent_mail_checkmark_20_regular"></i>
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <div class="d-flex justify-content-between">
-                                                    <h6>Email clicked</h6>
-                                                    <span class="time-stamp">a few seconds ago</span>
-                                                </div>
-                                                <div class="notification-info">
-                                                    <p>(Sample) Re: Final discussion about the deal</p>
-                                                    <p><a href="#">Jane Sampleton (sample)</a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-flex" href="#">
-                                            <div class="flex-shrink-0 notification-icon">
-                                                <i class="icon icon-ic_fluent_clipboard_task_20_regular"></i>
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <div class="d-flex justify-content-between">
-                                                    <h6>Email clicked</h6>
-                                                    <span class="time-stamp">a few seconds ago</span>
-                                                </div>
-                                                <div class="notification-info">
-                                                    <p>(Sample) Re: Final discussion about the deal</p>
-                                                    <p><a href="#">Jane Sampleton (sample)</a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link profile dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
-                                href="#">sm</a>
-                            <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 profile-drop">
-                                <li>
-                                    <h5 class="dropdown-header">Sumit Mehta</h5>
-                                </li>
-
-                                <li><a class="dropdown-item" href="#"><i
-                                            class="icon icon-ic_fluent_mail_20_regular"></i> <span>
-                                            Connect email</span></a></li>
-                                <li><a class="dropdown-item" href="#"><i
-                                            class="icon icon-ic_fluent_arrow_sync_20_regular"></i> <span>Sync
-                                            contact</span></a></li>
-
-                                <li><a class="dropdown-item" href="#"><i
-                                            class="icon icon-ic_fluent_calendar_mail_16_regular"></i>
-                                        <span>Calendar and Conferencing</span></a></li>
-
-                                <li><a class="dropdown-item" href="#"><i
-                                            class="icon icon-ic_fluent_mail_add_16_regular"></i> <span>Email
-                                            Templates</span></a></li>
-                                <li><a class="dropdown-item" href="#"><i
-                                            class="icon icon-ic_fluent_target_arrow_20_regular"></i> <span>Sales
-                                            Target</span></a></li>
-
-                                <li><a class="dropdown-item" href="#"><i
-                                            class="icon icon-ic_fluent_settings_20_regular"></i>
-                                        <span>Sales</span></a></li>
-                                <li class="p-0">
-                                    <hr class="dropdown-divider" />
-                                </li>
-                                <li><a href="#" class="dropdown-item"><i
-                                            class="icon icon-ic_fluent_arrow_exit_20_regular"></i>
-                                        <span>Logout</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
+      <header>
+        <div class="container-fluid">
+          <div
+            class="d-flex justify-content-between flex-column flex-lg-row flex-md-row flex-sm-row"
+          >
+            <div
+              class="flex-grow-1 d-flex align-items-center header-mobile position-relative"
+            >
+              <button class="mobile-nav btn btn-outline-secondary me-2">
+                <span class=""
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-list"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                    /></svg
+                ></span>
+              </button>
+              <div
+                class="search global-search d-inline-flex position-relative"
+                id=""
+              >
+                <div class="input-group">
+                  <span class="input-group-text" id="basic-addon1"
+                    ><i class="icon icon-ic_fluent_search_12_regular"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search in your crm"
+                    aria-label="Search in your crm"
+                    aria-describedby="basic-addon1"
+                  />
                 </div>
-            </div>
-        </header>
-        <!-- header -->
-        <!-- End of Header -->
+                <div class="search-auto-complete">
+                  <div class="top-search">
+                    <div class="row">
+                      <div class="col-11">
+                        <div class="search-radio">
+                          <input type="radio" value="all" name="top-search" />
+                          <label for="top-search">All</label>
+                        </div>
+                        <div class="search-radio">
+                          <input type="radio" value="all" name="top-search" />
+                          <label for="top-search">Contact</label>
+                        </div>
+                        <div class="search-radio">
+                          <input type="radio" value="all" name="top-search" />
+                          <label for="top-search">Accounts</label>
+                        </div>
+                        <div class="search-radio">
+                          <input type="radio" value="all" name="top-search" />
+                          <label for="top-search">Deal</label>
+                        </div>
+                        <div class="search-radio">
+                          <input type="radio" value="all" name="top-search" />
+                          <label for="top-search">Chat Conversation</label>
+                        </div>
+                        <div class="search-radio">
+                          <input type="radio" value="all" name="top-search" />
+                          <label for="top-search">Meeting</label>
+                        </div>
+                      </div>
 
-        <!-- Mid header -->
-        <div class="mid-header">
-            <div class="container-fluid">
-                <div class="d-flex justify-content-between align-items-center ipad-view">
-                    <div class="mid-left">
-                        <a href="#" class="btn btn-outline-secondary c-filter">
-                            <i class="icon icon-ic_fluent_navigation_unread_20_regular"></i>
+                      <div class="col-1">
+                        <button class="btn btn-link">
+                          <i
+                            class="icon icon-ic_fluent_more_vertical_16_regular"
+                          ></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inner-search-body">
+                    <h5>Contact (1)</h5>
+                    <ul class="avtar">
+                      <li>
+                        <a href="#">
+                          <div class="list-first">
+                            <div class="d-flex align-items-center">
+                              <div class="flex-shrink-0 rounded-circle">
+                                <img
+                                  src="./assets/images/Avatar/Image-40.png"
+                                  alt="..."
+                                />
+                              </div>
+                              <div class="flex-grow-1 ms-3">
+                                <h4>Jane Cooper</h4>
+                                <p>jane.cooper@example.com</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="list-second">
+                            <p>Sumit Mehta</p>
+                            <p>Updated 2 day ago</p>
+                          </div>
                         </a>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Contacts</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">My Contacts(1)
-                                </li>
-                            </ol>
-                        </nav>
-
-                    </div>
-                    <div class="mid-right mt-md-2">
-                        <div class="mid-right-iner">
-                            <button class="btn btn-outline-primary" id="liveToastBtn">toast</button>
-                            <div class="btn-group me-2">
-                                <button class="btn btn-primary" type="button">
-                                    Import contacts
-                                </button>
-                                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Import History</a></li>
-
-                                </ul>
-                            </div>
-
-
-                            <a href="index-c-table.html" type="button" class="btn btn-outline-secondary"
-                                data-bs-toggle="tooltip" data-bs-placement="right"
-                                data-bs-title="Switch to compact view">
-                                <span class="def-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none">
-                                        <path
-                                            d="M2.75 13.4968H21.25C21.6642 13.4968 22 13.8326 22 14.2468C22 14.6265 21.7178 14.9403 21.3518 14.9899L21.25 14.9968H2.75C2.33579 14.9968 2 14.661 2 14.2468C2 13.8671 2.28215 13.5533 2.64823 13.5036L2.75 13.4968ZM2.75 9H21.25C21.6642 9 22 9.33579 22 9.75C22 10.1297 21.7178 10.4435 21.3518 10.4931L21.25 10.5H2.75C2.33579 10.5 2 10.1642 2 9.75C2 9.3703 2.28215 9.05651 2.64823 9.00685L2.75 9Z"
-                                            fill="inherit" />
-                                        <path
-                                            d="M12 7C11.8543 7 11.7149 6.94806 11.6139 6.85614L7.14956 2.79364C6.94449 2.60702 6.95113 2.31029 7.16442 2.13086C7.37763 1.95143 7.71677 1.95724 7.92185 2.14385L12 5.85495L16.0781 2.14385C16.2832 1.95724 16.6223 1.95143 16.8356 2.13086C17.0489 2.31029 17.0555 2.60702 16.8504 2.79364L12.3861 6.85614C12.2851 6.94806 12.1457 7 12 7Z"
-                                            fill="inherit" />
-                                        <path
-                                            d="M11.5 16.9968C11.6603 16.9968 11.8137 17.0487 11.9248 17.1406L16.8355 21.2031C17.0611 21.3897 17.0538 21.6865 16.8191 21.8659C16.5846 22.0453 16.2115 22.0395 15.986 21.8529L11.5 18.1418L7.01407 21.8529C6.78849 22.0395 6.41545 22.0453 6.18085 21.8659C5.94625 21.6865 5.93893 21.3897 6.16451 21.2031L11.0752 17.1406C11.1863 17.0487 11.3397 16.9968 11.5 16.9968Z"
-                                            fill="inherit" />
-                                    </svg>
-                                </span>
-
-                            </a>
-                            <div class="btn-group ms-2">
-                                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
-                                    data-bs-target="#editColumn" aria-controls="offcanvasRight">
-                                    <i class="icon icon-ic_fluent_table_freeze_row_20_regular"></i>
-                                    Edit column
-                                </button>
-                                <button type="button"
-                                    class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Edit Column</a></li>
-                                    <li><a class="dropdown-item" href="#">Add Column</a></li>
-                                </ul>
-                            </div>
-
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight"
-                                class="ms-2 btn btn-outline-secondary position-relative filter"><i
-                                    class="icon icon-ic_fluent_filter_16_regular"></i> Filter <span
-                                    class="position-absolute top-0 start-100 translate-middle badge  rounded-circle bg-nippon">
-                                    99
-
-                                </span></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end fof Mid header -->
-
-        <!-- Table view -->
-        <div class="tableview default-view">
-           
-            <div class="table-responsive position-relative">
-                 <!-- bulk view assign -->
-            <div class="bulk-action p-2">
-                <button class="btn btn-outline-secondary">
-                    Bulk email
-                </button>
-                <button class="btn btn-outline-secondary">
-                    Add task
-                </button>
-                <button class="btn btn-outline-secondary">
-                    Assign to
-                </button>
-                <button class="btn btn-outline-secondary">
-                    Merge
-                </button>
-                <button class="btn btn-outline-secondary">
-                    Update field
-                </button>
-                <button class="btn btn-outline-secondary">
-                    Delete
-                </button>
-                <button class="btn btn-outline-secondary">
-                    Bulk SMS
-                </button>
-                <div class="dropdown">
-                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Add to sequence
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Add to sequence</a></li>
-                        <li><a class="dropdown-item" href="#">Remove from sequence</a></li>
-
+                      </li>
                     </ul>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Add Tags
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Add Tags</a></li>
-                        <li><a class="dropdown-item" href="#">Remove Tags</a></li>
-
-                    </ul>
-                </div>
-            </div>
-            <!-- end of bulk view assign -->
-                <table class="table table-data">
-                    <thead>
-                        <tr>
-                            <th width="50px" class="text-center">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="bulkact">
-
-                                </div>
-                            </th>
-                            <th>Name</th>
-                            <th>Score</th>
-                            <th>Open deal Account</th>
-                            <th>Last Contaced Time</th>
-                            <th>Sales Owner</th>
-                            <th>Email</th>
-                            <th>Work</th>
-                            <th><span class="visually-hidden">Action</span></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td width="50px" class="text-center">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-
-                                </div>
-                            </td>
-                            <td class="avtar-view">
-                                <div class="dropdown">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 avtar-img">
-                                            <img src="./assets/images/Avatar/Image-40.png" alt="...">
-                                        </div>
-                                        <div class="flex-grow-1 ms-3">
-                                            <h5 class="mb-0 name-title">Jane Sampleton</h5>
-                                            <p class="mb-0 sub-heading">Sales Manager</p>
-                                            <a href="#" class="small">Widgetz.io (sample)</a>
-                                        </div>
-
-                                        <a href="#" class="table-edit dropdown-toggle" type="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="inside"><i
-                                                class="icon icon-ic_fluent_edit_20_regular"></i></a>
-                                        <div class="dropdown-menu contact-edit-inline shadow">
-                                            <div class="dropheader">
-                                                <strong>Edit</strong>
-                                                <div class="action">
-                                                    <a href="#" class="d-inline-flex me-2 secondedit"><i
-                                                            class="icon icon-ic_fluent_presence_offline_10_regular"></i></a>
-                                                    <a href="#" class="d-inline-flex me-2 "><i
-                                                            class="icon icon-ic_fluent_presence_available_10_regular"></i></a>
-
-                                                </div>
-                                            </div>
-                                            <div class="p-3">
-                                                <div class="mb-3">
-                                                    <label for="FirstName" class="form-label">First Name</label>
-                                                    <input type="text" class="form-control"
-                                                        id="exampleFormControlInput1" placeholder="First Name">
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <label for="LastName" class="form-label">Last Name</label>
-                                                    <input type="text" class="form-control"
-                                                        id="exampleFormControlInput1" placeholder="Last Name">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="LastName" class="form-label">Job Title</label>
-                                                    <input type="text" class="form-control"
-                                                        id="exampleFormControlInput1" placeholder="Last Name">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="Acconts" class="form-label">Acount</label>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected>Open this select menu</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-            </div>
-            </td>
-            <td width="150">0 <i class="icon icon-ic_fluent_arrow_sort_up_20_regular"></i></td>
-            <td>
-                <div class="amt">$ 7,000</div>
-            </td>
-            <td><span>14 days ago</span></td>
-            <td>
-                <p class="edit-view"> <a href="#">Sumit Mehta</a>
-                    <a href="#" class="table-edit"><i class="icon icon-ic_fluent_edit_20_regular"></i></a>
-                </p>
-            </td>
-            <td>
-                <p class="edit-view"> <a href="mailto:sumitmehtas@gmail.com">sumitmehtas@gmail.com</a>
-                    <a href="#" class="table-edit"><i class="icon icon-ic_fluent_edit_20_regular"></i></a>
-                </p>
-            </td>
-            <td>
-                <p class="edit-view"> <a href="#">3684932360</a>
-                    <a href="#" class="table-edit"><i class="icon icon-ic_fluent_edit_20_regular"></i></a>
-                </p>
-            </td>
-            <td class="text-end">
-                <div class="btn-group act-btn" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-outline-secondary"><i
-                            class="icon icon-ic_fluent_mail_20_regular"></i></button>
-                    <button type="button" class="btn btn-outline-secondary"><i
-                            class="icon icon-ic_fluent_call_20_regular"></i></button>
-                    <button type="button" class="btn btn-outline-secondary"><i
-                            class="icon icon-ic_fluent_edit_20_regular"></i></button>
-                    <button type="button" class="btn btn-outline-secondary last-btn"><i
-                            class="icon icon-ic_fluent_more_vertical_20_regular"></i></button>
-                </div>
-            </td>
-            </tr>
-            <tr>
-                <td width="50px" class="text-center">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-
-                    </div>
-                </td>
-                <td class="avtar-view">
-                    <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0 ">
-                            <div class="avtar-cir">
-                                SM
+                    <h5>Mailing(1)</h5>
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <div class="list-first">
+                            <div class="d-flex align-items-center">
+                              <div
+                                class="flex-shrink-0 rounded-circle icon-box"
+                              >
+                                <i
+                                  class="icon icon-ic_fluent_calendar_ltr_16_regular"
+                                ></i>
+                              </div>
+                              <div class="flex-grow-1 ms-3">
+                                <h4>
+                                  (sample) meeting - final discussion about the
+                                  deal
+                                </h4>
+                                <ul>
+                                  <li>
+                                    Jun 26, 2022 <span>|</span> 16:00 - 18:00
+                                  </li>
+                                  <li>Jane Sampleton (sample)</li>
+                                </ul>
+                              </div>
                             </div>
+                          </div>
+                          <div class="list-second">
+                            <p>Sumit Mehta</p>
+                            <p>Updated 2 day ago</p>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                    <h5>Task(1)</h5>
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <div class="list-first">
+                            <div class="d-flex align-items-center">
+                              <div
+                                class="flex-shrink-0 rounded-circle icon-box"
+                              >
+                                <i
+                                  class="icon icon-ic_fluent_clipboard_task_20_regular"
+                                ></i>
+                              </div>
+                              <div class="flex-grow-1 ms-3">
+                                <h4>(sample) send the proposal document</h4>
+                                <ul>
+                                  <li>
+                                    Jun 26, 2022 <span>|</span> 16:00 - 18:00
+                                  </li>
+                                  <li>Jane Sampleton (sample)</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="list-second">
+                            <p>Sumit Mehta</p>
+                            <p>Updated 2 day ago</p>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="nav right-nav">
+              <li class="nav-item dropdown add">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="icon icon-ic_fluent_add_16_regular"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
+                  <li>
+                    <h5 class="dropdown-header">Records</h5>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><i
+                        class="icon icon-ic_fluent_person_circle_20_regular"
+                      ></i>
+                      <span>Add Contact</span></a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><i
+                        class="icon icon-ic_fluent_building_multiple_20_regular"
+                      ></i>
+                      <span>Add Account</span></a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      type="button"
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#addDeal"
+                      aria-controls="offcanvasRight"
+                      href="#addDeal"
+                      ><i class="icon icon-ic_fluent_box_16_regular"></i>
+                      <span>Add Deal</span></a
+                    >
+                  </li>
+                  <li>
+                    <h5 class="dropdown-header">Sales</h5>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><i
+                        class="icon icon-ic_fluent_person_circle_20_regular"
+                      ></i>
+                      <span>Add Contact</span></a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><i
+                        class="icon icon-ic_fluent_building_multiple_20_regular"
+                      ></i>
+                      <span>Add Account</span></a
+                    >
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><i class="icon icon-ic_fluent_box_16_regular"></i>
+                      <span>Add Account</span></a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link mail"
+                  data-bs-toggle="offcanvas"
+                  aria-controls="offcanvasBottom"
+                  href="#offcanvasBottom"
+                  ><i class="icon icon-ic_fluent_mail_20_regular"></i
+                ></a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link mail position-relative"
+                  data-bs-placement="bottom"
+                  data-bs-title="What's new"
+                  data-bs-toggle="offcanvas"
+                  href="#whatnew"
+                  role="button"
+                  aria-controls="offcanvasExample"
+                  ><i class="icon icon-ic_fluent_rocket_20_regular"></i>
+                  <span class="position-absolute badge rounded-pill bg-danger">
+                    9
+                    <span class="visually-hidden">unread messages</span>
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link mail position-relative dropdown-toggle notification-drowpdown"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  ><i class="icon icon-ic_fluent_alert_20_regular"></i>
+                  <span class="position-absolute badge rounded-pill bg-danger">
+                    9
+                    <span class="visually-hidden">unread messages</span>
+                  </span></a
+                >
+                <div class="dropdown-menu notification shadow-sm border-0">
+                  <div class="title-header fs-5">Notification</div>
+                  <ul
+                    class="list-inline d-flex py-2 px-4 top-list justify-content-end"
+                  >
+                    <li class="list-inline-item">
+                      <a href="">Mark all as read</a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="">Turn off alerts</a>
+                    </li>
+                    <li class="list-inline-item"><a href="">Settings</a></li>
+                  </ul>
+                  <ul class="notification-list">
+                    <li class="unread">
+                      <div class="d-flex" href="#">
+                        <div class="flex-shrink-0 notification-icon">
+                          <i
+                            class="icon icon-ic_fluent_mail_checkmark_20_regular"
+                          ></i>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h5 class="mb-0 name-title">Jane Sampleton</h5>
-                            <p class="mb-0 sub-heading">Sales Manager</p>
-                            <a href="#" class="small">Widgetz.io (sample)</a>
+                          <div class="d-flex justify-content-between">
+                            <h6>Email clicked</h6>
+                            <span class="time-stamp">a few seconds ago</span>
+                          </div>
+                          <div class="notification-info">
+                            <p>(Sample) Re: Final discussion about the deal</p>
+                            <p><a href="#">Jane Sampleton (sample)</a></p>
+                          </div>
                         </div>
-                        <a href="#" class="table-edit"><i class="icon icon-ic_fluent_edit_20_regular"></i></a>
-                    </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="d-flex" href="#">
+                        <div class="flex-shrink-0 notification-icon">
+                          <i
+                            class="icon icon-ic_fluent_clipboard_task_20_regular"
+                          ></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                          <div class="d-flex justify-content-between">
+                            <h6>Email clicked</h6>
+                            <span class="time-stamp">a few seconds ago</span>
+                          </div>
+                          <div class="notification-info">
+                            <p>(Sample) Re: Final discussion about the deal</p>
+                            <p><a href="#">Jane Sampleton (sample)</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link profile dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  href="#"
+                  >sm</a
+                >
+                <ul
+                  class="dropdown-menu dropdown-menu-end shadow-sm border-0 profile-drop"
+                >
+                  <li>
+                    <h5 class="dropdown-header">Sumit Mehta</h5>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><i class="icon icon-ic_fluent_mail_20_regular"></i>
+                      <span> Connect email</span></a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><i class="icon icon-ic_fluent_arrow_sync_20_regular"></i>
+                      <span>Sync contact</span></a
+                    >
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><i
+                        class="icon icon-ic_fluent_calendar_mail_16_regular"
+                      ></i>
+                      <span>Calendar and Conferencing</span></a
+                    >
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><i class="icon icon-ic_fluent_mail_add_16_regular"></i>
+                      <span>Email Templates</span></a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><i
+                        class="icon icon-ic_fluent_target_arrow_20_regular"
+                      ></i>
+                      <span>Sales Target</span></a
+                    >
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><i class="icon icon-ic_fluent_settings_20_regular"></i>
+                      <span>Sales</span></a
+                    >
+                  </li>
+                  <li class="p-0">
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-item"
+                      ><i class="icon icon-ic_fluent_arrow_exit_20_regular"></i>
+                      <span>Logout</span></a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <!-- header -->
+      <!-- End of Header -->
+
+      <!-- Mid header -->
+      <div class="mid-header">
+        <div class="container-fluid">
+          <div
+            class="d-flex justify-content-between align-items-center ipad-view"
+          >
+            <div class="mid-left">
+              <a href="#" class="btn btn-outline-secondary c-filter">
+                <i class="icon icon-ic_fluent_navigation_unread_20_regular"></i>
+              </a>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Contacts</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    My Contacts(1)
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div class="mid-right mt-md-2">
+              <div class="mid-right-iner">
+                <button class="btn btn-outline-primary" id="liveToastBtn">
+                  toast
+                </button>
+                <div class="btn-group me-2">
+                  <button class="btn btn-primary" type="button">
+                    Import contacts
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  ></button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">Import History</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <a
+                  href="index-c-table.html"
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="right"
+                  data-bs-title="Switch to compact view"
+                >
+                  <span class="def-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M2.75 13.4968H21.25C21.6642 13.4968 22 13.8326 22 14.2468C22 14.6265 21.7178 14.9403 21.3518 14.9899L21.25 14.9968H2.75C2.33579 14.9968 2 14.661 2 14.2468C2 13.8671 2.28215 13.5533 2.64823 13.5036L2.75 13.4968ZM2.75 9H21.25C21.6642 9 22 9.33579 22 9.75C22 10.1297 21.7178 10.4435 21.3518 10.4931L21.25 10.5H2.75C2.33579 10.5 2 10.1642 2 9.75C2 9.3703 2.28215 9.05651 2.64823 9.00685L2.75 9Z"
+                        fill="inherit"
+                      />
+                      <path
+                        d="M12 7C11.8543 7 11.7149 6.94806 11.6139 6.85614L7.14956 2.79364C6.94449 2.60702 6.95113 2.31029 7.16442 2.13086C7.37763 1.95143 7.71677 1.95724 7.92185 2.14385L12 5.85495L16.0781 2.14385C16.2832 1.95724 16.6223 1.95143 16.8356 2.13086C17.0489 2.31029 17.0555 2.60702 16.8504 2.79364L12.3861 6.85614C12.2851 6.94806 12.1457 7 12 7Z"
+                        fill="inherit"
+                      />
+                      <path
+                        d="M11.5 16.9968C11.6603 16.9968 11.8137 17.0487 11.9248 17.1406L16.8355 21.2031C17.0611 21.3897 17.0538 21.6865 16.8191 21.8659C16.5846 22.0453 16.2115 22.0395 15.986 21.8529L11.5 18.1418L7.01407 21.8529C6.78849 22.0395 6.41545 22.0453 6.18085 21.8659C5.94625 21.6865 5.93893 21.3897 6.16451 21.2031L11.0752 17.1406C11.1863 17.0487 11.3397 16.9968 11.5 16.9968Z"
+                        fill="inherit"
+                      />
+                    </svg>
+                  </span>
+                </a>
+                <div class="btn-group ms-2">
+                  <button
+                    class="btn btn-outline-secondary"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#editColumn"
+                    aria-controls="offcanvasRight"
+                  >
+                    <i
+                      class="icon icon-ic_fluent_table_freeze_row_20_regular"
+                    ></i>
+                    Edit column
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  ></button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Edit Column</a></li>
+                    <li><a class="dropdown-item" href="#">Add Column</a></li>
+                  </ul>
+                </div>
+
+                <button
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight"
+                  aria-controls="offcanvasRight"
+                  class="ms-2 btn btn-outline-secondary position-relative filter"
+                >
+                  <i class="icon icon-ic_fluent_filter_16_regular"></i> Filter
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-nippon"
+                  >
+                    99
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end fof Mid header -->
+
+      <!-- Table view -->
+      <div class="tableview default-view">
+        <div class="table-responsive position-relative">
+          <!-- bulk view assign -->
+          <div class="bulk-action p-2">
+            <button class="btn btn-outline-secondary">Bulk email</button>
+            <button class="btn btn-outline-secondary">Add task</button>
+            <button class="btn btn-outline-secondary">Assign to</button>
+            <button class="btn btn-outline-secondary">Merge</button>
+            <button class="btn btn-outline-secondary">Update field</button>
+            <button class="btn btn-outline-secondary">Delete</button>
+            <button class="btn btn-outline-secondary">Bulk SMS</button>
+            <div class="dropdown">
+              <button
+                class="btn btn-outline-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Add to sequence
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Add to sequence</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Remove from sequence</a>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown">
+              <button
+                class="btn btn-outline-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Add Tags
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Add Tags</a></li>
+                <li><a class="dropdown-item" href="#">Remove Tags</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- end of bulk view assign -->
+          <table class="table table-data">
+            <thead>
+              <tr>
+                <th width="50px" class="text-center">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="bulkact"
+                    />
+                  </div>
+                </th>
+                <th>Name</th>
+                <th>Score</th>
+                <th>Open deal Account</th>
+                <th>Last Contaced Time</th>
+                <th>Sales Owner</th>
+                <th>Email</th>
+                <th>Work</th>
+                <th><span class="visually-hidden">Action</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td width="50px" class="text-center">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                  </div>
                 </td>
-                <td width="150">0 <i class="icon icon-ic_fluent_arrow_sort_up_20_regular"></i></td>
+                <td class="avtar-view">
+                  <div class="dropdown">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-shrink-0 avtar-img">
+                        <img
+                          src="./assets/images/Avatar/Image-40.png"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                        <h5 class="mb-0 name-title">Jane Sampleton</h5>
+                        <p class="mb-0 sub-heading">Sales Manager</p>
+                        <a href="#" class="small">Widgetz.io (sample)</a>
+                      </div>
+
+                      <a
+                        href="#"
+                        class="table-edit dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        data-bs-auto-close="inside"
+                        ><i class="icon icon-ic_fluent_edit_20_regular"></i
+                      ></a>
+                      <div class="dropdown-menu contact-edit-inline shadow">
+                        <div class="dropheader">
+                          <strong>Edit</strong>
+                          <div class="action">
+                            <a href="#" class="d-inline-flex me-2 secondedit"
+                              ><i
+                                class="icon icon-ic_fluent_presence_offline_10_regular"
+                              ></i
+                            ></a>
+                            <a href="#" class="d-inline-flex me-2"
+                              ><i
+                                class="icon icon-ic_fluent_presence_available_10_regular"
+                              ></i
+                            ></a>
+                          </div>
+                        </div>
+                        <div class="p-3">
+                          <div class="mb-3">
+                            <label for="FirstName" class="form-label"
+                              >First Name</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="exampleFormControlInput1"
+                              placeholder="First Name"
+                            />
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="LastName" class="form-label"
+                              >Last Name</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="exampleFormControlInput1"
+                              placeholder="Last Name"
+                            />
+                          </div>
+                          <div class="mb-3">
+                            <label for="LastName" class="form-label"
+                              >Job Title</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="exampleFormControlInput1"
+                              placeholder="Last Name"
+                            />
+                          </div>
+                          <div class="mb-3">
+                            <label for="Acconts" class="form-label"
+                              >Acount</label
+                            >
+                            <select
+                              class="form-select"
+                              aria-label="Default select example"
+                            >
+                              <option selected>Open this select menu</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td width="150">
+                  0 <i class="icon icon-ic_fluent_arrow_sort_up_20_regular"></i>
+                </td>
                 <td>
-                    <div class="amt">$ 7,000</div>
+                  <div class="amt">$ 7,000</div>
                 </td>
                 <td><span>14 days ago</span></td>
                 <td>
-                    <p class="edit-view"> <a href="#">Sumit Mehta</a>
-                        <a href="#" class="table-edit"><i class="icon icon-ic_fluent_edit_20_regular"></i></a>
-                    </p>
+                  <p class="edit-view">
+                    <a href="#">Sumit Mehta</a>
+                    <a href="#" class="table-edit"
+                      ><i class="icon icon-ic_fluent_edit_20_regular"></i
+                    ></a>
+                  </p>
                 </td>
                 <td>
-                    <p class="edit-view"> <a href="mailto:sumitmehtas@gmail.com">sumitmehtas@gmail.com</a>
-                        <a href="#" class="table-edit"><i class="icon icon-ic_fluent_edit_20_regular"></i></a>
-                    </p>
+                  <p class="edit-view">
+                    <a href="mailto:sumitmehtas@gmail.com"
+                      >sumitmehtas@gmail.com</a
+                    >
+                    <a href="#" class="table-edit"
+                      ><i class="icon icon-ic_fluent_edit_20_regular"></i
+                    ></a>
+                  </p>
                 </td>
                 <td>
-                    <p class="edit-view"> <a href="#">3684932360</a>
-                        <a href="#" class="table-edit"><i class="icon icon-ic_fluent_edit_20_regular"></i></a>
-                    </p>
+                  <p class="edit-view">
+                    <a href="#">3684932360</a>
+                    <a href="#" class="table-edit"
+                      ><i class="icon icon-ic_fluent_edit_20_regular"></i
+                    ></a>
+                  </p>
                 </td>
                 <td class="text-end">
-                    <div class="btn-group act-btn" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-outline-secondary"><i
-                                class="icon icon-ic_fluent_mail_20_regular"></i></button>
-                        <button type="button" class="btn btn-outline-secondary"><i
-                                class="icon icon-ic_fluent_call_20_regular"></i></button>
-                        <button type="button" class="btn btn-outline-secondary"><i
-                                class="icon icon-ic_fluent_edit_20_regular"></i></button>
-                        <button type="button" class="btn btn-outline-secondary last-btn"><i
-                                class="icon icon-ic_fluent_more_vertical_20_regular"></i></button>
-                    </div>
+                  <div
+                    class="btn-group act-btn"
+                    role="group"
+                    aria-label="Basic example"
+                  >
+                    <button type="button" class="btn btn-outline-secondary">
+                      <i class="icon icon-ic_fluent_mail_20_regular"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary">
+                      <i class="icon icon-ic_fluent_call_20_regular"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary">
+                      <i class="icon icon-ic_fluent_edit_20_regular"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary last-btn"
+                    >
+                      <i
+                        class="icon icon-ic_fluent_more_vertical_20_regular"
+                      ></i>
+                    </button>
+                  </div>
                 </td>
-            </tr>
+              </tr>
+              <tr>
+                <td width="50px" class="text-center">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                  </div>
+                </td>
+                <td class="avtar-view">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                      <div class="avtar-cir">SM</div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <h5 class="mb-0 name-title">Jane Sampleton</h5>
+                      <p class="mb-0 sub-heading">Sales Manager</p>
+                      <a href="#" class="small">Widgetz.io (sample)</a>
+                    </div>
+                    <a href="#" class="table-edit"
+                      ><i class="icon icon-ic_fluent_edit_20_regular"></i
+                    ></a>
+                  </div>
+                </td>
+                <td width="150">
+                  0 <i class="icon icon-ic_fluent_arrow_sort_up_20_regular"></i>
+                </td>
+                <td>
+                  <div class="amt">$ 7,000</div>
+                </td>
+                <td><span>14 days ago</span></td>
+                <td>
+                  <p class="edit-view">
+                    <a href="#">Sumit Mehta</a>
+                    <a href="#" class="table-edit"
+                      ><i class="icon icon-ic_fluent_edit_20_regular"></i
+                    ></a>
+                  </p>
+                </td>
+                <td>
+                  <p class="edit-view">
+                    <a href="mailto:sumitmehtas@gmail.com"
+                      >sumitmehtas@gmail.com</a
+                    >
+                    <a href="#" class="table-edit"
+                      ><i class="icon icon-ic_fluent_edit_20_regular"></i
+                    ></a>
+                  </p>
+                </td>
+                <td>
+                  <p class="edit-view">
+                    <a href="#">3684932360</a>
+                    <a href="#" class="table-edit"
+                      ><i class="icon icon-ic_fluent_edit_20_regular"></i
+                    ></a>
+                  </p>
+                </td>
+                <td class="text-end">
+                  <div
+                    class="btn-group act-btn"
+                    role="group"
+                    aria-label="Basic example"
+                  >
+                    <button type="button" class="btn btn-outline-secondary">
+                      <i class="icon icon-ic_fluent_mail_20_regular"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary">
+                      <i class="icon icon-ic_fluent_call_20_regular"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary">
+                      <i class="icon icon-ic_fluent_edit_20_regular"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary last-btn"
+                    >
+                      <i
+                        class="icon icon-ic_fluent_more_vertical_20_regular"
+                      ></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
             </tbody>
-            </table>
-        
-    </div>
-    </div>
-    <!-- Table view ine -->
-    <!-- compact view -->
+          </table>
+        </div>
+      </div>
+      <!-- Table view ine -->
+      <!-- compact view -->
 
-
-    <!-- end of comact view -->
+      <!-- end of comact view -->
     </div>
     <!-- Filter-right -->
-    <div class="offcanvas offcanvas-end filters" data-bs-scroll="true" tabindex="-1" id="offcanvasRight"
-        aria-labelledby="offcanvasRightLabel" data-bs-backdrop="false">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasTopLabel">Filters</h5>
-            
-            <div class="dropdown">
-                <a class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i
-                        class="icon icon-ic_fluent_add_circle_20_regular"></i> Add Filter</a>
-                <div class="dropdown-menu add-filter-dropdown">
-                    <div class="search">
-                        <div class="input-group">
-                            <span class="input-group-text" id="basic-addon1"><i
-                                    class="icon icon-ic_fluent_search_12_regular"></i></span>
-                            <input type="text" class="form-control" placeholder="Add a field to filter"
-                                aria-label="Add a field to filter" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-                    <ul class="filters-ul">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <div
+      class="offcanvas offcanvas-end filters"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="offcanvasRight"
+      aria-labelledby="offcanvasRightLabel"
+      data-bs-backdrop="false"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasTopLabel">Filters</h5>
 
-                    </ul>
-                </div>
+        <div class="dropdown">
+          <a
+            class="btn btn-outline-primary dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            ><i class="icon icon-ic_fluent_add_circle_20_regular"></i> Add
+            Filter</a
+          >
+          <div class="dropdown-menu add-filter-dropdown">
+            <div class="search">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1"
+                  ><i class="icon icon-ic_fluent_search_12_regular"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Add a field to filter"
+                  aria-label="Add a field to filter"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
             </div>
-            <button type="button" class="btn-close d-block d-sm-none d-lg-none d-xl-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                    <div class="inside-content">
-                        <div class="inside-content-top">
-                            <div class="flex-grow-1 d-inline-flex align-items-center">
-                                <h4>Sales owner</h4>
-                            </div>
-                            <div class="d-inline-flex align-items-center">
-                                <div class="dropdown">
-                                    <a data-bs-placement="right" data-bs-title="Contains"
-                                        class="btn btn-link dropdown-toggle nippon-tooltip" href="#" role="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span>contains</span> <i
-                                            class="icon icon-ic_fluent_more_vertical_16_regular"></i>
-                                    </a>
-
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Contains</a></li>
-                                        <li><a class="dropdown-item" href="#">does not contain</a></li>
-                                        <li><a class="dropdown-item" href="#">is not empty (has any value)</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-link"><i
-                                    class="icon icon-ic_fluent_dismiss_circle_20_regular"></i></a>
-                        </div>
-                        <div class="inside-content-bottom">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            Me
-                                        </label>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            Unassigned
-                                        </label>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            Sumit Mehta
-                                        </label>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </li>
-                <li class="list-group-item">An item</li>
+            <ul class="filters-ul">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
+          </div>
         </div>
-        <div class="offcanvas-footer">
-            <button class="btn btn-link w-180">Reset</button>
-            <button class="btn btn-primary w-180" disabled>Apply</button>
-        </div>
+        <button
+          type="button"
+          class="btn-close d-block d-sm-none d-lg-none d-xl-none"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="inside-content">
+              <div class="inside-content-top">
+                <div class="flex-grow-1 d-inline-flex align-items-center">
+                  <h4>Sales owner</h4>
+                </div>
+                <div class="d-inline-flex align-items-center">
+                  <div class="dropdown">
+                    <a
+                      data-bs-placement="right"
+                      data-bs-title="Contains"
+                      class="btn btn-link dropdown-toggle nippon-tooltip"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <span>contains</span>
+                      <i
+                        class="icon icon-ic_fluent_more_vertical_16_regular"
+                      ></i>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Contains</a></li>
+                      <li>
+                        <a class="dropdown-item" href="#">does not contain</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#"
+                          >is not empty (has any value)</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <a href="#" class="btn btn-link"
+                  ><i class="icon icon-ic_fluent_dismiss_circle_20_regular"></i
+                ></a>
+              </div>
+              <div class="inside-content-bottom">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault"
+                      />
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Me
+                      </label>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault"
+                      />
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Unassigned
+                      </label>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault"
+                      />
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Sumit Mehta
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">An item</li>
+        </ul>
+      </div>
+      <div class="offcanvas-footer">
+        <button class="btn btn-link w-180">Reset</button>
+        <button class="btn btn-primary w-180" disabled>Apply</button>
+      </div>
     </div>
     <!-- End of Filter right -->
     <!-- Contatct Filter start -->
     <div class="panel-view shadow">
-        <div class="search">
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1"><i
-                        class="icon icon-ic_fluent_search_12_regular"></i></span>
-                <input type="text" class="form-control" placeholder="Search in your crm" aria-label="Search in your crm"
-                    aria-describedby="basic-addon1">
-            </div>
+      <div class="search">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="icon icon-ic_fluent_search_12_regular"></i
+          ></span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search in your crm"
+            aria-label="Search in your crm"
+            aria-describedby="basic-addon1"
+          />
         </div>
-        <div class="panel-mid-view">
-            <h5>Default</h5>
-            <ul class="nav">
-                <li class="nav-list">
-                    <a href="#" class="nav-link">
-                        My Contacts
-                    </a>
-                </li>
-                <li class="nav-list">
-                    <a href="#" class="nav-link">
-                        My Territory Contacts
-                    </a>
-                </li>
-                <li class="nav-list">
-                    <a href="#" class="nav-link">
-                        New Contacts
-                    </a>
-                </li>
-                <li class="nav-list">
-                    <a href="#" class="nav-link">
-                        All Contact
-                    </a>
-                </li>
-            </ul>
-            <h5>Shared with me</h5>
-            <ul class="nav">
-                <li class="nav-list">
-                    <a href="#" class="nav-link">
-                        My Contacts
-                    </a>
-                </li>
-                <li class="nav-list">
-                    <a href="#" class="nav-link">
-                        My Territory Contacts
-                    </a>
-                </li>
-                <li class="nav-list">
-                    <a href="#" class="nav-link">
-                        New Contacts
-                    </a>
-                </li>
-                <li class="nav-list">
-                    <a href="#" class="nav-link">
-                        All Contact
-                    </a>
-                </li>
-            </ul>
-
-        </div>
+      </div>
+      <div class="panel-mid-view">
+        <h5>Default</h5>
+        <ul class="nav">
+          <li class="nav-list">
+            <a href="#" class="nav-link"> My Contacts </a>
+          </li>
+          <li class="nav-list">
+            <a href="#" class="nav-link"> My Territory Contacts </a>
+          </li>
+          <li class="nav-list">
+            <a href="#" class="nav-link"> New Contacts </a>
+          </li>
+          <li class="nav-list">
+            <a href="#" class="nav-link"> All Contact </a>
+          </li>
+        </ul>
+        <h5>Shared with me</h5>
+        <ul class="nav">
+          <li class="nav-list">
+            <a href="#" class="nav-link"> My Contacts </a>
+          </li>
+          <li class="nav-list">
+            <a href="#" class="nav-link"> My Territory Contacts </a>
+          </li>
+          <li class="nav-list">
+            <a href="#" class="nav-link"> New Contacts </a>
+          </li>
+          <li class="nav-list">
+            <a href="#" class="nav-link"> All Contact </a>
+          </li>
+        </ul>
+      </div>
     </div>
     <!-- End fo Contact Filter -->
     <!-- Mail box -->
-    <div class="offcanvas offcanvas-bottom mailbox" tabindex="-1" id="offcanvasBottom"
-        aria-labelledby="offcanvasBottomLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasBottomLabel">New Message</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div
+      class="offcanvas offcanvas-bottom mailbox"
+      tabindex="-1"
+      id="offcanvasBottom"
+      aria-labelledby="offcanvasBottomLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasBottomLabel">New Message</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body small">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="To"
+            aria-label="Dollar amount (with dot and two decimal places)"
+          />
+          <a class="input-group-text" href="#">Cc</a>
+          <a class="input-group-text" href="#">Bcc</a>
         </div>
-        <div class="offcanvas-body small">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="To"
-                    aria-label="Dollar amount (with dot and two decimal places)">
-                <a class="input-group-text" href="#">Cc</a>
-                <a class="input-group-text" href="#">Bcc</a>
-            </div>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Subject"
-                    aria-label="Dollar amount (with dot and two decimal places)">
-                <span class="input-group-text">
-                    <button type="button" class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Add Placeholder
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li>
-                            <div class="input-group">
-                                <span class="input-group-text" href="#"><i
-                                        class="icon icon-ic_fluent_search_12_regular"></i></span>
-                                <input type="text" class="form-control" placeholder="Search">
-
-                            </div>
-                        </li>
-                        <li>
-                            <h5 class="dropdown-header">Contact fields</h5>
-                        </li>
-                        <li><a class="dropdown-item" href="#">Full Name</a></li>
-                        <li><a class="dropdown-item" href="#">Last Name</a></li>
-                        <li><a class="dropdown-item" href="#">Account</a></li>
-
-                        <li><a class="dropdown-item" href="#">Email</a></li>
-                    </ul>
-                </span>
-                <span class="input-group-text">
-                    <button type="button" class="dropdown-toggle btn btn-link" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Add Template
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-
-                        <li>
-                            <h5 class="dropdown-header">Template</h5>
-                        </li>
-                        <li><a class="dropdown-item" href="#">Follow-up on deal marked as Won</a></li>
-                        <li><a class="dropdown-item" href="#">Follow-up on stage update</a></li>
-                        <li><a class="dropdown-item" href="#">Account</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item create-template" href="#"><i
-                                    class="icon icon-ic_fluent_add_circle_20_regular"></i> &nbsp;Creat Template</a></li>
-                    </ul>
-                </span>
-            </div>
-            <div class="editor">
-                <textarea cols="80" id="editor1" name="editor1" rows="10"
-                    data-sample-short>&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href=&quot;https://ckeditor.com/&quot;&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;</textarea>
-            </div>
-
-        </div>
-        <div class="offcanvas-footer">
-
-            <button class="btn btn-primary w-180">Send</button>
-            <div class="icon-section">
-                <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                            class="icon icon-ic_fluent_more_vertical_16_regular"></i></button>
-                    <ul class="dropdown-menu p-3">
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Link conversation to Contact
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Link conversation to Deal
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Add unsubscribe link
-                                </label>
-                            </div>
-                        </li>
-
-
-                    </ul>
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Subject"
+            aria-label="Dollar amount (with dot and two decimal places)"
+          />
+          <span class="input-group-text">
+            <button
+              type="button"
+              class="btn btn-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Add Placeholder
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <div class="input-group">
+                  <span class="input-group-text" href="#"
+                    ><i class="icon icon-ic_fluent_search_12_regular"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search"
+                  />
                 </div>
-                <button class="btn btn-link"><i class="icon icon-ic_fluent_delete_20_regular"></i></button>
-            </div>
+              </li>
+              <li>
+                <h5 class="dropdown-header">Contact fields</h5>
+              </li>
+              <li><a class="dropdown-item" href="#">Full Name</a></li>
+              <li><a class="dropdown-item" href="#">Last Name</a></li>
+              <li><a class="dropdown-item" href="#">Account</a></li>
 
-
+              <li><a class="dropdown-item" href="#">Email</a></li>
+            </ul>
+          </span>
+          <span class="input-group-text">
+            <button
+              type="button"
+              class="dropdown-toggle btn btn-link"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Add Template
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <h5 class="dropdown-header">Template</h5>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  >Follow-up on deal marked as Won</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Follow-up on stage update</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Account</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item create-template" href="#"
+                  ><i class="icon icon-ic_fluent_add_circle_20_regular"></i>
+                  &nbsp;Creat Template</a
+                >
+              </li>
+            </ul>
+          </span>
         </div>
+        <div class="editor">
+          <textarea
+            cols="80"
+            id="editor1"
+            name="editor1"
+            rows="10"
+            data-sample-short
+          >
+&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href=&quot;https://ckeditor.com/&quot;&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;</textarea
+          >
+        </div>
+      </div>
+      <div class="offcanvas-footer">
+        <button class="btn btn-primary w-180">Send</button>
+        <div class="icon-section">
+          <div class="dropdown">
+            <button
+              class="btn btn-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+            >
+              <i class="icon icon-ic_fluent_more_vertical_16_regular"></i>
+            </button>
+            <ul class="dropdown-menu p-3">
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Link conversation to Contact
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Link conversation to Deal
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Add unsubscribe link
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <button class="btn btn-link">
+            <i class="icon icon-ic_fluent_delete_20_regular"></i>
+          </button>
+        </div>
+      </div>
     </div>
     <!-- End of Mail box -->
     <!-- What is new Sidebar -->
-    <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="whatnew"
-        aria-labelledby="whatnewLabel">
-        <div class="offcanvas-header bg-primary text-white">
-            <h5 class="offcanvas-title" id="whatnewExampleLabel">What's New</h5>
-            <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div
+      class="offcanvas offcanvas-end"
+      data-bs-scroll="true"
+      data-bs-backdrop="true"
+      tabindex="-1"
+      id="whatnew"
+      aria-labelledby="whatnewLabel"
+    >
+      <div class="offcanvas-header bg-primary text-white">
+        <h5 class="offcanvas-title" id="whatnewExampleLabel">What's New</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <div class="d-flex align-items-center py-1">
+              <span class="badge new-features rounded-pill">NEW FEATURE</span
+              >&nbsp; <span class="date">July 13, 2022</span>
+            </div>
+            <a href="#" class="card-title fs-4 d-block mb-2"
+              >Introducing Record Types</a
+            >
+
+            <p class="card-text">
+              Does your business involve dealing with different categories of
+              contacts, accounts, and deals? B2B contacts, B2C contacts,
+              enterprise accounts, mid-market accounts—there are just so many
+              types. Unless you've found your own way to differentiate all of
+              these records, it can be a bit of a daze.
+            </p>
+            <p class="card-text">
+              To make life easier, record types are here. Once your admin
+              configures the different record types your business needs, use
+              them to categorize your contacts, accounts, deals, and and even
+              custom modules. You can also set up advanced automations based on
+              record types.
+            </p>
+            <a href="#">Learn More</a>
+          </div>
         </div>
-        <div class="offcanvas-body">
-            <div class="card border-0 shadow-sm">
-                <div class="card-body">
-                    <div class="d-flex align-items-center py-1">
-                        <span class="badge new-features rounded-pill">NEW FEATURE</span>&nbsp; <span class="date">July
-                            13, 2022</span>
-                    </div>
-                    <a href="#" class="card-title fs-4 d-block mb-2">Introducing Record Types</a>
-
-                    <p class="card-text">Does your business involve dealing with different categories of contacts,
-                        accounts, and deals? B2B contacts, B2C contacts, enterprise accounts, mid-market accounts—there
-                        are just so many types. Unless you've found your own way to differentiate all of these records,
-                        it can be a bit of a daze. </p>
-                    <p class="card-text">To make life easier, record types are here. Once your admin configures the
-                        different record types your business needs, use them to categorize your contacts, accounts,
-                        deals, and and even custom modules. You can also set up advanced automations based on record
-                        types.</p>
-                    <a href="#">Learn More</a>
-                </div>
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <div class="d-flex align-items-center py-1">
+              <span class="badge update-feature rounded-pill">NEW FEATURE</span
+              >&nbsp; <span class="date">July 13, 2022</span>
             </div>
-            <div class="card border-0 shadow-sm">
-                <div class="card-body">
-                    <div class="d-flex align-items-center py-1">
-                        <span class="badge update-feature rounded-pill">NEW FEATURE</span>&nbsp; <span class="date">July
-                            13, 2022</span>
-                    </div>
-                    <a href="#" class="card-title fs-4 d-block mb-2">Introducing Record Types</a>
+            <a href="#" class="card-title fs-4 d-block mb-2"
+              >Introducing Record Types</a
+            >
 
-                    <p class="card-text">Does your business involve dealing with different categories of contacts,
-                        accounts, and deals? B2B contacts, B2C contacts, enterprise accounts, mid-market accounts—there
-                        are just so many types. Unless you've found your own way to differentiate all of these records,
-                        it can be a bit of a daze. </p>
-                    <p class="card-text">To make life easier, record types are here. Once your admin configures the
-                        different record types your business needs, use them to categorize your contacts, accounts,
-                        deals, and and even custom modules. You can also set up advanced automations based on record
-                        types.</p>
-                    <a href="#">Learn More</a>
-                </div>
-            </div>
-            <div class="card border-0 shadow-sm">
-                <div class="card-body">
-                    <div class="d-flex align-items-center py-1">
-                        <span class="badge new-features rounded-pill announcement">Announcement</span>&nbsp; <span
-                            class="date">July 13, 2022</span>
-                    </div>
-                    <a href="#" class="card-title fs-4 d-block mb-2">Introducing Record Types</a>
-
-                    <p class="card-text">Does your business involve dealing with different categories of contacts,
-                        accounts, and deals? B2B contacts, B2C contacts, enterprise accounts, mid-market accounts—there
-                        are just so many types. Unless you've found your own way to differentiate all of these records,
-                        it can be a bit of a daze. </p>
-                    <p class="card-text">To make life easier, record types are here. Once your admin configures the
-                        different record types your business needs, use them to categorize your contacts, accounts,
-                        deals, and and even custom modules. You can also set up advanced automations based on record
-                        types.</p>
-                    <a href="#">Learn More</a>
-                </div>
-            </div>
+            <p class="card-text">
+              Does your business involve dealing with different categories of
+              contacts, accounts, and deals? B2B contacts, B2C contacts,
+              enterprise accounts, mid-market accounts—there are just so many
+              types. Unless you've found your own way to differentiate all of
+              these records, it can be a bit of a daze.
+            </p>
+            <p class="card-text">
+              To make life easier, record types are here. Once your admin
+              configures the different record types your business needs, use
+              them to categorize your contacts, accounts, deals, and and even
+              custom modules. You can also set up advanced automations based on
+              record types.
+            </p>
+            <a href="#">Learn More</a>
+          </div>
         </div>
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <div class="d-flex align-items-center py-1">
+              <span class="badge new-features rounded-pill announcement"
+                >Announcement</span
+              >&nbsp; <span class="date">July 13, 2022</span>
+            </div>
+            <a href="#" class="card-title fs-4 d-block mb-2"
+              >Introducing Record Types</a
+            >
+
+            <p class="card-text">
+              Does your business involve dealing with different categories of
+              contacts, accounts, and deals? B2B contacts, B2C contacts,
+              enterprise accounts, mid-market accounts—there are just so many
+              types. Unless you've found your own way to differentiate all of
+              these records, it can be a bit of a daze.
+            </p>
+            <p class="card-text">
+              To make life easier, record types are here. Once your admin
+              configures the different record types your business needs, use
+              them to categorize your contacts, accounts, deals, and and even
+              custom modules. You can also set up advanced automations based on
+              record types.
+            </p>
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Deal Form -->
-    <div class="offcanvas offcanvas-end deal" data-bs-backdrop="static" id="addDeal" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasRightLabel">ADD DEAL</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        
-        <div class="offcanvas-body">
-            <form class="needs-validation">
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label"> Name <sup
-                            class="text-danger">*</sup> <i class="icon icon-ic_fluent_question_circle_20_regular nippon-tooltip tooltip-icn" data-bs-toggle="tooltip" title="Tooltip on top" ></i></label>
-                    <input type="text" class="form-control" placeholder="Deal name" id="validationCustom01" value="Mark" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                      </div>
-                </div>
-                <div class="mb-3">
-                    <label for="validationCustom03" class="form-label"> Deal Value<sup
-                            class="text-danger">*</sup></label>
-                    <input type="text" class="form-control" id="validationCustom03" required placeholder="Deal name">
-                    <div class="invalid-feedback">
-                        Please provide a valid city.
-                      </div>
-                    <a class="btn btn-link"><i class="icon icon-ic_fluent_add_circle_20_regular"></i> Add products to
-                        deal</a>
-                </div>
-                <div class="mb-3 position-relative">
-                    <label for="exampleFormControlInput1" class="form-label"> Account Name <sup
-                            class="text-danger">*</sup></label>
-                    <input type="text" class="form-control typeahead" id="account" placeholder="Click to Select"
-                        data-provide="typeahead">
-                </div>
-                <div class="mb-3 position-relative">
-                    <label for="exampleFormControlInput1" class="form-label">Sales owner <sup
-                            class="text-danger">*</sup></label>
-                            <select class="selectpicker" multiple aria-label="Default select example" data-live-search="true" title="Click to select" >
-                                <option value="1">Sumit Mehta</option>
-                                <option value="2">Newton Crm</option>
-                                <option value="3">Harish</option>
-                                <option value="4">Ranvijay</option>
-                              </select>
-                              <div class="valid-feedback">
-                                Looks good!
-                              </div>
-                </div>
-                <div class="mb-3 position-relative">
-                    <label for="exampleFormControlInput1" class="form-label">Currency <sup
-                            class="text-danger">*</sup></label>
-                    <input type="text" class="form-control typeahead" id="account" placeholder="Click to Select"
-                        data-provide="typeahead">
-                </div>
-                <div class="mb-3 position-relative">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-      <label class="form-check-label" for="invalidCheck">
-        Agree to terms and conditions
-      </label>
-      <div class="invalid-feedback">
-        You must agree before submitting.
+    <div
+      class="offcanvas offcanvas-end deal"
+      data-bs-backdrop="static"
+      id="addDeal"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">ADD DEAL</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
       </div>
 
-                </div>
-                <div class="mb-3 position-relative">
-                    <label for="exampleFormControlInput1" class="form-label"> Start Date <sup
-                            class="text-danger">*</sup></label>
-                            <div class="input-group date-picker">
-                                <input type="text" class="form-control" id="date" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                                <span class="input-group-text" id="basic-addon1"><i class="icon icon-ic_fluent_calendar_ltr_16_regular"></i></span>
-                                
-                              </div>
-                    
-                </div>
-                <div class="mb-3">
-                    <label for="formFile" class="form-label">Image upload</label>
-                    <input class="form-control" type="file" id="formFile">
-                </div>
-                <div class="form-check d-flex">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      Default radio
-                    </label>
-                  </div>
-                  <div class="form-check form-switch d-flex">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
-                  </div>
-            </form>
-        </div>
-        <div class="offcanvas-footer">
-            <div class="btn-group">
-                <button class="btn btn-outline-secondary">Customize Filed</button>
+      <div class="offcanvas-body">
+        <form class="needs-validation">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">
+              Name <sup class="text-danger">*</sup>
+              <i
+                class="icon icon-ic_fluent_question_circle_20_regular nippon-tooltip tooltip-icn"
+                data-bs-toggle="tooltip"
+                title="Tooltip on top"
+              ></i
+            ></label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Deal name"
+              id="validationCustom01"
+              value="Mark"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+          </div>
+          <div class="mb-3">
+            <label for="validationCustom03" class="form-label">
+              Deal Value<sup class="text-danger">*</sup></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="validationCustom03"
+              required
+              placeholder="Deal name"
+            />
+            <div class="invalid-feedback">Please provide a valid city.</div>
+            <a class="btn btn-link"
+              ><i class="icon icon-ic_fluent_add_circle_20_regular"></i> Add
+              products to deal</a
+            >
+          </div>
+          <div class="mb-3 position-relative">
+            <label for="exampleFormControlInput1" class="form-label">
+              Account Name <sup class="text-danger">*</sup></label
+            >
+            <input
+              type="text"
+              class="form-control typeahead"
+              id="account"
+              placeholder="Click to Select"
+              data-provide="typeahead"
+            />
+          </div>
+          <div class="mb-3 position-relative">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Sales owner <sup class="text-danger">*</sup></label
+            >
+            <select
+              class="selectpicker"
+              multiple
+              aria-label="Default select example"
+              data-live-search="true"
+              title="Click to select"
+            >
+              <option value="1">Sumit Mehta</option>
+              <option value="2">Newton Crm</option>
+              <option value="3">Harish</option>
+              <option value="4">Ranvijay</option>
+            </select>
+            <div class="valid-feedback">Looks good!</div>
+          </div>
+          <div class="mb-3 position-relative">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Currency <sup class="text-danger">*</sup></label
+            >
+            <input
+              type="text"
+              class="form-control typeahead"
+              id="account"
+              placeholder="Click to Select"
+              data-provide="typeahead"
+            />
+          </div>
+          <div class="mb-3 position-relative">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="invalidCheck"
+              required
+            />
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
             </div>
-            <div class="btns">
-                <button class="btn btn-outline-primary me-2 w-180" data-bs-toggle="modal" data-bs-target="#exampleModal">Cancel</button>
-                <button class="btn btn-primary w-180 submit" type="submit">Save</button>
+          </div>
+          <div class="mb-3 position-relative">
+            <label for="exampleFormControlInput1" class="form-label">
+              Start Date <sup class="text-danger">*</sup></label
+            >
+            <div class="input-group date-picker">
+              <input
+                type="text"
+                class="form-control"
+                id="date"
+                placeholder="Username"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+              <span class="input-group-text" id="basic-addon1"
+                ><i class="icon icon-ic_fluent_calendar_ltr_16_regular"></i
+              ></span>
             </div>
+          </div>
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Image upload</label>
+            <input class="form-control" type="file" id="formFile" />
+          </div>
+          <div class="form-check d-flex">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+            />
+            <label class="form-check-label" for="flexRadioDefault1">
+              Default radio
+            </label>
+          </div>
+          <div class="form-check form-switch d-flex">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckDefault"
+            />
+            <label class="form-check-label" for="flexSwitchCheckDefault"
+              >Default switch checkbox input</label
+            >
+          </div>
+        </form>
+      </div>
+      <div class="offcanvas-footer">
+        <div class="btn-group">
+          <button class="btn btn-outline-secondary">Customize Filed</button>
         </div>
-    
+        <div class="btns">
+          <button
+            class="btn btn-outline-primary me-2 w-180"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Cancel
+          </button>
+          <button class="btn btn-primary w-180 submit" type="submit">
+            Save
+          </button>
+        </div>
+      </div>
     </div>
     <!-- Add Deal Form -->
     <!-- Edit Coloum  -->
-    <div class="offcanvas offcanvas-end w-30" tabindex="-1" id="editColumn" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasRightLabel">CHOOSE YOUR COLUMN <span
-                    class="badge text-bg-light">7/10</span></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div
+      class="offcanvas offcanvas-end w-30"
+      tabindex="-1"
+      id="editColumn"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">
+          CHOOSE YOUR COLUMN <span class="badge text-bg-light">7/10</span>
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="search border-bottom p-3">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="icon icon-ic_fluent_search_12_regular"></i
+          ></span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search in your crm"
+            aria-label="Search"
+            aria-describedby="basic-addon1"
+          />
         </div>
-        <div class="search border-bottom p-3">
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1"><i
-                        class="icon icon-ic_fluent_search_12_regular"></i></span>
-                <input type="text" class="form-control" placeholder="Search in your crm" aria-label="Search"
-                    aria-describedby="basic-addon1">
-            </div>
-        </div>
-        <div class="offcanvas-body">
+      </div>
+      <div class="offcanvas-body">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="home-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#home"
+              type="button"
+              role="tab"
+              aria-controls="home"
+              aria-selected="true"
+            >
+              Visible columns
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="profile-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#profile"
+              type="button"
+              role="tab"
+              aria-controls="profile"
+              aria-selected="false"
+            >
+              Basic information
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="messages-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#messages"
+              type="button"
+              role="tab"
+              aria-controls="messages"
+              aria-selected="false"
+            >
+              Hidden fields
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="settings-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#settings"
+              type="button"
+              role="tab"
+              aria-controls="settings"
+              aria-selected="false"
+            >
+              Others
+            </button>
+          </li>
+        </ul>
 
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
-                        type="button" role="tab" aria-controls="home" aria-selected="true">Visible columns</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
-                        type="button" role="tab" aria-controls="profile" aria-selected="false">Basic
-                        information</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages"
-                        type="button" role="tab" aria-controls="messages" aria-selected="false">Hidden fields</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings"
-                        type="button" role="tab" aria-controls="settings" aria-selected="false">Others</button>
-                </li>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div
+            class="tab-pane active"
+            id="home"
+            role="tabpanel"
+            aria-labelledby="home-tab"
+            tabindex="0"
+          >
+            <ul class="list-group list-group-sortable list-short">
+              <li class="list-group-item">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0V0z" />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    /></svg
+                ></span>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="name"
+                    disabled
+                  />
+                  <label class="form-check-label" for="name"> Name </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0V0z" />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    /></svg
+                ></span>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="score"
+                    disabled
+                  />
+                  <label class="form-check-label" for="score"> Score </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0V0z" />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    /></svg
+                ></span>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="amount"
+                  />
+                  <label class="form-check-label" for="amount">
+                    Open Deals amount
+                  </label>
+                </div>
+              </li>
             </ul>
-
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                    <ul class="list-group list-group-sortable list-short">
-                        <li class="list-group-item">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></span>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="name" disabled>
-                                <label class="form-check-label" for="name">
-                                  Name
-                                </label>
-                              </div>
-                        </li>
-                        <li class="list-group-item">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></span>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="score" disabled>
-                                <label class="form-check-label" for="score">
-                                  Score
-                                </label>
-                              </div>
-                        </li>
-                        <li class="list-group-item">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></span>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="amount" >
-                                <label class="form-check-label" for="amount">
-                                  Open Deals amount
-                                </label>
-                              </div>
-                        </li>
-                    </ul>
+          </div>
+          <div
+            class="tab-pane"
+            id="profile"
+            role="tabpanel"
+            aria-labelledby="profile-tab"
+            tabindex="0"
+          >
+            <ul class="list-group list-group-sortable list-short">
+              <li class="list-group-item">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0V0z" />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    /></svg
+                ></span>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="name"
+                    disabled
+                  />
+                  <label class="form-check-label" for="name"> Name </label>
                 </div>
-                <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                    <ul class="list-group list-group-sortable list-short">
-                        <li class="list-group-item">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></span>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="name" disabled>
-                                <label class="form-check-label" for="name">
-                                  Name
-                                </label>
-                              </div>
-                        </li>
-                        <li class="list-group-item">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></span>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="score" disabled>
-                                <label class="form-check-label" for="score">
-                                  Score
-                                </label>
-                              </div>
-                        </li>
-                        <li class="list-group-item">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></span>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="amount" >
-                                <label class="form-check-label" for="amount">
-                                  Open Deals amount
-                                </label>
-                              </div>
-                        </li>
-                    </ul>
+              </li>
+              <li class="list-group-item">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0V0z" />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    /></svg
+                ></span>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="score"
+                    disabled
+                  />
+                  <label class="form-check-label" for="score"> Score </label>
                 </div>
-                <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab" tabindex="0">
-                    <ul class="list-group list-group-sortable list-short">
-                        <li class="list-group-item">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></span>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="name" disabled>
-                                <label class="form-check-label" for="name">
-                                  Name
-                                </label>
-                              </div>
-                        </li>
-                        <li class="list-group-item">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></span>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="score" disabled>
-                                <label class="form-check-label" for="score">
-                                  Score
-                                </label>
-                              </div>
-                        </li>
-                        <li class="list-group-item">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></span>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="amount" >
-                                <label class="form-check-label" for="amount">
-                                  Open Deals amount
-                                </label>
-                              </div>
-                        </li>
-                        
-                    </ul>
+              </li>
+              <li class="list-group-item">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0V0z" />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    /></svg
+                ></span>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="amount"
+                  />
+                  <label class="form-check-label" for="amount">
+                    Open Deals amount
+                  </label>
                 </div>
-                <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab" tabindex="0">
-                    <ul class="list-group list-group-sortable list-short">
-                        <li class="list-group-item">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></span>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="name" disabled>
-                                <label class="form-check-label" for="name">
-                                  Name
-                                </label>
-                              </div>
-                        </li>
-                        <li class="list-group-item">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></span>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="score" disabled>
-                                <label class="form-check-label" for="score">
-                                  Score
-                                </label>
-                              </div>
-                        </li>
-                        <li class="list-group-item">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></span>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="amount" >
-                                <label class="form-check-label" for="amount">
-                                  Open Deals amount
-                                </label>
-                              </div>
-                        </li>
-                    </ul>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="tab-pane"
+            id="messages"
+            role="tabpanel"
+            aria-labelledby="messages-tab"
+            tabindex="0"
+          >
+            <ul class="list-group list-group-sortable list-short">
+              <li class="list-group-item">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0V0z" />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    /></svg
+                ></span>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="name"
+                    disabled
+                  />
+                  <label class="form-check-label" for="name"> Name </label>
                 </div>
-            </div>
+              </li>
+              <li class="list-group-item">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0V0z" />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    /></svg
+                ></span>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="score"
+                    disabled
+                  />
+                  <label class="form-check-label" for="score"> Score </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0V0z" />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    /></svg
+                ></span>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="amount"
+                  />
+                  <label class="form-check-label" for="amount">
+                    Open Deals amount
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="tab-pane"
+            id="settings"
+            role="tabpanel"
+            aria-labelledby="settings-tab"
+            tabindex="0"
+          >
+            <ul class="list-group list-group-sortable list-short">
+              <li class="list-group-item">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0V0z" />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    /></svg
+                ></span>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="name"
+                    disabled
+                  />
+                  <label class="form-check-label" for="name"> Name </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0V0z" />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    /></svg
+                ></span>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="score"
+                    disabled
+                  />
+                  <label class="form-check-label" for="score"> Score </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0V0z" />
+                    <path
+                      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    /></svg
+                ></span>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="amount"
+                  />
+                  <label class="form-check-label" for="amount">
+                    Open Deals amount
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="offcanvas-footer">
-            <div class="btn-group">
-                <button class="btn btn-outline-secondary" >Customize Filed</button>
-            </div>
-            <div class="btns">
-                <button class="btn btn-outline-primary me-2 w-180">Cancel</button>
-                <button class="btn btn-primary w-180" disabled="">Save</button>
-            </div>
+      </div>
+      <div class="offcanvas-footer">
+        <div class="btn-group">
+          <button class="btn btn-outline-secondary">Customize Filed</button>
         </div>
+        <div class="btns">
+          <button class="btn btn-outline-primary me-2 w-180">Cancel</button>
+          <button class="btn btn-primary w-180" disabled="">Save</button>
+        </div>
+      </div>
     </div>
 
     <!-- End of Edit column -->
     <!-- End of what's new sidebar -->
     <!-- end of sidebar -->
     <!-- Modal view -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              Are you sure want to close
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Are you sure want to close</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
+    </div>
     <!-- End of modal veiw -->
 
-<!-- end of toast message -->
+    <!-- end of toast message -->
 
-
-
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
-  <div id="liveToast" class="toast success" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-inside">
-        <div class="toast-icon">
-            <i class="icon icon-ic_fluent_checkmark_circle_20_regular"></i>
-        </div>
-        <div class="toast-body">
-            <h6>Sucess</h6>
-          Hello, world! This is a toast message.
-        </div>
-        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-  </div>
-</div>
-
-<div class="toast-container position-fixed top-0 end-0 p-3">
-    <div id="liveToasterror" class="toast error" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="toast-inside">
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="liveToast"
+        class="toast success"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-inside">
           <div class="toast-icon">
-              <i class="icon icon-ic_fluent_dismiss_circle_16_regular"></i>
+            <i class="icon icon-ic_fluent_checkmark_circle_20_regular"></i>
           </div>
           <div class="toast-body">
-              <h6>Error</h6>
+            <h6>Sucess</h6>
+            Hello, world! This is a toast message.
+          </div>
+          <button
+            type="button"
+            class="btn-close me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+      <div
+        id="liveToasterror"
+        class="toast error"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-inside">
+          <div class="toast-icon">
+            <i class="icon icon-ic_fluent_dismiss_circle_16_regular"></i>
+          </div>
+          <div class="toast-body">
+            <h6>Error</h6>
             <strong>Hello</strong>, world! This is a toast message.
           </div>
-          <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          <button
+            type="button"
+            class="btn-close me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
         </div>
+      </div>
     </div>
-  </div>
 
     <!-- Scripts -->
     <script src="https://cdn.ckeditor.com/4.19.1/standard-all/ckeditor.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./javascripts/jquery.sortable.js"></script>
     <script src="./javascripts/datepicker.js"></script>
-    
+
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/rowreorder/1.2.7/js/dataTables.rowReorder.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
     <script>
-const toastTrigger = document.getElementById('liveToastBtn')
-const toastLiveExample = document.getElementById('liveToast')
-if (toastTrigger) {
-    debugger;
-  toastTrigger.addEventListener('click', () => {
-    const toast = new bootstrap.Toast(toastLiveExample)
+      const toastTrigger = document.getElementById("liveToastBtn");
+      const toastLiveExample = document.getElementById("liveToast");
+      if (toastTrigger) {
+        debugger;
+        toastTrigger.addEventListener("click", () => {
+          const toast = new bootstrap.Toast(toastLiveExample);
 
-    toast.show()
-  })
-}
-
-        var dataTable = $('.table').DataTable( {
-            "sDom": 'rt<"nippon-b"flip>',
-            searching: false,
-    //   rowReorder: {
-    //     selector: 'tr'
-    //   }
-});
-
-
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-        const tooltip = new bootstrap.Tooltip('.nippon-tooltip', {
-            boundary: document.body // or document.querySelector('#boundary')
-        })
-
-        CKEDITOR.replace('editor1', {
-            toolbarLocation: 'bottom',
-            // Remove some plugins that would conflict with the bottom
-            // toolbar position.
-            removePlugins: 'elementspath,resize',
-            removeButtons: 'PasteFromWord'
+          toast.show();
         });
-        $(".global-search .form-control").focus(function () {
-            $(".search-auto-complete").show();
-        });
-        $(".global-search .form-control").focusout(function (e) {
-            $(".search-auto-complete").hide();
-        });
-        $('.c-filter').click(function () {
-            $(this).toggleClass("active");
-            $('.panel-view').toggleClass('show')
-        });
-        $("#bulkact").click(function () {
-
-            $(".bulk-action").toggleClass('show');
-
-        })
-        $(".table-edit").click(function () {
-
-            $(".table-responsive").toggleClass('overflow-visible');
-
-        })
-        $(".secondedit").click(function () {
-
-            $(".table-responsive").toggleClass('overflow-visible');
-
-        })
-        // Initializes  input( name of states)
-        // with a typeahead
-        var $input = $(".typeahead");
-        $input.typeahead({
-            source: [
-                "Andhra Pradesh",
-                "Arunachal Pradesh",
-                "Assam",
-                "Bihar",
-                "Chhattisgarh",
-                "Goa",
-                "Gujarat",
-                "Haryana",
-                "Himachal Pradesh",
-                "Jharkhand",
-                "Karnataka",
-                "Kerala",
-                "Madhya Pradesh",
-                "Maharashtra",
-                "Manipur",
-                "Meghalaya",
-                "Mizoram",
-                "Nagaland",
-                "Odisha",
-                "Punjab",
-                "Rajasthan",
-                "Sikkim",
-                "Tamil Nadu",
-                "Telangana",
-                "Tripura",
-                "Uttar Pradesh",
-                "Uttarakhand",
-                "West Bengal",
-            ],
-            autoSelect: true,
-        });
-
-        $input.change(function () {
-            var current = $input.typeahead("getActive");
-            matches = [];
-
-            if (current) {
-
-                // Some item from your input matches
-                // with entered data
-                if (current.name == $input.val()) {
-                    matches.push(current.name);
-                }
-            }
-        });
-        $('.mobile-nav').on('click', function (event) {
-            $('.sidebar').toggleClass('show');
-        });
-        $('.mobile-close').on('click', function (event) {
-            $('.sidebar').toggleClass('show');
-        });
-        
-       
-        $('.secondedit').on('click', function (event) {
-            $(this).parent().toggleClass('open');
-        })
-        $('.list-group-sortable').sortable({
-                placeholderClass: 'list-group-item'
-            });
-// $('#account').autocomplete({
-//   // source: ['Value 1', 'Value 2', 'Value 3']
-//   source: [
-//     {
-//       value: 'v1', 
-//       label: 'Value 1', 
-//       extradata: 'jQuery1' // optional
-//     },
-//     {
-//       value: 'v2', 
-//       label: 'Value 2', 
-//       extradata: 'jQuery2'
-//     },
-//     {
-//       value: 'v3', 
-//       label: 'Value 3', 
-//       extradata: 'jQuery3'
-//     }
-//     // ...
-//   ]
-// })
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(() => {
-  'use strict'
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.from(forms).forEach(form => {
-    form.addEventListener('.submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
       }
 
-      form.classList.add('was-validated')
-    }, false)
-  })
-})()
-$('.submit').on('click', function (event) {
-    
-    $(".needs-validation").addClass('was-validated');
-           
-        });
-        $('#date').datepicker();
+      var dataTable = $(".table").DataTable({
+        sDom: 'rt<"nippon-b"flip>',
+        searching: false,
+        //   rowReorder: {
+        //     selector: 'tr'
+        //   }
+      });
 
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+      );
+      const tooltip = new bootstrap.Tooltip(".nippon-tooltip", {
+        boundary: document.body, // or document.querySelector('#boundary')
+      });
+
+      CKEDITOR.replace("editor1", {
+        toolbarLocation: "bottom",
+        // Remove some plugins that would conflict with the bottom
+        // toolbar position.
+        removePlugins: "elementspath,resize",
+        removeButtons: "PasteFromWord",
+      });
+      $(".global-search .form-control").focus(function () {
+        $(".search-auto-complete").show();
+      });
+      $(".global-search .form-control").focusout(function (e) {
+        $(".search-auto-complete").hide();
+      });
+      $(".c-filter").click(function () {
+        $(this).toggleClass("active");
+        $(".panel-view").toggleClass("show");
+      });
+      $("#bulkact").click(function () {
+        $(".bulk-action").toggleClass("show");
+      });
+      $(".table-edit").click(function () {
+        $(".table-responsive").toggleClass("overflow-visible");
+      });
+      $(".secondedit").click(function () {
+        $(".table-responsive").toggleClass("overflow-visible");
+      });
+      // Initializes  input( name of states)
+      // with a typeahead
+      var $input = $(".typeahead");
+      $input.typeahead({
+        source: [
+          "Andhra Pradesh",
+          "Arunachal Pradesh",
+          "Assam",
+          "Bihar",
+          "Chhattisgarh",
+          "Goa",
+          "Gujarat",
+          "Haryana",
+          "Himachal Pradesh",
+          "Jharkhand",
+          "Karnataka",
+          "Kerala",
+          "Madhya Pradesh",
+          "Maharashtra",
+          "Manipur",
+          "Meghalaya",
+          "Mizoram",
+          "Nagaland",
+          "Odisha",
+          "Punjab",
+          "Rajasthan",
+          "Sikkim",
+          "Tamil Nadu",
+          "Telangana",
+          "Tripura",
+          "Uttar Pradesh",
+          "Uttarakhand",
+          "West Bengal",
+        ],
+        autoSelect: true,
+      });
+
+      $input.change(function () {
+        var current = $input.typeahead("getActive");
+        matches = [];
+
+        if (current) {
+          // Some item from your input matches
+          // with entered data
+          if (current.name == $input.val()) {
+            matches.push(current.name);
+          }
+        }
+      });
+      $(".mobile-nav").on("click", function (event) {
+        $(".sidebar").toggleClass("show");
+      });
+      $(".mobile-close").on("click", function (event) {
+        $(".sidebar").toggleClass("show");
+      });
+
+      $(".secondedit").on("click", function (event) {
+        $(this).parent().toggleClass("open");
+      });
+      $(".list-group-sortable").sortable({
+        placeholderClass: "list-group-item",
+      });
+      // $('#account').autocomplete({
+      //   // source: ['Value 1', 'Value 2', 'Value 3']
+      //   source: [
+      //     {
+      //       value: 'v1',
+      //       label: 'Value 1',
+      //       extradata: 'jQuery1' // optional
+      //     },
+      //     {
+      //       value: 'v2',
+      //       label: 'Value 2',
+      //       extradata: 'jQuery2'
+      //     },
+      //     {
+      //       value: 'v3',
+      //       label: 'Value 3',
+      //       extradata: 'jQuery3'
+      //     }
+      //     // ...
+      //   ]
+      // })
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (() => {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            ".submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+      $(".submit").on("click", function (event) {
+        $(".needs-validation").addClass("was-validated");
+      });
+      $("#date").datepicker();
     </script>
 
-
-
     <!-- end of Scripts -->
-</body>
-
+  </body>
 </html>
