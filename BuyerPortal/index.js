@@ -236,11 +236,11 @@ function searchPoNumber(event) {
   
     function renderPoNumberUI() {
       dynamicInputContainer.innerHTML = `
-        <label for="PO No" class="d-flex justify-content-evenly d-sm-flex justify-content-sm-start">
-          <span class="ms-sm-2 label-text d-flex align-items-center">PO Number</span>
+        <label for="PO No" class="d-lg-flex d-sm-block d-md-block">
+          <span class="ms-sm-4 ms-lg-1 me-lg-1 ms-md-1 card-inside-text label-text d-lg-flex align-items-center">PO Number</span>
           <input
             id="po-number-input"
-            class="ms-sm-5 px-sm-5 ms-lg-3 px-lg-5 py-lg-1 customer-input"
+            class="ms-sm-4 px-sm-5 py-sm-1 ms-lg-3 px-lg-5 py-lg-1 py-sm-1 customer-input ms-md-3"
             list="po-number-list"
             placeholder="Select or type PO Number" />
           <datalist id="po-number-list">
@@ -253,14 +253,14 @@ function searchPoNumber(event) {
   
     function renderDateUI() {
       dynamicInputContainer.innerHTML = `
-        <label for="From Date" class="d-flex justify-content-evenly d-sm-flex justify-content-sm-start">
-          <span class="ms-sm-2 label-text d-flex align-items-center">From Date</span>
-          <input id="from-date-input" class="ms-sm-5 px-sm-5 px-lg-5 customer-input" type="date" />
+        <label for="From Date" class="d-lg-flex d-sm-block d-md-block">
+          <span class="ms-sm-4 ms-lg-1 me-lg-1 ms-md-1 card-inside-text label-text d-lg-flex align-items-center">From Date</span>
+          <input id="from-date-input" class="ms-sm-4 px-sm-5 py-sm-1 ms-lg-3 px-lg-5 py-lg-1 py-sm-1 customer-input ms-md-3" type="date" />
         </label>
         <hr/>
-        <label for="To Date" class="d-flex justify-content-evenly d-sm-flex justify-content-sm-start mt-2">
+        <label for="To Date" class="d-lg-flex d-sm-block d-md-block mt-2">
           <span class="ms-sm-4 ms-lg-4 label-text ms-lg-2 d-flex align-items-center">To Date</span>
-          <input id="to-date-input" class="ms-sm-5 px-sm-5 ms-lg-5 px-lg-5 customer-input" type="date" />
+          <input id="to-date-input" class="ms-sm-4 px-sm-5 py-sm-1 ms-lg-3 px-lg-5 py-lg-1 py-sm-1 customer-input ms-md-3" type="date" />
         </label>`;
     }
   });

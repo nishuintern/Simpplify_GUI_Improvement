@@ -20,7 +20,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"
     />
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"
@@ -34,6 +34,15 @@
       rel="stylesheet"
     />
     <title>Simplify</title>
+    <style>
+      .select2-container .select2-selection--single {
+        height: 34px !important;
+}
+        .select2-container--default .select2-selection--single {
+          border: 1px solid #ccc !important;
+          border-radius: 0px !important;
+}
+    </style>
   </head>
   <body style="background-color: white">
     <div
@@ -1037,12 +1046,17 @@
               <label for="locationName" class="form-label fw-semibold"
                 >Location Name</label
               >
-              <input
+              <select
                 id="locationName"
                 type="text"
-                class="form-control"
+                class="form-select select2"
                 list="locationNameList"
-              />
+              >
+              <option value="">Delhi</option>
+              <option value="">Chennai</option>
+              <option value="">Ahemdabad</option>
+              <option value="">Bengluru</option>
+            </select>
               <datalist id="locationNameList"></datalist>
             </div>
             <div class="col-md-6 col-12">
@@ -1062,22 +1076,32 @@
           <div class="row g-3 my-2">
             <div class="col-md-6 col-12">
               <label for="POType" class="form-label fw-semibold">PO Type</label>
-              <input
+              <select
                 id="POType"
                 type="text"
-                class="form-control"
+                class="form-select"
                 list="POTypeList"
-              />
+              >
+              <option value="">Select</option>
+              <option value="">Purchase Order (Wood)</option>
+              <option value="">Purchase Order (Import-Fixed Asses)</option>
+              <option value="">Purchase Order (General)</option>
+            </select>
               <datalist id="POTypeList"></datalist>
             </div>
             <div class="col-md-6 col-12">
               <label for="status" class="form-label fw-semibold">Status</label>
-              <input
+              <select
                 id="status"
                 type="text"
                 class="form-control"
                 list="statusList"
-              />
+              >
+              <option value="">All</option>
+              <option value="">Pending</option>
+              <option value="">COMPLITED WITHIN DELIVERY DATE</option>
+              <option value="">COMPLITED AFTER DELIVERY DATE</option>
+            </select>
               <datalist id="statusList"></datalist>
             </div>
           </div>
@@ -1097,6 +1121,7 @@
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="/SupplierPortal/loadContent.js"></script>
@@ -1114,6 +1139,9 @@
   $('.mobile-close').on('click', function () {
       $('.sidebar').toggleClass('show');
   });
+  $('.select2').select2({
+        width:'100%',
+      });
 })
     </script>
     <script>

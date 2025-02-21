@@ -42,6 +42,9 @@
         overflow-x: hidden;
         background-color: white;
       }
+      ::-webkit-scrollbar{
+        display: none;
+      }
       .select2-container .select2-selection--single {
         height: 34px !important;
 }
@@ -49,6 +52,15 @@
           border: 1px solid #ccc !important;
           border-radius: 0px !important;
 }
+@media screen and (max-width: 420px) {
+.customer-input{
+  display:inline-grid;
+}
+.customer-input input{
+min-width:170%;
+}
+}
+
     </style>
   </head>
   <body>
@@ -1320,8 +1332,8 @@
               <h4 class="p-2 card-heading">To Do List</h4>
               <hr />
               <div class="table-responsive">
-                <table class="table  table-responsive">
-                    <thead class="sortable-header text-nowrap">
+                <table class="table  table-responsive text-nowrap">
+                    <thead class="sortable-header">
                         <tr>
                             <th class="sortable-header">Task ID</th>
                             <th class="sortable-header">Assign To</th>
@@ -1363,7 +1375,7 @@
         </section> -->
       </div>
       <div class="row mt-3 ms-2 container-fluid" style="background-color: white;">
-        <section class="col-sm-12 col-md-12 col-lg-5 mb-4 container-fluid" style="border: 1px solid #babed8;">
+        <section class="col-sm-12 col-md-12 col-lg-5 mb-4 container-fluid" style="border: 1px solid #babed8;overflow: auto;">
           <div class="search-po">
             <h4 class="p-2 card-heading">Buyer Order Status</h4>
             <hr />
@@ -1409,7 +1421,7 @@
                             <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
                             <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td>SUGANDHA AIRAN</td>
                             <td><a href="POR.html" class="text-decoration-none text-center">20</a></td>
                             <td><a href="POR.html" class="text-decoration-none text-center">9</a></td>
@@ -1438,7 +1450,7 @@
                             <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
                             <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
                             <td><a href="POR.html" class="text-decoration-none text-center">0</a></td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
               </div>
@@ -1455,8 +1467,8 @@
             </div>
           </div>
         </section>
-        <section class="col-sm-12 col-md-12 col-lg-6 mb-4 container-fluid" style="border: 1px solid #babed8">
-          <form action="#">
+        <section class="col-sm-12 col-md-12 col-lg-6 mb-4 container-fluid" style="border: 1px solid #babed8;overflow: auto;">
+          <form action="#" style="overflow: auto;">
             <div class="search-po">
               <h4 class="p-2 card-heading">Invoice Report</h4>
               <hr />
@@ -1478,8 +1490,8 @@
                   </div>
                 </div>
                   <div class="table-responsive">
-                  <table class="table  table-responsive">
-                      <thead class="sortable-header text-nowrap">
+                  <table class="table  table-responsive text-nowrap">
+                      <thead class="sortable-header">
                           <tr>
                               <th class="sortable-header">Task ID</th>
                               <th class="sortable-header">Assign By</th>
